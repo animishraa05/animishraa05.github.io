@@ -1,17 +1,12 @@
-# Quartz v4
+# animesh's brain 🧠
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+> A living knowledge base — algorithms, systems, backend, AI, and everything I'm learning.
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
+🔗 **Live site:** https://animishraa05.github.io
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
+---
 
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
 
-## Sponsors
+## stack
 
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+Built with [Quartz v4]\ — synced from Obsidian, hosted on GitHub Pages.
