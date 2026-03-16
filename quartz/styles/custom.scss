@@ -738,3 +738,10 @@ article hr {
     max-width: 100% !important;
   }
 }
+// ─── Hide Quartz credit ──────────────────────────────────────────
+
+.quartz-footer p,
+footer > p,
+footer p:last-child {
+  display: none !important;
+}
