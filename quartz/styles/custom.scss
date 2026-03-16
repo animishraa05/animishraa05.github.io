@@ -30,22 +30,166 @@ article {
   font-size: 0.97rem;
 }
 
-// Homepage wider content
 .page[data-slug="index"] article {
   max-width: 900px;
 }
 
-// Hide graph on homepage
 .page[data-slug="index"] .graph {
   display: none;
 }
 
-// ─── Sidebar width ──────────────────────────────────────────────
+// ─── Left Sidebar ───────────────────────────────────────────────
 
 .left.sidebar {
   border-right: 1px solid var(--lightgray);
   padding-right: 1em;
+  overflow: hidden;
+  min-width: 0;
+
+  .flex {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 4px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    align-items: center !important;
+  }
+
+  .search {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+
+  #search-button {
+    width: 100% !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  .darkmode {
+    flex-shrink: 0 !important;
+  }
+
+  button[aria-label="Toggle reader mode"] {
+    flex-shrink: 0 !important;
+  }
 }
+
+// ─── Page title ─────────────────────────────────────────────────
+
+.page-title {
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em;
+  color: var(--secondary) !important;
+
+  &::before {
+    content: "~ ";
+    opacity: 0.4;
+  }
+
+  a {
+    border-bottom: none !important;
+    background: none !important;
+  }
+}
+
+// ─── Explorer ───────────────────────────────────────────────────
+
+.explorer-title {
+  font-size: 0.75em !important;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray) !important;
+  margin-bottom: 0.5em;
+}
+
+.explorer ul li a {
+  font-size: 0.88em;
+  transition: color 0.15s, padding-left 0.15s;
+  color: var(--darkgray) !important;
+  background: none !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  max-width: 100%;
+
+  &:hover {
+    color: var(--secondary) !important;
+    padding-left: 4px;
+    border-bottom: none !important;
+  }
+}
+
+// ─── Recent notes ───────────────────────────────────────────────
+
+.recent-notes {
+  margin-top: 1.2em;
+
+  h3 {
+    font-size: 0.75em !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gray) !important;
+    margin-bottom: 0.5em;
+
+    &::before {
+      content: none !important;
+    }
+  }
+
+  ul li a {
+    font-size: 0.85em;
+    color: var(--darkgray) !important;
+    background: none !important;
+    transition: color 0.15s, padding-left 0.15s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    max-width: 100%;
+
+    &:hover {
+      color: var(--secondary) !important;
+      padding-left: 4px;
+      border-bottom: none !important;
+    }
+  }
+}
+
+// ─── Right Sidebar ──────────────────────────────────────────────
+
+.right.sidebar {
+  border-left: 1px solid var(--lightgray);
+  padding-left: 1em;
+}
+
+// ─── TOC ────────────────────────────────────────────────────────
+
+.toc {
+  font-size: 0.83em !important;
+
+  li a {
+    color: var(--gray) !important;
+    transition: color 0.15s;
+    border-bottom: none !important;
+    background: none !important;
+
+    &:hover {
+      color: var(--secondary) !important;
+    }
+  }
+
+  li.in-view > a {
+    color: var(--secondary) !important;
+    font-weight: 600;
+  }
+}
+
 // ─── Headings ───────────────────────────────────────────────────
 
 article h1 {
@@ -106,7 +250,6 @@ article a {
   }
 }
 
-// External link arrow
 article a[href^="http"]::after {
   content: " ↗";
   font-size: 0.72em;
@@ -114,7 +257,6 @@ article a[href^="http"]::after {
   vertical-align: super;
 }
 
-// Internal wikilinks — subtle background pill
 article a:not([href^="http"]):not([href^="#"]) {
   background: var(--highlight);
   border-radius: 3px;
@@ -261,108 +403,6 @@ tbody tr:hover {
     color: var(--light) !important;
     border-color: var(--secondary) !important;
     border-bottom: none !important;
-  }
-}
-
-// ─── Page title ─────────────────────────────────────────────────
-
-.page-title {
-  font-size: 0.95rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.04em;
-  color: var(--secondary) !important;
-
-  &::before {
-    content: "~ ";
-    opacity: 0.4;
-  }
-
-  a {
-    border-bottom: none !important;
-    background: none !important;
-  }
-}
-
-// ─── Explorer ───────────────────────────────────────────────────
-
-.explorer-title {
-  font-size: 0.75em !important;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--gray) !important;
-  margin-bottom: 0.5em;
-}
-
-.explorer ul li a {
-  font-size: 0.88em;
-  transition: color 0.15s, padding-left 0.15s;
-  color: var(--darkgray) !important;
-  background: none !important;
-
-  &:hover {
-    color: var(--secondary) !important;
-    padding-left: 4px;
-    border-bottom: none !important;
-  }
-}
-
-// ─── Recent notes ───────────────────────────────────────────────
-
-.recent-notes {
-  margin-top: 1.2em;
-
-  h3 {
-    font-size: 0.75em !important;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--gray) !important;
-    margin-bottom: 0.5em;
-
-    &::before {
-      content: none !important;
-    }
-  }
-
-  ul li a {
-    font-size: 0.85em;
-    color: var(--darkgray) !important;
-    background: none !important;
-    transition: color 0.15s, padding-left 0.15s;
-
-    &:hover {
-      color: var(--secondary) !important;
-      padding-left: 4px;
-      border-bottom: none !important;
-    }
-  }
-}
-
-// ─── Right Sidebar ──────────────────────────────────────────────
-
-.right.sidebar {
-  border-left: 1px solid var(--lightgray);
-  padding-left: 1em;
-}
-
-// ─── TOC ────────────────────────────────────────────────────────
-
-.toc {
-  font-size: 0.83em !important;
-
-  li a {
-    color: var(--gray) !important;
-    transition: color 0.15s;
-    border-bottom: none !important;
-    background: none !important;
-
-    &:hover {
-      color: var(--secondary) !important;
-    }
-  }
-
-  li.in-view > a {
-    color: var(--secondary) !important;
-    font-weight: 600;
   }
 }
 
