@@ -1,3 +1,349 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+// ─── Kanagawa Palette ───────────────────────────────────────────
+// Wave (dark) + Lotus (light) full token set
+
+:root {
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+// ─── Typography ─────────────────────────────────────────────────
+
+* {
+  font-family: var(--font-mono) !important;
+  letter-spacing: -0.01em;
+}
+
+// ─── Scrollbar ──────────────────────────────────────────────────
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--light); }
+::-webkit-scrollbar-thumb { background: var(--lightgray); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--secondary); }
+
+// ─── Page Layout ────────────────────────────────────────────────
+
+.page {
+  max-width: 1400px !important;
+}
+
+article {
+  max-width: 720px;
+  line-height: 1.8 !important;
+}
+
+// ─── Headings ───────────────────────────────────────────────────
+
+article h1 {
+  font-size: 1.8rem !important;
+  font-weight: 700 !important;
+  color: var(--dark) !important;
+  border-bottom: 1px solid var(--lightgray);
+  padding-bottom: 0.4em;
+  margin-bottom: 1em;
+}
+
+article h2 {
+  font-size: 1.3rem !important;
+  font-weight: 600 !important;
+  color: var(--secondary) !important;
+  margin-top: 2em;
+
+  &::before {
+    content: "## ";
+    opacity: 0.4;
+    font-size: 0.9em;
+  }
+}
+
+article h3 {
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  color: var(--tertiary) !important;
+
+  &::before {
+    content: "### ";
+    opacity: 0.4;
+    font-size: 0.9em;
+  }
+}
+
+// ─── Links ──────────────────────────────────────────────────────
+
+article a {
+  color: var(--secondary) !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    border-bottom-color: var(--secondary);
+  }
+}
+
+// External link arrow icon
+article a[href^="http"]::after {
+  content: " ↗";
+  font-size: 0.75em;
+  opacity: 0.6;
+  vertical-align: super;
+}
+
+// ─── Code ───────────────────────────────────────────────────────
+
+// Inline code
+:not(pre) > code {
+  background: var(--lightgray) !important;
+  color: var(--tertiary) !important;
+  border-radius: 4px !important;
+  padding: 2px 7px !important;
+  font-size: 0.88em !important;
+  border: 1px solid var(--gray) !important;
+}
+
+// Code blocks
+pre {
+  border-radius: 8px !important;
+  border: 1px solid var(--lightgray) !important;
+  padding: 1.2em 1.4em !important;
+  font-size: 0.88em !important;
+  line-height: 1.7 !important;
+  overflow-x: auto;
+  position: relative;
+}
+
+// ─── Blockquotes ────────────────────────────────────────────────
+
+blockquote {
+  border-left: 3px solid var(--secondary) !important;
+  background: var(--lightgray) !important;
+  margin: 1.5em 0 !important;
+  padding: 0.8em 1.2em !important;
+  border-radius: 0 6px 6px 0 !important;
+  font-style: italic;
+  color: var(--darkgray) !important;
+}
+
+// ─── Tables ─────────────────────────────────────────────────────
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92em;
+  margin: 1.5em 0;
+}
+
+thead tr {
+  background: var(--lightgray);
+}
+
+th {
+  color: var(--secondary) !important;
+  font-weight: 600;
+  padding: 10px 14px;
+  border: 1px solid var(--lightgray);
+  text-align: left;
+}
+
+td {
+  padding: 8px 14px;
+  border: 1px solid var(--lightgray);
+}
+
+tbody tr:hover {
+  background: var(--highlight);
+}
+
+// ─── Callouts / Admonitions ─────────────────────────────────────
+
+.callout {
+  border-radius: 6px !important;
+  border-left-width: 3px !important;
+  padding: 0.8em 1em !important;
+  margin: 1.5em 0 !important;
+}
+
+.callout[data-callout="note"] {
+  border-left-color: var(--secondary) !important;
+  background: var(--highlight) !important;
+}
+
+.callout[data-callout="warning"] {
+  border-left-color: #e6c384 !important;
+  background: rgba(230, 195, 132, 0.1) !important;
+}
+
+.callout[data-callout="danger"] {
+  border-left-color: #c34043 !important;
+  background: rgba(195, 64, 67, 0.1) !important;
+}
+
+.callout[data-callout="tip"] {
+  border-left-color: var(--tertiary) !important;
+  background: rgba(118, 148, 106, 0.1) !important;
+}
+
+// ─── Tags ───────────────────────────────────────────────────────
+
+.tag-link, a.tag-link {
+  display: inline-block;
+  background: var(--lightgray) !important;
+  color: var(--secondary) !important;
+  border: 1px solid var(--gray) !important;
+  border-radius: 4px !important;
+  padding: 1px 8px !important;
+  font-size: 0.82em !important;
+  text-decoration: none !important;
+  transition: background 0.2s;
+
+  &:hover {
+    background: var(--secondary) !important;
+    color: var(--light) !important;
+    border-bottom: none !important;
+  }
+}
+
+// ─── Left Sidebar ───────────────────────────────────────────────
+
+.left.sidebar {
+  border-right: 1px solid var(--lightgray);
+  padding-right: 1em;
+}
+
+// Page title
+.page-title {
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em;
+  color: var(--secondary) !important;
+
+  &::before {
+    content: "~ ";
+    opacity: 0.5;
+  }
+}
+
+// Explorer folder/file items
+.explorer-title {
+  font-size: 0.82em !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gray) !important;
+}
+
+.explorer ul li a {
+  font-size: 0.9em;
+  transition: color 0.15s;
+  color: var(--darkgray) !important;
+
+  &:hover {
+    color: var(--secondary) !important;
+    border-bottom: none !important;
+  }
+}
+
+// ─── Right Sidebar ──────────────────────────────────────────────
+
+.right.sidebar {
+  border-left: 1px solid var(--lightgray);
+  padding-left: 1em;
+}
+
+// Table of contents
+.toc {
+  font-size: 0.85em !important;
+
+  li a {
+    color: var(--gray) !important;
+    transition: color 0.15s;
+    border-bottom: none !important;
+
+    &:hover {
+      color: var(--secondary) !important;
+    }
+  }
+}
+
+// ─── Graph ──────────────────────────────────────────────────────
+
+.graph {
+  .graph-outer {
+    border: 1px solid var(--lightgray) !important;
+    border-radius: 8px !important;
+  }
+}
+
+// ─── Search ─────────────────────────────────────────────────────
+
+#search-button {
+  border: 1px solid var(--lightgray) !important;
+  border-radius: 6px !important;
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: var(--secondary) !important;
+  }
+}
+
+#search-bar {
+  border-radius: 6px !important;
+  border: 1px solid var(--secondary) !important;
+  font-family: var(--font-mono) !important;
+}
+
+// ─── Backlinks ──────────────────────────────────────────────────
+
+.backlinks {
+  font-size: 0.88em;
+
+  ul li a {
+    color: var(--secondary) !important;
+    border-bottom: none !important;
+
+    &:hover {
+      border-bottom: 1px solid var(--secondary) !important;
+    }
+  }
+}
+
+// ─── Footer ─────────────────────────────────────────────────────
+
+footer {
+  border-top: 1px solid var(--lightgray) !important;
+  font-size: 0.8em !important;
+  color: var(--gray) !important;
+  padding-top: 1em;
+}
+
+// ─── Folder Pages ───────────────────────────────────────────────
+
+.folder-outer {
+  border: 1px solid var(--lightgray);
+  border-radius: 8px;
+  padding: 1em;
+  margin-bottom: 0.5em;
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: var(--secondary);
+  }
+}
+
+// ─── Popover previews ───────────────────────────────────────────
+
+.popover {
+  border: 1px solid var(--lightgray) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3) !important;
+}
+
+// ─── Smooth page transitions ────────────────────────────────────
+
+.singlePage {
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
