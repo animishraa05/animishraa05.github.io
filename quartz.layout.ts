@@ -3,22 +3,34 @@ import * as Component from "./quartz/components"
 
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
-  header: [],
+  header: [
+    Component.PageTitle(),
+    Component.Flex({
+      components: [
+        {
+          Component: Component.Search(),
+          grow: true,
+        },
+        { Component: Component.Darkmode() },
+        { Component: Component.ReaderMode() },
+      ],
+    }),
+  ],
   afterBody: [
-   Component.Comments({
-  provider: "giscus",
-  options: {
-    repo: "animishraa05/animishraa05.github.io",
-    repoId: "R_kgDORoJkag",
-    category: "Announcements",
-    categoryId: "DIC_kwDORoJkas4C4f9J",
-    lang: "en",
-    inputPosition: "top",
-    mapping: "pathname",
-    strict: false,
-    reactionsEnabled: true,
-  },
-}),
+    Component.Comments({
+      provider: "giscus",
+      options: {
+        repo: "animishraa05/animishraa05.github.io",
+        repoId: "R_kgDORoJkag",
+        category: "Announcements",
+        categoryId: "DIC_kwDORoJkas4C4f9J",
+        lang: "en",
+        inputPosition: "top",
+        mapping: "pathname",
+        strict: false,
+        reactionsEnabled: true,
+      },
+    }),
   ],
   footer: Component.Footer({
     links: {
@@ -39,18 +51,6 @@ export const defaultContentPageLayout: PageLayout = {
     Component.TagList(),
   ],
   left: [
-    Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
-    Component.Flex({
-      components: [
-        {
-          Component: Component.Search(),
-          grow: true,
-        },
-        { Component: Component.Darkmode() },
-        { Component: Component.ReaderMode() },
-      ],
-    }),
     Component.Explorer({
       title: "explorer",
       folderClickBehavior: "collapse",
@@ -102,34 +102,21 @@ export const defaultContentPageLayout: PageLayout = {
         showTags: false,
       },
     }),
-    Component.DesktopOnly(Component.TableOfContents({
-      maxDepth: 3,
-      minEntries: 3,
-      showByDefault: true,
-      collapseByDefault: false,
-    })),
+    Component.DesktopOnly(
+      Component.TableOfContents({
+        maxDepth: 3,
+        minEntries: 3,
+        showByDefault: true,
+        collapseByDefault: false,
+      }),
+    ),
     Component.Backlinks(),
   ],
 }
 
 export const defaultListPageLayout: PageLayout = {
-  beforeBody: [
-    Component.Breadcrumbs(),
-    Component.ArticleTitle(),
-    Component.ContentMeta(),
-  ],
+  beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
   left: [
-    Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
-    Component.Flex({
-      components: [
-        {
-          Component: Component.Search(),
-          grow: true,
-        },
-        { Component: Component.Darkmode() },
-      ],
-    }),
     Component.Explorer({
       title: "explorer",
       folderClickBehavior: "collapse",

@@ -13,10 +13,20 @@
 
 // ─── Scrollbar ──────────────────────────────────────────────────
 
-::-webkit-scrollbar { width: 4px; height: 4px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--lightgray); border-radius: 99px; }
-::-webkit-scrollbar-thumb:hover { background: var(--secondary); }
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--lightgray);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
 
 // ─── Page Layout ────────────────────────────────────────────────
 
@@ -38,46 +48,49 @@ article {
   display: none;
 }
 
-// ─── Left Sidebar ───────────────────────────────────────────────
+// ─── TOP NAVBAR ─────────────────────────────────────────────────
+// Move page title + search + darkmode into a clean top bar
 
-.left.sidebar {
-  border-right: 1px solid var(--lightgray);
-  padding-right: 1em;
-  overflow-x: hidden;
-  min-width: 0;
-
-  .flex {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    gap: 4px !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    align-items: center !important;
-  }
-
-  .search {
-    flex: 1 1 0 !important;
-    min-width: 0 !important;
-    overflow: hidden !important;
-  }
-
- 
-  .darkmode {
-    flex-shrink: 0 !important;
-  }
-
-  button[aria-label="Toggle reader mode"] {
-    flex-shrink: 0 !important;
-  }
+#quartz-body {
+  display: flex;
+  flex-direction: column;
 }
 
-// ─── Page title ─────────────────────────────────────────────────
+// Hide page title from left sidebar — it lives in the header now
+.left.sidebar .page-title {
+  display: none !important;
+}
 
-.page-title {
-  font-size: 0.95rem !important;
+// Hide search + darkmode + readermode from left sidebar
+.left.sidebar .search-container,
+.left.sidebar .search,
+.left.sidebar .darkmode,
+.left.sidebar .flex {
+  display: none !important;
+}
+
+// Style the header bar
+header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 0 2rem !important;
+  height: 52px !important;
+  border-bottom: 1px solid var(--lightgray) !important;
+  background: var(--light) !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 100 !important;
+  width: 100% !important;
+}
+
+// Page title in header
+header .page-title {
+  font-size: 0.9rem !important;
   font-weight: 700 !important;
   letter-spacing: 0.04em;
   color: var(--secondary) !important;
+  display: block !important;
 
   &::before {
     content: "~ ";
@@ -87,22 +100,67 @@ article {
   a {
     border-bottom: none !important;
     background: none !important;
+    color: var(--secondary) !important;
   }
+}
+
+// Search in header
+header .search {
+  flex: 0 0 auto !important;
+}
+
+header #search-button {
+  border: 1px solid var(--lightgray) !important;
+  border-radius: 6px !important;
+  font-size: 0.82em !important;
+  padding: 4px 12px !important;
+  color: var(--gray) !important;
+  transition: border-color 0.15s;
+
+  &:hover {
+    border-color: var(--secondary) !important;
+    color: var(--secondary) !important;
+  }
+}
+
+// Darkmode + readermode in header
+header .darkmode,
+header button[aria-label="Toggle reader mode"] {
+  display: flex !important;
+  align-items: center !important;
+}
+
+// Header right group (search + darkmode + reader)
+header .flex {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+// ─── Left Sidebar ───────────────────────────────────────────────
+
+.left.sidebar {
+  border-right: 1px solid var(--lightgray);
+  padding: 1.2em 1em 1em 1em;
+  overflow-x: hidden;
+  min-width: 0;
 }
 
 // ─── Explorer ───────────────────────────────────────────────────
 
 .explorer-title {
-  font-size: 0.75em !important;
+  font-size: 0.72em !important;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--gray) !important;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.6em;
 }
 
 .explorer ul li a {
-  font-size: 0.88em;
-  transition: color 0.15s, padding-left 0.15s;
+  font-size: 0.87em;
+  transition:
+    color 0.15s,
+    padding-left 0.15s;
   color: var(--darkgray) !important;
   background: none !important;
   white-space: nowrap;
@@ -121,25 +179,33 @@ article {
 // ─── Recent notes ───────────────────────────────────────────────
 
 .recent-notes {
-  margin-top: 1.2em;
+  margin-top: 1.4em;
+  padding-top: 1em;
+  border-top: 1px solid var(--lightgray);
 
   h3 {
-    font-size: 0.75em !important;
+    font-size: 0.72em !important;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: var(--gray) !important;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.6em;
 
     &::before {
       content: none !important;
     }
   }
 
+  ul li {
+    margin-bottom: 0.5em;
+  }
+
   ul li a {
-    font-size: 0.85em;
+    font-size: 0.84em;
     color: var(--darkgray) !important;
     background: none !important;
-    transition: color 0.15s, padding-left 0.15s;
+    transition:
+      color 0.15s,
+      padding-left 0.15s;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -235,7 +301,10 @@ article a {
   color: var(--secondary) !important;
   text-decoration: none !important;
   border-bottom: 1px solid transparent;
-  transition: border-color 0.15s ease, color 0.15s ease, opacity 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease,
+    opacity 0.15s ease;
 
   &:hover {
     border-bottom-color: var(--secondary);
@@ -379,7 +448,8 @@ tbody tr:hover {
 
 // ─── Tags ───────────────────────────────────────────────────────
 
-.tag-link, a.tag-link {
+.tag-link,
+a.tag-link {
   display: inline-block;
   background: transparent !important;
   color: var(--secondary) !important;
@@ -409,18 +479,7 @@ tbody tr:hover {
   }
 }
 
-// ─── Search ─────────────────────────────────────────────────────
-
-#search-button {
-  border: 1px solid var(--lightgray) !important;
-  border-radius: 6px !important;
-  transition: border-color 0.15s;
-  font-size: 0.88em !important;
-
-  &:hover {
-    border-color: var(--secondary) !important;
-  }
-}
+// ─── Search bar (modal) ─────────────────────────────────────────
 
 #search-bar {
   border-radius: 6px !important;
@@ -453,9 +512,16 @@ footer {
   border-top: 1px solid var(--lightgray) !important;
   font-size: 0.78em !important;
   color: var(--gray) !important;
-  padding-top: 1.2em;
-  margin-top: 2em;
+  padding: 0.8em 2rem !important;
+  margin-top: 0 !important;
   opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  p:last-child {
+    display: none !important;
+  }
 }
 
 // ─── Folder pages ───────────────────────────────────────────────
@@ -465,7 +531,9 @@ footer {
   border-radius: 8px;
   padding: 1em;
   margin-bottom: 0.6em;
-  transition: border-color 0.15s, background 0.15s;
+  transition:
+    border-color 0.15s,
+    background 0.15s;
 
   &:hover {
     border-color: var(--secondary);
@@ -492,8 +560,14 @@ footer {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 // ─── Article spacing ────────────────────────────────────────────
@@ -502,7 +576,8 @@ article p {
   margin-bottom: 1.2em;
 }
 
-article ul, article ol {
+article ul,
+article ol {
   padding-left: 1.4em;
   margin-bottom: 1.2em;
 
@@ -569,12 +644,17 @@ article hr {
 // ─── Mobile ─────────────────────────────────────────────────────
 
 @media (max-width: 768px) {
+  header {
+    padding: 0 1rem !important;
+  }
+
   .left.sidebar {
     flex: unset !important;
     min-width: unset !important;
     max-width: unset !important;
-    padding-right: 0 !important;
+    padding: 1rem !important;
     border-right: none !important;
+    border-bottom: 1px solid var(--lightgray) !important;
   }
 
   article {
@@ -583,5 +663,104 @@ article hr {
 
   .page[data-slug="index"] article {
     max-width: 100%;
+  }
+}
+// ─── Mobile ─────────────────────────────────────────────────────
+
+@media (max-width: 768px) {
+  // Header becomes stacked on mobile
+  header {
+    height: auto !important;
+    padding: 10px 1rem !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  // Title takes full width on mobile
+  header .page-title {
+    width: 100% !important;
+    font-size: 0.85rem !important;
+  }
+
+  // Search + buttons row
+  header .flex {
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+
+  // Left sidebar goes full width, no border
+  .left.sidebar {
+    flex: unset !important;
+    min-width: unset !important;
+    max-width: unset !important;
+    width: 100% !important;
+    padding: 1rem !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--lightgray) !important;
+  }
+
+  // Article full width
+  article {
+    padding: 0 1rem !important;
+    max-width: 100% !important;
+    font-size: 0.95rem !important;
+  }
+
+  .page[data-slug="index"] article {
+    max-width: 100% !important;
+  }
+
+  // Right sidebar hides on mobile
+  .right.sidebar {
+    display: none !important;
+  }
+
+  // Reduce heading sizes on mobile
+  article h1 {
+    font-size: 1.4rem !important;
+  }
+
+  article h2 {
+    font-size: 1.1rem !important;
+  }
+
+  // Code blocks scrollable on mobile
+  pre {
+    font-size: 0.82em !important;
+  }
+
+  // Tags wrap properly
+  .tags {
+    flex-wrap: wrap !important;
+  }
+
+  // Footer stacks on mobile
+  footer {
+    flex-direction: column !important;
+    gap: 8px !important;
+    text-align: center !important;
+    padding: 1rem !important;
+  }
+
+  // Giscus comments full width
+  .giscus {
+    width: 100% !important;
+  }
+}
+
+// ─── Tablet ──────────────────────────────────────────────────────
+
+@media (min-width: 769px) and (max-width: 1100px) {
+  // Right sidebar hides on tablet too
+  .right.sidebar {
+    display: none !important;
+  }
+
+  article {
+    max-width: 100% !important;
+  }
+
+  header {
+    padding: 0 1.5rem !important;
   }
 }
