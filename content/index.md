@@ -3,7 +3,7 @@ title: animesh's brain
 tags: []
 ---
 
-# hey, I'm animesh 👋
+# hey, I'm animesh 
 
 > MCA student at IIPS DAVV · currently breaking things with Python and AI
 
@@ -14,7 +14,7 @@ and this is where I document everything I pick up along the way.
 
 ---
 
-## 👨‍💻 what I'm doing
+## what I'm doing
 
 - **studying** — DSA, system design, computer networks
 - **building** — random projects that scratch my own itch
@@ -22,19 +22,19 @@ and this is where I document everything I pick up along the way.
 
 ---
 
-## 📂 what's inside
+##  what's inside
 
 | area | what you'll find |
 |------|-----------------|
-| [[computer-networks/01_Introduction_to_Computer_Networks\|🌐 networks]] | TCP/IP, HTTP, DNS, security, VPNs |
-| [[springboot/spring-boot-tutorial/01-What-is-Spring-Framework\|☕ spring boot]] | framework internals, REST, why it exists |
-| [[daily/Authentication and Authorization\|🔐 auth & systems]] | auth flows, linux tweaks, architecture |
-| [[ai/knowledge Representation\|🤖 ai]] | knowledge representation, diffusion models |
-| [[djangointernals\|🐍 django]] | django internals deep dive |
+| [[computer-networks/01_Introduction_to_Computer_Networks\| networks]] | TCP/IP, HTTP, DNS, security, VPNs |
+| [[springboot/spring-boot-tutorial/01-What-is-Spring-Framework\| spring boot]] | framework internals, REST, why it exists |
+| [[daily/Authentication and Authorization\| auth & systems]] | auth flows, linux tweaks, architecture |
+| [[ai/knowledge Representation\| ai]] | knowledge representation, diffusion models |
+| [[djangointernals\| django]] | django internals deep dive |
 
 ---
 
-## 🚀 things I've shipped
+##  things I've shipped
 
 **Arogya Setu** — *National Hackathon Finalist*
 Multi-tenant backend for real-time health outbreak alerts with
@@ -52,7 +52,7 @@ Co-authored a research paper from it.
 
 ---
 
-## 🛠 stack
+##  stack
 ```
 languages   →  Python · C++ · Java · TypeScript · SQL
 ai/ml       →  PyTorch · Diffusers ·  · RAG · Vector DBs
@@ -62,7 +62,7 @@ tools       →  Docker · PostgreSQL · Git · Linux · Neovim
 
 ---
 
-## ⚡ recently added
+##  recently added
 
 - [[djangointernals|Django Internals]]
 - [[controlnet|ControlNet Notes]]
