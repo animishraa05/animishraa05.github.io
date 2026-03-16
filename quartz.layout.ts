@@ -1,20 +1,33 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 
-// components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
+  afterBody: [
+   Component.Comments({
+  provider: "giscus",
+  options: {
+    repo: "animishraa05/animishraa05.github.io",
+    repoId: "R_kgDORoJkag",
+    category: "Announcements",
+    categoryId: "DIC_kwDORoJkas4C4f9J",
+    lang: "en",
+    inputPosition: "top",
+    mapping: "pathname",
+    strict: false,
+    reactionsEnabled: true,
+  },
+}),
+  ],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/jackyzha0/quartz",
-      "Discord Community": "https://discord.gg/cRFFHYye7t",
+      GitHub: "https://github.com/animishraa05",
+      LinkedIn: "https://www.linkedin.com/in/animesh-mishra-944287256/",
     },
   }),
 }
 
-// components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
     Component.ConditionalRender({
@@ -38,18 +51,73 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      title: "explorer",
+      folderClickBehavior: "collapse",
+      folderDefaultState: "collapsed",
+      useSavedState: true,
+      sortFn: (a, b) => {
+        if ((!a.file && !b.file) || (a.file && b.file)) {
+          return a.displayName.localeCompare(b.displayName, undefined, {
+            numeric: true,
+            sensitivity: "base",
+          })
+        }
+        if (a.file && !b.file) return 1
+        return -1
+      },
+    }),
+    Component.RecentNotes({
+      title: "recently updated",
+      limit: 5,
+      showTags: false,
+    }),
   ],
   right: [
-    Component.Graph(),
-    Component.DesktopOnly(Component.TableOfContents()),
+    Component.Graph({
+      localGraph: {
+        drag: true,
+        zoom: true,
+        depth: 2,
+        scale: 1.1,
+        repulseStrength: 0,
+        nodeSize: 4,
+        linkDistance: 30,
+        fontSize: 0.6,
+        opacityScale: 1,
+        removeSelfLoops: true,
+        showTags: false,
+      },
+      globalGraph: {
+        drag: true,
+        zoom: true,
+        depth: -1,
+        scale: 0.9,
+        repulseStrength: 0,
+        nodeSize: 4,
+        linkDistance: 30,
+        fontSize: 0.6,
+        opacityScale: 1,
+        removeSelfLoops: true,
+        showTags: false,
+      },
+    }),
+    Component.DesktopOnly(Component.TableOfContents({
+      maxDepth: 3,
+      minEntries: 3,
+      showByDefault: true,
+      collapseByDefault: false,
+    })),
     Component.Backlinks(),
   ],
 }
 
-// components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
-  beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
+  beforeBody: [
+    Component.Breadcrumbs(),
+    Component.ArticleTitle(),
+    Component.ContentMeta(),
+  ],
   left: [
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
@@ -62,7 +130,17 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      title: "explorer",
+      folderClickBehavior: "collapse",
+      folderDefaultState: "collapsed",
+      useSavedState: true,
+    }),
+    Component.RecentNotes({
+      title: "recently updated",
+      limit: 5,
+      showTags: false,
+    }),
   ],
   right: [],
 }
