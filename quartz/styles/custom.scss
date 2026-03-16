@@ -644,65 +644,36 @@ article hr {
 // ─── Mobile ─────────────────────────────────────────────────────
 
 @media (max-width: 768px) {
-  header {
-    padding: 0 1rem !important;
-  }
-
+  // Hide left sidebar completely on mobile
   .left.sidebar {
-    flex: unset !important;
-    min-width: unset !important;
-    max-width: unset !important;
-    padding: 1rem !important;
-    border-right: none !important;
-    border-bottom: 1px solid var(--lightgray) !important;
+    display: none !important;
   }
 
-  article {
-    padding: 0 1rem !important;
+  // Hide right sidebar completely on mobile
+  .right.sidebar {
+    display: none !important;
   }
 
-  .page[data-slug="index"] article {
-    max-width: 100%;
-  }
-}
-// ─── Mobile ─────────────────────────────────────────────────────
-
-@media (max-width: 768px) {
-  // Header becomes stacked on mobile
-  header {
-    height: auto !important;
-    padding: 10px 1rem !important;
-    flex-wrap: wrap !important;
-    gap: 8px !important;
+  // Content takes full width
+  .page {
+    display: block !important;
   }
 
-  // Title takes full width on mobile
-  header .page-title {
+  .page > #quartz-body {
+    display: block !important;
     width: 100% !important;
-    font-size: 0.85rem !important;
   }
 
-  // Search + buttons row
-  header .flex {
+  .center {
     width: 100% !important;
-    justify-content: space-between !important;
-  }
-
-  // Left sidebar goes full width, no border
-  .left.sidebar {
-    flex: unset !important;
-    min-width: unset !important;
-    max-width: unset !important;
-    width: 100% !important;
-    padding: 1rem !important;
-    border-right: none !important;
-    border-bottom: 1px solid var(--lightgray) !important;
-  }
-
-  // Article full width
-  article {
-    padding: 0 1rem !important;
     max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 1rem !important;
+  }
+
+  article {
+    max-width: 100% !important;
+    padding: 0 !important;
     font-size: 0.95rem !important;
   }
 
@@ -710,57 +681,60 @@ article hr {
     max-width: 100% !important;
   }
 
-  // Right sidebar hides on mobile
-  .right.sidebar {
-    display: none !important;
+  // Header compact on mobile
+  header {
+    height: auto !important;
+    min-height: 48px !important;
+    padding: 8px 1rem !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
   }
 
-  // Reduce heading sizes on mobile
+  header .page-title {
+    font-size: 0.85rem !important;
+  }
+
+  header .flex {
+    width: 100% !important;
+  }
+
+  // Heading sizes
   article h1 {
     font-size: 1.4rem !important;
   }
-
   article h2 {
     font-size: 1.1rem !important;
   }
+  article h3 {
+    font-size: 1rem !important;
+  }
 
-  // Code blocks scrollable on mobile
+  // Code scrollable
   pre {
-    font-size: 0.82em !important;
+    font-size: 0.8em !important;
   }
 
-  // Tags wrap properly
-  .tags {
-    flex-wrap: wrap !important;
-  }
-
-  // Footer stacks on mobile
+  // Footer stacks
   footer {
     flex-direction: column !important;
-    gap: 8px !important;
+    gap: 6px !important;
     text-align: center !important;
     padding: 1rem !important;
-  }
-
-  // Giscus comments full width
-  .giscus {
-    width: 100% !important;
   }
 }
 
 // ─── Tablet ──────────────────────────────────────────────────────
 
 @media (min-width: 769px) and (max-width: 1100px) {
-  // Right sidebar hides on tablet too
   .right.sidebar {
     display: none !important;
   }
 
-  article {
+  .center {
     max-width: 100% !important;
   }
 
-  header {
-    padding: 0 1.5rem !important;
+  article {
+    max-width: 100% !important;
   }
 }

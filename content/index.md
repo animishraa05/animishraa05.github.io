@@ -46,10 +46,6 @@ Scaled to 300+ users in launch month. Full stack assessment platform
 with secure auth and admin data exports.
 `Next.js 14 · Supabase · TypeScript · Tailwind`
 
-**DDoS Mitigation System** — *Avinya, MCTE Mhow (Indian Army)*
-AI-driven mitigation system built with military faculty.
-Co-authored a research paper from it.
-
 ---
 
 ##  stack
@@ -71,4 +67,4 @@ tools       →  Docker · PostgreSQL · Git · Linux · Neovim
 
 ---
 
-*9.21 GPA · basketball team captain · building in public*
+*· basketball team captain · building in public*
