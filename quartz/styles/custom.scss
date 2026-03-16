@@ -43,7 +43,7 @@ article {
 .left.sidebar {
   border-right: 1px solid var(--lightgray);
   padding-right: 1em;
-  overflow: hidden;
+  overflow-x: hidden;
   min-width: 0;
 
   .flex {
@@ -61,14 +61,7 @@ article {
     overflow: hidden !important;
   }
 
-  #search-button {
-    width: 100% !important;
-    min-width: 0 !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    white-space: nowrap !important;
-  }
-
+ 
   .darkmode {
     flex-shrink: 0 !important;
   }
