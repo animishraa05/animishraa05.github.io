@@ -43,13 +43,9 @@ article {
 // ─── Sidebar width ──────────────────────────────────────────────
 
 .left.sidebar {
-  flex: 0 0 200px !important;
-  min-width: 200px !important;
-  max-width: 200px !important;
   border-right: 1px solid var(--lightgray);
   padding-right: 1em;
 }
-
 // ─── Headings ───────────────────────────────────────────────────
 
 article h1 {
