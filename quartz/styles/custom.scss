@@ -30,6 +30,26 @@ article {
   font-size: 0.97rem;
 }
 
+// Homepage wider content
+.page[data-slug="index"] article {
+  max-width: 900px;
+}
+
+// Hide graph on homepage
+.page[data-slug="index"] .graph {
+  display: none;
+}
+
+// ─── Sidebar width ──────────────────────────────────────────────
+
+.left.sidebar {
+  flex: 0 0 200px !important;
+  min-width: 200px !important;
+  max-width: 200px !important;
+  border-right: 1px solid var(--lightgray);
+  padding-right: 1em;
+}
+
 // ─── Headings ───────────────────────────────────────────────────
 
 article h1 {
@@ -125,7 +145,6 @@ pre {
   overflow-x: auto;
   position: relative;
 
-  // subtle top accent line
   &::before {
     content: "";
     position: absolute;
@@ -249,12 +268,7 @@ tbody tr:hover {
   }
 }
 
-// ─── Left Sidebar ───────────────────────────────────────────────
-
-.left.sidebar {
-  border-right: 1px solid var(--lightgray);
-  padding-right: 1em;
-}
+// ─── Page title ─────────────────────────────────────────────────
 
 .page-title {
   font-size: 0.95rem !important;
@@ -272,6 +286,8 @@ tbody tr:hover {
     background: none !important;
   }
 }
+
+// ─── Explorer ───────────────────────────────────────────────────
 
 .explorer-title {
   font-size: 0.75em !important;
@@ -294,7 +310,8 @@ tbody tr:hover {
   }
 }
 
-// Recent notes section
+// ─── Recent notes ───────────────────────────────────────────────
+
 .recent-notes {
   margin-top: 1.2em;
 
@@ -331,6 +348,8 @@ tbody tr:hover {
   padding-left: 1em;
 }
 
+// ─── TOC ────────────────────────────────────────────────────────
+
 .toc {
   font-size: 0.83em !important;
 
@@ -345,7 +364,6 @@ tbody tr:hover {
     }
   }
 
-  // Active heading highlight
   li.in-view > a {
     color: var(--secondary) !important;
     font-weight: 600;
@@ -411,7 +429,7 @@ footer {
   opacity: 0.8;
 }
 
-// ─── Folder Pages ───────────────────────────────────────────────
+// ─── Folder pages ───────────────────────────────────────────────
 
 .folder-outer {
   border: 1px solid var(--lightgray);
@@ -449,7 +467,7 @@ footer {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-// ─── Article content spacing ────────────────────────────────────
+// ─── Article spacing ────────────────────────────────────────────
 
 article p {
   margin-bottom: 1.2em;
@@ -472,7 +490,7 @@ article hr {
   opacity: 0.6;
 }
 
-// ─── Content meta (date, read time) ─────────────────────────────
+// ─── Content meta ───────────────────────────────────────────────
 
 .content-meta {
   font-size: 0.8em !important;
@@ -500,3 +518,41 @@ article hr {
   }
 }
 
+// ─── 404 page ───────────────────────────────────────────────────
+
+.not-found {
+  text-align: center;
+  padding: 4em 0;
+  color: var(--gray);
+
+  h1 {
+    font-size: 4rem !important;
+    color: var(--secondary) !important;
+    border-bottom: none !important;
+    margin-bottom: 0.2em;
+  }
+
+  p {
+    opacity: 0.7;
+  }
+}
+
+// ─── Mobile ─────────────────────────────────────────────────────
+
+@media (max-width: 768px) {
+  .left.sidebar {
+    flex: unset !important;
+    min-width: unset !important;
+    max-width: unset !important;
+    padding-right: 0 !important;
+    border-right: none !important;
+  }
+
+  article {
+    padding: 0 1rem !important;
+  }
+
+  .page[data-slug="index"] article {
+    max-width: 100%;
+  }
+}
