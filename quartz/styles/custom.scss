@@ -1,8 +1,5 @@
 @use "./base.scss";
 
-// ─── Kanagawa Palette ───────────────────────────────────────────
-// Wave (dark) + Lotus (light) full token set
-
 :root {
   --font-mono: "JetBrains Mono", monospace;
 }
@@ -16,9 +13,9 @@
 
 // ─── Scrollbar ──────────────────────────────────────────────────
 
-::-webkit-scrollbar { width: 5px; height: 5px; }
-::-webkit-scrollbar-track { background: var(--light); }
-::-webkit-scrollbar-thumb { background: var(--lightgray); border-radius: 3px; }
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--lightgray); border-radius: 99px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--secondary); }
 
 // ─── Page Layout ────────────────────────────────────────────────
@@ -28,44 +25,55 @@
 }
 
 article {
-  max-width: 720px;
-  line-height: 1.8 !important;
+  max-width: 740px;
+  line-height: 1.85 !important;
+  font-size: 0.97rem;
 }
 
 // ─── Headings ───────────────────────────────────────────────────
 
 article h1 {
-  font-size: 1.8rem !important;
+  font-size: 1.75rem !important;
   font-weight: 700 !important;
   color: var(--dark) !important;
   border-bottom: 1px solid var(--lightgray);
   padding-bottom: 0.4em;
   margin-bottom: 1em;
+  letter-spacing: -0.02em;
 }
 
 article h2 {
-  font-size: 1.3rem !important;
+  font-size: 1.25rem !important;
   font-weight: 600 !important;
   color: var(--secondary) !important;
-  margin-top: 2em;
+  margin-top: 2.2em;
+  margin-bottom: 0.6em;
 
   &::before {
     content: "## ";
-    opacity: 0.4;
-    font-size: 0.9em;
+    opacity: 0.3;
+    font-size: 0.85em;
   }
 }
 
 article h3 {
-  font-size: 1.1rem !important;
+  font-size: 1.05rem !important;
   font-weight: 600 !important;
   color: var(--tertiary) !important;
+  margin-top: 1.6em;
 
   &::before {
     content: "### ";
-    opacity: 0.4;
-    font-size: 0.9em;
+    opacity: 0.3;
+    font-size: 0.85em;
   }
+}
+
+article h4 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: var(--darkgray) !important;
+  opacity: 0.8;
 }
 
 // ─── Links ──────────────────────────────────────────────────────
@@ -74,54 +82,74 @@ article a {
   color: var(--secondary) !important;
   text-decoration: none !important;
   border-bottom: 1px solid transparent;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  transition: border-color 0.15s ease, color 0.15s ease, opacity 0.15s ease;
 
   &:hover {
     border-bottom-color: var(--secondary);
+    opacity: 0.85;
   }
 }
 
-// External link arrow icon
+// External link arrow
 article a[href^="http"]::after {
   content: " ↗";
-  font-size: 0.75em;
-  opacity: 0.6;
+  font-size: 0.72em;
+  opacity: 0.5;
   vertical-align: super;
+}
+
+// Internal wikilinks — subtle background pill
+article a:not([href^="http"]):not([href^="#"]) {
+  background: var(--highlight);
+  border-radius: 3px;
+  padding: 0 3px;
 }
 
 // ─── Code ───────────────────────────────────────────────────────
 
-// Inline code
 :not(pre) > code {
   background: var(--lightgray) !important;
   color: var(--tertiary) !important;
   border-radius: 4px !important;
-  padding: 2px 7px !important;
-  font-size: 0.88em !important;
+  padding: 1px 6px !important;
+  font-size: 0.87em !important;
   border: 1px solid var(--gray) !important;
 }
 
-// Code blocks
 pre {
-  border-radius: 8px !important;
+  border-radius: 10px !important;
   border: 1px solid var(--lightgray) !important;
   padding: 1.2em 1.4em !important;
-  font-size: 0.88em !important;
-  line-height: 1.7 !important;
+  font-size: 0.87em !important;
+  line-height: 1.75 !important;
   overflow-x: auto;
   position: relative;
+
+  // subtle top accent line
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--secondary);
+    border-radius: 10px 10px 0 0;
+    opacity: 0.5;
+  }
 }
 
 // ─── Blockquotes ────────────────────────────────────────────────
 
 blockquote {
-  border-left: 3px solid var(--secondary) !important;
-  background: var(--lightgray) !important;
-  margin: 1.5em 0 !important;
-  padding: 0.8em 1.2em !important;
+  border-left: 2px solid var(--secondary) !important;
+  background: var(--highlight) !important;
+  margin: 1.8em 0 !important;
+  padding: 0.7em 1.2em !important;
   border-radius: 0 6px 6px 0 !important;
   font-style: italic;
   color: var(--darkgray) !important;
+  opacity: 0.9;
 }
 
 // ─── Tables ─────────────────────────────────────────────────────
@@ -129,8 +157,11 @@ blockquote {
 table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.92em;
-  margin: 1.5em 0;
+  font-size: 0.9em;
+  margin: 1.8em 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--lightgray);
 }
 
 thead tr {
@@ -141,26 +172,34 @@ th {
   color: var(--secondary) !important;
   font-weight: 600;
   padding: 10px 14px;
-  border: 1px solid var(--lightgray);
+  border-bottom: 2px solid var(--gray) !important;
   text-align: left;
+  font-size: 0.88em;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 td {
-  padding: 8px 14px;
-  border: 1px solid var(--lightgray);
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--lightgray);
+  color: var(--darkgray);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
 }
 
 tbody tr:hover {
   background: var(--highlight);
 }
 
-// ─── Callouts / Admonitions ─────────────────────────────────────
+// ─── Callouts ───────────────────────────────────────────────────
 
 .callout {
   border-radius: 6px !important;
-  border-left-width: 3px !important;
-  padding: 0.8em 1em !important;
-  margin: 1.5em 0 !important;
+  border-left-width: 2px !important;
+  padding: 0.75em 1em !important;
+  margin: 1.8em 0 !important;
 }
 
 .callout[data-callout="note"] {
@@ -170,35 +209,42 @@ tbody tr:hover {
 
 .callout[data-callout="warning"] {
   border-left-color: #e6c384 !important;
-  background: rgba(230, 195, 132, 0.1) !important;
+  background: rgba(230, 195, 132, 0.08) !important;
 }
 
 .callout[data-callout="danger"] {
   border-left-color: #c34043 !important;
-  background: rgba(195, 64, 67, 0.1) !important;
+  background: rgba(195, 64, 67, 0.08) !important;
 }
 
 .callout[data-callout="tip"] {
   border-left-color: var(--tertiary) !important;
-  background: rgba(118, 148, 106, 0.1) !important;
+  background: rgba(118, 148, 106, 0.08) !important;
+}
+
+.callout[data-callout="info"] {
+  border-left-color: var(--secondary) !important;
+  background: var(--highlight) !important;
 }
 
 // ─── Tags ───────────────────────────────────────────────────────
 
 .tag-link, a.tag-link {
   display: inline-block;
-  background: var(--lightgray) !important;
+  background: transparent !important;
   color: var(--secondary) !important;
-  border: 1px solid var(--gray) !important;
-  border-radius: 4px !important;
-  padding: 1px 8px !important;
-  font-size: 0.82em !important;
+  border: 1px solid var(--lightgray) !important;
+  border-radius: 99px !important;
+  padding: 1px 10px !important;
+  font-size: 0.78em !important;
   text-decoration: none !important;
-  transition: background 0.2s;
+  transition: all 0.15s;
+  letter-spacing: 0.02em;
 
   &:hover {
     background: var(--secondary) !important;
     color: var(--light) !important;
+    border-color: var(--secondary) !important;
     border-bottom: none !important;
   }
 }
@@ -210,35 +256,71 @@ tbody tr:hover {
   padding-right: 1em;
 }
 
-// Page title
 .page-title {
-  font-size: 1rem !important;
+  font-size: 0.95rem !important;
   font-weight: 700 !important;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   color: var(--secondary) !important;
 
   &::before {
     content: "~ ";
-    opacity: 0.5;
+    opacity: 0.4;
+  }
+
+  a {
+    border-bottom: none !important;
+    background: none !important;
   }
 }
 
-// Explorer folder/file items
 .explorer-title {
-  font-size: 0.82em !important;
+  font-size: 0.75em !important;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: var(--gray) !important;
+  margin-bottom: 0.5em;
 }
 
 .explorer ul li a {
-  font-size: 0.9em;
-  transition: color 0.15s;
+  font-size: 0.88em;
+  transition: color 0.15s, padding-left 0.15s;
   color: var(--darkgray) !important;
+  background: none !important;
 
   &:hover {
     color: var(--secondary) !important;
+    padding-left: 4px;
     border-bottom: none !important;
+  }
+}
+
+// Recent notes section
+.recent-notes {
+  margin-top: 1.2em;
+
+  h3 {
+    font-size: 0.75em !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gray) !important;
+    margin-bottom: 0.5em;
+
+    &::before {
+      content: none !important;
+    }
+  }
+
+  ul li a {
+    font-size: 0.85em;
+    color: var(--darkgray) !important;
+    background: none !important;
+    transition: color 0.15s, padding-left 0.15s;
+
+    &:hover {
+      color: var(--secondary) !important;
+      padding-left: 4px;
+      border-bottom: none !important;
+    }
   }
 }
 
@@ -249,18 +331,24 @@ tbody tr:hover {
   padding-left: 1em;
 }
 
-// Table of contents
 .toc {
-  font-size: 0.85em !important;
+  font-size: 0.83em !important;
 
   li a {
     color: var(--gray) !important;
     transition: color 0.15s;
     border-bottom: none !important;
+    background: none !important;
 
     &:hover {
       color: var(--secondary) !important;
     }
+  }
+
+  // Active heading highlight
+  li.in-view > a {
+    color: var(--secondary) !important;
+    font-weight: 600;
   }
 }
 
@@ -270,6 +358,7 @@ tbody tr:hover {
   .graph-outer {
     border: 1px solid var(--lightgray) !important;
     border-radius: 8px !important;
+    overflow: hidden;
   }
 }
 
@@ -278,7 +367,8 @@ tbody tr:hover {
 #search-button {
   border: 1px solid var(--lightgray) !important;
   border-radius: 6px !important;
-  transition: border-color 0.2s;
+  transition: border-color 0.15s;
+  font-size: 0.88em !important;
 
   &:hover {
     border-color: var(--secondary) !important;
@@ -289,18 +379,22 @@ tbody tr:hover {
   border-radius: 6px !important;
   border: 1px solid var(--secondary) !important;
   font-family: var(--font-mono) !important;
+  font-size: 0.9em !important;
 }
 
 // ─── Backlinks ──────────────────────────────────────────────────
 
 .backlinks {
-  font-size: 0.88em;
+  font-size: 0.85em;
 
   ul li a {
     color: var(--secondary) !important;
     border-bottom: none !important;
+    background: none !important;
+    transition: padding-left 0.15s;
 
     &:hover {
+      padding-left: 4px;
       border-bottom: 1px solid var(--secondary) !important;
     }
   }
@@ -310,9 +404,11 @@ tbody tr:hover {
 
 footer {
   border-top: 1px solid var(--lightgray) !important;
-  font-size: 0.8em !important;
+  font-size: 0.78em !important;
   color: var(--gray) !important;
-  padding-top: 1em;
+  padding-top: 1.2em;
+  margin-top: 2em;
+  opacity: 0.8;
 }
 
 // ─── Folder Pages ───────────────────────────────────────────────
@@ -321,29 +417,92 @@ footer {
   border: 1px solid var(--lightgray);
   border-radius: 8px;
   padding: 1em;
-  margin-bottom: 0.5em;
-  transition: border-color 0.2s;
+  margin-bottom: 0.6em;
+  transition: border-color 0.15s, background 0.15s;
 
   &:hover {
     border-color: var(--secondary);
+    background: var(--highlight);
   }
 }
 
-// ─── Popover previews ───────────────────────────────────────────
+// ─── Popovers ───────────────────────────────────────────────────
 
 .popover {
   border: 1px solid var(--lightgray) !important;
-  border-radius: 8px !important;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25) !important;
+
+  .popover-inner {
+    padding: 1em !important;
+  }
 }
 
-// ─── Smooth page transitions ────────────────────────────────────
+// ─── Page transitions ───────────────────────────────────────────
 
 .singlePage {
-  animation: fadeIn 0.2s ease;
+  animation: fadeIn 0.18s ease;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(6px); }
+  from { opacity: 0; transform: translateY(5px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+// ─── Article content spacing ────────────────────────────────────
+
+article p {
+  margin-bottom: 1.2em;
+}
+
+article ul, article ol {
+  padding-left: 1.4em;
+  margin-bottom: 1.2em;
+
+  li {
+    margin-bottom: 0.4em;
+    line-height: 1.7;
+  }
+}
+
+article hr {
+  border: none;
+  border-top: 1px solid var(--lightgray);
+  margin: 2.5em 0;
+  opacity: 0.6;
+}
+
+// ─── Content meta (date, read time) ─────────────────────────────
+
+.content-meta {
+  font-size: 0.8em !important;
+  color: var(--gray) !important;
+  margin-bottom: 1.5em;
+  opacity: 0.8;
+}
+
+// ─── Breadcrumbs ────────────────────────────────────────────────
+
+.breadcrumb-container {
+  font-size: 0.8em !important;
+  color: var(--gray) !important;
+  margin-bottom: 0.5em;
+  opacity: 0.7;
+
+  a {
+    color: var(--gray) !important;
+    background: none !important;
+    border-bottom: none !important;
+
+    &:hover {
+      color: var(--secondary) !important;
+    }
+  }
+}
+// ─── Sidebar width ──────────────────────────────────────────────
+
+.left.sidebar {
+  flex: 0 0 200px !important;
+  min-width: 200px !important;
+  max-width: 200px !important;
 }
