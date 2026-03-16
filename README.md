@@ -9,4 +9,4 @@
 
 ## stack
 
-Built with [Quartz v4]\ — synced from Obsidian, hosted on GitHub Pages.
+synced from Obsidian, hosted on GitHub Pages.
