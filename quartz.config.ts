@@ -1,99 +1,91 @@
-import { PageLayout, SharedLayout } from "./quartz/cfg"
-import * as Component from "./quartz/components"
+import { QuartzConfig } from "./quartz/cfg"
+import * as Plugin from "./quartz/plugins"
 
-// components shared across all pages
-export const sharedPageComponents: SharedLayout = {
-  head: Component.Head(),
-  header: [],
-  afterBody: [],
-  footer: Component.Footer({
-    links: {
-      GitHub: "https://github.com/animishraa05",
-      LinkedIn: "https://www.linkedin.com/in/animesh-mishra-944287256/",
+const config: QuartzConfig = {
+  configuration: {
+    pageTitle: "animesh's brain",
+    pageTitleSuffix: "",
+    enableSPA: true,
+    enablePopovers: true,
+    analytics: {
+      provider: "plausible",
     },
-  }),
+    locale: "en-US",
+    baseUrl: "animishraa05.github.io",
+    ignorePatterns: ["private", "templates", ".obsidian"],
+    defaultDateType: "modified",
+    theme: {
+      fontOrigin: "googleFonts",
+      cdnCaching: true,
+      typography: {
+        header: "JetBrains Mono",
+        body: "JetBrains Mono",
+        code: "JetBrains Mono",
+      },
+      colors: {
+        lightMode: {
+          light: "#F2ECBC",
+          lightgray: "#E7DBA0",
+          gray: "#9B9EA4",
+          darkgray: "#545464",
+          dark: "#1F1F28",
+          secondary: "#4D699B",
+          tertiary: "#6F894E",
+          highlight: "rgba(77, 105, 155, 0.1)",
+          textHighlight: "rgba(131, 111, 74, 0.2)",
+        },
+        darkMode: {
+          light: "#1F1F28",
+          lightgray: "#2A2A37",
+          gray: "#54546D",
+          darkgray: "#DCD7BA",
+          dark: "#C8C093",
+          secondary: "#7E9CD8",
+          tertiary: "#76946A",
+          highlight: "rgba(126, 156, 216, 0.1)",
+          textHighlight: "rgba(192, 163, 110, 0.2)",
+        },
+      },
+    },
+  },
+  plugins: {
+    transformers: [
+      Plugin.FrontMatter(),
+      Plugin.CreatedModifiedDate({
+        priority: ["frontmatter", "git", "filesystem"],
+      }),
+      Plugin.SyntaxHighlighting({
+        theme: {
+          light: "github-light",
+          dark: "kanagawa",
+        },
+        keepBackground: true,
+      }),
+      Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
+      Plugin.GitHubFlavoredMarkdown(),
+      Plugin.TableOfContents(),
+      Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
+      Plugin.Description(),
+      Plugin.Latex({ renderEngine: "katex" }),
+    ],
+    filters: [Plugin.RemoveDrafts()],
+    emitters: [
+      Plugin.AliasRedirects(),
+      Plugin.ComponentResources(),
+      Plugin.ContentPage(),
+      Plugin.FolderPage(),
+      Plugin.TagPage(),
+      Plugin.ContentIndex({
+        enableSiteMap: true,
+        enableRSS: true,
+      }),
+      Plugin.Assets(),
+      Plugin.Static(),
+      Plugin.Favicon(),
+      Plugin.NotFoundPage(),
+      Plugin.CustomOgImages(),
+    ],
+  },
 }
 
-// components for pages that display a single page (e.g. a single note)
-export const defaultContentPageLayout: PageLayout = {
-  beforeBody: [
-    Component.ConditionalRender({
-      component: Component.Breadcrumbs(),
-      condition: (page) => page.fileData.slug !== "index",
-    }),
-    Component.ArticleTitle(),
-    Component.ContentMeta(),
-    Component.TagList(),
-  ],
-  left: [
-    Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
-    Component.Flex({
-      components: [
-        {
-          Component: Component.Search(),
-          grow: true,
-        },
-        { Component: Component.Darkmode() },
-        { Component: Component.ReaderMode() },
-      ],
-    }),
-    Component.Explorer(),
-  ],
-  right: [
-    Component.Graph({
-      localGraph: {
-        drag: true,
-        zoom: true,
-        depth: 2,
-        scale: 1.1,
-        repulseStrength: 0,
-        nodeSize: 4,
-        linkDistance: 30,
-        fontSize: 0.6,
-        opacityScale: 1,
-        removeSelfLoops: true,
-        showTags: false,
-      },
-      globalGraph: {
-        drag: true,
-        zoom: true,
-        depth: -1,
-        scale: 0.9,
-        repulseStrength: 0,
-        nodeSize: 4,
-        linkDistance: 30,
-        fontSize: 0.6,
-        opacityScale: 1,
-        removeSelfLoops: true,
-        showTags: false,
-      },
-    }),
-    Component.DesktopOnly(Component.TableOfContents()),
-    Component.Backlinks(),
-  ],
-}
-
-// components for pages that display lists of pages (e.g. tags or folders)
-export const defaultListPageLayout: PageLayout = {
-  beforeBody: [
-    Component.Breadcrumbs(),
-    Component.ArticleTitle(),
-    Component.ContentMeta(),
-  ],
-  left: [
-    Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
-    Component.Flex({
-      components: [
-        {
-          Component: Component.Search(),
-          grow: true,
-        },
-        { Component: Component.Darkmode() },
-      ],
-    }),
-    Component.Explorer(),
-  ],
-  right: [],
-}
+export default config
