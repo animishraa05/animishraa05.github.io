@@ -635,59 +635,101 @@ article hr {
 // ─── Mobile ─────────────────────────────────────────────────────
 
 @media (max-width: 768px) {
+
+  // Let Quartz handle the left sidebar naturally on mobile
+  // It goes sticky + horizontal at top — don't hide it
   .left.sidebar {
+    border-right: none !important;
+    border-bottom: 1px solid var(--lightgray) !important;
+    padding: 0.6em 1rem !important;
+    background: var(--light) !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 50 !important;
+    width: 100% !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  // Hide explorer + recent notes on mobile — too much for a sticky bar
+  .left.sidebar .explorer,
+  .left.sidebar .recent-notes {
     display: none !important;
   }
 
+  // Page title shrinks
+  .left.sidebar .page-title {
+    font-size: 0.85rem !important;
+    white-space: nowrap;
+  }
+
+  // Search bar takes available space
+  .left.sidebar .search {
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+
+  // Hide right sidebar on mobile
   .right.sidebar {
     display: none !important;
   }
 
-  .page {
-    display: block !important;
-  }
-
-  .page > #quartz-body {
-    display: block !important;
-    width: 100% !important;
-  }
-
+  // Content full width
   .center {
     width: 100% !important;
     max-width: 100% !important;
-    margin: 0 !important;
     padding: 0 1rem !important;
+    box-sizing: border-box !important;
   }
 
   article {
     max-width: 100% !important;
-    padding: 0 !important;
     font-size: 0.95rem !important;
+    overflow-x: hidden !important;
   }
 
   .page[data-slug="index"] article {
     max-width: 100% !important;
   }
 
+  // Prevent horizontal scroll from code blocks
+  pre {
+    font-size: 0.8em !important;
+    overflow-x: auto !important;
+    max-width: 100% !important;
+  }
+
+  // Tables scroll horizontally instead of breaking
+  table {
+    display: block !important;
+    overflow-x: auto !important;
+    max-width: 100% !important;
+  }
+
+  // Heading sizes
   article h1 { font-size: 1.4rem !important; }
   article h2 { font-size: 1.1rem !important; }
   article h3 { font-size: 1rem !important; }
 
-  pre {
-    font-size: 0.8em !important;
-  }
-
+  // Footer stacks vertically
   footer {
     flex-direction: column !important;
     gap: 6px !important;
     text-align: center !important;
     padding: 1rem !important;
   }
+
+  // Giscus comments full width
+  .giscus-frame {
+    width: 100% !important;
+  }
 }
 
 // ─── Tablet ──────────────────────────────────────────────────────
 
 @media (min-width: 769px) and (max-width: 1100px) {
+
   .right.sidebar {
     display: none !important;
   }
@@ -699,4 +741,12 @@ article hr {
   article {
     max-width: 100% !important;
   }
+}
+
+// ─── Hide Quartz credit ──────────────────────────────────────────
+
+.quartz-footer p,
+footer > p,
+footer p:last-child {
+  display: none !important;
 }
