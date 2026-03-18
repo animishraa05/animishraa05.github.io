@@ -29,14 +29,14 @@ and this is where I document everything I pick up along the way.
 | [[computer-networks/01_Introduction_to_Computer_Networks\| networks]] | TCP/IP, HTTP, DNS, security, VPNs |
 | [[springboot/spring-boot-tutorial/01-What-is-Spring-Framework\| spring boot]] | framework internals, REST, why it exists |
 | [[daily/Authentication and Authorization\| auth & systems]] | auth flows, linux tweaks, architecture |
-| [[ai/knowledge Representation\| ai]] | knowledge representation, diffusion models |
+| [[ai/knowledge Representation\| ai]] 
 | [[djangointernals\| django]] | django internals deep dive |
 
 ---
 
 ##  things I've shipped
 
-**Arogya Setu** — *National Hackathon Finalist*
+**Arogya Setu** 
 Multi-tenant backend for real-time health outbreak alerts with
 geospatial visualization and local LLM inference via Ollama.
 `Django · Redis · Celery · Llama 3 · React`

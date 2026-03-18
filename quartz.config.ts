@@ -57,7 +57,7 @@ const config: QuartzConfig = {
       Plugin.SyntaxHighlighting({
         theme: {
           light: "rose-pine-dawn",
-          dark: "rose-pine-moon",
+          dark: "synthwave-84",
         },
         keepBackground: true,
       }),
