@@ -92,16 +92,43 @@ article {
 // ─── Explorer ───────────────────────────────────────────────────
 
 .explorer-title {
-  font-size: 0.72em !important;
+  font-size: 0.7em !important;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   color: var(--gray) !important;
-  margin-bottom: 0.6em;
+  margin-bottom: 0.8em;
+  padding-bottom: 0.4em;
+  border-bottom: 1px solid var(--lightgray);
 }
 
+// Folder toggle buttons
+.explorer button.folder-button {
+  font-size: 0.87em !important;
+  color: var(--darkgray) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.01em;
+  transition: color 0.15s;
+  width: 100%;
+  text-align: left;
+  background: none !important;
+  border: none !important;
+  padding: 3px 0 !important;
+
+  &:hover {
+    color: var(--secondary) !important;
+  }
+}
+
+// Folder icon color
+.explorer .folder-icon {
+  color: var(--secondary) !important;
+  opacity: 0.6;
+}
+
+// All file/folder links
 .explorer ul li a {
-  font-size: 0.87em;
-  transition: color 0.15s, padding-left 0.15s;
+  font-size: 0.85em;
+  transition: color 0.15s, background 0.15s;
   color: var(--darkgray) !important;
   background: none !important;
   white-space: nowrap;
@@ -109,14 +136,40 @@ article {
   text-overflow: ellipsis;
   display: block;
   max-width: 100%;
+  padding: 2px 6px;
+  border-radius: 4px;
 
   &:hover {
     color: var(--secondary) !important;
-    padding-left: 4px;
+    background: var(--highlight) !important;
     border-bottom: none !important;
   }
 }
 
+// Active/current page indicator
+.explorer ul li.active > a {
+  color: var(--secondary) !important;
+  background: var(--highlight) !important;
+  border-left: 2px solid var(--secondary);
+  padding-left: 4px;
+}
+
+// Nested items indentation line
+.explorer ul ul {
+  border-left: 1px solid var(--lightgray);
+  margin-left: 0.6em;
+  padding-left: 0.6em;
+}
+
+// Nested file items slightly muted
+.explorer ul ul li a {
+  font-size: 0.83em;
+  color: var(--gray) !important;
+
+  &:hover {
+    color: var(--secondary) !important;
+  }
+}
 // ─── Recent notes ───────────────────────────────────────────────
 
 .recent-notes {
