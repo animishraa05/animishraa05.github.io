@@ -3,6 +3,8 @@ import style from "./styles/explorer.scss"
 
 // @ts-ignore
 import script from "./scripts/explorer.inline"
+// @ts-ignore
+import brainModeScript from "./scripts/brain-mode.inline"
 import { classNames } from "../util/lang"
 import { i18n } from "../i18n"
 import { FileTrieNode } from "../util/fileTrie"
@@ -160,6 +162,6 @@ export default ((userOpts?: Partial<Options>) => {
   }
 
   Explorer.css = style
-  Explorer.afterDOMLoaded = concatenateResources(script, overflowListAfterDOMLoaded)
+  Explorer.afterDOMLoaded = concatenateResources(script, overflowListAfterDOMLoaded, brainModeScript)
   return Explorer
 }) satisfies QuartzComponentConstructor

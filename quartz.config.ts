@@ -18,9 +18,15 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "JetBrains Mono",
-        body: "JetBrains Mono",
-        code: "JetBrains Mono",
+        header: {
+          name: "JetBrains Mono",
+          weights: [400, 600, 700, 800],
+        },
+        body: {
+          name: "JetBrains Mono",
+          weights: [400, 600],
+        },
+        code: "Fira Code",
       },
       colors: {
         lightMode: {

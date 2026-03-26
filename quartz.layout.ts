@@ -52,18 +52,22 @@ export const defaultContentPageLayout: PageLayout = {
       ],
     }),
     Component.Explorer({
-      title: "explorer",
+      title: "Directory",
       folderClickBehavior: "collapse",
       folderDefaultState: "collapsed",
       useSavedState: true,
       sortFn: (a, b) => {
-        if ((!a.file && !b.file) || (a.file && b.file)) {
+        // @ts-ignore
+        const aIsFolder = !a.file
+        // @ts-ignore
+        const bIsFolder = !b.file
+        if ((aIsFolder && bIsFolder) || (!aIsFolder && !bIsFolder)) {
           return a.displayName.localeCompare(b.displayName, undefined, {
             numeric: true,
             sensitivity: "base",
           })
         }
-        if (a.file && !b.file) return 1
+        if (!aIsFolder && bIsFolder) return 1
         return -1
       },
     }),
@@ -133,10 +137,24 @@ export const defaultListPageLayout: PageLayout = {
       ],
     }),
     Component.Explorer({
-      title: "explorer",
+      title: "Directory",
       folderClickBehavior: "collapse",
       folderDefaultState: "collapsed",
       useSavedState: true,
+      sortFn: (a, b) => {
+        // @ts-ignore
+        const aIsFolder = !a.file
+        // @ts-ignore
+        const bIsFolder = !b.file
+        if ((aIsFolder && bIsFolder) || (!aIsFolder && !bIsFolder)) {
+          return a.displayName.localeCompare(b.displayName, undefined, {
+            numeric: true,
+            sensitivity: "base",
+          })
+        }
+        if (!aIsFolder && bIsFolder) return 1
+        return -1
+      },
     }),
     Component.RecentNotes({
       title: "recently updated",
