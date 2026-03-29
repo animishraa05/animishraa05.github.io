@@ -7,7 +7,7 @@ Asynchronous Transfer Mode (ATM) is a switching technique for telecommunication 
 
 ## ATM Standards
 
-ATM is standardized by the International Telecommunication Union (ITU) and the ATM Forum. The ATM standards define the physical layer, the ATM layer, and the ATM adaptation layer (AAL) of the protocol.
+ATM is standardized by the International Telecommunication Union (ITU) and the ATM Forum. The ATM standards define [[06_The_Physical_Layer|the physical layer]], the ATM layer, and the ATM adaptation layer (AAL) of the protocol.
 
 ## ATM Cell
 
@@ -37,12 +37,12 @@ There are four types of AALs:
 
 ## ATM vs. Ethernet
 
-ATM and Ethernet are two different networking technologies. The main difference between ATM and Ethernet is the way that they transmit data. ATM uses fixed-size cells, while Ethernet uses variable-size frames.
+ATM and [[31_Ethernet|Ethernet]] are two different networking technologies. The main difference between ATM and [[31_Ethernet|Ethernet]] is the way that they transmit data. ATM uses fixed-size cells, while [[31_Ethernet|Ethernet]] uses variable-size frames.
 
-ATM is a connection-oriented protocol, which means that a connection must be established before data can be transmitted. Ethernet is a connectionless protocol, which means that data can be transmitted without establishing a connection.
+ATM is a connection-oriented protocol, which means that a connection must be established before data can be transmitted. [[31_Ethernet|Ethernet]] is a connectionless protocol, which means that data can be transmitted without establishing a connection.
 
-ATM is more reliable than Ethernet, but it is also more expensive. Ethernet is less reliable than ATM, but it is also less expensive.
+ATM is more reliable than [[31_Ethernet|Ethernet]], but it is also more expensive. [[31_Ethernet|Ethernet]] is less reliable than ATM, but it is also less expensive.
 
 ## Decline of ATM
 
-ATM was once a popular networking technology, but it has been largely replaced by Ethernet. The decline of ATM is due to a number of factors, including the high cost of ATM hardware, the complexity of the ATM protocol, and the rise of Fast Ethernet and Gigabit Ethernet.
+ATM was once a popular networking technology, but it has been largely replaced by [[31_Ethernet|Ethernet]]. The decline of ATM is due to a number of factors, including the high cost of ATM hardware, the complexity of the ATM protocol, and the rise of Fast [[31_Ethernet|Ethernet]] and Gigabit [[31_Ethernet|Ethernet]].

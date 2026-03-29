@@ -68,19 +68,19 @@ To reduce their design complexity, most networks are organized as a stack of lay
 
 The Open Systems Interconnection (OSI) model is a conceptual framework that standardizes the functions of a telecommunication or computing system in terms of seven abstraction layers.
 
-1.  **Physical Layer:** The physical layer is concerned with transmitting raw bits over a communication channel.
-2.  **Data Link Layer:** The main task of the data link layer is to transform a raw transmission facility into a line that appears free of undetected transmission errors to the network layer.
-3.  **Network Layer:** The network layer controls the operation of the subnet. A key design issue is determining how packets are routed from source to destination.
-4.  **Transport Layer:** The basic function of the transport layer is to accept data from above, split it up into smaller units if need be, pass these to the network layer, and ensure that the pieces all arrive correctly at the other end.
+1.  **Physical Layer:** [[06_The_Physical_Layer|The physical layer]] is concerned with transmitting raw bits over a communication channel.
+2.  **Data Link Layer:** The main task of [[07_The_Data_Link_Layer|the data link layer]] is to transform a raw transmission facility into a line that appears free of undetected transmission errors to [[08_The_Network_Layer|the network layer]].
+3.  **Network Layer:** [[08_The_Network_Layer|The network layer]] controls the operation of the subnet. A key design issue is determining how packets are routed from source to destination.
+4.  **Transport Layer:** The basic function of [[09_The_Transport_Layer|the transport layer]] is to accept data from above, split it up into smaller units if need be, pass these to [[08_The_Network_Layer|the network layer]], and ensure that the pieces all arrive correctly at the other end.
 5.  **Session Layer:** The session layer allows users on different machines to establish sessions between them.
 6.  **Presentation Layer:** The presentation layer is concerned with the syntax and semantics of the information transmitted.
-7.  **Application Layer:** The application layer contains a variety of protocols that are commonly needed by users.
+7.  **Application Layer:** [[10_The_Application_Layer|The application layer]] contains a variety of protocols that are commonly needed by users.
 
 ### The TCP/IP Reference Model
 
-The TCP/IP model is a more practical model that is used in the real world. It consists of four layers:
+[[05_The_TCP_IP_Model|The TCP/IP model]] is a more practical model that is used in the real world. It consists of four layers:
 
-1.  **Link Layer:** The link layer (or network interface layer) is the lowest layer in the TCP/IP model. It describes what links must do to meet the needs of this connectionless internet layer.
+1.  **Link Layer:** The link layer (or network interface layer) is the lowest layer in [[05_The_TCP_IP_Model|the TCP/IP model]]. It describes what links must do to meet the needs of this connectionless internet layer.
 2.  **Internet Layer:** The internet layer's job is to permit hosts to inject packets into any network and have them travel independently to the destination.
-3.  **Transport Layer:** The transport layer is designed to allow peer entities on the source and destination hosts to carry on a conversation, just as in the OSI transport layer. Two end-to-end transport protocols have been defined here: TCP and UDP.
-4.  **Application Layer:** The application layer contains all the higher-level protocols. Some of them are the virtual terminal (TELNET), file transfer (FTP), and electronic mail s(sSMTP).
+3.  **Transport Layer:** [[09_The_Transport_Layer|The transport layer]] is designed to allow peer entities on the source and destination hosts to carry on a conversation, just as in the OSI transport layer. Two end-to-end transport protocols have been defined here: TCP and UDP.
+4.  **Application Layer:** [[10_The_Application_Layer|The application layer]] contains all the higher-level protocols. Some of them are the virtual terminal (TELNET), file transfer (FTP), and electronic mail s(sSMTP).

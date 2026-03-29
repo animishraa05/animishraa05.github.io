@@ -25,11 +25,11 @@ A network switch is a computer networking device that connects devices together 
 
 ### Bridge
 
-A bridge is a network device that connects multiple LANs (local area networks) to form a larger LAN. The process of aggregating networks is called network bridging. A bridge connects different network segments and helps to filter traffic between them. It operates at the data link layer of the OSI model.
+A bridge is a network device that connects multiple LANs (local area networks) to form a larger LAN. The process of aggregating networks is called network bridging. A bridge connects different network segments and helps to filter traffic between them. It operates at [[07_The_Data_Link_Layer|the data link layer]] of the OSI model.
 
 ### Router
 
-A router is a networking device that forwards data packets between computer networks. Routers perform the traffic directing functions on the Internet. Data sent through the internet, such as a web page or email, is in the form of data packets. A packet is typically forwarded from one router to another router through the networks that constitute an internetwork until it reaches its destination node.
+A router is a networking device that forwards data packets between [[1|computer networks]]. Routers perform the traffic directing functions on the Internet. Data sent through the internet, such as a web page or email, is in the form of data packets. A packet is typically forwarded from one router to another router through the networks that constitute an internetwork until it reaches its destination node.
 
 ### Modem
 
@@ -41,7 +41,7 @@ A gateway is a network node that connects two networks with different transmissi
 
 ### Firewall
 
-A firewall is a network security system that monitors and controls incoming and outgoing network traffic based on predetermined security rules. A firewall typically establishes a barrier between a trusted internal network and an untrusted external network, such as the Internet.
+A firewall is a [[16_Network_Security|network security]] system that monitors and controls incoming and outgoing network traffic based on predetermined security rules. A firewall typically establishes a barrier between a trusted internal network and an untrusted external network, such as the Internet.
 
 ### Access Point
 

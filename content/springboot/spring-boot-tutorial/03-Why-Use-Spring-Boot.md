@@ -12,7 +12,7 @@ But *why* has it become the de-facto standard for Java development in so many co
 This is the most immediate benefit you'll experience. Spring Boot is designed for **developer productivity**.
 
 *   **Eliminates Boilerplate**: As we saw, autoconfiguration and starter dependencies remove the need for vast amounts of setup code and configuration that were required in the past. Instead of spending the first day of a project setting up your application structure, configuring your database connection, and choosing a web server, you can be writing your core business logic within minutes.
-*   **Rapid Prototyping**: Because it's so fast to get started, Spring Boot is an incredible tool for prototyping ideas. You can build and test a new REST API or a small web application in an afternoon, allowing you to experiment and iterate quickly.
+*   **Rapid Prototyping**: Because it's so fast to get started, Spring Boot is an incredible tool for prototyping ideas. You can build and [[test]] a new REST API or a small web application in an afternoon, allowing you to experiment and iterate quickly.
 
 Think of it like this: without Spring Boot, building an application was like having to assemble a car from hundreds of individual parts, including the engine, the chassis, and all the wiring. With Spring Boot, you are given a fully functional car, and you can spend your time customizing it (writing your business logic) rather than building it from scratch.
 
@@ -63,7 +63,7 @@ To understand this benefit, you need to understand the two main architectural st
 
 A monolithic application is built as a single, unified unit. For an e-commerce application, this would mean that the code for the user interface, product catalog, shopping cart, and payment processing are all in the same codebase, deployed as a single large application.
 
-*   **Pros**: Simpler to develop and test initially. All code is in one place.
+*   **Pros**: Simpler to develop and [[test]] initially. All code is in one place.
 *   **Cons**:
     *   **Hard to Scale**: If only the shopping cart service is getting a lot of traffic, you have to scale the *entire* application, which is inefficient.
     *   **Brittle**: A bug in one module (e.g., product catalog) can crash the entire application.

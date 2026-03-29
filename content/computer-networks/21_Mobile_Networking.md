@@ -28,7 +28,7 @@ There are many different mobile networking technologies, but some of the most co
 
 ## Mobile IP
 
-Mobile IP is a protocol that allows a mobile device to stay connected to the internet as it moves from one network to another. Mobile IP is based on the concept of a home agent and a foreign agent.
+[[45_Mobile_IP|Mobile IP]] is a protocol that allows a mobile device to stay connected to the internet as it moves from one network to another. [[45_Mobile_IP|Mobile IP]] is based on the concept of a home agent and a foreign agent.
 
 - **Home Agent:** The home agent is a router on the mobile device's home network. The home agent is responsible for forwarding packets to the mobile device when it is away from home.
 - **Foreign Agent:** The foreign agent is a router on the network that the mobile device is currently visiting. The foreign agent is responsible for forwarding packets from the mobile device to the home agent.

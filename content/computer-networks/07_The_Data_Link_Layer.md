@@ -3,13 +3,13 @@
 
 ## Introduction to the Data Link Layer
 
-The data link layer is the second layer of the OSI model. It is responsible for providing reliable, error-free transmission of data between two nodes on the same local network. The data link layer takes the packets from the network layer and encapsulates them into frames for transmission. It is also responsible for flow control, which ensures that a fast sender does not overwhelm a slow receiver.
+The data link layer is the second layer of the OSI model. It is responsible for providing reliable, error-free transmission of data between two nodes on the same local network. The data link layer takes the packets from [[08_The_Network_Layer|the network layer]] and encapsulates them into frames for transmission. It is also responsible for flow control, which ensures that a fast sender does not overwhelm a slow receiver.
 
 ## Functions of the Data Link Layer
 
-- **Framing:** The data link layer divides the stream of bits received from the network layer into manageable data units called frames.
+- **Framing:** The data link layer divides the stream of bits received from [[08_The_Network_Layer|the network layer]] into manageable data units called frames.
 - **Physical Addressing:** The data link layer adds a header to the frame to define the physical address of the source and destination nodes on the local network.
-- **Error Control:** The data link layer is responsible for detecting and correcting errors that occur in the physical layer. It adds a trailer to the frame to detect errors.
+- **Error Control:** The data link layer is responsible for detecting and correcting errors that occur in [[06_The_Physical_Layer|the physical layer]]. It adds a trailer to the frame to detect errors.
 - **Flow Control:** The data link layer is responsible for regulating the flow of data so that a fast sender does not overwhelm a slow receiver.
 - **Access Control:** When two or more devices are connected to the same link, the data link layer is responsible for determining which device has control over the link at any given time.
 

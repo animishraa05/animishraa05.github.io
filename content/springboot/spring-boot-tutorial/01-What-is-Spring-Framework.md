@@ -16,7 +16,7 @@ J2EE was powerful, but it was also notoriously complex, heavy, and difficult to 
 
 1.  **Complex Configuration**: Developers had to write a lot of configuration files in a format called **XML** (eXtensible Markup Language). These files described how different parts of the application should behave and connect to each other. It was common to have more lines of configuration than actual Java code.
 2.  **Heavyweight Components**: The core components of J2EE, known as **Enterprise JavaBeans (EJBs)**, were cumbersome. They required special interfaces, deployment descriptors (more XML!), and ran in a special, resource-intensive environment called an **Application Server** (like WebSphere or WebLogic).
-3.  **Difficult Testing**: Because the code was so tightly bound to the J2EE environment, it was very difficult to test individual pieces of it in isolation. You often had to start the entire heavy application server just to run a small test, which dramatically slowed down development.
+3.  **Difficult Testing**: Because the code was so tightly bound to the J2EE environment, it was very difficult to [[test]] individual pieces of it in isolation. You often had to start the entire heavy application server just to run a small [[test]], which dramatically slowed down development.
 
 This complexity led to slower development, higher costs, and frustrated developers. The community was looking for a simpler, more lightweight alternative.
 
@@ -35,7 +35,7 @@ Let's break these down.
 
 **Coupling** is a measure of how dependent two pieces of code are on each other.
 
-*   **Tight Coupling**: When a class creates an instance of another class directly within itself, it is tightly coupled to that other class. This means if you change the second class, you will very likely have to change the first one. It makes your code rigid, hard to test, and difficult to reuse.
+*   **Tight Coupling**: When a class creates an instance of another class directly within itself, it is tightly coupled to that other class. This means if you change the second class, you will very likely have to change the first one. It makes your code rigid, hard to [[test]], and difficult to reuse.
 
 **A "Before Spring" Example (Tight Coupling):**
 
@@ -205,7 +205,7 @@ In a Spring application, you would configure this (nowadays with annotations, bu
 // 4. Find the V8Engine bean you already created and "inject" it into the Car.
 ```
 
-Now, if you want to switch to an electric car, you don't touch the `Car.java` file at all. You just change one line in your configuration to tell Spring to inject an `ElectricEngine` instead of a `V8Engine`. The application code remains unchanged. This makes your system incredibly flexible, modular, and easy to test.
+Now, if you want to switch to an electric car, you don't touch the `Car.java` file at all. You just change one line in your configuration to tell Spring to inject an `ElectricEngine` instead of a `V8Engine`. The application code remains unchanged. This makes your system incredibly flexible, modular, and easy to [[test]].
 
 ---
 
@@ -215,7 +215,7 @@ Now, if you want to switch to an electric car, you don't touch the `Car.java` fi
 *   It solves two major problems: **Tight Coupling** (classes being too dependent on each other) and **Boilerplate Code** (repetitive, messy code).
 *   The core principle Spring uses is **Inversion of Control (IoC)**, where the framework, not your code, is in control of creating and managing objects.
 *   The primary technique to achieve IoC is **Dependency Injection (DI)**, where an object's dependencies (the other objects it needs) are supplied to it from an external source (the **IoC Container**).
-*   This leads to **Loose Coupling**, making your code more flexible, modular, maintainable, and easier to test.
+*   This leads to **Loose Coupling**, making your code more flexible, modular, maintainable, and easier to [[test]].
 
 Understanding IoC and DI is the single most important concept for mastering the Spring ecosystem. Every other feature of Spring and Spring Boot is built on top of this foundation.
 
@@ -225,9 +225,9 @@ In the next chapter, we will see how **Spring Boot** takes these powerful concep
 
 ## Chapter 1: Assignments
 
-These exercises are conceptual and don't require coding. They are designed to test your understanding of the core principles discussed.
+These exercises are conceptual and don't require coding. They are designed to [[test]] your understanding of the core principles discussed.
 
-1.  **Describe Tight Coupling**: In your own words, write a short paragraph explaining the problem of "Tight Coupling." Why does it make code difficult to maintain and test?
+1.  **Describe Tight Coupling**: In your own words, write a short paragraph explaining the problem of "Tight Coupling." Why does it make code difficult to maintain and [[test]]?
 
 -- okay so tight coupling refers to the problem of depedency of classes on their objects and functions and they need to be entirely reconfigured if one object or function doesnt require the sme attributes as another function, this makes it very rigid and complex to deal with.
 

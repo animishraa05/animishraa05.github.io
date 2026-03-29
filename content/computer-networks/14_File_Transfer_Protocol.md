@@ -53,4 +53,4 @@ FTP responses are three-digit numbers that indicate the status of a command. The
 SFTP and FTPS are two secure versions of FTP.
 
 - **SFTP (SSH File Transfer Protocol):** SFTP is a completely different protocol from FTP. It is based on the SSH protocol and encrypts both the control and data connections.
-- **FTPS (FTP over SSL/TLS):** FTPS is an extension of FTP that adds support for the Transport Layer Security (TLS) and the Secure Sockets Layer (SSL) cryptographic protocols. It encrypts both the control and data connections.
+- **FTPS (FTP over SSL/TLS):** FTPS is an extension of FTP that adds support for [[09_The_Transport_Layer|the Transport Layer]] Security (TLS) and the Secure Sockets Layer (SSL) cryptographic protocols. It encrypts both the control and data connections.

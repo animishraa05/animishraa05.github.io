@@ -33,7 +33,7 @@ This is not a bug. It is a **fundamental architectural limitation** with three s
 
 ### Root Cause 1 — CLIP is Character Blind
 
-Every diffusion model uses a **text encoder** to convert your prompt string into numbers the model can understand. Flux uses two encoders. The primary one is **CLIP (Contrastive Language Image Pretraining).**
+Every diffusion model uses a **text encoder** to convert your prompt string into numbers the model can understand. Flux uses two [[encoders]]. The primary one is **CLIP (Contrastive Language Image Pretraining).**
 
 CLIP was trained on **billions of image-text pairs** like this:-
 
@@ -114,7 +114,7 @@ Understanding this is critical because our solution only makes sense once you un
 
 User types:- `"luxury Diwali poster, LAKME SALE 50% OFF, gold red theme"`
 
-This string passes through two encoders in Flux:-
+This string passes through two [[encoders]] in Flux:-
 
 **CLIP-L (400M parameters)** — converts the whole sentence into a 768-dimensional semantic vector. Fast, captures overall meaning and style concepts.
 
@@ -159,7 +159,7 @@ It has two parts:-
 
 **19 Double Stream Blocks** — Image tokens and text tokens are processed in separate streams but cross-attend to each other. The image learns from the text, the text learns from the image context.
 
-**38 Single Stream Blocks** — Image and text tokens are merged and processed together. This is where deep integration of style and content happens.
+**38 Single Stream Blocks** — Image and text tokens are merged and processed together. This is where deep [[integration]] of style and content happens.
 
 Each denoising step:-
 
@@ -213,7 +213,7 @@ The denoising (the 50 steps) happens entirely **inside** the latent space, betwe
 
 ### The Core Insight
 
-Every approach to fixing AI text generation tries to make the model generate text better. Character-aware encoders, text-specific fine-tuning, larger models — they all fight the same architectural problems.
+Every approach to fixing AI text generation tries to make the model generate text better. Character-aware [[encoders]], text-specific fine-tuning, larger models — they all fight the same architectural problems.
 
 **We do not ask AI to generate text at all.**
 
@@ -237,7 +237,7 @@ This is not a workaround. It is architecturally superior because:-
 
 ## 4. The 7 Stage Pipeline
 
-Every stage is a separate, independent component. If one component needs to be upgraded or replaced, the rest of the pipeline does not change.
+Every stage is a separate, independent component. If one component needs to be upgraded or replaced, the rest of the [[PIPELINE|pipeline]] does not change.
 
 ---
 
@@ -435,7 +435,7 @@ This is especially important for text — the upscaled image has crisper letter 
 
 ## 5. Glyph Injection — The Heart of Everything
 
-This section goes deeper on the technical mechanism because this is what makes the pipeline genuinely novel.
+This section goes deeper on the technical mechanism because this is what makes the [[PIPELINE|pipeline]] genuinely novel.
 
 ### Why ControlNet Works for Text
 
@@ -531,7 +531,7 @@ The base Mistral model does not naturally produce good poster layouts. It needs 
 
 ### What LoRA Is
 
-LoRA (Low Rank Adaptation) is a technique for efficiently fine-tuning large models. Instead of updating all 12 billion parameters of Flux, LoRA adds small adapter matrices at specific layers.
+LoRA (Low Rank Adaptation) is a technique for efficiently fine-tuning large models. Instead of updating all 12 billion parameters of Flux, LoRA adds small adapter [[matrices]] at specific layers.
 
 ```
 Normal fine-tuning:-  Update 12B parameters  →  12GB of new weights
@@ -587,7 +587,7 @@ premium cosmetics brand, soft lighting, elegant typography"
 
 | Component | Technology | Version | Role |
 |---|---|---|---|
-| Workflow engine | ComfyUI | latest | Visual pipeline orchestration |
+| Workflow engine | ComfyUI | latest | Visual [[PIPELINE|pipeline]] orchestration |
 | API layer | FastAPI | 0.111.x | REST endpoints |
 | Job queue | Celery | 5.3.x | Async task processing |
 | Job store | Redis | 7.x | Queue state and result cache |
@@ -595,7 +595,7 @@ premium cosmetics brand, soft lighting, elegant typography"
 | Model loading | Diffusers | 0.27.x | Flux inference |
 | LLM runtime | Ollama | 0.3.x | Local model serving |
 | Weight format | safetensors | 0.4.x | Model storage |
-| Language | Python | 3.11.x | All pipeline code |
+| Language | Python | 3.11.x | All [[PIPELINE|pipeline]] code |
 
 ### Hardware Requirements
 
@@ -684,7 +684,7 @@ Three scripts are handling data collection:-
 
 **pinterest_scraper.py** — Uses Pinterest internal API, 34 queries times 150 images each = 5100 target images.
 
-**scrape_and_caption_agent.py** — Combined scrape and caption pipeline. Scrapes Pinterest and Google Images simultaneously, extracts page context (title, description, alt text), runs Florence-2 plus OCR, produces ready-to-train image-caption pairs.
+**scrape_and_caption_agent.py** — Combined scrape and caption [[PIPELINE|pipeline]]. Scrapes Pinterest and Google Images simultaneously, extracts page context (title, description, alt text), runs Florence-2 plus OCR, produces ready-to-train image-caption pairs.
 
 ### Training Configuration (kohya-ss)
 
@@ -715,7 +715,7 @@ flip_aug = false
 
 ### Why These Specific Metrics
 
-The pipeline makes two core claims:-
+The [[PIPELINE|pipeline]] makes two core claims:-
 1. Text will be accurate
 2. Images will be visually high quality
 
@@ -824,7 +824,7 @@ Exact Match Rate = 98/100 = 98%
 Target:-  95% plus
 ```
 
-**Important distinction:-** The pipeline guarantees that Pillow renders correct text and ControlNet enforces it. The 5% gap from 100% in target is due to OCR limitations (small text, unusual fonts, background blending) — not pipeline failure.
+**Important distinction:-** The [[PIPELINE|pipeline]] guarantees that Pillow renders correct text and ControlNet enforces it. The 5% gap from 100% in target is due to OCR limitations (small text, unusual fonts, background blending) — not [[PIPELINE|pipeline]] failure.
 
 ---
 
@@ -901,11 +901,11 @@ Total:-                25 to 60 seconds per image
 This is important for the presentation. Run the same 100 prompts through:-
 
 1. **Vanilla Flux.1-dev** (direct prompt, no ControlNet, no glyph)
-2. **Our pipeline** (full glyph injection system)
+2. **Our [[PIPELINE|pipeline]]** (full glyph injection system)
 
 Expected results:-
 
-| Metric | Vanilla Flux | Our Pipeline |
+| Metric | Vanilla Flux | Our [[PIPELINE|Pipeline]] |
 |---|---|---|
 | Exact Match Rate | 15 to 25% | 95%+ |
 | CER | 0.40 to 0.60 | below 0.05 |
@@ -971,7 +971,7 @@ A: They do text better than Midjourney or DALL-E, but they still fail on non-Eng
 
 **Q: You claim 100% text accuracy but your target is 95% exact match. Is that a contradiction?**
 
-A: No. The pipeline guarantees 100% accuracy in text generation — Pillow renders correct text and ControlNet enforces every stroke. The 5% gap in exact match rate is a measurement artifact from OCR limitations:- very small text, unusual decorative fonts, or text that visually blends with a similarly-colored background can confuse the EasyOCR model even when the text in the image is technically correct. These are measurement tool limitations, not pipeline failures. Human visual inspection of the same images would show higher accuracy.
+A: No. The [[PIPELINE|pipeline]] guarantees 100% accuracy in text generation — Pillow renders correct text and ControlNet enforces every stroke. The 5% gap in exact match rate is a measurement artifact from OCR limitations:- very small text, unusual decorative fonts, or text that visually blends with a similarly-colored background can confuse the EasyOCR model even when the text in the image is technically correct. These are measurement tool limitations, not [[PIPELINE|pipeline]] failures. Human visual inspection of the same images would show higher accuracy.
 
 ---
 
@@ -1005,14 +1005,14 @@ A: Flux.1-schnell is 12B parameters too but distilled for speed (4 steps instead
 
 ---
 
-**Q: What is your test set and how did you make sure it does not overlap with training data?**
+**Q: What is your [[test]] set and how did you make sure it does not overlap with training data?**
 
-A: Standard 80-10-10 split on the collected dataset. The test set of 10% is held out before any training begins and is never used for model selection or hyperparameter tuning. For evaluation prompts we also generate synthetic prompts (Indian brand names, festival names, product categories) that did not appear in the training corpus — this tests generalization beyond memorization.
+A: Standard 80-10-10 split on the collected dataset. The [[test]] set of 10% is held out before any training begins and is never used for model selection or hyperparameter tuning. For evaluation prompts we also generate synthetic prompts (Indian brand names, festival names, product categories) that did not appear in the training corpus — this tests generalization beyond memorization.
 
 ---
 
 *Document version 1.0 — Last updated March 2026*  
-*Pipeline by:- [Your Name]*  
+*[[PIPELINE|Pipeline]] by:- [Your Name]*  
 *For academic and peer presentation use*
 # AI Marketing Image Pipeline — Complete Scripting Knowledge
 
@@ -1941,7 +1941,7 @@ python scrape_and_caption_agent.py \
 
 ### Kya karta hai
 
-LLM ka JSON schema le aur ek white background black text PNG banao jo ControlNet ko input milega. Ye pipeline ka Stage 3 hai.
+LLM ka JSON schema le aur ek white background black text PNG banao jo ControlNet ko input milega. Ye [[PIPELINE|pipeline]] ka Stage 3 hai.
 
 ### Core Logic Explained
 
@@ -2273,7 +2273,7 @@ curl http://localhost:11434/api/generate \
 
 ### Kya karta hai
 
-Ye pipeline ka core hai. Glyph PNG aur Flux prompt lo, ControlNet enforced image generate karo.
+Ye [[PIPELINE|pipeline]] ka core hai. Glyph PNG aur Flux prompt lo, ControlNet enforced image generate karo.
 
 ### Core Logic Explained
 
@@ -2657,7 +2657,7 @@ class Upscaler:
 
 ### Kya karta hai
 
-100 test images pe poori pipeline run karta hai aur sab metrics calculate karta hai. Ye final evaluation script hai jo proof deta hai ki pipeline kaam karti hai.
+100 [[test]] images pe poori [[PIPELINE|pipeline]] run karta hai aur sab metrics calculate karta hai. Ye final evaluation script hai jo proof deta hai ki [[PIPELINE|pipeline]] kaam karti hai.
 
 ```python
 import easyocr
@@ -2793,7 +2793,7 @@ class PipelineEvaluator:
 
 ### Kya karta hai
 
-Pipeline ko ek REST API ke roop mein expose karta hai. Client ek POST request bhejta hai brief ke saath, Celery job queue mein task push hota hai, client job ID leta hai, phir poll karta hai result ke liye.
+[[PIPELINE|Pipeline]] ko ek REST API ke roop mein expose karta hai. Client ek POST request bhejta hai brief ke saath, Celery job queue mein task push hota hai, client job ID leta hai, phir poll karta hai result ke liye.
 
 ```python
 from fastapi import FastAPI, BackgroundTasks, HTTPException
@@ -3170,4 +3170,4 @@ FIX: Worker properly start hai? — celery worker command check karo
 ---
 
 *Scripting Knowledge Document v1.0*  
-*Project: AI Marketing Image Pipeline*
+*Project: AI Marketing Image [[PIPELINE|Pipeline]]*

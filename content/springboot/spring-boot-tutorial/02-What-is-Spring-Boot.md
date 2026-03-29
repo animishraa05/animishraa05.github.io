@@ -93,7 +93,7 @@ This has several huge advantages:
 
 | Feature             | Spring Framework                                       | Spring Boot                                                              |
 | ------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------ |
-| **Core Idea**       | Provides powerful tools for DI, IoC, and enterprise integration. | Makes it extremely fast and easy to build production-ready Spring apps.    |
+| **Core Idea**       | Provides powerful tools for DI, IoC, and enterprise [[integration]]. | Makes it extremely fast and easy to build production-ready Spring apps.    |
 | **Configuration**   | Requires explicit, manual configuration (XML or Java). | Emphasizes autoconfiguration based on the classpath.                     |
 | **Dependencies**    | You manage all dependencies and their versions yourself. | Provides "Starters" to simplify dependency management.                     |
 | **Web Server**      | Requires deploying a WAR file to an external server.   | Includes an embedded server (like Tomcat) for self-contained JAR files.  |

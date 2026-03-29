@@ -20,7 +20,7 @@ There are many different network design principles, but some of the most importa
 - **Hierarchy:** A hierarchical network design is a network design that is divided into layers. This makes the network more scalable and easier to manage.
 - **Modularity:** A modular network design is a network design that is made up of modules. This makes the network more flexible and easier to expand.
 - **Resiliency:** A resilient network design is a network design that is able to withstand failures. This is achieved by using redundant devices and links.
-- **Security:** A secure network design is a network design that is protected from unauthorized access. This is achieved by using firewalls, intrusion detection systems, and other security devices.
+- **Security:** A secure network design is a network design that is protected from unauthorized access. This is achieved by using [[18_Firewalls|firewalls]], intrusion detection systems, and other security devices.
 
 ## Network Design Process
 
@@ -30,12 +30,12 @@ The network design process is a systematic process that involves a series of ste
 2. **Analysis:** The next step is to analyze the requirements. This will help you to determine the size of the network, the number of users, the types of applications that will be used, and the budget.
 3. **Design:** The next step is to design the network. This will involve creating a logical and physical design of the network.
 4. **Implementation:** The next step is to implement the network. This will involve installing the network devices and configuring the network.
-5. **Testing:** The final step is to test the network. This will involve testing the network to make sure that it is working properly.
+5. **Testing:** The final step is to [[test]] the network. This will involve testing the network to make sure that it is working properly.
 
 ## Network Design Tools
 
 There are many different network design tools available. Some of the most popular network design tools are:
 
-- **Cisco Packet Tracer:** Cisco Packet Tracer is a network simulation tool that can be used to design and test networks.
-- **GNS3:** GNS3 is a network simulation tool that can be used to design and test networks.
-- **NetSim:** NetSim is a network simulation tool that can be used to design and test networks.
+- **Cisco Packet Tracer:** Cisco Packet Tracer is a network simulation tool that can be used to design and [[test]] networks.
+- **GNS3:** GNS3 is a network simulation tool that can be used to design and [[test]] networks.
+- **NetSim:** NetSim is a network simulation tool that can be used to design and [[test]] networks.

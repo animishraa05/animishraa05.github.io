@@ -10,3 +10,6 @@ private/
 .replit
 replit.nix
 content/private/
+content/scripts/
+content/**/*.py
+content/**/*.sh

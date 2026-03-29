@@ -3,7 +3,7 @@
 
 ## What is a Network Topology?
 
-Network topology refers to the arrangement of the various elements (links, nodes, etc.) of a computer network. Essentially, it is the topological structure of a network and may be depicted physically or logically. Physical topology is the placement of the various components of a network, including device location and cable installation, while logical topology illustrates how data flows within a network, regardless of its physical design. 
+Network topology refers to the arrangement of the various elements (links, nodes, etc.) of a computer network. Essentially, it is the topological structure of a network and may be depicted physically or logically. Physical topology is the placement of the various components of a network, including device location and cable installation, while logical topology illustrates how data flows within a network, re[[03_Network_Hardware]]gardless of its physical design. 
 
 ## Physical Topologies
 
@@ -32,7 +32,7 @@ In a ring topology, every device has exactly two neighbors for communication pur
 
 - **Disadvantages:**
     - The entire network will be impacted if one workstation shuts down.
-    - The hardware needed to connect each workstation to the network is more expensive than Ethernet cards and hubs/switches.
+    - The hardware needed to connect each workstation to the network is more expensive than [[31_Ethernet|Ethernet]] cards and hubs/switches.
 
 ### Star Topology
 
@@ -90,4 +90,4 @@ A hybrid topology is a combination of two or more different topologies. For exam
 
 Logical topology, in contrast to physical topology, is the way that the signals act on the network media, or the way that the data passes through the network from one device to the next without regard to the physical interconnection of the devices. A network's logical topology is not necessarily the same as its physical topology.
 
-For example, twisted pair Ethernet is a logical bus topology in a physical star topology layout. While IBM's Token Ring is a logical ring topology, it is physically set up in a star topology.
+For example, twisted pair [[31_Ethernet|Ethernet]] is a logical bus topology in a physical star topology layout. While IBM's [[32_Token_Ring|Token Ring]] is a logical ring topology, it is physically set up in a star topology.

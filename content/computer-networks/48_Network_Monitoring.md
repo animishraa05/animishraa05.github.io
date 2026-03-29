@@ -3,7 +3,7 @@
 
 ## Introduction to Network Monitoring
 
-Network monitoring is the process of continuously monitoring a computer network for slow or failing components and that notifies the network administrator (via email, SMS or other alarms) in case of outages. Network monitoring is part of network management.
+Network monitoring is the process of continuously monitoring a computer network for slow or failing components and that notifies the network administrator (via email, SMS or other alarms) in case of outages. Network monitoring is part of [[27_Network_Management|network management]].
 
 ## Network Monitoring Tools
 
@@ -18,8 +18,8 @@ There are many different network monitoring tools available. Some of the most po
 
 There are many different network monitoring protocols, but some of the most common protocols are:
 
-- **Simple Network Management Protocol (SNMP):** SNMP is a protocol that is used to manage devices on a network. SNMP is a simple protocol that is easy to use.
-- **Internet Control Message Protocol (ICMP):** ICMP is a protocol that is used to send error messages and operational information. For example, the ping command uses ICMP to test the connectivity between two devices.
+- **Simple [[27_Network_Management|Network Management]] Protocol (SNMP):** SNMP is a protocol that is used to manage devices on a network. SNMP is a simple protocol that is easy to use.
+- **Internet Control Message Protocol (ICMP):** ICMP is a protocol that is used to send error messages and operational information. For example, the ping command uses ICMP to [[test]] the connectivity between two devices.
 - **NetFlow:** NetFlow is a protocol that is used to collect IP traffic information. NetFlow can be used to monitor the traffic on a network and to identify potential problems.
 
 ## Network Monitoring Best Practices

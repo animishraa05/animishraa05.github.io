@@ -38,4 +38,4 @@ SONET/SDH is more efficient than ATM for carrying constant bit rate (CBR) traffi
 
 ## Decline of SONET/SDH
 
-SONET/SDH was once a popular networking technology, but it has been largely replaced by other technologies, such as Ethernet and MPLS. The decline of SONET/SDH is due to a number of factors, including the high cost of SONET/SDH hardware, the complexity of the SONET/SDH protocol, and the rise of Ethernet and MPLS.
+SONET/SDH was once a popular networking technology, but it has been largely replaced by other technologies, such as [[31_Ethernet|Ethernet]] and MPLS. The decline of SONET/SDH is due to a number of factors, including the high cost of SONET/SDH hardware, the complexity of the SONET/SDH protocol, and the rise of [[31_Ethernet|Ethernet]] and MPLS.

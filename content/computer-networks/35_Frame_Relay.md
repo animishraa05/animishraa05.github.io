@@ -7,7 +7,7 @@ Frame Relay is a standardized wide area network (WAN) technology that specifies 
 
 ## Frame Relay Standards
 
-Frame Relay is standardized by the International Telecommunication Union (ITU) and the American National Standards Institute (ANSI). The Frame Relay standards define the physical layer and the data link layer of the protocol.
+Frame Relay is standardized by the International Telecommunication Union (ITU) and the American National Standards Institute (ANSI). The Frame Relay standards define [[06_The_Physical_Layer|the physical layer]] and [[07_The_Data_Link_Layer|the data link layer]] of the protocol.
 
 ## Frame Relay Frame
 
@@ -31,4 +31,4 @@ Frame Relay and X.25 are two different WAN technologies. The main difference bet
 
 ## Decline of Frame Relay
 
-Frame Relay was once a popular WAN technology, but it has been largely replaced by other technologies, such as MPLS and Ethernet. The decline of Frame Relay is due to a number of factors, including the high cost of Frame Relay hardware, the complexity of the Frame Relay protocol, and the rise of MPLS and Ethernet.
+Frame Relay was once a popular WAN technology, but it has been largely replaced by other technologies, such as MPLS and [[31_Ethernet|Ethernet]]. The decline of Frame Relay is due to a number of factors, including the high cost of Frame Relay hardware, the complexity of the Frame Relay protocol, and the rise of MPLS and [[31_Ethernet|Ethernet]].

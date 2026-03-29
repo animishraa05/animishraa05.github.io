@@ -25,12 +25,12 @@ A Token Ring frame has the following format:
 
 ## Token Ring vs. Ethernet
 
-Token Ring and Ethernet are two different LAN technologies. The main difference between Token Ring and Ethernet is the way that they control access to the medium. Token Ring uses a token-passing scheme, while Ethernet uses a CSMA/CD scheme.
+Token Ring and [[31_Ethernet|Ethernet]] are two different LAN technologies. The main difference between Token Ring and [[31_Ethernet|Ethernet]] is the way that they control access to the medium. Token Ring uses a token-passing scheme, while [[31_Ethernet|Ethernet]] uses a CSMA/CD scheme.
 
-Token Ring is a deterministic protocol, which means that each station is guaranteed to be able to transmit data within a certain amount of time. Ethernet is a probabilistic protocol, which means that there is no guarantee that a station will be able to transmit data within a certain amount of time.
+Token Ring is a deterministic protocol, which means that each station is guaranteed to be able to transmit data within a certain amount of time. [[31_Ethernet|Ethernet]] is a probabilistic protocol, which means that there is no guarantee that a station will be able to transmit data within a certain amount of time.
 
-Token Ring is more reliable than Ethernet, but it is also more expensive. Ethernet is less reliable than Token Ring, but it is also less expensive.
+Token Ring is more reliable than [[31_Ethernet|Ethernet]], but it is also more expensive. [[31_Ethernet|Ethernet]] is less reliable than Token Ring, but it is also less expensive.
 
 ## Decline of Token Ring
 
-Token Ring was once a popular LAN technology, but it has been largely replaced by Ethernet. The decline of Token Ring is due to a number of factors, including the high cost of Token Ring hardware, the complexity of the Token Ring protocol, and the rise of switched Ethernet.
+Token Ring was once a popular LAN technology, but it has been largely replaced by [[31_Ethernet|Ethernet]]. The decline of Token Ring is due to a number of factors, including the high cost of Token Ring hardware, the complexity of the Token Ring protocol, and the rise of switched [[31_Ethernet|Ethernet]].

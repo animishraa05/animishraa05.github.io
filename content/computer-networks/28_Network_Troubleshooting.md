@@ -7,12 +7,12 @@ Network troubleshooting is the process of identifying, diagnosing, and resolving
 
 ## Network Troubleshooting Methodology
 
-There are many different network troubleshooting methodologies, but one of the most common methodologies is the top-down methodology. The top-down methodology starts at the application layer and works its way down to the physical layer. The steps in the top-down methodology are as follows:
+There are many different network troubleshooting methodologies, but one of the most common methodologies is the top-down methodology. The top-down methodology starts at [[10_The_Application_Layer|the application layer]] and works its way down to [[06_The_Physical_Layer|the physical layer]]. The steps in the top-down methodology are as follows:
 
 1. **Identify the problem:** The first step is to identify the problem. This can be done by talking to the users who are experiencing the problem.
 2. **Gather information:** The next step is to gather information about the problem. This can be done by using a variety of tools, such as ping, traceroute, and nslookup.
 3. **Develop a hypothesis:** The next step is to develop a hypothesis about the cause of the problem. This can be done by analyzing the information that you have gathered.
-4. **Test the hypothesis:** The next step is to test the hypothesis. This can be done by making a change to the network and observing the results.
+4. **[[test|Test]] the hypothesis:** The next step is to [[test]] the hypothesis. This can be done by making a change to the network and observing the results.
 5. **Implement a solution:** If the hypothesis is correct, then the next step is to implement a solution. This may involve making a change to the network configuration or replacing a faulty device.
 6. **Verify the solution:** The final step is to verify the solution. This can be done by testing the network to make sure that the problem has been resolved.
 
@@ -28,7 +28,7 @@ There are many different common network problems, but some of the most common pr
 
 There are many different network troubleshooting tools available. Some of the most popular network troubleshooting tools are:
 
-- **Ping:** Ping is a command-line tool that is used to test the connectivity between two devices.
+- **Ping:** Ping is a command-line tool that is used to [[test]] the connectivity between two devices.
 - **Traceroute:** Traceroute is a command-line tool that is used to trace the path that a packet takes from the source to the destination.
 - **Nslookup:** Nslookup is a command-line tool that is used to query the Domain Name System (DNS).
 - **Wireshark:** Wireshark is a graphical network protocol analyzer. It can be used to capture and analyze network traffic.

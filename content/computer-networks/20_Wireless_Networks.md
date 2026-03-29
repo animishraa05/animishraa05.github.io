@@ -28,11 +28,11 @@ There are many different wireless network technologies, but some of the most com
 
 Wireless networks are more vulnerable to security threats than wired networks. This is because the signals are broadcast through the air, which makes them easy to intercept.
 
-There are many different wireless network security protocols, but some of the most common protocols are:
+There are many different wireless [[16_Network_Security|network security]] protocols, but some of the most common protocols are:
 
-- **Wired Equivalent Privacy (WEP):** WEP is an old and insecure wireless network security protocol. It is no longer recommended for use.
-- **Wi-Fi Protected Access (WPA):** WPA is a more secure wireless network security protocol than WEP. It is still used in some older devices.
-- **Wi-Fi Protected Access 2 (WPA2):** WPA2 is the most secure wireless network security protocol. It is the recommended protocol for all new devices.
+- **Wired Equivalent Privacy (WEP):** WEP is an old and insecure wireless [[16_Network_Security|network security]] protocol. It is no longer recommended for use.
+- **Wi-Fi Protected Access (WPA):** WPA is a more secure wireless [[16_Network_Security|network security]] protocol than WEP. It is still used in some older devices.
+- **Wi-Fi Protected Access 2 (WPA2):** WPA2 is the most secure wireless [[16_Network_Security|network security]] protocol. It is the recommended protocol for all new devices.
 
 ## Advantages of Wireless Networks
 

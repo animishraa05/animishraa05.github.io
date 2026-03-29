@@ -16,7 +16,7 @@ The network layer is the third layer of the OSI model. It is responsible for pro
 
 - **Internet Protocol (IP):** The Internet Protocol is the main protocol of the network layer. It is responsible for addressing and routing packets. There are two versions of IP: IPv4 and IPv6.
 - **Address Resolution Protocol (ARP):** The Address Resolution Protocol is used to resolve an IP address to a physical address. The physical address is the MAC address of the device.
-- **Internet Control Message Protocol (ICMP):** The Internet Control Message Protocol is used to send error messages and operational information. For example, the ping command uses ICMP to test the connectivity between two devices.
+- **Internet Control Message Protocol (ICMP):** The Internet Control Message Protocol is used to send error messages and operational information. For example, the ping command uses ICMP to [[test]] the connectivity between two devices.
 - **Internet Group Management Protocol (IGMP):** The Internet Group Management Protocol is used to manage multicast groups. A multicast group is a group of devices that receive the same data.
 
 ## Routing Algorithms

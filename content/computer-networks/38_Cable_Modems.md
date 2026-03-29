@@ -15,7 +15,7 @@ The cable modem communicates with a cable modem termination system (CMTS) at the
 
 ## Cable Modem Standards
 
-There are many different cable modem standards, but the most common standard is Data Over Cable Service Interface Specification (DOCSIS). DOCSIS is a standard that was developed by CableLabs. DOCSIS defines the physical layer and the media access control (MAC) layer of the protocol.
+There are many different cable modem standards, but the most common standard is Data Over Cable Service Interface Specification (DOCSIS). DOCSIS is a standard that was developed by CableLabs. DOCSIS defines [[06_The_Physical_Layer|the physical layer]] and the media access control (MAC) layer of the protocol.
 
 ## DOCSIS Versions
 

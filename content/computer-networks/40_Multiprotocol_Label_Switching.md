@@ -3,7 +3,7 @@
 
 ## Introduction to MPLS
 
-Multiprotocol Label Switching (MPLS) is a routing technique in telecommunications networks that directs data from one node to the next based on short path labels rather than long network addresses, avoiding complex lookups in a routing table. The labels identify virtual links (paths) between distant nodes rather than endpoints. MPLS can encapsulate packets of various network protocols, hence the "multiprotocol" reference in its name. MPLS supports a range of access technologies, including T1/E1, ATM, Frame Relay, and DSL.
+Multiprotocol Label Switching (MPLS) is a routing technique in telecommunications networks that directs data from one node to the next based on short path labels rather than long network addresses, avoiding complex lookups in a routing table. The labels identify virtual links[[41_Network_Address_Translation]] (paths) between distant nodes rather than endpoints. MPLS can encapsulate packets of various network protocols, hence the "multiprotocol" reference in its name. MPLS supports a range of access technologies, including T1/E1, ATM, [[35_Frame_Relay|Frame Relay]], and DSL.
 
 ## How MPLS Works
 

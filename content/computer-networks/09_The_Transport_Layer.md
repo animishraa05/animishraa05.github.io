@@ -3,12 +3,12 @@
 
 ## Introduction to the Transport Layer
 
-The transport layer is the fourth layer of the OSI model. It is responsible for providing reliable, end-to-end communication between applications. The transport layer takes the data from the application layer and segments it into smaller units called segments. It then sends these segments to the network layer for transmission. The transport layer is also responsible for reassembling the segments at the destination and ensuring that all the data is received correctly and in order.
+The transport layer is the fourth layer of the OSI model. It is responsible for providing reliable, end-to-end communication between applications. The transport layer takes the data from [[10_The_Application_Layer|the application layer]] and segments it into smaller units called segments. It then sends these segments to [[08_The_Network_Layer|the network layer]] for transmission. The transport layer is also responsible for reassembling the segments at the destination and ensuring that all the data is received correctly and in order.
 
 ## Functions of the Transport Layer
 
 - **Service-Point Addressing:** The transport layer is responsible for delivering the data to the correct process on the destination computer. This is done by using a port number. A port number is a unique address that is assigned to each process.
-- **Segmentation and Reassembly:** The transport layer is responsible for breaking up the data from the application layer into smaller segments and for reassembling the segments at the destination.
+- **Segmentation and Reassembly:** The transport layer is responsible for breaking up the data from [[10_The_Application_Layer|the application layer]] into smaller segments and for reassembling the segments at the destination.
 - **Connection Control:** The transport layer can provide either a connection-oriented or a connectionless service. A connection-oriented service establishes a connection before sending the data, while a connectionless service does not.
 - **Flow Control:** The transport layer is responsible for regulating the flow of data so that a fast sender does not overwhelm a slow receiver.
 - **Error Control:** The transport layer is responsible for ensuring that all the data is received correctly and in order. This is done by using error detection and correction mechanisms.

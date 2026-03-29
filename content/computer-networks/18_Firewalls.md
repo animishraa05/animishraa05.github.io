@@ -3,7 +3,7 @@
 
 ## Introduction to Firewalls
 
-A firewall is a network security system that monitors and controls incoming and outgoing network traffic based on predetermined security rules. A firewall typically establishes a barrier between a trusted internal network and an untrusted external network, such as the Internet. Firewalls are a first line of defense in network security.
+A firewall is a [[16_Network_Security|network security]] system that monitors and controls incoming and outgoing network traffic based on predetermined security rules. A firewall typically establishes a barrier between a trusted internal network and an untrusted external network, such as the Internet. Firewalls are a first line of defense in [[16_Network_Security|network security]].
 
 ## How Firewalls Work
 

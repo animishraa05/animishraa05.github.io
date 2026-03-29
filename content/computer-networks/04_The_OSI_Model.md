@@ -10,13 +10,13 @@ tags: []
 
 The Open Systems Interconnection (OSI) model is a conceptual framework that standardizes the functions of a telecommunication or computing system in terms of seven abstraction layers. The model was developed by the International Organization for Standardization (ISO) in 1984, and it is now considered the primary architectural model for intercomputer communications.
 
-The OSI model divides the complex task of computer-to-computer communication into seven smaller, more manageable parts, called layers. Each layer is responsible for a specific part of the communication process. This layered approach allows for interoperability between different computer systems and network hardware.
+The OSI model divides the complex task of computer-to-computer communication into seven smaller, more manageable parts, called layers. Each layer is responsible for a specific part of the communication process. This layered approach allows for interoperability between different computer systems and [[03_Network_Hardware|network hardware]].
 
 ## The Seven Layers of the OSI Model
 
 ### 1. Physical Layer
 
-The physical layer is the lowest layer of the OSI model. It is responsible for the transmission and reception of unstructured raw data between a device and a physical transmission medium. It converts the digital bits into electrical, radio, or optical signals. 
+[[06_The_Physical_Layer|The physical layer]] is the lowest layer of the OSI model. It is responsible for the transmission and reception of unstructured raw data between a device and a physical transmission medium. It converts the digital bits into electrical, radio, or optical signals. 
 
 - **Key Functions:**
     - Bit-by-bit or symbol-by-symbol delivery.
@@ -25,10 +25,10 @@ The physical layer is the lowest layer of the OSI model. It is responsible for t
 
 ### 2. Data Link Layer
 
-The data link layer provides node-to-node data transfer—a link between two directly connected nodes. It detects and possibly corrects errors that may occur in the physical layer. It defines the protocol to establish and terminate a connection between two physically connected devices. It also defines the protocol for flow control between them.
+[[07_The_Data_Link_Layer|The data link layer]] provides node-to-node data transfer—a link between two directly connected nodes. It detects and possibly corrects errors that may occur in [[06_The_Physical_Layer|the physical layer]]. It defines the protocol to establish and terminate a connection between two physically connected devices. It also defines the protocol for flow control between them.
 
 - **Key Functions:**
-    - **Framing:** Divides the stream of bits received from the network layer into manageable data units called frames.
+    - **Framing:** Divides the stream of bits received from [[08_The_Network_Layer|the network layer]] into manageable data units called frames.
     - **Physical Addressing:** Adds a header to the frame to define the sender and/or receiver of the frame.
     - **Error Control:** Detects and retransmits damaged or lost frames.
     - **Flow Control:** Prevents a fast sender from overwhelming a slow receiver.
@@ -36,7 +36,7 @@ The data link layer provides node-to-node data transfer—a link between two dir
 
 ### 3. Network Layer
 
-The network layer is responsible for packet forwarding including routing through intermediate routers. The network layer provides the functional and procedural means of transferring variable length data sequences from a source host on one network to a destination host on a different network. 
+[[08_The_Network_Layer|The network layer]] is responsible for packet forwarding including routing through intermediate routers. [[08_The_Network_Layer|The network layer]] provides the functional and procedural means of transferring variable length data sequences from a source host on one network to a destination host on a different network. 
 
 - **Key Functions:**
     - **Logical Addressing:** Adds a header to the packet which includes the logical addresses of the source and destination.
@@ -44,7 +44,7 @@ The network layer is responsible for packet forwarding including routing through
 
 ### 4. Transport Layer
 
-The transport layer provides reliable transmission of data segments between points on a network, including segmentation, acknowledgement, and multiplexing. The transport layer provides the functional and procedural means of transferring variable-length data sequences from a source to a destination host via one or more networks, while maintaining the quality of service functions.
+[[09_The_Transport_Layer|The transport layer]] provides reliable transmission of data segments between points on a network, including segmentation, acknowledgement, and multiplexing. [[09_The_Transport_Layer|The transport layer]] provides the functional and procedural means of transferring variable-length data sequences from a source to a destination host via one or more networks, while maintaining the quality of service functions.
 
 - **Key Functions:**
     - **Segmentation and Reassembly:** Segments the message into smaller chunks and reassembles them at the destination.
@@ -72,7 +72,7 @@ The presentation layer establishes a context between application-layer entities,
 
 ### 7. Application Layer
 
-The application layer is the OSI layer closest to the end user, which means that both the OSI application layer and the user interact directly with the software application. This layer interacts with software applications that implement a communicating component. Such application programs fall outside the scope of the OSI model.
+[[10_The_Application_Layer|The application layer]] is the OSI layer closest to the end user, which means that both the OSI application layer and the user interact directly with the software application. This layer interacts with software applications that implement a communicating component. Such application programs fall outside the scope of the OSI model.
 
 - **Key Functions:**
     - **Network Virtual Terminal:** Allows a user to log on to a remote host.

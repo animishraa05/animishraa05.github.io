@@ -11,7 +11,7 @@ tags: []
 
 The physical layer is the first and lowest layer of the Open Systems Interconnection (OSI) model. It is responsible for the transmission and reception of unstructured raw data between a device and a physical transmission medium. It is the only layer that deals with the physical connectivity of two different stations. The physical layer contains information in the form of bits. It is responsible for transmitting individual bits from one node to the next.
 
-When receiving data, this layer will get the signal received and convert it into 0s and 1s and send them to the Data Link layer, which will put the frame back together. When transmitting data, the physical layer will take the stream of bits from the Data Link layer and encode it into a signal that can be transmitted over the physical medium.
+When receiving data, this layer will get the signal received and convert it into 0s and 1s and send them to [[07_The_Data_Link_Layer|the Data Link layer]], which will put the frame back together. When transmitting data, the physical layer will take the stream of bits from [[07_The_Data_Link_Layer|the Data Link layer]] and encode it into a signal that can be transmitted over the physical medium.
 
 ## Functions of the Physical Layer
 
@@ -29,8 +29,8 @@ Transmission media is the physical path between the transmitter and the receiver
 
 Guided media, also known as wired or bounded transmission media, are physical media through which the signals are transmitted. They are called guided because they provide a physical path for the signal to travel.
 
-- **Twisted-Pair Cable:** This is the most common type of guided media. It consists of two insulated copper wires twisted together. Twisted-pair cable is used in telephone lines and Ethernet networks.
-- **Coaxial Cable:** Coaxial cable has a central copper core, an insulator, a braided metal shield, and an outer cover. It is used in cable television and some older Ethernet networks.
+- **Twisted-Pair Cable:** This is the most common type of guided media. It consists of two insulated copper wires twisted together. Twisted-pair cable is used in telephone lines and [[31_Ethernet|Ethernet]] networks.
+- **Coaxial Cable:** Coaxial cable has a central copper core, an insulator, a braided metal shield, and an outer cover. It is used in cable television and some older [[31_Ethernet|Ethernet]] networks.
 - **Fiber-Optic Cable:** Fiber-optic cable uses light to transmit data. It consists of a thin strand of glass or plastic that can carry light for long distances. Fiber-optic cable is used for high-speed data transmission.
 
 ### Unguided Media

@@ -17,7 +17,7 @@ The data plane is made up of simple forwarding devices, such as switches and rou
 
 The SDN architecture is made up of three layers:
 
-- **Application Layer:** The application layer is where the network applications and services reside. The applications and services can be anything from a simple web server to a complex video streaming service.
+- **Application Layer:** [[10_The_Application_Layer|The application layer]] is where the network applications and services reside. The applications and services can be anything from a simple web server to a complex video streaming service.
 - **Control Layer:** The control layer is where the SDN controller resides. The controller is responsible for managing the network and for making decisions about where to forward packets.
 - **Infrastructure Layer:** The infrastructure layer is where the network devices, such as switches and routers, reside. The network devices are responsible for forwarding the packets according to the instructions of the controller.
 

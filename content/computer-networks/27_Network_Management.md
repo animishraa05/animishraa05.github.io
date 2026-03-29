@@ -40,7 +40,7 @@ There are five main network management functions:
 
 There are many different network management tools available. Some of the most popular network management tools are:
 
-- **Nagios:** Nagios is an open-source network monitoring tool.
-- **Zabbix:** Zabbix is an open-source network monitoring tool.
+- **Nagios:** Nagios is an open-source [[48_Network_Monitoring|network monitoring]] tool.
+- **Zabbix:** Zabbix is an open-source [[48_Network_Monitoring|network monitoring]] tool.
 - **SolarWinds:** SolarWinds is a commercial network management tool.
-- **PRTG:** PRTG is a commercial network monitoring tool.
+- **PRTG:** PRTG is a commercial [[48_Network_Monitoring|network monitoring]] tool.

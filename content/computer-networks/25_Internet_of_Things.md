@@ -14,9 +14,9 @@ IoT devices are typically connected to the internet through a wireless network, 
 The IoT architecture is made up of four layers:
 
 - **Sensing Layer:** The sensing layer is where the IoT devices reside. The IoT devices are responsible for collecting data from the physical world.
-- **Network Layer:** The network layer is responsible for connecting the IoT devices to the internet.
+- **Network Layer:** [[08_The_Network_Layer|The network layer]] is responsible for connecting the IoT devices to the internet.
 - **Data Processing Layer:** The data processing layer is responsible for processing the data that is collected by the IoT devices.
-- **Application Layer:** The application layer is where the IoT applications and services reside. The applications and services can be anything from a simple web server to a complex video streaming service.
+- **Application Layer:** [[10_The_Application_Layer|The application layer]] is where the IoT applications and services reside. The applications and services can be anything from a simple web server to a complex video streaming service.
 
 ## IoT Protocols
 

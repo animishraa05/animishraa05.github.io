@@ -17,8 +17,8 @@ There are many different types of network cables, but some of the most common ty
 
 There are many different network cable standards, but some of the most common standards are:
 
-- **Ethernet:** Ethernet is the most common network cable standard. It is a family of standards that define the physical layer and data link layer of a computer network.
-- **Token Ring:** Token Ring is a network cable standard that was developed by IBM. It is a token-passing standard that is used in a ring topology.
+- **[[31_Ethernet|Ethernet]]:** [[31_Ethernet|Ethernet]] is the most common network cable standard. It is a family of standards that define [[06_The_Physical_Layer|the physical layer]] and data link layer of a computer network.
+- **[[32_Token_Ring|Token Ring]]:** [[32_Token_Ring|Token Ring]] is a network cable standard that was developed by IBM. It is a token-passing standard that is used in a ring topology.
 - **Fiber Distributed Data Interface (FDDI):** FDDI is a network cable standard that is used for high-speed data transmission. It is a token-passing standard that is used in a dual-ring topology.
 
 ## Network Cable Installation
@@ -28,7 +28,7 @@ Network cable installation is a complex process that should be performed by a qu
 1. **Planning:** The first step is to plan the network cable installation. This will involve determining the layout of the network and the types of cables that will be used.
 2. **Installation:** The next step is to install the network cables. This will involve running the cables through the walls and ceilings.
 3. **Termination:** The next step is to terminate the network cables. This will involve connecting the cables to the network devices.
-4. **Testing:** The final step is to test the network cables. This will involve testing the cables to make sure that they are working properly.
+4. **Testing:** The final step is to [[test]] the network cables. This will involve testing the cables to make sure that they are working properly.
 
 ## Network Cable Troubleshooting
 

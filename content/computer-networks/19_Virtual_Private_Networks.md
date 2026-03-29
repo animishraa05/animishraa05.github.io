@@ -3,7 +3,7 @@
 
 ## Introduction to VPNs
 
-A virtual private network (VPN) is a technology that creates a safe and encrypted connection over a less secure network, such as the internet. A VPN can be used to remotely access a company's internal network or to browse the internet anonymously. VPNs are a key component of network security.
+A virtual private network (VPN) is a technology that creates a safe and encrypted connection over a less secure network, such as the internet. A VPN can be used to remotely access a company's internal network or to browse the internet anonymously. VPNs are a key component of [[16_Network_Security|network security]].
 
 ## How VPNs Work
 

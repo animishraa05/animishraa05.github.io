@@ -30,7 +30,7 @@ MPLS is a multiprotocol label switching. MPLS is a routing technique that direct
 
 - **Flexibility:** Network virtualization can make a network more flexible. This is because it allows you to create and manage virtual networks without having to change the physical network.
 - **Agility:** Network virtualization can make a network more agile. This is because it allows you to quickly and easily provision and de-provision virtual networks.
-- **Cost savings:** Network virtualization can save you money. This is because it allows you to consolidate your network hardware and to reduce your power consumption.
+- **Cost savings:** Network virtualization can save you money. This is because it allows you to consolidate your [[03_Network_Hardware|network hardware]] and to reduce your power consumption.
 
 ## Disadvantages of Network Virtualization
 

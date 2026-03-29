@@ -7,7 +7,7 @@ Network function virtualization (NFV) is a network architecture concept that use
 
 ## How NFV Works
 
-NFV works by decoupling network functions, such as firewalls, load balancers, and routers, from dedicated hardware devices. These network functions are then run as software on standard x86 servers. This allows for a more flexible and agile network.
+NFV works by decoupling network functions, such as [[18_Firewalls|firewalls]], load balancers, and routers, from dedicated hardware devices. These network functions are then run as software on standard x86 servers. This allows for a more flexible and agile network.
 
 ## NFV Architecture
 

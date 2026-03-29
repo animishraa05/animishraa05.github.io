@@ -5,7 +5,7 @@
 
 The TCP/IP model is a concise and practical model for computer networking. It is the model that is used in the real world, and it is the model that the Internet is based on. The TCP/IP model is also known as the Internet Protocol Suite. It was developed by the United States Department of Defense Advanced Research Projects Agency (DARPA) in the 1970s.
 
-The TCP/IP model is a four-layer model, in contrast to the seven-layer OSI model. The four layers of the TCP/IP model are the Link Layer, the Internet Layer, the Transport Layer, and the Application Layer.
+The TCP/IP model is a four-layer model, in contrast to the seven-layer OSI model. The four layers of the TCP/IP model are the Link Layer, the Internet Layer, [[09_The_Transport_Layer|the Transport Layer]], and [[10_The_Application_Layer|the Application Layer]].
 
 ## The Four Layers of the TCP/IP Model
 
@@ -20,7 +20,7 @@ The link layer, also known as the network interface layer, is the lowest layer o
 
 ### 2. Internet Layer
 
-The internet layer is responsible for the logical transmission of data from the source to the destination. It is responsible for routing packets across the network. The internet layer is equivalent to the network layer of the OSI model.
+The internet layer is responsible for the logical transmission of data from the source to the destination. It is responsible for routing packets across the network. The internet layer is equivalent to [[08_The_Network_Layer|the network layer]] of the OSI model.
 
 - **Key Protocols:**
     - **Internet Protocol (IP):** The main protocol of the internet layer. It is responsible for addressing and routing packets.
@@ -29,7 +29,7 @@ The internet layer is responsible for the logical transmission of data from the 
 
 ### 3. Transport Layer
 
-The transport layer is responsible for providing end-to-end communication between applications. It is responsible for ensuring that data is delivered reliably and in order. The transport layer is equivalent to the transport layer of the OSI model.
+[[09_The_Transport_Layer|The transport layer]] is responsible for providing end-to-end communication between applications. It is responsible for ensuring that data is delivered reliably and in order. [[09_The_Transport_Layer|The transport layer]] is equivalent to [[09_The_Transport_Layer|the transport layer]] of the OSI model.
 
 - **Key Protocols:**
     - **Transmission Control Protocol (TCP):** A connection-oriented protocol that provides reliable, ordered, and error-checked delivery of a stream of octets between applications.
@@ -37,7 +37,7 @@ The transport layer is responsible for providing end-to-end communication betwee
 
 ### 4. Application Layer
 
-The application layer is the highest layer of the TCP/IP model. It is responsible for providing services to the user. The application layer is equivalent to the session, presentation, and application layers of the OSI model.
+[[10_The_Application_Layer|The application layer]] is the highest layer of the TCP/IP model. It is responsible for providing services to the user. [[10_The_Application_Layer|The application layer]] is equivalent to the session, presentation, and application layers of the OSI model.
 
 - **Key Protocols:**
     - **Hypertext Transfer Protocol (HTTP):** Used for transferring web pages.
@@ -53,5 +53,5 @@ The application layer is the highest layer of the TCP/IP model. It is responsibl
 | Development | Developed by ISO | Developed by DARPA |
 | Usage | A reference model | A practical model |
 | Layers | Physical, Data Link, Network, Transport, Session, Presentation, Application | Link, Internet, Transport, Application |
-| Reliability | Handled by the transport and data link layers | Handled by the transport layer |
-| Addressing | Supports both connection-oriented and connectionless communication | Supports connectionless communication at the network layer |
+| Reliability | Handled by the transport and data link layers | Handled by [[09_The_Transport_Layer|the transport layer]] |
+| Addressing | Supports both connection-oriented and connectionless communication | Supports connectionless communication at [[08_The_Network_Layer|the network layer]] |

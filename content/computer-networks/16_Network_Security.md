@@ -3,7 +3,7 @@
 
 ## Introduction to Network Security
 
-Network security is a broad term that covers a multitude of technologies, devices, and processes. In its simplest term, it is a set of rules and configurations designed to protect the integrity, confidentiality, and accessibility of computer networks and data using both software and hardware technologies.
+Network security is a broad term that covers a multitude of technologies, devices, and processes. In its simplest term, it is a set of rules and configurations designed to protect the integrity, confidentiality, and accessibility of [[1|computer networks]] and data using both software and hardware technologies.
 
 Network security is important for home networks as well as in the business world. Most homes with high-speed internet connections have one or more wireless routers, which could be exploited if not properly secured. A solid network security system helps reduce the risk of data loss, theft, and sabotage.
 
@@ -11,7 +11,7 @@ Network security is important for home networks as well as in the business world
 
 There are many different types of network security, but some of the most common types are:
 
-- **Firewalls:** A firewall is a network security system that monitors and controls incoming and outgoing network traffic based on predetermined security rules. A firewall typically establishes a barrier between a trusted internal network and an untrusted external network, such as the Internet.
+- **[[18_Firewalls|Firewalls]]:** A firewall is a network security system that monitors and controls incoming and outgoing network traffic based on predetermined security rules. A firewall typically establishes a barrier between a trusted internal network and an untrusted external network, such as the Internet.
 - **Intrusion Detection Systems (IDS):** An IDS is a device or software application that monitors a network or systems for malicious activity or policy violations. Any malicious activity or violation is typically reported either to an administrator or collected centrally using a security information and event management (SIEM) system.
 - **Intrusion Prevention Systems (IPS):** An IPS is a network security/threat prevention technology that examines network traffic flows to detect and prevent vulnerability exploits. An IPS is an extension of an IDS.
 - **Virtual Private Networks (VPNs):** A VPN is a technology that creates a safe and encrypted connection over a less secure network, such as the internet. A VPN can be used to remotely access a company's internal network or to browse the internet anonymously.

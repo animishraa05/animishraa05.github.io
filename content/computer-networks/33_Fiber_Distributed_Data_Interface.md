@@ -3,11 +3,11 @@
 
 ## Introduction to FDDI
 
-Fiber Distributed Data Interface (FDDI) is a standard for data transmission in a local area network. It uses a dual-ring topology and a token-passing scheme to control access to the medium. FDDI was developed in the 1980s as a high-speed alternative to Ethernet and Token Ring. It has a data rate of 100 Mbps.
+Fiber Distributed Data Interface (FDDI) is a standard for data transmission in a local area network. It uses a dual-ring topology and a token-passing scheme to control access to the medium. FDDI was developed in the 1980s as a high-speed alternative to [[31_Ethernet|Ethernet]] and [[32_Token_Ring|Token Ring]]. It has a data rate of 100 Mbps.
 
 ## FDDI Standards
 
-FDDI is standardized by the American National Standards Institute (ANSI) and the International Organization for Standardization (ISO). The FDDI standards define the physical layer and the media access control (MAC) layer of the protocol.
+FDDI is standardized by the American National Standards Institute (ANSI) and the International Organization for Standardization (ISO). The FDDI standards define [[06_The_Physical_Layer|the physical layer]] and the media access control (MAC) layer of the protocol.
 
 ## FDDI Topology
 
@@ -29,12 +29,12 @@ An FDDI frame has the following format:
 
 ## FDDI vs. Ethernet
 
-FDDI and Ethernet are two different LAN technologies. The main difference between FDDI and Ethernet is the way that they control access to the medium. FDDI uses a token-passing scheme, while Ethernet uses a CSMA/CD scheme.
+FDDI and [[31_Ethernet|Ethernet]] are two different LAN technologies. The main difference between FDDI and [[31_Ethernet|Ethernet]] is the way that they control access to the medium. FDDI uses a token-passing scheme, while [[31_Ethernet|Ethernet]] uses a CSMA/CD scheme.
 
-FDDI is a deterministic protocol, which means that each station is guaranteed to be able to transmit data within a certain amount of time. Ethernet is a probabilistic protocol, which means that there is no guarantee that a station will be able to transmit data within a certain amount of time.
+FDDI is a deterministic protocol, which means that each station is guaranteed to be able to transmit data within a certain amount of time. [[31_Ethernet|Ethernet]] is a probabilistic protocol, which means that there is no guarantee that a station will be able to transmit data within a certain amount of time.
 
-FDDI is more reliable than Ethernet, but it is also more expensive. Ethernet is less reliable than FDDI, but it is also less expensive.
+FDDI is more reliable than [[31_Ethernet|Ethernet]], but it is also more expensive. [[31_Ethernet|Ethernet]] is less reliable than FDDI, but it is also less expensive.
 
 ## Decline of FDDI
 
-FDDI was once a popular LAN technology, but it has been largely replaced by Ethernet. The decline of FDDI is due to a number of factors, including the high cost of FDDI hardware, the complexity of the FDDI protocol, and the rise of Fast Ethernet and Gigabit Ethernet.
+FDDI was once a popular LAN technology, but it has been largely replaced by [[31_Ethernet|Ethernet]]. The decline of FDDI is due to a number of factors, including the high cost of FDDI hardware, the complexity of the FDDI protocol, and the rise of Fast [[31_Ethernet|Ethernet]] and Gigabit [[31_Ethernet|Ethernet]].
