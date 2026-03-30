@@ -11,6 +11,11 @@ I work across backend systems, AI/ML, networking, and anything that involves mak
 
 This is where I document everything I pick up along the way.
 
+1
+Investigating current left sidebar configuration
+
+Analyzed
+Generating
 ---
 
 ##  What's Inside
@@ -19,17 +24,16 @@ A curated map to the knowledge base:
 
 ### Core Computer Science
 
-- **[[01_Introduction_to_Computer_Networks|Computer Networks]]**: TCP/IP, HTTP, DNS, Security, VPNs, OSI & TCP/IP models, and the full protocol stack (50+ topics from Physical Layer to Network Virtualization).
-- **[[Binary Search|Algorithms & DSA]]**: Search algorithms, trees, sparse tables, and competitive programming paradigms.
-- **[[Bankers Algorithm|Operating Systems]]**: Process scheduling, deadlocks, and memory management.
-- **[[Program for Deterministic Finite Automata|Theory of Computation]]**: Automata, grammars, parsing, and language generation.
-- **[[Code Optimization in Compiler Design|Compiler Design]]**: Code optimization, shift-reduce parsing, and symbol tables.
+- **[[computer-networks/01_Introduction_to_Computer_Networks|Computer Networks]]**: TCP/IP, HTTP, DNS, Security, VPNs, OSI & TCP/IP models, and the full protocol stack (50+ topics from Physical Layer to Network Virtualization).
+- **[[computer-science/algorithms/binary-search|Algorithms & DSA]]**: Search algorithms, trees, sparse tables, and competitive programming paradigms.
+- **[[computer-science/operating-systems/bankers-algorithm|Operating Systems]]**: Process scheduling, deadlocks, and memory management.
+- **[[computer-science/theory-of-computation/program-for-deterministic-finite-automata|Theory of Computation]]**: Automata, grammars, parsing, and language generation.
+- **[[computer-science/compiler-design/code-optimization-in-compiler-design|Compiler Design]]**: Code optimization, shift-reduce parsing, and symbol tables.
 
 ### Artificial Intelligence & Machine Learning
 
-- **[[knowledge Representation|AI Foundations]]**: Declarative, procedural, meta, heuristic, and structural knowledge representations.
-- **[[image-generation|GenAI & Image Pipelines]]**: Deep dives into diffusion models, ControlNet glyph injection, LoRA fine-tuning, and building production AI pipelines.
-- **[[controlnet|ControlNet & Text Rendering]]**: How to achieve 100% accurate text in AI-generated marketing images.
+- **[[ai/knowledge Representation|AI Foundations]]**: Declarative, procedural, meta, heuristic, and structural knowledge representations.
+- **[[genai/image-generation|GenAI & Image Pipelines]]**: Deep dives into diffusion models, ControlNet glyph injection, LoRA fine-tuning, and building production AI pipelines.
 
 #### Explore by Subfield
 
@@ -41,8 +45,8 @@ A curated map to the knowledge base:
 
 ### Software Engineering & Backend Development
 
-- **[[01-What-is-Spring-Framework|Spring Framework & Spring Boot]]**: IoC, DI, autoconfiguration, starter dependencies, embedded servers, and microservices architecture.
-- **[[djangointernals|Django & Django REST Framework]]**: Deep architectural dive — from URL resolution to ViewSets, Serializers, ORM, and the request/response lifecycle.
+- **[[springboot/spring-boot-tutorial/01-What-is-Spring-Framework|Spring Framework & Spring Boot]]**: IoC, DI, autoconfiguration, starter dependencies, embedded servers, and microservices architecture.
+- **[[django/djangointernals|Django & Django REST Framework]]**: Deep architectural dive — from URL resolution to ViewSets, Serializers, ORM, and the request/response lifecycle.
 - **[[software-engineering/software-architecture|Software Architecture]]**: Design patterns, architectural styles, and system design principles.
 - **[[software-engineering/sdlc-methodologies|SDLC & Methodologies]]**: Software development lifecycle models and agile practices.
 - **[[software-engineering/testing|Testing]]**: Testing strategies, frameworks, and best practices.
@@ -69,7 +73,7 @@ Explore the complete [[computer-science|Computer Science]] curriculum:
 
 ##  What I'm Doing Now
 
-- **studying** — Data Structures, System Design, [[01_Introduction_to_Computer_Networks|Computer Networks]], Computer Architecture, Operating Systems
+- **studying** — Data Structures, System Design, [[computer-networks/01_Introduction_to_Computer_Networks|Computer Networks]], Computer Architecture, Operating Systems
 - **building** — Backend systems, AI/ML pipelines, and projects that scratch my own itch
 - **reading** — Distributed systems, ML internals, and framework architecture
 
@@ -77,19 +81,18 @@ Explore the complete [[computer-science|Computer Science]] curriculum:
 
 ## Recently Added
 
-- [[djangointernals|Django Internals — The RESTaurant Analogy]]
-- [[image-generation|AI Marketing Image Pipeline — Complete Documentation]]
-- [[controlnet|ControlNet Glyph Injection for Text Rendering]]
-- [[01-What-is-Spring-Framework|Spring Framework Fundamentals]]
-- [[02-What-is-Spring-Boot|Spring Boot & Autoconfiguration]]
-- [[03-Why-Use-Spring-Boot|Why Spring Boot for Microservices]]
+- [[django/djangointernals|Django Internals — The RESTaurant Analogy]]
+- [[genai/image-generation|AI Marketing Image Pipeline — Complete Documentation]]
+- [[springboot/spring-boot-tutorial/01-What-is-Spring-Framework|Spring Framework Fundamentals]]
+- [[springboot/spring-boot-tutorial/02-What-is-Spring-Boot|Spring Boot & Autoconfiguration]]
+- [[springboot/spring-boot-tutorial/03-Why-Use-Spring-Boot|Why Spring Boot for Microservices]]
 
 ---
 
 ##  Quick Stats
 
-- **** Computer Network topics (complete curriculum)
--  Spring Boot chapters (Framework → Boot → Microservices)
+- **50+** Computer Network topics (complete curriculum)
+- **3** Spring Boot chapters (Framework → Boot → Microservices)
 - **7-stage** AI image generation pipeline with ControlNet
 - **Full** Django REST Framework architectural deep-dive
 - **Complete** AI/ML knowledge base structure (ML, DL, NLP, CV, GenAI)

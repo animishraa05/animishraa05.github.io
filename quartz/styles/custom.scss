@@ -40,8 +40,13 @@ body {
 
 article {
   max-width: 740px;
-  line-height: 1.9 !important;
+  line-height: 1.75 !important;
   font-size: 1.05rem;
+}
+
+article p {
+  margin-bottom: 1.1em;
+  letter-spacing: 0.01em;
 }
 
 .page[data-slug="index"] article {
@@ -90,16 +95,24 @@ article {
   font-size: 0.95rem !important;
   font-weight: 700 !important;
   letter-spacing: 0.04em;
-  color: var(--secondary) !important;
 
   &::before {
     content: "~ ";
     opacity: 0.4;
+    color: var(--secondary);
   }
 
   a {
     border-bottom: none !important;
-    background: none !important;
+    background: linear-gradient(135deg, var(--secondary), var(--tertiary)) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.75;
+    }
   }
 }
 
@@ -175,7 +188,7 @@ article {
 // All file/folder links
 .explorer ul li a {
   font-size: 0.85em;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.2s ease;
   color: var(--darkgray) !important;
   background: none !important;
   white-space: nowrap;
@@ -183,13 +196,15 @@ article {
   text-overflow: ellipsis;
   display: block;
   max-width: 100%;
-  padding: 2px 4px;
+  padding: 2px 8px;
   border-radius: 4px;
-  margin-left: -4px;
+  margin-left: -8px;
+  border-left: 2px solid transparent;
 
   &:hover {
     color: var(--secondary) !important;
-    background: color-mix(in srgb, var(--highlight) 50%, transparent) !important;
+    background: color-mix(in srgb, var(--highlight) 60%, transparent) !important;
+    border-left-color: color-mix(in srgb, var(--secondary) 40%, transparent);
     transform: translateX(2px);
   }
   
@@ -198,7 +213,9 @@ article {
   &.active {
     color: var(--secondary) !important;
     background: var(--highlight) !important;
+    border-left: 2px solid var(--secondary) !important;
     font-weight: 600;
+    padding-left: 10px;
   }
 }
 
@@ -327,7 +344,10 @@ article {
 article h1 {
   font-size: 1.75rem !important;
   font-weight: 800 !important;
-  color: var(--dark) !important;
+  background: linear-gradient(135deg, var(--secondary), var(--tertiary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   border-bottom: 1px solid var(--lightgray);
   padding-bottom: 0.4em;
   margin-bottom: 1em;
@@ -634,9 +654,10 @@ footer p:last-child {
   display: none !important;
 }
 
-// ─── Folder pages ───────────────────────────────────────────────
+// ─── Folder pages (folder listing cards only, NOT sidebar explorer) ───
 
-.folder-outer {
+.section-ul .folder-outer,
+li.section-li .folder-outer {
   border: 1px solid var(--lightgray);
   border-radius: 8px;
   padding: 1em;
@@ -883,12 +904,20 @@ footer p:last-child {
   top: 0;
   left: 0;
   width: 0%;
-  height: 2px;
-  background: linear-gradient(90deg, var(--secondary), var(--tertiary));
+  height: 3px;
+  background: linear-gradient(90deg, var(--secondary), var(--tertiary), var(--secondary));
+  background-size: 200% 100%;
+  animation: progressShimmer 3s linear infinite;
   z-index: 99999;
   transition: width 0.1s linear;
   border-radius: 0 2px 2px 0;
   pointer-events: none;
+  box-shadow: 0 0 8px color-mix(in srgb, var(--secondary) 60%, transparent);
+}
+
+@keyframes progressShimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
 
 // ─── Font Weight Contrast ────────────────────────────────────────

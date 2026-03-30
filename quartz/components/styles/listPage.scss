@@ -7,11 +7,18 @@ ul.section-ul {
 }
 
 li.section-li {
-  margin-bottom: 1em;
+  margin-bottom: 0.6em;
 
   & > .section {
-    display: grid;
-    grid-template-columns: fit-content(8em) 3fr 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1em;
+
+    & > .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
 
     @media all and ($mobile) {
       & > .tags {
@@ -24,8 +31,9 @@ li.section-li {
     }
 
     & .meta {
-      margin: 0 1em 0 0;
-      opacity: 0.6;
+      font-size: 0.78em;
+      opacity: 0.5;
+      margin: 0;
     }
   }
 }
