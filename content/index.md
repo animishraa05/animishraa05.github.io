@@ -58,6 +58,12 @@ A curated map to the knowledge base:
 - **[[distributed-systems/microservices|Microservices]]**: Service decomposition, inter-service communication, and resilience patterns.
 - **[[distributed-systems/cloud-computing|Cloud Computing]]**: Cloud-native architectures and distributed infrastructure.
 
+### The Wiki (Second Brain)
+
+- **[[wiki/index|The Wiki]]**: A persistent, interlinked knowledge layer where concepts from various sources (EJB, networking, TOC, etc.) are distilled into atomic, compounding notes.
+- **[[wiki/log|Operation Log]]**: History of wiki ingests and maintenance.
+- **[[wiki/SCHEMA|Wiki Schema]]**: The conventions and rules governing the knowledge base.
+
 ### Computer Science Fundamentals
 
 Explore the complete [[computer-science|Computer Science]] curriculum:
@@ -91,6 +97,8 @@ Explore the complete [[computer-science|Computer Science]] curriculum:
 
 ##  Quick Stats
 
+- **120+** Atomic concept pages in [[wiki/index|The Wiki]]
+- **11** Knowledge domains (Networking, EJB, TOC, AI, etc.)
 - **50+** Computer Network topics (complete curriculum)
 - **3** Spring Boot chapters (Framework → Boot → Microservices)
 - **7-stage** AI image generation pipeline with ControlNet
