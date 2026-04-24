@@ -1,7 +1,8 @@
 ---
-title: "Detailed Study of PushDown Automata"
-topic: "theory-of-computation"
-scraped_date: [[2026-03-29]]
+title: Detailed Study of PushDown Automata
+topic: theory-of-computation
+a:
+  - - 2026-03-29
 ---
 
 # Detailed Study of PushDown Automata

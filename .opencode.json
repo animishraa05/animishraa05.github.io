@@ -1,0 +1,14 @@
+{
+  "providers": {
+    "google": {
+      "api_key_env": "GEMINI_API_KEY",
+      "disabled": false
+    }
+  },
+  "agents": {
+    "coder": {
+      "model": "google/gemini-2.0-flash",
+      "maxTokens": 8192
+    }
+  }
+}
