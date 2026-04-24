@@ -22,6 +22,10 @@ Generating
 
 A curated map to the knowledge base:
 
+### 🧠 The Second Brain
+
+- **[[wiki/index|Knowledge Wiki]]**: My persistent, interlinked second brain. Over 120+ atomic concept notes distilled from various sources, covering networking, theory of computation, EJB, image generation, and more.
+
 ### Core Computer Science
 
 - **[[computer-networks/01_Introduction_to_Computer_Networks|Computer Networks]]**: TCP/IP, HTTP, DNS, Security, VPNs, OSI & TCP/IP models, and the full protocol stack (50+ topics from Physical Layer to Network Virtualization).
