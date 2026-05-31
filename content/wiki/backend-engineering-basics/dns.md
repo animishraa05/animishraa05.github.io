@@ -2,10 +2,10 @@
 concept: DNS
 aliases: [Domain Name System, domain resolution, DNS lookup]
 tags: [networking, dns]
-sources_count: 1
-last_source: Backend Engineering Basics.md
+sources_count: 2
+last_source: https.md
 created: 2026-04-12
-updated: 2026-04-12
+updated: 2026-04-30
 ---
 
 # DNS (Domain Name System)
@@ -36,10 +36,12 @@ This happens in milliseconds. DNS uses caching heavily—once resolved, subseque
 - Anycast allows multiple servers to serve the same domain from different locations
 
 ## Connections
-
 - **Built from:** [[ip-address|IP Address]] — DNS resolves to IP addresses
 - **Builds into:** [[http|HTTP]] — HTTP requests need an IP, which DNS provides
+- **Builds into:** [[dns-lookup|DNS Lookup]] — DNS lookup is the full resolution process
 - **Related:** [[ports|Port]] — IP + port identifies the final destination
+- **Related:** [[dns-cache|DNS Cache]] — caching speeds up DNS resolution
+- **Related:** [[recursive-dns|Recursive DNS]] — does the heavy lifting for clients
 - **Contrasts with:** [[circuit-switching|Circuit Switching]] — DNS is packet-based, not circuit-based
 
 ## Edge Cases & Gotchas

@@ -57,4 +57,4 @@ A Mobile Ad Hoc Network (MANET) is a self-configuring network of mobile devices 
 - Not suitable for real-time applications without explicit QoS support
 
 ## Sources
-- [[../wireless-n-summary|WirelessN.md]]
+- [[wireless-n-summary|WirelessN.md]]

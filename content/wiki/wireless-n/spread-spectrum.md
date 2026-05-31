@@ -52,4 +52,4 @@ There are two primary techniques:
 - DSSS spreading codes must have good autocorrelation properties to minimize ISI
 
 ## Sources
-- [[../wireless-n-summary|WirelessN.md]]
+- [[wireless-n-summary|WirelessN.md]]

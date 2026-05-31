@@ -68,4 +68,4 @@ Antennas are classified by their radiation pattern: isotropic (theoretical perfe
 - Diversity and MIMO are different: diversity improves reliability, MIMO improves throughput
 
 ## Sources
-- [[../wireless-n-summary|WirelessN.md]]
+- [[wireless-n-summary|WirelessN.md]]

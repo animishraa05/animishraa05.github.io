@@ -34,9 +34,10 @@ With bean-managed persistence (BMP), the developer writes explicit JDBC code (or
 
 ## Connections
 
-- Built from: [[entity-bean|Entity Bean]]
+- Built from: [[entity-bean|Entity Bean]], [[jdbc|JDBC]]
+- Builds into: [[ejbcreate|ejbCreate()]], [[ejbremove|ejbRemove()]], [[finder-methods|Finder Methods]], [[ejbload|ejbLoad()]], [[ejbstore|ejbStore()]], [[one-to-one-relationship|One-to-One Relationship]], [[one-to-many-relationship|One-to-Many Relationship]], [[many-to-many-relationship|Many-to-Many Relationship]]
 - Contrasts with: [[container-managed-persistence|Container-Managed Persistence]]
-- Related: [[ejbcreate|ejbCreate()]], [[ejbremove|ejbRemove()]]
+- Related: [[getprimarykey|getPrimaryKey()]], [[instance-pooling|Instance Pooling]], [[primary-key-class|Primary Key Class]], [[session-bean-relationships|Session Bean Relationships]]
 
 ## Edge Cases & Gotchas
 

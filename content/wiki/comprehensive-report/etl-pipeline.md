@@ -2,8 +2,10 @@
 concept: ETL Pipeline
 aliases: [ETL, extract transform load, data pipeline]
 tags: [database, data-engineering]
+sources_count: 2
+last_source: dw1.md
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-05-04
 ---
 
 # ETL Pipeline
@@ -41,16 +43,17 @@ ETL (Extract, Transform, Load) is a three-phase data pipeline that reads raw dat
 
 ## Connections
 - Builds into: [[data-warehouse|Data Warehouse]] — ETL populates the warehouse
-- Builds into: [[dimension-table|Dimension Table]] — ETL creates dimension tables
-- Builds into: [[fact-table|Fact Table]] — ETL creates fact tables
+- Builds into: [[wiki/comprehensive-report/dimension-table|Dimension Table]] — ETL creates dimension tables
+- Builds into: [[wiki/comprehensive-report/fact-table|Fact Table]] — ETL creates fact tables
 - Related: [[apache-airflow|Apache Airflow]] — orchestration runs ETL on schedule
-- Related: [[star-schema|Star Schema]] — ETL transforms data into star schema format
+- Related: [[wiki/comprehensive-report/star-schema|Star Schema]] — ETL transforms data into star schema format
 
 ## Edge Cases & Gotchas
 - **Partial failure**: If load fails midway, inconsistent data remains—use transactions
 - **Reference date staleness**: Hardcoded 2024-12-31 makes tenure values incorrect over time
 - **Full refresh limitation**: Doesn't scale to millions of rows—in production use incremental UPSERT
 - **No watermark tracking**: Simple REPLACE loses ability to process only new records
-
 ## Sources
+
 - [[../comprehensive-report-summary|FoodFlow Analytics Comprehensive Report]]
+- [[dw1-summary|Data Warehouse — Definitions, Architecture, ETL, OLAP]] — four-phase ETL process, data scrubbing, loading with checkpoints, refresh techniques

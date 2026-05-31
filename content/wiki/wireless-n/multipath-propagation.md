@@ -46,4 +46,4 @@ The delay spread (difference between earliest and latest arriving paths) determi
 - OFDM (used in Wi-Fi, 4G, 5G) converts one wide band into many narrow subcarriers, each less affected by frequency-selective multipath
 
 ## Sources
-- [[../wireless-n-summary|WirelessN.md]]
+- [[wireless-n-summary|WirelessN.md]]

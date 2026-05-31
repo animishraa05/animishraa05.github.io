@@ -55,4 +55,4 @@ DAMA (Demand Assigned Multiple Access) is a combination of random access (Aloha)
 - PRMA requires a voice activity detector to efficiently use slots during silence periods
 
 ## Sources
-- [[../wireless-n-summary|WirelessN.md]]
+- [[wireless-n-summary|WirelessN.md]]

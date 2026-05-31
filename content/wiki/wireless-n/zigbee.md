@@ -62,4 +62,4 @@ ZigBee (IEEE 802.15.4) is an ultra-low-power wireless personal area network (WPA
 - ZigBee and BLE are not interoperable — separate ecosystems
 
 ## Sources
-- [[../wireless-n-summary|WirelessN.md]]
+- [[wireless-n-summary|WirelessN.md]]

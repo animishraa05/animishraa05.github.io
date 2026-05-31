@@ -36,8 +36,8 @@ A *stateless* *session* bean is a session bean that holds conversations that spa
 
 - Built from: [[session-bean|Session Bean]]
 - Builds into: [[instance-pooling|Instance Pooling]]
-- Contrasts with: [[stateful-session-bean|Stateful Session Bean]]
-- Related: [[ejb-container|EJB Container]]
+- Contrasts with: [[stateful-session-bean|Stateful Session Bean]], [[message-driven-bean|Message-Driven Bean]]
+- Related: [[ejb-container|EJB Container]], [[transaction-demarcation|Transaction Demarcation]], [[queue-partitioning|Queue Partitioning]]
 
 ## Edge Cases & Gotchas
 

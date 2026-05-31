@@ -4,6 +4,7 @@ source_path: sources/COMPREHENSIVE_REPORT.md
 content_hash: ""
 ingested: 2026-04-14
 concepts_count: 11
+tags: [database, data-engineering]
 ---
 
 # FoodFlow Analytics — Source Summary
@@ -14,9 +15,9 @@ A comprehensive end-to-end data warehouse and analytics project for an Indian fo
 ## Concepts Extracted
 This source introduced 11 atomic concepts:
 
-1. **[[star-schema|Star Schema]]** — Denormalized dimensional model with fact tables at center, dimension tables surrounding
-2. **[[dimension-table|Dimension Table]]** — Descriptive attributes about business entities (customer, restaurant, date)
-3. **[[fact-table|Fact Table]]** — Measurable business events with foreign keys to dimensions
+1. **[[wiki/comprehensive-report/star-schema|Star Schema]]** — Denormalized dimensional model with fact tables at center, dimension tables surrounding
+2. **[[wiki/comprehensive-report/dimension-table|Dimension Table]]** — Descriptive attributes about business entities (customer, restaurant, date)
+3. **[[wiki/comprehensive-report/fact-table|Fact Table]]** — Measurable business events with foreign keys to dimensions
 4. **[[etl-pipeline|ETL Pipeline]]** — Extract, Transform, Load process that populates warehouse
 5. **[[data-warehouse|Data Warehouse]]** — Separate analytical database for OLAP queries
 6. **[[apache-airflow|Apache Airflow]]** — Workflow orchestration for scheduling and monitoring pipelines
@@ -41,3 +42,16 @@ This source adds **data engineering** domain concepts to the wiki. Previously th
 - How would incremental ETL differ from full REPLACE for this schema?
 - What additional features would improve Prophet forecasting accuracy?
 - How would real-time streaming change the architecture?
+
+## Connections
+
+- [[wiki/comprehensive-report/star-schema|Star Schema]] — dimensional model design
+- [[etl-pipeline|ETL Pipeline]] — data loading process
+- [[data-warehouse|Data Warehouse]] — analytical storage
+- [[apache-airflow|Apache Airflow]] — workflow orchestration
+- [[prophet-forecasting|Prophet Forecasting]] — ML forecasting
+- [[rfm-segmentation|RFM Segmentation]] — customer analytics
+- [[docker-compose|Docker Compose]] — infrastructure orchestration
+- [[wiki/comprehensive-report/fact-table|Fact Table]] — measurable events
+- [[wiki/comprehensive-report/dimension-table|Dimension Table]] — descriptive attributes
+- [[customer-lifetime-value|Customer Lifetime Value]] — revenue metric

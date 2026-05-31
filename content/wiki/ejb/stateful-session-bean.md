@@ -36,8 +36,8 @@ A stateful session bean is a session bean designed to service business processes
 
 - Built from: [[session-bean|Session Bean]]
 - Builds into: [[passivation|Passivation]], [[activation|Activation]]
-- Contrasts with: [[stateless-session-bean|Stateless Session Bean]]
-- Related: [[ejbpassivate|ejbPassivate()]], [[ejbactivate|ejbActivate()]]
+- Contrasts with: [[stateless-session-bean|Stateless Session Bean]], [[message-driven-bean|Message-Driven Bean]]
+- Related: [[ejbpassivate|ejbPassivate()]], [[ejbactivate|ejbActivate()]], [[session-bean-relationships|Session Bean Relationships]]
 
 ## Edge Cases & Gotchas
 

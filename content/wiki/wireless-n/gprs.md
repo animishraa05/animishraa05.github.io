@@ -53,4 +53,4 @@ GPRS (General Packet Radio Service) adds packet-switching capability to the exis
 - Handover between voice and data: GSM handles voice first; data gets preempted
 
 ## Sources
-- [[../wireless-n-summary|WirelessN.md]]
+- [[wireless-n-summary|WirelessN.md]]

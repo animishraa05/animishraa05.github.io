@@ -4,6 +4,7 @@ source_path: sources/Lsp.md
 content_hash: lsp-neovim-doc-2026
 ingested: 2026-04-12
 concepts_count: 7
+tags: [dev, lsp]
 ---
 
 ## What concepts were extracted
@@ -38,3 +39,14 @@ concepts_count: 7
 
 - How does LSP compare to Treesitter in terms of use cases and performance?
 - What are the security implications of running language servers as subprocesses?
+
+## Connections
+
+- [[language-server-protocol|Language Server Protocol]] — protocol overview
+- [[vim-lsp|vim.lsp]] — Neovim LSP framework
+- [[lsp-configuration|LSP Configuration]] — config merge chain
+- [[lsp-client|LSP Client]] — runtime client object
+- [[lsp-root-markers|Root Markers]] — workspace detection
+- [[lsp-events|LSP Events]] — lifecycle events
+- [[lsp-semantic-tokens|Semantic Tokens]] — semantic highlighting
+- [[vim-modes|Vim Modes]] — Vim fundamentals this builds on

@@ -41,11 +41,11 @@ The near/far effect is fundamentally different from the other two: it is caused 
 - These mechanisms are often combined in modern wireless systems (802.11 + power control, CDMA + MACA)
 
 ## Connections
-- [[../hidden-terminal-problem|Hidden Terminal Problem]] — collision at the receiver
-- [[../exposed-terminal-problem|Exposed Terminal Problem]] — unnecessary deferral
-- [[../near-far-terminal|Near/Far Terminal Effect]] — drowning out of weak signals
-- [[../maca|MACA]] — the protocol that solves hidden/exposed terminal
-- [[../csma-cd|CSMA/CD]] — the wired protocol that fails in wireless
+- [[hidden-terminal-problem|Hidden Terminal Problem]] — collision at the receiver
+- [[exposed-terminal-problem|Exposed Terminal Problem]] — unnecessary deferral
+- [[near-far-terminal|Near/Far Terminal Effect]] — drowning out of weak signals
+- [[maca|MACA]] — the protocol that solves hidden/exposed terminal
+- [[csma-cd|CSMA/CD]] — the wired protocol that fails in wireless
 
 ## Sources
 - WirelessN.md — Jochen Schiller "Mobile Communications" ch 3

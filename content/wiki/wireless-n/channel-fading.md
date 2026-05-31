@@ -45,4 +45,4 @@ Fading typically follows statistical distributions: Rayleigh fading when there i
 - Diversity combining (selection, maximal ratio combining) can provide 10–30 dB of improvement
 
 ## Sources
-- [[../wireless-n-summary|WirelessN.md]]
+- [[wireless-n-summary|WirelessN.md]]

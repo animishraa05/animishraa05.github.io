@@ -47,4 +47,4 @@ Minimum orthogonal separation: Δf = 1/(2T) where T is the bit duration. This is
 - GMSK applies a Gaussian filter before modulation to further smooth the frequency transitions
 
 ## Sources
-- [[../wireless-n-summary|WirelessN.md]]
+- [[wireless-n-summary|WirelessN.md]]

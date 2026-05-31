@@ -5,6 +5,7 @@ source_path: sources/imgen.md
 content_hash:
 ingested: 2026-04-12
 concepts_count: 10
+tags: [ai, image-generation]
 ---
 
 ## Source Overview
@@ -50,3 +51,16 @@ This source is a conversation transcript covering the design of a production-gra
 - [[t5-encoder]]
 - [[lora-finetuning]]
 - [[controlnet]]
+
+## Connections
+
+- [[hybrid-pipeline|Hybrid Pipeline]] — architecture decision
+- [[text-rendering-problem|Text Rendering Problem]] — 3-layer root causes
+- [[flux-architecture|Flux Architecture]] — base model
+- [[diffusion-models|Diffusion Models]] — generation mechanism
+- [[vae|VAE]] — latent compression
+- [[clip|CLIP]] — text encoder
+- [[t5-encoder|T5 Encoder]] — character-aware encoder
+- [[glyph-injection|Glyph Injection]] — ControlNet solution
+- [[text-rendering-solutions|Text Rendering Solutions]] — synthesis created
+- [[controlnet|ControlNet]] — spatial conditioning

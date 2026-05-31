@@ -5,6 +5,7 @@ source_path: sources/YBlog - Learn Vim Progressively.md
 content_hash: a1b2c3d4e5f6
 ingested: 2026-04-12
 concepts_count: 11
+tags: [dev, vim]
 ---
 
 ## Concepts Extracted
@@ -58,3 +59,17 @@ Extracted 11 atomic Vim concept pages with practical commands. Complements exist
 - How do folds (za, zR) fit into this progressive framework?
 - How do registers (especially unnamed, black hole, and named) extend beyond macros?
 - How does this connect to Neovim's Lua configuration and plugins?
+
+## Connections
+
+- [[vim-modes|Vim Modes]] — modal editing fundamentals
+- [[vim-basic-commands|Vim Basic Commands]] — survival commands
+- [[vim-text-objects|Vim Text Objects]] — zone selection
+- [[vim-visual-selection|Vim Visual Selection]] — text region selection
+- [[vim-search-navigation|Vim Search & Navigation]] — movement patterns
+- [[vim-macros|Vim Macros]] — command recording/replay
+- [[vim-repetition|Vim Repetition]] — dot command and counts
+- [[vim-splits|Vim Splits]] — window management
+- [[vim-buffers|Vim Buffers]] — file management
+- [[language-server-protocol|Language Server Protocol]] — complements LSP wiki
+- [[vim-lsp|vim.lsp]] — related Neovim LSP integration

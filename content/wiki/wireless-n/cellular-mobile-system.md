@@ -50,4 +50,4 @@ Key concepts: **Frequency Reuse** (same frequencies in distant cells), **Cell Sp
 - Too many small cells cause excessive handoffs, degrading quality
 
 ## Sources
-- [[../wireless-n-summary|WirelessN.md]]
+- [[wireless-n-summary|WirelessN.md]]

@@ -49,4 +49,4 @@ In CDMA systems, the near/far effect is particularly devastating because all use
 - Near/far is a fundamental reason why CDMA required sophisticated power control before being deployed
 
 ## Sources
-- [[../wireless-n-summary|WirelessN.md]]
+- [[wireless-n-summary|WirelessN.md]]

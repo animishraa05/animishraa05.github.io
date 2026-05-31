@@ -1,8 +1,12 @@
 ---
-title: "Array Data Structure"
-topic: "algorithms"
-tags: [algorithms, gate-cse, dsa, algorithms, gate-cse, dsa, algorithms, gate-cse, dsa]
-scraped_date: [[2026-03-29]]
+title: Array Data Structure
+topic: algorithms
+tags:
+  - algorithms
+  - gate-cse
+  - dsa
+scraped_date:
+  - - 2026-03-29
 ---
 
 # Array Data Structure

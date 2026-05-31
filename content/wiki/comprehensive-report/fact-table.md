@@ -2,8 +2,10 @@
 concept: Fact Table
 aliases: [fact, measure, business metric]
 tags: [database, data-warehouse]
+sources_count: 2
+last_source: dw1.md
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-05-04
 ---
 
 # Fact Table
@@ -41,9 +43,9 @@ ORDER BY revenue DESC
 - **Denormalization**: customer_id and date_id included in fact_order_items to avoid JOINs
 
 ## Connections
-- Built from: [[star-schema|Star Schema]] — fact tables are the center
+- Built from: [[wiki/comprehensive-report/star-schema|Star Schema]] — fact tables are the center
 - Builds into: [[data-warehouse|Data Warehouse]] — fact tables are core warehouse components
-- Related: [[dimension-table|Dimension Table]] — fact tables reference dimensions
+- Related: [[wiki/comprehensive-report/dimension-table|Dimension Table]] — fact tables reference dimensions
 - Related: [[sql-database|SQL Database]] — fact tables are implemented in SQL
 - Related: [[etl-pipeline|ETL Pipeline]] — ETL populates fact tables
 
@@ -52,6 +54,7 @@ ORDER BY revenue DESC
 - **NULL in measures**: Aggregations like SUM() ignore NULLs—use COALESCE or fill nulls with 0
 - **Integer flags vs boolean**: Using SMALLINT (0/1) instead of BOOLEAN enables SUM(is_delivered) directly
 - **Degenerate dimension misuse**: Creating separate tables for 3-5 value attributes adds overhead with no benefit
-
 ## Sources
+
 - [[../comprehensive-report-summary|FoodFlow Analytics Comprehensive Report]]
+- [[dw1-summary|Data Warehouse — Definitions, Architecture, ETL, OLAP]] — fact table with measures and foreign keys, fact constellation with multiple facts

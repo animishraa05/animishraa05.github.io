@@ -2,8 +2,10 @@
 concept: Dimension Table
 aliases: [dimension, dimension attribute, descriptive attribute]
 tags: [database, data-warehouse]
+sources_count: 2
+last_source: dw1.md
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-05-04
 ---
 
 # Dimension Table
@@ -33,8 +35,8 @@ In a food delivery warehouse:
 - **Foreign key in fact**: Fact tables reference dimension primary keys
 
 ## Connections
-- Built from: [[star-schema|Star Schema]] — dimension tables are a core component
-- Builds into: [[fact-table|Fact Table]] — fact tables reference dimensions via foreign keys
+- Built from: [[wiki/comprehensive-report/star-schema|Star Schema]] — dimension tables are a core component
+- Builds into: [[wiki/comprehensive-report/fact-table|Fact Table]] — fact tables reference dimensions via foreign keys
 - Related: [[etl-pipeline|ETL Pipeline]] — ETL transforms raw data into dimension tables
 - Related: [[data-warehouse|Data Warehouse]] — dimensions are part of the warehouse schema
 
@@ -42,6 +44,7 @@ In a food delivery warehouse:
 - **Hardcoded reference date**: Using fixed reference date (2024-12-31) makes tenure_days stale over time
 - **Type 1 limitation**: Customer city change overwrites history—old orders appear in new city
 - **Low-cardinality attributes**: Attributes with 3-5 values (status, platform) belong in fact as degenerate dimensions, not separate dimension tables
-
 ## Sources
+
 - [[../comprehensive-report-summary|FoodFlow Analytics Comprehensive Report]]
+- [[dw1-summary|Data Warehouse — Definitions, Architecture, ETL, OLAP]] — dimension tables with attributes, hierarchies, normalization in snowflake schema

@@ -4,6 +4,7 @@ source_path: sources/Backend Engineering Basics.md
 content_hash: 401791f91ca599ff8d7991fbbf9a519adcca4d7f0af65201259c7b2629957856
 ingested: 2026-04-12
 concepts_count: 18
+tags: [dev, backend]
 ---
 
 # Source: Backend Engineering Basics
@@ -48,3 +49,18 @@ This source reinforces existing wiki content on HTTP, server, client-server mode
 - What are the exact performance trade-offs between session and JWT auth at scale?
 - When should you build from scratch vs use a framework?
 - How do reverse proxies actually handle TLS termination in production?
+
+## Connections
+
+- [[backend-as-program|Backend as Program]] — core concept
+- [[socket|Socket]] — communication endpoint
+- [[tcp-handshake|TCP Handshake]] — connection establishment
+- [[tls-handshake|TLS Handshake]] — encryption negotiation
+- [[http-protocol|HTTP Protocol]] — application protocol
+- [[dns|DNS]] — name resolution
+- [[sql-database|SQL Database]] — relational storage
+- [[nosql-database|NoSQL Database]] — flexible storage
+- [[session-authentication|Session Authentication]] — server-side auth
+- [[jwt-authentication|JWT Authentication]] — stateless auth
+- [[backend-architecture|Backend Architecture]] — layered structure
+- [[backend-framework|Backend Framework]] — abstraction layer

@@ -47,4 +47,4 @@ Wireless networks operate in regulated frequency bands (e.g., 800 MHz–900 MHz 
 - Mobile devices have limited battery power — transmission must be energy-efficient
 
 ## Sources
-- [[../wireless-n-summary|WirelessN.md]]
+- [[wireless-n-summary|WirelessN.md]]

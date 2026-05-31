@@ -5,7 +5,7 @@ tags: [dev, ejb, stateful-bean]
 created: 2026-04-11
 updated: 2026-04-11
 ---
-
+	
 # Passivation
 
 ## The Problem

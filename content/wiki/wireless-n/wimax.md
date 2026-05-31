@@ -64,4 +64,4 @@ WiMAX (IEEE 802.16) is a metropolitan area wireless broadband standard providing
 - Mobile WiMAX (802.16e) was the first 4G contender but lost to LTE
 
 ## Sources
-- [[../wireless-n-summary|WirelessN.md]]
+- [[wireless-n-summary|WirelessN.md]]

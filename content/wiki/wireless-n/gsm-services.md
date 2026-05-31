@@ -60,4 +60,4 @@ GSM defines three categories of services: bearer services (transparent data tran
 - GPRS (2.5G) dramatically improved bearer services with packet switching
 
 ## Sources
-- [[../wireless-n-summary|WirelessN.md]]
+- [[wireless-n-summary|WirelessN.md]]

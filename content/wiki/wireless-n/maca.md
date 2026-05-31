@@ -48,4 +48,4 @@ MACA is a MAC protocol that solves the hidden terminal problem through a four-wa
 - In practice, RTS/CTS is only enabled for data frames exceeding a certain length threshold
 
 ## Sources
-- [[../wireless-n-summary|WirelessN.md]]
+- [[wireless-n-summary|WirelessN.md]]

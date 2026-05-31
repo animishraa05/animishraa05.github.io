@@ -47,4 +47,4 @@ Modulation is the process of encoding digital information onto a high-frequency 
 - MSK and GMSK are used in cellular systems because of their spectral efficiency and constant envelope (power efficiency)
 
 ## Sources
-- [[../wireless-n-summary|WirelessN.md]]
+- [[wireless-n-summary|WirelessN.md]]

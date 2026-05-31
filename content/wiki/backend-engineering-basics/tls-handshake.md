@@ -2,10 +2,10 @@
 concept: TLS Handshake
 aliases: [TLS, SSL, transport layer security, SSL handshake, HTTPS handshake]
 tags: [security, tls]
-sources_count: 1
-last_source: Backend Engineering Basics.md
+sources_count: 2
+last_source: https.md
 created: 2026-04-12
-updated: 2026-04-12
+updated: 2026-04-30
 ---
 
 # TLS Handshake
@@ -37,9 +37,10 @@ After handshake, all data is encrypted using the agreed-upon cipher (e.g., AES-2
 - Runs on top of TCP, before HTTP begins
 
 ## Connections
-
 - **Built from:** [[socket|Socket]] — TLS runs over TCP sockets
+- **Built from:** [[tcp-handshake|TCP Handshake]] — TCP must be established first
 - **Builds into:** [[https|HTTPS]] — HTTPS is HTTP over TLS
+- **Builds into:** [[hsts|HSTS]] — HSTS enforces HTTPS/TLS usage
 - **Related:** [[http|HTTP]] — TLS encrypts HTTP communication
 - **Contrasts with:** [[http|HTTP]] — plain HTTP has no encryption or authentication
 - **Related:** [[certificate-authority|Certificate Authority]] — CAs sign certificates for server verification

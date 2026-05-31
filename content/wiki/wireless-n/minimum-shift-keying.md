@@ -47,4 +47,4 @@ The smooth waveform avoids sharp discontinuities, which means no high-frequency 
 - In practice, MSK is filtered with a Gaussian filter before transmission to further smooth transitions
 
 ## Sources
-- [[../wireless-n-summary|WirelessN.md]]
+- [[wireless-n-summary|WirelessN.md]]

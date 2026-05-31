@@ -47,4 +47,4 @@ Co-channel interference is the interference between signals from co-channel cell
 - Soft handoff in CDMA provides macro-diversity, which also reduces co-channel interference
 
 ## Sources
-- [[../wireless-n-summary|WirelessN.md]]
+- [[wireless-n-summary|WirelessN.md]]

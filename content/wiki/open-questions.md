@@ -16,6 +16,7 @@ updated: 2026-04-11
 When ingesting a source, the LLM should ask: **what did this source make me wonder that I can't answer from existing wiki pages?**
 
 Each question gets:
+
 - The question itself
 - Which source raised it
 - Which existing concepts are related
@@ -29,7 +30,7 @@ Each question gets:
 
 ### EJB / Enterprise Java
 
-- *(No questions yet — EJB was the first source)*
+- _(No questions yet — EJB was the first source)_
 
 ### Backend Engineering
 
@@ -40,15 +41,15 @@ Each question gets:
 
 ### Networking
 
-- *(No questions yet — seeding phase)*
+- _(No questions yet — seeding phase)_
 
 ### Theory of Computation
 
-- *(No questions yet — seeding phase)*
+- _(No questions yet — seeding phase)_
 
 ### Cross-Domain
 
-- *(No questions yet — need more sources to reveal connections)*
+- _(No questions yet — need more sources to reveal connections)_
 
 ### Data Engineering
 
@@ -62,7 +63,7 @@ Each question gets:
 
 <!-- When a question is answered, move it here with the answer -->
 
-- *(None yet)*
+- _(None yet)_
 
 ---
 

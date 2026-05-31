@@ -3,7 +3,7 @@ concept: Object-Relational Mapping
 aliases: [O/R Mapping, ORM]
 tags: [dev, ejb, persistence, database]
 created: 2026-04-11
-updated: 2026-04-11
+updated: 2026-05-13
 ---
 
 # Object-Relational Mapping
@@ -29,8 +29,9 @@ Object-Relational Mapping (O/R mapping) is the technology of converting in-memor
 - Decomposes objects into relational data
 - Enables arbitrary database queries (unlike serialization)
 - Data is visually inspectable in the database
-- Can be handcrafted or automated with tools like Hibernate
-- EJB uses this for entity beans
+- Can be handcrafted or automated with tools like Hibernate, EclipseLink, and MyBatis
+- EJB uses this for entity beans (CMP)
+- Hibernate extends ORM with caching (1st/2nd level), HQL (object-oriented queries), and inheritance mapping strategies
 
 ## Connections
 
@@ -46,3 +47,4 @@ Object-Relational Mapping (O/R mapping) is the technology of converting in-memor
 ## Sources
 
 - [[ejb-source-summary|EJB Source]]
+- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Hibernate ORM implementation

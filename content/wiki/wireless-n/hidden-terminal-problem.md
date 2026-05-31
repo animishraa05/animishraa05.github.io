@@ -48,4 +48,4 @@ Standard CSMA fails because carrier sense only detects local transmissions, not 
 - In dense ad hoc networks, hidden terminals can form chains of 3+ nodes
 
 ## Sources
-- [[../wireless-n-summary|WirelessN.md]]
+- [[wireless-n-summary|WirelessN.md]]

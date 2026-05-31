@@ -55,4 +55,4 @@ Handoff is the process of transferring an active call from one base station to a
 - Hard handoff in GSM was acceptable for 2G voice but problematic for 3G data
 
 ## Sources
-- [[../wireless-n-summary|WirelessN.md]]
+- [[wireless-n-summary|WirelessN.md]]

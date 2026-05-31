@@ -2,6 +2,7 @@
 source: EJB — Enterprise JavaBeans
 source_path: sources/Ejb.md
 ingested: 2026-04-11
+tags: [dev, ejb]
 ---
 
 # EJB Source Summary
@@ -55,3 +56,19 @@ This source covered **Chapter 4 (Session Beans)** and **Chapter 6 (Introduction 
 - [[ejb-lifecycle-stateful|EJB Lifecycle — Stateful]]
 - [[object-relational-mapping|Object-Relational Mapping]]
 - [[ejb-container|EJB Container]]
+
+## Connections
+
+- [[session-bean|Session Bean]] — Chapter 4 coverage
+- [[stateful-session-bean|Stateful Session Bean]] — stateful variant
+- [[stateless-session-bean|Stateless Session Bean]] — stateless variant
+- [[entity-bean|Entity Bean]] — Chapter 6 coverage
+- [[passivation|Passivation]] — memory optimization
+- [[activation|Activation]] — restoration from disk
+- [[bean-managed-persistence|Bean-Managed Persistence]] — manual JDBC
+- [[container-managed-persistence|Container-Managed Persistence]] — auto-generated
+- [[ejb-lifecycle-stateless|Stateless Bean Lifecycle]] — lifecycle coverage
+- [[ejb-lifecycle-stateful|Stateful Bean Lifecycle]] — lifecycle coverage
+- [[instance-pooling|Instance Pooling]] — resource optimization
+- [[object-relational-mapping|Object-Relational Mapping]] — ORM concept
+- [[ejb-container|EJB Container]] — runtime environment

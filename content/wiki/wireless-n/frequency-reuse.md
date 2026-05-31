@@ -48,4 +48,4 @@ Capacity is directly proportional to the number of times the cluster pattern is 
 - Handoff zones at cell boundaries must be carefully designed to avoid dropped calls
 
 ## Sources
-- [[../wireless-n-summary|WirelessN.md]]
+- [[wireless-n-summary|WirelessN.md]]

@@ -47,8 +47,8 @@ GROUP BY c.customer_id, c.full_name, c.city
 
 ## Connections
 - Related: [[rfm-segmentation|RFM Segmentation]] — CLV monetary dimension is related to RFM
-- Related: [[dimension-table|Dimension Table]] — customer data stored in dim_customer
-- Related: [[fact-table|Fact Table]] — order data in fact_orders used for CLV calculation
+- Related: [[wiki/comprehensive-report/dimension-table|Dimension Table]] — customer data stored in dim_customer
+- Related: [[wiki/comprehensive-report/fact-table|Fact Table]] — order data in fact_orders used for CLV calculation
 
 ## Edge Cases & Gotchas
 - **Zero orders**: LEFT JOIN includes customers who registered but never ordered—they have CLV = 0

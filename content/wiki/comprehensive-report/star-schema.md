@@ -2,8 +2,10 @@
 concept: Star Schema
 aliases: [star schema design, kimball dimensional model]
 tags: [database, data-warehouse]
+sources_count: 2
+last_source: dw1.md
 created: 2026-04-14
-updated: 2026-04-14
+updated: 2026-05-04
 ---
 
 # Star Schema
@@ -46,14 +48,15 @@ GROUP BY r.city
 ## Connections
 - Built from: [[sql-database|SQL Database]] — star schema is implemented on top of relational databases
 - Builds into: [[data-warehouse|Data Warehouse]] — star schema is the standard schema design for OLAP warehouses
-- Builds into: [[dimension-table|Dimension Table]] — dimension tables are a core component of star schema
-- Builds into: [[fact-table|Fact Table]] — fact tables are the center of star schema
+- Builds into: [[wiki/comprehensive-report/dimension-table|Dimension Table]] — dimension tables are a core component of star schema
+- Builds into: [[wiki/comprehensive-report/fact-table|Fact Table]] — fact tables are the center of star schema
 - Related: [[etl-pipeline|ETL Pipeline]] — ETL populates star schema tables from source data
 
 ## Edge Cases & Gotchas
 - **SCD Type 1 only**: Overwrites on change—historical orders show new city if customer moves
 - **Full refresh**: For small datasets, full REPLACE (DROP + INSERT) is simpler than incremental loads
 - **Integer vs DATE**: Using INTEGER date_id (YYYYMMDD) performs faster than DATE type for range scans in PostgreSQL
-
 ## Sources
+
 - [[../comprehensive-report-summary|FoodFlow Analytics Comprehensive Report]]
+- [[dw1-summary|Data Warehouse — Definitions, Architecture, ETL, OLAP]] — Kimball's dimensional modeling, star/snowflake/galaxy schemas, denormalization tradeoffs

@@ -1,241 +1,301 @@
-# SCHEMA — Wiki Conventions
+# Wiki Page Templates
 
-> This file defines page formats, naming rules, and linking conventions. Read this before creating any wiki page.
-
----
-
-## Directory Structure
-
-```
-content/
-├── sources/                     ← RAW SOURCES (drop anything here — articles, transcripts, papers)
-│                                ← Human owns this. LLM reads only, NEVER writes.
-│
-├── [topic-folders]/             ← EXISTING STUDY NOTES (also count as raw sources)
-│   ├── computer-networks/
-│   ├── ai-ml/
-│   ├── springboot/
-│   └── ...
-│
-└── wiki/                        ← THE WIKI (LLM-owned, interlinked, compounding)
-    ├── SCHEMA.md                ← THIS file
-    ├── index.md                 ← Wiki landing page (catalog with one-line summaries)
-    ├── log.md                   ← Append-only, grep-parseable log
-    ├── MAINTENANCE.md           ← Human's maintenance guide
-    │
-    ├── ejb/                     ← Topic folder (one per ingested source)
-    │   ├── stateless-session-bean.md      ← concept page
-    │   ├── activation.md                  ← concept page
-    │   ├── cmp-vs-bmp.md                  ← synthesis page
-    │   └── ejb-summary.md                 ← source summary
-    │
-    ├── networking/              ← Another topic folder
-    │   ├── packet-switching.md
-    │   └── ...
-    │
-    └── theory-of-computation/   ← Another topic folder
-        ├── turing-machine.md
-        └── ...
-```
-
-**Raw Sources** = `sources/` (anything you drop: articles, transcripts, papers, notes) + existing topic folders (`computer-networks/`, `ai-ml/`, etc.). These are **immutable** — the LLM **reads from them but never modifies them**. They are the source of truth.
-
-**The Wiki** = `wiki/` directory. The LLM **owns this entirely**. It creates pages, updates them, maintains cross-references, and keeps everything consistent. The human reads it; the LLM writes it.
-
-**Topic Folders** = Inside `wiki/`, each ingested source gets its own folder named after the source (human-readable, kebab-case). ALL pages from that source — concepts, syntheses, source summaries — live inside this single folder.
+> Copy the relevant template when creating a new page.
+> Required fields are marked. Optional fields are marked (optional).
 
 ---
 
-## Topic Folder Naming Rule
+## Template 1 — Concept Page
 
-When ingesting a source, create a topic folder named after the source:
-
-| Source File | Topic Folder |
-|---|---|
-| `Ejb.md` | `wiki/ejb/` |
-| `karpathy-transformer-inference.md` | `wiki/karpathy-transformer-inference/` |
-| `django-orm-deep-dive.md` | `wiki/django-orm-deep-dive/` |
-| `computer-networks-intro.md` | `wiki/computer-networks-intro/` |
-
-Rules:
-- Use the source filename without extension, converted to kebab-case
-- If multiple sources cover the same topic, add them to the SAME folder
-- If the folder already exists, add new pages to it — don't create a duplicate folder
-- Keep it short but descriptive — `ejb` not `ejb-source-from-my-2025-semester-notes`
-
+````markdown
 ---
-
-## Page Types
-
-### 1. Concept Pages
-- **Location:** `wiki/[topic-folder]/[concept-name].md`
-- **One atomic concept per file**
-- **Frontmatter:**
-```yaml
----
-concept: Human Readable Concept Name
-aliases: [alias1, alias2]
-tags: [domain, subdomain]
-sources_count: 1
-last_source: source-filename.md
+concept: Human-Readable Concept Name
+aliases: [alternate name, acronym, misspelling]
+tags: [domain-tag, subtopic]
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
 ---
+
+## The Problem
+
+_Why does this concept exist? What pain, limitation, or question does it address?
+Write 2–4 sentences. This section must not be skipped — it is the "why" that makes everything else stick._
+
+## Core Idea
+
+_The minimum viable definition. What is this concept, in plain language?
+One clear paragraph. Avoid jargon where possible._
+
+## How It Works
+
+_The mechanism. Not just what it does, but how it does it.
+Step-by-step or cause-and-effect prose. Flesh this out when not a stub._
+
+## Visual Explanation
+
+_A Graphviz DOT diagram showing the concept's internal structure, flow, or mechanism._
+_Render with: `dot -Tsvg` or Obsidian's Graphviz plugin._
+
+```dot
+digraph concept_name {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica" fontsize=12]
+  edge [fontname="Helvetica" fontsize=10]
+
+  A [label="Input / Trigger"]
+  B [label="Core Mechanism"]
+  C [label="Output / Result"]
+
+  A -> B [label="causes"]
+  B -> C [label="produces"]
+}
+```
+````
+
+_Replace node labels and edges with vocabulary from this concept.
+Use rankdir=TB for top-down hierarchies. 4–8 nodes is the sweet spot._
+
+## Semantic Network
+
+_A Graphviz DOT mind map showing where this concept lives in the knowledge graph._
+_Color legend: gold = this concept, blue = prerequisites, green = builds into, orange = contrasts with, gray = related._
+
+```dot
+graph semantic_concept_name {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  edge [fontname="Helvetica" fontsize=9]
+
+  // Center node — this concept
+  THIS [label="This Concept" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+
+  // Prerequisites — what this is built from
+  PRE1 [label="Prerequisite A" fillcolor="#cce5ff"]
+
+  // Builds into — what uses this concept
+  OUT1 [label="Higher Concept B" fillcolor="#d4edda"]
+
+  // Contrasts with — similar but different
+  CON1 [label="Contrasting Concept C" fillcolor="#ffe5cc"]
+
+  // Related — adjacent, same domain
+  REL1 [label="Related Concept D" fillcolor="#f0f0f0"]
+
+  THIS -- PRE1  [label="built from"    style=dashed]
+  THIS -- OUT1  [label="builds into"]
+  THIS -- CON1  [label="contrasts with" style=dotted]
+  THIS -- REL1  [label="related"]
+}
 ```
 
-**Maturity tracking:**
-- `sources_count` — how many distinct sources have contributed to this concept (starts at 1)
-- `last_source` — which source last updated this concept (for tracking provenance)
-- A concept with `sources_count >= 3` is considered **well-established**
-- A concept with `sources_count == 1` is **fragile** — needs more sources to confirm it
+_Every node must link to a real wiki page or a planned stub.
+Replace labels with actual concept names from your wiki._
 
-### 2. Synthesis Pages
-- **Location:** `wiki/[topic-folder]/[comparison-name].md`
-- **Comparisons, deep dives, analyses spanning multiple concepts**
-- **Frontmatter:**
-```yaml
+## Key Properties
+
+- Property one: explanation
+- Property two: explanation
+- Property three: explanation
+
+_(Add more as needed. Each bullet should be a specific, falsifiable claim.)_
+
+## Connections
+
+- **Built from:** [[prerequisite-page|Prerequisite Name]] — one line on why
+- **Builds into:** [[higher-concept|Higher Concept]] — one line on how this enables it
+- **Contrasts with:** [[other-approach|Other Approach]] — one line on the key difference
+- **Related:** [[adjacent-concept|Adjacent Concept]] — one line on the relationship
+
+_(Minimum 2 connections. 4+ preferred. Be specific — explain the relationship, don't just list names.)_
+
+## Edge Cases & Gotchas
+
+- Where this concept breaks down or is misapplied
+- Common misconceptions
+- Boundary conditions
+
+_(Leave as stub note if unknown on first pass.)_
+
+## Sources
+
+- [[topic-name-summary|Source: Full Title]] — what this source contributed
+
+````
+
 ---
-title: Human Readable Title
-type: comparison | deep-dive | analysis
-tags: [domain, subdomain]
+
+## Template 2 — Synthesis Page
+
+```markdown
+---
+title: A vs B — Descriptive Title of the Comparison
+type: synthesis
+tags: [domain-tag, subtopic]
+status: draft
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
 ---
-```
 
-### 3. Source Summaries
-- **Location:** `wiki/[topic-folder]/[topic-name]-summary.md`
-- **What the LLM extracted from each source**
-- **Frontmatter:**
-```yaml
+## What's Being Compared
+
+*One paragraph framing the comparison. Why does this distinction matter?
+What problem does understanding the difference solve?*
+
+## The Core Tension
+
+*What is the fundamental tradeoff or design decision that separates A from B?
+This is the insight, not just the list of differences.*
+
+## Comparison
+
+| Dimension | [[page-a\|A]] | [[page-b\|B]] |
+|-----------|--------------|--------------|
+| When to use | ... | ... |
+| Performance | ... | ... |
+| Complexity | ... | ... |
+| Key limitation | ... | ... |
+
+*(Add or remove rows to fit the concepts being compared.)*
+
+## When to Choose A
+
+*Specific conditions that favor A. Not generic — tied to real use cases from the source.*
+
+## When to Choose B
+
+*Specific conditions that favor B.*
+
+## The Insight
+
+*What does this comparison reveal that neither page alone captures?
+This section is what makes a synthesis page worth having.*
+
+## Connections
+
+- [[page-a|Concept A]] — left side of this comparison
+- [[page-b|Concept B]] — right side of this comparison
+- [[related-synthesis|Related Synthesis]] — if applicable
+````
+
 ---
-source: Human Readable Source Name
-source_path: sources/filename.md
-content_hash: sha256hash
+
+## Template 3 — Source Summary
+
+```markdown
+---
+source: Full Title of the Source
+source_path: sources/filename.ext
 ingested: YYYY-MM-DD
 concepts_count: N
 ---
-```
 
-**Dedup:** `content_hash` is the SHA-256 of the source file. If a new source has the same hash as an existing one, skip it — it's the same content under a different name.
+## What This Source Is
+
+_One paragraph: what kind of source is this, what topic does it cover, what is its scope?_
+
+## Concepts Extracted
+
+_(List every page created or updated from this source)_
+
+**Created:**
+
+- [[concept-one|Concept One]] — one line on what it covers
+- [[concept-two|Concept Two]] — one line on what it covers
+
+**Updated:**
+
+- [[existing-page|Existing Page]] — what new information was merged in
+
+## Syntheses Created
+
+- [[a-vs-b|A vs B]] — what comparison this source prompted
+
+## Key Takeaways
+
+- The most important ideas from this source, in your own words
+- 3–6 bullet points
+
+## Open Questions
+
+_(Things this source raised but didn't answer — also append these to `wiki/open-questions.md`)_
+
+- Question one?
+- Question two?
+```
 
 ---
 
-## Domain Tags
+## Template 4 — Map of Content (MOC)
 
-The FIRST tag must ALWAYS be a domain tag. Use ONLY these:
+```markdown
+---
+title: [Topic Name] — Map of Content
+type: moc
+tags: [domain-tag, topic]
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
+---
 
-| Domain Tag | Covers |
-|---|---|
-| `networking` | Computer networks, protocols, communication |
-| `ai` | AI, knowledge representation, reasoning |
-| `ml` | Machine learning, deep learning, training, inference |
-| `systems` | Distributed systems, microservices, architecture |
-| `dev` | Software engineering, frameworks, tools, EJB, Spring |
-| `theory` | Theory of computation, formal languages, automata |
-| `database` | Data storage, querying, consistency |
-| `security` | Encryption, auth, vulnerabilities |
-| `meta` | Concepts about learning, knowledge, thinking |
+## What This Topic Is About
 
-Second tag = specific subdomain:
+_2–3 sentences orienting a reader who is new to this topic area._
 
-```yaml
-tags: [dev, ejb]              ← good
-tags: [dev, ejb, persistence]  ← also fine, 3 tags max
-tags: [ejb, session-bean]     ← WRONG — "ejb" is not a domain
-tags: [dev]                    ← acceptable but prefer 2 tags
-tags: [theory, automata]       ← good
-tags: [networking, switching]  ← good
+## Core Concepts
+
+_(The foundational pages — start here)_
+
+- [[concept-a|Concept A]] — one-line summary
+- [[concept-b|Concept B]] — one-line summary
+
+## Mechanisms & How Things Work
+
+_(Pages that explain processes, flows, or implementations)_
+
+- [[concept-c|Concept C]] — one-line summary
+
+## Comparisons & Tradeoffs
+
+_(Synthesis pages)_
+
+- [[a-vs-b|A vs B]] — what the comparison is about
+
+## Sources Ingested
+
+- [[topic-summary|Source Title]] — ingested YYYY-MM-DD
+
+## Suggested Reading Order
+
+1. [[concept-a|Concept A]] — start here
+2. [[concept-b|Concept B]] — then this
+3. [[a-vs-b|A vs B]] — then the comparison
 ```
 
 ---
 
-## Concept Page Template
+## Template 5 — Stub Page
 
-Every concept page MUST follow this structure:
+_(Created by lint pass when a linked page doesn't exist yet)_
 
 ```markdown
 ---
 concept: Concept Name
-aliases: [alias1, alias2]
-tags: [domain, subdomain]
+tags: [domain-tag]
+status: stub
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
 ---
 
-# Concept Name
+<!-- Stub created by lint pass. Needs content. -->
 
 ## The Problem
-_What problem does this concept solve? What would break if it didn't exist?_
-2-4 sentences, specific and concrete.
+
+_To be written._
 
 ## Core Idea
-_Minimum viable definition in plain language. No jargon unless explained._
-1-3 sentences that capture the essence.
 
-## How It Works
-_Mechanism, not just description. Why does it work this way?_
-Step-by-step or cause-and-effect. 4-8 sentences or bullet points.
-
-## Key Properties
-- Property 1: brief explanation
-- Property 2: brief explanation
-- Property 3: brief explanation
+_To be written._
 
 ## Connections
-- Built from: [[concept-filename|Display Name]] — how this concept depends on it
-- Builds into: [[concept-filename|Display Name]] — what uses this concept
-- Contrasts with: [[concept-filename|Display Name]] — how they differ
-- Related: [[concept-filename|Display Name]] — adjacent idea
 
-Minimum 4 connections. Each must have a brief explanation of the relationship.
-
-## Edge Cases & Gotchas
-- When does this fail or break down?
-- What hidden assumptions does it rely on?
-- What do people commonly misunderstand about it?
-
-## Sources
-- [[../topic-name-summary|Human readable source name]]
+_To be written._
 ```
-
----
-
-## Cross-Reference Strategy
-
-Every concept should link to:
-1. **Prerequisites** — concepts it builds upon (Built from)
-2. **Applications** — concepts that use it (Builds into)
-3. **Contrasts** — similar but different concepts (Contrasts with)
-4. **Relations** — adjacent or related concepts (Related)
-
-The goal is a **dense graph**, not a tree. Concepts should have 4+ connections minimum.
-
-### Link format
-Use Obsidian wiki links: `[[filename-without-ext|Display Name]]`
-
-Obsidian resolves links across all topic folders automatically.
-
-### Bidirectional linking is mandatory
-If page A links to page B, page B must mention page A in its Connections section.
-
----
-
-## What NOT To Do
-
-- Do NOT modify anything in `sources/` (human's raw sources, LLM only reads)
-- Do NOT modify files outside `wiki/` (existing study notes are immutable)
-- Do NOT create concept pages without checking if one already exists
-- Do NOT leave broken wiki links
-- Do NOT write vague Connections sections — be specific about the relationship
-- Do NOT create catch-all pages — split concepts into atomic pages
-- Do NOT skip the "The Problem" section — every concept needs a why
-- Do NOT use non-domain tags as the first tag (e.g., `[ejb, session-bean]` is wrong)
-
----
-
-## Evolution
-
-This schema is not static. As the wiki grows, the human and LLM should refine this document. New conventions, naming rules, and page types should be added here as they emerge.
-
-When you (LLM) encounter a situation this schema doesn't cover, flag it and propose a convention. Don't improvise silently.

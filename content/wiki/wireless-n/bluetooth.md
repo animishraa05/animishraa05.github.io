@@ -62,4 +62,4 @@ Bluetooth (IEEE 802.15.1) is a wireless personal area network (WPAN) standard fo
 - BLE (Bluetooth Low Energy) is a different physical layer from classic Bluetooth
 
 ## Sources
-- [[../wireless-n-summary|WirelessN.md]]
+- [[wireless-n-summary|WirelessN.md]]

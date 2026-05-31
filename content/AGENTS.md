@@ -55,6 +55,7 @@ content/
 - "The Problem" section — why this concept exists
 - "Core Idea" section — minimum viable definition
 - "How It Works" section — mechanism, not just description
+- "Visual Explanation" section — a Graphviz (DOT) diagram explaining the concept's structure, flow, or relationships. Use ` ```dot ` blocks.
 - "Key Properties" section — bullet points
 - "Connections" section — wiki links to related concepts (4+ minimum)
 - "Edge Cases & Gotchas" section — where this fails, common misconceptions

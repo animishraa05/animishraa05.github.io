@@ -34,9 +34,10 @@ With container-managed persistence (CMP), the EJB container automatically handle
 
 ## Connections
 
-- Built from: [[entity-bean|Entity Bean]]
+- Built from: [[entity-bean|Entity Bean]], [[ejb-container|EJB Container]]
+- Builds into: [[ejbcreate|ejbCreate()]], [[ejbremove|ejbRemove()]], [[ejbload|ejbLoad()]], [[ejbstore|ejbStore()]], [[cmp-abstract-accessors|CMP Abstract Accessors]], [[cmp-lifecycle|CMP Lifecycle]]
 - Contrasts with: [[bean-managed-persistence|Bean-Managed Persistence]]
-- Related: [[ejb-container|EJB Container]]
+- Related: [[object-relational-mapping|Object-Relational Mapping]], [[ejb-ql|EJB-QL]], [[cdata-hack|CDATA Hack]], [[one-to-one-relationship|One-to-One Relationship]], [[one-to-many-relationship|One-to-Many Relationship]], [[many-to-many-relationship|Many-to-Many Relationship]], [[bidirectional-vs-unidirectional|Bidirectional vs Unidirectional]]
 
 ## Edge Cases & Gotchas
 

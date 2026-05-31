@@ -2,10 +2,10 @@
 concept: Socket
 aliases: [network socket, TCP socket, socket connection]
 tags: [networking, socket]
-sources_count: 1
-last_source: Backend Engineering Basics.md
+sources_count: 2
+last_source: https.md
 created: 2026-04-12
-updated: 2026-04-12
+updated: 2026-04-30
 ---
 
 # Socket
@@ -37,9 +37,10 @@ The socket is essentially a file-like interface managed by the OS kernel. You re
 - Everything network-related runs on top of sockets—HTTP, TLS, WebSockets, databases
 
 ## Connections
-
 - **Built from:** [[ip-address|IP Address]] — IP identifies the machine
 - **Built from:** [[port|Port]] — port identifies the program
+- **Built from:** [[mac-address|MAC Address]] — final delivery uses MAC on local network
+- **Builds into:** [[tcp-handshake|TCP Handshake]] — TCP handshake creates socket connections
 - **Builds into:** [[http|HTTP]] — HTTP runs over socket connections
 - **Builds into:** [[tls-handshake|TLS Handshake]] — TLS runs over sockets
 - **Related:** [[backend-as-program|Backend as Program]] — backend programs use sockets to receive requests

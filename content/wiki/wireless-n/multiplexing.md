@@ -43,4 +43,4 @@ Multiplexing is the technique of combining multiple signals into a single shared
 - CDMA codes must be orthogonal to minimize self-interference
 
 ## Sources
-- [[../wireless-n-summary|WirelessN.md]]
+- [[wireless-n-summary|WirelessN.md]]

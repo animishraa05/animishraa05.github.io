@@ -2,6 +2,7 @@
 source: Theory of computation - Wikipedia
 source_path: sources/Theory of computation - Wikipedia.md
 ingested: 2026-04-11
+tags: [theory, wikipedia]
 ---
 
 # Theory of Computation — Source Summary

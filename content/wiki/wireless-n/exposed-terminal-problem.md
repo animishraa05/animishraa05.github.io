@@ -46,4 +46,4 @@ The key insight: if the intended receivers are sufficiently separated, simultane
 - RTS/CTS helps resolve both hidden and exposed terminal problems by explicitly announcing receiver locations
 
 ## Sources
-- [[../wireless-n-summary|WirelessN.md]]
+- [[wireless-n-summary|WirelessN.md]]

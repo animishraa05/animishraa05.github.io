@@ -3,7 +3,9 @@ concept: Entity Bean
 aliases: [EJB Entity Bean]
 tags: [dev, ejb, persistence]
 created: 2026-04-11
-updated: 2026-04-11
+updated: 2026-04-28
+sources_count: 2
+last_source: EJbContinued.md
 ---
 
 # Entity Bean
@@ -36,8 +38,11 @@ An entity bean is a persistent object that represents business data stored in pe
 
 ## Connections
 
-- Contrasts with: [[session-bean|Session Bean]]
-- Related: [[container-managed-persistence|Container-Managed Persistence]], [[bean-managed-persistence|Bean-Managed Persistence]], [[primary-key|Primary Key]]
+- Built from: [[ejb-container|EJB Container]], [[primary-key|Primary Key]], [[entity-bean-identity|Entity Bean Identity]], [[entity-bean-instance-vs-data|Entity Bean Instance vs Data]], [[persistence-concepts|Persistence Concepts]]
+- Builds into: [[bean-managed-persistence|Bean-Managed Persistence]], [[container-managed-persistence|Container-Managed Persistence]], [[entity-context|Entity Context]]
+- Contrasts with: [[session-bean|Session Bean]], [[message-driven-bean|Message-Driven Bean]], [[session-bean-lifetime|Session Bean Lifetime]]
+- Related: [[instance-pooling|Instance Pooling]], [[finder-methods|Finder Methods]], [[ejbload|ejbLoad()]], [[ejbstore|ejbStore()]], [[ejbcreate|ejbCreate()]], [[ejbremove|ejbRemove()]]
+- Related: [[entity-bean-transactions|Entity Bean Transaction Rules]], [[one-to-one-relationship|One-to-One Relationship]], [[one-to-many-relationship|One-to-Many Relationship]], [[many-to-many-relationship|Many-to-Many Relationship]], [[serialization-vs-orm|Serialization vs ORM]]
 
 ## Edge Cases & Gotchas
 
@@ -48,3 +53,4 @@ An entity bean is a persistent object that represents business data stored in pe
 ## Sources
 
 - [[ejb-source-summary|EJB Source]]
+- [[ejb-continued-summary|EJbContinued]]

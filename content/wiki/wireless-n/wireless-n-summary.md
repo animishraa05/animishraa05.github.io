@@ -4,6 +4,7 @@ source_path: sources/WirelessN.md
 content_hash: wirelessN-20260421
 ingested: 2026-04-21
 concepts_count: 25
+tags: [networking, wireless]
 ---
 
 # WirelessN.md — Source Summary
@@ -15,49 +16,49 @@ This source covers Jochen Schiller's "Mobile Communications" (2nd Edition, Pears
 ## Concepts Extracted (25)
 
 ### Unit 1: Wireless Basics
-- [[../wireless-network|Wireless Network]]
-- [[../multipath-propagation|Multipath Propagation]]
-- [[../channel-fading|Channel Fading]]
-- [[../modulation|Modulation]]
-- [[../multiplexing|Multiplexing]]
-- [[../spread-spectrum|Spread Spectrum]]
-- [[../frequency-shift-keying|FSK]]
-- [[../minimum-shift-keying|MSK]]
-- [[../antenna-types|Antenna Types]]
+- [[wireless-network|Wireless Network]]
+- [[multipath-propagation|Multipath Propagation]]
+- [[channel-fading|Channel Fading]]
+- [[modulation|Modulation]]
+- [[multiplexing|Multiplexing]]
+- [[spread-spectrum|Spread Spectrum]]
+- [[frequency-shift-keying|FSK]]
+- [[minimum-shift-keying|MSK]]
+- [[antenna-types|Antenna Types]]
 
 ### Unit 2: MAC Layer
-- [[../hidden-terminal-problem|Hidden Terminal Problem]]
-- [[../exposed-terminal-problem|Exposed Terminal Problem]]
-- [[../near-far-terminal|Near/Far Terminal Effect]]
-- [[../maca|MACA Protocol]]
-- [[../dama|DAMA Protocol]]
+- [[hidden-terminal-problem|Hidden Terminal Problem]]
+- [[exposed-terminal-problem|Exposed Terminal Problem]]
+- [[near-far-terminal|Near/Far Terminal Effect]]
+- [[maca|MACA Protocol]]
+- [[dama|DAMA Protocol]]
 
 ### Unit 3: Cellular Mobile Systems
-- [[../cellular-mobile-system|Cellular Mobile System]]
-- [[../frequency-reuse|Frequency Reuse]]
-- [[../co-channel-interference|Co-Channel Interference]]
-- [[../cell-sectoring|Cell Sectoring]]
-- [[../handoff|Handoff]]
+- [[cellular-mobile-system|Cellular Mobile System]]
+- [[frequency-reuse|Frequency Reuse]]
+- [[co-channel-interference|Co-Channel Interference]]
+- [[cell-sectoring|Cell Sectoring]]
+- [[handoff|Handoff]]
 
 ### Unit 4: GSM Architecture
-- [[../gsm-architecture|GSM Architecture]]
-- [[../gsm-services|GSM Services]]
-- [[../gprs|GPRS]]
+- [[gsm-architecture|GSM Architecture]]
+- [[gsm-services|GSM Services]]
+- [[gprs|GPRS]]
 
 ### Unit 5: WLAN and WPAN
-- [[../ieee-802-11|IEEE 802.11]]
-- [[../bluetooth|Bluetooth]]
-- [[../wimax|WiMAX]]
-- [[../zigbee|ZigBee]]
+- [[ieee-802-11|IEEE 802.11]]
+- [[bluetooth|Bluetooth]]
+- [[wimax|WiMAX]]
+- [[zigbee|ZigBee]]
 
 ### Transport and Ad Hoc
-- [[../mobile-tcp|Mobile TCP]]
-- [[../mobile-ad-hoc-network|Mobile Ad Hoc Network]]
+- [[mobile-tcp|Mobile TCP]]
+- [[mobile-ad-hoc-network|Mobile Ad Hoc Network]]
 
 ## Syntheses Created (2)
 
-- [[../modulation-techniques-compared|Modulation Techniques Compared]] — FSK, MSK, GMSK comparison
-- [[../wireless-mac-problems-compared|Wireless MAC Problems Compared]] — Hidden, Exposed, Near/Far comparison
+- [[modulation-techniques-compared|Modulation Techniques Compared]] — FSK, MSK, GMSK comparison
+- [[wireless-mac-problems-compared|Wireless MAC Problems Compared]] — Hidden, Exposed, Near/Far comparison
 
 ## Key Takeaways
 
@@ -81,3 +82,16 @@ This source covers Jochen Schiller's "Mobile Communications" (2nd Edition, Pears
 
 ## Domain Tags
 networking, wireless
+
+## Connections
+
+- [[wireless-network|Wireless Network]] — foundational concept covered
+- [[cellular-mobile-system|Cellular Mobile System]] — Unit 3 coverage
+- [[gsm-architecture|GSM Architecture]] — Unit 4 coverage
+- [[ieee-802-11|IEEE 802.11]] — Unit 5 coverage
+- [[modulation-techniques-compared|Modulation Techniques Compared]] — synthesis created
+- [[wireless-mac-problems-compared|Wireless MAC Problems Compared]] — synthesis created
+- [[hidden-terminal-problem|Hidden Terminal Problem]] — Unit 2 coverage
+- [[frequency-reuse|Frequency Reuse]] — Unit 3 coverage
+- [[multiplexing|Multiplexing]] — Unit 1 coverage
+- [[spread-spectrum|Spread Spectrum]] — Unit 1 coverage

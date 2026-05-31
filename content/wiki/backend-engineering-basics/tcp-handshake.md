@@ -2,10 +2,10 @@
 concept: TCP Handshake
 aliases: [TCP three-way handshake, SYN, SYN-ACK, ACK]
 tags: [networking, tcp]
-sources_count: 1
-last_source: Backend Engineering Basics.md
+sources_count: 2
+last_source: https.md
 created: 2026-04-12
-updated: 2026-04-12
+updated: 2026-04-30
 ---
 
 # TCP Handshake
@@ -37,10 +37,11 @@ This happens before TLS handshake (for HTTPS) and before any HTTP request. It's 
 - Part of TCP, not HTTP—HTTP runs on top of TCP
 
 ## Connections
-
 - **Built from:** [[socket|Socket]] — TCP handshake creates socket connections
+- **Built from:** [[arp-protocol|ARP Protocol]] — IP to MAC resolution before TCP
 - **Builds into:** [[tls-handshake|TLS Handshake]] — TLS runs after TCP is established
 - **Builds into:** [[http-protocol|HTTP Protocol]] — HTTP runs over TCP connections
+- **Builds into:** [[tcp-packet-drop|TCP Packet Drop]] — TCP handles lost packets
 - **Related:** [[ip-address|IP Address]] — TCP routes packets to IP addresses
 
 ## Edge Cases & Gotchas

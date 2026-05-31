@@ -55,4 +55,4 @@ GSM architecture is organized into three hierarchical subsystems: RSS (Radio Sub
 - GSM-Rail (GSM-R): specialized variant for railroad control with priority calls and VGCS/VBS
 
 ## Sources
-- [[../wireless-n-summary|WirelessN.md]]
+- [[wireless-n-summary|WirelessN.md]]

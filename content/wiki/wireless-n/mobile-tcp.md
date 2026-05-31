@@ -61,4 +61,4 @@ Mobile TCP adaptations modify the standard TCP protocol to handle wireless link 
 - For real-time traffic (voice), TCP is fundamentally wrong — UDP with FEC/Raptor codes is better
 
 ## Sources
-- [[../wireless-n-summary|WirelessN.md]]
+- [[wireless-n-summary|WirelessN.md]]

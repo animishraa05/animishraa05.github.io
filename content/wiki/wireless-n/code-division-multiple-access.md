@@ -48,4 +48,4 @@ CDMA (Code Division Multiple Access) is a spread-spectrum digital cellular techn
 - Processing gain (Spreading factor) decreases as data rates increase
 
 ## Sources
-- [[../wireless-n-summary|WirelessN.md]]
+- [[wireless-n-summary|WirelessN.md]]

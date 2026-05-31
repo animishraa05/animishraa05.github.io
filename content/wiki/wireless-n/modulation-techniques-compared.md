@@ -38,10 +38,10 @@ GMSK applies a Gaussian filter before MSK modulation, pre-shaping the frequency 
 In practice, all modern digital systems have moved beyond standard FSK: FSK → CPFSK → MSK → GMSK → QPSK/OQPSK. Higher-order modulation schemes (16-QAM, 64-QAM, 256-QAM) are now used in LTE and 5G for even higher data rates.
 
 ## Connections
-- [[../frequency-shift-keying|FSK]] — standard FSK with phase reset
-- [[../minimum-shift-keying|MSK]] — continuous-phase FSK
-- [[../modulation|Modulation]] — foundational concept
-- [[../spread-spectrum|Spread Spectrum]] — modulation technique that spreads signal across wide bandwidth
+- [[frequency-shift-keying|FSK]] — standard FSK with phase reset
+- [[minimum-shift-keying|MSK]] — continuous-phase FSK
+- [[modulation|Modulation]] — foundational concept
+- [[spread-spectrum|Spread Spectrum]] — modulation technique that spreads signal across wide bandwidth
 
 ## Sources
 - WirelessN.md — Jochen Schiller "Mobile Communications" ch 2

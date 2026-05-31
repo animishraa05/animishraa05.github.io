@@ -49,4 +49,4 @@ The effective reuse factor improves by a factor equal to the number of sectors: 
 - Ping-pong handovers can occur at sector boundaries
 
 ## Sources
-- [[../wireless-n-summary|WirelessN.md]]
+- [[wireless-n-summary|WirelessN.md]]

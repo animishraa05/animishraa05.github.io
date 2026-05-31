@@ -34,10 +34,10 @@ A session bean is a server-side component that represents work being performed f
 
 ## Connections
 
-- Built from: [[ejb-container|EJB Container]]
-- Builds into: [[stateful-session-bean|Stateful Session Bean]], [[stateless-session-bean|Stateless Session Bean]]
-- Contrasts with: [[entity-bean|Entity Bean]]
-- Related: [[ejb-home-interface|Home Interface]], [[ejb-object|EJB Object]]
+- Built from: [[ejb-container|EJB Container]], [[session-bean-lifetime|Session Bean Lifetime]], [[session-bean-subtypes|Session Bean Subtypes]]
+- Builds into: [[stateful-session-bean|Stateful Session Bean]], [[stateless-session-bean|Stateless Session Bean]], [[session-bean-relationships|Session Bean Relationships]], [[stateless-session-bean-pooling|Stateless Session Bean Pooling]]
+- Contrasts with: [[entity-bean|Entity Bean]], [[message-driven-bean|Message-Driven Bean]]
+- Related: [[ejb-home-interface|Home Interface]], [[local-home-interface|Local Home Interface]], [[ejb-object|EJB Object]], [[transaction-demarcation|Transaction Demarcation]], [[declarative-vs-programmatic-transactions|Declarative vs Programmatic Transactions]], [[dont-rely-on-ejbremove|Don't Rely on ejbRemove()]]
 
 ## Edge Cases & Gotchas
 

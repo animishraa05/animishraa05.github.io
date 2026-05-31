@@ -7,6 +7,7 @@ ingested: 2026-04-12
 concepts_count: 7
 created: 2026-04-12
 updated: 2026-04-12
+tags: [dev, http]
 ---
 
 ## Extracted Concepts
@@ -54,3 +55,13 @@ updated: 2026-04-12
 ## Sources
 
 This source summary links to all concept pages it created
+
+## Connections
+
+- [[http|HTTP]] — protocol covered
+- [[statelessness|Statelessness]] — core HTTP property covered
+- [[http-methods|HTTP Methods]] — GET/POST/PUT/PATCH/DELETE covered
+- [[http-headers|HTTP Headers]] — metadata mechanism covered
+- [[http-status-codes|HTTP Status Codes]] — response taxonomy covered
+- [[cors|CORS]] — cross-origin security covered
+- [[http-versions|HTTP Versions]] — protocol evolution covered
