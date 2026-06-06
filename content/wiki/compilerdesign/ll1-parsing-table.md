@@ -1,6 +1,6 @@
 ---
 concept: LL(1) Parsing Table
-aliases: [LL(1) table, predictive parsing table, M[A,a] table]
+aliases: [LL(1) table, predictive parsing table, "M[A,a] table"]
 tags: [dev, compiler-design]
 created: 2026-05-13
 updated: 2026-05-13

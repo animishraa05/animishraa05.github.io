@@ -1,6 +1,6 @@
 ---
 concept: Spring Form Handling
-aliases: [Spring MVC Form, Form Validation, @ModelAttribute]
+aliases: [Spring MVC Form, Form Validation, "@ModelAttribute"]
 tags: [dev, web]
 created: 2026-05-13
 updated: 2026-05-13

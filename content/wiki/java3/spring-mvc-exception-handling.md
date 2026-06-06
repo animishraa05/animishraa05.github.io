@@ -1,6 +1,6 @@
 ---
 concept: Spring MVC Exception Handling
-aliases: [@ExceptionHandler, @ControllerAdvice, HandlerExceptionResolver]
+aliases: ["@ExceptionHandler", "@ControllerAdvice", HandlerExceptionResolver]
 tags: [dev, web]
 created: 2026-05-13
 updated: 2026-05-13

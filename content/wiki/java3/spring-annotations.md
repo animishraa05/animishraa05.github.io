@@ -1,6 +1,6 @@
 ---
 concept: Spring Annotations
-aliases: [Spring Stereotype Annotations, @Component, @Service, @Repository, @Configuration]
+aliases: [Spring Stereotype Annotations, "@Component", "@Service", "@Repository", "@Configuration"]
 tags: [dev, java]
 created: 2026-05-13
 updated: 2026-05-13

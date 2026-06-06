@@ -1,6 +1,6 @@
 ---
 concept: Spring Autowiring
-aliases: [Autowiring, @Autowired, Dependency Resolution]
+aliases: [Autowiring, "@Autowired", Dependency Resolution]
 tags: [dev, java]
 created: 2026-05-13
 updated: 2026-05-13

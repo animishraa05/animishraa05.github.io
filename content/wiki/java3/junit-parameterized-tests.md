@@ -1,6 +1,6 @@
 ---
 concept: JUnit Parameterized Tests
-aliases: [ParameterizedTest, @ValueSource, @CsvSource, @MethodSource]
+aliases: [ParameterizedTest, "@ValueSource", "@CsvSource", "@MethodSource"]
 tags: [dev, testing]
 created: 2026-05-13
 updated: 2026-05-13

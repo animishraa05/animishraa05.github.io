@@ -1,6 +1,6 @@
 ---
 concept: Spring Boot Auto-Configuration
-aliases: [@EnableAutoConfiguration, Auto-Configuration, Spring Boot Starters]
+aliases: ["@EnableAutoConfiguration", Auto-Configuration, Spring Boot Starters]
 tags: [dev, java]
 created: 2026-05-13
 updated: 2026-05-13

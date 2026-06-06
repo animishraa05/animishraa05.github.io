@@ -1,6 +1,6 @@
 ---
 concept: Spring AOP Advice Types
-aliases: [@Before, @After, @Around, @AfterReturning, @AfterThrowing]
+aliases: ["@Before", "@After", "@Around", "@AfterReturning", "@AfterThrowing"]
 tags: [dev, java]
 created: 2026-05-13
 updated: 2026-05-13

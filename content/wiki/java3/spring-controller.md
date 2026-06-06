@@ -1,6 +1,6 @@
 ---
 concept: Spring Controller
-aliases: [@Controller, @RestController, @RequestMapping, @RequestParam]
+aliases: ["@Controller", "@RestController", "@RequestMapping", "@RequestParam"]
 tags: [dev, web]
 created: 2026-05-13
 updated: 2026-05-13

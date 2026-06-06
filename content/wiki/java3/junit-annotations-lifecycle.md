@@ -1,6 +1,6 @@
 ---
 concept: JUnit Annotations and Lifecycle
-aliases: [@BeforeEach, @AfterEach, @BeforeAll, @AfterAll, @Tag]
+aliases: ["@BeforeEach", "@AfterEach", "@BeforeAll", "@AfterAll", "@Tag"]
 tags: [dev, testing]
 created: 2026-05-13
 updated: 2026-05-13
