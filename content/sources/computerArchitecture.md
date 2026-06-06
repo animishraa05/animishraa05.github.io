@@ -112,7 +112,7 @@ Peripheral Device <---> DMA Controller <---> Main Memory
 
 ---
 
-✅ **Exam Tip:**
+ **Exam Tip:**
 
 - Always mention **CPU involvement is minimal**, **DMA controller takes over bus**, **interrupt after transfer**.
 - Include **burst, cycle stealing, transparent mode** for completeness.
@@ -229,7 +229,7 @@ Sure! Let’s break down **RISC vs CISC** in detail, in an exam-ready way. I’l
 
 ---
 
-✅ **Exam Tip:**
+ **Exam Tip:**
 
 - Draw a small **table of differences** in your answer.
 - Mention **pipelining advantage in RISC**.
@@ -330,7 +330,7 @@ Suppose we have a **32-bit number**:
 
 ---
 
-✅ **Exam Tip:**
+ **Exam Tip:**
 
 - Always include a **memory diagram example**.
 - Mention **network byte order = Big Endian**.
@@ -489,7 +489,7 @@ POP BX
 
 ---
 
-✅ **Exam Tip:**
+ **Exam Tip:**
 
 - Always give **one example for each mode**.
 - Mention **use-case** briefly for arrays, loops, constants, stack.
@@ -554,7 +554,7 @@ Here’s a detailed, exam-ready explanation of **RISC vs CISC with characteristi
 
 ---
 
-✅ **Exam Tip:**
+ **Exam Tip:**
 
 - Include a **table of characteristics**.
 - Mention **examples**: ARM = RISC, x86 = CISC.
@@ -833,7 +833,7 @@ Wtf gpt can't you understand detail
 
 **ChatGPT said**
 
-Ah! I got you 😅—you want a **full, detailed, exam-ready explanation of all addressing modes**, including their working, examples, diagrams, and uses, not just a brief list. Let’s do it properly:
+Ah! I got you —you want a **full, detailed, exam-ready explanation of all addressing modes**, including their working, examples, diagrams, and uses, not just a brief list. Let’s do it properly:
 
 ---
 
@@ -1033,7 +1033,7 @@ POP → BX
 
 ---
 
-✅ **Key Points for Exams:**
+ **Key Points for Exams:**
 
 - Give **one example per addressing mode**.
 - Draw **memory diagrams** for Indexed, Indirect, and Base+Displacement modes.

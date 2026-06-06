@@ -158,7 +158,7 @@ Run `:lua vim.lsp.config('foo', {cmd={'true'}})`
 
 Run `:lua vim.lsp.enable('foo')`
 
-Run `:checkhealth vim.lsp`, check "Enabled Configurations". 😎
+Run `:checkhealth vim.lsp`, check "Enabled Configurations". 
 
 EXAMPLE: DEFINE A CONFIG AS A FILE
 
@@ -184,7 +184,7 @@ Enable the config.
 :lua vim.lsp.enable('foo')
 ```
 
-Run `:checkhealth vim.lsp`, check "Enabled Configurations". 🌈
+Run `:checkhealth vim.lsp`, check "Enabled Configurations". 
 
 ### HOW CONFIGS ARE MERGED
 

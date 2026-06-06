@@ -2171,7 +2171,7 @@ Book ne do methods ko highlight kiya hai jahan iski sabse zyada zaroorat padti h
 
 ---
 
-### 💡 Exam Trick Question:
+###  Exam Trick Question:
 
 - **Q:** *`ejbLoad()` mein `getPrimaryKey()` chahiye, par `ejbStore()` (RAM se Database mein save karna) mein kyun nahi chahiye?*
 - **Ans:** Kyunki jab `ejbStore()` call hota hai, toh data pehle se hi RAM (Bean ki memory) mein loaded hota hai. Bean ko apna account number pehle se pata hota hai jo memory mein saved hai, toh usko alag se context se ID mangne ki zaroorat nahi padti.
@@ -2210,7 +2210,7 @@ out what data it should be dealing with
 
 **Gemini**
 
-Ani bhai, lagta hai tumne galti se wahi paragraph dobara paste kar diya! 😄 Maine just pichle message mein is "Identity Crisis" wale logic ko detail mein explain kiya tha.
+Ani bhai, lagta hai tumne galti se wahi paragraph dobara paste kar diya!  Maine just pichle message mein is "Identity Crisis" wale logic ko detail mein explain kiya tha.
 
 Ekdum short mein wapas yaad dila deta hoon: Kyunki server RAM bachane ke liye ek hi Entity Bean ko alag-alag customers ke liye reuse (pool) karta hai, bean ko khud nahi pata hota ki wo currently kisko represent kar rahi hai. Isliye jab bhi usko database se data load ya delete karna hota hai, wo `getPrimaryKey()` call karke apni current identity (jaise Account ID) confirm karti hai taaki kisi galat customer ka data delete na ho jaye.
 

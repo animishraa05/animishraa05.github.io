@@ -141,9 +141,9 @@ A function that is both many-one and into is called many-one into function.
 
 Let f: A ⇢ B be a bijection then, a function g: B ⇢ A which associates each element b ∈ B to a different element a ∈ A such that f(a) = b is called the inverse of f.
 
-> f(a) = b ↔︎ g(b) = a
+> f(a) = b ↔ g(b) = a
 
-f(a) = b ↔︎ g(b) = a
+f(a) = b ↔ g(b) = a
 
 Read More about Inverse Function.
 

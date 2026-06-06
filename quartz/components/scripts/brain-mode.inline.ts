@@ -35,7 +35,7 @@ document.addEventListener("nav", async () => {
     const filterContainer = document.createElement("div")
     filterContainer.id = "brain-mode-filter"
     filterContainer.innerHTML = `
-      <div class="brain-mode-label">Brain Mode 🧠</div>
+      <div class="brain-mode-label">Brain Mode</div>
       <div class="brain-mode-pills"></div>
     `
     

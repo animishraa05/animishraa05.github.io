@@ -64,8 +64,8 @@ Your LLM refinement layer is the right instinct, but the strategy matters:
 
 LoRA is sufficient for *style* consistency but has limits for *object/product* consistency. Specifically:
 
-- ✅ Good for: color palettes, lighting style, photographic aesthetic, composition preferences
-- ⚠️ Weak for: specific product shapes, logos, precise brand asset reproduction
+-  Good for: color palettes, lighting style, photographic aesthetic, composition preferences
+-  Weak for: specific product shapes, logos, precise brand asset reproduction
 - For product-specific fidelity, pair LoRA with **IP-Adapter** (image prompt conditioning) or **ControlNet** seeded with reference brand assets
 
 At scale with multiple clients, use **LoRA merging strategies** — keep a base style LoRA and a brand-specific LoRA separate, then merge at inference time. This avoids training N×M combinations.
@@ -927,7 +927,7 @@ Iska matlab CLIP **semantic meaning** samjhta hai. Concepts samjhta hai.
 
 CLIP ke liye **"Lakme"** aur **"LAKME"** aur **"lakme"** practically ek hi cheez hai — ek cosmetics brand ka concept. Spelling ka koi fark nahi.
 
-> 🔴 **Pehli problem:** CLIP character-blind hai. Wo letters nahi dekhta, meaning dekhta hai.
+>  **Pehli problem:** CLIP character-blind hai. Wo letters nahi dekhta, meaning dekhta hai.
 
 ---
 
@@ -940,8 +940,8 @@ Model ke text encoder ne suna: **GOLD = concept of gold = shiny, yellow, metalli
 Ab jab model image generate karne lagta hai, uske dimag mein "GOLD" ka matlab hai:
 
 ```
-✗ G - O - L - D  (4 letters, specific shapes)
-✓ ✨ golden shimmer, metallic sheen, luxury feel ✨
+ G - O - L - D  (4 letters, specific shapes)
+  golden shimmer, metallic sheen, luxury feel 
 ```
 
 Model **semantic meaning** ko **visual form** pe impose kar deta hai.
@@ -982,7 +982,7 @@ Natural images mein text bohot kam tha. Isliye VAE ne kabhi properly nahi seekha
 
 Jab ek letter "L" latent space mein jaata hai, uski thin vertical line ka exact information **blur** ho jaati hai. Recover karne pe model apne best guess se "L" jaisi cheez banata hai — jo "l" bhi ho sakta hai, "I" bhi, ya kuch aur.
 
-> 🔴 **Doosri problem:** VAE ka compression text ke fine details destroy kar deta hai. Strokes, serifs, exact curves — sab blur.
+>  **Doosri problem:** VAE ka compression text ke fine details destroy kar deta hai. Strokes, serifs, exact curves — sab blur.
 
 ---
 
@@ -1004,10 +1004,10 @@ Lekin text ke liye jo information chahiye hoti hai — exact letter shapes — w
 
 Iska matlab:
 
-- Bottle ✓ (low frequency — large shape)
-- Bottle ka color ✓ (low frequency)
-- Label ka existence ✓ (medium frequency)
-- "Made by Lakme" ke exact letters ✗ (high frequency — model struggle karta hai)
+- Bottle  (low frequency — large shape)
+- Bottle ka color  (low frequency)
+- Label ka existence  (medium frequency)
+- "Made by Lakme" ke exact letters  (high frequency — model struggle karta hai)
 
 ---
 
@@ -1044,11 +1044,11 @@ High frequency letter shapes? Struggle karta hai.
 Semantic drift? "Lakme" = logo jaisi cheez banata hai.
                     ↓
 FINAL OUTPUT:
-Bottle ✓
-Label ✓
-Text? "Maed by Lakem" ✗
-      ya "Made by Lak3e" ✗
-      ya kuch aur random ✗
+Bottle 
+Label 
+Text? "Maed by Lakem" 
+      ya "Made by Lak3e" 
+      ya kuch aur random 
 ```
 
 ---
@@ -1134,11 +1134,11 @@ Har character ki information preserve hoti hai vector mein.
 |  | CLIP | T5-XXL |
 | --- | --- | --- |
 | Context length | 77 tokens max | 4096 tokens |
-| Spelling aware? | ❌ Nahi | ✅ Haan |
+| Spelling aware? |  Nahi |  Haan |
 | Long prompts? | Degrade ho jaata hai | Handle karta hai |
 | Training data | Image-text pairs | Pure text — books, internet |
 
-> ✅ **Layer 1 fix:** T5-XXL use karo as text encoder. Spelling information ab encode hoti hai.
+>  **Layer 1 fix:** T5-XXL use karo as text encoder. Spelling information ab encode hoti hai.
 
 ---
 
@@ -1174,13 +1174,13 @@ Bajaye iske ki hum model ko bolein "yahan 'Made by Lakme' likhna hai" — hum **
 
 ```
 Pehle:
-Prompt → Model → (hope karo ki sahi letters banega) → ❌ Unreliable
+Prompt → Model → (hope karo ki sahi letters banega) →  Unreliable
 
 Baad mein (GlyphControl approach):
 "Made by Lakme" → Font rendering → Clean glyph image
                                           ↓
                                     ControlNet → Model ko force karo
-                                    ki in exact strokes ko follow kare → ✅ Reliable
+                                    ki in exact strokes ko follow kare →  Reliable
 ```
 
 **ControlNet kya karta hai yahan?**
@@ -1213,7 +1213,7 @@ Clean rendered text (black letters, white background)
 
 Semantic drift **practically impossible** ho jaati hai — kyunki model ko letters generate hi nahi karne. Model ko bas **given strokes pe style apply** karna hai.
 
-> ✅ **Layer 2 fix:** Glyph pre-rendering + ControlNet conditioning. Model follow karta hai, generate nahi karta.
+>  **Layer 2 fix:** Glyph pre-rendering + ControlNet conditioning. Model follow karta hai, generate nahi karta.
 
 ---
 
@@ -1249,14 +1249,14 @@ Isme jo information fit nahi hoti — text ke fine strokes, thin lines, serif de
 
 Ab latent space mein **enough room** hai ki:
 
-- Large shapes ✅
-- Colors ✅
-- Textures ✅
-- **Fine letter strokes ✅**
-- **Serif details ✅**
-- **Character spacing ✅**
+- Large shapes 
+- Colors 
+- Textures 
+- **Fine letter strokes **
+- **Serif details **
+- **Character spacing **
 
-> ✅ **Layer 3 fix:** 16-channel VAE. Strokes ab compress hone pe survive karte hain.
+>  **Layer 3 fix:** 16-channel VAE. Strokes ab compress hone pe survive karte hain.
 
 ---
 
@@ -1490,7 +1490,7 @@ Bhai yeh ek solid roadmap banega. Isko sections mein todenge — pehle foundatio
 
 ---
 
-## 🗺️ The Full Map — Kya kya seekhna hai
+##  The Full Map — Kya kya seekhna hai
 
 ```
 FOUNDATION
@@ -1869,7 +1869,7 @@ FreeText — training-free glyph injection for Flux specifically
 
 ---
 
-## 📚 Ek Suggested Learning Order
+##  Ek Suggested Learning Order
 
 ```
 Week 1-2:
@@ -1901,7 +1901,7 @@ Ongoing:
 
 ---
 
-## 🛠️ Practical Side — Hands-on kaise karo
+##  Practical Side — Hands-on kaise karo
 
 Sirf padhne se kuch nahi hoga. Saath saath yeh karo:
 
@@ -2007,7 +2007,7 @@ You type: Made by Lakme
 
 CLIP Encoder
 
-Encodes as concept:\\nLakme brand identity\\nSpelling = ignored ❌
+Encodes as concept:\\nLakme brand identity\\nSpelling = ignored 
 
 T5 Encoder
 
@@ -2015,9 +2015,9 @@ Encodes characters:\\nL-a-k-m-e sequence\\nMay survive... maybe
 
 Diffusion Process
 
-GOLD = golden shiny luxury\\nnot the letters G-O-L-D ❌
+GOLD = golden shiny luxury\\nnot the letters G-O-L-D 
 
-4-channel latent space\\nFine strokes blur away ❌
+4-channel latent space\\nFine strokes blur away 
 
 Output: Garbled text
 
@@ -2061,9 +2061,9 @@ CLIP + Aesthetic scorer
 
 ### After Section 4 intro — The Full 7-Stage Flow
 
-<svg id="mermaid-r1nv" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" style="max-width: 542.19580078125px;" viewBox="0 0 542.19580078125 2242.88330078125" role="graphics-document document" aria-roledescription="flowchart-v2"><g><marker id="mermaid-r1nv_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></path></marker><marker id="mermaid-r1nv_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></path></marker><marker id="mermaid-r1nv_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></circle></marker><marker id="mermaid-r1nv_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></circle></marker><marker id="mermaid-r1nv_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2px; stroke-dasharray: 1px, 0px;"></path></marker><marker id="mermaid-r1nv_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2px; stroke-dasharray: 1px, 0px;"></path></marker><g class="root"><g class="clusters"><g class="cluster" id="DIFF_LAYER" data-look="classic"><rect style="fill:#EDE9FE !important" x="35.5" y="1202.4167175292969" width="432.0250015258789" height="200"></rect><g class="cluster-label" transform="translate(151.51250076293945, 1202.4167175292969)"><foreignObject width="200" height="48"><p></p><p>🎨 Diffusion Layer — Visual Synthesis</p></foreignObject></g></g></g></g></g></svg>
+<svg id="mermaid-r1nv" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" style="max-width: 542.19580078125px;" viewBox="0 0 542.19580078125 2242.88330078125" role="graphics-document document" aria-roledescription="flowchart-v2"><g><marker id="mermaid-r1nv_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></path></marker><marker id="mermaid-r1nv_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></path></marker><marker id="mermaid-r1nv_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></circle></marker><marker id="mermaid-r1nv_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></circle></marker><marker id="mermaid-r1nv_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2px; stroke-dasharray: 1px, 0px;"></path></marker><marker id="mermaid-r1nv_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2px; stroke-dasharray: 1px, 0px;"></path></marker><g class="root"><g class="clusters"><g class="cluster" id="DIFF_LAYER" data-look="classic"><rect style="fill:#EDE9FE !important" x="35.5" y="1202.4167175292969" width="432.0250015258789" height="200"></rect><g class="cluster-label" transform="translate(151.51250076293945, 1202.4167175292969)"><foreignObject width="200" height="48"><p></p><p> Diffusion Layer — Visual Synthesis</p></foreignObject></g></g></g></g></g></svg>
 
-🧠 LLM Layer — Language Intelligence
+ LLM Layer — Language Intelligence
 
 Yes
 
@@ -2079,7 +2079,7 @@ No, return best
 
 Passed
 
-📝 User Brief\\n'Luxury skincare, Made by Lakme on label'
+ User Brief\\n'Luxury skincare, Made by Lakme on label'
 
 Stage 2: Brief Decomposer\\nMistral 7B / LLaMA 3.1\\nBrief → JSON Schema
 
@@ -2097,7 +2097,7 @@ Retry?\\nattempt < 3
 
 Stage 7: Upscaler + Output\\nReal-ESRGAN 2x or 4x\\n+ Metadata JSON
 
-🖼️ Final Image\\n2048px or 4096px PNG
+ Final Image\\n2048px or 4096px PNG
 
 ---
 
@@ -2119,13 +2119,13 @@ DiT\\nDiffusion Transformer\\n\\nText tokens + Image tokens\\nprocessed TOGETHER
 
 16-channel VAE Decoder\\nFine strokes survive
 
-🖼️ Output Image
+ Output Image
 
 ---
 
 ### After Section 7.2 — Glyph Injection: Before vs After
 
-<svg id="mermaid-r1o1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" style="max-width: 3086.216796875px;" viewBox="0 0 3086.216796875 211.98333740234375" role="graphics-document document" aria-roledescription="flowchart-v2"><g><marker id="mermaid-r1o1_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></path></marker><marker id="mermaid-r1o1_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></path></marker><marker id="mermaid-r1o1_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></circle></marker><marker id="mermaid-r1o1_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></circle></marker><marker id="mermaid-r1o1_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2px; stroke-dasharray: 1px, 0px;"></path></marker><marker id="mermaid-r1o1_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2px; stroke-dasharray: 1px, 0px;"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"></g><g class="edgeLabels"></g><g class="nodes"><g class="root" transform="translate(0, 0)"><g class="clusters"><g class="cluster" id="WITH" data-look="classic"><rect style="" x="8" y="8" width="1675" height="195.98333740234375"></rect><g class="cluster-label" transform="translate(745.5, 8)"><foreignObject width="200" height="48"><p></p><p>✅ With Glyph Injection</p></foreignObject></g></g></g></g></g></g></g></svg>
+<svg id="mermaid-r1o1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" style="max-width: 3086.216796875px;" viewBox="0 0 3086.216796875 211.98333740234375" role="graphics-document document" aria-roledescription="flowchart-v2"><g><marker id="mermaid-r1o1_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></path></marker><marker id="mermaid-r1o1_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></path></marker><marker id="mermaid-r1o1_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></circle></marker><marker id="mermaid-r1o1_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1px; stroke-dasharray: 1px, 0px;"></circle></marker><marker id="mermaid-r1o1_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2px; stroke-dasharray: 1px, 0px;"></path></marker><marker id="mermaid-r1o1_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2px; stroke-dasharray: 1px, 0px;"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"></g><g class="edgeLabels"></g><g class="nodes"><g class="root" transform="translate(0, 0)"><g class="clusters"><g class="cluster" id="WITH" data-look="classic"><rect style="" x="8" y="8" width="1675" height="195.98333740234375"></rect><g class="cluster-label" transform="translate(745.5, 8)"><foreignObject width="200" height="48"><p></p><p> With Glyph Injection</p></foreignObject></g></g></g></g></g></g></g></svg>
 
 text\_to\_render: 'Made by Lakme'
 
@@ -2135,9 +2135,9 @@ ControlNet: enforces exact\\nstroke geometry every step
 
 Flux: applies style, colour,\\ntexture ON TOP of strokes
 
-Output: 'Made by Lakme' ✅
+Output: 'Made by Lakme' 
 
-❌ Without Glyph Injection
+ Without Glyph Injection
 
 Prompt: 'write Made by Lakme'
 
@@ -2145,7 +2145,7 @@ CLIP: Lakme = brand concept
 
 Attention: semantic meaning\\ndominates over letter shapes
 
-Output: 'Maed by Lakm3' ❌
+Output: 'Maed by Lakm3' 
 
 ---
 
@@ -2233,7 +2233,7 @@ Imagine karo ek blank canvas hai — lekin yeh canvas **pure random noise** se b
 Step 0:  ░▒▓█▒░▓▒░█▓░▒█  ← pure noise, kuch nahi
 Step 5:  dhundla sa shape banta hai
 Step 15: outline clear hona shuru
-Step 25: final image ✓
+Step 25: final image 
 ```
 
 Model **25-30 steps** mein dheere dheere is noise ko ek image mein badalta hai. Har step pe thoda aur detail aata hai.
@@ -3492,7 +3492,7 @@ Got it — casual, real user prompts. Jaise koi actual client ya marketer likhta
 
 ---
 
-1. "Create a yoga studio promotional poster, calm morning light, yoga mat and candles, write — **Find Your Balance at ZenFlow Yoga Studio. Morning · Evening · Weekend Batches. Hatha · Vinyasa · Yin Yoga. First class free for new members. 📍 Koramangala, Bengaluru. Call 98XXXXXXXX to book** "
+1. "Create a yoga studio promotional poster, calm morning light, yoga mat and candles, write — **Find Your Balance at ZenFlow Yoga Studio. Morning · Evening · Weekend Batches. Hatha · Vinyasa · Yin Yoga. First class free for new members.  Koramangala, Bengaluru. Call 98XXXXXXXX to book** "
 
 ---
 
@@ -3524,7 +3524,7 @@ Got it — casual, real user prompts. Jaise koi actual client ya marketer likhta
 
 ---
 
-1. "Make a bakery promotional image, fresh sourdough bread on wooden table, warm morning light, write — **The Bread Collective. Slow fermented. Stone baked. Every loaf made with 72 hour cold fermented dough. Sourdough · Multigrain · Rye & Walnut. Fresh out of the oven at 7am every day. 📍 Bandra West, Mumbai · Indiranagar, Bengaluru · Hauz Khas, Delhi. Order by 8pm for next morning delivery** "
+1. "Make a bakery promotional image, fresh sourdough bread on wooden table, warm morning light, write — **The Bread Collective. Slow fermented. Stone baked. Every loaf made with 72 hour cold fermented dough. Sourdough · Multigrain · Rye & Walnut. Fresh out of the oven at 7am every day.  Bandra West, Mumbai · Indiranagar, Bengaluru · Hauz Khas, Delhi. Order by 8pm for next morning delivery** "
 
 ---
 
@@ -3656,16 +3656,16 @@ DALL-E 3 is ideal for rapid content creation — it favors speed and simplicity.
 
 | Tool | Text Rendering | Product Photos | Free Tier | Best Use |
 | --- | --- | --- | --- | --- |
-| **Ideogram** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ✅ | Text-heavy marketing |
-| **Adobe Firefly** | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ✅ | Commercial-safe agency work |
-| **Midjourney** | ⭐⭐ | ⭐⭐⭐⭐⭐ | ❌ | Artistic campaigns |
-| **GPT Image** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ✅ | Complex mockups |
-| **Leonardo AI** | ⭐⭐⭐ | ⭐⭐⭐⭐ | ✅ | E-commerce product shots |
-| **Canva AI** | ⭐⭐⭐ | ⭐⭐⭐ | ✅ | Quick social media |
+| **Ideogram** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |  | Text-heavy marketing |
+| **Adobe Firefly** | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ |  | Commercial-safe agency work |
+| **Midjourney** | ⭐⭐ | ⭐⭐⭐⭐⭐ |  | Artistic campaigns |
+| **GPT Image** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ |  | Complex mockups |
+| **Leonardo AI** | ⭐⭐⭐ | ⭐⭐⭐⭐ |  | E-commerce product shots |
+| **Canva AI** | ⭐⭐⭐ | ⭐⭐⭐ |  | Quick social media |
 | **Flux.2** | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | API only | Photorealistic agency |
-| **Stable Diffusion** | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ✅ Free | Full control pipeline |
-| **Recraft** | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ✅ | Brand consistency |
-| **DALL-E 3** | ⭐⭐⭐⭐ | ⭐⭐⭐ | ✅ | Beginners, fast content |
+| **Stable Diffusion** | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ |  Free | Full control pipeline |
+| **Recraft** | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ |  | Brand consistency |
+| **DALL-E 3** | ⭐⭐⭐⭐ | ⭐⭐⭐ |  | Beginners, fast content |
 
 ---
 
@@ -3743,23 +3743,23 @@ LoRA **low-rank** adaptation hai — yeh ek small set of weights update karta ha
 Ek image "good training data" tab hai jab:
 
 ```
-✅ Text clearly readable hai
-✅ Text image ke saath naturally integrated hai
-✅ Professional designer ne banaya hai
-✅ High resolution — minimum 512x512, ideally 1024x1024
-✅ Text aur background mein proper contrast hai
-✅ Caption/description available hai ya banana possible hai
+ Text clearly readable hai
+ Text image ke saath naturally integrated hai
+ Professional designer ne banaya hai
+ High resolution — minimum 512x512, ideally 1024x1024
+ Text aur background mein proper contrast hai
+ Caption/description available hai ya banana possible hai
 ```
 
 Yeh image **bad training data** hai:
 
 ```
-❌ Blurry ya low resolution
-❌ Text barely visible hai
-❌ Screenshot of a screenshot
-❌ Watermark heavy
-❌ Text awkwardly pasted on — not integrated
-❌ Single color flat background with just text (no design)
+ Blurry ya low resolution
+ Text barely visible hai
+ Screenshot of a screenshot
+ Watermark heavy
+ Text awkwardly pasted on — not integrated
+ Single color flat background with just text (no design)
 ```
 
 ---
@@ -3782,7 +3782,7 @@ Certificate / diploma designs   → 30-40 images
 Magazine covers / layouts       → 30-40 images
 Packaging designs with text     → 30-40 images
 ─────────────────────────────────────────────
-Total                           → 530-770 images ✓
+Total                           → 530-770 images 
 ```
 
 ---
@@ -4322,19 +4322,19 @@ for filename in os.listdir("raw_scraped/"):
 ## Legal — Yeh Dhyan Mein Rakho
 
 ```
-✅ Safe sources:
+ Safe sources:
    Wikimedia Commons — CC license
    Unsplash — commercial OK
    Pexels — commercial OK
    OpenLibrary — public domain
    LAION filtered — research OK
 
-⚠️ Grey area (for research/personal use OK):
+ Grey area (for research/personal use OK):
    Pinterest scraping — ToS violation technically
    Behance scraping — ToS violation technically
    Google Images — ToS violation technically
 
-❌ Avoid:
+ Avoid:
    Shutterstock / Getty — strictly copyrighted
    Adobe Stock premium — copyrighted
    Individual photographer sites
@@ -4539,7 +4539,7 @@ Google Images via icrawler       → 1,500
 Canva templates manual           → 500
 (manually screenshot karo)
 ─────────────────────────────────────────
-Total                            → ~10,000 ✓
+Total                            → ~10,000 
 ```
 
 ---
@@ -5168,10 +5168,10 @@ TOTAL                     ~640,000        ~3-4 days
 
 | Tool | Best for | 500k possible? | Speed |
 | --- | --- | --- | --- |
-| **img2dataset** | Bulk download from URL lists | ✅ Best choice | 100k/hour |
-| **gallery-dl** | Pinterest/Flickr single sites | ❌ Too slow, gets blocked | 1k/hour |
-| **Scrapy** | Custom site crawling | ⚠️ Need to build spider | Medium |
-| **icrawler** | Google/Bing images | ❌ 1000 max per query | Very slow |
+| **img2dataset** | Bulk download from URL lists |  Best choice | 100k/hour |
+| **gallery-dl** | Pinterest/Flickr single sites |  Too slow, gets blocked | 1k/hour |
+| **Scrapy** | Custom site crawling |  Need to build spider | Medium |
+| **icrawler** | Google/Bing images |  1000 max per query | Very slow |
 
 ---
 
@@ -5222,12 +5222,12 @@ Yeh pairing **zaroori hai** — warna model ko pata hi nahi chalega ki jab user 
 Tere paas abhi:
 
 Pinterest se aayi images     →  filename: pin_wedding_1234.jpg
-                                caption:  KUCH NAHI ❌
+                                caption:  KUCH NAHI 
 
 Flickr se aayi images        →  filename: poster_design_5678.jpg
-                                caption:  KUCH NAHI ❌
+                                caption:  KUCH NAHI 
 
-LAION se aayi images         →  caption:  HAI ✅ (already included)
+LAION se aayi images         →  caption:  HAI  (already included)
 ```
 
 LAION ka data already captioned hai. Pinterest aur Flickr ka nahi.
@@ -5343,10 +5343,10 @@ print(f"Done: {len(captions)} basic captions")
 ```
 Method              Quality    Speed        GPU needed
 ────────────────────────────────────────────────────────
-BLIP-2 auto         ★★★★☆     500 img/hr   CPU slow, GPU fast
-LLaVA auto          ★★★★★     300 img/hr   GPU recommended
-Filename based      ★★☆☆☆     100k/minute  None
-LAION (pre-made)    ★★★★☆     Already done None
+BLIP-2 auto              500 img/hr   CPU slow, GPU fast
+LLaVA auto               300 img/hr   GPU recommended
+Filename based           100k/minute  None
+LAION (pre-made)         Already done None
 ```
 
 ---
@@ -6179,11 +6179,11 @@ For **Text Rendering LoRA** — quality matters more than quantity.
 5,000 high quality images          >        15,000 random scraped images
 
 High quality = 
-  ✅ Professional designer made
-  ✅ Text clearly readable
-  ✅ Min 512x512 resolution
-  ✅ Text integrated naturally (not pasted on)
-  ✅ Good caption describing layout + style + text
+   Professional designer made
+   Text clearly readable
+   Min 512x512 resolution
+   Text integrated naturally (not pasted on)
+   Good caption describing layout + style + text
 ```
 
 Your scraping agent with Florence-2 captions is already handling this correctly.
@@ -7243,7 +7243,7 @@ Example:-
 ```
 Expected  →  LAKME
 Detected  →  LAKME
-Edit Distance = 0  ✓ perfect
+Edit Distance = 0   perfect
 ```
 
 ```
@@ -7316,11 +7316,11 @@ Detected  →  "LAKME DIWALL SAIE 5O% OFF"
               LAKME  DIWALL  SAIE  5O%  OFF   →  5 words
 
 Word level compare:-
-LAKME   vs  LAKME   →  match ✓
-DIWALI  vs  DIWALL  →  wrong ✗  (1 substitution)
-SALE    vs  SAIE    →  wrong ✗  (1 substitution)
-50%     vs  5O%     →  wrong ✗  (1 substitution)
-OFF     vs  OFF     →  match ✓
+LAKME   vs  LAKME   →  match 
+DIWALI  vs  DIWALL  →  wrong   (1 substitution)
+SALE    vs  SAIE    →  wrong   (1 substitution)
+50%     vs  5O%     →  wrong   (1 substitution)
+OFF     vs  OFF     →  match 
 
 Word Edit Distance = 3
 Total Expected Words = 5
@@ -7377,16 +7377,16 @@ Exact Match Rate = (Images with perfect text) / (Total images tested)
 **Example — 10 images test kiye:-**
 
 ```
-Image 1  →  Expected "LAKME 50% OFF"  Detected "LAKME 50% OFF"  ✓ match
-Image 2  →  Expected "SALE TODAY"     Detected "SAIE TODAY"     ✗ no match
-Image 3  →  Expected "BUY NOW"        Detected "BUY NOW"        ✓ match
-Image 4  →  Expected "DIWALI"         Detected "DIWALI"         ✓ match
-Image 5  →  Expected "FLAT 30% OFF"   Detected "FLAT 30% OFF"   ✓ match
-Image 6  →  Expected "HURRY"          Detected "HURRY"          ✓ match
-Image 7  →  Expected "LAST DAY"       Detected "LAST DAY"       ✓ match
-Image 8  →  Expected "MEGA SALE"      Detected "MEGA SAIE"      ✗ no match
-Image 9  →  Expected "SHOP NOW"       Detected "SHOP NOW"       ✓ match
-Image 10 →  Expected "WIN BIG"        Detected "WIN BIG"        ✓ match
+Image 1  →  Expected "LAKME 50% OFF"  Detected "LAKME 50% OFF"   match
+Image 2  →  Expected "SALE TODAY"     Detected "SAIE TODAY"      no match
+Image 3  →  Expected "BUY NOW"        Detected "BUY NOW"         match
+Image 4  →  Expected "DIWALI"         Detected "DIWALI"          match
+Image 5  →  Expected "FLAT 30% OFF"   Detected "FLAT 30% OFF"    match
+Image 6  →  Expected "HURRY"          Detected "HURRY"           match
+Image 7  →  Expected "LAST DAY"       Detected "LAST DAY"        match
+Image 8  →  Expected "MEGA SALE"      Detected "MEGA SAIE"       no match
+Image 9  →  Expected "SHOP NOW"       Detected "SHOP NOW"        match
+Image 10 →  Expected "WIN BIG"        Detected "WIN BIG"         match
 
 Exact Matches = 8 out of 10
 Exact Match Rate = 8/10 = 80%
@@ -7493,7 +7493,7 @@ Achha analysis hai. Seedha bolta hoon — **kuch points genuine hain, kuch thode
 
 ## Jo wo sahi keh raha hai — genuinely valid points
 
-### Problem 2 — Text "integration" illusion ✅ REAL problem
+### Problem 2 — Text "integration" illusion  REAL problem
 
 Ye actually sahi pakda usne. Glyph injection text correct kar deta hai but text ko image ke saath naturally blend karna alag problem hai.
 
@@ -7505,13 +7505,13 @@ Real poster mein text ko:-
 
 **ControlNet sirf shape lock karta hai — lighting interaction aur material blending wo nahi karta.** Ye genuine limitation hai.
 
-### Problem 3 — Layout intelligence underpowered ✅ PARTIALLY valid
+### Problem 3 — Layout intelligence underpowered  PARTIALLY valid
 
 Ye bhi sahi hai. LLM ka "title center mein, subtitle neeche" approach professional design ka substitute nahi hai. Real design systems grid systems use karte hain, visual weight balance karte hain, whitespace intentionally place karte hain.
 
 **Lekin** — for a general purpose marketing tool like ours, LLM-based layout kaafi sufficient hai. Hum Adobe InDesign nahi bana rahe. Hum ek tool bana rahe hain jo normal users ke liye Canva se better text accuracy de.
 
-### Problem 5 — Evaluation too weak ✅ PARTIALLY valid
+### Problem 5 — Evaluation too weak  PARTIALLY valid
 
 CLIP + Aesthetic score layout correctness nahi measure karte — ye sahi hai. Typography quality, readability, visual balance — ye sab unmeasured reh jaate hain.
 
@@ -7519,7 +7519,7 @@ CLIP + Aesthetic score layout correctness nahi measure karte — ye sahi hai. Ty
 
 ## Jo wo over-hype kar raha hai — reality check
 
-### Problem 1 — ControlNet ≠ Typography Control ❌ OVER-STATED
+### Problem 1 — ControlNet ≠ Typography Control  OVER-STATED
 
 "Letters distort slightly, kerning breaks, fonts lose identity" — ye tab hota hai jab **controlnet\_scale kam ho ya glyph quality poor ho.**
 
@@ -7527,7 +7527,7 @@ Is paper se results yaad hain — ControlNet plus text edge ne F1 score 0.7942 a
 
 Kerning aur font identity preserve hoti hai agar glyph PNG high quality ho aur ControlNet scale 0.7 se upar ho.
 
-### Problem 4 — LoRA won't teach layout ❌ MISUNDERSTANDING
+### Problem 4 — LoRA won't teach layout  MISUNDERSTANDING
 
 LoRA layout rules nahi sikhata — ye sahi hai. **But LoRA ka kaam hi layout sikhana nahi hai.** LLM layout decide karta hai, LoRA brand aesthetic sikhata hai. Dono alag concerns hain. Ye is person ne confusion mein mix kar diya.
 
@@ -7535,7 +7535,7 @@ LoRA layout rules nahi sikhata — ye sahi hai. **But LoRA ka kaam hi layout sik
 
 ## Ideas jo genuinely useful hain
 
-### Idea 2 — Differentiable Typography Loop ✅ ACTUALLY GOOD
+### Idea 2 — Differentiable Typography Loop  ACTUALLY GOOD
 
 Ye genuine improvement hai jo tere current pipeline mein add ho sakta hai without major rework:-
 
@@ -7553,7 +7553,7 @@ Dobara generate karo (ya composite karo)
 
 Ye tera quality gate extend karta hai — abhi sirf CLIP + Aesthetic check hai, text readability check nahi hai explicitly. Ye add karna meaningful improvement hoga.
 
-### Idea 5 — Two-pass Generation ✅ GENUINELY POWERFUL
+### Idea 5 — Two-pass Generation  GENUINELY POWERFUL
 
 Ye real value add hai:-
 
@@ -7563,7 +7563,7 @@ Ye real value add hai:-
 
 Is paper ne bhi yahi approach discuss ki thi — background pe text dalna. Is se text integration illusion problem partially solve hoti hai.
 
-### Idea 3 — OCR Feedback Loop ✅ ALREADY IN YOUR PIPELINE
+### Idea 3 — OCR Feedback Loop  ALREADY IN YOUR PIPELINE
 
 Ye tere paas pehle se hai basically. Smart caption mein OCR hai, quality gate mein OCR integrate karna sirf thoda sa kaam hai. Low-hanging fruit.
 
@@ -7571,7 +7571,7 @@ Ye tere paas pehle se hai basically. Smart caption mein OCR hai, quality gate me
 
 ## Ideas jo currently impractical hain
 
-### Idea 6 — Text-aware ControlNet Training ❌ OUT OF SCOPE
+### Idea 6 — Text-aware ControlNet Training  OUT OF SCOPE
 
 "Train ControlNet with bounding boxes + text tokens" — ye genuinely research-level kaam hai. Iske liye:-
 
@@ -7581,7 +7581,7 @@ Ye tere paas pehle se hai basically. Smart caption mein OCR hai, quality gate me
 
 For this project, for this timeline — not practical. He himself called it "almost unexplored" which means no clear path forward.
 
-### Idea 4 — Train a Poster Understanding Model ❌ VAGUE
+### Idea 4 — Train a Poster Understanding Model  VAGUE
 
 "Train a model that learns hierarchy and visual balance" — ye kya model hoga exactly? Kya architecture? Kya training data? Kya loss function?
 
@@ -7809,7 +7809,7 @@ Dekh, ye person genuinely knowledgeable hai. Pehle wale se better feedback hai k
 
 ## Jo actually implement karna chahiye — HIGH VALUE
 
-### Upgrade 5 — Dynamic ControlNet Scale ✅ EASY + HIGH IMPACT
+### Upgrade 5 — Dynamic ControlNet Scale  EASY + HIGH IMPACT
 
 Ye sabse easy aur impactful change hai. Ek line ka logic:-
 
@@ -7829,7 +7829,7 @@ def get_controlnet_scale(font_size, canvas_size=1024):
 
 ---
 
-### Upgrade 6 — Local Contrast Boost ✅ EASY + SOLVES REAL PROBLEM
+### Upgrade 6 — Local Contrast Boost  EASY + SOLVES REAL PROBLEM
 
 Text correct hai but readable nahi — ye real world mein hota hai. Background ka color text ke color se blend ho jaata hai.
 
@@ -7852,7 +7852,7 @@ Post-processing mein add karo after Pass 2. 10 lines ka code, noticeable improve
 
 ---
 
-### Upgrade 4 — Layout Constraints Engine ✅ MEDIUM EFFORT + HIGH VALUE
+### Upgrade 4 — Layout Constraints Engine  MEDIUM EFFORT + HIGH VALUE
 
 Ye LLM ke JSON schema validate karne ke baad ek simple check layer hai. Rocket science nahi hai:-
 
@@ -7885,7 +7885,7 @@ Ye Glyph Renderer se pehle run hoga. Pillow pe render hone se pehle positions gu
 
 ---
 
-### Speed Optimization — Pass 2 Steps Reduce ✅ FREE WIN
+### Speed Optimization — Pass 2 Steps Reduce  FREE WIN
 
 ```python
 # Pass 1 — full generation
@@ -7905,17 +7905,17 @@ final = flux_controlnet_pipe(
 
 ## Jo skip karna chahiye — LOW PRIORITY
 
-### Upgrade 1 — Multi-channel Control Map ❌ OVER-ENGINEERED
+### Upgrade 1 — Multi-channel Control Map  OVER-ENGINEERED
 
 "Channel 1 glyph, channel 2 importance map, channel 3 depth" — ye ControlNet Union ka architecture support nahi karta by default. Custom ControlNet training chahiye hoga. Ye months ka kaam hai.
 
 **Simple alternative jo same kaam karta hai:** Dynamic controlnet scale per text block (Upgrade 5) already importance hierarchy handle kar leta hai.
 
-### Upgrade 3 — Dual OCR Verification ❌ NOT WORTH IT
+### Upgrade 3 — Dual OCR Verification  NOT WORTH IT
 
 Florence-2 OCR as verification use karna — Florence image captioning ke liye trained hai, dedicated OCR ke liye nahi. EasyOCR + PaddleOCR dual verification zyada sensible hoga. But honestly, ek achha OCR with confidence threshold kaafi hai. Over-engineering hai ye.
 
-### Upgrade 7 — Layout Prior Model ❌ OUT OF SCOPE FOR NOW
+### Upgrade 7 — Layout Prior Model  OUT OF SCOPE FOR NOW
 
 Dataset collect hone ke baad ye train karna meaningful hai — but pehle dataset banao, pehle pipeline kaam kare, tab ye sochna. Abhi premature optimization hai.
 
@@ -7963,7 +7963,7 @@ Ye person ab genuinely helpful ho gaya hai. Feedback tight hai, actionable hai, 
 
 ## Jo bilkul sahi keh raha hai — implement karo
 
-### Fix 1 — Soft Mask Edges ✅ MUST DO
+### Fix 1 — Soft Mask Edges  MUST DO
 
 Ye sabse important fix hai is round mein. Hard mask edges exactly wo problem create karti hain jo text ko "cut-paste" feel deti hai. Ye literally 5 lines ka code hai aur impact bahut zyada hai.
 
@@ -7991,7 +7991,7 @@ def create_soft_mask(schema, canvas_size=1024, blur_radius=15):
 
 ---
 
-### Fix 2 — Text Length in Dynamic Scale ✅ IMPLEMENT
+### Fix 2 — Text Length in Dynamic Scale  IMPLEMENT
 
 Uska point sahi hai. "50% OFF" aur "Limited time offer valid on all products" dono same scale nahi le sakte.
 
@@ -8015,7 +8015,7 @@ def get_controlnet_scale(font_size, text_content, canvas_size=1024):
 
 ---
 
-### Fix 3 — Conditional Contrast Boost ✅ SMART
+### Fix 3 — Conditional Contrast Boost  SMART
 
 Hamesha contrast boost karna sometimes over-sharpening karta hai. Simple check:-
 
@@ -8041,7 +8041,7 @@ def should_boost_contrast(image, mask):
 
 ---
 
-### Optional — Color Hint in Schema ✅ ACTUALLY GOOD IDEA
+### Optional — Color Hint in Schema  ACTUALLY GOOD IDEA
 
 Ye wo person ne pehle bhi suggest kiya tha indirectly. LLM already `color_instruction` field deta tha — ab usse Flux prompt mein explicitly aur forcefully dalna chahiye.
 
@@ -8130,9 +8130,9 @@ Theek hai. Current state se lekar working pipeline tak — **har ek cheez** list
 ## Tera Current State
 
 ```
-✅ ~5000 images scraped
-🔄 Captions generate ho rahi hain (smart_caption.py running)
-❌ Baaki sab karna hai
+ ~5000 images scraped
+ Captions generate ho rahi hain (smart_caption.py running)
+ Baaki sab karna hai
 ```
 
 ---
@@ -8838,12 +8838,12 @@ Bhai. RTX Pro 6000 Blackwell 96GB — ye sab kuch local hai. RunPod ki zarurat n
 ## Jo Badal Gaya — Sab Kuch Local Hai
 
 ```
-❌ RunPod — not needed
-❌ Cloud upload — not needed  
-❌ SSH — not needed
-❌ Quantization — not needed
-❌ CPU offloading — not needed
-✅ Sab kuch apni machine pe
+ RunPod — not needed
+ Cloud upload — not needed  
+ SSH — not needed
+ Quantization — not needed
+ CPU offloading — not needed
+ Sab kuch apni machine pe
 ```
 
 ---
@@ -9347,12 +9347,12 @@ if len(text) == 0 or alpha / len(text) < 0.35:
 
 **Problem:** Ye filter karta hai:-
 
-- `"50% OFF"` — alpha ratio = 4/7 = 0.57 ✓ (pass)
-- `"₹1999/-"` — alpha = 0, REJECT ❌
-- `"10AM-6PM"` — alpha ratio = 0.4 ✓ (pass)
-- `"#1 Brand"` — alpha ratio = 0.28, REJECT ❌
+- `"50% OFF"` — alpha ratio = 4/7 = 0.57  (pass)
+- `"₹1999/-"` — alpha = 0, REJECT 
+- `"10AM-6PM"` — alpha ratio = 0.4  (pass)
+- `"#1 Brand"` — alpha ratio = 0.28, REJECT 
 - `"www.lakme.com"` — pass but should we keep?
-- `"2024"` — alpha = 0, REJECT ❌
+- `"2024"` — alpha = 0, REJECT 
 
 Marketing posters mein price tags, years, URLs, phone numbers — sab important training data hai.
 
@@ -9724,12 +9724,12 @@ IMPORTANT (quality ke liye)
 
 JO BILKUL MAT CHHEDO
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-✓ Preprocessing pipeline (CLAHE/sharpen/upscale)
-✓ Edge case detectors
-✓ Watermark threshold (adaptive)
-✓ Fragment merger
-✓ Two-pass retry system
-✓ Ollama cleanup concept
+ Preprocessing pipeline (CLAHE/sharpen/upscale)
+ Edge case detectors
+ Watermark threshold (adaptive)
+ Fragment merger
+ Two-pass retry system
+ Ollama cleanup concept
 ```
 
 Ye 4 fixes ke baad tera caption script production-grade ho jaayega for Flux LoRA training.
@@ -9959,15 +9959,15 @@ Ye regional OCR specifically ye cheezein pakdega jo abhi miss ho rahi hain:-
 ```
 Original Image (1000x1000)
 ┌─────────────────────────────┐
-│  DIWALI SALE  ← bada text   │  ✓ sab detect karte hain
+│  DIWALI SALE  ← bada text   │   sab detect karte hain
 │                             │
-│   50% OFF     ← headline    │  ✓ sab detect karte hain
+│   50% OFF     ← headline    │   sab detect karte hain
 │                             │
 │  Valid on all products      │  ~ sometimes miss
 │                             │
-│ T&C apply  |  www.lakme.com │  ✗ current mein miss
-│ +91-XXXXXXXXXX              │  ✗ current mein miss  
-│ Shop 14, Mall Road, Delhi   │  ✗ current mein miss
+│ T&C apply  |  www.lakme.com │   current mein miss
+│ +91-XXXXXXXXXX              │   current mein miss  
+│ Shop 14, Mall Road, Delhi   │   current mein miss
 └─────────────────────────────┘
      ↑ footer strip 4x upscale se catch hoga
 ```
@@ -10840,12 +10840,12 @@ Abhi tak ka status dekho:
 ## Jo Complete Ho Gaya
 
 ```
-✅ Dataset scraping (Pinterest + Flickr — 6600 images)
-✅ Caption script — final version ready
-✅ Caption quality testing — batch_2, batch_3, batch_7 tested
-✅ Lorem filter fixes
-✅ EasyOCR parameter fixes (width_ths, double pass)
-✅ Regional OCR
+ Dataset scraping (Pinterest + Flickr — 6600 images)
+ Caption script — final version ready
+ Caption quality testing — batch_2, batch_3, batch_7 tested
+ Lorem filter fixes
+ EasyOCR parameter fixes (width_ths, double pass)
+ Regional OCR
 ```
 
 ---
@@ -11275,10 +11275,10 @@ cp /tmp/glyph_test/* /home/aiteam/ai_team/Animesh-Diffusion/pipeline/outputs/
 Output numbers bilkul sahi hain:
 
 ```
-'LAKME'                → 571x117px  @ 160pt  ✓ fits canvas
-'DIWALI SALE'          → 641x74px   @ 100pt  ✓ fits canvas  
-'50% OFF'              → 913x148px  @ 200pt  ✓ auto-shifted to x=71 (was 150, too wide)
-'Valid on all products' → 459x47px  @ 48pt   ✓ fits canvas
+'LAKME'                → 571x117px  @ 160pt   fits canvas
+'DIWALI SALE'          → 641x74px   @ 100pt   fits canvas  
+'50% OFF'              → 913x148px  @ 200pt   auto-shifted to x=71 (was 150, too wide)
+'Valid on all products' → 459x47px  @ 48pt    fits canvas
 ```
 
 `50% OFF` ka x 150 → 71 auto-correct hua kyunki 913px wide text at x=150 would overflow at 1063px (canvas is 1024). Glyph renderer ne automatically clamp kiya — ye sahi kaam hai.

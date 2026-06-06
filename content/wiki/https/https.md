@@ -25,7 +25,7 @@ HTTPS is HTTP over TLS/SSL encryption. It wraps HTTP inside an encrypted tunnel,
 3. **Encrypted HTTP**: All HTTP requests/responses are encrypted with the shared key
 4. **Decrypt**: Server decrypts request, sends encrypted response
 
-The browser shows a lock icon 🔒 for HTTPS sites.
+The browser shows a lock icon  for HTTPS sites.
 
 ## Visual Explanation
 

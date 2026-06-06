@@ -350,14 +350,14 @@ Response:
 
 To become a **top backend engineer**, master these:
 
-1️⃣ Networking fundamentals  
-2️⃣ HTTP protocol  
-3️⃣ Databases  
-4️⃣ API design  
-5️⃣ Authentication  
-6️⃣ System design  
-7️⃣ Caching  
-8️⃣ Distributed systems
+1⃣ Networking fundamentals  
+2⃣ HTTP protocol  
+3⃣ Databases  
+4⃣ API design  
+5⃣ Authentication  
+6⃣ System design  
+7⃣ Caching  
+8⃣ Distributed systems
 
 ---
 
@@ -1114,7 +1114,7 @@ Client checks:
 • Is domain correct?
 
 If yes → trust server  
-If no → warning (you’ve seen this in browsers ⚠️)
+If no → warning (you’ve seen this in browsers )
 
 ---
 
@@ -1218,9 +1218,9 @@ Because:
 
 Handshake ensures:
 
-✔ secure key exchange  
-✔ server authenticity  
-✔ encryption agreement
+ secure key exchange  
+ server authenticity  
+ encryption agreement
 
 ---
 
@@ -1258,7 +1258,7 @@ Whenever you see:
 
 ```markdown
 https://
-🔒 lock icon in browser
+ lock icon in browser
 ```
 
 TLS is happening.
@@ -1313,7 +1313,7 @@ Let’s go step by step, no skipping.
 
 **Short answer:**
 
-> ❌ No — they do NOT handle TLS in production.
+>  No — they do NOT handle TLS in production.
 
 They are:
 
@@ -1406,7 +1406,7 @@ uvicorn app:app --ssl-keyfile key.pem --ssl-certfile cert.pem
 
 But:
 
-> ❌ Not used in production
+>  Not used in production
 
 Why?
 
@@ -1439,7 +1439,7 @@ http://example.com
 
 Then:
 
-> ✅ YES — vulnerable
+>  YES — vulnerable
 
 You can:
 
@@ -1453,7 +1453,7 @@ You can:
 
 ## Reality:
 
-### ❌ On HTTPS sites → Very hard
+###  On HTTPS sites → Very hard
 
 Because:
 
@@ -1463,7 +1463,7 @@ Because:
 
 ---
 
-### ✅ On HTTP sites → Easy
+###  On HTTP sites → Easy
 
 Example attack:
 
@@ -1537,7 +1537,7 @@ Since you're building projects:
 
 ### If using Vercel / Netlify:
 
-> ✅ TLS is automatic  
+>  TLS is automatic  
 > No work needed.
 
 ---
@@ -1609,7 +1609,7 @@ http://localhost:8000
 
 But you deploy behind Nginx with HTTPS:
 
-👉 Is your backend still “insecure”?
+ Is your backend still “insecure”?
 
 Think carefully — this tests real understanding.
 
@@ -1936,7 +1936,7 @@ And you open:
 localhost:5000
 ```
 
-👉 What exactly are you connecting to?
+ What exactly are you connecting to?
 
 (Be precise — don’t say “server”, explain in socket terms.)
 
@@ -2338,9 +2338,9 @@ localhost:5000
 
 Answer:
 
-👉 How many sockets exist on server side?
+ How many sockets exist on server side?
 
-👉 And what is common vs different among them?
+ And what is common vs different among them?
 
 ---
 
@@ -2360,7 +2360,7 @@ Good — **partially correct**, but I want you to be *precise like a backend eng
 
 ## Your Answer: “3”
 
-### ✔️ Correct — but incomplete.
+###  Correct — but incomplete.
 
 Let’s refine it.
 
@@ -2764,7 +2764,7 @@ Hello Animesh
 
 Yet:
 
-> ✅ A working HTTP server
+>  A working HTTP server
 
 ---
 
@@ -2870,7 +2870,7 @@ GET /hello HTTP/1.1
 Host: localhost
 ```
 
-👉 What EXACTLY must your server send back for browser to show:
+ What EXACTLY must your server send back for browser to show:
 
 ```markdown
 Hello World

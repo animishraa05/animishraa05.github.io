@@ -227,10 +227,10 @@ Start broad and go deeper in a few areas. It helps to know a little about variou
 
 |  | Short | Medium | Long |
 | --- | --- | --- | --- |
-| Read through the System design topics to get a broad understanding of how systems work | 👍 | 👍 | 👍 |
-| Read through a few articles in the Company engineering blogs for the companies you are interviewing with | 👍 | 👍 | 👍 |
-| Read through a few Real world architectures | 👍 | 👍 | 👍 |
-| Review How to approach a system design interview question | 👍 | 👍 | 👍 |
+| Read through the System design topics to get a broad understanding of how systems work |  |  |  |
+| Read through a few articles in the Company engineering blogs for the companies you are interviewing with |  |  |  |
+| Read through a few Real world architectures |  |  |  |
+| Review How to approach a system design interview question |  |  |  |
 | Work through System design interview questions with solutions | Some | Many | Most |
 | Work through Object-oriented design interview questions with solutions | Some | Many | Most |
 | Review Additional system design interview questions | Some | Many | Most |

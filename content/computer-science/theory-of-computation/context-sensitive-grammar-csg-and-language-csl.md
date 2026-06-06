@@ -7,15 +7,15 @@ scraped_date: [[2026-03-29]]
 # Context-sensitive Grammar (CSG) and Language (CSL)
 Context-Sensitive Grammar (CSG) is a formal grammar where production rules depends on the context of a symbols, a non-terminal can be replaced only when it appears in a specific context.
 
-> Production Rules α X β → α γ βX ➜ non-terminal symbolα and β ➜ strings of terminals and/or non-terminalsγ ➜ non-empty stringX is replaced by γ only in the context of α and β
+> Production Rules α X β → α γ βX  non-terminal symbolα and β  strings of terminals and/or non-terminalsγ  non-empty stringX is replaced by γ only in the context of α and β
 
 Production Rules
 
 α X β → α γ β
 
-- X ➜ non-terminal symbol
-- α and β ➜ strings of terminals and/or non-terminals
-- γ ➜ non-empty string
+- X  non-terminal symbol
+- α and β  strings of terminals and/or non-terminals
+- γ  non-empty string
 - X is replaced by γ only in the context of α and β
 
 Context-sensitive grammars are more powerful than context-free grammars because there are some languages that can be described by CSG but not by context-free grammars and CSL are less powerful than Unrestricted grammar. That's why context-sensitive grammars are positioned between context-free and unrestricted grammars in the Chomsky hierarchy.

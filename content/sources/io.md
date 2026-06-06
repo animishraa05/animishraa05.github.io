@@ -597,21 +597,21 @@ When the CPU accesses `Page 2`, the **Page Table** finds that `P2` is in **Frame
 
 ## 5\. Advantages of Paging
 
-✔ **No External Fragmentation** → Since memory is allocated in fixed-sized frames, **wastage due to fragmentation is minimized**.
+ **No External Fragmentation** → Since memory is allocated in fixed-sized frames, **wastage due to fragmentation is minimized**.
 
-✔ **Efficient Memory Utilization** → Non-contiguous memory allocation allows efficient use of available RAM.
+ **Efficient Memory Utilization** → Non-contiguous memory allocation allows efficient use of available RAM.
 
-✔ **Easy Process Execution** → A process can run even if all its pages are not loaded into memory (**demand paging**).
+ **Easy Process Execution** → A process can run even if all its pages are not loaded into memory (**demand paging**).
 
 ---
 
 ## 6\. Disadvantages of Paging
 
-❌ **Internal Fragmentation** → If a process does not fully use a page (e.g., only 3 KB in a 4 KB page), the remaining space is **wasted**.
+ **Internal Fragmentation** → If a process does not fully use a page (e.g., only 3 KB in a 4 KB page), the remaining space is **wasted**.
 
-❌ **Overhead of Page Tables** → Each process needs a **Page Table**, which consumes extra memory.
+ **Overhead of Page Tables** → Each process needs a **Page Table**, which consumes extra memory.
 
-❌ **Increased Memory Access Time** → Since every memory access requires a **Page Table lookup**, **execution can be slower**.
+ **Increased Memory Access Time** → Since every memory access requires a **Page Table lookup**, **execution can be slower**.
 
 > **Solution:** Use a **TLB (Translation Lookaside Buffer)**, a **cache** for frequently accessed page mappings, to **speed up address translation**.
 
@@ -665,9 +665,9 @@ A **Page Fault** occurs when a required page is **not present in RAM**, forcing 
 
 ## Conclusion
 
-✔ **Paging eliminates external fragmentation and improves memory efficiency.**  
-✔ **The OS uses Page Tables to map logical pages to physical frames.**  
-✔ **Techniques like TLB and Demand Paging help optimize performance.**
+ **Paging eliminates external fragmentation and improves memory efficiency.**  
+ **The OS uses Page Tables to map logical pages to physical frames.**  
+ **Techniques like TLB and Demand Paging help optimize performance.**
 
 ---
 
@@ -733,18 +733,18 @@ A **hash table** supports the following basic operations:
 | **Quadratic Probing** | $O(1)$ | $O(1)$ | $O(n)$ |
 | **Double Hashing** | $O(1)$ | $O(1)$ | $O(n)$ |
 
-✔ **Separate Chaining**: Uses linked lists at each index. If a chain grows long, search time becomes **$O(n)$**.  
-✔ **Linear Probing**: Uses **next available slot** when collision occurs. In worst case, **clustering** leads to $O(n)$ search time.  
-✔ **Quadratic Probing**: Avoids clustering but still can degrade to $O(n)$ in bad cases.  
-✔ **Double Hashing**: Uses a **second hash function** to resolve collisions, giving the best performance among probing methods.
+ **Separate Chaining**: Uses linked lists at each index. If a chain grows long, search time becomes **$O(n)$**.  
+ **Linear Probing**: Uses **next available slot** when collision occurs. In worst case, **clustering** leads to $O(n)$ search time.  
+ **Quadratic Probing**: Avoids clustering but still can degrade to $O(n)$ in bad cases.  
+ **Double Hashing**: Uses a **second hash function** to resolve collisions, giving the best performance among probing methods.
 
 ---
 
 ### 5\. Improving Hashing Performance
 
-✔ **Choose a good hash function** → Distributes keys **evenly** to avoid clustering.  
-✔ **Keep load factor low ($\alpha \leq 0.7$)** → Resize the table when needed.  
-✔ **Use Double Hashing or Separate Chaining** for better collision resolution.
+ **Choose a good hash function** → Distributes keys **evenly** to avoid clustering.  
+ **Keep load factor low ($\alpha \leq 0.7$)** → Resize the table when needed.  
+ **Use Double Hashing or Separate Chaining** for better collision resolution.
 
 ---
 
@@ -784,13 +784,13 @@ Hashing is a technique used for **fast data retrieval** using a **hash function*
 
 ### (a) Best & Average Case: O(1)O(1)
 
-✔ If the **hash function distributes keys evenly**, operations take **constant time** $O(1)$.  
-✔ Most hash tables (e.g., dictionaries in Python, `unordered_map` in C++) provide **average $O(1)$ time complexity** for insert, search, and delete.
+ If the **hash function distributes keys evenly**, operations take **constant time** $O(1)$.  
+ Most hash tables (e.g., dictionaries in Python, `unordered_map` in C++) provide **average $O(1)$ time complexity** for insert, search, and delete.
 
 ### (b) Worst Case: O(n)O(n)
 
-❌ If multiple keys **collide** (map to the same index), we need to **search a list of values** stored at that index.  
-❌ In extreme cases, all elements may hash to the **same index**, making search take **$O(n)$ time**.
+ If multiple keys **collide** (map to the same index), we need to **search a list of values** stored at that index.  
+ In extreme cases, all elements may hash to the **same index**, making search take **$O(n)$ time**.
 
 ---
 
@@ -802,8 +802,8 @@ $$
 \alpha = \frac{\text{Number of elements}}{\text{Size of hash table}}
 $$
 
-✔ If **$\alpha$ is low**, fewer collisions occur → **fast operations ($O(1)$)**.  
-❌ If **$\alpha$ is high**, more collisions occur → **degrades to $O(n)$ performance**.
+ If **$\alpha$ is low**, fewer collisions occur → **fast operations ($O(1)$)**.  
+ If **$\alpha$ is high**, more collisions occur → **degrades to $O(n)$ performance**.
 
 ### (b) Collision Resolution Strategy
 
@@ -814,9 +814,9 @@ $$
 | **Quadratic Probing** | $O(1)$ | $O(1)$ | $O(n)$ |
 | **Double Hashing** | $O(1)$ | $O(1)$ | $O(n)$ |
 
-✔ **Separate Chaining**: Uses linked lists; longer chains slow down search.  
-✔ **Linear Probing**: Uses next available slot, but can cause clustering.  
-✔ **Double Hashing**: Uses another hash function to reduce clustering.
+ **Separate Chaining**: Uses linked lists; longer chains slow down search.  
+ **Linear Probing**: Uses next available slot, but can cause clustering.  
+ **Double Hashing**: Uses another hash function to reduce clustering.
 
 ---
 
@@ -828,16 +828,16 @@ $$
 | **C++ `unordered_map`** | $O(1)$ | $O(n)$ |
 | **Java `HashMap`** | $O(1)$ | $O(n)$ |
 
-✔ In practice, well-designed hash tables **rarely** degrade to $O(n)$.  
-✔ Resizing and rehashing help maintain performance.
+ In practice, well-designed hash tables **rarely** degrade to $O(n)$.  
+ Resizing and rehashing help maintain performance.
 
 ---
 
 ## 4\. Conclusion
 
-✔ **Ideal case:** Hashing gives $O(1)$ time for insert, search, and delete.  
-✔ **Collisions can degrade performance to $O(n)$,** but good strategies minimize this.  
-✔ **Load factor, hash function, and collision handling** are key to performance.
+ **Ideal case:** Hashing gives $O(1)$ time for insert, search, and delete.  
+ **Collisions can degrade performance to $O(n)$,** but good strategies minimize this.  
+ **Load factor, hash function, and collision handling** are key to performance.
 
 ---
 
@@ -880,10 +880,10 @@ A **device driver** is a special program that allows the operating system to com
 
 ### (a) Functions of a Device Driver:
 
-✔ Converts **high-level I/O requests** into **low-level hardware-specific instructions**.  
-✔ Manages **device initialization** and **configuration**.  
-✔ Handles **interrupts and errors** from hardware.  
-✔ Ensures **synchronized access** for shared devices.
+ Converts **high-level I/O requests** into **low-level hardware-specific instructions**.  
+ Manages **device initialization** and **configuration**.  
+ Handles **interrupts and errors** from hardware.  
+ Ensures **synchronized access** for shared devices.
 
 ### (b) Types of Device Drivers:
 
@@ -934,12 +934,12 @@ When a user requests an I/O operation (e.g., reading a file), the OS must transf
 
 ## 5\. Conclusion
 
-✔ **I/O devices** include block, character, network, and sensor devices.  
-✔ **Device drivers** act as intermediaries between **OS and hardware**.  
-✔ The **I/O system has a layered structure**, handling requests at different levels.  
-✔ **Transforming an I/O request** involves checking the request, interacting with drivers, and using interrupts to notify completion.
+ **I/O devices** include block, character, network, and sensor devices.  
+ **Device drivers** act as intermediaries between **OS and hardware**.  
+ The **I/O system has a layered structure**, handling requests at different levels.  
+ **Transforming an I/O request** involves checking the request, interacting with drivers, and using interrupts to notify completion.
 
-Would you like **a deeper explanation of any specific topic** (like disk scheduling, buffering, or interrupt handling)? 🚀
+Would you like **a deeper explanation of any specific topic** (like disk scheduling, buffering, or interrupt handling)? 
 
 ---
 
@@ -955,21 +955,21 @@ Absolutely! Let's **deep dive into "Transforming an I/O Request to a Hardware Op
 
 ---
 
-## 🔧 What Does This Mean?
+##  What Does This Mean?
 
 When a **user or a process requests an I/O operation** (like reading a file, printing a document, or accessing a USB drive), the OS must **translate** this high-level request into **low-level hardware commands**. This entire flow, from request to hardware execution and back, involves **multiple layers** and **several operations.**
 
 ---
 
-## 🧭 Step-by-Step Process of Transforming an I/O Request to a Hardware Operation
+##  Step-by-Step Process of Transforming an I/O Request to a Hardware Operation
 
 ---
 
-### 📌 1. Application Layer: The I/O Request Begins
+###  1. Application Layer: The I/O Request Begins
 
 A user-level application issues an I/O request:
 
-> 🧑💻 Example:
+>  Example:
 
 ```c
 FILE *fp = fopen("data.txt", "r");
@@ -979,7 +979,7 @@ At this point, the application has no idea **how the file is stored, where it's 
 
 ---
 
-### 📌 2. OS Checks File System and Buffer Cache
+###  2. OS Checks File System and Buffer Cache
 
 The OS does the following:
 
@@ -989,7 +989,7 @@ The OS does the following:
 
 ---
 
-### 📌 3. Device-Independent I/O Software Layer
+###  3. Device-Independent I/O Software Layer
 
 Here, OS handles generic I/O functions:
 
@@ -1002,11 +1002,11 @@ This makes I/O handling **independent of specific hardware**.
 
 ---
 
-### 📌 4. Device Driver: Translator to Hardware Language
+###  4. Device Driver: Translator to Hardware Language
 
 Once the I/O operation is defined, the OS invokes the appropriate **device driver**:
 
-> 🔄 Device driver = software translator that converts OS commands into **hardware commands**
+>  Device driver = software translator that converts OS commands into **hardware commands**
 
 Example:
 
@@ -1017,7 +1017,7 @@ It also sets up **registers, DMA (Direct Memory Access) addresses**, and **I/O c
 
 ---
 
-### 📌 5. Hardware-Level Execution
+###  5. Hardware-Level Execution
 
 Now the actual device comes into play:
 
@@ -1030,7 +1030,7 @@ Now the actual device comes into play:
 
 ---
 
-### 📌 6. Interrupt Handling
+###  6. Interrupt Handling
 
 Once the I/O is complete, the hardware sends an **interrupt signal** to the CPU:
 
@@ -1041,7 +1041,7 @@ Once the I/O is complete, the hardware sends an **interrupt signal** to the CPU:
 
 ---
 
-### 📌 7. Completion and Return to User Process
+###  7. Completion and Return to User Process
 
 Finally, the data is made available to the **user-space process**:
 
@@ -1050,7 +1050,7 @@ Finally, the data is made available to the **user-space process**:
 
 ---
 
-## 📊 Full Flow Diagram
+##  Full Flow Diagram
 
 ```
 User Application
@@ -1084,7 +1084,7 @@ User Application
 
 ---
 
-## 🔁 Alternate I/O Techniques
+##  Alternate I/O Techniques
 
 | **Method** | **How it works** | **Pros** | **Used in** |
 | --- | --- | --- | --- |
@@ -1094,7 +1094,7 @@ User Application
 
 ---
 
-## ✅ Summary
+##  Summary
 
 | Stage | Description |
 | --- | --- |
@@ -1108,9 +1108,9 @@ User Application
 
 ---
 
-## 🧠 Final Thought:
+##  Final Thought:
 
-👉 Think of the I/O system as **a relay race**. Each layer hands off the baton (data/request) to the next, until the actual hardware completes the job, and then the baton is handed back up to the user.
+ Think of the I/O system as **a relay race**. Each layer hands off the baton (data/request) to the next, until the actual hardware completes the job, and then the baton is handed back up to the user.
 
 Would you like a **real-world analogy** for this process (like postal delivery, restaurant ordering, etc.) or want to go deeper into **interrupts or DMA**?
 
@@ -1128,7 +1128,7 @@ Alright! Let’s break down **I/O devices in Operating Systems** like a proper O
 
 ---
 
-## 🖥️ What Are I/O Devices?
+##  What Are I/O Devices?
 
 **I/O (Input/Output) devices** are external hardware components that allow a computer to **communicate with the outside world** — either to **receive input**, **produce output**, or both.
 
@@ -1136,7 +1136,7 @@ In OS, I/O devices are managed carefully so that multiple programs can use them 
 
 ---
 
-## 🧩 Categories of I/O Devices
+##  Categories of I/O Devices
 
 I/O devices are classified based on their **functionality**:
 
@@ -1150,7 +1150,7 @@ I/O devices are classified based on their **functionality**:
 
 ---
 
-## 💡 I/O Device Characteristics
+##  I/O Device Characteristics
 
 1. **Speed varies** greatly:
 	- Keyboard: very slow
@@ -1167,7 +1167,7 @@ I/O devices are classified based on their **functionality**:
 
 ---
 
-## 🎯 Device Examples with Categories
+##  Device Examples with Categories
 
 | Device | Category | Type |
 | --- | --- | --- |
@@ -1185,7 +1185,7 @@ I/O devices are classified based on their **functionality**:
 
 ---
 
-## 📦 How OS Manages I/O Devices
+##  How OS Manages I/O Devices
 
 The OS uses several tools and abstractions:
 
@@ -1207,7 +1207,7 @@ The OS uses several tools and abstractions:
 
 ---
 
-## 🔁 Interaction Between OS and I/O Devices
+##  Interaction Between OS and I/O Devices
 
 ```
 Mermaid
@@ -1215,7 +1215,7 @@ Mermaid
 
 ---
 
-## 🔧 I/O Techniques Summary
+##  I/O Techniques Summary
 
 | Technique | Description | Pros | Used For |
 | --- | --- | --- | --- |
@@ -1225,7 +1225,7 @@ Mermaid
 
 ---
 
-## 🧠 Final Thought:
+##  Final Thought:
 
 The OS doesn’t just "talk" to devices — it **controls access**, ensures **efficient sharing**, handles **errors**, and provides **abstractions** to user programs so they don’t need to care about the nitty-gritty of hardware.
 
@@ -1247,7 +1247,7 @@ Perfect! Let’s deep dive into **Device Drivers** — one of the core component
 
 ---
 
-## 🧠 What is a Device Driver?
+##  What is a Device Driver?
 
 A **Device Driver** is a specialized **software component** that allows the **Operating System (OS)** and application programs to **interact with hardware devices**.
 
@@ -1255,7 +1255,7 @@ It acts as a **translator** between the generic I/O instructions from the OS and
 
 ---
 
-## 🏗️ Why Are Device Drivers Needed?
+##  Why Are Device Drivers Needed?
 
 Different hardware devices have **unique control mechanisms**, communication protocols, and configurations. Instead of rewriting the OS for every new device, we:
 
@@ -1266,7 +1266,7 @@ This makes the system **modular, scalable, and easy to update**.
 
 ---
 
-## ⚙️ Key Functions of a Device Driver:
+##  Key Functions of a Device Driver:
 
 1. **Initialization of device** (power-up, handshake).
 2. **Managing I/O requests** (e.g., read/write).
@@ -1277,7 +1277,7 @@ This makes the system **modular, scalable, and easy to update**.
 
 ---
 
-## 🧩 Types of Device Drivers:
+##  Types of Device Drivers:
 
 | Type | Description | Examples |
 | --- | --- | --- |
@@ -1288,7 +1288,7 @@ This makes the system **modular, scalable, and easy to update**.
 
 ---
 
-## 🛠️ Device Driver Architecture (with Diagram)
+##  Device Driver Architecture (with Diagram)
 
 ```
 Mermaid
@@ -1300,7 +1300,7 @@ Mermaid
 
 ---
 
-## 🧬 Example – How Keyboard Driver Works
+##  Example – How Keyboard Driver Works
 
 1. You press the key **"A"**.
 2. The **keyboard hardware** sends a **scan code** to the system.
@@ -1310,7 +1310,7 @@ Mermaid
 
 ---
 
-## 📂 Location of Drivers in OS
+##  Location of Drivers in OS
 
 | OS | Where Drivers Are Stored |
 | --- | --- |
@@ -1320,7 +1320,7 @@ Mermaid
 
 ---
 
-## 🛑 What If the Driver Is Missing?
+##  What If the Driver Is Missing?
 
 - Device might not work.
 - System may show an **“unknown device”** warning.
@@ -1329,7 +1329,7 @@ Mermaid
 
 ---
 
-## 💡 Summary
+##  Summary
 
 - A **Device Driver** = bridge between OS and hardware.
 - It handles **communication**, **control**, **data transfer**, and **error management**.
@@ -1339,7 +1339,7 @@ Mermaid
 
 Next up, want to go into **Structure of I/O Software** (which includes how drivers fit into the entire stack), or move toward **Disk Structure / Disk Scheduling** from the storage side of this unit?
 
-Your call, captain 😎
+Your call, captain 
 
 ---
 
@@ -1355,7 +1355,7 @@ Awesome! Let’s break down the **Structure of I/O Software** — a key part of 
 
 ---
 
-## 🧠 What Is I/O Software?
+##  What Is I/O Software?
 
 **I/O software** is the **layered system** that manages input/output operations from applications to devices. It provides **abstraction**, **synchronization**, and **control** over diverse hardware components like disks, keyboards, printers, etc.
 
@@ -1363,7 +1363,7 @@ Think of it like a **multi-layered translator** helping the OS and hardware unde
 
 ---
 
-## 🏗️ Layers of I/O Software
+##  Layers of I/O Software
 
 The I/O software system is typically organized into **four layers** (from top to bottom):
 
@@ -1375,7 +1375,7 @@ Let’s understand each layer:
 
 ---
 
-### 1\. 🔼 User-Level I/O Software (Top-most Layer)
+### 1\.  User-Level I/O Software (Top-most Layer)
 
 **Who uses it?**
 
@@ -1389,11 +1389,11 @@ Let’s understand each layer:
 		- Formatted I/O (e.g., `printf`, `scanf`)
 		- Spooling (managing queues for devices like printers)
 
-🧠 *Example:* When you run a `read()` command, it doesn’t talk to the hardware directly — it’s handled by this software layer first.
+ *Example:* When you run a `read()` command, it doesn’t talk to the hardware directly — it’s handled by this software layer first.
 
 ---
 
-### 2\. 🧰 Device-Independent I/O Software
+### 2\.  Device-Independent I/O Software
 
 **Responsibilities:**
 
@@ -1405,11 +1405,11 @@ Let’s understand each layer:
 		- Allocation & deallocation
 		- Error reporting
 
-🎯 *Goal:* Make devices look the **same** to upper layers, even if hardware is different.
+ *Goal:* Make devices look the **same** to upper layers, even if hardware is different.
 
 ---
 
-### 3\. 🧩 Device Drivers
+### 3\.  Device Drivers
 
 We covered these already! Here's a quick refresher:
 
@@ -1417,11 +1417,11 @@ We covered these already! Here's a quick refresher:
 - Converts OS I/O requests into device-specific operations.
 - Interfaces with **hardware registers**, handles **interrupts**, and ensures data transfer.
 
-🧠 *Example:* Disk driver knows how to rotate platters, read sectors, manage seek time.
+ *Example:* Disk driver knows how to rotate platters, read sectors, manage seek time.
 
 ---
 
-### 4\. ⚡ Interrupt Handlers (Lowest Layer in Software)
+### 4\.  Interrupt Handlers (Lowest Layer in Software)
 
 **Why we need it:**  
 Polling wastes CPU cycles. Instead, **interrupts** tell the CPU when something happens (e.g., “disk read complete”).
@@ -1433,11 +1433,11 @@ Polling wastes CPU cycles. Instead, **interrupts** tell the CPU when something h
 - Executes interrupt routine.
 - Restores context & resumes previous work.
 
-💡 *Example:* When keyboard input arrives, an interrupt is raised → the OS handles it via the keyboard interrupt handler.
+ *Example:* When keyboard input arrives, an interrupt is raised → the OS handles it via the keyboard interrupt handler.
 
 ---
 
-## 🧪 Putting It All Together (Data Flow):
+##  Putting It All Together (Data Flow):
 
 Let’s say you write a file to disk:
 
@@ -1448,7 +1448,7 @@ Let’s say you write a file to disk:
 
 ---
 
-## 🎯 Goals of I/O Software Structure
+##  Goals of I/O Software Structure
 
 | Goal | Why It Matters |
 | --- | --- |
@@ -1460,7 +1460,7 @@ Let’s say you write a file to disk:
 
 ---
 
-## 🧠 Summary
+##  Summary
 
 - The I/O system is layered: **User-level → Generic OS → Drivers → Interrupts**.
 - This design helps in building scalable, portable, and efficient OSes.
@@ -1470,7 +1470,7 @@ Let’s say you write a file to disk:
 
 Next up: Want to explore **Transforming I/O Requests to Hardware Operations** (how these layers actually work in real scenarios), or jump into **Disk Structure & Scheduling**?
 
-You command, I deliver 😄
+You command, I deliver 
 
 ---
 
@@ -1482,17 +1482,17 @@ write working of an io operation
 
 **ChatGPT said**
 
-Sure! Let’s walk through the **working of an I/O operation** in an Operating System — step by step, like how data moves from a user request to a hardware action and back. 🧠⚙️
+Sure! Let’s walk through the **working of an I/O operation** in an Operating System — step by step, like how data moves from a user request to a hardware action and back. 
 
 ---
 
-## 🔄 Working of an I/O Operation
+##  Working of an I/O Operation
 
 Let's say a user wants to read a file from the disk. Here's what happens:
 
 ---
 
-### 🧑💻 1. User Request (System Call)
+###  1. User Request (System Call)
 
 - The user program (e.g., text editor) makes a **system call** like:
 	```c
@@ -1502,7 +1502,7 @@ Let's say a user wants to read a file from the disk. Here's what happens:
 
 ---
 
-### 🧰 2. Check File and Buffer Info
+###  2. Check File and Buffer Info
 
 - The OS:
 	- Checks if the file descriptor `fd` is valid.
@@ -1511,7 +1511,7 @@ Let's say a user wants to read a file from the disk. Here's what happens:
 
 ---
 
-### 🧱 3. Device-Independent I/O Layer
+###  3. Device-Independent I/O Layer
 
 - This layer:
 	- Identifies **which device** to use (e.g., disk0, USB).
@@ -1520,7 +1520,7 @@ Let's say a user wants to read a file from the disk. Here's what happens:
 
 ---
 
-### 🧩 4. Device Driver
+###  4. Device Driver
 
 - The device driver converts the **generic request** into **hardware-specific commands**.
 	- For example: convert “read 4KB at block 120” into device-specific register values.
@@ -1528,7 +1528,7 @@ Let's say a user wants to read a file from the disk. Here's what happens:
 
 ---
 
-### ⚡ 5. Hardware Operation Starts
+###  5. Hardware Operation Starts
 
 - The hardware device (e.g., disk controller) starts the operation.
 - It may:
@@ -1538,7 +1538,7 @@ Let's say a user wants to read a file from the disk. Here's what happens:
 
 ---
 
-### 📣 6. Interrupt on Completion
+###  6. Interrupt on Completion
 
 - Once the I/O operation is complete:
 	- The device raises an **interrupt** to signal the CPU.
@@ -1546,7 +1546,7 @@ Let's say a user wants to read a file from the disk. Here's what happens:
 
 ---
 
-### 🛠️ 7. Interrupt Handler Executes
+###  7. Interrupt Handler Executes
 
 - The **interrupt handler**:
 	- Checks the device status.
@@ -1555,21 +1555,21 @@ Let's say a user wants to read a file from the disk. Here's what happens:
 
 ---
 
-### 📦 8. Data Returned to User Space
+###  8. Data Returned to User Space
 
 - The data is copied from the kernel buffer to the **user buffer** (if not using DMA).
 - The system call returns to the user with the result (e.g., number of bytes read).
 
 ---
 
-### ✅ 9. User Program Continues
+###  9. User Program Continues
 
 - The user program now has the data it requested.
 - It can now proceed with further processing.
 
 ---
 
-## 📊 Diagram: I/O Operation Flow
+##  Diagram: I/O Operation Flow
 
 ```
 Mermaid
@@ -1577,7 +1577,7 @@ Mermaid
 
 ---
 
-## 🔁 Recap Table
+##  Recap Table
 
 | Step | Component | Action |
 | --- | --- | --- |
@@ -1651,7 +1651,7 @@ is a **C language** statement used for **file handling**. Here's a breakdown of 
 
 ---
 
-### 🔍 Explanation
+###  Explanation
 
 | Part | Meaning |
 | --- | --- |
@@ -1662,7 +1662,7 @@ is a **C language** statement used for **file handling**. Here's a breakdown of 
 
 ---
 
-### 📌 What it does:
+###  What it does:
 
 - Tries to open the file `data.txt` in **read mode**.
 - If successful, `fp` points to the file stream.
@@ -1670,7 +1670,7 @@ is a **C language** statement used for **file handling**. Here's a breakdown of 
 
 ---
 
-### ✅ Usage Example:
+###  Usage Example:
 
 ```c
 if (fp == NULL) {

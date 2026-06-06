@@ -1973,7 +1973,7 @@ Ye diagram tumhe ye samajhne mein help karega ki EJB backend mein kahan fit hota
 
 ---
 
-### 🔗 Reference Links for Diagrams & Quick Notes
+###  Reference Links for Diagrams & Quick Notes
 
 Tumhe in links par bahut clean aur simplified diagrams mil jayenge:
 

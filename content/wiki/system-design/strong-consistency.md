@@ -42,7 +42,7 @@ digraph G {
     n1 -> coord [label="ack"];
     n2 -> coord [label="ack"];
     n3 -> coord [label="ack"];
-    coord -> client [label="✓ Write committed"];
+    coord -> client [label=" Write committed"];
 
     reader [label="Client Read"];
     reader -> n2 [label="→ X=7 (guaranteed latest)"];

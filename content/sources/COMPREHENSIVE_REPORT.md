@@ -1393,34 +1393,34 @@ This provides immediate visibility into model quality for stakeholders.
 
 The dashboard has a sidebar navigation with 10 pages:
 
-#### Page 1: 📊 Overview
+#### Page 1:  Overview
 - **KPI strip**: Total orders, net revenue, avg order value, avg delivery time, delivery rate — displayed as metric cards at the top of every page
 - **Order status distribution**: Pie chart (delivered/cancelled/refunded)
 - **Platform split**: Bar chart showing orders by platform
 - **Monthly revenue trend**: Dual-axis chart — revenue (line) + orders (bar) over time
 - **Data model summary**: Table showing row counts per table
 
-#### Page 2: 💰 Revenue
+#### Page 2:  Revenue
 - **Monthly revenue line chart**: Revenue over time with markers
 - **MoM growth bar chart**: Color-coded green/red for positive/negative growth
 - **Full data table**: All monthly revenue data
 
-#### Page 3: 🏆 Restaurants
+#### Page 3:  Restaurants
 - **Top 10 restaurants bar chart**: Revenue with city coloring
 - **Hover data**: Rating, delivery success rate, total orders
 - **Full data table**
 
-#### Page 4: 👥 Customers
+#### Page 4:  Customers
 - **Customer segments pie chart**: Distribution of Premium-Loyal, Premium-New, etc.
 - **Top 20 CLV bar chart**: Lifetime value with segment coloring
 - **Full data table**
 
-#### Page 5: 🍔 Menu Items
+#### Page 5:  Menu Items
 - **Top 10 items bar chart**: Revenue with category coloring
 - **Hover data**: Units sold, order count, average price
 - **Full data table**
 
-#### Page 6: ❌ Cancellations
+#### Page 6:  Cancellations
 - **Cancellation rate bar chart**: Top 15 cities by cancellation rate
 - **Scatter plot**: Volume vs cancellation rate, sized by cancelled count
 - **Full data table**
@@ -1430,17 +1430,17 @@ The dashboard has a sidebar navigation with 10 pages:
 - **Color scale**: YlOrRd (yellow → orange → red) for intuitive demand visualization
 - **Full data table**
 
-#### Page 8: 🚴 Delivery Agents
+#### Page 8:  Delivery Agents
 - **Leaderboard bar chart**: Top 15 agents by deliveries
 - **Box plots**: Delivery volume distribution by performance tier
 - **Full data table**
 
-#### Page 9: 📈 RFM Segmentation
+#### Page 9:  RFM Segmentation
 - **Segment bar chart**: Customer count per RFM segment
 - **Scatter plot**: Frequency vs monetary value, sized by customer count
 - **Full segment summary table**
 
-#### Page 10: 🔮 ML Forecast
+#### Page 10:  ML Forecast
 - **Model metrics**: MAPE, MAE, RMSE displayed as metric cards
 - **Forecast chart**: Predicted orders with confidence interval shading
 - **Forecast data table**

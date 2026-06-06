@@ -114,13 +114,13 @@ Some properties of PMF are:
 
 Example:
 
-> Suppose a hospital receives an average of λ = 4 emergency cases per hour. What is the probability that exactly 2 cases occur in an hour? Solution: Using the Poisson formula:P (X = 2) = e-4 42 /2! = e-4 ✕ 16/2 = 0.0183 ✕ 16 /2 = 0.1465
+> Suppose a hospital receives an average of λ = 4 emergency cases per hour. What is the probability that exactly 2 cases occur in an hour? Solution: Using the Poisson formula:P (X = 2) = e-4 42 /2! = e-4  16/2 = 0.0183  16 /2 = 0.1465
 
 Suppose a hospital receives an average of λ = 4 emergency cases per hour. What is the probability that exactly 2 cases occur in an hour? Solution:
 
 Using the Poisson formula:
 
-P (X = 2) = e-4 42 /2! = e-4 ✕ 16/2 = 0.0183 ✕ 16 /2 = 0.1465
+P (X = 2) = e-4 42 /2! = e-4  16/2 = 0.0183  16 /2 = 0.1465
 
 Cumulative Distribution Function (CDF): gives the probability that the random variable is less than or equal to a certain value. It is expressed as:F(x) = \sum^{k=0}_{⌊x⌋}\frac{ (e^{-λ} × λ^k) }{ k!}where ⌊x⌋ denotes the greatest integer less than or equal to x.
 

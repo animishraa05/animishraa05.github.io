@@ -202,7 +202,7 @@ Book ne do methods ko highlight kiya hai jahan iski sabse zyada zaroorat padti h
 
 ---
 
-### **💡 Exam Trick Question:**
+### ** Exam Trick Question:**
 
 - **Q:** *`ejbLoad()` mein `getPrimaryKey()` chahiye, par `ejbStore()` (RAM se Database mein save karna) mein kyun nahi chahiye?*
 - **Ans:** Kyunki jab `ejbStore()` call hota hai, toh data pehle se hi RAM (Bean ki memory) mein loaded hota hai. Bean ko apna account number pehle se pata hota hai jo memory mein saved hai, toh usko alag se context se ID mangne ki zaroorat nahi padti.
@@ -237,7 +237,7 @@ out what data it should be dealing with
 
 ## Gemini said
 
-Ani bhai, lagta hai tumne galti se wahi paragraph dobara paste kar diya! 😄 Maine just pichle message mein is "Identity Crisis" wale logic ko detail mein explain kiya tha.
+Ani bhai, lagta hai tumne galti se wahi paragraph dobara paste kar diya!  Maine just pichle message mein is "Identity Crisis" wale logic ko detail mein explain kiya tha.
 
 Ekdum short mein wapas yaad dila deta hoon: Kyunki server RAM bachane ke liye ek hi Entity Bean ko alag-alag customers ke liye reuse (pool) karta hai, bean ko khud nahi pata hota ki wo currently kisko represent kar rahi hai. Isliye jab bhi usko database se data load ya delete karna hota hai, wo `getPrimaryKey()` call karke apni current identity (jaise Account ID) confirm karti hai taaki kisi galat customer ka data delete na ho jaye.
 
@@ -4962,7 +4962,7 @@ EJB 2.0 tak MDB sirf JMS messages leti thi. Lekin EJB 2.1 ke baad ye **J2EE Conn
 
 ---
 
-### **💡 Quick Comparison (Session vs MDB)**
+### ** Quick Comparison (Session vs MDB)**
 
 | Feature | Session Bean | Message-Driven Bean (MDB) |
 | --- | --- | --- |
@@ -5138,7 +5138,7 @@ Book mein ek "Box" hai jo batata hai ki Queues ko use karke hum clustering kaise
 
 ---
 
-### **💡 Final Comparison for your revision:**
+### ** Final Comparison for your revision:**
 
 | Topic | Key Point |
 | --- | --- |
@@ -5695,7 +5695,7 @@ Chalo isko bina kisi fluff ke, exam ke point of view se todte hain.
 EJB Transactions ko samajhne se pehle book ne ek real-world problem di hai:
 
 - **Flat Transaction (All-or-Nothing):** Tumne London se Paris ka balloon ticket liya, aur phir Paris se aage ki flight book ki. Agar flight cancel ho gayi, toh *poora* transaction roll back ho jayega (yaani balloon ticket bhi cancel ho jayega). Complex backend systems mein ye achhi approach nahi hai.
-- **Nested Transaction (The Tree):** Isme ek "Main (Root) Transaction" hota hai, aur uske andar chhote "Sub-transactions" hote hain. Agar Paris wali flight (sub-transaction) fail hoti hai, toh sirf wahi roll back hogi. Main transaction zinda rahega aur kisi doosri flight ya train ka sub-transaction try kar lega. **🚨 EXAM CATCH:** Book clear karti hai ki EJB specification formally **Nested Transactions support nahi karta**. EJB mein aamtaur par hum **Flat Transactions** hi use karte hain.
+- **Nested Transaction (The Tree):** Isme ek "Main (Root) Transaction" hota hai, aur uske andar chhote "Sub-transactions" hote hain. Agar Paris wali flight (sub-transaction) fail hoti hai, toh sirf wahi roll back hogi. Main transaction zinda rahega aur kisi doosri flight ya train ka sub-transaction try kar lega. ** EXAM CATCH:** Book clear karti hai ki EJB specification formally **Nested Transactions support nahi karta**. EJB mein aamtaur par hum **Flat Transactions** hi use karte hain.
 
 ---
 

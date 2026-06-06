@@ -23,21 +23,21 @@ I’ve filtered out shallow tutorials and kept **proper deep dives** (the kind a
 
 ---
 
-## 1\. 🧠 Full End-to-End: What happens when you type a URL
+## 1\.  Full End-to-End: What happens when you type a URL
 
-👉 [Deep dive (Medium) – URL → DNS → HTTP → Rendering](https://fazalerabbi.medium.com/how-the-web-works-a-deep-dive-into-what-happens-when-you-type-a-url-dns-lookup-and-http-f05af4be36d8?utm_source=chatgpt.com)
+ [Deep dive (Medium) – URL → DNS → HTTP → Rendering](https://fazalerabbi.medium.com/how-the-web-works-a-deep-dive-into-what-happens-when-you-type-a-url-dns-lookup-and-http-f05af4be36d8?utm_source=chatgpt.com)
 
-👉 [Step-by-step breakdown (WebAsha guide)](https://www.webasha.com/blog/what-really-happens-when-you-type-a-url-in-your-browser-step-by-step-guide-explained?utm_source=chatgpt.com)
+ [Step-by-step breakdown (WebAsha guide)](https://www.webasha.com/blog/what-really-happens-when-you-type-a-url-in-your-browser-step-by-step-guide-explained?utm_source=chatgpt.com)
 
-👉 [Modern explanation (Educative, 2026 updated)](https://www.educative.io/blog/what-happens-when-we-type-a-url?utm_source=chatgpt.com)
+ [Modern explanation (Educative, 2026 updated)](https://www.educative.io/blog/what-happens-when-we-type-a-url?utm_source=chatgpt.com)
 
-💡 Why these are good:
+ Why these are good:
 
 - Covers **browser cache → DNS → TCP → TLS → HTTP → rendering**
 - Explains actual **network flow + system design perspective**
 - Not just theory — includes **real-world infra like CDN, load balancers**
 
-👉 Key idea from these:
+ Key idea from these:
 
 - DNS converts domain → IP
 - Then TCP + TLS (for HTTPS) connection
@@ -46,31 +46,31 @@ I’ve filtered out shallow tutorials and kept **proper deep dives** (the kind a
 
 ---
 
-## 2\. 🌐 DNS (very important for interviews)
+## 2\.  DNS (very important for interviews)
 
-👉 [Wikipedia – DNS deep technical explanation](https://en.wikipedia.org/wiki/Domain_Name_System?utm_source=chatgpt.com)
+ [Wikipedia – DNS deep technical explanation](https://en.wikipedia.org/wiki/Domain_Name_System?utm_source=chatgpt.com)
 
-👉 [DNS resolution deep dive (Medium article)](https://medium.com/%40ismailkovvuru/what-happens-when-you-type-a-url-in-the-browser-a39f8c58c527?utm_source=chatgpt.com)
+ [DNS resolution deep dive (Medium article)](https://medium.com/%40ismailkovvuru/what-happens-when-you-type-a-url-in-the-browser-a39f8c58c527?utm_source=chatgpt.com)
 
-💡 Why these are gold:
+ Why these are gold:
 
 - Explains **hierarchical structure (Root → TLD → Authoritative)**
 - Shows **how recursive resolvers work**
 - Covers **caching, TTL, distributed design**
 
-👉 Core concept:
+ Core concept:
 
 - DNS = “Internet phonebook” mapping names → IP addresses
 
 ---
 
-## 3\. 🔐 HTTP vs HTTPS (concept + security depth)
+## 3\.  HTTP vs HTTPS (concept + security depth)
 
-👉 [HTTP vs HTTPS explanation (FreeCodeCamp discussion)](https://forum.freecodecamp.org/t/what-happens-when-you-type-https-www-google-com-in-your-browser-and-press-enter/561581?utm_source=chatgpt.com)
+ [HTTP vs HTTPS explanation (FreeCodeCamp discussion)](https://forum.freecodecamp.org/t/what-happens-when-you-type-https-www-google-com-in-your-browser-and-press-enter/561581?utm_source=chatgpt.com)
 
-👉 [HTTPS technical details (Wikipedia)](https://en.wikipedia.org/wiki/HTTPS?utm_source=chatgpt.com)
+ [HTTPS technical details (Wikipedia)](https://en.wikipedia.org/wiki/HTTPS?utm_source=chatgpt.com)
 
-💡 Key insights:
+ Key insights:
 
 - HTTP = plain text protocol
 - HTTPS = HTTP + TLS encryption
@@ -81,11 +81,11 @@ I’ve filtered out shallow tutorials and kept **proper deep dives** (the kind a
 
 ---
 
-## 4\. 🧠 THE BEST RESOURCE (legendary)
+## 4\.  THE BEST RESOURCE (legendary)
 
-👉 [GitHub – “What happens when…” (ultimate breakdown)](https://github.com/alex/what-happens-when?utm_source=chatgpt.com)
+ [GitHub – “What happens when…” (ultimate breakdown)](https://github.com/alex/what-happens-when?utm_source=chatgpt.com)
 
-💀 This is **THE GOAT resource**:
+ This is **THE GOAT resource**:
 
 - Goes insanely deep:
 	- DNS resolution internals
@@ -99,29 +99,29 @@ If you master this → **you’re interview ready**
 
 ---
 
-## 🧩 How to Study This Properly (important)
+##  How to Study This Properly (important)
 
 Don’t just read randomly — follow this order:
 
 ### Step 1:
 
-👉 Start with WebAsha or Medium (basic flow)
+ Start with WebAsha or Medium (basic flow)
 
 ### Step 2:
 
-👉 Read GitHub “what happens when” slowly
+ Read GitHub “what happens when” slowly
 
 ### Step 3:
 
-👉 Deep dive DNS separately (very important)
+ Deep dive DNS separately (very important)
 
 ### Step 4:
 
-👉 Study HTTPS (TLS handshake especially)
+ Study HTTPS (TLS handshake especially)
 
 ---
 
-## 🧠 Pro Tip (this will level you up)
+##  Pro Tip (this will level you up)
 
 If you can explain this in interviews:
 
@@ -129,7 +129,7 @@ If you can explain this in interviews:
 
 …and explain each step deeply…
 
-👉 You’ll outperform **90% of candidates**
+ You’ll outperform **90% of candidates**
 
 ---
 
@@ -148,38 +148,38 @@ Skip to content alex what-happens-when Repository navigation Code Issues242 (242
 
 **ChatGPT said**
 
-Bhai ye repo 🔥 hai — agar tu ise samajh gaya na, toh **CN + interviews + system design sab sorted**.
+Bhai ye repo  hai — agar tu ise samajh gaya na, toh **CN + interviews + system design sab sorted**.
 
 Main tujhe **full flow Hinglish me, step-by-step, simple but deep** samjhata hoon. No bakwaas, only clarity.
 
 ---
 
-## 🧠 1. Jab tu "g" type karta hai (Keyboard → OS → Browser)
+##  1. Jab tu "g" type karta hai (Keyboard → OS → Browser)
 
-👉 Tu keyboard pe `g` dabata hai
+ Tu keyboard pe `g` dabata hai
 
 - Electrical signal generate hota hai
 - OS ko interrupt milta hai
 - OS bolta hai: “browser active hai → isko bhejo”
 
-👉 Browser kya karta hai?
+ Browser kya karta hai?
 
 - Autocomplete suggestions dikhata hai (history, cookies, AI guesses)
 
-💡 Simple:  
+ Simple:  
 **Hardware → OS → Browser event**
 
 ---
 
-## ⌨️ 2. Enter dabaya (Action trigger)
+## ⌨ 2. Enter dabaya (Action trigger)
 
-👉 Enter dabate hi:
+ Enter dabate hi:
 
 - Browser bolta hai: “Ab request bhejni hai”
 
 ---
 
-## 🌐 3. URL parse hota hai
+##  3. URL parse hota hai
 
 Example:
 
@@ -193,26 +193,26 @@ Browser break karta hai:
 - Domain → `google.com`
 - Path → `/`
 
-💡 Simple:  
+ Simple:  
 **Browser samajhta hai: kis server se kya mangna hai**
 
 ---
 
-## 🔐 4. HSTS check (security shortcut)
+##  4. HSTS check (security shortcut)
 
-👉 Browser check karta hai:
+ Browser check karta hai:
 
 - “Kya ye site hamesha HTTPS pe hi chalti hai?”
 
 Agar haan:  
-➡️ Direct HTTPS (no HTTP try)
+ Direct HTTPS (no HTTP try)
 
 ---
 
-## 🌍 5. DNS lookup (MOST IMPORTANT 🔥)
+##  5. DNS lookup (MOST IMPORTANT )
 
-👉 Browser ko IP nahi pata hota  
-👉 Internet IP pe kaam karta hai
+ Browser ko IP nahi pata hota  
+ Internet IP pe kaam karta hai
 
 Toh:
 
@@ -231,14 +231,14 @@ google.com → 142.250.xxx.xxx
 		- TLD server (.com)
 		- Authoritative server
 
-💡 Final:  
+ Final:  
 **Domain → IP mil gaya**
 
 ---
 
-## 🔗 6. ARP (IP → MAC address)
+##  6. ARP (IP → MAC address)
 
-👉 Ab IP mil gaya, but network me packet bhejne ke liye MAC address chahiye
+ Ab IP mil gaya, but network me packet bhejne ke liye MAC address chahiye
 
 Toh:
 
@@ -258,7 +258,7 @@ Ye mera MAC hai
 
 ---
 
-## 🔌 7. TCP Connection (3-way handshake)
+##  7. TCP Connection (3-way handshake)
 
 Connection establish hota hai:
 
@@ -266,15 +266,15 @@ Connection establish hota hai:
 2. Server → SYN + ACK
 3. Client → ACK
 
-💡 Ye ensure karta hai:
+ Ye ensure karta hai:
 
 - Dono ready hain communication ke liye
 
 ---
 
-## 🔐 8. TLS Handshake (HTTPS ke liye 🔥)
+##  8. TLS Handshake (HTTPS ke liye )
 
-👉 Ab secure connection banega
+ Ab secure connection banega
 
 Steps:
 
@@ -286,12 +286,12 @@ Steps:
 4. Dono:
 	- Same symmetric key use karte hain
 
-💡 Result:  
+ Result:  
 **Ab sab data encrypted hai**
 
 ---
 
-## 📡 9. HTTP Request bhejna
+##  9. HTTP Request bhejna
 
 Browser request bhejta hai:
 
@@ -300,12 +300,12 @@ GET / HTTP/1.1
 Host: google.com
 ```
 
-💡 Meaning:  
+ Meaning:  
 “Bhai homepage de de”
 
 ---
 
-## 🖥️ 10. Server side pe kya hota hai
+##  10. Server side pe kya hota hai
 
 Server (nginx/apache):
 
@@ -324,37 +324,37 @@ Response:
 
 ---
 
-## 🎨 11. Browser rendering (ye underrated part hai 🔥)
+##  11. Browser rendering (ye underrated part hai )
 
 Ab asli magic:
 
 ### Step 1: HTML → DOM tree
 
-👉 Structure ban gaya
+ Structure ban gaya
 
 ### Step 2: CSS → Style tree
 
-👉 Design apply
+ Design apply
 
 ### Step 3: Render tree
 
-👉 Combine structure + design
+ Combine structure + design
 
 ### Step 4: Layout
 
-👉 Position calculate
+ Position calculate
 
 ### Step 5: Painting
 
-👉 Screen pe draw
+ Screen pe draw
 
 ### Step 6: GPU rendering
 
-👉 Smooth visuals
+ Smooth visuals
 
 ---
 
-## 🔁 12. Extra requests
+##  12. Extra requests
 
 HTML me aur cheeze hoti hain:
 
@@ -362,12 +362,12 @@ HTML me aur cheeze hoti hain:
 - JS
 - Images
 
-👉 Har ek ke liye:  
-➡️ Same DNS + TCP + HTTP process repeat
+ Har ek ke liye:  
+ Same DNS + TCP + HTTP process repeat
 
 ---
 
-## 🧠 FINAL FLOW (INTERVIEW GOLD 🔥)
+##  FINAL FLOW (INTERVIEW GOLD )
 
 Yaad rakh:
 
@@ -384,9 +384,9 @@ User types URL
 
 ---
 
-## 💀 Real Insight (jo log miss karte hain)
+##  Real Insight (jo log miss karte hain)
 
-👉 Ye sirf “request-response” nahi hai
+ Ye sirf “request-response” nahi hai
 
 Isme involved hai:
 
@@ -398,18 +398,18 @@ Isme involved hai:
 
 ---
 
-## 🚀 Bhai next level jaana hai?
+##  Bhai next level jaana hai?
 
 Main tujhe:
 
-- 🔥 1-page cheat sheet
-- 🔥 Interview answers (perfect wording)
-- 🔥 Diagram flow (yaad rehne wala)
+-  1-page cheat sheet
+-  Interview answers (perfect wording)
+-  Diagram flow (yaad rehne wala)
 
 bhi bana deta hoon
 
 Bas bol:  
-👉 “interview mode chalu kar”
+ “interview mode chalu kar”
 
 ---
 
@@ -425,50 +425,50 @@ Sahi bola bhai — ab main **kuch skip nahi karunga**, pura flow **ground level 
 
 ---
 
-## ⚡ FULL FLOW START — “g” dabane se leke page render hone tak
+##  FULL FLOW START — “g” dabane se leke page render hone tak
 
 ---
 
-## 🧠 1. Keyboard pe key press — actual hardware level
+##  1. Keyboard pe key press — actual hardware level
 
-👉 Jab tu `g` dabata hai:
+ Jab tu `g` dabata hai:
 
 - Keyboard ke andar ek **matrix circuit** hota hai (rows × columns)
 - `g` key press → ek specific row + column connect hota hai
 - Isse **electrical signal generate hota hai**
 
-👉 Keyboard controller:
+ Keyboard controller:
 
 - Is signal ko **scan code** me convert karta hai (example: `g = code`)
 - Memory register me store karta hai
 
-👉 USB ke through:
+ USB ke through:
 
 - Har ~10ms pe computer ka USB controller poll karta hai
 - Ye scan code computer ko bheja jata hai
 
-💡 Important:  
-➡️ Keyboard khud smart device hai (microcontroller hota hai)
+ Important:  
+ Keyboard khud smart device hai (microcontroller hota hai)
 
 ---
 
-## 🧠 2. OS Interrupt System
+##  2. OS Interrupt System
 
-👉 Computer ko signal milte hi:
+ Computer ko signal milte hi:
 
 - CPU interrupt handle karta hai
 - Interrupt vector table check karta hai
 - Relevant handler call hota hai
 
-👉 OS driver (keyboard driver):
+ OS driver (keyboard driver):
 
 - Scan code → actual character me convert karta hai (`g`)
 
-👉 OS decide karta hai:
+ OS decide karta hai:
 
 - Kaunsa app active hai (browser)
 
-👉 Browser ko event bhejta hai:
+ Browser ko event bhejta hai:
 
 ```
 KeyDown: 'g'
@@ -476,27 +476,27 @@ KeyDown: 'g'
 
 ---
 
-## 🌐 3. Browser ke andar kya hota hai (typing stage)
+##  3. Browser ke andar kya hota hai (typing stage)
 
-👉 Browser address bar me:
+ Browser address bar me:
 
 - Input receive hota hai
 - Autocomplete engine run karta hai
 
-👉 Ye use karta hai:
+ Ye use karta hai:
 
 - History
 - Bookmarks
 - Cookies
 - Popular queries
 
-💡 Yaha tak network ka use nahi hua
+ Yaha tak network ka use nahi hua
 
 ---
 
-## ⌨️ 4. Enter press — actual trigger
+## ⌨ 4. Enter press — actual trigger
 
-👉 Jab tu Enter dabata hai:
+ Jab tu Enter dabata hai:
 
 - Same process (interrupt → OS → browser)
 - Browser ko signal milta hai:
@@ -506,7 +506,7 @@ KeyDown: 'g'
 
 ---
 
-## 🔍 5. URL parsing (VERY IMPORTANT)
+##  5. URL parsing (VERY IMPORTANT)
 
 Example:
 
@@ -522,30 +522,30 @@ Browser todta hai:
 | google.com | domain |
 | / | path |
 
-👉 Agar tu sirf “google” likhta:  
-➡️ Browser decide karta: search ya URL?
+ Agar tu sirf “google” likhta:  
+ Browser decide karta: search ya URL?
 
 ---
 
-## 🔐 6. HSTS check (security shortcut)
+##  6. HSTS check (security shortcut)
 
-👉 Browser ke paas ek list hoti hai:
+ Browser ke paas ek list hoti hai:
 
 - “Ye sites hamesha HTTPS pe hi open hongi”
 
-👉 Agar google usme hai:  
-➡️ Direct HTTPS  
-➡️ HTTP try bhi nahi karega
+ Agar google usme hai:  
+ Direct HTTPS  
+ HTTP try bhi nahi karega
 
-💡 Attack prevent karta hai (downgrade attack)
+ Attack prevent karta hai (downgrade attack)
 
 ---
 
-## 🌍 7. DNS Lookup — FULL DEEP FLOW 🔥
+##  7. DNS Lookup — FULL DEEP FLOW 
 
-👉 Browser ko IP chahiye  
-👉 Domain = human-friendly  
-👉 IP = machine-friendly
+ Browser ko IP chahiye  
+ Domain = human-friendly  
+ IP = machine-friendly
 
 ---
 
@@ -553,15 +553,15 @@ Browser todta hai:
 
 ### 1\. Browser cache
 
-👉 Kya recently visit kiya?
+ Kya recently visit kiya?
 
 ### 2\. OS cache
 
-👉 OS ne store kiya ho
+ OS ne store kiya ho
 
 ### 3\. Hosts file
 
-👉 Manual mapping (e.g. 127.0.0.1)
+ Manual mapping (e.g. 127.0.0.1)
 
 ### 4\. Router cache
 
@@ -571,23 +571,23 @@ Browser todta hai:
 
 ## Agar yaha bhi nahi mila:
 
-👉 Recursive DNS process start hota hai:
+ Recursive DNS process start hota hai:
 
 ### Step A: Root server
 
-👉 “.com ka server kaun hai?”
+ “.com ka server kaun hai?”
 
 ### Step B: TLD server (.com)
 
-👉 “google.com ka server kaun hai?”
+ “google.com ka server kaun hai?”
 
 ### Step C: Authoritative server
 
-👉 “Ye lo final IP”
+ “Ye lo final IP”
 
 ---
 
-💡 Result:
+ Result:
 
 ```
 google.com → 142.250.xx.xx
@@ -595,21 +595,21 @@ google.com → 142.250.xx.xx
 
 ---
 
-## 🔗 8. ARP (IP → MAC conversion)
+##  8. ARP (IP → MAC conversion)
 
-👉 Network me data MAC address pe jata hai
+ Network me data MAC address pe jata hai
 
-👉 System puchta hai:
+ System puchta hai:
 
 ```
 "Is IP ka MAC address kya hai?"
 ```
 
-👉 Broadcast:
+ Broadcast:
 
 - Sab devices ko message jata hai
 
-👉 Router reply:
+ Router reply:
 
 ```
 "Ye mera MAC hai"
@@ -617,22 +617,22 @@ google.com → 142.250.xx.xx
 
 ---
 
-💡 Ab system ke paas:
+ Ab system ke paas:
 
 - Destination IP
 - Destination MAC
 
 ---
 
-## 🔌 9. Socket creation + TCP connection
+##  9. Socket creation + TCP connection
 
-👉 Browser OS ko bolta hai:
+ Browser OS ko bolta hai:
 
 ```
 socket(AF_INET, SOCK_STREAM)
 ```
 
-👉 TCP connection establish hota hai:
+ TCP connection establish hota hai:
 
 ### 3-way handshake:
 
@@ -640,16 +640,16 @@ socket(AF_INET, SOCK_STREAM)
 2. Server → SYN + ACK
 3. Client → ACK
 
-💡 Guarantee:
+ Guarantee:
 
 - Reliable connection
 - Order maintain hoga
 
 ---
 
-## 🔐 10. TLS Handshake (HTTPS ka heart 🔥)
+##  10. TLS Handshake (HTTPS ka heart )
 
-👉 Secure connection banana hai
+ Secure connection banana hai
 
 ---
 
@@ -667,7 +667,7 @@ socket(AF_INET, SOCK_STREAM)
 
 ### 3\. Certificate verify
 
-👉 Browser check karta hai:
+ Browser check karta hai:
 
 - Trusted CA se signed hai?
 
@@ -675,12 +675,12 @@ socket(AF_INET, SOCK_STREAM)
 
 ### 4\. Key exchange
 
-👉 Client:
+ Client:
 
 - Random secret generate karta hai
 - Server ke public key se encrypt karta hai
 
-👉 Server:
+ Server:
 
 - Apne private key se decrypt karta hai
 
@@ -688,28 +688,28 @@ socket(AF_INET, SOCK_STREAM)
 
 ### 5\. Symmetric key ban jata hai
 
-👉 Ab:
+ Ab:
 
 - Fast encryption use hoga
 - Same key dono ke paas
 
 ---
 
-💡 Result:  
-➡️ Secure tunnel ready
+ Result:  
+ Secure tunnel ready
 
 ---
 
-## 📡 11. HTTP Request
+##  11. HTTP Request
 
-👉 Browser request bhejta hai:
+ Browser request bhejta hai:
 
 ```
 GET / HTTP/1.1
 Host: google.com
 ```
 
-👉 Headers include:
+ Headers include:
 
 - cookies
 - user-agent
@@ -717,9 +717,9 @@ Host: google.com
 
 ---
 
-## 🖥️ 12. Server side processing
+##  12. Server side processing
 
-👉 Server (nginx/apache):
+ Server (nginx/apache):
 
 1. Request receive
 2. Route match
@@ -729,7 +729,7 @@ Host: google.com
 
 ---
 
-👉 Response:
+ Response:
 
 ```
 200 OK
@@ -738,44 +738,44 @@ Host: google.com
 
 ---
 
-## 🔁 13. Multiple requests
+##  13. Multiple requests
 
-👉 HTML me hota hai:
+ HTML me hota hai:
 
 - CSS
 - JS
 - Images
 
-👉 Har ek ke liye:  
-➡️ Same DNS + TCP + HTTP process
+ Har ek ke liye:  
+ Same DNS + TCP + HTTP process
 
 ---
 
-## 🎨 14. Browser Rendering (DETAILED 🔥)
+##  14. Browser Rendering (DETAILED )
 
 ---
 
 ## Step 1: HTML parsing
 
-👉 DOM tree banta hai
+ DOM tree banta hai
 
 ---
 
 ## Step 2: CSS parsing
 
-👉 Style rules bante hain
+ Style rules bante hain
 
 ---
 
 ## Step 3: Render tree
 
-👉 DOM + CSS combine
+ DOM + CSS combine
 
 ---
 
 ## Step 4: Layout
 
-👉 Position calculate:
+ Position calculate:
 
 - width
 - height
@@ -785,32 +785,32 @@ Host: google.com
 
 ## Step 5: Painting
 
-👉 Pixels draw hote hain
+ Pixels draw hote hain
 
 ---
 
 ## Step 6: GPU rendering
 
-👉 Fast rendering (parallel processing)
+ Fast rendering (parallel processing)
 
 ---
 
 ## Step 7: Compositing
 
-👉 Layers combine hote hain
+ Layers combine hote hain
 
 ---
 
-## ⚠️ 15. Network issues (packet drop)
+##  15. Network issues (packet drop)
 
-👉 Agar packet lost:
+ Agar packet lost:
 
 - TCP retry karega
 - Congestion control apply hoga
 
 ---
 
-## 🧠 FINAL MASTER FLOW
+##  FINAL MASTER FLOW
 
 ```
 Key press → OS interrupt → Browser input
@@ -823,9 +823,9 @@ Key press → OS interrupt → Browser input
 
 ---
 
-## 💀 REAL LEVEL UNDERSTANDING
+##  REAL LEVEL UNDERSTANDING
 
-👉 Ye sab layers involved hain:
+ Ye sab layers involved hain:
 
 - Hardware (keyboard)
 - OS (interrupts)
@@ -838,7 +838,7 @@ Key press → OS interrupt → Browser input
 
 Bhai ab tu bol:
 
-👉 “ab mujhe sirf DNS aur TLS aur deep chahiye”  
-👉 ya “interview answer bana de”
+ “ab mujhe sirf DNS aur TLS aur deep chahiye”  
+ ya “interview answer bana de”
 
-Main tujhe aur bhi **low-level + diagram + memory tricks** ke saath master bana dunga 🚀
+Main tujhe aur bhi **low-level + diagram + memory tricks** ke saath master bana dunga 

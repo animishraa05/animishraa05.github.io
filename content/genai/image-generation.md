@@ -779,7 +779,7 @@ Example:-
 Expected:-  "LAKME DIWALI SALE 50% OFF"   (5 words)
 Detected:-  "LAKME DIWALL SAIE 5O% OFF"   (5 words)
 
-LAKME  ✓  DIWALL  ✗  SAIE  ✗  5O%  ✗  OFF  ✓
+LAKME    DIWALL    SAIE    5O%    OFF  
 Wrong words = 3
 
 WER = 3/5 = 0.60   →  60% words wrong (bad)

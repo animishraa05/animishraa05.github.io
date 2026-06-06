@@ -19,31 +19,31 @@ Alright, let’s do a **clean, exam-focused revision of EJB (Enterprise JavaBean
 
 **EJB (Enterprise JavaBeans)** is a **server-side component architecture** in **Java EE (now Jakarta EE)** used to build **scalable, secure, and transactional enterprise applications**.
 
-👉 Runs inside an **EJB Container** (part of application server like WildFly or GlassFish)
+ Runs inside an **EJB Container** (part of application server like WildFly or GlassFish)
 
 ---
 
-## 🎯 Why EJB?
+##  Why EJB?
 
 Instead of writing everything manually, EJB gives:
 
-- ✅ Transaction management (auto commit/rollback)
-- ✅ Security (role-based)
-- ✅ Concurrency handling
-- ✅ Remote access (distributed systems)
-- ✅ Lifecycle management
+-  Transaction management (auto commit/rollback)
+-  Security (role-based)
+-  Concurrency handling
+-  Remote access (distributed systems)
+-  Lifecycle management
 
-👉 Basically: **focus on business logic, container handles everything else**
+ Basically: **focus on business logic, container handles everything else**
 
 ---
 
-## 🧩 Types of EJB
+##  Types of EJB
 
 ## 1\. Session Beans (Most Important)
 
 Used for **business logic**
 
-### 🔹 a) Stateless Session Bean
+###  a) Stateless Session Bean
 
 5
 
@@ -51,7 +51,7 @@ Used for **business logic**
 - Fast & scalable
 - Example: login validation
 
-👉 Annotation:
+ Annotation:
 
 ```java
 @Stateless
@@ -60,14 +60,14 @@ public class MyBean { }
 
 ---
 
-### 🔹 b) Stateful Session Bean
+###  b) Stateful Session Bean
 
 6
 
 - Maintains state per client
 - Example: shopping cart
 
-👉 Annotation:
+ Annotation:
 
 ```java
 @Stateful
@@ -76,7 +76,7 @@ public class CartBean { }
 
 ---
 
-### 🔹 c) Singleton Session Bean
+###  c) Singleton Session Bean
 
 5
 
@@ -84,7 +84,7 @@ public class CartBean { }
 - Shared by all users
 - Example: caching, config
 
-👉 Annotation:
+ Annotation:
 
 ```java
 @Singleton
@@ -101,11 +101,11 @@ public class ConfigBean { }
 - Asynchronous communication
 - No direct client interaction
 
-👉 Example: Order processing queue
+ Example: Order processing queue
 
 ---
 
-## ⚙️ EJB Architecture
+##  EJB Architecture
 
 7
 
@@ -115,12 +115,12 @@ public class ConfigBean { }
 2. **EJB Container**
 3. **Enterprise Beans**
 
-👉 Flow:  
+ Flow:  
 Client → Container → Bean → Response
 
 ---
 
-## 🔐 EJB Container Services (VERY IMPORTANT)
+##  EJB Container Services (VERY IMPORTANT)
 
 | Service | Meaning |
 | --- | --- |
@@ -132,7 +132,7 @@ Client → Container → Bean → Response
 
 ---
 
-## 🔄 Lifecycle (Exam Favourite)
+##  Lifecycle (Exam Favourite)
 
 ## Stateless:
 
@@ -148,12 +148,12 @@ Client → Container → Bean → Response
 
 ---
 
-## 🔗 Interfaces in EJB
+##  Interfaces in EJB
 
 - **Local Interface** → same JVM
 - **Remote Interface** → different JVM
 
-👉 Example:
+ Example:
 
 ```java
 @Remote
@@ -162,7 +162,7 @@ public interface MyService { }
 
 ---
 
-## 🔥 Key Annotations (REVISION GOLD)
+##  Key Annotations (REVISION GOLD)
 
 | Annotation | Use |
 | --- | --- |
@@ -185,7 +185,7 @@ public interface MyService { }
 
 ---
 
-## 🧠 5-Line Exam Summary (WRITE THIS)
+##  5-Line Exam Summary (WRITE THIS)
 
 EJB is a server-side component architecture used in Java EE for building scalable enterprise applications. It runs inside an EJB container that provides services like transaction management, security, and lifecycle handling. There are mainly session beans (stateless, stateful, singleton) and message-driven beans. Stateless beans do not maintain state, while stateful beans maintain client-specific data. EJB simplifies development by handling system-level concerns automatically.
 
@@ -193,11 +193,11 @@ EJB is a server-side component architecture used in Java EE for building scalabl
 
 If you want, I can give you:
 
-- 💯 **previous year questions on EJB**
-- 📝 **assignment-ready answers**
-- ⚡ **one-page cheat sheet for last-day revision**
+-  **previous year questions on EJB**
+-  **assignment-ready answers**
+-  **one-page cheat sheet for last-day revision**
 
-Just tell me 👍
+Just tell me 
 
 ---
 
@@ -213,21 +213,21 @@ Got it—you want **EJB revision aligned with the classic book *Mastering Enterp
 
 ---
 
-## 📘 EJB (as per Mastering EJB) — Core Idea
+##  EJB (as per Mastering EJB) — Core Idea
 
 EJB is a **component model for distributed, transactional, secure enterprise applications**.
 
-👉 The key philosophy from the book:
+ The key philosophy from the book:
 
 > “Write only business logic. The container handles system-level concerns.”
 
 ---
 
-## 🧩 EJB Architecture (Book-Oriented Explanation)
+##  EJB Architecture (Book-Oriented Explanation)
 
 7
 
-### 🔹 3 Main Parts:
+###  3 Main Parts:
 
 1. **EJB Client**
 	- Calls business methods
@@ -238,12 +238,12 @@ EJB is a **component model for distributed, transactional, secure enterprise app
 3. **Enterprise Bean**
 	- Actual business logic
 
-👉 Flow:  
+ Flow:  
 Client → Home/Business Interface → Container → Bean
 
 ---
 
-## 🔗 Interfaces (VERY IMPORTANT — BOOK FOCUS)
+##  Interfaces (VERY IMPORTANT — BOOK FOCUS)
 
 The book strongly emphasizes **interfaces separation**:
 
@@ -279,16 +279,16 @@ public class OrderBean implements SessionBean {
 }
 ```
 
-👉 💡 Exam tip:  
+  Exam tip:  
 **Separation of interface & implementation = key EJB design principle**
 
 ---
 
-## 🧠 Types of Beans (Book Classification)
+##  Types of Beans (Book Classification)
 
 ## 1\. Session Beans
 
-### 🔹 Stateless
+###  Stateless
 
 6
 
@@ -296,26 +296,26 @@ public class OrderBean implements SessionBean {
 - Pooled by container
 - High performance
 
-👉 Example: Authentication service
+ Example: Authentication service
 
 ---
 
-### 🔹 Stateful
+###  Stateful
 
 6
 
 - Maintains state per client
 - Supports **passivation/activation**
 
-👉 Example: Shopping cart
+ Example: Shopping cart
 
 ---
 
-## 2\. Entity Beans (VERY BOOK-SPECIFIC ⚠️)
+## 2\. Entity Beans (VERY BOOK-SPECIFIC )
 
 7
 
-👉 Represents **database data as objects**
+ Represents **database data as objects**
 
 ### Types:
 
@@ -324,7 +324,7 @@ public class OrderBean implements SessionBean {
 - **BMP (Bean Managed Persistence)**
 	- Developer writes SQL
 
-👉 Example: Customer, Account
+ Example: Customer, Account
 
 ---
 
@@ -336,7 +336,7 @@ public class OrderBean implements SessionBean {
 
 ---
 
-## ⚙️ Container Services (Core Philosophy)
+##  Container Services (Core Philosophy)
 
 The book repeatedly stresses this:
 
@@ -350,7 +350,7 @@ The book repeatedly stresses this:
 
 ---
 
-## 🔄 Lifecycle (IMPORTANT FOR THEORY)
+##  Lifecycle (IMPORTANT FOR THEORY)
 
 ## Stateless Bean:
 
@@ -363,7 +363,7 @@ The book repeatedly stresses this:
 
 - Created → Active → **Passivated** → Activated → Removed
 
-👉 Passivation = temporarily stored to save memory
+ Passivation = temporarily stored to save memory
 
 ---
 
@@ -373,7 +373,7 @@ The book repeatedly stresses this:
 
 ---
 
-## 🌐 Distributed Nature (Book Highlight)
+##  Distributed Nature (Book Highlight)
 
 EJB supports:
 
@@ -381,7 +381,7 @@ EJB supports:
 - Distributed transactions
 - Multi-tier architecture
 
-👉 That’s why it’s used in:
+ That’s why it’s used in:
 
 - Banking systems
 - Enterprise apps
@@ -398,7 +398,7 @@ EJB supports:
 
 ---
 
-## 🧠 Key Concepts the Book Emphasizes
+##  Key Concepts the Book Emphasizes
 
 - Separation of concerns
 - Distributed computing
@@ -408,35 +408,35 @@ EJB supports:
 
 ---
 
-## 📝 Exam-Ready Definition (Book Style)
+##  Exam-Ready Definition (Book Style)
 
 Enterprise JavaBeans (EJB) is a server-side component architecture that simplifies the development of distributed enterprise applications by providing system-level services such as transaction management, security, and persistence through an EJB container, allowing developers to focus only on business logic.
 
 ---
 
-## ⚠️ Important Note (Modern Context)
+##  Important Note (Modern Context)
 
 The book is based on **older EJB (2.x)**:
 
 - Uses Home/Remote interfaces
 - Uses Entity Beans (now replaced by JPA)
 
-👉 Modern EJB (3.x):
+ Modern EJB (3.x):
 
 - Uses annotations
 - Simpler (no home interface)
 
 ---
 
-## 🚀 If you want next:
+##  If you want next:
 
 I can give you:
 
-- 📄 **Assignment answers strictly in “Mastering EJB” language**
-- 📌 **Important questions + model answers**
-- ⚡ **1-page last-night revision sheet**
+-  **Assignment answers strictly in “Mastering EJB” language**
+-  **Important questions + model answers**
+-  **1-page last-night revision sheet**
 
-Just tell me 👍
+Just tell me 
 
 ---
 
@@ -454,16 +454,16 @@ I’ll compress this into **high-yield exam notes (chapter-wise)** + what to **f
 
 ---
 
-## 🧠 PART 1: CORE FUNDAMENTALS (VERY HIGH WEIGHTAGE)
+##  PART 1: CORE FUNDAMENTALS (VERY HIGH WEIGHTAGE)
 
-## 🔹 EJB Fundamentals + Enterprise Beans
+##  EJB Fundamentals + Enterprise Beans
 
-👉 **Definition (must memorize):**  
+ **Definition (must memorize):**  
 EJB is a **server-side component model** that allows building distributed, transactional, secure applications using a container.
 
 ---
 
-## 🔹 What Constitutes an Enterprise Bean?
+##  What Constitutes an Enterprise Bean?
 
 6
 
@@ -478,24 +478,24 @@ EJB is a **server-side component model** that allows building distributed, trans
 5. **Deployment Descriptor** → XML config
 6. **EJB-JAR file** → packaging
 
-👉 ⭐ Expected Question:
+ ⭐ Expected Question:
 
 > Explain the architecture of an enterprise bean.
 
 ---
 
-## 🧩 PART 2: DISTRIBUTED OBJECTS (CONCEPTUAL GOLD)
+##  PART 2: DISTRIBUTED OBJECTS (CONCEPTUAL GOLD)
 
-## 🔹 Distributed Objects: Foundation for EJB
+##  Distributed Objects: Foundation for EJB
 
-👉 EJB is built on **distributed computing**
+ EJB is built on **distributed computing**
 
 - Client ≠ Server
 - Communication via **RMI-IIOP**
 
 ---
 
-## 🔹 Middleware
+##  Middleware
 
 ### Types:
 
@@ -504,14 +504,14 @@ EJB is a **server-side component model** that allows building distributed, trans
 | Explicit Middleware | Developer handles everything |
 | Implicit Middleware | Container handles everything (EJB) |
 
-👉 ⭐ Key line:  
+ ⭐ Key line:  
 **EJB = implicit middleware system**
 
 ---
 
-## 🔁 PART 3: SESSION BEANS (HIGH PRIORITY)
+##  PART 3: SESSION BEANS (HIGH PRIORITY)
 
-## 🔹 Types
+##  Types
 
 ### 1\. Stateless
 
@@ -530,13 +530,13 @@ EJB is a **server-side component model** that allows building distributed, trans
 	- **Passivation**
 		- **Activation**
 
-👉 ⭐ Expected:
+ ⭐ Expected:
 
 > Explain lifecycle of session bean
 
 ---
 
-## 🔹 Important Concepts
+##  Important Concepts
 
 - Conversational state
 - Lifecycle callbacks
@@ -544,9 +544,9 @@ EJB is a **server-side component model** that allows building distributed, trans
 
 ---
 
-## 🗃️ PART 4: ENTITY BEANS (VERY IMPORTANT ⚠️)
+##  PART 4: ENTITY BEANS (VERY IMPORTANT )
 
-## 🔹 What is Entity Bean?
+##  What is Entity Bean?
 
 - Represents **database data**
 - Persistent
@@ -554,7 +554,7 @@ EJB is a **server-side component model** that allows building distributed, trans
 
 ---
 
-## 🔹 CMP vs BMP (🔥 VERY FREQUENT)
+##  CMP vs BMP ( VERY FREQUENT)
 
 | Feature | CMP | BMP |
 | --- | --- | --- |
@@ -563,7 +563,7 @@ EJB is a **server-side component model** that allows building distributed, trans
 
 ---
 
-## 🔹 Relationships (EXAM FAVOURITE)
+##  Relationships (EXAM FAVOURITE)
 
 5
 
@@ -580,13 +580,13 @@ EJB is a **server-side component model** that allows building distributed, trans
 - Referential integrity
 - Cascading delete
 
-👉 ⭐ Expected:
+ ⭐ Expected:
 
 > Explain CMP relationships with cardinality
 
 ---
 
-## 📩 PART 5: MESSAGE-DRIVEN BEANS (IMPORTANT)
+##  PART 5: MESSAGE-DRIVEN BEANS (IMPORTANT)
 
 7
 
@@ -594,15 +594,15 @@ EJB is a **server-side component model** that allows building distributed, trans
 - Asynchronous
 - No client interface
 
-👉 Use case:  
-✔ Order processing  
-✔ Notifications
+ Use case:  
+ Order processing  
+ Notifications
 
 ---
 
-## 🌐 PART 6: TRANSACTIONS (VERY HIGH WEIGHTAGE 🔥🔥)
+##  PART 6: TRANSACTIONS (VERY HIGH WEIGHTAGE )
 
-## 🔹 Why Transactions?
+##  Why Transactions?
 
 - Failure handling
 - Data consistency
@@ -610,7 +610,7 @@ EJB is a **server-side component model** that allows building distributed, trans
 
 ---
 
-## 🔹 ACID Properties (MUST WRITE)
+##  ACID Properties (MUST WRITE)
 
 | Property | Meaning |
 | --- | --- |
@@ -621,14 +621,14 @@ EJB is a **server-side component model** that allows building distributed, trans
 
 ---
 
-## 🔹 Transaction Models
+##  Transaction Models
 
 - Flat transactions
 - Nested transactions
 
 ---
 
-## 🔹 Types in EJB
+##  Types in EJB
 
 ### 1\. Container-Managed Transactions (CMT)
 
@@ -643,7 +643,7 @@ EJB is a **server-side component model** that allows building distributed, trans
 
 ---
 
-## 🔹 Transaction Attributes (VERY IMPORTANT)
+##  Transaction Attributes (VERY IMPORTANT)
 
 | Attribute | Meaning |
 | --- | --- |
@@ -656,7 +656,7 @@ EJB is a **server-side component model** that allows building distributed, trans
 
 ---
 
-## 🔹 Isolation Problems (🔥 THEORY)
+##  Isolation Problems ( THEORY)
 
 - Dirty Read
 - Unrepeatable Read
@@ -664,16 +664,16 @@ EJB is a **server-side component model** that allows building distributed, trans
 
 ---
 
-## 🔹 Two-Phase Commit (VERY IMPORTANT)
+##  Two-Phase Commit (VERY IMPORTANT)
 
 - Phase 1: Prepare
 - Phase 2: Commit
 
-👉 Used in **distributed transactions**
+ Used in **distributed transactions**
 
 ---
 
-## ⚙️ PART 7: WRITING EJB (PRACTICAL THEORY)
+##  PART 7: WRITING EJB (PRACTICAL THEORY)
 
 ## Steps:
 
@@ -686,15 +686,15 @@ EJB is a **server-side component model** that allows building distributed, trans
 
 ---
 
-## 🔹 JNDI Lookup
+##  JNDI Lookup
 
 Client finds bean using naming service.
 
 ---
 
-## 🎯 WHAT TO FOCUS (SMART STRATEGY)
+##  WHAT TO FOCUS (SMART STRATEGY)
 
-## 🔥 MUST DO (80% marks)
+##  MUST DO (80% marks)
 
 - Enterprise Bean architecture
 - Session beans + lifecycle
@@ -705,21 +705,21 @@ Client finds bean using naming service.
 
 ---
 
-## ⚡ MEDIUM
+##  MEDIUM
 
 - Relationships (1:1, 1:N, M:N)
 - JNDI + deployment
 
 ---
 
-## 😴 LOW PRIORITY
+##  LOW PRIORITY
 
 - Web services (unless asked)
 - Deep API syntax
 
 ---
 
-## 📝 10 MARK QUESTION READY ANSWERS
+##  10 MARK QUESTION READY ANSWERS
 
 ### 1\. Explain EJB Architecture
 
@@ -739,19 +739,19 @@ Client finds bean using naming service.
 
 ---
 
-## ⚡ FINAL 1-LINE MEMORY TRICK
+##  FINAL 1-LINE MEMORY TRICK
 
-👉 **EJB = Beans + Container + Services + Distribution**
+ **EJB = Beans + Container + Services + Distribution**
 
 ---
 
 If you want next step (this will boost your marks seriously):
 
-- 📝 I can give **ready-to-write answers (exact exam format)**
-- 📄 OR a **1-night before exam cheat sheet (ultra compressed)**
-- ❓ OR **PYQs with solutions**
+-  I can give **ready-to-write answers (exact exam format)**
+-  OR a **1-night before exam cheat sheet (ultra compressed)**
+-  OR **PYQs with solutions**
 
-Just tell me 👍
+Just tell me 
 
 ---
 
@@ -764,23 +764,23 @@ UNIT I RMI: Object Serialization, Developing Applications with RMI, and the RMI 
 **ChatGPT said**
 
 Good—this is now **crystal clear syllabus**, and we’ll prepare it the right way:  
-👉 **unit-wise + exam-ready + conceptual clarity (Mastering EJB style)**
+ **unit-wise + exam-ready + conceptual clarity (Mastering EJB style)**
 
 I’ll give you **deep but structured notes** so you can both **learn + write answers**.
 
 ---
 
-## 📘 UNIT I — RMI (FOUNDATION 🔥)
+##  UNIT I — RMI (FOUNDATION )
 
-## 🔹 What is RMI?
+##  What is RMI?
 
 **RMI (Remote Method Invocation)** allows a Java object in one JVM to call methods of an object in another JVM.
 
-👉 Core idea: **Distributed object communication**
+ Core idea: **Distributed object communication**
 
 ---
 
-## 🔹 Architecture of RMI
+##  Architecture of RMI
 
 7
 
@@ -794,16 +794,16 @@ I’ll give you **deep but structured notes** so you can both **learn + write an
 
 ---
 
-## 🔹 Object Serialization (VERY IMPORTANT)
+##  Object Serialization (VERY IMPORTANT)
 
-👉 Process of converting object → byte stream
+ Process of converting object → byte stream
 
-✔ Used when:
+ Used when:
 
 - Sending objects over network
 - Saving object state
 
-👉 Must implement:
+ Must implement:
 
 ```java
 implements Serializable
@@ -811,7 +811,7 @@ implements Serializable
 
 ---
 
-## 🔹 Parameter Passing in RMI
+##  Parameter Passing in RMI
 
 | Type | How |
 | --- | --- |
@@ -819,12 +819,12 @@ implements Serializable
 | Object | By value (serialized) |
 | Remote object | By reference |
 
-👉 ⭐ Exam line:  
+ ⭐ Exam line:  
 **RMI uses pass-by-value except remote objects (pass-by-reference)**
 
 ---
 
-## 🔹 RMI Security Manager
+##  RMI Security Manager
 
 - Controls permissions
 - Prevents unauthorized access
@@ -832,7 +832,7 @@ implements Serializable
 
 ---
 
-## 🔹 Steps to Develop RMI App
+##  Steps to Develop RMI App
 
 1. Create remote interface
 2. Implement class
@@ -843,15 +843,15 @@ implements Serializable
 
 ---
 
-## 📘 UNIT II — JNDI (IMPORTANT CONCEPTUAL)
+##  UNIT II — JNDI (IMPORTANT CONCEPTUAL)
 
-## 🔹 What is JNDI?
+##  What is JNDI?
 
 **JNDI (Java Naming and Directory Interface)** is used to **locate resources** (EJB, DB, services).
 
 ---
 
-## 🔹 Naming vs Directory Services
+##  Naming vs Directory Services
 
 | Naming | Directory |
 | --- | --- |
@@ -859,7 +859,7 @@ implements Serializable
 
 ---
 
-## 🔹 JNDI Architecture
+##  JNDI Architecture
 
 6
 
@@ -871,7 +871,7 @@ implements Serializable
 
 ---
 
-## 🔹 Benefits
+##  Benefits
 
 - Decoupling
 - Centralized lookup
@@ -879,22 +879,22 @@ implements Serializable
 
 ---
 
-## 🔹 JNDI Concepts
+##  JNDI Concepts
 
 - Context
 - Lookup
 - Binding
 - Naming
 
-👉 ⭐ Most asked:
+ ⭐ Most asked:
 
 > Explain JNDI architecture and its benefits
 
 ---
 
-## 📘 UNIT III — EJB FUNDAMENTALS (🔥 CORE UNIT)
+##  UNIT III — EJB FUNDAMENTALS ( CORE UNIT)
 
-## 🔹 Motivation for EJB
+##  Motivation for EJB
 
 - Reduce complexity
 - Handle transactions
@@ -903,9 +903,9 @@ implements Serializable
 
 ---
 
-## 🔹 Component Architecture
+##  Component Architecture
 
-👉 EJB = **component-based model**
+ EJB = **component-based model**
 
 - Reusable
 - Modular
@@ -913,7 +913,7 @@ implements Serializable
 
 ---
 
-## 🔹 Roles in J2EE
+##  Roles in J2EE
 
 | Role | Work |
 | --- | --- |
@@ -924,7 +924,7 @@ implements Serializable
 
 ---
 
-## 🔹 Types of Beans
+##  Types of Beans
 
 - Session
 - Entity
@@ -932,14 +932,14 @@ implements Serializable
 
 ---
 
-## 🔹 Distributed Objects & Middleware
+##  Distributed Objects & Middleware
 
-👉 EJB uses **implicit middleware**  
+ EJB uses **implicit middleware**  
 (Container handles complexity)
 
 ---
 
-## 🔹 Constituents of Enterprise Bean
+##  Constituents of Enterprise Bean
 
 7
 
@@ -954,9 +954,9 @@ implements Serializable
 
 ---
 
-## 📘 UNIT IV — SESSION BEANS + JMS (🔥🔥 HIGH)
+##  UNIT IV — SESSION BEANS + JMS ( HIGH)
 
-## 🔹 Stateless Session Bean
+##  Stateless Session Bean
 
 - No state
 - Fast
@@ -964,7 +964,7 @@ implements Serializable
 
 ---
 
-## 🔹 Stateful Session Bean
+##  Stateful Session Bean
 
 7
 
@@ -976,7 +976,7 @@ implements Serializable
 
 ---
 
-## 🔹 Lifecycle
+##  Lifecycle
 
 ### Stateful:
 
@@ -984,20 +984,20 @@ implements Serializable
 
 ---
 
-## 🔹 JMS (Java Message Service)
+##  JMS (Java Message Service)
 
-👉 Messaging system for asynchronous communication
+ Messaging system for asynchronous communication
 
 ---
 
-## 🔹 Integrating JMS with EJB
+##  Integrating JMS with EJB
 
 - MDB listens to JMS queue
 - Processes messages
 
 ---
 
-## 🔹 Message Driven Beans (MDB)
+##  Message Driven Beans (MDB)
 
 - No client interface
 - Asynchronous
@@ -1005,15 +1005,15 @@ implements Serializable
 
 ---
 
-## 📘 UNIT V — ENTITY BEANS (🔥 THEORY HEAVY)
+##  UNIT V — ENTITY BEANS ( THEORY HEAVY)
 
-## 🔹 Persistence Concepts
+##  Persistence Concepts
 
-👉 Data stored in DB survives failures
+ Data stored in DB survives failures
 
 ---
 
-## 🔹 Features of Entity Beans
+##  Features of Entity Beans
 
 - Persistent
 - Shared
@@ -1021,7 +1021,7 @@ implements Serializable
 
 ---
 
-## 🔹 BMP vs CMP (VERY IMPORTANT)
+##  BMP vs CMP (VERY IMPORTANT)
 
 | Feature | BMP | CMP |
 | --- | --- | --- |
@@ -1030,7 +1030,7 @@ implements Serializable
 
 ---
 
-## 🔹 Lifecycle
+##  Lifecycle
 
 6
 
@@ -1041,7 +1041,7 @@ implements Serializable
 
 ---
 
-## 🔹 Relationships (IMPORTANT)
+##  Relationships (IMPORTANT)
 
 - 1:1
 - 1:N
@@ -1049,7 +1049,7 @@ implements Serializable
 
 ---
 
-## 🔹 Advanced Concepts
+##  Advanced Concepts
 
 - Lazy loading
 - Referential integrity
@@ -1057,9 +1057,9 @@ implements Serializable
 
 ---
 
-## 🎯 FINAL STRATEGY (READ THIS CAREFULLY)
+##  FINAL STRATEGY (READ THIS CAREFULLY)
 
-## 🔥 Highest Weight:
+##  Highest Weight:
 
 - RMI (serialization + parameter passing)
 - Session beans + lifecycle
@@ -1068,7 +1068,7 @@ implements Serializable
 
 ---
 
-## ⚡ Medium:
+##  Medium:
 
 - JNDI
 - MDB
@@ -1076,35 +1076,35 @@ implements Serializable
 
 ---
 
-## 😴 Low:
+##  Low:
 
 - Vendor-specific files
 - Deep API syntax
 
 ---
 
-## 🧠 LAST NIGHT REVISION MAP
+##  LAST NIGHT REVISION MAP
 
-👉 **UNIT I → RMI = Communication**  
-👉 **UNIT II → JNDI = Lookup**  
-👉 **UNIT III → EJB = Architecture**  
-👉 **UNIT IV → Session + JMS = Execution**  
-👉 **UNIT V → Entity = Database**
+ **UNIT I → RMI = Communication**  
+ **UNIT II → JNDI = Lookup**  
+ **UNIT III → EJB = Architecture**  
+ **UNIT IV → Session + JMS = Execution**  
+ **UNIT V → Entity = Database**
 
 ---
 
-## 🚀 Next Step (HIGHLY RECOMMENDED)
+##  Next Step (HIGHLY RECOMMENDED)
 
 Now don’t just read— **practice writing**.
 
 I can give you:
 
-- 📝 **Full 10-mark answers (perfect exam format)**
-- ❓ **Important questions predicted**
-- ⚡ **1-page cheat sheet (super compressed)**
+-  **Full 10-mark answers (perfect exam format)**
+-  **Important questions predicted**
+-  **1-page cheat sheet (super compressed)**
 
 Just tell me:  
-👉 “answers” / “cheat sheet” / “questions”
+ “answers” / “cheat sheet” / “questions”
 
 ---
 
@@ -1123,7 +1123,7 @@ If this clicks, the rest becomes much easier.
 
 ---
 
-## 🧠 1. Why Serialization even exists (intuition first)
+##  1. Why Serialization even exists (intuition first)
 
 In normal Java:
 
@@ -1135,7 +1135,7 @@ Now imagine:
 - You want to send an object over network
 - Or store it in a file
 
-👉 Raw object memory **cannot be sent directly**
+ Raw object memory **cannot be sent directly**
 
 So we need:
 
@@ -1143,11 +1143,11 @@ So we need:
 
 ---
 
-## 🔄 2. What Serialization actually is
+##  2. What Serialization actually is
 
 **Serialization = converting an object into a byte stream**
 
-👉 Think:
+ Think:
 
 ```
 Object → bytes → network/file → bytes → object
@@ -1161,7 +1161,7 @@ This byte stream:
 
 ---
 
-## ⚙️ 3. How Java does it
+##  3. How Java does it
 
 You mark a class:
 
@@ -1172,7 +1172,7 @@ class Student implements Serializable {
 }
 ```
 
-👉 That’s it. No methods required.
+ That’s it. No methods required.
 
 Why?
 
@@ -1180,13 +1180,13 @@ Why?
 
 ---
 
-## 🔬 4. What actually gets serialized (VERY IMPORTANT)
+##  4. What actually gets serialized (VERY IMPORTANT)
 
-### ✔ Included:
+###  Included:
 
 - Instance variables (non-static, non-transient)
 
-### ❌ NOT included:
+###  NOT included:
 
 - `static` → belongs to class, not object
 - `transient` → explicitly skipped
@@ -1198,11 +1198,11 @@ class A implements Serializable {
 }
 ```
 
-👉 Exam trap: **transient fields reset after deserialization**
+ Exam trap: **transient fields reset after deserialization**
 
 ---
 
-## 🔁 5. Deserialization
+##  5. Deserialization
 
 Reverse process:
 
@@ -1211,14 +1211,14 @@ ObjectInputStream in = new ObjectInputStream(...);
 Student s = (Student) in.readObject();
 ```
 
-👉 JVM reconstructs object:
+ JVM reconstructs object:
 
 - Allocates memory
 - Sets fields from byte stream
 
 ---
 
-## 🧠 6. Deep Concept: Identity vs State
+##  6. Deep Concept: Identity vs State
 
 Serialization **does NOT preserve object identity perfectly**
 
@@ -1234,14 +1234,14 @@ After deserialization:
 A newObj = ...
 ```
 
-👉 `obj != newObj` (different reference)
+ `obj != newObj` (different reference)
 
 But:  
-👉 State (values) is same
+ State (values) is same
 
 ---
 
-## ⚠️ 7. serialVersionUID (VERY IMPORTANT CONCEPT)
+##  7. serialVersionUID (VERY IMPORTANT CONCEPT)
 
 Each class has a version ID:
 
@@ -1249,40 +1249,40 @@ Each class has a version ID:
 private static final long serialVersionUID = 1L;
 ```
 
-👉 Why needed?
+ Why needed?
 
 If class changes:
 
 - Old serialized object may not match new class
 
-👉 JVM checks:
+ JVM checks:
 
 ```
 UID match → OK  
 UID mismatch → InvalidClassException
 ```
 
-👉 Concept:  
+ Concept:  
 **Ensures compatibility between versions**
 
 ---
 
-## 🔥 8. Serialization in RMI (CRITICAL CONNECTION)
+##  8. Serialization in RMI (CRITICAL CONNECTION)
 
 In RMI:
 
 - When client sends object → serialized
 - Server receives → deserialized
 
-👉 So:
+ So:
 
 > Serialization is the backbone of RMI communication
 
 ---
 
-## ⚠️ 9. Deep Pitfalls (this is where most people don’t go)
+##  9. Deep Pitfalls (this is where most people don’t go)
 
-### ❗ 1. Object graph serialization
+###  1. Object graph serialization
 
 If object contains other objects:
 
@@ -1292,11 +1292,11 @@ class A {
 }
 ```
 
-👉 Entire graph serialized recursively
+ Entire graph serialized recursively
 
 ---
 
-### ❗ 2. Circular references
+###  2. Circular references
 
 Java handles:
 
@@ -1304,46 +1304,46 @@ Java handles:
 A → B → A
 ```
 
-👉 Doesn’t crash (uses reference tracking)
+ Doesn’t crash (uses reference tracking)
 
 ---
 
-### ❗ 3. Performance cost
+###  3. Performance cost
 
 Serialization is:
 
 - CPU heavy
 - Memory heavy
 
-👉 That’s why modern systems avoid it (use JSON/Protobuf)
+ That’s why modern systems avoid it (use JSON/Protobuf)
 
 ---
 
-## 🧠 10. Mental Model (IMPORTANT)
+##  10. Mental Model (IMPORTANT)
 
-👉 Think of serialization as:
+ Think of serialization as:
 
 > “Taking a snapshot of object state and packing it into a transportable form”
 
 ---
 
-## ✍️ How to write in exam (5–7 lines)
+##  How to write in exam (5–7 lines)
 
 Object serialization is the process of converting a Java object into a byte stream so that it can be transmitted over a network or stored in a file. It is achieved by implementing the Serializable interface. During serialization, only instance variables are saved, while static and transient variables are ignored. The process is reversed using deserialization, where the object is reconstructed from the byte stream. Serialization is widely used in RMI for transferring objects between client and server.
 
 ---
 
-## 🚀 Next step
+##  Next step
 
 We go step-by-step like this:
 
-👉 Next topic should be:  
+ Next topic should be:  
 **RMI Architecture (stub, registry, call flow)** — this is where most students get confused but also where marks come from.
 
 Just say:  
-👉 “next”  
+ “next”  
 or  
-👉 “go deeper into serialization” (if you want edge-level mastery)
+ “go deeper into serialization” (if you want edge-level mastery)
 
 ---
 
@@ -1361,7 +1361,7 @@ We’re building **RMI in your brain like a system**, not memorizing it.
 
 ---
 
-## 🧠 STEP 1 — THE REAL PROBLEM (why RMI exists)
+##  STEP 1 — THE REAL PROBLEM (why RMI exists)
 
 Imagine:
 
@@ -1370,7 +1370,7 @@ Calculator c = new Calculator();
 c.add(5, 3);
 ```
 
-👉 Works because:
+ Works because:
 
 - Object is in **same JVM**
 - Direct memory access
@@ -1382,20 +1382,20 @@ Now change situation:
 - Client = your laptop
 - Server = remote machine
 
-👉 You want:
+ You want:
 
 ```java
 c.add(5, 3); // but c is on another machine
 ```
 
-💥 Problem:
+ Problem:
 
 - No shared memory
 - No direct method call possible
 
 ---
 
-👉 So we need:
+ So we need:
 
 > “Make remote method call feel like local call”
 
@@ -1403,28 +1403,28 @@ This is the **core idea of RMI**
 
 ---
 
-## 🔥 STEP 2 — WHAT RMI ACTUALLY DOES
+##  STEP 2 — WHAT RMI ACTUALLY DOES
 
 RMI = **Remote Method Invocation**
 
-👉 It allows:
+ It allows:
 
 - Calling methods on **remote objects**
 - As if they are **local objects**
 
 ---
 
-## 🧠 STEP 3 — THE ILLUSION (MOST IMPORTANT CONCEPT)
+##  STEP 3 — THE ILLUSION (MOST IMPORTANT CONCEPT)
 
 RMI creates an **illusion**:
 
-👉 You think:
+ You think:
 
 ```java
 remoteObj.add(5,3);
 ```
 
-👉 But actually:
+ But actually:
 
 - Request goes over network
 - Server processes it
@@ -1432,7 +1432,7 @@ remoteObj.add(5,3);
 
 ---
 
-## ⚙️ STEP 4 — INTERNAL ARCHITECTURE (CORE UNDERSTANDING)
+##  STEP 4 — INTERNAL ARCHITECTURE (CORE UNDERSTANDING)
 
 6
 
@@ -1440,7 +1440,7 @@ remoteObj.add(5,3);
 
 ---
 
-## 🔹 1. Remote Object (Server side)
+##  1. Remote Object (Server side)
 
 Actual logic:
 
@@ -1454,24 +1454,24 @@ Lives on server.
 
 ---
 
-## 🔹 2. Stub (Client-side proxy)
+##  2. Stub (Client-side proxy)
 
-👉 THIS is the real hero.
+ THIS is the real hero.
 
 - Looks like real object
 - But actually:
 	- Packs method call
 		- Sends over network
 
-👉 Think:
+ Think:
 
 > Stub = “fake object that talks to server”
 
 ---
 
-## 🔹 3. RMI Registry
+##  3. RMI Registry
 
-👉 Naming service
+ Naming service
 
 Like:
 
@@ -1485,16 +1485,16 @@ Client asks:
 
 ---
 
-## 🔹 4. Skeleton (old concept)
+##  4. Skeleton (old concept)
 
 - Used to receive request on server
 - Now handled internally by JVM
 
-👉 You can ignore in modern understanding
+ You can ignore in modern understanding
 
 ---
 
-## 🔄 STEP 5 — COMPLETE CALL FLOW (THIS IS GOLD)
+##  STEP 5 — COMPLETE CALL FLOW (THIS IS GOLD)
 
 Let’s trace:
 
@@ -1524,7 +1524,7 @@ return 8;
 
 ---
 
-👉 So real flow:
+ So real flow:
 
 ```
 Client → Stub → Network → Server → Object → Result → Back
@@ -1532,7 +1532,7 @@ Client → Stub → Network → Server → Object → Result → Back
 
 ---
 
-## 🧠 STEP 6 — PARAMETER PASSING (CONCEPTUAL DEPTH)
+##  STEP 6 — PARAMETER PASSING (CONCEPTUAL DEPTH)
 
 This is where examiners test thinking.
 
@@ -1542,7 +1542,7 @@ This is where examiners test thinking.
 add(5,3)
 ```
 
-👉 Passed **by value**
+ Passed **by value**
 
 ---
 
@@ -1552,8 +1552,8 @@ add(5,3)
 send(Student s)
 ```
 
-👉 Serialized → sent → copied  
-👉 So:
+ Serialized → sent → copied  
+ So:
 
 - Different object on server
 
@@ -1565,29 +1565,29 @@ send(Student s)
 send(RemoteObj r)
 ```
 
-👉 Passed **by reference**
+ Passed **by reference**
 
-👉 Meaning:
+ Meaning:
 
 - Stub is passed instead
 - Calls still go to original server
 
 ---
 
-👉 🔥 Golden Rule:
+  Golden Rule:
 
 > RMI = Pass-by-value + Pass-by-reference (only for remote objects)
 
 ---
 
-## 🔐 STEP 7 — SECURITY MANAGER (WHY IT EXISTS)
+##  STEP 7 — SECURITY MANAGER (WHY IT EXISTS)
 
 RMI can:
 
 - Load classes dynamically
 - Execute remote code
 
-👉 That’s dangerous
+ That’s dangerous
 
 So:
 
@@ -1596,20 +1596,20 @@ So:
 
 ---
 
-## 🔬 STEP 8 — OBJECT SERIALIZATION (RMI CORE)
+##  STEP 8 — OBJECT SERIALIZATION (RMI CORE)
 
 Already covered but connect it:
 
-👉 Every time:
+ Every time:
 
 - Method call → arguments serialized
 - Return → serialized
 
-👉 Without serialization → RMI impossible
+ Without serialization → RMI impossible
 
 ---
 
-## 🧠 STEP 9 — FAILURE MODEL (ADVANCED UNDERSTANDING)
+##  STEP 9 — FAILURE MODEL (ADVANCED UNDERSTANDING)
 
 Local call:
 
@@ -1621,7 +1621,7 @@ Remote call:
 - Server down
 - Timeout
 
-👉 That’s why:
+ That’s why:
 
 ```java
 throws RemoteException
@@ -1629,27 +1629,27 @@ throws RemoteException
 
 ---
 
-👉 Concept:
+ Concept:
 
 > Remote calls are **unreliable by nature**
 
 ---
 
-## ⚠️ STEP 10 — PERFORMANCE REALITY
+##  STEP 10 — PERFORMANCE REALITY
 
 RMI is:
 
 - Slow (network + serialization)
 - Heavy
 
-👉 That’s why:
+ That’s why:
 
 - Not used much today
 - Replaced by REST/gRPC
 
 ---
 
-## 🧠 STEP 11 — FULL DEVELOPMENT FLOW (MENTAL MODEL)
+##  STEP 11 — FULL DEVELOPMENT FLOW (MENTAL MODEL)
 
 ### Step 1: Define remote interface
 
@@ -1701,30 +1701,30 @@ c.add(5,3);
 
 ---
 
-## 🧠 FINAL MENTAL MODEL (NEVER FORGET)
+##  FINAL MENTAL MODEL (NEVER FORGET)
 
-👉 RMI is:
+ RMI is:
 
 > “A system that turns a method call into a network request and back into a result transparently.”
 
 ---
 
-## ✍️ HOW TO WRITE IN EXAM (10 MARK)
+##  HOW TO WRITE IN EXAM (10 MARK)
 
 Remote Method Invocation (RMI) is a Java mechanism that allows an object in one JVM to invoke methods on an object located in another JVM. It provides location transparency using a client-side stub that acts as a proxy for the remote object. The RMI registry is used for locating remote objects. Method parameters and return values are transferred using serialization. Remote method calls may throw RemoteException due to network failures. RMI enables distributed computing by making remote calls appear like local method invocations.
 
 ---
 
-## 🚀 Next (important)
+##  Next (important)
 
 We should now go:
 
-👉 **RMI Registry + JNDI connection (deep)**  
+ **RMI Registry + JNDI connection (deep)**  
 OR  
-👉 **Distributed Objects & Middleware (foundation of EJB)**
+ **Distributed Objects & Middleware (foundation of EJB)**
 
 Say:  
-👉 “next registry” or “next middleware”
+ “next registry” or “next middleware”
 
 ---
 
@@ -1742,11 +1742,11 @@ We’ll build it from **pure Java → then RMI → then edge cases** so it stick
 
 ---
 
-## 🧠 STEP 1 — First fix your base (Java itself)
+##  STEP 1 — First fix your base (Java itself)
 
 Before RMI, understand this clearly:
 
-👉 In Java:
+ In Java:
 
 > Everything is technically **pass-by-value**
 
@@ -1754,7 +1754,7 @@ Yes—even objects.
 
 ---
 
-## 🔹 Example (normal Java)
+##  Example (normal Java)
 
 ```java
 void change(int x) {
@@ -1767,13 +1767,13 @@ change(a);
 System.out.println(a); // still 5
 ```
 
-👉 Why?
+ Why?
 
 - Value of `a` is copied into `x`
 
 ---
 
-## 🔹 Objects in Java
+##  Objects in Java
 
 ```java
 void modify(Student s) {
@@ -1781,24 +1781,24 @@ void modify(Student s) {
 }
 ```
 
-👉 Here:
+ Here:
 
 - `s` is a **reference**
 - But reference itself is passed **by value (copied)**
 
-👉 So:
+ So:
 
 - Both point to same object → change visible
 
 ---
 
-👉 🧠 Core truth:
+  Core truth:
 
 > Java never passes variables by reference—only copies of values (including references)
 
 ---
 
-## 🔥 STEP 2 — Now shift to RMI
+##  STEP 2 — Now shift to RMI
 
 In RMI, things change because:
 
@@ -1807,15 +1807,15 @@ In RMI, things change because:
 
 ---
 
-## ⚙️ STEP 3 — PASS-BY-VALUE IN RMI
+##  STEP 3 — PASS-BY-VALUE IN RMI
 
-## 🔹 Case 1: Normal Objects
+##  Case 1: Normal Objects
 
 ```java
 public void update(Student s)
 ```
 
-👉 What happens:
+ What happens:
 
 1. Object is **serialized**
 2. Sent over network
@@ -1823,7 +1823,7 @@ public void update(Student s)
 
 ---
 
-👉 So:
+ So:
 
 Client side:
 
@@ -1837,43 +1837,43 @@ Server side:
 s.name = "Rahul";
 ```
 
-👉 After call:
+ After call:
 
 - Client object = Aman
 - Server object = Rahul
 
-❌ Changes NOT reflected back
+ Changes NOT reflected back
 
 ---
 
-👉 🧠 Concept:
+  Concept:
 
 > RMI pass-by-value = deep copy (via serialization)
 
 ---
 
-## 🔥 STEP 4 — PASS-BY-REFERENCE IN RMI
+##  STEP 4 — PASS-BY-REFERENCE IN RMI
 
 This happens ONLY when:
 
-👉 Object implements `Remote`
+ Object implements `Remote`
 
 ---
 
-## 🔹 Example
+##  Example
 
 ```java
 public void process(RemoteObj r)
 ```
 
-👉 What happens:
+ What happens:
 
 - Object is NOT serialized
 - Instead, a **stub (reference)** is sent
 
 ---
 
-👉 So:
+ So:
 
 Client:
 
@@ -1889,51 +1889,51 @@ r.doSomething(); // still calls client-side object
 
 ---
 
-👉 🧠 Concept:
+  Concept:
 
 > Remote object = accessed via network reference (stub)
 
 ---
 
-## ⚡ STEP 5 — SIDE-BY-SIDE COMPARISON
+##  STEP 5 — SIDE-BY-SIDE COMPARISON
 
 | Feature | Pass-by-Value | Pass-by-Reference |
 | --- | --- | --- |
 | What is sent | Copy of object | Stub (reference) |
 | Mechanism | Serialization | Remote proxy |
-| Memory sharing | ❌ No | ✔ Yes (via calls) |
-| Changes reflect | ❌ No | ✔ Yes |
+| Memory sharing |  No |  Yes (via calls) |
+| Changes reflect |  No |  Yes |
 | Used for | Normal objects | Remote objects |
 
 ---
 
-## 🔬 STEP 6 — DEEP INTUITION (THIS IS THE REAL UNDERSTANDING)
+##  STEP 6 — DEEP INTUITION (THIS IS THE REAL UNDERSTANDING)
 
-### 🔹 Why normal objects can’t be pass-by-reference?
+###  Why normal objects can’t be pass-by-reference?
 
 Because:
 
 - Different JVMs
 - Different memory spaces
 
-👉 You cannot point to memory of another machine
+ You cannot point to memory of another machine
 
 ---
 
-### 🔹 Why remote objects can?
+###  Why remote objects can?
 
 Because:
 
 - You’re not sending memory
 - You’re sending a **network handle (stub)**
 
-👉 Like:
+ Like:
 
 > “Call this object through me”
 
 ---
 
-## 🧠 STEP 7 — VISUAL MENTAL MODEL
+##  STEP 7 — VISUAL MENTAL MODEL
 
 ### Pass-by-value:
 
@@ -1941,7 +1941,7 @@ Because:
 Client Object → Serialized → Sent → New Object (Server)
 ```
 
-👉 Two separate objects
+ Two separate objects
 
 ---
 
@@ -1951,61 +1951,61 @@ Client Object → Serialized → Sent → New Object (Server)
 Client Object ←→ Stub ←→ Network ←→ Server uses stub
 ```
 
-👉 One logical object, accessed remotely
+ One logical object, accessed remotely
 
 ---
 
-## ⚠️ STEP 8 — COMMON CONFUSIONS (EXAM TRAPS)
+##  STEP 8 — COMMON CONFUSIONS (EXAM TRAPS)
 
-### ❌ Myth:
+###  Myth:
 
 “Objects are passed by reference in Java”
 
-👉 Wrong  
-✔ They are passed by value (reference is copied)
+ Wrong  
+ They are passed by value (reference is copied)
 
 ---
 
-### ❌ Myth:
+###  Myth:
 
 “All objects in RMI are pass-by-reference”
 
-👉 Wrong  
-✔ Only **Remote objects**
+ Wrong  
+ Only **Remote objects**
 
 ---
 
-### ❌ Myth:
+###  Myth:
 
 “Changes in server reflect in client always”
 
-👉 Wrong  
-✔ Only for remote objects
+ Wrong  
+ Only for remote objects
 
 ---
 
-## 🧠 STEP 9 — ONE-LINE MEMORY HOOK
+##  STEP 9 — ONE-LINE MEMORY HOOK
 
-👉 **Normal Object → Copy → No sync**  
-👉 **Remote Object → Stub → Live connection**
+ **Normal Object → Copy → No sync**  
+ **Remote Object → Stub → Live connection**
 
 ---
 
-## ✍️ EXAM ANSWER (PERFECT)
+##  EXAM ANSWER (PERFECT)
 
 In RMI, parameter passing is achieved using both pass-by-value and pass-by-reference mechanisms. Primitive types and normal objects are passed by value, where the object is serialized, transmitted over the network, and reconstructed on the receiving side, resulting in a copy. Therefore, changes made to the object on the server do not affect the original object on the client. However, remote objects (those implementing the Remote interface) are passed by reference in the form of a stub. This allows method calls on the object to be forwarded to the original remote object, maintaining consistency across JVMs.
 
 ---
 
-## 🚀 Next (important progression)
+##  Next (important progression)
 
 Now that you understand this deeply:
 
-👉 Next logical step:  
+ Next logical step:  
 **RMI Registry + Lookup + Naming (connects to JNDI later)**
 
 Say:  
-👉 “next registry deep”
+ “next registry deep”
 
 ---
 
@@ -2023,7 +2023,7 @@ We’ll go **intuitively → internally → flow → edge cases → connection t
 
 ---
 
-## 🧠 STEP 1 — The Real Problem
+##  STEP 1 — The Real Problem
 
 You already understand:
 
@@ -2032,20 +2032,20 @@ You already understand:
 
 But **how does client know where that object is?**
 
-👉 IP? Port? Object reference?  
+ IP? Port? Object reference?  
 Too messy.
 
 ---
 
-👉 So we need:
+ So we need:
 
 > A **naming system** to locate remote objects
 
 ---
 
-## 🔥 STEP 2 — Enter RMI Registry
+##  STEP 2 — Enter RMI Registry
 
-👉 **RMI Registry = simple naming service**
+ **RMI Registry = simple naming service**
 
 It works like a **phonebook**:
 
@@ -2061,17 +2061,17 @@ Example:
 
 ---
 
-## ⚙️ STEP 3 — What Registry Actually Stores (IMPORTANT)
+##  STEP 3 — What Registry Actually Stores (IMPORTANT)
 
 It does NOT store the real object.
 
-👉 It stores:
+ It stores:
 
 > A **stub (proxy)** of the remote object
 
 ---
 
-👉 So internally:
+ So internally:
 
 ```
 "calcService" → stub → actual object (on server)
@@ -2079,67 +2079,67 @@ It does NOT store the real object.
 
 ---
 
-## 🔄 STEP 4 — COMPLETE FLOW (THIS IS EXAM GOLD)
+##  STEP 4 — COMPLETE FLOW (THIS IS EXAM GOLD)
 
 Let’s go step by step.
 
 ---
 
-## 🔹 Step 1: Start Registry
+##  Step 1: Start Registry
 
 ```bash
 rmiregistry 1099
 ```
 
-👉 Runs on a port (default 1099)
+ Runs on a port (default 1099)
 
 ---
 
-## 🔹 Step 2: Server binds object
+##  Step 2: Server binds object
 
 ```java
 Naming.rebind("rmi://localhost/calcService", obj);
 ```
 
-👉 What happens:
+ What happens:
 
 - Object converted to stub
 - Stub stored in registry
 
 ---
 
-## 🔹 Step 3: Client looks up
+##  Step 3: Client looks up
 
 ```java
 Calc c = (Calc) Naming.lookup("rmi://localhost/calcService");
 ```
 
-👉 Client receives:
+ Client receives:
 
 - Stub (not real object)
 
 ---
 
-## 🔹 Step 4: Client calls method
+##  Step 4: Client calls method
 
 ```java
 c.add(5,3);
 ```
 
-👉 Stub handles everything → RMI call happens
+ Stub handles everything → RMI call happens
 
 ---
 
-## 🧠 STEP 5 — KEY INSIGHT (MOST IMPORTANT)
+##  STEP 5 — KEY INSIGHT (MOST IMPORTANT)
 
-👉 Registry is used **ONLY once**:
+ Registry is used **ONLY once**:
 
-✔ At lookup time  
-❌ Not used during method calls
+ At lookup time  
+ Not used during method calls
 
 ---
 
-👉 After lookup:
+ After lookup:
 
 ```
 Client ↔ Stub ↔ Server
@@ -2149,7 +2149,7 @@ Registry is out of picture.
 
 ---
 
-## 🔬 STEP 6 — Naming Class vs Registry (CONFUSION POINT)
+##  STEP 6 — Naming Class vs Registry (CONFUSION POINT)
 
 You use:
 
@@ -2157,47 +2157,47 @@ You use:
 Naming.lookup(...)
 ```
 
-👉 But internally:
+ But internally:
 
 - It talks to **Registry**
 
 ---
 
-👉 So:
+ So:
 
 - `Naming` = API
 - `Registry` = actual service
 
 ---
 
-## ⚠️ STEP 7 — Important Methods
+##  STEP 7 — Important Methods
 
-### ✔ bind()
+###  bind()
 
 - Add new name
 - Fails if already exists
 
 ---
 
-### ✔ rebind()
+###  rebind()
 
 - Replace existing
 
 ---
 
-### ✔ lookup()
+###  lookup()
 
 - Get object
 
 ---
 
-### ✔ unbind()
+###  unbind()
 
 - Remove object
 
 ---
 
-## 🧠 STEP 8 — URL FORMAT (EXAM DETAIL)
+##  STEP 8 — URL FORMAT (EXAM DETAIL)
 
 ```
 rmi://host:port/name
@@ -2211,9 +2211,9 @@ rmi://localhost:1099/calcService
 
 ---
 
-## ⚠️ STEP 9 — REAL-WORLD ISSUES (DEEP UNDERSTANDING)
+##  STEP 9 — REAL-WORLD ISSUES (DEEP UNDERSTANDING)
 
-### ❗ 1. Registry must be running
+###  1. Registry must be running
 
 If not:
 
@@ -2223,20 +2223,20 @@ Connection refused
 
 ---
 
-### ❗ 2. Same host vs remote host
+###  2. Same host vs remote host
 
 - `localhost` → same machine
 - IP → remote server
 
 ---
 
-### ❗ 3. Firewall issues
+###  3. Firewall issues
 
 Port 1099 must be open
 
 ---
 
-### ❗ 4. Class availability
+###  4. Class availability
 
 Client must have:
 
@@ -2245,15 +2245,15 @@ Client must have:
 
 ---
 
-## 🧠 STEP 10 — INTERNAL MENTAL MODEL
+##  STEP 10 — INTERNAL MENTAL MODEL
 
-👉 Think of registry as:
+ Think of registry as:
 
 > “A directory that gives you a remote control (stub) to operate an object elsewhere”
 
 ---
 
-## 🔗 STEP 11 — CONNECTION TO JNDI (VERY IMPORTANT FOR UNIT II)
+##  STEP 11 — CONNECTION TO JNDI (VERY IMPORTANT FOR UNIT II)
 
 RMI Registry is:
 
@@ -2265,19 +2265,19 @@ JNDI is:
 
 ---
 
-👉 So:
+ So:
 
 ```
 RMI Registry ⊂ JNDI concept
 ```
 
-👉 Later:
+ Later:
 
 - EJB uses JNDI instead of raw registry
 
 ---
 
-## 🧠 STEP 12 — FLOW SUMMARY (LOCK THIS IN)
+##  STEP 12 — FLOW SUMMARY (LOCK THIS IN)
 
 ```
 Server:
@@ -2292,22 +2292,22 @@ Stub → Network → Server → Response
 
 ---
 
-## ✍️ EXAM ANSWER (10 MARK READY)
+##  EXAM ANSWER (10 MARK READY)
 
 The RMI Registry is a simple naming service that allows clients to locate remote objects using a logical name. It acts as a directory where remote objects are registered by the server using methods like bind() or rebind(). The client performs a lookup operation using the Naming class to obtain a stub of the remote object. This stub acts as a proxy and enables the client to invoke methods on the remote object. The registry is only involved during the lookup process and not during actual method invocation.
 
 ---
 
-## 🚀 Next (natural progression)
+##  Next (natural progression)
 
 Now you’re ready for a **big concept jump**:
 
-👉 **Distributed Objects & Middleware (this is what connects RMI → EJB)**
+ **Distributed Objects & Middleware (this is what connects RMI → EJB)**
 
 This is where most students finally “get” EJB.
 
 Say:  
-👉 “next middleware deep”
+ “next middleware deep”
 
 ---
 
@@ -2323,7 +2323,7 @@ Alright—now we zoom out and **connect everything you’ve learned (Serializati
 
 ---
 
-## 🧠 The Big Picture: What problem are we solving?
+##  The Big Picture: What problem are we solving?
 
 At its core, all of this exists because:
 
@@ -2339,7 +2339,7 @@ So Java builds a **layered illusion system** to hide that complexity.
 
 ---
 
-## 🧩 Layer 1 — Object → Bytes (Serialization)
+##  Layer 1 — Object → Bytes (Serialization)
 
 Everything starts here.
 
@@ -2371,7 +2371,7 @@ This is the **only reason RMI can even exist**.
 
 ---
 
-## 🧩 Layer 2 — Calling Methods Remotely (RMI Core Illusion)
+##  Layer 2 — Calling Methods Remotely (RMI Core Illusion)
 
 Now comes the real trick.
 
@@ -2395,11 +2395,11 @@ You’re:
 - Sending it
 - Waiting for a reply
 
-👉 That’s **distributed computing disguised as local programming**
+ That’s **distributed computing disguised as local programming**
 
 ---
 
-## 🧩 Layer 3 — The Proxy Trick (Stub)
+##  Layer 3 — The Proxy Trick (Stub)
 
 Here’s where the illusion becomes elegant.
 
@@ -2426,17 +2426,17 @@ And the stub:
 3. Waits
 4. Deserializes response
 
-👉 The stub is the **translator between object world and network world**
+ The stub is the **translator between object world and network world**
 
 ---
 
-## 🧩 Layer 4 — Finding Objects (Registry Problem)
+##  Layer 4 — Finding Objects (Registry Problem)
 
 Now a deeper issue:
 
 Even if you understand remote calls…
 
-👉 How do you even *get* `c`?
+ How do you even *get* `c`?
 
 You don’t know:
 
@@ -2465,11 +2465,11 @@ lookup("calcService")
 ```
 
 This gives you:  
-👉 A usable handle (stub)
+ A usable handle (stub)
 
 ---
 
-## 🧠 Important Insight
+##  Important Insight
 
 The registry is not part of execution.
 
@@ -2484,7 +2484,7 @@ Once you get the stub:
 
 ---
 
-## 🧩 Layer 5 — Two Worlds Colliding (Parameter Passing)
+##  Layer 5 — Two Worlds Colliding (Parameter Passing)
 
 Now we hit the deepest conceptual divide.
 
@@ -2513,7 +2513,7 @@ They are:
 - Separate
 - Independent
 
-👉 This is why changes don’t reflect back
+ This is why changes don’t reflect back
 
 ---
 
@@ -2522,7 +2522,7 @@ They are:
 If object implements `Remote`:
 
 Instead of sending the object:  
-👉 Java sends a **stub**
+ Java sends a **stub**
 
 So now:
 
@@ -2534,11 +2534,11 @@ Every method call:
 
 - Goes back to original JVM
 
-👉 This creates a **shared illusion of a single object**
+ This creates a **shared illusion of a single object**
 
 ---
 
-## 🧠 This is the Deepest Insight in RMI
+##  This is the Deepest Insight in RMI
 
 There are **two realities**:
 
@@ -2554,7 +2554,7 @@ There are **two realities**:
 
 ---
 
-## 🧩 Layer 6 — Failure & Reality Check
+##  Layer 6 — Failure & Reality Check
 
 Everything we built so far is an illusion.
 
@@ -2570,13 +2570,13 @@ That’s why:
 throws RemoteException
 ```
 
-👉 This is Java reminding you:
+ This is Java reminding you:
 
 > “This is NOT a normal method call”
 
 ---
 
-## 🧩 Layer 7 — Putting It All Together (Full System Flow)
+##  Layer 7 — Putting It All Together (Full System Flow)
 
 Let’s narrate a real call:
 
@@ -2638,7 +2638,7 @@ c.add(5,3);
 
 ---
 
-## 🧠 Final Mental Model (Lock This In)
+##  Final Mental Model (Lock This In)
 
 RMI is not about objects.
 
@@ -2648,18 +2648,18 @@ It is about:
 
 ---
 
-## 🔗 How This Connects to Next Units (VERY IMPORTANT)
+##  How This Connects to Next Units (VERY IMPORTANT)
 
 Now you can finally understand:
 
-### 🔹 JNDI (Unit II)
+###  JNDI (Unit II)
 
 - Generalizes registry
 - Not just RMI, but DB, EJB, etc.
 
 ---
 
-### 🔹 EJB (Unit III+)
+###  EJB (Unit III+)
 
 - Builds on RMI ideas
 - Adds:
@@ -2667,11 +2667,11 @@ Now you can finally understand:
 		- Security
 		- Lifecycle
 
-👉 EJB = **RMI + container intelligence**
+ EJB = **RMI + container intelligence**
 
 ---
 
-## 🧠 One-Line Deep Summary
+##  One-Line Deep Summary
 
 > Serialization moves data, stubs move behavior, registry connects names to objects, and RMI ties it all together to simulate local execution over a network.
 
@@ -2679,12 +2679,12 @@ Now you can finally understand:
 
 If you want to go even deeper (this is where you become top 1% in class):
 
-👉 Next we should do:
+ Next we should do:
 
 - **“Distributed Objects & Middleware” (this will make EJB feel obvious instead of complex)**
 
 Say:  
-👉 “middleware deep”
+ “middleware deep”
 
 ---
 
@@ -2704,7 +2704,7 @@ If you truly understand this, **EJB will stop feeling like a random technology**
 
 ---
 
-## 🧠 STEP 1 — Start from Reality (no jargon)
+##  STEP 1 — Start from Reality (no jargon)
 
 Imagine you are building a system:
 
@@ -2726,7 +2726,7 @@ But:
 
 ---
 
-👉 So what do you need?
+ So what do you need?
 
 Not just networking…  
 You need:
@@ -2740,11 +2740,11 @@ You need:
 
 ---
 
-💥 If you write all this manually → nightmare
+ If you write all this manually → nightmare
 
 ---
 
-## 🔥 STEP 2 — What is a Distributed Object System?
+##  STEP 2 — What is a Distributed Object System?
 
 A **distributed object system** means:
 
@@ -2752,7 +2752,7 @@ A **distributed object system** means:
 
 ---
 
-👉 Example:
+ Example:
 
 ```java
 Account acc = getRemoteAccount();
@@ -2768,13 +2768,13 @@ But actually:
 
 ---
 
-👉 So:
+ So:
 
 > Distributed objects = illusion of a single unified object space across machines
 
 ---
 
-## 🧩 STEP 3 — Where RMI Fits
+##  STEP 3 — Where RMI Fits
 
 RMI gives you:
 
@@ -2784,7 +2784,7 @@ RMI gives you:
 
 ---
 
-👉 But RMI **only solves communication**
+ But RMI **only solves communication**
 
 It does NOT handle:
 
@@ -2795,13 +2795,13 @@ It does NOT handle:
 
 ---
 
-👉 So RMI is:
+ So RMI is:
 
 > **Foundation, not complete solution**
 
 ---
 
-## 🧠 STEP 4 — Enter Middleware (THE BIG IDEA)
+##  STEP 4 — Enter Middleware (THE BIG IDEA)
 
 Now we introduce the real hero:
 
@@ -2809,7 +2809,7 @@ Now we introduce the real hero:
 
 ---
 
-## 🔹 Think of it like this:
+##  Think of it like this:
 
 Without middleware:
 
@@ -2825,7 +2825,7 @@ Client → Middleware → Server
 
 ---
 
-👉 Middleware handles:
+ Middleware handles:
 
 - Communication
 - Security
@@ -2834,9 +2834,9 @@ Client → Middleware → Server
 
 ---
 
-## ⚙️ STEP 5 — Two Types of Middleware (VERY IMPORTANT)
+##  STEP 5 — Two Types of Middleware (VERY IMPORTANT)
 
-## 🔴 1. Explicit Middleware
+##  1. Explicit Middleware
 
 You (developer) handle everything.
 
@@ -2848,7 +2848,7 @@ Example:
 
 ---
 
-👉 You write:
+ You write:
 
 ```
 Send data → handle failure → retry → manage state
@@ -2856,7 +2856,7 @@ Send data → handle failure → retry → manage state
 
 ---
 
-💥 Problem:
+ Problem:
 
 - Complex
 - Error-prone
@@ -2882,17 +2882,17 @@ And middleware handles:
 
 ---
 
-👉 This is what EJB gives you
+ This is what EJB gives you
 
 ---
 
-## 🧠 STEP 6 — Evolution (THIS CONNECTS EVERYTHING)
+##  STEP 6 — Evolution (THIS CONNECTS EVERYTHING)
 
 Let’s see progression:
 
 ---
 
-### 🔹 Step 1: Low-level networking
+###  Step 1: Low-level networking
 
 - Sockets
 - Full control
@@ -2900,7 +2900,7 @@ Let’s see progression:
 
 ---
 
-### 🔹 Step 2: RMI
+###  Step 2: RMI
 
 - Object-based communication
 - Easier
@@ -2908,14 +2908,14 @@ Let’s see progression:
 
 ---
 
-### 🔹 Step 3: Middleware (EJB)
+###  Step 3: Middleware (EJB)
 
 - Adds intelligence
 - Handles system-level concerns
 
 ---
 
-👉 So:
+ So:
 
 ```
 Sockets → RMI → Middleware (EJB)
@@ -2923,13 +2923,13 @@ Sockets → RMI → Middleware (EJB)
 
 ---
 
-## 🧩 STEP 7 — Why Middleware is Necessary (Deep Understanding)
+##  STEP 7 — Why Middleware is Necessary (Deep Understanding)
 
 Let’s take a real scenario:
 
 ---
 
-## 💰 Bank Transaction
+##  Bank Transaction
 
 ```java
 transfer(A → B, 1000);
@@ -2942,22 +2942,22 @@ What must happen?
 
 ---
 
-### ❗ What if failure happens in between?
+###  What if failure happens in between?
 
 - A deducted
 - B not credited
 
-💥 Data inconsistency
+ Data inconsistency
 
 ---
 
-👉 Middleware solves this with:
+ Middleware solves this with:
 
 > **Transactions (ACID)**
 
 ---
 
-## 🔐 Security Example
+##  Security Example
 
 Only authorized users should call:
 
@@ -2965,25 +2965,25 @@ Only authorized users should call:
 admin.deleteAccount();
 ```
 
-👉 Middleware enforces:
+ Middleware enforces:
 
 - Authentication
 - Authorization
 
 ---
 
-## ⚙️ Scaling Example
+##  Scaling Example
 
 1000 clients call same object
 
-👉 Middleware:
+ Middleware:
 
 - Pools objects
 - Manages load
 
 ---
 
-## 🧠 STEP 8 — What Middleware Actually Provides
+##  STEP 8 — What Middleware Actually Provides
 
 This is core:
 
@@ -2998,16 +2998,16 @@ This is core:
 
 ---
 
-👉 RMI only gives:  
-✔ Communication  
-✔ Serialization
+ RMI only gives:  
+ Communication  
+ Serialization
 
-👉 Middleware gives:  
-✔ Everything
+ Middleware gives:  
+ Everything
 
 ---
 
-## 🧩 STEP 9 — Now EJB Makes Sense
+##  STEP 9 — Now EJB Makes Sense
 
 EJB is:
 
@@ -3029,14 +3029,14 @@ You write:
 
 ---
 
-👉 Container handles:
+ Container handles:
 
 - Commit
 - Rollback
 
 ---
 
-## 🧠 STEP 10 — Deep Analogy (THIS WILL LOCK IT IN)
+##  STEP 10 — Deep Analogy (THIS WILL LOCK IT IN)
 
 Think of building a house:
 
@@ -3061,13 +3061,13 @@ You:
 
 ---
 
-👉 You focus on:
+ You focus on:
 
 > **Business logic**
 
 ---
 
-## 🧠 STEP 11 — Final Conceptual Integration
+##  STEP 11 — Final Conceptual Integration
 
 Let’s connect everything you’ve learned so far:
 
@@ -3097,7 +3097,7 @@ Let’s connect everything you’ve learned so far:
 
 ---
 
-👉 Combined:
+ Combined:
 
 ```
 Client → Middleware (EJB) → RMI → Serialization → Server
@@ -3105,24 +3105,24 @@ Client → Middleware (EJB) → RMI → Serialization → Server
 
 ---
 
-## 🧠 FINAL DEEP SUMMARY
+##  FINAL DEEP SUMMARY
 
 Distributed systems are inherently complex because objects exist across different machines with no shared memory. RMI provides a mechanism to invoke methods remotely by converting method calls into network communication using stubs and serialization. However, RMI alone does not handle higher-level concerns such as transactions, security, and scalability. Middleware introduces an abstraction layer that manages these concerns automatically. EJB is a form of implicit middleware that builds on distributed object principles and allows developers to focus purely on business logic while the container handles system-level complexities.
 
 ---
 
-## 🚀 Where we go next
+##  Where we go next
 
 Now you are ready for:
 
-👉 **JNDI (deep)** — because now you understand why naming systems must evolve beyond RMI registry
+ **JNDI (deep)** — because now you understand why naming systems must evolve beyond RMI registry
 
 or
 
-👉 **EJB architecture (deep dive)** — now it will feel natural, not forced
+ **EJB architecture (deep dive)** — now it will feel natural, not forced
 
 Just say:  
-👉 “JNDI deep” or “EJB deep”
+ “JNDI deep” or “EJB deep”
 
 ---
 
@@ -3139,7 +3139,7 @@ By the end, you should be able to *derive answers*, not memorize them.
 
 ---
 
-## 🧠 STEP 1 — Why EJB had to exist (build from pain)
+##  STEP 1 — Why EJB had to exist (build from pain)
 
 You already saw:
 
@@ -3172,17 +3172,17 @@ check user permissions
 handle threads
 ```
 
-💥 That’s not business logic—that’s infrastructure hell.
+ That’s not business logic—that’s infrastructure hell.
 
 ---
 
-👉 So EJB was created with one idea:
+ So EJB was created with one idea:
 
 > **Separate business logic from system-level concerns**
 
 ---
 
-## 🔥 STEP 2 — The Core Philosophy (THIS IS EVERYTHING)
+##  STEP 2 — The Core Philosophy (THIS IS EVERYTHING)
 
 EJB says:
 
@@ -3203,11 +3203,11 @@ You don’t worry about:
 - Security
 - Networking
 
-👉 Container injects those automatically.
+ Container injects those automatically.
 
 ---
 
-## 🧩 STEP 3 — What is EJB Architecturally?
+##  STEP 3 — What is EJB Architecturally?
 
 At a deep level, EJB is:
 
@@ -3223,7 +3223,7 @@ Let’s break that:
 
 ---
 
-## ⚙️ STEP 4 — THE EJB TRIANGLE (VERY IMPORTANT)
+##  STEP 4 — THE EJB TRIANGLE (VERY IMPORTANT)
 
 6
 
@@ -3231,14 +3231,14 @@ Let’s break that:
 
 ---
 
-## 🔹 1. Client
+##  1. Client
 
 - Calls methods
 - Doesn’t know implementation details
 
 ---
 
-## 🔹 2. EJB Container (THE REAL BRAIN)
+##  2. EJB Container (THE REAL BRAIN)
 
 This is the most important part.
 
@@ -3252,20 +3252,20 @@ It provides:
 
 ---
 
-👉 Think:
+ Think:
 
 > Container = operating system for enterprise objects
 
 ---
 
-## 🔹 3. Enterprise Bean
+##  3. Enterprise Bean
 
 - Your business logic
 - Plain Java class
 
 ---
 
-👉 Flow:
+ Flow:
 
 ```
 Client → Container → Bean → Container → Client
@@ -3273,13 +3273,13 @@ Client → Container → Bean → Container → Client
 
 ---
 
-## 🧠 STEP 5 — What Constitutes an Enterprise Bean (DEEP BREAKDOWN)
+##  STEP 5 — What Constitutes an Enterprise Bean (DEEP BREAKDOWN)
 
 This is where exams come from—but we’ll make it logical.
 
 ---
 
-## 🔹 1. Bean Class
+##  1. Bean Class
 
 This is your actual logic:
 
@@ -3289,18 +3289,18 @@ public class BankBean {
 }
 ```
 
-👉 Pure business logic
+ Pure business logic
 
 ---
 
-## 🔹 2. EJB Object (Remote Access Layer)
+##  2. EJB Object (Remote Access Layer)
 
 This is:
 
 - A wrapper created by container
 - Handles remote calls
 
-👉 It sits between:
+ It sits between:
 
 ```
 Client ↔ EJB Object ↔ Bean
@@ -3308,7 +3308,7 @@ Client ↔ EJB Object ↔ Bean
 
 ---
 
-## 🔹 3. Home Object (Factory + Lifecycle)
+##  3. Home Object (Factory + Lifecycle)
 
 Responsible for:
 
@@ -3318,7 +3318,7 @@ Responsible for:
 
 ---
 
-👉 Conceptually:
+ Conceptually:
 
 ```
 Home Object = constructor + manager
@@ -3326,7 +3326,7 @@ Home Object = constructor + manager
 
 ---
 
-## 🔹 4. Interfaces
+##  4. Interfaces
 
 ### Remote Interface
 
@@ -3338,13 +3338,13 @@ Home Object = constructor + manager
 
 ---
 
-👉 This separation enforces:
+ This separation enforces:
 
 > Loose coupling
 
 ---
 
-## 🔹 5. Deployment Descriptor (VERY IMPORTANT)
+##  5. Deployment Descriptor (VERY IMPORTANT)
 
 XML file that tells container:
 
@@ -3354,20 +3354,20 @@ XML file that tells container:
 
 ---
 
-👉 This is where:
+ This is where:
 
 > Behavior is configured without changing code
 
 ---
 
-## 🔹 6. Vendor-specific Files
+##  6. Vendor-specific Files
 
 - Server-specific configs
 - Optimization details
 
 ---
 
-## 🔹 7. EJB-JAR File
+##  7. EJB-JAR File
 
 Final packaged unit:
 
@@ -3377,13 +3377,13 @@ Classes + Interfaces + XML → EJB-JAR
 
 ---
 
-## 🧠 STEP 6 — THE REAL MAGIC: CONTAINER SERVICES
+##  STEP 6 — THE REAL MAGIC: CONTAINER SERVICES
 
 This is why EJB exists.
 
 ---
 
-## 🔹 1. Transactions
+##  1. Transactions
 
 You don’t write:
 
@@ -3397,14 +3397,14 @@ Instead:
 @TransactionAttribute(REQUIRED)
 ```
 
-👉 Container ensures:
+ Container ensures:
 
 - Commit
 - Rollback
 
 ---
 
-## 🔹 2. Security
+##  2. Security
 
 Instead of:
 
@@ -3420,7 +3420,7 @@ You declare:
 
 ---
 
-## 🔹 3. Lifecycle Management
+##  3. Lifecycle Management
 
 Container:
 
@@ -3430,18 +3430,18 @@ Container:
 
 ---
 
-## 🔹 4. Concurrency
+##  4. Concurrency
 
 Multiple users call same bean:
 
-👉 Container ensures:
+ Container ensures:
 
 - Thread safety
 - No data corruption
 
 ---
 
-## 🔹 5. Remote Communication
+##  5. Remote Communication
 
 Uses:
 
@@ -3451,7 +3451,7 @@ But you don’t see it.
 
 ---
 
-## 🧠 STEP 7 — WHY SO MANY LAYERS? (DEEP INSIGHT)
+##  STEP 7 — WHY SO MANY LAYERS? (DEEP INSIGHT)
 
 Because EJB enforces:
 
@@ -3467,7 +3467,7 @@ Because EJB enforces:
 
 ---
 
-👉 This allows:
+ This allows:
 
 - Scalability
 - Maintainability
@@ -3475,40 +3475,40 @@ Because EJB enforces:
 
 ---
 
-## 🧩 STEP 8 — TYPES OF BEANS (WHY THEY EXIST)
+##  STEP 8 — TYPES OF BEANS (WHY THEY EXIST)
 
 Now types will make sense:
 
 ---
 
-## 🔹 Session Beans
+##  Session Beans
 
-👉 Temporary work (like function calls)
+ Temporary work (like function calls)
 
 - Stateless → no memory
 - Stateful → remembers client
 
 ---
 
-## 🔹 Entity Beans
+##  Entity Beans
 
-👉 Represent database data
-
----
-
-## 🔹 Message Driven Beans
-
-👉 Event-based processing (JMS)
+ Represent database data
 
 ---
 
-👉 Each exists because:
+##  Message Driven Beans
+
+ Event-based processing (JMS)
+
+---
+
+ Each exists because:
 
 > Different problems need different object behavior
 
 ---
 
-## 🧠 STEP 9 — CONNECT EVERYTHING (FINAL INTEGRATION)
+##  STEP 9 — CONNECT EVERYTHING (FINAL INTEGRATION)
 
 Let’s connect your entire syllabus:
 
@@ -3544,7 +3544,7 @@ Let’s connect your entire syllabus:
 
 ---
 
-👉 Final flow:
+ Final flow:
 
 ```
 Client → JNDI → EJB Container → Bean
@@ -3554,7 +3554,7 @@ Client → JNDI → EJB Container → Bean
 
 ---
 
-## 🧠 FINAL DEEP UNDERSTANDING
+##  FINAL DEEP UNDERSTANDING
 
 EJB is not just a technology—it is a **design philosophy**:
 
@@ -3562,22 +3562,22 @@ EJB is not just a technology—it is a **design philosophy**:
 
 ---
 
-## ✍️ EXAM-LEVEL ANSWER (10 MARK)
+##  EXAM-LEVEL ANSWER (10 MARK)
 
 Enterprise JavaBeans (EJB) is a server-side component architecture that simplifies the development of distributed enterprise applications by separating business logic from system-level concerns. It operates within an EJB container that provides services such as transaction management, security, lifecycle handling, and concurrency control. An enterprise bean consists of a bean class, EJB object, home object, interfaces, and deployment descriptors. The container manages communication using RMI and handles object creation, method invocation, and resource management, allowing developers to focus solely on business functionality.
 
 ---
 
-## 🚀 Next (important)
+##  Next (important)
 
 Now we go deeper into:
 
-👉 **Session Beans (lifecycle + internal behavior)**  
+ **Session Beans (lifecycle + internal behavior)**  
 OR  
-👉 **Entity Beans (CMP/BMP + DB mapping deep)**
+ **Entity Beans (CMP/BMP + DB mapping deep)**
 
 Say:  
-👉 “session deep” or “entity deep”
+ “session deep” or “entity deep”
 
 ---
 
@@ -3593,14 +3593,14 @@ Good—let’s go **deep into Session Beans**, the way the book expects you to *
 
 ---
 
-## 🧠 STEP 1 — What problem do Session Beans solve?
+##  STEP 1 — What problem do Session Beans solve?
 
 In a distributed system (EJB world), you don’t just need:
 
 - Objects that *exist* (like entity beans)
 - You need objects that *do work*
 
-👉 Session beans are:
+ Session beans are:
 
 > **Temporary workers that execute business logic on behalf of a client**
 
@@ -3619,7 +3619,7 @@ They:
 
 ---
 
-## 🧩 STEP 2 — Where Session Beans sit in architecture
+##  STEP 2 — Where Session Beans sit in architecture
 
 6
 
@@ -3629,27 +3629,27 @@ Flow:
 Client → Container → Session Bean → Container → Client
 ```
 
-👉 Important:  
+ Important:  
 Client never talks directly to bean.  
 Container is always in between.
 
 ---
 
-## 🧠 STEP 3 — Two fundamentally different types
+##  STEP 3 — Two fundamentally different types
 
 This is not just classification—this is **design philosophy**
 
 ---
 
-## 🔴 1. Stateless Session Bean
+##  1. Stateless Session Bean
 
-### 🔹 Core idea:
+###  Core idea:
 
 > “I don’t remember anything about you”
 
 ---
 
-### 🔹 Example:
+###  Example:
 
 ```java
 calculateTax(income)
@@ -3659,14 +3659,14 @@ calculateTax(income)
 
 ---
 
-### 🔹 What container does:
+###  What container does:
 
 - Creates a **pool of beans**
 - Any client request → any bean can handle it
 
 ---
 
-👉 So:
+ So:
 
 ```
 Client A → Bean 1  
@@ -3676,7 +3676,7 @@ Client C → Bean 2
 
 ---
 
-👉 🧠 Insight:
+  Insight:
 
 > Stateless = highly scalable because no client-specific data
 
@@ -3684,13 +3684,13 @@ Client C → Bean 2
 
 ## 🟢 2. Stateful Session Bean
 
-### 🔹 Core idea:
+###  Core idea:
 
 > “I remember your conversation”
 
 ---
 
-### 🔹 Example:
+###  Example:
 
 Shopping cart:
 
@@ -3700,21 +3700,21 @@ addItem("Mouse")
 checkout()
 ```
 
-👉 The bean must remember:
+ The bean must remember:
 
 - Items added
 - User state
 
 ---
 
-### 🔹 What container does:
+###  What container does:
 
 - One bean instance per client
 - Maintains **conversational state**
 
 ---
 
-👉 So:
+ So:
 
 ```
 Client A → Bean A  
@@ -3723,13 +3723,13 @@ Client B → Bean B
 
 ---
 
-👉 🧠 Insight:
+  Insight:
 
 > Stateful = personalized but less scalable
 
 ---
 
-## 🧠 STEP 4 — The Deep Difference (THIS IS WHAT EXAMINERS WANT)
+##  STEP 4 — The Deep Difference (THIS IS WHAT EXAMINERS WANT)
 
 | Concept | Stateless | Stateful |
 | --- | --- | --- |
@@ -3740,18 +3740,18 @@ Client B → Bean B
 
 ---
 
-👉 The real difference is:
+ The real difference is:
 
 > Stateless = function  
 > Stateful = session
 
 ---
 
-## 🔄 STEP 5 — Lifecycle (THIS IS WHERE DEPTH COMES)
+##  STEP 5 — Lifecycle (THIS IS WHERE DEPTH COMES)
 
 ---
 
-## 🔴 Stateless Lifecycle (Simple but important)
+##  Stateless Lifecycle (Simple but important)
 
 5
 
@@ -3763,7 +3763,7 @@ Create → Pool → Method calls → Destroy
 
 ---
 
-### 🔹 What actually happens:
+###  What actually happens:
 
 1. Container creates few beans
 2. Stores them in pool
@@ -3772,7 +3772,7 @@ Create → Pool → Method calls → Destroy
 
 ---
 
-👉 🧠 Insight:
+  Insight:
 
 > No identity, no memory → pure service machine
 
@@ -3790,7 +3790,7 @@ Create → Active → Passivate → Activate → Remove
 
 ---
 
-### 🔹 Let’s understand deeply:
+###  Let’s understand deeply:
 
 ---
 
@@ -3810,7 +3810,7 @@ Create → Active → Passivate → Activate → Remove
 
 ### 3\. Passivation (VERY IMPORTANT)
 
-👉 When server is overloaded:
+ When server is overloaded:
 
 - Bean is moved to disk
 - State is saved
@@ -3837,14 +3837,14 @@ Disk → RAM
 
 ---
 
-👉 🧠 Insight:
+  Insight:
 
 > Passivation = memory optimization  
 > Activation = restoring state
 
 ---
 
-## ⚠️ STEP 6 — Rules of Conversational State
+##  STEP 6 — Rules of Conversational State
 
 This is subtle but important:
 
@@ -3854,14 +3854,14 @@ This is subtle but important:
 
 ---
 
-👉 That’s why:
+ That’s why:
 
 - Passivation exists
 - Stateful beans are heavier
 
 ---
 
-## 🧠 STEP 7 — Achieving Pooling with Stateful Beans (ADVANCED)
+##  STEP 7 — Achieving Pooling with Stateful Beans (ADVANCED)
 
 Book mentions this:
 
@@ -3871,13 +3871,13 @@ But container can:
 
 - Swap them in/out of memory
 
-👉 So indirectly:
+ So indirectly:
 
 > Memory is optimized via passivation
 
 ---
 
-## 🧠 STEP 8 — When to Use What (REAL THINKING)
+##  STEP 8 — When to Use What (REAL THINKING)
 
 ---
 
@@ -3886,7 +3886,7 @@ But container can:
 - No memory needed
 - Independent operations
 
-👉 Example:
+ Example:
 
 - Authentication
 - Calculations
@@ -3898,14 +3898,14 @@ But container can:
 - Multi-step interaction
 - User-specific data
 
-👉 Example:
+ Example:
 
 - Shopping cart
 - Wizard forms
 
 ---
 
-## 🧠 STEP 9 — Deep System Insight
+##  STEP 9 — Deep System Insight
 
 Session beans are:
 
@@ -3921,11 +3921,11 @@ They are NOT:
 ---
 
 They are:  
-👉 **Workers that perform tasks**
+ **Workers that perform tasks**
 
 ---
 
-## 🧠 FINAL INTEGRATION
+##  FINAL INTEGRATION
 
 Let’s connect with previous concepts:
 
@@ -3953,7 +3953,7 @@ Let’s connect with previous concepts:
 
 ---
 
-👉 So:
+ So:
 
 ```
 Client → Container → Session Bean (logic) → Container → Client
@@ -3961,21 +3961,21 @@ Client → Container → Session Bean (logic) → Container → Client
 
 ---
 
-## ✍️ EXAM ANSWER (10 MARK READY)
+##  EXAM ANSWER (10 MARK READY)
 
 Session beans are enterprise beans that implement business logic and execute tasks on behalf of clients. They operate within an EJB container, which manages their lifecycle, security, and transactions. There are two types of session beans: stateless and stateful. Stateless session beans do not maintain any client-specific state and are pooled by the container for scalability. Stateful session beans maintain conversational state across multiple method calls and are associated with a specific client. Their lifecycle includes creation, activation, passivation, and removal. Session beans provide a simplified way to implement business logic in distributed systems.
 
 ---
 
-## 🚀 Next
+##  Next
 
 Now we go even deeper:
 
-👉 **Entity Beans (CMP vs BMP + DB mapping + relationships)**  
+ **Entity Beans (CMP vs BMP + DB mapping + relationships)**  
 This is heavy but scoring.
 
 Say:  
-👉 “entity deep”
+ “entity deep”
 
 ---
 
@@ -3989,43 +3989,43 @@ RMI: Object Serialization, Developing Applications with RMI, and the RMI securit
 
 Perfect. Now we’ll do this **the right way**:
 
-👉 **Unit I (RMI) → deep, one concept at a time with diagrams + internal understanding**  
-👉 Then **Unit II (JNDI)** same way
+ **Unit I (RMI) → deep, one concept at a time with diagrams + internal understanding**  
+ Then **Unit II (JNDI)** same way
 
 No rushing. No skipping mental steps.
 
 ---
 
-## 🔴 UNIT I — RMI (DEEP LEARNING)
+##  UNIT I — RMI (DEEP LEARNING)
 
 ---
 
-## 🧠 1. Object Serialization (Foundation of RMI)
+##  1. Object Serialization (Foundation of RMI)
 
-## 🔹 Why it exists
+##  Why it exists
 
 Objects in Java:
 
 - Live in **RAM**
 - Contain **memory references**
 
-👉 These cannot be sent over network.
+ These cannot be sent over network.
 
 ---
 
-## 🔹 Solution
+##  Solution
 
 > Convert object → byte stream → send → reconstruct
 
 ---
 
-## 🔹 Diagram (Mental Model)
+##  Diagram (Mental Model)
 
 5
 
 ---
 
-## 🔹 What actually happens internally
+##  What actually happens internally
 
 1. JVM reads object fields
 2. Converts into byte stream
@@ -4034,26 +4034,26 @@ Objects in Java:
 
 ---
 
-## 🔹 Important Rules
+##  Important Rules
 
-✔ Must implement:
+ Must implement:
 
 ```java
 Serializable
 ```
 
-✔ Serialized:
+ Serialized:
 
 - Instance variables
 
-❌ Not serialized:
+ Not serialized:
 
 - `static`
 - `transient`
 
 ---
 
-## 🔹 Deep Insight
+##  Deep Insight
 
 > Serialization = **state transfer, not identity transfer**
 
@@ -4064,19 +4064,19 @@ Two objects after serialization:
 
 ---
 
-## 🧠 2. Developing Applications with RMI (Full System Thinking)
+##  2. Developing Applications with RMI (Full System Thinking)
 
 Now we build the **entire system mentally**
 
 ---
 
-## 🔹 Architecture
+##  Architecture
 
 5
 
 ---
 
-## 🔹 Components Explained Deeply
+##  Components Explained Deeply
 
 ---
 
@@ -4092,7 +4092,7 @@ public interface Calc extends Remote {
 }
 ```
 
-👉 Important:
+ Important:
 
 - Extends `Remote`
 - Every method throws `RemoteException`
@@ -4111,7 +4111,7 @@ public class CalcImpl extends UnicastRemoteObject implements Calc {
 }
 ```
 
-👉 Extending `UnicastRemoteObject`:
+ Extending `UnicastRemoteObject`:
 
 - Makes object remotely accessible
 
@@ -4119,7 +4119,7 @@ public class CalcImpl extends UnicastRemoteObject implements Calc {
 
 ### 3\. Stub (Client-side brain)
 
-👉 Most important component
+ Most important component
 
 - Acts like real object
 - Converts method call → network call
@@ -4140,7 +4140,7 @@ public class CalcImpl extends UnicastRemoteObject implements Calc {
 
 ---
 
-## 🔹 Full Flow (Never forget this)
+##  Full Flow (Never forget this)
 
 ```
 Client → Registry → Stub → Network → Server → Object → Response → Client
@@ -4148,33 +4148,33 @@ Client → Registry → Stub → Network → Server → Object → Response → 
 
 ---
 
-## 🔹 Deep Insight
+##  Deep Insight
 
 > RMI is NOT method calling  
 > It is **message passing disguised as method calling**
 
 ---
 
-## 🧠 3. RMI Security Manager
+##  3. RMI Security Manager
 
-## 🔹 Why needed
+##  Why needed
 
 RMI can:
 
 - Load classes remotely
 - Execute remote code
 
-👉 That’s dangerous.
+ That’s dangerous.
 
 ---
 
-## 🔹 What it does
+##  What it does
 
 > Controls permissions using policy files
 
 ---
 
-## 🔹 Example
+##  Example
 
 ```java
 System.setSecurityManager(new SecurityManager());
@@ -4182,7 +4182,7 @@ System.setSecurityManager(new SecurityManager());
 
 ---
 
-## 🔹 What it restricts
+##  What it restricts
 
 - File access
 - Network access
@@ -4190,59 +4190,59 @@ System.setSecurityManager(new SecurityManager());
 
 ---
 
-## 🔹 Deep Insight
+##  Deep Insight
 
 > Security Manager = sandbox for distributed execution
 
 ---
 
-## 🧠 4. Parameter Passing in RMI (CRITICAL)
+##  4. Parameter Passing in RMI (CRITICAL)
 
 We already touched this, now formalize it.
 
 ---
 
-## 🔹 Diagram
+##  Diagram
 
 5
 
 ---
 
-## 🔹 Case 1 — Primitive
+##  Case 1 — Primitive
 
 ```java
 add(5,3)
 ```
 
-👉 Passed by value
+ Passed by value
 
 ---
 
-## 🔹 Case 2 — Normal Object
+##  Case 2 — Normal Object
 
 ```java
 send(Student s)
 ```
 
-👉 Serialized → copied
+ Serialized → copied
 
-👉 Changes NOT reflected
+ Changes NOT reflected
 
 ---
 
-## 🔹 Case 3 — Remote Object
+##  Case 3 — Remote Object
 
 ```java
 send(RemoteObj r)
 ```
 
-👉 Stub passed
+ Stub passed
 
-👉 Calls go back to original object
+ Calls go back to original object
 
 ---
 
-## 🔹 Deep Insight
+##  Deep Insight
 
 > RMI creates two worlds:
 
@@ -4251,9 +4251,9 @@ send(RemoteObj r)
 
 ---
 
-## 🔴 UNIT I COMPLETE — CORE UNDERSTANDING
+##  UNIT I COMPLETE — CORE UNDERSTANDING
 
-👉 RMI =
+ RMI =
 
 - Serialization (data movement)
 - Stub (behavior proxy)
@@ -4262,13 +4262,13 @@ send(RemoteObj r)
 
 ---
 
-## 🔵 UNIT II — JNDI (DEEP)
+##  UNIT II — JNDI (DEEP)
 
 Now this becomes easy because you understand RMI.
 
 ---
 
-## 🧠 1. Why JNDI exists
+##  1. Why JNDI exists
 
 Problem:
 
@@ -4279,7 +4279,7 @@ RMI Registry is:
 
 ---
 
-👉 Real systems need to find:
+ Real systems need to find:
 
 - Databases
 - EJBs
@@ -4287,17 +4287,17 @@ RMI Registry is:
 
 ---
 
-👉 So we need:
+ So we need:
 
 > A **general naming + directory system**
 
 ---
 
-## 🧠 2. Naming Services vs Directory Services
+##  2. Naming Services vs Directory Services
 
 ---
 
-## 🔹 Naming Service
+##  Naming Service
 
 ```
 Name → Object
@@ -4311,7 +4311,7 @@ Example:
 
 ---
 
-## 🔹 Directory Service
+##  Directory Service
 
 ```
 Name → Object + Attributes
@@ -4325,24 +4325,24 @@ Example:
 
 ---
 
-## 🔹 Diagram
+##  Diagram
 
 7
 
 ---
 
-## 🔹 Deep Insight
+##  Deep Insight
 
 > Naming = lookup  
 > Directory = lookup + metadata
 
 ---
 
-## 🧠 3. Benefits of JNDI
+##  3. Benefits of JNDI
 
 ---
 
-## 🔹 Key idea
+##  Key idea
 
 > Decoupling
 
@@ -4362,7 +4362,7 @@ lookup("jdbc/MyDB")
 
 ---
 
-## 🔹 Benefits
+##  Benefits
 
 - Location independence
 - Flexibility
@@ -4370,13 +4370,13 @@ lookup("jdbc/MyDB")
 
 ---
 
-## 🧠 4. JNDI Architecture (IMPORTANT)
+##  4. JNDI Architecture (IMPORTANT)
 
 6
 
 ---
 
-## 🔹 Components
+##  Components
 
 ---
 
@@ -4388,7 +4388,7 @@ Main interface:
 Context ctx = new InitialContext();
 ```
 
-👉 Entry point
+ Entry point
 
 ---
 
@@ -4409,49 +4409,49 @@ Actual implementation:
 
 ---
 
-👉 🧠 Insight:
+  Insight:
 
 > JNDI is just an API—it delegates work to providers
 
 ---
 
-## 🧠 5. JNDI Concepts (DEEP)
+##  5. JNDI Concepts (DEEP)
 
 ---
 
-## 🔹 Lookup
+##  Lookup
 
 ```java
 ctx.lookup("name");
 ```
 
-👉 Get object
+ Get object
 
 ---
 
-## 🔹 Binding
+##  Binding
 
 ```java
 ctx.bind("name", obj);
 ```
 
-👉 Store object
+ Store object
 
 ---
 
-## 🔹 Rebinding
+##  Rebinding
 
 Replace existing mapping
 
 ---
 
-## 🔹 Unbinding
+##  Unbinding
 
 Remove mapping
 
 ---
 
-## 🔹 Subcontexts
+##  Subcontexts
 
 Hierarchical structure:
 
@@ -4461,13 +4461,13 @@ java:/comp/env/jdbc/MyDB
 
 ---
 
-## 🔹 Deep Insight
+##  Deep Insight
 
 > JNDI = abstraction over multiple naming systems
 
 ---
 
-## 🧠 FINAL INTEGRATION (UNIT I + II)
+##  FINAL INTEGRATION (UNIT I + II)
 
 Now connect everything:
 
@@ -4497,7 +4497,7 @@ Now connect everything:
 
 ---
 
-👉 Final flow:
+ Final flow:
 
 ```
 Client → JNDI → gets stub → RMI call → Server → Response
@@ -4505,17 +4505,17 @@ Client → JNDI → gets stub → RMI call → Server → Response
 
 ---
 
-## 🚀 What next
+##  What next
 
 Now you have **strong foundation**.
 
 We can go even deeper:
 
-👉 **JNDI vs RMI Registry (exam comparison + tricky questions)**  
-👉 OR **start Unit III (EJB fundamentals deeply)**
+ **JNDI vs RMI Registry (exam comparison + tricky questions)**  
+ OR **start Unit III (EJB fundamentals deeply)**
 
 Just say:  
-👉 “compare jndi vs rmi” or “next ejb deeper”
+ “compare jndi vs rmi” or “next ejb deeper”
 
 ---
 
@@ -4550,7 +4550,7 @@ Good. Now we do **Object Serialization properly** —not definition level, but *
 
 ---
 
-## 🧠 1. Start from the real problem (not definition)
+##  1. Start from the real problem (not definition)
 
 Inside a JVM, an object looks like this:
 
@@ -4572,14 +4572,14 @@ Internally:
 s → memory address (0x7ffe...)
 ```
 
-👉 That address:
+ That address:
 
 - Only makes sense inside *this* JVM
 - Is meaningless outside (another machine, another JVM)
 
 ---
 
-### 🚨 Core Problem
+###  Core Problem
 
 If I try to send this object to another machine:
 
@@ -4588,13 +4588,13 @@ If I try to send this object to another machine:
 
 ---
 
-👉 So we need:
+ So we need:
 
 > A way to convert object into something **machine-independent**
 
 ---
 
-## 🔄 2. What Serialization REALLY is
+##  2. What Serialization REALLY is
 
 > Serialization = converting object → structured byte stream
 
@@ -4602,7 +4602,7 @@ Not random bytes. Structured.
 
 ---
 
-## 🔹 Think of it like this:
+##  Think of it like this:
 
 ```
 Object:
@@ -4616,13 +4616,13 @@ Byte Stream:
 
 ---
 
-## 🔹 Diagram (conceptual flow)
+##  Diagram (conceptual flow)
 
 5
 
 ---
 
-👉 Important:  
+ Important:  
 This byte stream is:
 
 - Platform independent
@@ -4631,18 +4631,18 @@ This byte stream is:
 
 ---
 
-## 🧠 3. What exactly gets serialized (this is where depth starts)
+##  3. What exactly gets serialized (this is where depth starts)
 
 When JVM serializes an object, it walks through:
 
-### ✔ Included:
+###  Included:
 
 - Instance variables
 - Object graph (nested objects)
 
 ---
 
-### ❌ Excluded:
+###  Excluded:
 
 #### 1\. static
 
@@ -4670,7 +4670,7 @@ transient int password;
 
 ---
 
-👉 After deserialization:
+ After deserialization:
 
 ```
 transient fields → default values (0, null, false)
@@ -4678,7 +4678,7 @@ transient fields → default values (0, null, false)
 
 ---
 
-## 🧠 4. Deep internal working (what JVM actually does)
+##  4. Deep internal working (what JVM actually does)
 
 When you serialize:
 
@@ -4699,7 +4699,7 @@ class A {
 }
 ```
 
-👉 JVM recursively serializes:
+ JVM recursively serializes:
 
 ```
 A → B → (and so on)
@@ -4715,18 +4715,18 @@ If same object appears twice:
 A → B → A
 ```
 
-👉 JVM does NOT duplicate  
+ JVM does NOT duplicate  
 It tracks references
 
 ---
 
-👉 So:
+ So:
 
 > Serialization preserves **object structure**, not just values
 
 ---
 
-## 🧠 5. serialVersionUID (VERY DEEP + IMPORTANT)
+##  5. serialVersionUID (VERY DEEP + IMPORTANT)
 
 Every class has a version ID:
 
@@ -4736,7 +4736,7 @@ private static final long serialVersionUID = 1L;
 
 ---
 
-## 🔹 Why this exists
+##  Why this exists
 
 Imagine:
 
@@ -4749,7 +4749,7 @@ Now:
 
 ---
 
-👉 JVM checks:
+ JVM checks:
 
 ```
 UID match → safe  
@@ -4758,23 +4758,23 @@ UID mismatch → exception
 
 ---
 
-### ❗ Without UID
+###  Without UID
 
 JVM generates one → risky
 
 ---
 
-👉 Deep insight:
+ Deep insight:
 
 > serialVersionUID = contract between serialized data and class definition
 
 ---
 
-## 🧠 6. Deserialization (reverse but not simple)
+##  6. Deserialization (reverse but not simple)
 
 When reconstructing object:
 
-### JVM does NOT call constructor ❗
+### JVM does NOT call constructor 
 
 Instead:
 
@@ -4783,7 +4783,7 @@ Instead:
 
 ---
 
-👉 That’s huge.
+ That’s huge.
 
 Because:
 
@@ -4792,7 +4792,7 @@ Because:
 
 ---
 
-## 🧠 7. Identity vs State (VERY IMPORTANT CONCEPT)
+##  7. Identity vs State (VERY IMPORTANT CONCEPT)
 
 Original:
 
@@ -4808,7 +4808,7 @@ Student s2 = ...
 
 ---
 
-👉 Truth:
+ Truth:
 
 ```
 s1 != s2   (different objects)
@@ -4818,13 +4818,13 @@ s1.data == s2.data
 
 ---
 
-👉 So:
+ So:
 
 > Serialization transfers **state**, not **identity**
 
 ---
 
-## 🧠 8. Where Serialization fits in RMI
+##  8. Where Serialization fits in RMI
 
 Now connect to RMI deeply.
 
@@ -4847,7 +4847,7 @@ remoteObj.method(student);
 
 ---
 
-👉 So:
+ So:
 
 > Serialization = transport mechanism of RMI
 
@@ -4857,11 +4857,11 @@ Without it:
 
 ---
 
-## ⚠️ 9. Edge Cases (this is real depth)
+##  9. Edge Cases (this is real depth)
 
 ---
 
-## ❗ Case 1: Non-serializable object
+##  Case 1: Non-serializable object
 
 ```java
 class A {
@@ -4869,7 +4869,7 @@ class A {
 }
 ```
 
-👉 Runtime error:
+ Runtime error:
 
 ```
 NotSerializableException
@@ -4877,7 +4877,7 @@ NotSerializableException
 
 ---
 
-## ❗ Case 2: Performance
+##  Case 2: Performance
 
 Serialization is:
 
@@ -4885,24 +4885,24 @@ Serialization is:
 - CPU heavy
 - Memory heavy
 
-👉 That’s why modern systems use:
+ That’s why modern systems use:
 
 - JSON
 - Protobuf
 
 ---
 
-## ❗ Case 3: Security risks
+##  Case 3: Security risks
 
 Deserialization can:
 
 - Execute malicious payloads
 
-👉 Real-world vulnerability
+ Real-world vulnerability
 
 ---
 
-## 🧠 10. Final mental model (lock this in)
+##  10. Final mental model (lock this in)
 
 Think of serialization as:
 
@@ -4910,20 +4910,20 @@ Think of serialization as:
 
 ---
 
-## ✍️ If examiner asks (write like this)
+##  If examiner asks (write like this)
 
 Object serialization is the process of converting a Java object into a byte stream so that it can be transmitted over a network or stored in a file. It is achieved by implementing the Serializable interface. During serialization, only instance variables are stored, while static and transient variables are ignored. The object is reconstructed using deserialization without invoking the constructor. Serialization is essential in RMI for transferring objects between client and server.
 
 ---
 
-## 🚀 Your move
+##  Your move
 
 Now we go in same depth for next topic.
 
 Send next:  
-👉 **“RMI application development”**  
+ **“RMI application development”**  
 or  
-👉 **“RMI architecture”** (better next step)
+ **“RMI architecture”** (better next step)
 
 ---
 
@@ -4939,7 +4939,7 @@ Alright—switching gears to **Amplitude**, and we’ll do it with the same dept
 
 ---
 
-## 🧠 1. What is Amplitude (real intuition)
+##  1. What is Amplitude (real intuition)
 
 Think of any wave:
 
@@ -4948,17 +4948,17 @@ Think of any wave:
 - Light
 - Vibrations
 
-👉 All of them involve **oscillation around an equilibrium position**
+ All of them involve **oscillation around an equilibrium position**
 
 ---
 
-## 🔹 Core idea:
+##  Core idea:
 
 > **Amplitude = maximum displacement from the mean (equilibrium) position**
 
 ---
 
-## 🔹 Example (simple)
+##  Example (simple)
 
 If a particle moves like this:
 
@@ -4968,19 +4968,19 @@ If a particle moves like this:
        center
 ```
 
-👉 If it goes up to +2 and down to -2:
+ If it goes up to +2 and down to -2:
 
 > Amplitude = 2 (not 4)
 
 ---
 
-## 📈 Visual Understanding
+##  Visual Understanding
 
 6
 
 ---
 
-👉 From diagram:
+ From diagram:
 
 - Center line = equilibrium
 - Peak = +A
@@ -4989,7 +4989,7 @@ If a particle moves like this:
 
 ---
 
-## 🧠 2. Mathematical Form (this locks understanding)
+##  2. Mathematical Form (this locks understanding)
 
 In most wave/oscillation equations:
 
@@ -4997,7 +4997,7 @@ $$
 x(t) = A \sin(\omega t + \phi)
 $$
 
-👉 Here:
+ Here:
 
 - $x(t)$ = displacement
 - $A$ = amplitude
@@ -5006,21 +5006,21 @@ $$
 
 ---
 
-## 🔹 Meaning of A:
+##  Meaning of A:
 
 > A tells **how far the system can go from center**
 
 ---
 
-## 🧠 3. Physical Meaning (VERY IMPORTANT)
+##  3. Physical Meaning (VERY IMPORTANT)
 
 Amplitude is not just distance.
 
 It represents:
 
-### 🔹 Energy
+###  Energy
 
-👉 Bigger amplitude → more energy
+ Bigger amplitude → more energy
 
 For many systems:
 
@@ -5030,40 +5030,40 @@ $$
 
 ---
 
-### 🔹 Intensity (in waves)
+###  Intensity (in waves)
 
 - Sound: louder
 - Light: brighter
 
 ---
 
-👉 So:
+ So:
 
 > Amplitude controls **strength of the wave**, not speed
 
 ---
 
-## ⚠️ 4. Common Confusions
+##  4. Common Confusions
 
 ---
 
-## ❌ Confusion 1: Amplitude vs Wavelength
+##  Confusion 1: Amplitude vs Wavelength
 
 - Amplitude → vertical height
 - Wavelength → horizontal distance
 
 ---
 
-## ❌ Confusion 2: Amplitude vs Frequency
+##  Confusion 2: Amplitude vs Frequency
 
 - Amplitude → how big
 - Frequency → how fast
 
 ---
 
-## ❌ Confusion 3: Amplitude = peak-to-peak
+##  Confusion 3: Amplitude = peak-to-peak
 
-👉 Wrong
+ Wrong
 
 $$
 \text{Peak-to-peak} = 2A
@@ -5071,25 +5071,25 @@ $$
 
 ---
 
-## 🧠 5. In Different Contexts
+##  5. In Different Contexts
 
 ---
 
-## 🔊 Sound Waves
+##  Sound Waves
 
 - Amplitude ↑ → louder sound
 - Doesn’t change pitch
 
 ---
 
-## 💡 Light Waves
+##  Light Waves
 
 - Amplitude ↑ → brighter light
 - Doesn’t change color
 
 ---
 
-## ⚙️ Mechanical Systems (SHM)
+##  Mechanical Systems (SHM)
 
 Example: spring
 
@@ -5098,7 +5098,7 @@ Example: spring
 
 ---
 
-## 🧠 6. Deep Insight (this is the real understanding)
+##  6. Deep Insight (this is the real understanding)
 
 Amplitude defines:
 
@@ -5111,15 +5111,15 @@ Two systems can have:
 - Same frequency
 - Different amplitudes
 
-👉 One moves farther, not faster
+ One moves farther, not faster
 
 ---
 
-## 🧠 7. Edge Case Thinking
+##  7. Edge Case Thinking
 
 ---
 
-## 🔹 Damping
+##  Damping
 
 In real systems:
 
@@ -5127,22 +5127,22 @@ In real systems:
 Amplitude decreases over time
 ```
 
-👉 Due to:
+ Due to:
 
 - Friction
 - Resistance
 
 ---
 
-## 🔹 Resonance
+##  Resonance
 
 If system is driven at natural frequency:
 
-👉 Amplitude increases dramatically
+ Amplitude increases dramatically
 
 ---
 
-## 🧠 FINAL MENTAL MODEL
+##  FINAL MENTAL MODEL
 
 Think of amplitude as:
 
@@ -5150,7 +5150,7 @@ Think of amplitude as:
 
 ---
 
-## ✍️ Exam Answer (clean)
+##  Exam Answer (clean)
 
 Amplitude is the maximum displacement of a particle from its equilibrium position in an oscillatory motion or wave. It represents the strength or intensity of the wave and is directly related to the energy of the system. In a sinusoidal wave, amplitude is denoted by A and defines the peak value of displacement from the mean position.
 
@@ -5178,7 +5178,7 @@ We’ll build it properly: **intuition → physics → equations → behavior �
 
 ---
 
-## 🧠 1. What is an LCR Circuit?
+##  1. What is an LCR Circuit?
 
 An **LCR circuit** contains:
 
@@ -5186,17 +5186,17 @@ An **LCR circuit** contains:
 - **C** → Capacitor
 - **R** → Resistor
 
-👉 Connected either in **series** or **parallel**
+ Connected either in **series** or **parallel**
 
 ---
 
-## 🔹 Core Idea
+##  Core Idea
 
 > It is an **electrical system that behaves like a mechanical oscillator**
 
 ---
 
-👉 Analogy:
+ Analogy:
 
 | Mechanical | Electrical |
 | --- | --- |
@@ -5206,7 +5206,7 @@ An **LCR circuit** contains:
 
 ---
 
-## ⚡ 2. Physical Intuition (VERY IMPORTANT)
+##  2. Physical Intuition (VERY IMPORTANT)
 
 Imagine:
 
@@ -5215,7 +5215,7 @@ Imagine:
 
 ---
 
-👉 Energy keeps shifting:
+ Energy keeps shifting:
 
 ```
 Cap
@@ -5236,11 +5236,11 @@ We’ll build this from **digital viewpoint: signals, timing, switching behavior
 
 ---
 
-## 🧠 1. First fix the mindset (Digital vs Analog)
+##  1. First fix the mindset (Digital vs Analog)
 
 In digital electronics:
 
-👉 Signals are:
+ Signals are:
 
 ```
 0 (LOW)  and  1 (HIGH)
@@ -5253,29 +5253,29 @@ But in reality:
 
 ---
 
-👉 That gradual change is caused by:
+ That gradual change is caused by:
 
 > **RC, RL, and RLC effects**
 
 ---
 
-## ⚡ 2. RC Circuit (MOST IMPORTANT in Digital 🔥)
+##  2. RC Circuit (MOST IMPORTANT in Digital )
 
 ---
 
-## 🔹 What is it?
+##  What is it?
 
 - Resistor (R) + Capacitor (C)
 
 ---
 
-## 🔹 Diagram (charging behavior)
+##  Diagram (charging behavior)
 
 7
 
 ---
 
-## 🔹 What happens physically
+##  What happens physically
 
 When input goes:
 
@@ -5290,7 +5290,7 @@ Capacitor:
 
 ---
 
-👉 Output is NOT instant:
+ Output is NOT instant:
 
 ```
 Input:   ────▁▁▁▁▁────
@@ -5299,7 +5299,7 @@ Output:  ──╮~~~~~~
 
 ---
 
-## 🔹 Mathematical idea (intuitive)
+##  Mathematical idea (intuitive)
 
 Voltage rises like:
 
@@ -5307,39 +5307,39 @@ $$
 V(t) = V_{max}(1 - e^{-t/RC})
 $$
 
-👉 Not linear → exponential
+ Not linear → exponential
 
 ---
 
-## 🔹 Key concept: Time Constant (VERY IMPORTANT)
+##  Key concept: Time Constant (VERY IMPORTANT)
 
 $$
 \tau = RC
 $$
 
-👉 Meaning:
+ Meaning:
 
 - Time to reach ~63% of final value
 
 ---
 
-## 🔹 Why it matters in digital
+##  Why it matters in digital
 
-### ✔ Rise time (0 → 1)
+###  Rise time (0 → 1)
 
-### ✔ Fall time (1 → 0)
+###  Fall time (1 → 0)
 
-### ✔ Delay in circuits
+###  Delay in circuits
 
 ---
 
-👉 Deep insight:
+ Deep insight:
 
 > RC circuit controls **how fast a digital signal changes**
 
 ---
 
-## 🔹 Where used
+##  Where used
 
 - Delay circuits
 - Timing circuits
@@ -5348,29 +5348,29 @@ $$
 
 ---
 
-## ⚡ 3. RL Circuit (Less common but important)
+##  3. RL Circuit (Less common but important)
 
 ---
 
-## 🔹 What is it?
+##  What is it?
 
 - Resistor + Inductor
 
 ---
 
-## 🔹 Behavior
+##  Behavior
 
 Inductor resists change in **current**
 
 ---
 
-## 🔹 Diagram idea
+##  Diagram idea
 
 6
 
 ---
 
-## 🔹 Key equation (intuition)
+##  Key equation (intuition)
 
 $$
 I(t) = I_{max}(1 - e^{-tR/L})
@@ -5378,7 +5378,7 @@ $$
 
 ---
 
-## 🔹 Time constant
+##  Time constant
 
 $$
 \tau = L/R
@@ -5386,7 +5386,7 @@ $$
 
 ---
 
-## 🔹 Digital relevance
+##  Digital relevance
 
 - Slows current changes
 - Used in power circuits
@@ -5394,24 +5394,24 @@ $$
 
 ---
 
-👉 Insight:
+ Insight:
 
 > RC affects voltage timing  
 > RL affects current timing
 
 ---
 
-## ⚡ 4. RLC Circuit (advanced behavior)
+##  4. RLC Circuit (advanced behavior)
 
 ---
 
-## 🔹 What is it?
+##  What is it?
 
 - R + L + C together
 
 ---
 
-## 🔹 Behavior
+##  Behavior
 
 Now system can:
 
@@ -5421,13 +5421,13 @@ Now system can:
 
 ---
 
-## 🔹 Diagram (ringing)
+##  Diagram (ringing)
 
 6
 
 ---
 
-## 🔹 What happens in digital signals
+##  What happens in digital signals
 
 Instead of clean transition:
 
@@ -5443,13 +5443,13 @@ Real:      ─────╮~~~
 
 ---
 
-👉 This is called:
+ This is called:
 
 > **Ringing / overshoot**
 
 ---
 
-## 🔹 Why it matters
+##  Why it matters
 
 - Causes noise
 - Signal distortion
@@ -5457,7 +5457,7 @@ Real:      ─────╮~~~
 
 ---
 
-## 🧠 5. Deep Comparison (Digital View)
+##  5. Deep Comparison (Digital View)
 
 | Circuit | Controls | Effect in Digital |
 | --- | --- | --- |
@@ -5467,7 +5467,7 @@ Real:      ─────╮~~~
 
 ---
 
-## 🧠 6. The Most Important Concept (THIS IS GOLD)
+##  6. The Most Important Concept (THIS IS GOLD)
 
 In digital electronics:
 
@@ -5475,7 +5475,7 @@ In digital electronics:
 
 ---
 
-👉 That’s why:
+ That’s why:
 
 - High-speed circuits are hard
 - Timing matters
@@ -5483,17 +5483,17 @@ In digital electronics:
 
 ---
 
-## ⚠️ 7. Real-world Problems
+##  7. Real-world Problems
 
 ---
 
-## ❗ Propagation Delay
+##  Propagation Delay
 
 Signal takes time to travel → RC effect
 
 ---
 
-## ❗ Rise/Fall Time
+##  Rise/Fall Time
 
 If too slow:
 
@@ -5501,19 +5501,19 @@ If too slow:
 
 ---
 
-## ❗ Crosstalk & Noise
+##  Crosstalk & Noise
 
 Due to inductance/capacitance
 
 ---
 
-## ❗ Ringing (RLC)
+##  Ringing (RLC)
 
 - Causes glitches
 
 ---
 
-## 🧠 FINAL MENTAL MODEL
+##  FINAL MENTAL MODEL
 
 Think of it like this:
 
@@ -5521,13 +5521,13 @@ Think of it like this:
 
 ---
 
-## ✍️ Exam Answer (clean)
+##  Exam Answer (clean)
 
 RC, RL, and RLC circuits play an important role in digital electronics by influencing signal transitions and timing behavior. RC circuits control the charging and discharging of capacitors, determining rise and fall times of digital signals. RL circuits affect current variation due to inductance, while RLC circuits can introduce oscillations and ringing in signals. These effects are critical in high-speed digital systems as they impact propagation delay, signal integrity, and overall circuit performance.
 
 ---
 
-## 🚀 Next (recommended)
+##  Next (recommended)
 
 We can go deeper into:
 
@@ -5549,7 +5549,7 @@ So we’ll go **logic gates from absolute fundamentals → physical meaning → 
 
 ---
 
-## 🧠 1. What does “0” and “1” actually mean?
+##  1. What does “0” and “1” actually mean?
 
 In digital electronics:
 
@@ -5558,29 +5558,29 @@ In digital electronics:
 1 → HIGH voltage (≈ 5V or 3.3V)
 ```
 
-👉 Important:
+ Important:
 
 > These are not numbers, they are **voltage levels representing logic states**
 
 ---
 
-## ⚡ 2. Logic Gates = Decision Makers
+##  2. Logic Gates = Decision Makers
 
 A **logic gate** takes inputs (0/1) and produces an output (0/1).
 
 ---
 
-## 🔴 3. OR Gate (this is what you called “01 circuit”)
+##  3. OR Gate (this is what you called “01 circuit”)
 
 ---
 
-## 🔹 Core Idea
+##  Core Idea
 
 > Output is 1 if **ANY input is 1**
 
 ---
 
-## 🔹 Truth Table
+##  Truth Table
 
 | A | B | Output (A + B) |
 | --- | --- | --- |
@@ -5591,13 +5591,13 @@ A **logic gate** takes inputs (0/1) and produces an output (0/1).
 
 ---
 
-## 🔹 Diagram
+##  Diagram
 
 5
 
 ---
 
-## 🔹 Physical Meaning
+##  Physical Meaning
 
 Think:
 
@@ -5605,7 +5605,7 @@ Think:
 Switch A OR Switch B
 ```
 
-👉 If ANY switch is ON → output ON
+ If ANY switch is ON → output ON
 
 ---
 
@@ -5613,13 +5613,13 @@ Switch A OR Switch B
 
 ---
 
-## 🔹 Core Idea
+##  Core Idea
 
 > Output is 1 only if **ALL inputs are 1**
 
 ---
 
-## 🔹 Truth Table
+##  Truth Table
 
 | A | B | Output (A · B) |
 | --- | --- | --- |
@@ -5630,13 +5630,13 @@ Switch A OR Switch B
 
 ---
 
-## 🔹 Diagram
+##  Diagram
 
 5
 
 ---
 
-## 🔹 Physical Meaning
+##  Physical Meaning
 
 Think:
 
@@ -5644,21 +5644,21 @@ Think:
 Switch A AND Switch B
 ```
 
-👉 Both must be ON → output ON
+ Both must be ON → output ON
 
 ---
 
-## 🔵 5. NOT Gate (Inverter)
+##  5. NOT Gate (Inverter)
 
 ---
 
-## 🔹 Core Idea
+##  Core Idea
 
 > Output is opposite of input
 
 ---
 
-## 🔹 Truth Table
+##  Truth Table
 
 | A | Output |
 | --- | --- |
@@ -5667,29 +5667,29 @@ Switch A AND Switch B
 
 ---
 
-## 🔹 Diagram
+##  Diagram
 
 6
 
 ---
 
-## 🔹 Deep Insight
+##  Deep Insight
 
 > NOT gate introduces **control and inversion**, essential for logic design
 
 ---
 
-## 🟡 6. NAND Gate (VERY IMPORTANT 🔥)
+## 🟡 6. NAND Gate (VERY IMPORTANT )
 
 ---
 
-## 🔹 Core Idea
+##  Core Idea
 
 > NOT of AND
 
 ---
 
-## 🔹 Truth Table
+##  Truth Table
 
 | A | B | Output |
 | --- | --- | --- |
@@ -5700,7 +5700,7 @@ Switch A AND Switch B
 
 ---
 
-👉 🧠 Key Insight:
+  Key Insight:
 
 > NAND alone can build ALL circuits
 
@@ -5710,13 +5710,13 @@ Switch A AND Switch B
 
 ---
 
-## 🔹 Core Idea
+##  Core Idea
 
 > NOT of OR
 
 ---
 
-## 🔹 Truth Table
+##  Truth Table
 
 | A | B | Output |
 | --- | --- | --- |
@@ -5727,21 +5727,21 @@ Switch A AND Switch B
 
 ---
 
-👉 Also universal like NAND
+ Also universal like NAND
 
 ---
 
-## 🧠 8. XOR Gate (Important for logic problems)
+##  8. XOR Gate (Important for logic problems)
 
 ---
 
-## 🔹 Core Idea
+##  Core Idea
 
 > Output is 1 when inputs are **different**
 
 ---
 
-## 🔹 Truth Table
+##  Truth Table
 
 | A | B | Output |
 | --- | --- | --- |
@@ -5752,18 +5752,18 @@ Switch A AND Switch B
 
 ---
 
-👉 Used in:
+ Used in:
 
 - Adders
 - Error detection
 
 ---
 
-## 🧠 9. Deep System Understanding
+##  9. Deep System Understanding
 
 ---
 
-## 🔹 OR Gate = Parallel Logic
+##  OR Gate = Parallel Logic
 
 ```
 Paths in parallel → any path ON → output ON
@@ -5771,7 +5771,7 @@ Paths in parallel → any path ON → output ON
 
 ---
 
-## 🔹 AND Gate = Series Logic
+##  AND Gate = Series Logic
 
 ```
 Paths in series → all must be ON
@@ -5779,14 +5779,14 @@ Paths in series → all must be ON
 
 ---
 
-👉 This maps directly to:
+ This maps directly to:
 
 - Transistor circuits
 - Switch circuits
 
 ---
 
-## ⚡ 10. Real Hardware Insight (VERY IMPORTANT)
+##  10. Real Hardware Insight (VERY IMPORTANT)
 
 In actual circuits:
 
@@ -5795,13 +5795,13 @@ In actual circuits:
 
 ---
 
-👉 That’s why:
+ That’s why:
 
 > Logic gates are just controlled switches
 
 ---
 
-## 🧠 FINAL MENTAL MODEL
+##  FINAL MENTAL MODEL
 
 Think of digital circuits as:
 
@@ -5809,19 +5809,19 @@ Think of digital circuits as:
 
 ---
 
-## ✍️ Exam Answer (clean)
+##  Exam Answer (clean)
 
 Logic gates are the fundamental building blocks of digital electronics that perform logical operations on binary inputs. The OR gate produces an output of 1 when any input is 1, while the AND gate produces an output of 1 only when all inputs are 1. The NOT gate inverts the input. NAND and NOR gates are universal gates that can implement any logical function. These gates are physically realized using electronic switches such as transistors arranged in series or parallel configurations.
 
 ---
 
-## 🚀 Next (tell me)
+##  Next (tell me)
 
 We can go deeper into:
 
-- 🔥 **How logic gates are built using transistors (very important)**
-- ⚡ **Boolean algebra + circuit simplification**
-- 🧠 **Combinational circuits (adders, multiplexers)**
+-  **How logic gates are built using transistors (very important)**
+-  **Boolean algebra + circuit simplification**
+-  **Combinational circuits (adders, multiplexers)**
 
 Just say:  
-👉 “transistor level” or “boolean deep”
+ “transistor level” or “boolean deep”
