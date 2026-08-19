@@ -1,0 +1,89 @@
+@use '../variables.scss' as *;
+
+body[data-layout='technical-tractatus'],
+body[data-layout='technical'] {
+  .page-footer {
+    padding: 0;
+
+    & > .graph,
+    & > .recommendations,
+    & > .backlinks {
+      display: none;
+    }
+  }
+
+  .collapse-rail {
+    width: 0;
+
+    & > .collapse-line {
+      width: 0;
+    }
+  }
+}
+
+body[data-layout='technical-tractatus'] {
+  .page-content :is(ul, ol) {
+    list-style: none;
+    padding-inline-start: 0;
+    margin-left: 0;
+  }
+}
+
+section[class~='tractatus-root'] {
+  ul,
+  ol {
+    list-style: none;
+    padding-inline-start: 0;
+    margin-left: 0;
+  }
+}
+
+body {
+  --tractatus-number-col: 7.5ch;
+  --tractatus-number-gap: 1.2rem;
+  --tractatus-number-indent: 0.8rem;
+
+  .tractatus-list {
+    margin: 0;
+    list-style: none;
+    padding-inline-start: 0;
+    margin-left: 0;
+  }
+
+  .tractatus-item {
+    margin: 0 0 0.75rem 0;
+  }
+
+  .tractatus-content {
+    p {
+      margin: 0;
+    }
+  }
+
+  .tractatus-row {
+    display: grid;
+    grid-template-columns: var(--tractatus-number-col) 1fr;
+    column-gap: var(--tractatus-number-gap);
+    align-items: start;
+  }
+
+  .tractatus-number {
+    padding-left: calc(var(--tractatus-depth) * var(--tractatus-number-indent));
+  }
+
+  .tractatus-text {
+    text-align: left;
+  }
+
+  .tractatus-text > :first-child {
+    margin-top: 0;
+  }
+
+  .tractatus-text > p:first-of-type {
+    margin-bottom: 0;
+  }
+
+  .tractatus-text > :last-child {
+    margin-bottom: 0;
+  }
+}

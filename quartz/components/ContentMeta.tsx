@@ -1,0 +1,235 @@
+import { JSX, h } from 'preact'
+import { i18n } from '../i18n'
+import {
+  QuartzComponent,
+  QuartzComponentConstructor,
+  QuartzComponentProps,
+} from '../types/component'
+import { deckPathsForSource, flashcardsSlug } from '../util/flashcards-path'
+import { classNames } from '../util/lang'
+import { FilePath, FullSlug, joinSegments, resolveRelative } from '../util/path'
+import { Date as DateComponent, getDate } from './Date'
+//@ts-ignore
+import script from './scripts/content-meta.inline'
+import style from './styles/contentMeta.scss'
+import { svgOptions } from './svg'
+
+type MetaProp = { title: string; classes: string[]; item: JSX.Element | JSX.Element[] }
+
+export default (() => {
+  const ContentMeta: QuartzComponent = ({
+    cfg,
+    ctx,
+    fileData,
+    displayClass,
+  }: QuartzComponentProps) => {
+    let created: Date | undefined
+    let modified: Date | undefined
+    const { locale } = cfg
+
+    if (fileData.dates) {
+      created = getDate(cfg, fileData)
+    }
+    if (fileData.dates?.modified) {
+      modified = fileData.dates?.['modified']
+    }
+    const displayedTime = i18n(locale).components.contentMeta.readingTime({
+      minutes: Math.ceil(fileData.readingTime ? fileData.readingTime.minutes! : 0),
+      words: Math.ceil(fileData.readingTime ? fileData.readingTime.words! : 0),
+    })
+
+    const Li = ({ title, item, classes }: MetaProp) => {
+      return (
+        <li class={classNames(undefined, ...classes)}>
+          <h2>{title}</h2>
+          <div class="container">{item}</div>
+        </li>
+      )
+    }
+
+    const meta: MetaProp[] = []
+
+    const collaboratorsRaw =
+      fileData.frontmatter?.collaborators || fileData.frontmatter?.collaborator
+    if (collaboratorsRaw) {
+      const collaborators = Array.isArray(collaboratorsRaw) ? collaboratorsRaw : [collaboratorsRaw]
+      const collabAliases: Record<string, string> = {
+        opus: 'opus-4.7[1m]',
+        gemini: 'gemini-3.1-pro-review',
+        gpt: 'gpt-5.5',
+        codex: 'gpt-5.5',
+      }
+      const items: JSX.Element[] = []
+      collaborators.forEach((c: string, i: number) => {
+        const alias = collabAliases[c.toLowerCase()] || c
+        const mdLinkMatch = alias.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
+        if (mdLinkMatch) {
+          items.push(
+            h(
+              'a',
+              {
+                href: mdLinkMatch[2],
+                target: '_blank',
+                rel: 'noopener noreferrer',
+                class: 'collab-link',
+              },
+              [mdLinkMatch[1]],
+            ),
+          )
+        } else if (alias.startsWith('http://') || alias.startsWith('https://')) {
+          items.push(
+            h(
+              'a',
+              { href: alias, target: '_blank', rel: 'noopener noreferrer', class: 'collab-link' },
+              [alias],
+            ),
+          )
+        } else {
+          items.push(h('span', { class: 'collab-text' }, [alias]))
+        }
+        if (i < collaborators.length - 1) {
+          items.push(h('span', {}, [',']))
+        }
+      })
+      meta.push({ title: 'with', classes: ['collaborators'], item: items })
+    }
+    if (created !== undefined) {
+      meta.push({
+        title: 'published',
+        classes: ['published-time'],
+        item: h(
+          'span',
+          { class: 'page-creation', title: `Page content creation date (${created})` },
+          [h('em', {}, [<DateComponent date={created} locale={locale} />])],
+        ),
+      })
+    }
+    if (modified !== undefined) {
+      meta.push({
+        title: 'modified',
+        classes: ['modified-time'],
+        item: h(
+          'span',
+          { class: 'page-modification' },
+          h('em', {}, <DateComponent date={modified} locale={locale} />),
+        ),
+      })
+    }
+
+    meta.push({ title: 'length', classes: ['reading-time'], item: h('span', {}, [displayedTime]) })
+
+    if (fileData.frontmatter?.slides) {
+      const slidesSlug = joinSegments(fileData.slug!, 'slides') as FullSlug
+      const slidesHref = resolveRelative(fileData.slug!, slidesSlug)
+
+      meta.push({
+        title: 'slides',
+        classes: ['slides-links'],
+        item: [
+          h(
+            'a',
+            {
+              href: slidesHref,
+              class: 'internal content-meta-link',
+              'data-slug': slidesHref,
+              'data-no-popover': true,
+            },
+            ['deck'],
+          ),
+          h(
+            'a',
+            {
+              href: '/',
+              class: 'internal content-meta-link',
+              'data-slug': '/',
+              'data-no-popover': true,
+            },
+            ['home'],
+          ),
+        ],
+      })
+    }
+
+    if (
+      fileData.slug &&
+      !fileData.flashcards &&
+      fileData.relativePath &&
+      deckPathsForSource(fileData.relativePath).some(deckPath =>
+        ctx.allFiles.includes(deckPath as FilePath),
+      )
+    ) {
+      const deckSlug = flashcardsSlug(fileData.slug)
+      const deckHref = resolveRelative(fileData.slug, deckSlug)
+      const deckLink = (href: string, label: string) =>
+        h(
+          'a',
+          {
+            href,
+            class: 'internal content-meta-link',
+            'data-slug': deckSlug,
+            'data-no-popover': true,
+          },
+          [label],
+        )
+      meta.push({
+        title: 'flashcards',
+        classes: ['flashcards-links'],
+        item: [deckLink(deckHref, 'review'), deckLink(`${deckHref}?n=20`, 'shuffle 20')],
+      })
+    }
+
+    if (fileData.frontmatter?.protected !== true) {
+      meta.push({
+        title: 'source',
+        classes: ['readable-source'],
+        item: [
+          h(
+            'a',
+            {
+              href: resolveRelative(
+                fileData.slug!,
+                ((fileData.slug === 'arena' ? 'are.na' : fileData.slug!) + '.md') as FullSlug,
+              ),
+              target: '_blank',
+              rel: 'noopener noreferrer',
+              class: 'llm-source',
+            },
+            [h('span', { title: 'see https://github.com/AnswerDotAI/llms-txt' }, ['llms.txt'])],
+          ),
+          h(
+            'span',
+            {
+              type: 'button',
+              ariaLabel: 'copy source',
+              class: 'clipboard-button',
+              'data-href': resolveRelative(
+                fileData.slug!,
+                ((fileData.slug === 'arena' ? 'are.na' : fileData.slug!) + '.md') as FullSlug,
+              ),
+            },
+
+            h('svg', { ...svgOptions, viewbox: '0 -8 24 24', class: 'copy-icon' }, [
+              h('use', { href: '#github-copy' }),
+            ]),
+            h('svg', { ...svgOptions, viewbox: '0 -8 24 24', class: 'check-icon' }, [
+              h('use', { href: '#github-check' }),
+            ]),
+          ),
+        ],
+      })
+    }
+
+    return (
+      <ul class={classNames(displayClass, 'content-meta')}>
+        {meta.map(el => (
+          <Li {...el} />
+        ))}
+      </ul>
+    )
+  }
+
+  ContentMeta.css = style
+  ContentMeta.afterDOMLoaded = script
+
+  return ContentMeta
+}) satisfies QuartzComponentConstructor

@@ -1,0 +1,80 @@
+$quote-mark-size: 2em;
+$quote-mark-line-height: 0.1em;
+$quote-mark-shift: -0.4em;
+$quote-mark-gap: 0.25em;
+$quote-indent: 1.25em;
+
+@mixin quote-mark {
+  font-size: $quote-mark-size;
+  line-height: $quote-mark-line-height;
+  vertical-align: $quote-mark-shift;
+}
+
+@mixin quote-block($padding-top) {
+  border-left: none;
+  padding-top: $padding-top;
+  padding-left: 1.8rem;
+  margin: inherit;
+
+  &::before {
+    content: '';
+  }
+
+  & > p {
+    &:not(:first-of-type):not(:last-of-type) {
+      padding-left: $quote-indent;
+    }
+
+    &:first-of-type::before {
+      @include quote-mark;
+      content: '“';
+      margin-right: $quote-mark-gap;
+    }
+
+    &:nth-last-of-type(2)::after {
+      @include quote-mark;
+      content: '”';
+      margin-left: $quote-mark-gap;
+    }
+
+    &:last-of-type {
+      margin-top: 0.8rem;
+      margin-left: 0.5rem;
+      margin-bottom: 0;
+      font-style: italic;
+
+      &:before {
+        content: '—';
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+[data-slug='quotes'] {
+  header {
+    height: 0;
+  }
+
+  & article {
+    & > blockquote:not(.twitter-tweet) {
+      @include quote-block(1rem);
+    }
+  }
+
+  blockquote::before {
+    content: '';
+  }
+
+  .seealso-rail-line {
+    background: transparent;
+  }
+}
+
+blockquote.quotes {
+  @include quote-block(0rem);
+
+  &::before {
+    content: '';
+  }
+}

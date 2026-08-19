@@ -1,0 +1,170 @@
+import { isRecord, type UnknownRecord } from './type-guards'
+
+export type TriathlonMaintenancePosition = 'front' | 'rear'
+export type TriathlonMaintenancePart = 'tire' | 'tube'
+
+export interface TriathlonChainMaintenance {
+  id: string
+  distance: string | null
+  lubricant: string
+  since: string
+  waxed: boolean
+}
+
+export interface TriathlonMaintenanceRange {
+  start: string
+  end: string | null
+}
+
+export interface TriathlonWheelMaintenance {
+  position: TriathlonMaintenancePosition
+  part: TriathlonMaintenancePart
+  type: string
+  distance: string | null
+  ranges: TriathlonMaintenanceRange[]
+  reason: string | null
+  repaired: boolean | null
+}
+
+export interface TriathlonMaintenance {
+  chains: TriathlonChainMaintenance[]
+  wheels: TriathlonWheelMaintenance[]
+}
+
+const nullableString = (record: UnknownRecord, key: string): string | null | undefined => {
+  const value = record[key]
+  if (value === null) return null
+  return typeof value === 'string' ? value : undefined
+}
+
+const parseChain = (id: string, value: unknown): TriathlonChainMaintenance | null => {
+  if (!isRecord(value)) return null
+  const distance = nullableString(value, 'distance')
+  const lubricant = value.lubricant
+  const since = value.since
+  const waxed = value.waxed
+  if (
+    distance === undefined ||
+    typeof lubricant !== 'string' ||
+    typeof since !== 'string' ||
+    typeof waxed !== 'boolean'
+  ) {
+    return null
+  }
+  return { id, distance, lubricant, since, waxed }
+}
+
+const mergeMaintenanceFields = (value: unknown): UnknownRecord | null => {
+  if (!Array.isArray(value)) return null
+  const record: UnknownRecord = {}
+  for (const field of value) {
+    if (!isRecord(field)) return null
+    for (const [key, fieldValue] of Object.entries(field)) record[key] = fieldValue
+  }
+  return record
+}
+
+const parseRange = (value: unknown): TriathlonMaintenanceRange | null => {
+  if (!isRecord(value)) return null
+  const start = value.start
+  const end = nullableString(value, 'end')
+  if (typeof start !== 'string' || end === undefined) return null
+  return { start, end }
+}
+
+const parseRanges = (record: UnknownRecord): TriathlonMaintenanceRange[] | null => {
+  if (record.range !== undefined) {
+    if (!Array.isArray(record.range) || record.range.length === 0) return null
+    const ranges: TriathlonMaintenanceRange[] = []
+    for (const value of record.range) {
+      const range = parseRange(value)
+      if (!range) return null
+      ranges.push(range)
+    }
+    return ranges.sort((left, right) => left.start.localeCompare(right.start))
+  }
+
+  const range = parseRange(record)
+  return range ? [range] : null
+}
+
+const parseWheelEntry = (
+  position: TriathlonMaintenancePosition,
+  part: TriathlonMaintenancePart,
+  value: unknown,
+): TriathlonWheelMaintenance | null => {
+  const record = mergeMaintenanceFields(value)
+  if (!record) return null
+  const type = record.type
+  const distance = nullableString(record, 'distance')
+  const ranges = parseRanges(record)
+  const reason = nullableString(record, 'reason')
+  const repaired = record.repaired
+  if (
+    typeof type !== 'string' ||
+    distance === undefined ||
+    !ranges ||
+    reason === undefined ||
+    (repaired !== undefined && repaired !== null && typeof repaired !== 'boolean')
+  ) {
+    return null
+  }
+  return {
+    position,
+    part,
+    type,
+    distance,
+    ranges,
+    reason,
+    repaired: typeof repaired === 'boolean' ? repaired : null,
+  }
+}
+
+const parseChains = (value: unknown): TriathlonChainMaintenance[] => {
+  if (!isRecord(value)) return []
+  const entries: TriathlonChainMaintenance[] = []
+  for (const [id, raw] of Object.entries(value)) {
+    const entry = parseChain(id, raw)
+    if (entry) entries.push(entry)
+  }
+  return entries.sort((left, right) => right.since.localeCompare(left.since))
+}
+
+const positions: TriathlonMaintenancePosition[] = ['front', 'rear']
+const parts: ReadonlyArray<{ key: string; part: TriathlonMaintenancePart }> = [
+  { key: 'tires', part: 'tire' },
+  { key: 'tube', part: 'tube' },
+]
+
+const parseWheels = (value: unknown): TriathlonWheelMaintenance[] => {
+  if (!isRecord(value)) return []
+  const entries: TriathlonWheelMaintenance[] = []
+  for (const position of positions) {
+    const wheel = value[position]
+    if (!isRecord(wheel)) continue
+    for (const { key, part } of parts) {
+      const records = wheel[key]
+      if (!Array.isArray(records)) continue
+      for (const raw of records) {
+        const entry = parseWheelEntry(position, part, raw)
+        if (entry) entries.push(entry)
+      }
+    }
+  }
+  return entries.sort((left, right) => {
+    const leftCurrent = left.ranges.some(range => range.end === null)
+    const rightCurrent = right.ranges.some(range => range.end === null)
+    if (leftCurrent && !rightCurrent) return -1
+    if (!leftCurrent && rightCurrent) return 1
+    const leftLatest = left.ranges[left.ranges.length - 1]
+    const rightLatest = right.ranges[right.ranges.length - 1]
+    return rightLatest.start.localeCompare(leftLatest.start)
+  })
+}
+
+export const parseTriathlonMaintenance = (value: unknown): TriathlonMaintenance | null => {
+  if (!isRecord(value)) return null
+  const chains = parseChains(value.chain)
+  const wheels = parseWheels(value.tires)
+  return chains.length > 0 || wheels.length > 0 ? { chains, wheels } : null
+}

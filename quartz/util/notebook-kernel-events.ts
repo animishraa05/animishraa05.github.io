@@ -1,0 +1,36 @@
+export const notebookKernelRequestEvent = 'notebookkernelrequest'
+export const notebookKernelCommandEvent = 'notebookkernelcommand'
+export const notebookKernelRunAllEvent = 'notebookkernelrunall'
+
+export type NotebookKernelStatus =
+  | 'available'
+  | 'warming'
+  | 'ready'
+  | 'running'
+  | 'failed'
+  | 'interrupting'
+  | 'interrupted'
+  | 'killed'
+  | 'stopped'
+export type NotebookKernelCommand = 'kill' | 'restart' | 'interrupt'
+
+export type NotebookKernelSnapshot = {
+  readonly runtimeId: string
+  readonly sourcePath: string
+  readonly language: string
+  readonly status: NotebookKernelStatus
+  readonly runningCellId?: string
+  readonly statusDetail?: string
+}
+
+export type NotebookKernelRequestDetail = {
+  readonly respond: (snapshot: NotebookKernelSnapshot) => void
+}
+
+export type NotebookKernelCommandDetail = {
+  readonly runtimeId: string
+  readonly language: string
+  readonly command: NotebookKernelCommand
+}
+
+export type NotebookKernelRunAllDetail = Record<string, never>

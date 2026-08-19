@@ -1,0 +1,861 @@
+import {
+  emptyGarminFueling,
+  emptyGarminMetrics,
+  type GarminActivity,
+  type GarminClimbSegment,
+  type GarminStreams,
+  type GarminVo2Day,
+  type GarminWeightSample,
+  hasGarminFueling,
+  hasGarminMetrics,
+  normalizeGarminSport,
+} from '../plugins/stores/garmin'
+import { isRecord, readNumber, readString, type UnknownRecord } from './type-guards'
+
+const RECORD_KEYS = [
+  'activity',
+  'activityDTO',
+  'activityDetail',
+  'activityDetailDTO',
+  'activitySummary',
+  'details',
+  'fueling',
+  'hydration',
+  'metadataDTO',
+  'nutrition',
+  'summary',
+  'summaryDTO',
+]
+
+const ID_KEYS = ['garminActivityId', 'activityId', 'activityIdStr', 'id', 'summaryId', 'uuid']
+const NAME_KEYS = ['activityName', 'name', 'title']
+const SPORT_KEYS = ['activityType', 'eventType', 'sport', 'sportType', 'type']
+const SPORT_NESTED_KEYS = ['name', 'type', 'typeKey']
+const START_UTC_KEYS = [
+  'beginTimestamp',
+  'startDate',
+  'startTime',
+  'startTimeGMT',
+  'startTimeGmt',
+  'startTimeInSeconds',
+  'startedAt',
+]
+const START_LOCAL_KEYS = ['startDateLocal', 'startLocal', 'startTimeLocal', 'startedAtLocal']
+const DISTANCE_M_KEYS = ['distance', 'distanceInMeters', 'distanceM', 'distanceMeters']
+const DISTANCE_KM_KEYS = ['distanceKm', 'distanceKilometers']
+const MOVING_S_KEYS = ['movingDuration', 'movingDurationS', 'movingTimeS']
+const MOVING_MS_KEYS = ['movingDurationMs', 'movingTimeMs']
+const ELAPSED_S_KEYS = [
+  'elapsedDuration',
+  'elapsedDurationS',
+  'elapsedTimeS',
+  'duration',
+  'durationInSeconds',
+  'durationS',
+]
+const ELAPSED_MS_KEYS = ['elapsedDurationMs', 'elapsedTimeMs', 'durationMs']
+const DEVICE_KEYS = [
+  'activityDeviceName',
+  'deviceDisplayName',
+  'deviceModel',
+  'deviceName',
+  'sourceDevice',
+]
+
+const TOTAL_CALORIES_KEYS = [
+  'activeKilocalories',
+  'calories',
+  'caloriesBurned',
+  'kilocalories',
+  'totalCalories',
+]
+const METABOLIC_CALORIES_KEYS = ['bmrCalories', 'metabolicCalories']
+const AVG_HR_KEYS = ['averageHR', 'averageHeartRate', 'averageHeartRateInBeatsPerMinute', 'avgHr']
+const MAX_HR_KEYS = ['maxHR', 'maxHeartRate', 'maxHeartRateInBeatsPerMinute']
+const AVG_POWER_KEYS = ['averagePower', 'avgPower']
+const NORMALIZED_POWER_KEYS = ['normalizedPower', 'weightedAverageWatts']
+const MAX_POWER_KEYS = ['maxPower', 'maxPowerInWatts']
+const AVG_CADENCE_KEYS = [
+  'averageBikeCadence',
+  'averageRunCadence',
+  'averageSwimCadence',
+  'avgCadence',
+]
+const ASCENT_M_KEYS = ['elevationGain', 'totalAscent', 'totalAscentM', 'totalElevationGain']
+const DESCENT_M_KEYS = ['elevationLoss', 'totalDescent', 'totalDescentM', 'totalElevationLoss']
+const WORK_KJ_KEYS = ['kilojoules', 'totalWorkKJ']
+const WORK_KCAL_KEYS = ['totalWork']
+const TSS_KEYS = ['trainingStressScore', 'tss']
+const IF_KEYS = ['intensityFactor']
+const AEROBIC_TRAINING_EFFECT_KEYS = ['aerobicTrainingEffect', 'trainingEffect']
+const ANAEROBIC_TRAINING_EFFECT_KEYS = ['anaerobicTrainingEffect']
+const EXERCISE_LOAD_KEYS = ['activityTrainingLoad', 'exerciseLoad']
+const TRAINING_EFFECT_LABEL_KEYS = ['trainingEffectLabel']
+const AEROBIC_TRAINING_EFFECT_MESSAGE_KEYS = ['aerobicTrainingEffectMessage']
+const ANAEROBIC_TRAINING_EFFECT_MESSAGE_KEYS = ['anaerobicTrainingEffectMessage']
+const KJ_PER_KCAL = 4.184
+const CLIMB_SPLIT_TYPE = 'CLIMB_PRO_CYCLING_CLIMB'
+
+const CALORIES_CONSUMED_KEYS = [
+  'caloriesConsumed',
+  'caloriesConsumedInKcal',
+  'caloriesConsumedKcal',
+  'caloriesIntake',
+  'caloriesIntakeKcal',
+  'consumedCalories',
+  'nutritionCalories',
+]
+const CARBS_KEYS = [
+  'carbIntakeG',
+  'carbohydrateIntakeG',
+  'carbohydratesConsumed',
+  'carbohydratesConsumedG',
+  'carbsConsumed',
+  'carbsConsumedG',
+  'consumedCarbs',
+]
+const CARBS_RECOMMENDED_KEYS = [
+  'carbohydratesRecommendedG',
+  'carbsRecommendedG',
+  'recommendedCarbohydratesG',
+  'recommendedCarbsG',
+]
+const FLUID_ML_KEYS = [
+  'fluidConsumedInMl',
+  'fluidConsumedMl',
+  'fluidIntakeInMl',
+  'fluidIntakeMl',
+  'fluidMl',
+  'hydrationMl',
+  'waterConsumedMl',
+  'waterIntakeMl',
+]
+const FLUID_L_KEYS = ['fluidConsumedL', 'fluidIntakeL', 'fluidL', 'fluidLiters', 'waterL']
+const FLUID_OZ_KEYS = ['fluidConsumedOz', 'fluidIntakeOz', 'fluidOunces', 'fluidOz', 'waterOz']
+const FLUID_RECOMMENDED_ML_KEYS = [
+  'fluidRecommendedMl',
+  'recommendedFluidMl',
+  'recommendedHydrationMl',
+  'recommendedWaterMl',
+]
+const FLUID_RECOMMENDED_L_KEYS = ['fluidRecommendedL', 'recommendedFluidL', 'recommendedWaterL']
+const FLUID_RECOMMENDED_OZ_KEYS = ['fluidRecommendedOz', 'recommendedFluidOz', 'recommendedWaterOz']
+const SWEAT_ML_KEYS = ['estimatedSweatLossMl', 'sweatLoss', 'sweatLossInMl', 'sweatLossMl']
+const SWEAT_L_KEYS = ['estimatedSweatLossL', 'sweatLossL']
+const SWEAT_OZ_KEYS = ['estimatedSweatLossOz', 'sweatLossOz']
+const METRIC_KEYS = {
+  altitude: 'directElevation',
+  cadence: 'directBikeCadence',
+  distance: 'sumDistance',
+  elapsedTime: 'sumElapsedDuration',
+  heartRate: 'directHeartRate',
+  latitude: 'directLatitude',
+  longitude: 'directLongitude',
+  potentialStamina: 'directPotentialStamina',
+  power: 'directPower',
+  rightBalance: 'directRightBalance',
+  respiration: 'directRespirationRate',
+  stamina: 'directAvailableStamina',
+}
+const CORE_CONNECT_IQ_APP_ID = '6957fe68-83fe-4ed6-8613-413f70624bb5'
+const CORE_DEVELOPER_FIELDS = { coreTemperatureC: 0, skinTemperatureC: 10, heatStrainIndex: 95 }
+const WEIGHT_KEYS = [
+  'weight',
+  'weightKg',
+  'weightInKg',
+  'weightInKilograms',
+  'weightValue',
+  'weightValueInKg',
+]
+const WEIGHT_GRAM_KEYS = ['weightGram', 'weightGrams', 'weightInGrams', 'weightValueInGrams']
+const WEIGHT_LB_KEYS = [
+  'weightLb',
+  'weightLbs',
+  'weightPounds',
+  'weightInPounds',
+  'weightValueInPounds',
+]
+const WEIGHT_UNIT_KEYS = ['unit', 'unitKey', 'weightUnit']
+const BMI_KEYS = ['bmi', 'bodyMassIndex']
+const BODY_FAT_KEYS = ['bodyFat', 'bodyFatPct', 'bodyFatPercent', 'bodyFatPercentage']
+const BODY_WATER_KEYS = ['bodyWater', 'bodyWaterPct', 'bodyWaterPercent', 'bodyWaterPercentage']
+const MUSCLE_MASS_KEYS = [
+  'muscleMass',
+  'muscleMassKg',
+  'muscleMassInKg',
+  'muscleMassInKilograms',
+  'skeletalMuscleMass',
+  'skeletalMuscleMassKg',
+]
+const MUSCLE_MASS_GRAM_KEYS = [
+  'muscleMassGram',
+  'muscleMassGrams',
+  'muscleMassInGrams',
+  'skeletalMuscleMassInGrams',
+]
+const BONE_MASS_KEYS = ['boneMass', 'boneMassKg', 'boneMassInKg', 'boneMassInKilograms']
+const BONE_MASS_GRAM_KEYS = ['boneMassGram', 'boneMassGrams', 'boneMassInGrams']
+const WEIGHT_RECORD_KEYS = ['weight', 'latestWeight', 'latestWeightMetric', 'measurement']
+const WEIGHT_LIST_KEYS = [
+  'allWeightMetrics',
+  'dateWeightList',
+  'measurements',
+  'weightList',
+  'weightMetrics',
+  'weights',
+]
+const WEIGHT_SUMMARY_RECORD_KEYS = ['latestWeight', 'latestWeightMetric']
+const WEIGHT_TIMESTAMP_KEYS = [
+  'date',
+  'measurementTimestampGMT',
+  'measurementTimestampLocal',
+  'samplePk',
+  'timestampGMT',
+  'timestampLocal',
+  'weighInTimestampGMT',
+  'weighInTimestampLocal',
+]
+const LB_PER_KG = 2.2046226218
+
+export interface GarminConnectActivityListItem {
+  id: string
+  record: UnknownRecord
+}
+
+function numeric(value: unknown): number | null {
+  if (typeof value === 'number' && Number.isFinite(value)) return value
+  if (typeof value !== 'string') return null
+  const parsed = Number(value.replace(/,/g, '').trim())
+  return Number.isFinite(parsed) ? parsed : null
+}
+
+function finite(value: unknown): number | null {
+  return typeof value === 'number' && Number.isFinite(value) ? value : numeric(value)
+}
+
+function positive(value: number | null): number | null {
+  return value != null && Number.isFinite(value) && value > 0 ? value : null
+}
+
+function rounded(value: number | null): number | null {
+  const n = positive(value)
+  return n == null ? null : Math.round(n)
+}
+
+function roundedFloat(value: number | null, dp: number): number | null {
+  const n = positive(value)
+  if (n == null) return null
+  const factor = 10 ** dp
+  return Math.round(n * factor) / factor
+}
+
+function roundedNonnegativeFloat(value: number | null, dp: number): number | null {
+  if (value == null || !Number.isFinite(value) || value < 0) return null
+  const factor = 10 ** dp
+  return Math.round(value * factor) / factor
+}
+
+function collectRecords(root: UnknownRecord): UnknownRecord[] {
+  const out: UnknownRecord[] = []
+  const queue: UnknownRecord[] = [root]
+  const seen = new Set<UnknownRecord>()
+  for (let i = 0; i < queue.length; i++) {
+    const record = queue[i]
+    if (seen.has(record)) continue
+    seen.add(record)
+    out.push(record)
+    for (const key of RECORD_KEYS) {
+      const child = record[key]
+      if (isRecord(child)) queue.push(child)
+    }
+  }
+  return out
+}
+
+function firstNumber(records: readonly UnknownRecord[], keys: readonly string[]): number | null {
+  for (const record of records) {
+    for (const key of keys) {
+      const value = readNumber(record, key) ?? numeric(record[key])
+      if (value != null) return value
+    }
+  }
+  return null
+}
+
+function firstString(records: readonly UnknownRecord[], keys: readonly string[]): string | null {
+  for (const record of records) {
+    for (const key of keys) {
+      const value = readString(record, key)
+      if (value?.trim()) return value.trim()
+      const n = readNumber(record, key)
+      if (n != null) return String(n)
+    }
+  }
+  return null
+}
+
+function firstSport(records: readonly UnknownRecord[]): string | null {
+  const direct = firstString(records, SPORT_KEYS)
+  if (direct) return direct
+  for (const record of records) {
+    for (const key of SPORT_KEYS) {
+      const child = record[key]
+      if (!isRecord(child)) continue
+      const nested = firstString([child], SPORT_NESTED_KEYS)
+      if (nested) return nested
+    }
+  }
+  return null
+}
+
+function normalizeDate(value: string | number | Date | null): string | null {
+  if (!value) return null
+  if (value instanceof Date) return Number.isFinite(value.valueOf()) ? value.toISOString() : null
+  if (typeof value === 'number') {
+    if (!Number.isFinite(value)) return null
+    const ms = value > 1_000_000_000_000 ? value : value * 1000
+    return new Date(ms).toISOString()
+  }
+  const trimmed = value.trim().replace(' ', 'T')
+  if (!trimmed) return null
+  const zoned = /(?:Z|[+-]\d{2}:?\d{2})$/.test(trimmed) ? trimmed : `${trimmed}Z`
+  const ms = Date.parse(zoned)
+  return Number.isFinite(ms) ? new Date(ms).toISOString() : null
+}
+
+function normalizeLocalDate(value: string | null, fallback: string): string {
+  if (!value) return fallback
+  return value.trim().replace(' ', 'T')
+}
+
+function ml(
+  records: readonly UnknownRecord[],
+  mlKeys: readonly string[],
+  literKeys: readonly string[],
+  ounceKeys: readonly string[],
+): number | null {
+  const direct = rounded(firstNumber(records, mlKeys))
+  if (direct != null) return direct
+  const liters = positive(firstNumber(records, literKeys))
+  if (liters != null) return Math.round(liters * 1000)
+  const ounces = positive(firstNumber(records, ounceKeys))
+  return ounces == null ? null : Math.round(ounces * 29.5735)
+}
+
+function activityId(record: UnknownRecord): string | null {
+  const id = firstString([record], ID_KEYS)
+  return id?.trim() || null
+}
+
+function hasGarminActivityData(activity: GarminActivity): boolean {
+  return (
+    hasGarminFueling(activity.fueling) ||
+    hasGarminMetrics(activity.metrics) ||
+    activity.distanceM != null ||
+    activity.movingTimeS != null ||
+    activity.elapsedTimeS != null
+  )
+}
+
+function recordsFromJson(raw: unknown): UnknownRecord[] {
+  if (Array.isArray(raw)) return raw.filter(isRecord)
+  if (!isRecord(raw)) return []
+  if (Array.isArray(raw.activities)) return raw.activities.filter(isRecord)
+  if (Array.isArray(raw.data)) return raw.data.filter(isRecord)
+  if (isRecord(raw.data) && raw.data.searchActivitiesScalar != null)
+    return recordsFromJson(graphqlScalar(raw.data.searchActivitiesScalar))
+  if (isRecord(raw.data) && Array.isArray(raw.data.activities))
+    return raw.data.activities.filter(isRecord)
+  return []
+}
+
+function graphqlScalar(raw: unknown): unknown {
+  if (typeof raw !== 'string') return raw
+  try {
+    return JSON.parse(raw) as unknown
+  } catch {
+    return null
+  }
+}
+
+export function garminConnectActivities(raw: unknown): GarminConnectActivityListItem[] {
+  const out: GarminConnectActivityListItem[] = []
+  const seen = new Set<string>()
+  for (const record of recordsFromJson(raw)) {
+    const id = activityId(record)
+    if (!id || seen.has(id)) continue
+    seen.add(id)
+    out.push({ id, record })
+  }
+  return out
+}
+
+function vo2Of(value: unknown): number | null {
+  if (!isRecord(value)) return null
+  return finite(value.vo2MaxPreciseValue) ?? finite(value.vo2MaxValue)
+}
+
+export function garminConnectVo2(raw: unknown): GarminVo2Day[] {
+  if (!Array.isArray(raw)) return []
+  const out: GarminVo2Day[] = []
+  for (const item of raw) {
+    if (!isRecord(item)) continue
+    const generic = isRecord(item.generic) ? item.generic : null
+    const cycling = isRecord(item.cycling) ? item.cycling : null
+    const date =
+      readString(item, 'calendarDate') ??
+      (generic ? readString(generic, 'calendarDate') : null) ??
+      (cycling ? readString(cycling, 'calendarDate') : null)
+    if (!date || !/^\d{4}-\d{2}-\d{2}$/.test(date)) continue
+    const g = vo2Of(generic)
+    const c = vo2Of(cycling)
+    if (g == null && c == null) continue
+    out.push({ date, generic: g, cycling: c })
+  }
+  return out.sort((a, b) => a.date.localeCompare(b.date))
+}
+
+const kgOf = (value: unknown): number | null => {
+  const n = finite(value)
+  if (n == null || n <= 0) return null
+  return Math.round((n > 400 ? n / 1000 : n) * 100) / 100
+}
+
+const kgOfPounds = (value: unknown): number | null => {
+  const n = finite(value)
+  return n != null && n > 0 ? Math.round((n / LB_PER_KG) * 100) / 100 : null
+}
+
+const pctOf = (value: unknown): number | null => {
+  const n = finite(value)
+  return n != null && n > 0 && n <= 100 ? Math.round(n * 10) / 10 : null
+}
+
+function firstFiniteRecord(record: UnknownRecord, keys: readonly string[]): number | null {
+  for (const key of keys) {
+    const value = finite(record[key])
+    if (value != null) return value
+  }
+  return null
+}
+
+function firstRecordArray(record: UnknownRecord, keys: readonly string[]): UnknownRecord[] | null {
+  for (const key of keys) {
+    const value = record[key]
+    if (Array.isArray(value)) return value.filter(isRecord)
+  }
+  return null
+}
+
+function msOf(value: unknown): number | null {
+  const n = finite(value)
+  if (n != null) {
+    if (n > 1_000_000_000_000) return n
+    if (n > 1_000_000_000) return n * 1000
+    return null
+  }
+  if (typeof value !== 'string') return null
+  const normalized = normalizeDate(value)
+  if (!normalized) return null
+  const ms = Date.parse(normalized)
+  return Number.isFinite(ms) ? ms : null
+}
+
+const isoDayOf = (record: UnknownRecord, keys: string[]): string | null => {
+  for (const key of keys) {
+    const v = record[key]
+    if (typeof v === 'string' && /^\d{4}-\d{2}-\d{2}/.test(v)) return v.slice(0, 10)
+    const ms = msOf(v)
+    if (ms != null) return new Date(ms).toISOString().slice(0, 10)
+  }
+  return null
+}
+
+const tsOf = (record: UnknownRecord): number | null => {
+  for (const key of WEIGHT_TIMESTAMP_KEYS) {
+    const ms = msOf(record[key])
+    if (ms != null) return ms
+  }
+  return null
+}
+
+function kgFromRecord(
+  record: UnknownRecord,
+  kgKeys: readonly string[],
+  gramKeys: readonly string[],
+  poundKeys: readonly string[],
+  unitAware = false,
+): number | null {
+  const kg = firstFiniteRecord(record, kgKeys)
+  if (kg != null) {
+    const unit = unitAware ? firstString([record], WEIGHT_UNIT_KEYS)?.toLowerCase() : null
+    if (unit?.includes('lb') || unit?.includes('pound')) return kgOfPounds(kg)
+    if (unit && (unit.includes('gram') || unit === 'g') && !unit.includes('kg')) return kgOf(kg)
+    return kgOf(kg)
+  }
+  const grams = firstFiniteRecord(record, gramKeys)
+  if (grams != null) return kgOf(grams)
+  const pounds = firstFiniteRecord(record, poundKeys)
+  if (pounds != null) return kgOfPounds(pounds)
+  return null
+}
+
+function nestedKgFromRecord(record: UnknownRecord): number | null {
+  for (const key of WEIGHT_RECORD_KEYS) {
+    const value = record[key]
+    if (!isRecord(value)) continue
+    const kg = kgFromRecord(value, WEIGHT_KEYS, WEIGHT_GRAM_KEYS, WEIGHT_LB_KEYS, true)
+    if (kg != null) return kg
+  }
+  return null
+}
+
+function pctFromRecord(record: UnknownRecord, keys: readonly string[]): number | null {
+  return pctOf(firstFiniteRecord(record, keys))
+}
+
+export function garminConnectWeightSamples(raw: unknown): GarminWeightSample[] {
+  const out: GarminWeightSample[] = []
+  const push = (m: UnknownRecord, dayHint: string | null): void => {
+    const ts = tsOf(m)
+    const date =
+      dayHint ??
+      isoDayOf(m, ['calendarDate', 'summaryDate', 'date', 'weightDate']) ??
+      (ts != null ? new Date(ts).toISOString().slice(0, 10) : null)
+    if (!date) return
+    const sample: GarminWeightSample = {
+      ts: ts ?? Date.parse(`${date}T12:00:00.000Z`),
+      date,
+      weightKg:
+        kgFromRecord(m, WEIGHT_KEYS, WEIGHT_GRAM_KEYS, WEIGHT_LB_KEYS, true) ??
+        nestedKgFromRecord(m),
+      bmi: pctFromRecord(m, BMI_KEYS),
+      bodyFatPct: pctFromRecord(m, BODY_FAT_KEYS),
+      bodyWaterPct: pctFromRecord(m, BODY_WATER_KEYS),
+      muscleMassKg: kgFromRecord(m, MUSCLE_MASS_KEYS, MUSCLE_MASS_GRAM_KEYS, []),
+      boneMassKg: kgFromRecord(m, BONE_MASS_KEYS, BONE_MASS_GRAM_KEYS, []),
+    }
+    if (
+      sample.weightKg == null &&
+      sample.bmi == null &&
+      sample.bodyFatPct == null &&
+      sample.bodyWaterPct == null &&
+      sample.muscleMassKg == null &&
+      sample.boneMassKg == null
+    )
+      return
+    out.push(sample)
+  }
+  const summaries =
+    isRecord(raw) && Array.isArray(raw.dailyWeightSummaries) ? raw.dailyWeightSummaries : []
+  for (const sum of summaries) {
+    if (!isRecord(sum)) continue
+    const date = isoDayOf(sum, ['summaryDate', 'calendarDate'])
+    const metrics = firstRecordArray(sum, WEIGHT_LIST_KEYS)
+    if (metrics && metrics.length) {
+      for (const m of metrics) push(m, date ?? isoDayOf(m, ['calendarDate', 'date']))
+    } else {
+      for (const key of WEIGHT_SUMMARY_RECORD_KEYS) {
+        const value = sum[key]
+        if (isRecord(value)) push(value, date)
+      }
+    }
+  }
+  if (!out.length) {
+    const list = isRecord(raw) ? firstRecordArray(raw, WEIGHT_LIST_KEYS) : null
+    const records = list ?? (Array.isArray(raw) ? raw.filter(isRecord) : [])
+    for (const m of records) push(m, null)
+    if (isRecord(raw)) {
+      for (const key of WEIGHT_SUMMARY_RECORD_KEYS) {
+        const value = raw[key]
+        if (isRecord(value)) push(value, null)
+      }
+    }
+  }
+  return out.sort((a, b) => a.ts - b.ts)
+}
+
+export function garminConnectClimbSegments(raw: unknown): GarminClimbSegment[] {
+  if (!isRecord(raw) || !Array.isArray(raw.splits)) return []
+  const out: GarminClimbSegment[] = []
+  for (const split of raw.splits) {
+    if (!isRecord(split) || readString(split, 'type') !== CLIMB_SPLIT_TYPE) continue
+    const startDate = normalizeDate(
+      readString(split, 'startTimeGMT') ?? readString(split, 'startTimeLocal') ?? null,
+    )
+    const endDate = normalizeDate(
+      readString(split, 'endTimeGMT') ?? readString(split, 'endTimeLocal') ?? null,
+    )
+    const distanceM = roundedFloat(firstNumber([split], ['distance']), 2)
+    const durationS = roundedFloat(firstNumber([split], ['duration']), 3)
+    if (!startDate || !endDate || distanceM == null || durationS == null) continue
+    out.push({
+      startDate,
+      endDate,
+      distanceM,
+      durationS,
+      movingTimeS: roundedFloat(firstNumber([split], ['movingDuration']), 3),
+      elapsedTimeS: roundedFloat(firstNumber([split], ['elapsedDuration']), 3),
+      elevationGainM: roundedFloat(firstNumber([split], ['elevationGain']), 1),
+      elevationLossM: roundedFloat(firstNumber([split], ['elevationLoss']), 1),
+      startElevationM: roundedFloat(firstNumber([split], ['startElevation']), 1),
+      avgGradePct: roundedFloat(firstNumber([split], ['averageGrade']), 2),
+      maxGradePct: roundedFloat(firstNumber([split], ['maxGrade']), 2),
+      avgSpeedMps: roundedFloat(firstNumber([split], ['averageSpeed']), 3),
+      avgHeartRate: rounded(firstNumber([split], ['averageHR'])),
+      maxHeartRate: rounded(firstNumber([split], ['maxHR'])),
+      avgPower: rounded(firstNumber([split], ['averagePower'])),
+      normalizedPower: rounded(firstNumber([split], ['normalizedPower'])),
+      maxPower: rounded(firstNumber([split], ['maxPower'])),
+      avgCadence: rounded(firstNumber([split], ['averageBikeCadence'])),
+      difficulty: readString(split, 'climbProDifficulty') ?? null,
+    })
+  }
+  return out.sort((a, b) => a.startDate.localeCompare(b.startDate))
+}
+
+function descriptorMetricIndex(
+  detail: UnknownRecord,
+  matches: (descriptor: UnknownRecord) => boolean,
+): number | null {
+  const descriptors = detail.metricDescriptors
+  if (!Array.isArray(descriptors)) return null
+  for (let i = 0; i < descriptors.length; i++) {
+    const descriptor = descriptors[i]
+    if (!isRecord(descriptor) || !matches(descriptor)) continue
+    const metricsIndex = readNumber(descriptor, 'metricsIndex')
+    return metricsIndex != null && Number.isInteger(metricsIndex) && metricsIndex >= 0
+      ? metricsIndex
+      : i
+  }
+  return null
+}
+
+const metricIndex = (detail: UnknownRecord, key: string): number | null =>
+  descriptorMetricIndex(detail, descriptor => readString(descriptor, 'key') === key)
+
+const coreMetricIndex = (
+  detail: UnknownRecord,
+  field: keyof typeof CORE_DEVELOPER_FIELDS,
+): number | null =>
+  descriptorMetricIndex(
+    detail,
+    descriptor =>
+      readString(descriptor, 'appID')?.toLowerCase() === CORE_CONNECT_IQ_APP_ID &&
+      readNumber(descriptor, 'developerFieldNumber') === CORE_DEVELOPER_FIELDS[field],
+  )
+
+function metricValue(row: UnknownRecord, index: number | null): number | null {
+  if (index == null) return null
+  const metrics = row.metrics
+  if (!Array.isArray(metrics)) return null
+  return finite(metrics[index])
+}
+
+function validLatLng(lat: number, lng: number): boolean {
+  return lat >= -90 && lat <= 90 && lng >= -180 && lng <= 180
+}
+
+function hasStreamData(streams: GarminStreams): boolean {
+  return (
+    streams.latlng.length >= 2 ||
+    streams.altitude.length > 0 ||
+    streams.distance.length > 0 ||
+    (streams.watts?.some(value => value > 0) ?? false) ||
+    (streams.rightBalance?.some(value => value >= 0 && value <= 100) ?? false) ||
+    (streams.heartrate?.some(value => value > 0) ?? false) ||
+    (streams.cadence?.some(value => value > 0) ?? false) ||
+    (streams.stamina?.some(value => value >= 0) ?? false) ||
+    (streams.potentialStamina?.some(value => value >= 0) ?? false) ||
+    (streams.respiration?.some(value => value > 0) ?? false) ||
+    (streams.heatStrainIndex?.some(value => value >= 0) ?? false) ||
+    (streams.coreTemperatureC?.some(value => value > 0) ?? false) ||
+    (streams.skinTemperatureC?.some(value => value > 0) ?? false)
+  )
+}
+
+function polylineStreams(detail: UnknownRecord): GarminStreams | null {
+  const geo = detail.geoPolylineDTO
+  if (!isRecord(geo) || !Array.isArray(geo.polyline)) return null
+
+  const streams: GarminStreams = { latlng: [], altitude: [], distance: [] }
+  let distance = 0
+  for (const item of geo.polyline) {
+    if (!isRecord(item)) continue
+    const lat = finite(item.lat)
+    const lng = finite(item.lon)
+    if (lat == null || lng == null || !validLatLng(lat, lng)) continue
+    distance =
+      finite(item.distanceInMeters) ?? distance + (finite(item.distanceFromPreviousPoint) ?? 0)
+    streams.latlng.push([lat, lng])
+    streams.altitude.push(finite(item.altitude) ?? 0)
+    streams.distance.push(distance)
+  }
+  return hasStreamData(streams) ? streams : null
+}
+
+export function garminConnectStreams(detail: UnknownRecord | null): GarminStreams | null {
+  if (!detail || !Array.isArray(detail.activityDetailMetrics))
+    return detail ? polylineStreams(detail) : null
+
+  const indices = {
+    altitude: metricIndex(detail, METRIC_KEYS.altitude),
+    cadence: metricIndex(detail, METRIC_KEYS.cadence),
+    distance: metricIndex(detail, METRIC_KEYS.distance),
+    elapsedTime: metricIndex(detail, METRIC_KEYS.elapsedTime),
+    heartRate: metricIndex(detail, METRIC_KEYS.heartRate),
+    latitude: metricIndex(detail, METRIC_KEYS.latitude),
+    longitude: metricIndex(detail, METRIC_KEYS.longitude),
+    potentialStamina: metricIndex(detail, METRIC_KEYS.potentialStamina),
+    power: metricIndex(detail, METRIC_KEYS.power),
+    rightBalance: metricIndex(detail, METRIC_KEYS.rightBalance),
+    respiration: metricIndex(detail, METRIC_KEYS.respiration),
+    stamina: metricIndex(detail, METRIC_KEYS.stamina),
+    heatStrainIndex: coreMetricIndex(detail, 'heatStrainIndex'),
+    coreTemperatureC: coreMetricIndex(detail, 'coreTemperatureC'),
+    skinTemperatureC: coreMetricIndex(detail, 'skinTemperatureC'),
+  }
+  const streams: GarminStreams = {
+    time: indices.elapsedTime == null ? undefined : [],
+    latlng: [],
+    altitude: [],
+    distance: [],
+    watts: [],
+    rightBalance: indices.rightBalance == null ? undefined : [],
+    heartrate: [],
+    cadence: [],
+    stamina: indices.stamina == null ? undefined : [],
+    potentialStamina: indices.potentialStamina == null ? undefined : [],
+    respiration: indices.respiration == null ? undefined : [],
+    heatStrainIndex: indices.heatStrainIndex == null ? undefined : [],
+    coreTemperatureC: indices.coreTemperatureC == null ? undefined : [],
+    skinTemperatureC: indices.skinTemperatureC == null ? undefined : [],
+  }
+
+  const hasLocationMetrics = indices.latitude != null && indices.longitude != null
+  let lastDistance = 0
+  let lastElapsedTime = 0
+  for (const item of detail.activityDetailMetrics) {
+    if (!isRecord(item)) continue
+    const lat = metricValue(item, indices.latitude)
+    const lng = metricValue(item, indices.longitude)
+    const hasLocation = lat != null && lng != null && validLatLng(lat, lng)
+    if (hasLocationMetrics && !hasLocation) continue
+
+    const distance = metricValue(item, indices.distance)
+    if (distance != null) lastDistance = distance
+    const elapsedTime = metricValue(item, indices.elapsedTime)
+    if (elapsedTime != null) lastElapsedTime = Math.max(lastElapsedTime, elapsedTime)
+    streams.time?.push(lastElapsedTime)
+    if (lat != null && lng != null && validLatLng(lat, lng)) streams.latlng.push([lat, lng])
+    streams.altitude.push(metricValue(item, indices.altitude) ?? 0)
+    streams.distance.push(lastDistance)
+    streams.watts?.push(metricValue(item, indices.power) ?? 0)
+    streams.rightBalance?.push(metricValue(item, indices.rightBalance) ?? -1)
+    streams.heartrate?.push(metricValue(item, indices.heartRate) ?? 0)
+    streams.cadence?.push(metricValue(item, indices.cadence) ?? 0)
+    streams.stamina?.push(metricValue(item, indices.stamina) ?? -1)
+    streams.potentialStamina?.push(metricValue(item, indices.potentialStamina) ?? -1)
+    streams.respiration?.push(metricValue(item, indices.respiration) ?? 0)
+    streams.heatStrainIndex?.push(metricValue(item, indices.heatStrainIndex) ?? -1)
+    streams.coreTemperatureC?.push(metricValue(item, indices.coreTemperatureC) ?? -1)
+    streams.skinTemperatureC?.push(metricValue(item, indices.skinTemperatureC) ?? -1)
+  }
+
+  if (streams.latlng.length < 2) {
+    const polyline = polylineStreams(detail)
+    if (polyline) {
+      streams.latlng = polyline.latlng
+      streams.altitude = polyline.altitude
+      streams.distance = polyline.distance
+    }
+  }
+
+  return hasStreamData(streams) ? streams : null
+}
+
+export function garminConnectActivity(
+  detail: UnknownRecord | null,
+  fallback: UnknownRecord,
+  index: number,
+): GarminActivity | null {
+  const records = detail
+    ? [...collectRecords(detail), ...collectRecords(fallback)]
+    : collectRecords(fallback)
+  const utcRaw = firstString(records, START_UTC_KEYS)
+  const localRaw = firstString(records, START_LOCAL_KEYS)
+  const startDate = normalizeDate(utcRaw ?? localRaw)
+  if (!startDate) return null
+
+  const sourceDevice = firstString(records, DEVICE_KEYS)
+  const distanceM =
+    rounded(firstNumber(records, DISTANCE_M_KEYS)) ??
+    rounded((firstNumber(records, DISTANCE_KM_KEYS) ?? 0) * 1000)
+  const movingTimeS =
+    rounded(firstNumber(records, MOVING_S_KEYS)) ??
+    rounded((firstNumber(records, MOVING_MS_KEYS) ?? 0) / 1000)
+  const elapsedTimeS =
+    rounded(firstNumber(records, ELAPSED_S_KEYS)) ??
+    rounded((firstNumber(records, ELAPSED_MS_KEYS) ?? 0) / 1000)
+
+  const metrics = emptyGarminMetrics()
+  metrics.totalCalories = rounded(firstNumber(records, TOTAL_CALORIES_KEYS))
+  metrics.metabolicCalories = rounded(firstNumber(records, METABOLIC_CALORIES_KEYS))
+  metrics.avgHeartRate = rounded(firstNumber(records, AVG_HR_KEYS))
+  metrics.maxHeartRate = rounded(firstNumber(records, MAX_HR_KEYS))
+  metrics.avgPower = rounded(firstNumber(records, AVG_POWER_KEYS))
+  metrics.normalizedPower = rounded(firstNumber(records, NORMALIZED_POWER_KEYS))
+  metrics.maxPower = rounded(firstNumber(records, MAX_POWER_KEYS))
+  metrics.avgCadence = rounded(firstNumber(records, AVG_CADENCE_KEYS))
+  metrics.totalAscentM = rounded(firstNumber(records, ASCENT_M_KEYS))
+  metrics.totalDescentM = rounded(firstNumber(records, DESCENT_M_KEYS))
+  metrics.totalWorkKJ =
+    roundedFloat(firstNumber(records, WORK_KJ_KEYS), 1) ??
+    roundedFloat((firstNumber(records, WORK_KCAL_KEYS) ?? 0) * KJ_PER_KCAL, 1)
+  metrics.trainingStressScore = roundedFloat(firstNumber(records, TSS_KEYS), 1)
+  metrics.intensityFactor = roundedFloat(firstNumber(records, IF_KEYS), 3)
+  metrics.aerobicTrainingEffect = roundedNonnegativeFloat(
+    firstNumber(records, AEROBIC_TRAINING_EFFECT_KEYS),
+    1,
+  )
+  metrics.anaerobicTrainingEffect = roundedNonnegativeFloat(
+    firstNumber(records, ANAEROBIC_TRAINING_EFFECT_KEYS),
+    1,
+  )
+  metrics.exerciseLoad = roundedNonnegativeFloat(firstNumber(records, EXERCISE_LOAD_KEYS), 1)
+  metrics.trainingEffectLabel = firstString(records, TRAINING_EFFECT_LABEL_KEYS)
+  metrics.aerobicTrainingEffectMessage = firstString(records, AEROBIC_TRAINING_EFFECT_MESSAGE_KEYS)
+  metrics.anaerobicTrainingEffectMessage = firstString(
+    records,
+    ANAEROBIC_TRAINING_EFFECT_MESSAGE_KEYS,
+  )
+
+  const fueling = emptyGarminFueling(sourceDevice)
+  fueling.caloriesConsumed = rounded(firstNumber(records, CALORIES_CONSUMED_KEYS))
+  fueling.carbsConsumedG = rounded(firstNumber(records, CARBS_KEYS))
+  fueling.fluidMl = ml(records, FLUID_ML_KEYS, FLUID_L_KEYS, FLUID_OZ_KEYS)
+  fueling.carbsRecommendedG = rounded(firstNumber(records, CARBS_RECOMMENDED_KEYS))
+  fueling.fluidRecommendedMl = ml(
+    records,
+    FLUID_RECOMMENDED_ML_KEYS,
+    FLUID_RECOMMENDED_L_KEYS,
+    FLUID_RECOMMENDED_OZ_KEYS,
+  )
+  fueling.sweatLossMl = ml(records, SWEAT_ML_KEYS, SWEAT_L_KEYS, SWEAT_OZ_KEYS)
+
+  const activity: GarminActivity = {
+    id: `connect:${firstString(records, ID_KEYS) ?? `${startDate}:${index}`}`,
+    name: firstString(records, NAME_KEYS),
+    sport: normalizeGarminSport(firstSport(records)),
+    startDate,
+    startDateLocal: normalizeLocalDate(localRaw, startDate),
+    distanceM,
+    movingTimeS,
+    elapsedTimeS,
+    sourceDevice,
+    sourceFile: null,
+    metrics,
+    fueling,
+  }
+  return hasGarminActivityData(activity) ? activity : null
+}

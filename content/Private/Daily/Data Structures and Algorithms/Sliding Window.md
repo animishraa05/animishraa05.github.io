@@ -1,0 +1,2 @@
+it is used as the recomputation is done in windows when using two loops. It is usually used only because we compute same things again and again .
+expand the array and also shrink from one side to avoid computing same things again.

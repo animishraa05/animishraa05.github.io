@@ -1,0 +1,423 @@
+/*
+ * comfy-dark.css — Editor-Only Dark Overlay
+ * Primary theme handles all UI chrome.
+ * This snippet ONLY styles the main note area:
+ * editor, preview, typography, content elements.
+ */
+
+/* ═══════════════════════════════════════════
+   0. DESIGN TOKENS — Editor-only palette
+   ═══════════════════════════════════════════ */
+
+:root {
+  /* Force 125% zoom permanently */
+  zoom: 1.10;
+
+  --cd-bg:              #181818;
+  --cd-bg-raised:       #222222;
+  --cd-bg-overlay:      #2a2a2a;
+  --cd-bg-surface:      #363636;
+  --cd-bg-elevated:     #444444;
+
+  --cd-border:          #504945;
+  --cd-border-strong:   #665c54;
+
+  --cd-text:            #ebdbb2;
+  --cd-text-muted:      #a89984;
+  --cd-text-faint:      #7c6f64;
+  --cd-text-bright:     #fbf1c7;
+
+  --cd-accent:          #fe8019;
+  --cd-accent-dim:      rgba(254, 128, 25, 0.12);
+
+  --cd-success:         #b8bb26;
+  --cd-warning:         #fabd2f;
+  --cd-error:           #fb4934;
+  --cd-info:            #83a598;
+  --cd-purple:          #d3869b;
+  --cd-aqua:            #8ec07c;
+
+  --cd-para-gap:        0.85em;
+  --cd-radius-sm:       6px;
+  --cd-radius-md:       10px;
+  --cd-radius-lg:       14px;
+  --cd-transition:      150ms ease;
+}
+
+/* ═══════════════════════════════════════════
+   1. EDITOR BACKGROUND — Pure black + gloss
+   ═══════════════════════════════════════════ */
+
+/* Set workspace bg to pure black so no light leaks behind editor */
+.theme-dark {
+  --background-primary: #181818;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-editor,
+.theme-dark .markdown-preview-view {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.03) 0%, transparent 60%),
+    var(--cd-bg) !important;
+}
+
+.theme-dark .markdown-source-view.mod-cm6 .cm-editor {
+  color: var(--cd-text);
+}
+
+/* ═══════════════════════════════════════════
+   2. EDITOR — Cursor, lines, gutters, selection
+   ═══════════════════════════════════════════ */
+
+.theme-dark .markdown-source-view .cm-content {
+  caret-color: var(--cd-accent);
+}
+
+.theme-dark .markdown-source-view .cm-active-line {
+  background-color: rgba(255, 255, 255, 0.015);
+}
+
+.theme-dark .markdown-source-view .cm-active-line-gutter {
+  background-color: rgba(255, 255, 255, 0.02);
+  color: var(--cd-text-muted);
+}
+
+.theme-dark .markdown-source-view .cm-gutters {
+  background-color: var(--cd-bg);
+  border-right-color: var(--cd-border);
+  color: var(--cd-text-faint);
+}
+
+.theme-dark .cm-selectionBackground,
+.theme-dark .cm-focused .cm-selectionBackground {
+  background-color: var(--cd-accent-dim) !important;
+}
+
+.theme-dark .markdown-source-view .cm-cursor {
+  border-left-color: var(--cd-accent);
+}
+
+.theme-dark .cm-matchingBracket {
+  background-color: rgba(254, 128, 25, 0.15) !important;
+  color: var(--cd-accent) !important;
+  outline: 1px solid rgba(254, 128, 25, 0.3);
+}
+
+.theme-dark .cm-searchMatch {
+  background-color: rgba(254, 128, 25, 0.20);
+  border-radius: 2px;
+}
+
+.theme-dark .cm-searchMatch-selected {
+  background-color: rgba(254, 128, 25, 0.35);
+}
+
+/* ═══════════════════════════════════════════
+   3. TYPOGRAPHY — Headings, text, links
+   ═══════════════════════════════════════════ */
+
+.theme-dark .markdown-preview-view h1,
+.theme-dark .markdown-source-view .cm-header-1 {
+  color: var(--cd-text-bright);
+  margin-top: 1.6em;
+  margin-bottom: 0.5em;
+}
+
+.theme-dark .markdown-preview-view h2,
+.theme-dark .markdown-source-view .cm-header-2 {
+  
+  margin-top: 1.1em;
+  margin-bottom: 0.1em;
+}
+
+.theme-dark .markdown-preview-view h3,
+.theme-dark .markdown-source-view .cm-header-3 {
+  margin-top: 1.2em;
+  margin-bottom: 0.35em;
+}
+
+.theme-dark .markdown-preview-view h4,
+.theme-dark .markdown-preview-view h5,
+.theme-dark .markdown-preview-view h6,
+.theme-dark .markdown-source-view .cm-header-4,
+.theme-dark .markdown-source-view .cm-header-5,
+.theme-dark .markdown-source-view .cm-header-6 {
+  color: var(--cd-text-muted);
+}
+
+.theme-dark .markdown-preview-view p {
+  margin-block: var(--cd-para-gap);
+}
+
+.theme-dark .markdown-preview-view a,
+.theme-dark .markdown-source-view .cm-url {
+  color: var(--cd-accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(254, 128, 25, 0.25);
+  transition: border-color var(--cd-transition);
+}
+
+.theme-dark .markdown-preview-view a:hover {
+  border-bottom-color: var(--cd-accent);
+}
+
+.theme-dark .markdown-preview-view strong,
+.theme-dark .markdown-source-view .cm-strong {
+  color: var(--cd-text-bright);
+}
+
+.theme-dark .markdown-preview-view em {
+  color: var(--cd-text);
+}
+
+/* ═══════════════════════════════════════════
+   4. CODE — Blocks & inline
+   ═══════════════════════════════════════════ */
+
+.theme-dark .markdown-preview-view code,
+.theme-dark .markdown-source-view .cm-inline-code {
+  background-color: var(--cd-bg-surface);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+}
+
+.theme-dark .markdown-preview-view pre code,
+.theme-dark .markdown-source-view .HyperMD-codeblock {
+  background-color: var(--cd-bg-raised);
+  color: var(--cd-text);
+  padding: 1em 1.2em;
+  border-radius: var(--cd-radius-md);
+  display: block;
+  overflow-x: auto;
+}
+
+.theme-dark .markdown-preview-view pre > code.language-title {
+  color: var(--cd-text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5em;
+  display: block;
+}
+
+/* Gruvbox syntax highlighting */
+.theme-dark .markdown-preview-view pre .keyword   { color: #fb4934; }
+.theme-dark .markdown-preview-view pre .string    { color: #b8bb26; }
+.theme-dark .markdown-preview-view pre .number    { color: #d3869b; }
+.theme-dark .markdown-preview-view pre .comment   { color: #7c6f64; font-style: italic; }
+.theme-dark .markdown-preview-view pre .function  { color: #83a598; }
+.theme-dark .markdown-preview-view pre .operator  { color: #8ec07c; }
+
+/* ═══════════════════════════════════════════
+   5. CONTENT ELEMENTS — Callouts, quotes, tables, lists
+   ═══════════════════════════════════════════ */
+
+.theme-dark .callout {
+  background-color: var(--cd-bg-raised);
+  border-radius: var(--cd-radius-md);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.theme-dark .callout-title {
+  color: var(--cd-text-bright);
+}
+
+.theme-dark .callout-content {
+  color: var(--cd-text-muted);
+}
+
+.theme-dark .callout[data-callout="note"]     { border-left-color: var(--cd-info); }
+.theme-dark .callout[data-callout="tip"]      { border-left-color: var(--cd-success); }
+.theme-dark .callout[data-callout="warning"]  { border-left-color: var(--cd-warning); }
+.theme-dark .callout[data-callout="danger"]   { border-left-color: var(--cd-error); }
+.theme-dark .callout[data-callout="quote"]    { border-left-color: var(--cd-purple); }
+.theme-dark .callout[data-callout="abstract"] { border-left-color: var(--cd-aqua); }
+.theme-dark .callout[data-callout="info"]     { border-left-color: var(--cd-info); }
+
+.theme-dark .markdown-preview-view blockquote,
+.theme-dark .markdown-source-view .HyperMD-quote {
+  border-left: 3px solid var(--cd-border-strong);
+  background-color: rgba(30, 30, 30, 0.6);
+  border-radius: 0 var(--cd-radius-sm) var(--cd-radius-sm) 0;
+  padding: 0.5em 0.8em;
+  color: var(--cd-text-muted);
+}
+
+.theme-dark .markdown-preview-view table {
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: var(--cd-radius-md);
+  overflow: hidden;
+}
+
+.theme-dark .markdown-preview-view th {
+  background-color: var(--cd-bg-surface);
+  color: var(--cd-text-bright);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.6em 0.8em;
+  border-bottom: 2px solid var(--cd-border-strong);
+  text-align: left;
+}
+
+.theme-dark .markdown-preview-view td {
+  padding: 0.55em 0.8em;
+  border-bottom: 1px solid var(--cd-border);
+  color: var(--cd-text);
+}
+
+.theme-dark .markdown-preview-view tr:hover td {
+  background-color: rgba(255, 255, 255, 0.015);
+}
+
+.theme-dark .markdown-preview-view ul {
+  padding-left: 0;
+}
+
+.theme-dark .markdown-preview-view ol {
+  list-style-type: decimal;
+  padding-left: 1.6em;
+  counter-reset: none;
+}
+
+.theme-dark .markdown-preview-view ol li::before {
+  display: none;
+}
+
+.theme-dark .markdown-preview-view .task-list-item-checkbox {
+  accent-color: var(--cd-accent);
+}
+
+.theme-dark .markdown-preview-view .task-list-item:checked {
+  color: var(--cd-text-faint);
+  text-decoration: line-through;
+  text-decoration-color: var(--cd-text-faint);
+}
+
+.theme-dark .markdown-preview-view hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--cd-border-strong) 20%,
+    var(--cd-border-strong) 80%,
+    transparent
+  );
+  margin: 2em 0;
+}
+
+.theme-dark .markdown-preview-view mark,
+.theme-dark .markdown-source-view .cm-highlight {
+  background-color: rgba(254, 128, 25, 0.20);
+  color: var(--cd-text-bright);
+  border-radius: 2px;
+  padding: 0.05em 0.2em;
+}
+
+.theme-dark .tag {
+  background-color: var(--cd-accent-dim);
+  color: var(--cd-accent);
+  border-radius: 4px;
+  padding: 0.1em 0.5em;
+  border: none;
+}
+
+.theme-dark .tag:hover {
+  background-color: rgba(254, 128, 25, 0.22);
+}
+
+/* ═══════════════════════════════════════════
+   6. WIKILINKS & BACKLINKS
+   ═══════════════════════════════════════════ */
+
+.theme-dark .internal-link {
+  color: var(--cd-accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(254, 128, 25, 0.20);
+  transition: border-color var(--cd-transition);
+}
+
+.theme-dark .internal-link:hover {
+  border-bottom-color: var(--cd-accent);
+}
+
+.theme-dark .internal-link.is-unresolved {
+  color: var(--cd-text-faint);
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+  font-style: italic;
+}
+
+.theme-dark .backlink-node {
+  background-color: var(--cd-bg-raised);
+  border-radius: var(--cd-radius-md);
+  padding: 0.5em;
+  transition: border-color var(--cd-transition);
+}
+
+.theme-dark .backlink-node:hover {
+  border-color: var(--cd-border-strong);
+  background-color: var(--cd-bg-overlay);
+}
+
+/* ═══════════════════════════════════════════
+   7. PROPERTIES / FRONTMATTER
+   ═══════════════════════════════════════════ */
+
+.theme-dark .metadata-property {
+  color: var(--cd-text-muted);
+}
+
+.theme-dark .metadata-property-key {
+  color: var(--cd-text-faint);
+}
+
+.theme-dark .metadata-property-value {
+  color: var(--cd-text);
+}
+
+/* ═══════════════════════════════════════════
+   9. SCROLLBAR — Thin & subtle
+   ═══════════════════════════════════════════ */
+
+.theme-dark ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.theme-dark ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.theme-dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 3px;
+}
+
+.theme-dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.theme-dark ::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* ═══════════════════════════════════════════
+   10. REDUCED MOTION
+   ═══════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0ms !important;
+    animation-duration: 0ms !important;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   11. RESPONSIVE — Narrow windows
+   ═══════════════════════════════════════════ */
+
+@media (max-width: 900px) {
+  .theme-dark .markdown-preview-view {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}

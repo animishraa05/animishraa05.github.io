@@ -1,0 +1,231 @@
+/*
+ * graph-beautifier.css — Graph View Polish
+ * Glowing nodes, warm colors, gradient background.
+ * Works with graph.json colorGroups + CSS variable fallbacks.
+ */
+
+/* ═══════════════════════════════════════════
+   0. GRAPH COLOR VARIABLES — Fallback palette
+   New folders auto-inherit these if not in colorGroups.
+   ═══════════════════════════════════════════ */
+
+:root {
+  /* Default node colors (first-match from graph.json, else these) */
+  --gb-node-default:     #8899AA;
+  --gb-node-focused:     #E8A430;
+  --gb-node-tag:         #B07AA1;
+  --gb-node-attachment:  #666666;
+  --gb-node-unresolved:  #555566;
+
+  /* Line colors */
+  --gb-line-default:     rgba(136, 153, 170, 0.12);
+  --gb-line-focused:     rgba(232, 164, 48, 0.50);
+  --gb-line-hover:       rgba(232, 164, 48, 0.25);
+
+  /* Text */
+  --gb-text:             rgba(200, 200, 215, 0.85);
+  --gb-text-focused:     #EEEEF2;
+
+  /* Background */
+  --gb-bg:               #0E0E16;
+  --gb-bg-gradient:      radial-gradient(
+    ellipse at 50% 40%,
+    #1A1A2A 0%,
+    #12121C 35%,
+    #0E0E16 70%,
+    #0A0A12 100%
+  );
+
+  /* Glow */
+  --gb-glow-color:       rgba(232, 164, 48, 0.40);
+  --gb-glow-spread:      8px;
+
+  /* 10-color fallback palette (Tableau 10, colorblind-friendly) */
+  --gb-palette-0: #4E79A7;
+  --gb-palette-1: #F28E2B;
+  --gb-palette-2: #E15759;
+  --gb-palette-3: #76B7B2;
+  --gb-palette-4: #59A14F;
+  --gb-palette-5: #EDC948;
+  --gb-palette-6: #B07AA1;
+  --gb-palette-7: #FF9DA7;
+  --gb-palette-8: #9C755F;
+  --gb-palette-9: #BAB0AC;
+}
+
+/* ═══════════════════════════════════════════
+   1. GRAPH VIEW BACKGROUND
+   ═══════════════════════════════════════════ */
+
+.graph-view.color-fill {
+  color: var(--gb-node-default);
+}
+
+.graph-view.color-fill-focused {
+  color: var(--gb-node-focused);
+}
+
+.graph-view.color-fill-tag {
+  color: var(--gb-node-tag);
+}
+
+.graph-view.color-fill-attachment {
+  color: var(--gb-node-attachment);
+}
+
+.graph-view.color-fill-unresolved {
+  color: var(--gb-node-unresolved);
+  opacity: 0.4;
+}
+
+.graph-view.color-line {
+  color: var(--gb-line-default);
+}
+
+.graph-view.color-arrow {
+  color: var(--gb-line-default);
+}
+
+.graph-view.color-circle {
+  color: var(--gb-node-default);
+}
+
+.graph-view.color-text {
+  color: var(--gb-text);
+}
+
+.graph-view.color-fill-highlight {
+  color: var(--gb-node-focused);
+}
+
+.graph-view.color-line-highlight {
+  color: var(--gb-line-focused);
+}
+
+/* ═══════════════════════════════════════════
+   2. GRAPH CONTAINER — Background gradient
+   ═══════════════════════════════════════════ */
+
+.graph-view .graph-view-container {
+  background: var(--gb-bg-gradient) !important;
+  background-color: var(--gb-bg) !important;
+}
+
+/* ═══════════════════════════════════════════
+   3. NODE STYLING — Via CSS classes
+   ═══════════════════════════════════════════ */
+
+/* Focused node glow */
+.graph-view .node.is-focused circle {
+  filter: drop-shadow(0 0 var(--gb-glow-spread) var(--gb-glow-color));
+}
+
+/* Hovered node brighten */
+.graph-view .node:hover circle {
+  filter: brightness(1.3) drop-shadow(0 0 4px rgba(255, 255, 255, 0.10));
+  transition: filter 150ms ease;
+}
+
+/* Node text labels */
+.graph-view .node text {
+  fill: var(--gb-text);
+  font-size: 0.78em;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.graph-view .node.is-focused text {
+  fill: var(--gb-text-focused);
+  font-weight: 600;
+  font-size: 0.85em;
+}
+
+/* ═══════════════════════════════════════════
+   4. EDGE/LINE STYLING
+   ═══════════════════════════════════════════ */
+
+.graph-view .link {
+  stroke-opacity: 0.12;
+  transition: stroke-opacity 150ms ease;
+}
+
+.graph-view .link.is-focused {
+  stroke-opacity: 0.50;
+  stroke: var(--gb-line-focused);
+}
+
+.graph-view:hover .link {
+  stroke-opacity: 0.08;
+}
+
+.graph-view:hover .link.is-focused {
+  stroke-opacity: 0.55;
+}
+
+/* ═══════════════════════════════════════════
+   5. GRAPH FILTER BAR
+   ═══════════════════════════════════════════ */
+
+.graph-view .graph-filter-input {
+  background-color: var(--cd-bg-surface, #282834);
+  border: 1px solid var(--cd-border, rgba(255, 255, 255, 0.06));
+  border-radius: 8px;
+  color: var(--cd-text, #D4D4DC);
+  padding: 6px 12px;
+  font-size: 0.82em;
+}
+
+.graph-view .graph-filter-input:focus {
+  border-color: var(--cd-accent, #E8A430);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(232, 164, 48, 0.15);
+}
+
+/* ═══════════════════════════════════════════
+   6. GRAPH SETTINGS PANEL
+   ═══════════════════════════════════════════ */
+
+.graph-view .graph-settings-view {
+  background-color: var(--cd-bg-raised, #1C1C28);
+  border: 1px solid var(--cd-border, rgba(255, 255, 255, 0.06));
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.graph-view .graph-settings-view label {
+  color: var(--cd-text-muted, #8888A0);
+  font-size: 0.78em;
+}
+
+/* ═══════════════════════════════════════════
+   7. LOCAL GRAPH (right sidebar)
+   ═══════════════════════════════════════════ */
+
+.graph-view.color-fill-focused {
+  color: var(--gb-node-focused);
+}
+
+/* Local graph has slightly different bg */
+.workspace-leaf-content[data-type="local-graph"] .graph-view .graph-view-container {
+  background: radial-gradient(
+    ellipse at 50% 40%,
+    rgba(26, 26, 42, 0.8) 0%,
+    var(--cd-bg-raised, #1C1C28) 100%
+  ) !important;
+}
+
+/* ═══════════════════════════════════════════
+   8. NODE COLOR BY FOLDER — CSS class overrides
+   These target the DOM classes Obsidian adds
+   based on graph.json colorGroups.
+   ═══════════════════════════════════════════ */
+
+/*
+ * If you want CSS-level folder coloring in addition to
+ * graph.json colorGroups, uncomment and adjust these.
+ * They work by matching the node's data attributes.
+ *
+ * Example: .graph-view .node[data-path*="wiki/ejb"] circle { fill: #EDC948; }
+ *
+ * graph.json colorGroups are the primary mechanism.
+ * These are fallbacks for when colorGroups don't cover a path.
+ */

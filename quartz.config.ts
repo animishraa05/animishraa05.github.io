@@ -1,0 +1,183 @@
+import { GlobalConfiguration, QuartzConfig, customMacros, katexOptions } from './quartz/cfg'
+import * as Component from './quartz/components'
+import * as Plugin from './quartz/plugins'
+
+const configuration: GlobalConfiguration = {
+  pageTitle: "Animesh Mishra",
+  enableSPA: true,
+  enablePopovers: true,
+  analytics: { provider: 'plausible' },
+  locale: 'en-US',
+  baseUrl: 'animishraa05.github.io',
+  ignorePatterns: [
+    'private',
+    'templates',
+    '.obsidian',
+    '**.adoc',
+    '**.zip',
+    '**.epub',
+    '**.docx',
+    '**.lvbitx',
+    '**.pyc',
+    '**.slx',
+    '**.so',
+    '**/docs',
+    '**/*400232791*',
+    '__pycache__',
+    '.mypy_cache',
+    '.ruff_cache',
+    '**.ignore.pdf',
+    'capstone',
+    '**/.conform*',
+    '**/target',
+    '**/data',
+    'hinterland/healthexporter/**',
+    'quartz/static/emails.txt',
+  ],
+  defaultDateType: 'created',
+  theme: {
+    cdnCaching: true,
+    fontOrigin: 'local',
+    typography: {
+      title: 'Space Groteskque',
+      header: 'Parclo Serif',
+      body: 'PP Neue Montreal',
+      code: 'Berkeley Mono',
+    },
+    colors: {
+      lightMode: {
+        light: 'rgb(255, 252, 240)',
+        lightgray: 'rgb(230, 228, 217)',
+        gray: 'rgb(183, 181, 172)',
+        darkgray: 'rgb(111, 110, 105)',
+        dark: 'rgb(16, 15, 15)',
+        secondary: 'rgb(205, 213, 151)',
+        tertiary: 'rgb(252, 193, 146)',
+        highlight: 'rgb(218, 216, 206)',
+        textHighlight: 'rgb(241, 214, 126)',
+      },
+      darkMode: {
+        light: 'rgb(16, 15, 15)',
+        lightgray: 'rgb(40, 39, 38)',
+        gray: 'rgb(87, 86, 83)',
+        darkgray: 'rgb(135, 133, 128)',
+        dark: 'rgb(206, 205, 195)',
+        secondary: 'rgb(205, 213, 151)',
+        tertiary: 'rgb(252, 193, 146)',
+        highlight: 'rgb(135, 154, 57)',
+        textHighlight: 'rgb(67, 133, 190)',
+      },
+    },
+  },
+  semanticSearch: {
+    enable: true,
+    // onnx-community/Qwen3-Embedding-0.6B-ONNX
+    // intfloat/multilingual-e5-large
+    // intfloat/multilingual-e5-large-instruct
+    // google/embeddinggemma-300m
+    model: 'google/embeddinggemma-300m',
+    aot: true,
+    dims: 768,
+    dtype: 'fp32',
+    shardSizeRows: 1024,
+    hnsw: { M: 16, efConstruction: 200 },
+    chunking: { chunkSize: 128, chunkOverlap: 64 },
+    vllm: { concurrency: 16, batchSize: 128 },
+  },
+  keybinds: {
+    'cmd+/': 'search',
+    'cmd+\\': "homepage",
+    'cmd+j': 'curius',
+    'cmd+g': 'triathlon',
+    'cmd+.': 'arena',
+    'cmd+i': 'stream',
+    'cmd+b': 'reader',
+    'cmd+o': 'opener',
+    'cmd+p': 'command palette',
+    "cmd+'": 'shortcut help',
+    gh: 'title navigation',
+    D: 'dark/light/system mode',
+    f: 'link selection mode',
+    'j/k': 'scroll up/down',
+    gg: 'go to start',
+    G: 'go to end',
+    'ctrl+d/u': 'half-page up/down',
+    'H/M/L': 'top/middle/bottom of viewport',
+  },
+}
+
+/**
+ * Quartz 4.0 Configuration
+ *
+ * See https://quartz.jzhao.xyz/configuration for more information.
+ */
+const config: QuartzConfig = {
+  configuration,
+  plugins: {
+    transformers: [
+      Plugin.FrontMatter(),
+      Plugin.CreatedModifiedDate({ priority: ['frontmatter', 'filesystem'] }),
+      Plugin.Aarnphm(),
+      Plugin.Flashcards(),
+      Plugin.Pseudocode(),
+      Plugin.TikzJax({ showConsole: false }),
+      Plugin.TelescopicText(),
+      Plugin.Codeblock(),
+      // Convert code-file transcludes to code blocks before highlighting
+      Plugin.CodeViewer({ indexUrls: { lean: '/api/lean/verify' } }),
+      Plugin.Twitter(),
+      Plugin.SyntaxHighlighting({ keepBackground: true }),
+      // Plugin.Citations
+      Plugin.ObsidianBases(),
+      Plugin.JsonCanvas(),
+      Plugin.Tracking(),
+      Plugin.ObsidianFlavoredMarkdown(),
+      Plugin.GitHubFlavoredMarkdown(),
+      Plugin.CrawlLinks({
+        markdownLinkResolution: 'absolute',
+        externalLinkIcon: true,
+        lazyLoad: true,
+        enableArxivEmbed: true,
+        enableRawEmbed: true,
+      }),
+      Plugin.GithubCodeEmbed(),
+      Plugin.Description(),
+      Plugin.Latex({ renderEngine: 'katex', customMacros, katexOptions }),
+      Plugin.GitHub({
+        internalLinks: [
+          'livingalonealone.com',
+          'bentoml.com',
+          'vllm.ai',
+          'obsidian.md',
+          'neovim.io',
+        ],
+      }),
+      Plugin.Sidenotes(),
+      Plugin.TableOfContents({ maxDepth: 5 }),
+      Plugin.GraphvizPlugin(),
+      Plugin.Slides(),
+      Plugin.Protected(),
+    ],
+    filters: [Plugin.RemoveDrafts(), Plugin.RemovePrivate()],
+    emitters: [
+      Plugin.AliasRedirects(),
+      Plugin.ComponentResources(),
+      // Plugin.Bibliography
+      Plugin.ContentPage(),
+      Plugin.FolderPage(),
+      Plugin.TagPage(),
+      Plugin.ContentIndex({ atomLimit: 50 }),
+      Plugin.SemanticIndex(configuration.semanticSearch!),
+      Plugin.Assets(),
+      Plugin.Static(),
+      Plugin.Favicon(),
+      Plugin.NotFoundPage(),
+      Plugin.CustomOgImages(),
+      Plugin.SlidesPage(),
+      Plugin.BasePage(),
+      Plugin.Masonry(),
+    ],
+  },
+}
+
+export default config

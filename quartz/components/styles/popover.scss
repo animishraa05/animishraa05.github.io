@@ -1,0 +1,647 @@
+@use '../../styles/variables.scss' as *;
+
+@keyframes dropin {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  1% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.popover {
+  --popover-padding: 1rem;
+  --popover-border: 1px;
+  --popover-arrow-size: 0.58rem;
+  --popover-arrow-leg: calc(var(--popover-arrow-size) * 0.7071);
+  --popover-arrow-overlap: calc(var(--popover-border) / 0.7071);
+  --popover-arrow-inset: calc(var(--popover-padding) - var(--popover-arrow-size) / 2);
+
+  z-index: var(--z-popover);
+  position: fixed;
+  isolation: isolate;
+  overflow: visible;
+  padding: var(--popover-padding);
+  left: 0;
+  top: 0;
+  will-change: transform;
+  filter: none;
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    opacity 120ms linear,
+    visibility 0ms linear 120ms;
+
+  .grid {
+    --layout-reading-column: 1 / -1;
+    --layout-wide-column: 1 / -1;
+    --layout-side-column: 1 / -1;
+    --layout-header-column: 1 / -1;
+    --layout-byline-column: 1 / -1;
+    --layout-byline-template: minmax(0, 1fr) minmax(12rem, 1fr);
+
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .page-header,
+  .page-content,
+  .page-footer,
+  .title-col,
+  .main-col,
+  .side-col,
+  .full-col,
+  .all-col {
+    grid-column: 1 / -1 !important;
+    min-width: 0;
+  }
+
+  .byline {
+    grid-column: 1 / -1 !important;
+    grid-template-columns: var(--layout-byline-template) !important;
+
+    & > * {
+      &:last-child {
+        border-left: 1px solid var(--lightgray);
+      }
+    }
+
+    div.first,
+    menu.tags {
+      grid-column: 1 / 2 !important;
+      min-width: 0;
+    }
+
+    .content-meta {
+      grid-column: 2 / 3 !important;
+      min-width: 0;
+    }
+  }
+
+  & > .popover-arrow {
+    position: absolute;
+    width: var(--popover-arrow-size);
+    height: var(--popover-arrow-size);
+    pointer-events: none;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 120ms linear;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border: var(--popover-arrow-leg) solid transparent;
+    }
+  }
+
+  &[data-placement^='bottom'] > .popover-arrow {
+    &::before {
+      bottom: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-bottom-color: var(--gray);
+    }
+
+    &::after {
+      bottom: calc(50% - var(--popover-arrow-overlap));
+      left: 50%;
+      transform: translateX(-50%);
+      border-bottom-color: var(--light);
+    }
+  }
+
+  &[data-placement^='top'] > .popover-arrow {
+    &::before {
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-top-color: var(--gray);
+    }
+
+    &::after {
+      top: calc(50% - var(--popover-arrow-overlap));
+      left: 50%;
+      transform: translateX(-50%);
+      border-top-color: var(--light);
+    }
+  }
+
+  &[data-placement^='right'] > .popover-arrow {
+    &::before {
+      right: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      border-right-color: var(--gray);
+    }
+
+    &::after {
+      right: calc(50% - var(--popover-arrow-overlap));
+      top: 50%;
+      transform: translateY(-50%);
+      border-right-color: var(--light);
+    }
+  }
+
+  &[data-placement^='left'] > .popover-arrow {
+    &::before {
+      left: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      border-left-color: var(--gray);
+    }
+
+    &::after {
+      left: calc(50% - var(--popover-arrow-overlap));
+      top: 50%;
+      transform: translateY(-50%);
+      border-left-color: var(--light);
+    }
+  }
+
+  & > .popover-inner {
+    position: relative;
+    z-index: 1;
+    width: 30rem;
+    max-height: 20rem;
+    padding: 0 1rem 1rem 1rem;
+    font-weight: initial;
+    font-style: initial;
+    line-height: normal;
+    font-size: initial;
+    font-family: var(--bodyFont);
+    border: var(--popover-border) solid var(--gray);
+    border-radius: var(--radius-none);
+    background-color: var(--light);
+    overflow: auto;
+    overscroll-behavior: contain;
+    white-space: normal;
+    user-select: none;
+    cursor: default;
+
+    footer {
+      display: none;
+    }
+  }
+
+  & > .popover-inner[data-content-type] {
+    &[data-content-type*='pdf'],
+    &[data-content-type*='image'] {
+      padding: 0;
+      max-height: 100%;
+    }
+
+    &[data-state='loading'] {
+      overflow: hidden;
+    }
+
+    &[data-content-type*='image'] {
+      img {
+        margin: 0;
+        border-radius: var(--radius-none);
+        display: block;
+      }
+    }
+
+    &[data-content-type*='pdf'] {
+      --popover-pdf-background: var(--light);
+
+      width: min(var(--popover-pdf-width, 30rem), calc(100vw - 2rem));
+      height: min(var(--popover-pdf-height, 20rem), calc(100vh - 2rem));
+      background: var(--popover-pdf-background);
+      overflow: hidden;
+
+      .pdf-embed-preview {
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: var(--popover-pdf-background);
+      }
+
+      .pdf-embed-toolbar,
+      .pdf-embed-body,
+      .pdf-viewer-container,
+      .pdf-viewer-shell,
+      .pdf-embed-page {
+        background: var(--popover-pdf-background);
+      }
+
+      .popover-loading {
+        background: var(--popover-pdf-background);
+      }
+
+      .popover-loading-dots span {
+        background: var(--gray);
+      }
+
+      .pdf-annotation-rail {
+        display: none;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  @media all and ($mobile) {
+    display: none !important;
+  }
+}
+
+.footnote-popover,
+.bib-popover {
+  color: var(--dark);
+
+  & > .popover-inner {
+    padding: 0.5rem 0.5rem 1rem;
+  }
+}
+
+.wikipedia-popover {
+  color: var(--dark);
+
+  & > .popover-inner {
+    padding: 0;
+    max-height: 24rem;
+  }
+}
+
+.wikipedia-popover-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.75rem;
+  padding: 0.875rem;
+
+  &.has-thumbnail {
+    grid-template-columns: minmax(0, 1fr) 7rem;
+  }
+}
+
+.wikipedia-popover-header {
+  min-width: 0;
+}
+
+.wikipedia-popover-heading {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.wikipedia-popover .wikipedia-popover-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.2;
+
+  a {
+    color: var(--dark);
+    text-decoration: none;
+
+    &:hover {
+      background: transparent;
+      color: var(--secondary);
+    }
+  }
+}
+
+.wikipedia-popover-description {
+  margin: 0.25rem 0 0;
+  color: var(--gray);
+  font-size: 0.78rem;
+  line-height: 1.3;
+}
+
+.wikipedia-popover-thumbnail {
+  width: 7rem;
+  max-height: 8rem;
+  object-fit: contain;
+  align-self: start;
+  margin: 0;
+}
+
+.wikipedia-popover-extract {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.wikipedia-popover-source {
+  grid-column: 1 / -1;
+  color: var(--gray);
+  font-size: 0.78rem;
+  text-decoration: none;
+
+  &:hover {
+    background: transparent;
+    color: var(--secondary);
+  }
+}
+
+.lesswrong-popover,
+.sep-popover {
+  color: var(--dark);
+
+  & > .popover-inner {
+    padding: 0;
+    max-height: 25rem;
+  }
+}
+
+.triathlon-popover {
+  color: var(--dark);
+
+  & > .popover-inner {
+    width: min(300px, 84vw);
+    max-height: min(60vh, 24rem);
+    padding: 0;
+  }
+}
+
+.lesswrong-popover-card,
+.sep-popover-card {
+  padding: 0.95rem;
+}
+
+.lesswrong-popover-header,
+.sep-popover-header {
+  display: grid;
+  gap: 0.45rem;
+  justify-items: start;
+  min-width: 0;
+}
+
+.lesswrong-popover-title,
+.sep-popover-title {
+  margin: 0;
+  padding: 0;
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.18;
+
+  a {
+    color: var(--dark);
+    text-decoration: none;
+
+    &:hover {
+      background: transparent;
+      color: var(--secondary);
+    }
+  }
+}
+
+.lesswrong-popover-meta,
+.sep-popover-meta,
+ul.tags.lesswrong-popover-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--darkgray);
+  font-size: 0.78rem;
+  line-height: 1.25;
+}
+
+.lesswrong-popover-meta,
+.sep-popover-meta {
+  justify-content: flex-start;
+
+  .author {
+    color: var(--dark);
+    font-weight: 600;
+  }
+}
+
+ul.tags.lesswrong-popover-tags {
+  gap: 0.4rem;
+  margin: 0;
+  line-height: 1.4rem;
+
+  li {
+    display: inline-block;
+    margin: 0;
+    overflow-wrap: normal;
+    white-space: nowrap;
+  }
+}
+
+span.internal.tag-link.lesswrong-popover-tag {
+  display: inline;
+  padding: 3px;
+  margin: -1px;
+  color: var(--darkgray);
+  font-family: var(--bodyFont);
+  font-size: 1em;
+  font-weight: 400;
+  line-height: inherit;
+  text-decoration: none;
+  border: 1px solid var(--telescope-border);
+  background: transparent;
+
+  &::before {
+    content: '#';
+  }
+}
+
+.popover-toc {
+  display: grid;
+  float: right;
+  gap: 0.35rem;
+  width: min(62%, 10rem);
+  box-sizing: border-box;
+  margin: 0.85rem 0 0.65rem 0.9rem;
+  padding: 0.55rem 0.65rem 0.6rem;
+  border: 1px solid color-mix(in srgb, var(--lightgray) 70%, transparent);
+  border-radius: var(--radius-none);
+}
+
+.popover-toc-title {
+  color: var(--gray);
+  font-family: var(--bodyFont);
+  font-size: 0.68rem;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.popover-toc-list {
+  display: grid;
+  gap: 0.2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.popover-toc-item {
+  min-width: 0;
+  margin: 0;
+  padding-left: var(--popover-toc-indent, 0);
+}
+
+.popover-toc-link {
+  display: block;
+  overflow: hidden;
+  color: var(--darkgray);
+  font-size: 0.78rem;
+  line-height: 1.22;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &:hover {
+    background: transparent;
+    color: var(--secondary);
+  }
+}
+
+.lesswrong-popover-extract,
+.sep-popover-extract {
+  margin: 0.85rem 0;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.lesswrong-popover-source,
+.sep-popover-source {
+  display: inline-block;
+  clear: both;
+  color: var(--gray);
+  font-size: 0.78rem;
+  text-decoration: none;
+
+  &:hover {
+    background: transparent;
+    color: var(--secondary);
+  }
+}
+
+.active-popover,
+.popover:hover {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0ms;
+}
+
+.active-popover > .popover-arrow,
+.popover:hover > .popover-arrow {
+  opacity: 1;
+}
+
+.preview-skeleton {
+  padding: 1rem 0;
+  height: 20rem;
+  max-height: 20rem;
+
+  .skeleton-title,
+  .skeleton-meta,
+  .skeleton-line {
+    background: linear-gradient(
+      90deg,
+      var(--lightgray) 25%,
+      color-mix(in srgb, var(--lightgray) 50%, transparent) 50%,
+      var(--lightgray) 75%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.5s infinite;
+    border-radius: var(--radius-none);
+  }
+
+  .skeleton-title {
+    height: 1.5rem;
+    width: 60%;
+    margin-bottom: 0.75rem;
+  }
+
+  .skeleton-meta {
+    height: 0.875rem;
+    width: 40%;
+    margin-bottom: 1rem;
+  }
+
+  .skeleton-line {
+    height: 0.875rem;
+    width: 100%;
+    margin-bottom: 0.5rem;
+
+    &.short {
+      width: 75%;
+    }
+  }
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.preview-empty {
+  color: var(--gray);
+  font-style: italic;
+  padding: 1rem 0;
+}
+
+.popover-loading {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  background: #2b2b2b;
+}
+
+.popover-loading-dots {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.42rem;
+}
+
+.popover-loading-dots span {
+  width: 0.36rem;
+  height: 0.36rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.64);
+  animation: popover-loading-dot 900ms ease-in-out infinite;
+}
+
+.popover-loading-dots span:nth-child(2) {
+  animation-delay: 120ms;
+}
+
+.popover-loading-dots span:nth-child(3) {
+  animation-delay: 240ms;
+}
+
+@keyframes popover-loading-dot {
+  0%,
+  100% {
+    opacity: 0.28;
+    transform: scale(0.72);
+  }
+
+  45% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

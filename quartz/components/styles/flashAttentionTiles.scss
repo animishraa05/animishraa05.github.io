@@ -1,0 +1,267 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixin.scss' as *;
+@use './figure.scss' as *;
+
+.flash-attention-tiles {
+  @include figure-frame('fat-figure', 32rem);
+
+  --fat-stroke: color-mix(in srgb, var(--darkgray) 70%, transparent);
+  --fat-stroke-soft: color-mix(in srgb, var(--gray) 45%, transparent);
+  --fat-divider: color-mix(in srgb, var(--gray) 30%, transparent);
+  --fat-note-fg: color-mix(in srgb, var(--darkgray) 78%, var(--dark) 22%);
+  --fat-bg-cell: color-mix(in srgb, var(--lightgray) 60%, var(--light));
+  --fat-bg-faded: color-mix(in srgb, var(--lightgray) 35%, var(--light));
+  --fat-active: #fdb2a2;
+  --fat-active-bg: color-mix(in srgb, #fdb2a2 35%, var(--light));
+  --fat-done: #cdd597;
+  --fat-done-bg: color-mix(in srgb, #cdd597 30%, var(--light));
+}
+
+:root[saved-theme='dark'] .flash-attention-tiles {
+  --fat-active-bg: color-mix(in srgb, #fdb2a2 25%, var(--lightgray));
+  --fat-done-bg: color-mix(in srgb, #cdd597 22%, var(--lightgray));
+  --fat-bg-cell: color-mix(in srgb, var(--lightgray) 35%, var(--dark));
+  --fat-bg-faded: color-mix(in srgb, var(--lightgray) 20%, var(--dark));
+}
+
+.fat-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.fat-graph {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 720 / 492;
+  display: block;
+
+  .fat-fo--axis {
+    color: var(--fat-note-fg);
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .fat-fo--block-label {
+    justify-content: flex-end;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--fat-note-fg);
+  }
+  .fat-fo--sublabel {
+    font-size: 10px;
+    font-style: italic;
+    color: var(--fat-note-fg);
+    .katex {
+      font-size: 1em;
+    }
+  }
+  .fat-fo--tile {
+    font-size: 11.5px;
+    color: var(--dark);
+  }
+  .fat-fo--caption-line {
+    color: var(--fat-note-fg);
+    font-size: 12px;
+  }
+
+  .fat-cell {
+    fill: var(--fat-bg-cell);
+    stroke: var(--fat-stroke-soft);
+    stroke-width: 0.75;
+    transition:
+      fill 220ms ease,
+      stroke 220ms ease;
+    &.is-faded {
+      fill: var(--fat-bg-faded);
+    }
+    &.is-done {
+      fill: var(--fat-done-bg);
+      stroke: var(--fat-done);
+    }
+    &.is-active {
+      fill: var(--fat-active-bg);
+      stroke: var(--fat-active);
+      stroke-width: 1.25;
+    }
+  }
+
+  .fat-arrow {
+    stroke: var(--fat-stroke);
+    stroke-width: 1.2;
+    fill: none;
+    opacity: 0;
+    transition: opacity 220ms ease;
+    &.is-active {
+      stroke: var(--fat-active);
+      opacity: 0.95;
+    }
+  }
+
+  .fat-arrowhead {
+    fill: var(--fat-stroke);
+    &.is-active {
+      fill: var(--fat-active);
+    }
+  }
+
+  .fat-sram-panel {
+    fill: none;
+    stroke: var(--fat-divider);
+    stroke-width: 1;
+  }
+
+  .fat-fo {
+    @include figure-fo;
+    justify-content: center;
+    font-size: 12px;
+  }
+}
+
+.fat-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.fat-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-none);
+  border: 1px solid var(--gray);
+  background: color-mix(in srgb, var(--light) 92%, transparent);
+  color: var(--dark);
+  font-family: var(--bodyFont);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 160ms ease;
+  &:hover {
+    background: color-mix(in srgb, var(--fat-active) 18%, var(--light));
+  }
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+  &[data-fat-reset] {
+    background: transparent;
+  }
+}
+
+.fat-step-readout {
+  color: var(--fat-note-fg);
+  font-family: var(--bodyFont);
+  font-size: 0.85rem;
+  .katex {
+    color: var(--dark);
+    font-size: 0.95em;
+  }
+}
+
+.fat-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.fat-card {
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-none);
+  border: 1px solid var(--gray);
+  background: color-mix(in srgb, var(--light) 96%, transparent);
+}
+
+.fat-stats {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.3rem 0.9rem;
+  font-family: var(--bodyFont);
+  font-size: 0.88rem;
+  color: var(--dark);
+  dt {
+    color: var(--fat-note-fg);
+  }
+  dd {
+    margin: 0;
+  }
+  .katex {
+    color: inherit;
+    font-size: 0.95em;
+  }
+}
+
+.fat-recurrence {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-top: 1rem;
+  padding: 0.85rem 1.1rem;
+  border-radius: var(--radius-none);
+  background: color-mix(in srgb, var(--light) 96%, transparent);
+
+  .fat-math {
+    display: block;
+  }
+  .katex-display {
+    margin: 0.2rem 0;
+    text-align: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+}
+
+.fat-math {
+  color: var(--dark);
+  .katex {
+    color: inherit;
+    font-size: 0.95em;
+  }
+  .katex-display {
+    margin: 0.15rem 0;
+    text-align: left;
+    & > .katex {
+      text-align: left;
+    }
+  }
+}
+
+.fat-ratio {
+  margin: 0;
+  min-width: 0;
+  overflow-x: auto;
+  font-family: var(--bodyFont);
+  font-size: 0.85rem;
+  color: var(--fat-note-fg);
+  .katex {
+    color: var(--dark);
+    font-size: 0.92em;
+  }
+}
+
+.fat-caption {
+  @include figure-caption;
+
+  .fat-math {
+    @include figure-caption-math-gap;
+  }
+}
+
+@container fat-figure (max-width: 760px) {
+  .fat-stage {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+@container fat-figure (max-width: 460px) {
+  .flash-attention-tiles {
+    padding: 0;
+  }
+  .fat-recurrence .katex {
+    font-size: 0.82em;
+  }
+}

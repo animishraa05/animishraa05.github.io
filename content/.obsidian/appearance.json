@@ -1,0 +1,14 @@
+{
+  "cssTheme": "Monokai",
+  "baseFontSize": 21,
+  "theme": "moonstone",
+  "translucency": false,
+  "nativeMenus": false,
+  "textFontFamily": "AtkynsonMono Nerd Font Mono",
+  "interfaceFontFamily": "Atkinson Hyperlegible Mono",
+  "monospaceFontFamily": "JetBrains Mono",
+  "enabledCssSnippets": [],
+  "baseFontSizeAction": true,
+  "showRibbon": false,
+  "showViewHeader": false
+}

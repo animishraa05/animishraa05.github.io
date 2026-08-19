@@ -1,0 +1,491 @@
+import type { RoughAnnotation } from 'rough-notation/lib/model'
+import { annotate } from 'rough-notation'
+
+let ag: RoughAnnotation | null = null
+let tocCleanup: (() => void) | null = null
+const tocScrollBuffer = 48
+const tocHoverSigma = 42
+const tocHoverRadius = tocHoverSigma * 3
+const tocHoverLerp = 0.32
+const tocHoverEpsilon = 0.08
+const tocDenseThreshold = 50
+const headingSelector = 'h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]'
+
+interface TocButtonMetric {
+  button: HTMLButtonElement
+  fill: HTMLElement | null
+  centerY: number
+  label: string
+  touched: boolean
+}
+
+let activeToc: HTMLDivElement | null = null
+let tocEntryBySlug = new Map<string, HTMLElement>()
+
+const observer = new IntersectionObserver(entries => {
+  for (const entry of entries) {
+    const slug = entry.target.id
+    const tocEntryElement = tocEntryBySlug.get(slug)
+    if (!tocEntryElement) continue
+
+    const toc = activeToc
+    if (!toc) continue
+
+    const windowHeight = entry.rootBounds?.height
+    if (!windowHeight) continue
+
+    const layout = toc.dataset.layout
+    const inView = entry.boundingClientRect.y < windowHeight
+    if (layout === 'minimal') {
+      tocEntryElement.classList.toggle('in-view', inView)
+      if (entry.isIntersecting && tocEntryElement instanceof HTMLButtonElement) {
+        scrollTocButtonIntoView(tocEntryElement)
+      }
+    } else {
+      tocEntryElement.classList.toggle('in-view', inView)
+      tocEntryElement.parentElement?.classList.toggle('in-view', inView)
+    }
+  }
+})
+
+function onClick(evt: MouseEvent) {
+  if (!(evt.target instanceof Element)) return
+
+  const button = evt.target.closest<HTMLButtonElement>('button[data-href]')
+  if (!button) return
+
+  const href = button.dataset.href
+  if (!href?.startsWith('#')) return
+
+  evt.preventDefault()
+  scrollToElement(href)
+
+  const toc = button.closest<HTMLElement>('.toc')
+  if (toc) {
+    toc.classList.remove('is-hovering')
+    setTocHovering(toc.closest<HTMLElement>('.page-content'), false)
+    hideTocLabel(toc)
+  }
+  resetTocButtons(toc?.querySelectorAll<HTMLButtonElement>('button[data-for]'))
+
+  if (window.location.hash) {
+    setTimeout(() => {
+      scrollToElement(window.location.hash)
+    }, 10)
+  }
+}
+
+function scrollToElement(hash: string) {
+  const elementId = hash.slice(1)
+  const element = document.getElementById(elementId)
+  if (!element) return
+
+  const collapsibleParent = element.closest('.collapsible-header-content')
+  if (collapsibleParent) {
+    const wrapper = collapsibleParent.closest('.collapsible-header')
+    const button = wrapper?.querySelector<HTMLButtonElement>('.toggle-button')
+    if (button?.getAttribute('aria-expanded') === 'false') {
+      button.click()
+    }
+  }
+
+  const foldedTransclude = element.closest<HTMLElement>('.transclude-collapsible.is-collapsed')
+  const foldButton = foldedTransclude?.querySelector<HTMLElement>('.transclude-fold')
+  if (foldButton) {
+    foldButton.click()
+  }
+
+  if (ag) ag.hide()
+
+  const highlight = element.querySelector<HTMLElement>('span.highlight-span')
+  if (highlight) {
+    ag = annotate(highlight, {
+      type: 'bracket',
+      color: 'rgba(234, 157, 52, 0.45)',
+      animate: false,
+      multiline: true,
+      brackets: ['left', 'right'],
+    })
+
+    const annotation = ag
+    setTimeout(() => annotation.show(), 50)
+    window.setTimeout(() => ag?.hide(), 2500)
+  }
+
+  const rect = element.getBoundingClientRect()
+  const absoluteTop = window.scrollY + rect.top
+
+  window.scrollTo({ top: absoluteTop - 100, behavior: 'smooth' })
+
+  history.pushState(null, '', hash)
+}
+
+document.addEventListener('nav', (ev: CustomEventMap['nav']) => {
+  if (ev.detail.url) {
+    const url = new URL(ev.detail.url, window.location.origin)
+    if (url.hash) {
+      scrollToElement(decodeURIComponent(url.hash))
+    }
+  }
+})
+
+function setupToc() {
+  cleanupToc()
+  resetTocPageContentClasses()
+
+  const toc = document.querySelector<HTMLElement>('.toc[data-layout="minimal"]')
+  if (!toc) return
+
+  if (getComputedStyle(toc).display === 'none') return
+
+  const nav = toc.querySelector<HTMLElement>('#toc-vertical')
+  if (!nav) return
+
+  const buttons = toc.querySelectorAll<HTMLButtonElement>('button[data-for]')
+  if (buttons.length === 0) return
+
+  const pageContent = toc.closest<HTMLElement>('.page-content')
+  const isDenseToc = toc.dataset.density === 'dense' || buttons.length >= tocDenseThreshold
+  if (isDenseToc) toc.dataset.density = 'dense'
+  pageContent?.classList.add('has-minimal-toc')
+  pageContent?.classList.toggle('toc-dense', isDenseToc)
+
+  const controller = new AbortController()
+  const { signal } = controller
+  let metrics = readTocButtonMetrics(buttons)
+  let maxScale = readTocMaxScale(nav, metrics)
+  let navViewportTop = nav.getBoundingClientRect().top
+
+  let frame = 0
+  let currentMouseY = 0
+  let targetMouseY = 0
+  let activeButton: HTMLButtonElement | null = null
+  let hovering = false
+  let touchedMetrics: TocButtonMetric[] = []
+  let nextTouchedMetrics: TocButtonMetric[] = []
+  let scrollEndTimer = 0
+
+  const setTocScrolling = (scrolling: boolean) => {
+    pageContent?.classList.toggle('toc-scrolling', scrolling)
+  }
+
+  const clearTocScrolling = () => {
+    if (scrollEndTimer !== 0) {
+      window.clearTimeout(scrollEndTimer)
+      scrollEndTimer = 0
+    }
+    setTocScrolling(false)
+  }
+
+  const refreshTocGeometry = () => {
+    navViewportTop = nav.getBoundingClientRect().top
+    metrics = readTocButtonMetrics(buttons)
+    maxScale = readTocMaxScale(nav, metrics)
+    updateTocOverflow(nav)
+  }
+
+  const scheduleHover = () => {
+    if (frame === 0) {
+      frame = requestAnimationFrame(updateHover)
+    }
+  }
+
+  const onMouseEnter = (evt: MouseEvent) => {
+    hovering = true
+    toc.classList.add('is-hovering')
+    setTocHovering(pageContent, true)
+    navViewportTop = nav.getBoundingClientRect().top
+    targetMouseY = evt.clientY - navViewportTop
+    currentMouseY = targetMouseY
+    scheduleHover()
+  }
+
+  const onMouseLeave = () => {
+    hovering = false
+    toc.classList.remove('is-hovering')
+    clearTocScrolling()
+    if (frame !== 0) {
+      cancelAnimationFrame(frame)
+      frame = 0
+    }
+    activeButton?.classList.remove('is-active')
+    activeButton = null
+    setTocHovering(pageContent, false)
+    hideTocLabel(toc)
+    resetTocButtons(buttons)
+    touchedMetrics.length = 0
+    nextTouchedMetrics.length = 0
+  }
+
+  const updateHover = () => {
+    frame = 0
+    currentMouseY += (targetMouseY - currentMouseY) * tocHoverLerp
+
+    const contentMouseY = currentMouseY + nav.scrollTop
+    nextTouchedMetrics.length = 0
+    const startIndex = firstTocMetricIndexAt(metrics, contentMouseY - tocHoverRadius)
+    const endIndex = firstTocMetricIndexAt(metrics, contentMouseY + tocHoverRadius)
+
+    for (let index = startIndex; index < endIndex; index++) {
+      const metric = metrics[index]
+      metric.touched = true
+      updateTocButtonFill(metric, contentMouseY, maxScale)
+      nextTouchedMetrics.push(metric)
+    }
+
+    for (const metric of touchedMetrics) {
+      if (!metric.touched) {
+        resetTocButton(metric.button)
+      }
+    }
+
+    for (const metric of nextTouchedMetrics) {
+      metric.touched = false
+    }
+
+    const previousTouchedMetrics = touchedMetrics
+    touchedMetrics = nextTouchedMetrics
+    nextTouchedMetrics = previousTouchedMetrics
+
+    const nearestMetric = nearestTocMetric(metrics, contentMouseY)
+    if (nearestMetric) {
+      activeButton = updateTocLabel(toc, nearestMetric, activeButton, currentMouseY)
+    }
+
+    if (hovering && Math.abs(targetMouseY - currentMouseY) > tocHoverEpsilon) {
+      scheduleHover()
+    }
+  }
+
+  const onPointerMove = (evt: PointerEvent) => {
+    targetMouseY = evt.clientY - navViewportTop
+    scheduleHover()
+  }
+
+  const onPageScroll = () => {
+    if (!hovering) return
+
+    setTocScrolling(true)
+    if (scrollEndTimer !== 0) {
+      window.clearTimeout(scrollEndTimer)
+    }
+    scrollEndTimer = window.setTimeout(() => {
+      scrollEndTimer = 0
+      setTocScrolling(false)
+    }, 140)
+  }
+
+  nav.addEventListener('click', onClick, { signal })
+  nav.addEventListener('mouseenter', onMouseEnter, { signal })
+  nav.addEventListener('mouseleave', onMouseLeave, { signal })
+  nav.addEventListener('pointermove', onPointerMove, { passive: true, signal })
+  window.addEventListener('scroll', onPageScroll, { passive: true, signal })
+  nav.addEventListener(
+    'scroll',
+    () => {
+      updateTocOverflow(nav)
+      if (toc.classList.contains('is-hovering')) {
+        scheduleHover()
+      }
+    },
+    { passive: true, signal },
+  )
+
+  tocCleanup = () => {
+    controller.abort()
+    if (frame !== 0) {
+      cancelAnimationFrame(frame)
+      frame = 0
+    }
+    activeButton?.classList.remove('is-active')
+    activeButton = null
+    toc.classList.remove('is-hovering')
+    setTocHovering(pageContent, false)
+    clearTocScrolling()
+    hideTocLabel(toc)
+    resetTocButtons(buttons)
+    touchedMetrics.length = 0
+    nextTouchedMetrics.length = 0
+  }
+
+  requestAnimationFrame(refreshTocGeometry)
+}
+
+function cleanupToc() {
+  tocCleanup?.()
+  tocCleanup = null
+}
+
+function cacheTocEntries() {
+  activeToc = document.querySelector<HTMLDivElement>('.toc')
+  tocEntryBySlug = new Map()
+  activeToc?.querySelectorAll<HTMLElement>('[data-for]').forEach(entry => {
+    const slug = entry.dataset.for
+    if (slug) tocEntryBySlug.set(slug, entry)
+  })
+}
+
+function tocHeadingTargets(): HTMLElement[] {
+  const pageContent = activeToc?.closest<HTMLElement>('.page-content')
+  const article = pageContent?.querySelector<HTMLElement>('article')
+  if (!article) return []
+
+  const headingById = new Map<string, HTMLElement>()
+  article.querySelectorAll<HTMLElement>(headingSelector).forEach(heading => {
+    if (!headingById.has(heading.id)) headingById.set(heading.id, heading)
+  })
+
+  const targets: HTMLElement[] = []
+  for (const slug of tocEntryBySlug.keys()) {
+    const heading = headingById.get(slug)
+    if (heading) targets.push(heading)
+  }
+  return targets
+}
+
+function resetTocPageContentClasses() {
+  document.querySelectorAll<HTMLElement>('.page-content.has-minimal-toc').forEach(pageContent => {
+    pageContent.classList.remove('has-minimal-toc', 'toc-hovering', 'toc-scrolling', 'toc-dense')
+  })
+}
+
+function setTocHovering(pageContent: HTMLElement | null | undefined, hovering: boolean) {
+  pageContent?.classList.toggle('toc-hovering', hovering)
+}
+
+function resetTocButtons(buttons?: NodeListOf<HTMLButtonElement>) {
+  buttons?.forEach(resetTocButton)
+}
+
+function resetTocButton(button: HTMLButtonElement) {
+  const fill = button.querySelector<HTMLElement>('.fill')
+  button.classList.remove('is-active')
+  if (!fill) return
+
+  fill.style.animation = 'none'
+  fill.style.transform = 'scaleX(1)'
+  fill.style.opacity = ''
+}
+
+function readTocButtonMetrics(buttons: NodeListOf<HTMLButtonElement>): TocButtonMetric[] {
+  const metrics: TocButtonMetric[] = []
+  buttons.forEach(button => {
+    metrics.push({
+      button,
+      fill: button.querySelector<HTMLElement>('.fill'),
+      centerY: button.offsetTop + button.offsetHeight / 2,
+      label: button.getAttribute('aria-label') ?? '',
+      touched: false,
+    })
+  })
+  return metrics
+}
+
+function readTocMaxScale(nav: HTMLElement, metrics: TocButtonMetric[]): number {
+  const baseWidth = Math.max(1, metrics[0]?.fill?.offsetWidth ?? 1)
+  return Math.max(1, nav.clientWidth / baseWidth)
+}
+
+function firstTocMetricIndexAt(metrics: TocButtonMetric[], centerY: number): number {
+  let low = 0
+  let high = metrics.length
+  while (low < high) {
+    const mid = Math.floor((low + high) / 2)
+    if (metrics[mid].centerY < centerY) {
+      low = mid + 1
+    } else {
+      high = mid
+    }
+  }
+  return low
+}
+
+function nearestTocMetric(metrics: TocButtonMetric[], centerY: number): TocButtonMetric | null {
+  const nextIndex = firstTocMetricIndexAt(metrics, centerY)
+  const previous = metrics[nextIndex - 1]
+  const next = metrics[nextIndex]
+  if (!previous) return next ?? null
+  if (!next) return previous
+
+  return centerY - previous.centerY <= next.centerY - centerY ? previous : next
+}
+
+function updateTocButtonFill(metric: TocButtonMetric, mouseY: number, maxScale: number): void {
+  const { fill } = metric
+  if (!fill) return
+
+  const distance = mouseY - metric.centerY
+  const falloff = Math.exp(-(distance * distance) / (2 * tocHoverSigma * tocHoverSigma))
+  const scale = 1 + (maxScale - 1) * falloff
+
+  fill.style.animation = 'none'
+  fill.style.transform = `scaleX(${scale.toFixed(3)})`
+}
+
+function hideTocLabel(toc: HTMLElement) {
+  toc.querySelector<HTMLElement>('.toc-label')?.classList.remove('is-visible')
+}
+
+function updateTocLabel(
+  toc: HTMLElement,
+  metric: TocButtonMetric,
+  activeButton: HTMLButtonElement | null,
+  labelY: number,
+): HTMLButtonElement {
+  const { button } = metric
+  const label = toc.querySelector<HTMLElement>('.toc-label')
+  if (!label) return button
+
+  if (button !== activeButton) {
+    activeButton?.classList.remove('is-active')
+    button.classList.add('is-active')
+    label.textContent = metric.label
+  }
+
+  toc.style.setProperty('--toc-label-y', `${labelY.toFixed(1)}px`)
+  label.classList.add('is-visible')
+  return button
+}
+
+function updateTocOverflow(nav: HTMLElement) {
+  const scrollable = nav.scrollHeight > nav.clientHeight + 1
+  const atStart = nav.scrollTop <= 1
+  const atEnd = nav.scrollTop + nav.clientHeight >= nav.scrollHeight - 1
+
+  nav.classList.toggle('is-scrollable', scrollable)
+  nav.classList.toggle('at-start', scrollable && atStart)
+  nav.classList.toggle('at-end', scrollable && atEnd)
+}
+
+function scrollTocButtonIntoView(button: HTMLButtonElement) {
+  const nav = button.closest<HTMLElement>('#toc-vertical')
+  if (!nav || nav.scrollHeight <= nav.clientHeight + 1) return
+
+  const navRect = nav.getBoundingClientRect()
+  const buttonRect = button.getBoundingClientRect()
+  const before = buttonRect.top - navRect.top - tocScrollBuffer
+  const after = buttonRect.bottom - navRect.bottom + tocScrollBuffer
+  let nextScroll = nav.scrollTop
+
+  if (before < 0) {
+    nextScroll += before
+  } else if (after > 0) {
+    nextScroll += after
+  }
+
+  if (Math.abs(nextScroll - nav.scrollTop) >= 1) {
+    nav.scrollTop = nextScroll
+  }
+}
+
+window.addEventListener('resize', setupToc)
+document.addEventListener('nav', () => {
+  setupToc()
+  cacheTocEntries()
+  observer.disconnect()
+  tocHeadingTargets().forEach(header => observer.observe(header))
+
+  window.addCleanup(() => {
+    cleanupToc()
+  })
+})

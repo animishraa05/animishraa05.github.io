@@ -1,0 +1,177 @@
+{
+  "collapse-filter": true,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": false,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "path:wiki/ejb/",
+      "color": {
+        "a": 1,
+        "rgb": 15583560
+      }
+    },
+    {
+      "query": "path:wiki/networking/",
+      "color": {
+        "a": 1,
+        "rgb": 5142951
+      }
+    },
+    {
+      "query": "path:wiki/os/",
+      "color": {
+        "a": 1,
+        "rgb": 5873999
+      }
+    },
+    {
+      "query": "path:wiki/computer-architecture/",
+      "color": {
+        "a": 1,
+        "rgb": 11565729
+      }
+    },
+    {
+      "query": "path:wiki/java/",
+      "color": {
+        "a": 1,
+        "rgb": 15896107
+      }
+    },
+    {
+      "query": "path:wiki/system-design/",
+      "color": {
+        "a": 1,
+        "rgb": 7780274
+      }
+    },
+    {
+      "query": "path:wiki/theory-of-computation/",
+      "color": {
+        "a": 1,
+        "rgb": 16752039
+      }
+    },
+    {
+      "query": "path:wiki/data-science/",
+      "color": {
+        "a": 1,
+        "rgb": 10253663
+      }
+    },
+    {
+      "query": "path:wiki/compilerdesign/",
+      "color": {
+        "a": 1,
+        "rgb": 14767961
+      }
+    },
+    {
+      "query": "path:wiki/backend-engineering-basics/",
+      "color": {
+        "a": 1,
+        "rgb": 6267598
+      }
+    },
+    {
+      "query": "path:wiki/data-warehouse/",
+      "color": {
+        "a": 1,
+        "rgb": 3447003
+      }
+    },
+    {
+      "query": "path:wiki/cn/",
+      "color": {
+        "a": 1,
+        "rgb": 8369107
+      }
+    },
+    {
+      "query": "path:wiki/strings/",
+      "color": {
+        "a": 1,
+        "rgb": 12234924
+      }
+    },
+    {
+      "query": "path:wiki/agent-module/",
+      "color": {
+        "a": 1,
+        "rgb": 16766720
+      }
+    },
+    {
+      "query": "path:wiki/io/",
+      "color": {
+        "a": 1,
+        "rgb": 49407
+      }
+    },
+    {
+      "query": "path:wiki/lsp/",
+      "color": {
+        "a": 1,
+        "rgb": 9807270
+      }
+    },
+    {
+      "query": "path:Daily/",
+      "color": {
+        "a": 1,
+        "rgb": 13936037
+      }
+    },
+    {
+      "query": "path:genai/",
+      "color": {
+        "a": 1,
+        "rgb": 55466
+      }
+    },
+    {
+      "query": "path:django/",
+      "color": {
+        "a": 1,
+        "rgb": 4036976
+      }
+    },
+    {
+      "query": "path:computer-networks/",
+      "color": {
+        "a": 1,
+        "rgb": 8379338
+      }
+    },
+    {
+      "query": "path:sources/",
+      "color": {
+        "a": 1,
+        "rgb": 6710886
+      }
+    },
+    {
+      "query": "-path:Templates/ AND -path:.obsidian/",
+      "color": {
+        "a": 1,
+        "rgb": 8952234
+      }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": false,
+  "textFadeMultiplier": 0.3,
+  "nodeSizeMultiplier": 1.3,
+  "lineSizeMultiplier": 0.8,
+  "collapse-forces": false,
+  "centerStrength": 0.5,
+  "repelStrength": 12,
+  "linkStrength": 1,
+  "linkDistance": 200,
+  "scale": 0.04212504142272931,
+  "close": true
+}

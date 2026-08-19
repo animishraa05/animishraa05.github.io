@@ -1,0 +1,172 @@
+/* Earth Online - MonoGray (极简灰白) */
+
+.theme-light {
+  color-scheme: light;
+}
+
+body {
+  /* Background */
+  --background-primary: #f9f9f9;
+  --background-primary-alt: #f2f2f2;
+  --background-secondary: #f2f2f2;
+  --background-secondary-alt: #ebebeb;
+  --background-modifier-border: #eeeeee;
+  --background-modifier-border-hover: #dddddd;
+  --background-modifier-border-focus: #333333;
+  --background-modifier-form-field: #ffffff;
+  --background-modifier-form-field-highlighted: #f9f9f9;
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.04);
+  --background-modifier-success: #33333318;
+  --background-modifier-error: #c0392b18;
+  --background-modifier-error-hover: #c0392b28;
+  --background-modifier-cover: rgba(0, 0, 0, 0.08);
+  --background-modifier-message: #f2f2f2;
+
+  /* Text */
+  --text-normal: #1a1a1a;
+  --text-muted: #888888;
+  --text-faint: #bbbbbb;
+  --text-accent: #333333;
+  --text-accent-hover: #555555;
+  --text-on-accent: #ffffff;
+  --text-highlight-bg: #66666633;
+  --text-selection: #33333322;
+  --text-error: #c0392b;
+  --text-success: #333333;
+
+  /* Interactive */
+  --interactive-normal: #ebebeb;
+  --interactive-hover: #e0e0e0;
+  --interactive-accent: #333333;
+  --interactive-accent-rgb: 51, 51, 51;
+  --interactive-accent-hover: #555555;
+
+  /* Scrollbar */
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: #dddddd;
+  --scrollbar-active-thumb-bg: #bbbbbb;
+
+  /* Code */
+  --code-background: #f2f2f2;
+  --code-normal: #1a1a1a;
+
+  /* Font */
+  --font-text-theme: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-interface-theme: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-monospace-theme: "SF Mono", "Cascadia Code", "Fira Code", "JetBrains Mono", Menlo, monospace;
+
+  /* Title bar */
+  --titlebar-background: #f2f2f2;
+  --titlebar-background-focused: #ebebeb;
+  --titlebar-text-color: #1a1a1a;
+
+  /* Tab */
+  --tab-background-active: #f9f9f9;
+  --tab-outline-color: #eeeeee;
+
+  /* Divider */
+  --divider-color: #eeeeee;
+
+  /* Nav */
+  --nav-item-background-active: #e8e8e8;
+  --nav-item-background-hover: #f0f0f0;
+
+  /* Prompt */
+  --prompt-border-color: #eeeeee;
+
+  /* Tags */
+  --tag-background: #333333;
+  --tag-color: #ffffff;
+
+  /* Checkbox */
+  --checkbox-color: #333333;
+
+  /* Icons */
+  --icon-color: #999999;
+  --icon-color-hover: #333333;
+  --icon-color-active: #333333;
+  --icon-color-focused: #333333;
+
+  /* Vault name */
+  --vault-name-color: #333333;
+
+  /* Slider */
+  --slider-thumb-border-color: #333333;
+
+  /* Embed / Page Preview */
+  --embed-background: #f9f9f9;
+  --inline-title-color: #1a1a1a;
+  --inline-title-size: 1.2em;
+  --h1-color: #1a1a1a;
+  --h2-color: #1a1a1a;
+  --h3-color: #1a1a1a;
+  --h4-color: #888888;
+  --h5-color: #888888;
+  --h6-color: #888888;
+}
+
+/* ── Elements ── */
+.cm-header-1, .markdown-rendered h1 { font-weight: 700; }
+.cm-header-2, .markdown-rendered h2 { font-weight: 600; }
+.cm-header-3, .markdown-rendered h3 { font-weight: 600; }
+.cm-header-4, .markdown-rendered h4 { font-weight: 500; color: var(--text-muted); }
+
+.cm-s-obsidian span.cm-inline-code,
+.markdown-rendered code {
+  color: var(--text-accent);
+  background: var(--code-background);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.9em;
+}
+
+.markdown-rendered blockquote {
+  border-left: 2px solid var(--interactive-accent);
+  background: var(--background-secondary);
+  border-radius: 0 4px 4px 0;
+  padding: 8px 16px;
+  color: var(--text-muted);
+}
+
+.tag {
+  background: var(--tag-background);
+  color: var(--tag-color);
+  border: none;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 0.85em;
+}
+
+.markdown-rendered a.internal-link { color: var(--text-accent); text-decoration: none; }
+.markdown-rendered a.internal-link:hover { text-decoration: underline; }
+.markdown-rendered ul > li::marker { color: var(--interactive-accent); }
+::selection { background: var(--text-selection); }
+
+.markdown-rendered table { border-collapse: collapse; }
+.markdown-rendered th {
+  background: var(--background-secondary);
+  border-bottom: 2px solid var(--background-modifier-border);
+  padding: 8px 12px;
+}
+.markdown-rendered td {
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.markdown-rendered .task-list-item-checkbox:checked {
+  background-color: var(--checkbox-color);
+  border-color: var(--checkbox-color);
+}
+
+.markdown-rendered hr { border-color: var(--background-modifier-border); }
+
+/* ── Tooltip (file hover) ── */
+body .tooltip,
+.tooltip.mod-right,
+.tooltip.mod-left {
+  background: #f9f9f9;
+  color: #1a1a1a;
+  border: 1px solid #eeeeee;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}

@@ -1,0 +1,1864 @@
+import type { SwimChartMetric } from './swim-metrics'
+import type { Locale } from './triathlon-presentation'
+
+interface Gloss {
+  term: string
+  def: string
+}
+
+interface TriDict {
+  ui: Record<string, string>
+  gloss: Record<string, Gloss>
+}
+
+export type SwimActivityTextPoint = {
+  elapsed: string
+  cumulativeDistanceM: number
+  windowStartDistanceM?: number
+}
+
+const swimTextNumber = (target: Locale, value: number, maximumFractionDigits = 0): string =>
+  value.toLocaleString(target === 'fr' ? 'fr-CA' : 'en-US', {
+    minimumFractionDigits: 0,
+    maximumFractionDigits,
+  })
+
+export const swimActivityDistanceText = (target: Locale, distanceM: number): string =>
+  `${swimTextNumber(target, distanceM)} m`
+
+export const swimActivityHeaderValue = (
+  target: Locale,
+  kind: SwimChartMetric,
+  value: number,
+  pace: string,
+): string =>
+  kind === 'pace'
+    ? pace
+    : swimTextNumber(target, value, kind === 'cadence' || kind === 'rate' ? 1 : 0)
+
+export const swimActivityPointText = (target: Locale, point: SwimActivityTextPoint): string => {
+  const end = swimTextNumber(target, point.cumulativeDistanceM)
+  const distance =
+    point.windowStartDistanceM == null
+      ? `${end} m`
+      : `${swimTextNumber(target, point.windowStartDistanceM)}–${end} m`
+  return `${distance} · ${point.elapsed} ${target === 'fr' ? 'écoulé' : 'elapsed'}`
+}
+
+export const swimActivityDisplayValue = (
+  target: Locale,
+  kind: SwimChartMetric,
+  value: number,
+  pace: string,
+): string =>
+  kind === 'pace'
+    ? `${pace} /100m`
+    : kind === 'cadence'
+      ? `${swimTextNumber(target, value, 1)} ${target === 'fr' ? 'coups/longueur' : 'str/length'}`
+      : kind === 'rate'
+        ? `${swimTextNumber(target, value, 1)} ${target === 'fr' ? 'coups/min' : 'spm'}`
+        : `${swimTextNumber(target, value)} SWOLF`
+
+export const swimActivityValueText = (
+  target: Locale,
+  kind: SwimChartMetric,
+  point: SwimActivityTextPoint,
+  value: number,
+  pace: string,
+): string => {
+  const end = swimTextNumber(target, point.cumulativeDistanceM)
+  const position =
+    point.windowStartDistanceM == null
+      ? target === 'fr'
+        ? `${end} mètres, temps écoulé ${point.elapsed}`
+        : `${end} metres, ${point.elapsed} elapsed`
+      : target === 'fr'
+        ? `bloc de ${swimTextNumber(target, point.cumulativeDistanceM - point.windowStartDistanceM)} mètres, de ${swimTextNumber(target, point.windowStartDistanceM)} à ${end} mètres, temps écoulé ${point.elapsed}`
+        : `${swimTextNumber(target, point.cumulativeDistanceM - point.windowStartDistanceM)} metre block from ${swimTextNumber(target, point.windowStartDistanceM)} to ${end} metres, ${point.elapsed} elapsed`
+  if (kind === 'pace')
+    return target === 'fr'
+      ? `${position}, allure de nage ${pace} par 100 mètres`
+      : `${position}, swim pace ${pace} per 100 metres`
+  if (kind === 'cadence') {
+    const cadence = swimTextNumber(target, value, 1)
+    return target === 'fr'
+      ? `${position}, cadence de nage ${cadence} coups par longueur`
+      : `${position}, swim cadence ${cadence} strokes per length`
+  }
+  if (kind === 'rate') {
+    const rate = swimTextNumber(target, value, 1)
+    return target === 'fr'
+      ? `${position}, fréquence de nage ${rate} coups par minute`
+      : `${position}, stroke rate ${rate} strokes per minute`
+  }
+  const swolf = swimTextNumber(target, value)
+  return target === 'fr' ? `${position}, score SWOLF ${swolf}` : `${position}, SWOLF score ${swolf}`
+}
+
+export const detectLocale = (): Locale => {
+  return 'en'
+}
+
+const en: TriDict = {
+  ui: {
+    tss: 'TSS',
+    fitness: 'fitness',
+    fatigue: 'fatigue',
+    form: 'form',
+    efficiency: 'efficiency',
+    'vs. ideal': 'vs. ideal',
+    'drivetrain loss': 'drivetrain loss',
+    'cross-chain loss': 'cross-chain loss',
+    decoupling: 'decoupling',
+    'hrv baseline': 'hrv baseline',
+    monotony: 'monotony',
+    strain: 'strain',
+    'fitness age': 'fitness age',
+    base: 'base',
+    'ACSM estimate': 'ACSM estimate',
+    rhr: 'rhr',
+    sprint: 'sprint',
+    threshold: 'threshold',
+    endurance: 'endurance',
+    climb: 'climb',
+    'stride length': 'stride length',
+    'estimated stride length': 'estimated stride length',
+    cadence: 'cadence',
+    'ground contact time': 'ground contact time',
+    'vertical oscillation': 'vertical oscillation',
+    'stroke rate': 'stroke rate',
+    'stroke type': 'stroke type',
+    strokes: 'strokes',
+    'air temp': 'air temp',
+    'water temp': 'water temp',
+    tempo: 'tempo',
+    aerobic: 'aerobic',
+    anaerobic: 'anaerobic',
+    'intensity factor': 'intensity factor',
+    'training effect': 'training effect',
+    'exercise load': 'exercise load',
+    VO2max: 'VO2max',
+    neuromuscular: 'neuromuscular',
+    'warm up': 'warm up',
+    'fat burning': 'fat burning',
+    vigorous: 'vigorous',
+    maximal: 'maximal',
+    water: 'water',
+    peak: 'peak',
+    latest: 'latest',
+    lab: 'lab',
+    goal: 'goal',
+    fat: 'fat',
+    debt: 'debt',
+    bone: 'bone',
+    muscle: 'muscle',
+    bmi: 'bmi',
+    baseline: 'baseline',
+    ramp: 'ramp',
+    'this wk': 'this wk',
+    'active wk': 'active wk',
+    avg: 'avg',
+    'wtd avg': 'wtd avg',
+    'vs last': 'vs last',
+    'training load · injury risk': 'training load · injury risk',
+    'weekly load': 'weekly load',
+    'race readiness': 'race readiness',
+    'pace trend + forecast': 'pace trend + forecast',
+    'things to improve': 'things to improve',
+    'body weight': 'body weight',
+    'body fat': 'body fat',
+    'body water': 'body water',
+    'daily analytics': 'daily analytics',
+    'body · recovery': 'body · recovery',
+    'state · load': 'state · load',
+    'training state': 'training state',
+    'sleep details': 'sleep details',
+    thermal: 'thermal',
+    'temperature deviation': 'temperature deviation',
+    'fitness · CTL': 'fitness · CTL',
+    'fatigue · ATL': 'fatigue · ATL',
+    'form · TSB': 'form · TSB',
+    'today load · TSS': 'today load · TSS',
+    'Garmin TSS': 'Garmin TSS',
+    site: 'site',
+    calculated: 'calculated',
+    'relative effort': 'relative effort',
+    'ambient heat · acclimatisation': 'ambient heat · acclimatisation',
+    'heat strain · acclimatisation': 'heat strain · acclimatisation',
+    'no outdoor temperature data': 'no outdoor temperature data',
+    'no thermal data': 'no thermal data',
+    'heat days': 'heat days',
+    '14d': '14d',
+    'activity temperature': 'activity temperature',
+    'acclimatisation proxy': 'acclimatisation proxy',
+    'heat exposure': 'heat exposure',
+    'ambient workout temperature and heat acclimatisation proxy over time':
+      'ambient workout temperature and heat acclimatisation proxy over time',
+    'CORE heat strain and heat acclimatisation over time':
+      'CORE heat strain and heat acclimatisation over time',
+    'weather coverage': 'weather coverage',
+    'thermal coverage': 'thermal coverage',
+    confidence: 'confidence',
+    moderate: 'moderate',
+    low: 'low',
+    none: 'none',
+    exposure: 'exposure',
+    exposures: 'exposures',
+    day: 'day',
+    days: 'days',
+    'decay after': 'decay after',
+    fallback: 'fallback',
+    'hot min': 'hot min',
+    proxy: 'proxy',
+    'recovery · hrv · rhr': 'recovery · hrv · rhr',
+    'sleep · debt': 'sleep · debt',
+    'body composition': 'body composition',
+    'body composition by region': 'body composition by region',
+    'lab test date': 'lab test date',
+    wk: 'wk',
+    BMR: 'BMR',
+    FFM: 'FFM',
+    FFMI: 'FFMI',
+    essential: 'essential',
+    athlete: 'athlete',
+    obese: 'obese',
+    Metabolic: 'Metabolic',
+    Ventilation: 'Ventilation',
+    Target: 'Target',
+    Min: 'Min',
+    Max: 'Max',
+    Avg: 'Avg',
+    HR: 'HR',
+    'Warm-Up': 'Warm-Up',
+    Test: 'Test',
+    'Cool-Down': 'Cool-Down',
+    'vo2max · fitness age': 'vo2max · fitness age',
+    'vo2 test profile': 'vo2 test profile',
+    'ftp hypothesis': 'ftp hypothesis',
+    abilities: 'abilities',
+    'training distributions': 'training distributions',
+    'training zone distributions': 'training zone distributions',
+    telemetry: 'telemetry',
+    'activity telemetry scrubber': 'activity telemetry, use left and right arrows to inspect',
+    'training zone metric': 'training zone metric',
+    'zone distribution': 'zone distribution',
+    'in zone': 'in zone',
+    'distribution sport': 'distribution sport',
+    'date range': 'date range',
+    'range start': 'range start',
+    'training time': 'training time',
+    'no activity distribution data': 'no activity distribution data',
+    'no zone data': 'no zone data',
+    'no telemetry data': 'no telemetry data',
+    'activities with telemetry': 'activities with telemetry',
+    'higher than previous activity': 'higher than previous activity',
+    'lower than previous activity': 'lower than previous activity',
+    'unchanged from previous activity': 'unchanged from previous activity',
+    improving: 'improving',
+    declining: 'declining',
+    stable: 'stable',
+    custom: 'custom',
+    device: 'measured',
+    clear: 'clear',
+    'comparison date': 'comparison date',
+    'date picker': 'date picker',
+    'previous month': 'previous month',
+    'next month': 'next month',
+    'cardiovascular health': 'cardiovascular health',
+    'fitness · fatigue · form': 'fitness · fatigue · form',
+    'form · ramp': 'form · ramp',
+    'heart rate zones': 'heart rate zones',
+    'power zones': 'power zones',
+    '25W power distribution': '25W power distribution',
+    'gear ratio distribution': 'gear ratio distribution',
+    'power curve': 'power curve',
+    'critical power model': 'critical power model',
+    'estimated critical power': 'estimated critical power',
+    'power balance': 'power balance',
+    'torque effectiveness': 'torque effectiveness',
+    'pedal smoothness': 'pedal smoothness',
+    'power phase': 'power phase',
+    'rider position': 'rider position',
+    standing: 'standing',
+    seated: 'seated',
+    start: 'start',
+    end: 'end',
+    'electronic shifting': 'electronic shifting',
+    stamina: 'stamina',
+    current: 'current',
+    potential: 'potential',
+    left: 'left',
+    right: 'right',
+    front: 'front',
+    rear: 'rear',
+    'tire pressure': 'tire pressure',
+    'morning weight unavailable': 'morning weight unavailable',
+    wheelset: 'wheelset',
+    'tire setup': 'tire setup',
+    surface: 'surface',
+    balance: 'balance',
+    'rider weight': 'rider weight',
+    'average speed': 'average speed',
+    'ride conditions': 'ride conditions',
+    'WeatherKit forecast unavailable': 'WeatherKit forecast unavailable',
+    wet: 'wet',
+    'best efforts · power curve': 'best efforts · power curve',
+    'best efforts power curve': 'best efforts power curve',
+    'power curve periods': 'power curve periods',
+    'last 6 weeks': 'last 6 weeks',
+    'calendar year': 'calendar year',
+    'maximal average power sustained for each duration':
+      'maximal average power sustained for each duration',
+    'no cycling power data': 'no cycling power data',
+    'this ride': 'this ride',
+    '6-week best': '6-week best',
+    'this ride eCP model': 'this ride eCP model',
+    'comparison range': 'comparison range',
+    selection: 'selection',
+    'compare activities': 'compare activities',
+    'choose 2 or more activities from one sport': 'choose 2 or more activities from one sport',
+    'compare selected': 'compare selected',
+    'change selection': 'change selection',
+    'clear selection': 'clear selection',
+    'remove activity': 'remove activity',
+    'activity data unavailable': 'activity data unavailable',
+    retry: 'retry',
+    'route overlay': 'route overlay',
+    'selected activities': 'selected activities',
+    'sensor coverage': 'sensor coverage',
+    temperature: 'temperature',
+    respiration: 'respiration',
+    'heat strain index': 'heat strain index',
+    'CORE temperature': 'CORE temperature',
+    'skin temperature': 'skin temperature',
+    '6 weeks': '6 weeks',
+    'all of': 'all of',
+    lengths: 'lengths',
+    '100 m': '100 m',
+    'swim chart aggregation': 'swim chart aggregation',
+    'swim activity analysis': 'swim activity analysis',
+    'pace /100m': 'pace /100m',
+    'cadence str/length': 'cadence str/length',
+    'stroke rate spm': 'stroke rate spm',
+    SWOLF: 'SWOLF',
+    'matched runs': 'matched runs',
+    runs: 'runs',
+    'route avg': 'route avg',
+    'trending average': 'Trending Average',
+    'all-time avg': 'Avg',
+    'matched fastest': 'Fastest',
+    'matched slowest': 'Slowest',
+    'this run': 'This Run',
+    'repeated routes grouped from private GPS traces':
+      'repeated routes grouped from private GPS traces',
+    'matched runs pace over time': 'matched runs pace over time',
+    'matched runs history': 'matched runs history',
+    'matched rides': 'matched rides',
+    rides: 'rides',
+    'route match': 'route match',
+    'characteristics match': 'characteristics match',
+    'repeated ride routes grouped from private GPS traces':
+      'repeated ride routes grouped from private GPS traces',
+    'rides grouped by similar distance, elevation, climbing density, and power provenance':
+      'rides grouped by similar distance, elevation, climbing density, and power provenance',
+    'matched rides power over time': 'matched rides power over time',
+    'matched rides history': 'matched rides history',
+    'normalized power': 'normalized power',
+    'average power': 'average power',
+    'matched highest power': 'Highest',
+    'group avg': 'Avg',
+    'matched lowest power': 'Lowest',
+    date: 'date',
+    activity: 'activity',
+    distance: 'distance',
+    'climbing density': 'climbing',
+    'vs route avg': 'vs route avg',
+    'moving time': 'moving time',
+    fastest: 'fastest',
+    slowest: 'slowest',
+    highest: 'highest',
+    estimated: 'est',
+    speed: 'speed',
+    pace: 'pace',
+    power: 'power',
+    'heart rate': 'heart rate',
+    elevation: 'elevation',
+    time: 'time',
+    'avg hr': 'avg hr',
+    'monotony / monotony —': 'monotony / monotony —',
+    'strain / strain —': 'strain / strain —',
+    'building base — ACWR needs ~4 weeks': 'building base — ACWR needs ~4 weeks',
+    'not enough data': 'not enough data',
+    today: 'today',
+    'projected TSS': 'projected TSS',
+    'assumed future daily TSS': 'assumed future daily TSS',
+    'no activity': 'no activity',
+    'no weeks': 'no weeks',
+    'above range': 'above range',
+    'in range': 'in range',
+    'below range': 'below range',
+    now: 'now',
+    faster: 'faster',
+    slower: 'slower',
+    flat: 'flat',
+    weakest: 'weakest',
+    'no weight logged': 'no weight logged',
+    'no effort logged': 'no effort logged',
+    'no recovery data': 'no recovery data',
+    'no sleep logged': 'no sleep logged',
+    'no dexa scan logged': 'no dexa scan logged',
+    '% fat': '% fat',
+    lean: 'lean',
+    arms: 'arms',
+    legs: 'legs',
+    trunk: 'trunk',
+    bmd: 'bmd',
+    'no power or hr data yet': 'no power or hr data yet',
+    'This estimate comes from running VO2max.': 'This estimate comes from running VO2max.',
+    'This estimate comes from cycling VO2max.': 'This estimate comes from cycling VO2max.',
+    'This estimate comes from VO2max with unknown sport provenance.':
+      'This estimate comes from VO2max with unknown sport provenance.',
+    'A lower resting heart rate is better.': 'A lower resting heart rate is better.',
+    'The 7 day average is compared with the 28 day baseline.':
+      'The 7 day average is compared with the 28 day baseline.',
+    'This is pace or power per heartbeat.': 'This is pace or power per heartbeat.',
+    'This needs at least 20 minutes with heart rate and pace or power data.':
+      'This needs at least 20 minutes with heart rate and pace or power data.',
+    'Under 5% means steady output.': 'Under 5% means steady output.',
+    'From 5% to 10% means some late fade.': 'From 5% to 10% means some late fade.',
+    'Over 10% means high late fade.': 'Over 10% means high late fade.',
+    'no vo2 test logged': 'no vo2 test logged',
+    'vt1 · aerobic threshold': 'vt1 · aerobic threshold',
+    'no vo2-derived ftp estimate': 'no vo2-derived ftp estimate',
+    'efficiency estimate': 'efficiency estimate',
+    'total vo2max': 'total vo2max',
+    'estimated cycling vo2max': 'estimated cycling vo2max',
+    'vo2 used at threshold': 'vo2 used at threshold',
+    'energy used per second': 'energy used per second',
+    'maximum aerobic power': 'maximum aerobic power',
+    'value from vo2 report': 'value from vo2 report',
+    'latest daily weight': 'latest daily weight',
+    vo2max: 'vo2max',
+    'running vo2max': 'running vo2max',
+    'cycling vo2max': 'cycling vo2max',
+    'cycling-specific source': 'cycling-specific source',
+    'unknown sport provenance': 'unknown sport provenance',
+    'measured during treadmill test': 'measured during treadmill test',
+    'athlete default': 'athlete default',
+    'cross-modal adjustment': 'cross-modal adjustment',
+    'reduces running vo2max for cycling': 'reduces running vo2max for cycling',
+    'cycling-specific vo2max needs no adjustment': 'cycling-specific vo2max needs no adjustment',
+    'conservative adjustment for unknown sport provenance':
+      'conservative adjustment for unknown sport provenance',
+    'vo2max used at threshold': 'vo2max used at threshold',
+    'estimated because the treadmill test did not find the second threshold':
+      'estimated because the treadmill test did not find the second threshold',
+    'gross metabolic efficiency': 'gross metabolic efficiency',
+    'literature prior': 'literature prior',
+    'measured metabolic efficiency': 'measured metabolic efficiency',
+    'modeled 60-minute power': 'modeled 60-minute power',
+    'declared ftp': 'declared ftp',
+    'independent efforts': 'independent efforts',
+    samples: 'samples',
+    coverage: 'coverage',
+    'observation window': 'observation window',
+    medium: 'medium',
+    provisional: 'provisional',
+    'no model': 'no model',
+    reset: 'reset',
+    'no heart data yet': 'no heart data yet',
+    'map unavailable': 'map unavailable',
+    'go back': 'back',
+    'metrics & terms': 'metrics & terms',
+    activities: 'activities',
+    'filter activities': 'filter activities',
+    'sort activities': 'sort activities',
+    'sort by distance, cadence, pace': 'sort by distance, cadence, pace',
+    'no matches': 'no matches',
+    'filter routes': 'filter routes',
+    'no routes': 'no routes',
+    loading: 'loading',
+    'no plan': 'no plan',
+    'no detail': 'no detail',
+    'no activities': 'no activities',
+    'no data': 'no data',
+    'no data available': 'no data available',
+    'go to page · toggle units...': 'go to page · toggle units...',
+    'command palette': 'command palette',
+    command: 'command',
+    'no commands': 'no commands',
+    'imperial → metric': 'imperial → metric',
+    'metric → imperial': 'metric → imperial',
+    'panels · full screen': 'panels · full screen',
+    'panels · windowed': 'panels · windowed',
+    'power averages · zeros included': 'power averages · zeros included',
+    'power averages · zeros excluded': 'power averages · zeros excluded',
+    'distance · pace · weight · composition': 'distance · pace · weight · composition',
+    'overview · bars': 'overview · bars',
+    tools: 'tools',
+    'gear · pace · fuel · calculator': 'gear · pace · fuel · calculator',
+    analytics: 'analytics',
+    'charts · search': 'charts · search',
+    maps: 'maps',
+    training: 'training',
+    feed: 'feed',
+    on: 'on',
+    'all activities · list': 'all activities · list',
+    'weight unit': 'weight unit',
+    home: 'home',
+    running: 'running',
+    swim: 'swim',
+    bike: 'bike',
+    run: 'run',
+    walk: 'walk',
+    wearables: 'wearables',
+    fuel: 'fuel',
+    mandarins: 'mandarins',
+    apple: 'apple',
+    banana: 'banana',
+    gear: 'gear',
+    maintenance: 'maintenance',
+    chains: 'chains',
+    chain: 'chain',
+    tires: 'tires',
+    tire: 'tire',
+    tube: 'tube',
+    since: 'since',
+    waxed: 'waxed',
+    yes: 'yes',
+    no: 'no',
+    repaired: 'repaired',
+    reason: 'reason',
+    'gear ratios': 'gear ratios',
+    chainrings: 'chainrings',
+    cassette: 'cassette',
+    calculator: 'calculator',
+    heat: 'heat',
+    hr: 'hr',
+    map: 'map',
+    'triathlon calculator': 'triathlon calculator',
+    average: 'average',
+    projected: 'projected',
+    projection: 'projection',
+    '28d trend': '28d trend',
+    'per week': 'per week',
+    '80% range': '80% range',
+    'lactate threshold projection': 'lactate threshold projection',
+    'declared heart-rate anchor': 'declared heart-rate anchor',
+    'training-derived LT2 proxy': 'training-derived LT2 proxy',
+    'dashed line is projected from bike power': 'dashed line is projected from bike power',
+    'vs current': 'vs current',
+    finish: 'finish',
+    'avg power': 'avg power',
+    'est power': 'est power',
+    'max power': 'max power',
+    'max speed': 'max speed',
+    energy: 'energy',
+    'max hr': 'max hr',
+    wind: 'wind',
+    gust: 'gust',
+    fueling: 'fueling',
+    recovery: 'recovery',
+    consumed: 'consumed',
+    fluid: 'fluid',
+    target: 'target',
+    sweat: 'sweat',
+    sleep: 'sleep',
+    slept: 'slept',
+    hrv: 'hrv',
+    'resting hr': 'resting hr',
+    'total burn': 'total burn',
+    'active burn': 'active burn',
+    rest: 'rest',
+    strength: 'strength',
+    freestyle: 'freestyle',
+    breast: 'breast',
+    back: 'back',
+    fly: 'fly',
+    mixed: 'mixed',
+    kick: 'kick',
+    race: 'race',
+    'inspired by rauno': 'inspired by rauno',
+    Close: 'Close',
+    olympic: 'olympic',
+    'Copy embed link': 'Copy embed link',
+    copy: 'copy',
+    copied: 'copied',
+    'go to page · toggle units…': 'go to page · toggle units…',
+    routes: 'routes',
+    'sleep score': 'sleep score',
+    'time in bed': 'time in bed',
+    'average hr': 'average hr',
+    'average hrv': 'average hrv',
+    'restless periods': 'restless periods',
+    'sleep debt': 'sleep debt',
+    'sleep baseline': 'sleep baseline',
+    'sleep target': 'sleep target',
+    'ambient temperature': 'ambient temperature',
+    observed: 'observed',
+    acclimatisation: 'acclimatisation',
+    'heat dose': 'heat dose',
+    readiness: 'readiness',
+    'sleep stages': 'sleep stages',
+    deep: 'deep',
+    light: 'light',
+    rem: 'rem',
+    awake: 'awake',
+    'no detail for this night': 'no detail for this night',
+    'rock bottom — no sleep recorded': 'rock bottom — no sleep recorded',
+    bedtime: 'bedtime',
+    'wake-up': 'wake-up',
+    latency: 'latency',
+    'lowest hr': 'lowest hr',
+    breath: 'breath',
+    'resting heart rate': 'resting heart rate',
+    'deep sleep': 'deep sleep',
+    'rem sleep': 'rem sleep',
+    restfulness: 'restfulness',
+    timing: 'timing',
+    'total sleep': 'total sleep',
+    'activity balance': 'activity balance',
+    'body temperature': 'body temperature',
+    'hrv balance': 'hrv balance',
+    'previous day activity': 'previous day activity',
+    'previous night': 'previous night',
+    'recovery index': 'recovery index',
+    'sleep balance': 'sleep balance',
+    'sleep regularity': 'sleep regularity',
+    age: 'age',
+    feet: 'feet',
+    metres: 'metres',
+    'projected finish range, including both transitions':
+      'The projected finish has an 80% chance of falling in this range. It includes both transitions.',
+    'custom date missing': 'custom date missing',
+    'radar sprint bike definition':
+      'Sprint uses your best 5 second bike power divided by body weight. A higher value means more power for your weight during a short effort.',
+    'radar sprint run definition':
+      'Sprint uses your fastest recorded 30 second running speed. It shows your top speed during a short effort.',
+    'radar sprint swim definition':
+      'Sprint uses the fastest average speed from one recorded swim. Pool data is recorded by length, so this page does not estimate a shorter peak from within the swim.',
+    'radar threshold bike definition':
+      'Threshold uses FTP divided by body weight. FTP estimates the bike power you can hold for about one hour.',
+    'radar threshold run definition':
+      'Threshold uses the fastest running speed you can hold for a sustained effort after adjusting for hills.',
+    'radar threshold swim definition':
+      'Threshold uses critical swim speed. It estimates the pace you can hold during a long, steady swim from your recorded sustained efforts.',
+    'radar endurance definition':
+      'Endurance uses the 42 day training load for this sport. The score compares that load with the target share of your total training.',
+    'radar pace swim definition':
+      'Pace uses the fastest valid average pace from one swim, based on active time. Fewer seconds per 100 metres give a higher score.',
+    'radar climb run definition':
+      'Climb uses the vertical {unit} gained per hour of running. It counts moving time.',
+    'radar climb bike definition':
+      'Climb uses the vertical {unit} gained per hour of cycling. It counts moving time.',
+    'radar cadence bike definition':
+      'Cadence compares your average pedal rate with 90 revolutions per minute. The score falls when your rate is above or below 90.',
+    'radar cadence run definition':
+      'Cadence compares your average step rate with 180 steps per minute. The score falls when your rate is above or below 180.',
+    'radar stroke rate swim definition':
+      'Stroke rate is the average from recorded swims that include both stroke counts and timing. Each rate is the stroke count divided by the time during which strokes were recorded. The target is 30 strokes per minute.',
+    'radar recovery definition':
+      'Recovery uses your average Oura Readiness score over the past 14 days. If Readiness is unavailable, it uses HRV.',
+    'radar stride run definition':
+      'Stride length is your 42 day average distance per running step. Native Apple Watch samples take priority. When those samples are unavailable, the value is estimated from speed and cadence. The score shows where the average falls within your recorded range.',
+    'radar oscillation run definition':
+      'Vertical oscillation is your 42 day average vertical movement per running step from Apple Watch. The score is inverted within your recorded range, so less movement plots farther from the centre. Pace, terrain, height, and running style affect the measurement.',
+    'radar unit wkg definition':
+      '$\\mathrm{W/kg}$ means watts per kilogram of body weight. A rider producing 270 W at 90 kg has 3.0 W/kg.',
+    'radar unit ctl definition':
+      'CTL is your average daily training load over 42 days. Recent days count more.',
+    'radar unit fth definition':
+      '$\\mathrm{ft/h}$ means vertical feet climbed per hour. This page converts metres to feet using $1\\,\\mathrm{m}=3.281\\,\\mathrm{ft}$.',
+    'radar unit mh definition':
+      '$\\mathrm{m/h}$ means vertical metres climbed per hour. This page divides elevation gain by moving uphill time and scales it to one hour.',
+    'radar unit mspeed definition':
+      '$\\mathrm{m/s}$ means metres travelled per second. Multiply the value by 3.6 to convert it to kilometres per hour.',
+    'radar unit s100m definition':
+      's/100 m means the seconds needed to swim 100 metres. A smaller value means a faster pace.',
+    'radar unit rpm definition':
+      'rpm means revolutions per minute. It measures how fast you turn the pedals.',
+    'radar unit spm definition': 'spm means steps per minute. It measures your running cadence.',
+    'radar unit strmin definition':
+      'str/min means strokes per minute. The rate is the stroke count divided by the time during which strokes were recorded.',
+    'radar unit readiness definition':
+      "Readiness is Oura's daily recovery score from 0 to 100. It uses your sleep and HRV. It also uses resting heart rate and recent activity.",
+    'radar unit ms definition':
+      'ms means milliseconds. HRV measures the change in time between heartbeats. A value above your usual range can mean better recovery.',
+    'radar unit stride definition':
+      'Stride length is stored in metres per step. Imperial mode converts it to feet using 1 m = 3.281 ft.',
+    'radar unit oscillation definition':
+      'Vertical oscillation is stored in centimetres. Imperial mode converts it to inches using 1 in = 2.54 cm.',
+    'radar unit default definition':
+      'The raw value is the original measurement used to calculate this score from 0 to 100.',
+  },
+  gloss: {
+    tss: {
+      term: 'training stress score (TSS)',
+      def: 'TSS is the daily sum of session stress. Each session uses intensity factor squared, multiplied by duration in hours and 100. Intensity is estimated from threshold-adjusted speed.',
+    },
+    cp: {
+      term: 'critical power (CP)',
+      def: 'Critical power is the sustainable-power asymptote fitted from maximal 3, 7, and 12 minute cycling efforts. This site estimates it from complete device-power windows and reports the fit provenance.',
+    },
+    wprime: {
+      term: 'W′',
+      def: 'W′ is the finite work capacity above critical power. It is the slope of the fitted power-duration model and is reported in kilojoules.',
+    },
+    'torque effectiveness': {
+      term: 'torque effectiveness (TE)',
+      def: 'Torque effectiveness compares the positive torque that drives the crank with negative torque that resists it during each revolution. A value of 100% means no negative torque was recorded. Interpret left and right trends alongside power and cadence; the metric has no universal target.',
+    },
+    'pedal smoothness': {
+      term: 'pedal smoothness (PS)',
+      def: 'Pedal smoothness is average power divided by peak power across one crank cycle. A higher percentage means power was applied more evenly through the revolution. It describes the shape of power delivery; total power and efficiency are separate measurements.',
+    },
+    'power phase': {
+      term: 'power phase (PP)',
+      def: 'Power phase is the crank-angle interval where each leg produces driving force. 0° is the 12 o’clock position and 180° is the 6 o’clock position; start and end mark the interval boundaries. The graph can cross 360°→0° because the crank cycle is circular.',
+    },
+    ctl: {
+      term: 'fitness (CTL)',
+      def: 'Fitness is your average daily training load over the past 42 days. Recent days count more. It rises when you train consistently and falls when you train less.',
+    },
+    atl: {
+      term: 'fatigue (ATL)',
+      def: 'Fatigue is your average daily training load over the past 7 days. Recent days count more. A high value means you have done more training lately.',
+    },
+    tsb: {
+      term: 'form (TSB)',
+      def: 'Form is fitness minus fatigue. A positive value means your recent load is below your longer term load, so you should be fresher. A negative value means your recent load is higher.',
+    },
+    acwr: {
+      term: 'ACWR',
+      def: 'ACWR divides your training load from the past 7 days by your load from the past 28 days. A value from 0.8 to 1.3 is the target range. A value above 1.5 means your recent load rose sharply.',
+    },
+    ramp: {
+      term: 'ramp',
+      def: 'Ramp is the change in fitness from one week to the next. A positive value means your training load is building. A large jump means your load increased quickly.',
+    },
+    monotony: {
+      term: 'monotony',
+      def: "Monotony measures how similar your daily training loads were during the week. A higher value means the days had similar loads. A value above about 2, together with a high weekly load, is a warning sign in Foster's method.",
+    },
+    strain: {
+      term: 'strain',
+      def: 'Strain is your weekly training load multiplied by monotony. It is high when the week had a high load and little change between days.',
+    },
+    load: {
+      term: 'load',
+      def: 'Load estimates how hard each workout was from its pace and duration. About 100 points means one hour at threshold effort. The activity records each sensor value separately. This score uses only pace and duration.',
+    },
+    score: {
+      term: 'readiness',
+      def: 'Readiness is a score from 0 to 100. Fitness compared with the race demand makes up 45%. The distance you have covered in training for each leg makes up 55%.',
+    },
+    binding: {
+      term: 'binding leg',
+      def: 'The binding leg is the sport holding your readiness score down the most. It combines how much of the race distance you have covered with how recently you trained that sport. Focus on this sport first.',
+    },
+    predtime: {
+      term: 'predicted time',
+      def: 'Predicted time is the estimated finish time for all three legs and both transitions. The pace model predicts each leg. Until the model loads, the estimate adjusts your threshold pace for the race distance. Each transition adds 5 minutes.',
+    },
+    conf: {
+      term: 'confidence',
+      def: 'Confidence shows how much recent data supports an estimate. Firm means there are enough recent efforts. Low means there are only a few efforts. Stale means the latest effort is more than 45 days old. Prior means there is no personal data, so the estimate uses a general starting value.',
+    },
+    threshold: {
+      term: 'threshold pace',
+      def: 'Threshold pace is your estimated pace for an effort lasting about one hour. It uses your faster sessions and adjusts running pace for hills. The pace model uses it as a starting point.',
+    },
+    lactate: {
+      term: 'lactate threshold',
+      def: 'LTHR is the declared heart-rate anchor. The sport values project the current one hour pace or power threshold over 14 days using recent training trends. Their shaded areas are 80% model ranges, not blood lactate measurements or measured ventilatory thresholds.',
+    },
+    trend: {
+      term: 'pace trend',
+      def: 'Pace trend shows whether your threshold pace is getting faster or slower. It uses your recent sessions. The shaded area shows the range of likely future values.',
+    },
+    weight: {
+      term: 'body weight',
+      def: 'Body weight comes from your daily weight records. It is used in recovery charts and in energy estimates that depend on weight.',
+    },
+    wtrend: {
+      term: 'weight trend',
+      def: 'Weight trend is the weekly rate of change in your logged weight. A negative value means your weight is decreasing.',
+    },
+    wgoal: {
+      term: 'weight goal',
+      def: 'Weight goal comes from Garmin Connect. The difference is your current weight minus your goal. The estimated date uses your current weekly trend and appears only when the trend is moving toward the goal.',
+    },
+    bodyfat: {
+      term: 'body fat',
+      def: 'Body fat is the percentage reported by the Garmin Index scale. Use the trend instead of one reading because hydration can change the result by about 1 percentage point.',
+    },
+    dexa: {
+      term: 'DEXA body composition',
+      def: 'DEXA is a lab scan that measures total mass and separates fat mass from lean mass. It also measures bone mineral content. Use it as the main body composition reading. The scale is useful for following daily changes.',
+    },
+    bmi: {
+      term: 'BMI',
+      def: 'BMI is your weight in kilograms divided by your height in metres squared. Muscle can raise BMI, so read it together with body fat.',
+    },
+    ffmi: {
+      term: 'FFMI',
+      def: 'Fat-free mass index is your fat-free mass in kilograms divided by your height in metres squared. DEXA supplies the main reading. Daily estimates use weight and body fat from the Garmin Index scale.',
+    },
+    bmr: {
+      term: 'BMR (Katch McArdle)',
+      def: 'BMR estimates how many calories your body uses each day at rest. This page uses the Katch McArdle formula, which starts from lean mass. The estimate changes when the Garmin Index scale reports a new body fat value.',
+    },
+    effort: {
+      term: 'relative effort',
+      def: "Strava's Relative Effort score uses heart rate or your own effort rating. This chart adds the scores from each calendar week. The shaded range is based on the three previous full weeks.",
+    },
+    hrv: {
+      term: 'HRV',
+      def: 'HRV is the change in time between heartbeats, measured in milliseconds. This chart compares your 7 day average with a 28 day personal baseline. A value more than one standard deviation below your baseline is far below your usual range and can be a sign of poor recovery.',
+    },
+    rhr: {
+      term: 'resting heart rate',
+      def: 'Resting heart rate is your lowest overnight heart rate. A rise of at least 5 bpm, or more than one standard deviation above your 28 day baseline, can be an early sign of fatigue or illness.',
+    },
+    tempdev: {
+      term: 'temperature deviation',
+      def: 'Temperature deviation is the change in skin temperature from your personal baseline. An increase of at least 0.5 °C can be a sign that your immune system is responding to something. It may appear 24 to 48 hours before symptoms.',
+    },
+    ambienttemp: {
+      term: 'ambient workout temperature',
+      def: 'Ambient temperature is the duration-weighted WeatherKit estimate during the activity at the route centre. Strava device temperature fills gaps. It is separate from Oura skin-temperature deviation.',
+    },
+    heatstrain: {
+      term: 'CORE Heat Strain Index',
+      def: 'CORE combines core and skin temperature into a real-time Heat Strain Index. Values at or above 3.0 count toward heat exposure on this page.',
+    },
+    heatdose: {
+      term: 'heat exposure dose',
+      def: 'CORE Heat Strain Index at or above 3.0 supplies the primary dose. A GPS run or ride above 22 °C supplies the fallback dose when CORE data is absent. Sixty hot minutes equal one dose. The proxy targets 14 doses, holds for three days without heat, then decays by 2.5% per day.',
+    },
+    heatacclimation: {
+      term: 'heat acclimatisation proxy',
+      def: 'This percentage tracks recent heat strain from CORE when available, then ambient exposure from WeatherKit or Strava. It remains an estimate because humidity, solar load, clothing, sweat response, hydration, and passive heat exposure are unavailable.',
+    },
+    sleepdebt: {
+      term: 'sleep debt',
+      def: 'Sleep debt adds up the time you slept below 7 hours during the past 14 nights. This chart uses 7 hours as its target. Athletes often need 8 to 10 hours.',
+    },
+    overreaching: {
+      term: 'overreaching',
+      def: 'Overreaching is flagged when HRV is low while training load rises quickly. Here, low HRV means at least one standard deviation below your baseline. A fast load increase means a high ACWR or a weekly ramp above 10%.',
+    },
+    oreadiness: {
+      term: 'Oura Readiness',
+      def: 'Oura Readiness is a daily score from 0 to 100. A score of 85 or higher is optimal. A score from 70 to 84 is good. A score below 70 calls for attention. Several days below 70 can point to accumulated strain.',
+    },
+    vo2max: {
+      term: 'VO₂max',
+      def: 'VO₂max is the maximum amount of oxygen your body can use during hard exercise. It is measured in millilitres per kilogram per minute. The 28 day trend uses observed values from the latest measurement method over at most 12 weeks. The cycling estimate starts with FTP, estimates maximum aerobic power, then estimates VO₂max.',
+    },
+    ftp: {
+      term: 'FTP hypothesis',
+      def: 'FTP is the cycling power you may be able to hold for about one hour. This estimate comes from a treadmill VO₂max test, so it crosses from running to cycling and has low confidence. Use your heart rate zones until you complete a bike power test.',
+    },
+    fitage: {
+      term: 'fitness age',
+      def: 'Fitness age is the age with the same median VO₂max in the male FRIEND reference data. This chart limits the result to ages 20 to 80. A lower fitness age means your VO₂max is above the median for your calendar age.',
+    },
+    vam: {
+      term: 'VAM',
+      def: 'VAM is the vertical distance you climb in one hour. This page calculates it from elevation gain and moving time. It shows metres per hour or feet per hour based on your unit setting.',
+    },
+    radar: {
+      term: 'abilities',
+      def: 'Each sport has six scores from 0 to 100. Sprint and threshold use power or speed. Endurance uses 42 days of training load. Run uses stride length, cadence, and vertical oscillation. Bike uses climbing rate and cadence. Swim uses pace and stroke rate. Bike and swim retain recovery. The dashed line shows the projected score 28 days from now.',
+    },
+    hrzones: {
+      term: 'training zone distributions',
+      def: 'This panel adds recorded time in each training zone across the selected sport and date range. Cycling switches between heart rate and seven FTP-based power zones. Running switches between heart rate and six Strava pace zones. Swimming uses heart rate. Run pace ranges show the observed split paces assigned to each zone.',
+    },
+    activitytelemetry: {
+      term: 'activity telemetry',
+      def: 'Each point is one activity. Power keeps measured and estimated values distinct. Cadence uses strokes per minute for swimming, revolutions per minute for cycling, and steps per minute for running. Skin temperature and Heat Strain Index are duration-weighted CORE observations. Missing sensor readings remain gaps.',
+    },
+    ef: {
+      term: 'efficiency factor',
+      def: 'Efficiency factor compares your pace or power with your heart rate. On the bike, it divides normalized power by average heart rate. Normalized power gives more weight to hard efforts. On the run, the calculation divides speed adjusted for hills by average heart rate. A higher value at the same effort means you are producing more output per heartbeat.',
+    },
+    decouple: {
+      term: 'decoupling',
+      def: 'Decoupling compares the pace or power you produced per heartbeat in the first and second half of a workout. A lower value is better. A value under 5% means you stayed steady. A value over 10% means you faded in the second half.',
+    },
+    legdist: {
+      term: 'total distance',
+      def: 'Total distance is the distance covered in this sport during the selected season. Swim distance is shown in metres. Bike and run distance use the kilometre or mile setting.',
+    },
+    legcount: {
+      term: 'sessions',
+      def: 'This is the number of workouts logged for this sport during the selected season.',
+    },
+    legtime: { term: 'total time', def: 'Total time adds the moving time from these workouts.' },
+    herodist: {
+      term: 'season total',
+      def: 'Season total adds the distance from all three sports during the selected season. It uses the kilometre or mile setting.',
+    },
+  },
+}
+
+const fr: TriDict = {
+  ui: {
+    tss: 'TSS',
+    fitness: 'condition',
+    fatigue: 'fatigue',
+    form: 'forme',
+    efficiency: 'efficience',
+    'vs. ideal': "par rapport à l'idéal",
+    'drivetrain loss': 'perte de transmission',
+    'cross-chain loss': 'perte de croisement',
+    decoupling: 'découplage',
+    'hrv baseline': 'référence vfc',
+    monotony: 'monotonie',
+    strain: 'contrainte',
+    'fitness age': 'âge de forme',
+    base: 'base',
+    'ACSM estimate': 'estimation ACSM',
+    rhr: 'fc',
+    sprint: 'sprint',
+    threshold: 'seuil',
+    endurance: 'endurance',
+    climb: 'grimpe',
+    'stride length': 'longueur de foulée',
+    'estimated stride length': 'longueur de foulée estimée',
+    cadence: 'cadence',
+    'ground contact time': 'temps de contact au sol',
+    'vertical oscillation': 'oscillation verticale',
+    'stroke rate': 'fréquence de nage',
+    'stroke type': 'type de nage',
+    strokes: 'coups de bras',
+    'air temp': "température de l'air",
+    'water temp': "température de l'eau",
+    tempo: 'tempo',
+    aerobic: 'aérobie',
+    anaerobic: 'anaérobie',
+    'intensity factor': "facteur d'intensité",
+    'training effect': "effet d'entraînement",
+    'exercise load': "charge d'exercice",
+    VO2max: 'VO2max',
+    neuromuscular: 'neuromusculaire',
+    'warm up': 'échauffement',
+    'fat burning': 'combustion graisses',
+    vigorous: 'intense',
+    maximal: 'maximal',
+    water: 'eau',
+    peak: 'pic',
+    latest: 'dernier',
+    lab: 'labo',
+    goal: 'objectif',
+    fat: 'gras',
+    debt: 'dette',
+    bone: 'os',
+    muscle: 'muscle',
+    bmi: 'IMC',
+    baseline: 'référence',
+    ramp: 'progression',
+    'this wk': 'cette sem',
+    'active wk': 'sem actives',
+    avg: 'moy',
+    'wtd avg': 'moy pond',
+    'vs last': 'vs préc',
+    'training load · injury risk': 'charge · risque de blessure',
+    'weekly load': 'charge hebdo',
+    'race readiness': 'préparation course',
+    'pace trend + forecast': 'tendance allure + prévision',
+    'things to improve': 'à améliorer',
+    'body weight': 'poids',
+    'body fat': 'masse grasse',
+    'body water': 'eau corporelle',
+    'daily analytics': 'analyse quotidienne',
+    'body · recovery': 'corps · récupération',
+    'state · load': 'état · charge',
+    'training state': "état d'entraînement",
+    'sleep details': 'détails du sommeil',
+    thermal: 'thermique',
+    'temperature deviation': 'écart de température',
+    'fitness · CTL': 'forme · CTL',
+    'fatigue · ATL': 'fatigue · ATL',
+    'form · TSB': 'équilibre · TSB',
+    'today load · TSS': 'charge du jour · TSS',
+    'Garmin TSS': 'TSS Garmin',
+    site: 'site',
+    calculated: 'calculé',
+    'relative effort': 'effort relatif',
+    'ambient heat · acclimatisation': 'chaleur ambiante · acclimatation',
+    'heat strain · acclimatisation': 'contrainte thermique · acclimatation',
+    'no outdoor temperature data': 'aucune température extérieure',
+    'no thermal data': 'aucune donnée thermique',
+    'heat days': 'jours de chaleur',
+    '14d': '14 j',
+    'activity temperature': 'température par activité',
+    'acclimatisation proxy': "indice d'acclimatation",
+    'heat exposure': 'exposition à la chaleur',
+    'ambient workout temperature and heat acclimatisation proxy over time':
+      "température ambiante des séances et indice d'acclimatation au fil du temps",
+    'CORE heat strain and heat acclimatisation over time':
+      'contrainte thermique CORE et acclimatation à la chaleur au fil du temps',
+    'weather coverage': 'couverture météo',
+    'thermal coverage': 'couverture thermique',
+    confidence: 'fiabilité',
+    moderate: 'modérée',
+    low: 'faible',
+    none: 'aucune',
+    exposure: 'exposition',
+    exposures: 'expositions',
+    day: 'jour',
+    days: 'jours',
+    'decay after': 'baisse après',
+    fallback: 'repli',
+    'hot min': 'min chaudes',
+    proxy: 'indice',
+    'recovery · hrv · rhr': 'récupération · vfc · fc',
+    'sleep · debt': 'sommeil · dette',
+    'body composition': 'composition corporelle',
+    'body composition by region': 'composition corporelle par région',
+    'lab test date': 'date des tests de laboratoire',
+    wk: 'sem',
+    BMR: 'MB',
+    FFM: 'MM',
+    FFMI: 'FFMI',
+    essential: 'essentiel',
+    athlete: 'athlète',
+    obese: 'obésité',
+    Metabolic: 'Métabolique',
+    Ventilation: 'Ventilation',
+    Target: 'Objectif',
+    Min: 'Min',
+    Max: 'Max',
+    Avg: 'Moy',
+    HR: 'FC',
+    'Warm-Up': 'Échauffement',
+    Test: 'Test',
+    'Cool-Down': 'Retour au calme',
+    'vo2max · fitness age': 'vo2max · âge de forme',
+    'vo2 test profile': 'profil test vo2',
+    'ftp hypothesis': 'hypothèse ftp',
+    abilities: 'aptitudes',
+    'training distributions': "répartition de l'entraînement",
+    'training zone distributions': "répartition des zones d'entraînement",
+    telemetry: 'télémétrie',
+    'activity telemetry scrubber':
+      'télémétrie des activités, utilise les flèches gauche et droite pour parcourir',
+    'training zone metric': "mesure des zones d'entraînement",
+    'zone distribution': 'répartition des zones',
+    'in zone': 'dans la zone',
+    'distribution sport': 'discipline de la répartition',
+    'date range': 'période',
+    'range start': 'début de la période',
+    'training time': "temps d'entraînement",
+    'no activity distribution data': 'aucune donnée de répartition',
+    'no zone data': 'aucune donnée de zone',
+    'no telemetry data': 'aucune donnée de télémétrie',
+    'activities with telemetry': 'activités avec télémétrie',
+    'higher than previous activity': "en hausse depuis l'activité précédente",
+    'lower than previous activity': "en baisse depuis l'activité précédente",
+    'unchanged from previous activity': "inchangé depuis l'activité précédente",
+    improving: 'en amélioration',
+    declining: 'en baisse',
+    stable: 'stable',
+    custom: 'perso',
+    device: 'mesurée',
+    clear: 'effacer',
+    'comparison date': 'date de comparaison',
+    'date picker': 'sélecteur de date',
+    'previous month': 'mois précédent',
+    'next month': 'mois suivant',
+    'cardiovascular health': 'santé cardiovasculaire',
+    'fitness · fatigue · form': 'condition · fatigue · forme',
+    'form · ramp': 'forme · ramp',
+    'heart rate zones': 'zones de fc',
+    'power zones': 'zones de puissance',
+    '25W power distribution': 'répartition puissance 25W',
+    'gear ratio distribution': 'répartition des rapports',
+    'power curve': 'courbe de puissance',
+    'critical power model': 'modèle de puissance critique',
+    'estimated critical power': 'puissance critique estimée',
+    'power balance': 'équilibre de puissance',
+    'torque effectiveness': 'efficacité du couple',
+    'pedal smoothness': 'fluidité du pédalage',
+    'power phase': 'phase de puissance',
+    'rider position': 'position du cycliste',
+    standing: 'debout',
+    seated: 'assis',
+    start: 'début',
+    end: 'fin',
+    'electronic shifting': 'changement de vitesse électronique',
+    stamina: 'stamina',
+    current: 'actuelle',
+    potential: 'potentielle',
+    left: 'gauche',
+    right: 'droite',
+    front: 'avant',
+    rear: 'arrière',
+    'tire pressure': 'pression des pneus',
+    'morning weight unavailable': 'poids matinal indisponible',
+    wheelset: 'roues',
+    'tire setup': 'montage pneu',
+    surface: 'revêtement',
+    balance: 'répartition',
+    'rider weight': 'poids du cycliste',
+    'average speed': 'vitesse moyenne',
+    'ride conditions': 'conditions de conduite',
+    'WeatherKit forecast unavailable': 'prévisions WeatherKit indisponibles',
+    wet: 'mouillé',
+    'best efforts · power curve': 'meilleurs efforts · courbe de puissance',
+    'best efforts power curve': 'courbe de puissance des meilleurs efforts',
+    'power curve periods': 'périodes de la courbe de puissance',
+    'last 6 weeks': '6 dernières semaines',
+    'calendar year': 'année civile',
+    'maximal average power sustained for each duration':
+      'puissance moyenne maximale soutenue pour chaque durée',
+    'no cycling power data': 'aucune donnée de puissance cycliste',
+    'this ride': 'cette sortie',
+    '6-week best': 'meilleur sur 6 semaines',
+    'this ride eCP model': 'modèle eCP de cette sortie',
+    'comparison range': 'période de comparaison',
+    selection: 'sélection',
+    'compare activities': 'comparer les activités',
+    'choose 2 or more activities from one sport': 'choisir au moins 2 activités du même sport',
+    'compare selected': 'comparer la sélection',
+    'change selection': 'modifier la sélection',
+    'clear selection': 'effacer la sélection',
+    'remove activity': "retirer l'activité",
+    'activity data unavailable': "données d'activité indisponibles",
+    retry: 'réessayer',
+    'route overlay': 'superposition des parcours',
+    'selected activities': 'activités sélectionnées',
+    'sensor coverage': 'couverture des capteurs',
+    temperature: 'température',
+    respiration: 'respiration',
+    'heat strain index': 'indice de contrainte thermique',
+    'CORE temperature': 'température centrale',
+    'skin temperature': 'température cutanée',
+    '6 weeks': '6 semaines',
+    'all of': "toute l'année",
+    lengths: 'longueurs',
+    '100 m': '100 m',
+    'swim chart aggregation': 'agrégation des graphiques de natation',
+    'swim activity analysis': "analyse de l'activité de natation",
+    'pace /100m': 'allure /100 m',
+    'cadence str/length': 'cadence coups/longueur',
+    'stroke rate spm': 'fréquence coups/min',
+    SWOLF: 'SWOLF',
+    'matched runs': 'parcours répétés',
+    runs: 'courses',
+    'route avg': 'moy. parcours',
+    'trending average': 'Moyenne tendancielle',
+    'all-time avg': 'Moyenne',
+    'matched fastest': 'Plus rapide',
+    'matched slowest': 'Plus lent',
+    'this run': 'Cette course',
+    'repeated routes grouped from private GPS traces':
+      'parcours répétés regroupés à partir des traces GPS privées',
+    'matched runs pace over time': 'allure dans le temps sur ce parcours',
+    'matched runs history': 'historique des parcours répétés',
+    'matched rides': 'sorties vélo comparées',
+    rides: 'sorties',
+    'route match': 'parcours GPS',
+    'characteristics match': 'caractéristiques similaires',
+    'repeated ride routes grouped from private GPS traces':
+      'parcours vélo répétés regroupés à partir des traces GPS privées',
+    'rides grouped by similar distance, elevation, climbing density, and power provenance':
+      'sorties regroupées par distance, dénivelé, densité de montée et provenance de puissance similaires',
+    'matched rides power over time': 'puissance dans le temps pour les sorties comparées',
+    'matched rides history': 'historique des sorties vélo comparées',
+    'normalized power': 'puissance normalisée',
+    'average power': 'puissance moyenne',
+    'matched highest power': 'Plus élevée',
+    'group avg': 'Moyenne',
+    'matched lowest power': 'Plus faible',
+    date: 'date',
+    activity: 'activité',
+    distance: 'distance',
+    'climbing density': 'dénivelé',
+    'vs route avg': 'vs moy. parcours',
+    'moving time': 'temps en mouvement',
+    fastest: 'plus rapide',
+    slowest: 'plus lent',
+    highest: 'plus élevée',
+    estimated: 'est.',
+    speed: 'vitesse',
+    pace: 'allure',
+    power: 'puissance',
+    'heart rate': 'fc',
+    elevation: 'altitude',
+    time: 'temps',
+    'avg hr': 'fc moy',
+    'monotony / monotony —': 'monotonie / monotonie —',
+    'strain / strain —': 'contrainte / contrainte —',
+    'building base — ACWR needs ~4 weeks': "constitution de la base — l'ACWR nécessite ~4 semaines",
+    'not enough data': 'données insuffisantes',
+    today: 'auj.',
+    'projected TSS': 'TSS projeté',
+    'assumed future daily TSS': 'TSS quotidien futur supposé',
+    'no activity': 'aucune activité',
+    'no weeks': 'aucune semaine',
+    'above range': 'au-dessus de la plage',
+    'in range': 'dans la plage',
+    'below range': 'sous la plage',
+    now: 'maint.',
+    faster: 'plus rapide',
+    slower: 'plus lent',
+    flat: 'stable',
+    weakest: 'point faible',
+    'no weight logged': 'aucun poids',
+    'no effort logged': 'aucun effort',
+    'no recovery data': 'aucune donnée récup.',
+    'no sleep logged': 'aucun sommeil',
+    'no dexa scan logged': 'aucun scan dexa',
+    '% fat': '% gras',
+    lean: 'maigre',
+    arms: 'bras',
+    legs: 'jambes',
+    trunk: 'tronc',
+    bmd: 'dmo',
+    'no power or hr data yet': 'pas encore de données puissance ou fc',
+    'This estimate comes from running VO2max.': 'Cette estimation vient de la VO₂max en course.',
+    'This estimate comes from cycling VO2max.': 'Cette estimation vient de la VO₂max à vélo.',
+    'This estimate comes from VO2max with unknown sport provenance.':
+      "Cette estimation vient d'une VO₂max dont le sport est inconnu.",
+    'A lower resting heart rate is better.':
+      'Une fréquence cardiaque au repos plus basse est meilleure.',
+    'The 7 day average is compared with the 28 day baseline.':
+      'La moyenne sur 7 jours est comparée à la référence sur 28 jours.',
+    'This is pace or power per heartbeat.':
+      "Il s'agit de l'allure ou de la puissance par battement.",
+    'This needs at least 20 minutes with heart rate and pace or power data.':
+      "Il faut au moins 20 minutes avec la fréquence cardiaque et l'allure ou la puissance.",
+    'Under 5% means steady output.': 'Une valeur sous 5 % signifie un effort stable.',
+    'From 5% to 10% means some late fade.':
+      'Une valeur de 5 % à 10 % signifie une légère baisse en fin de séance.',
+    'Over 10% means high late fade.':
+      'Une valeur au-dessus de 10 % signifie une forte baisse en fin de séance.',
+    'no vo2 test logged': 'aucun test vo2',
+    'vt1 · aerobic threshold': 'vt1 · seuil aérobie',
+    'no vo2-derived ftp estimate': "pas d'estimation ftp via vo2",
+    'efficiency estimate': "estimation par l'efficacité",
+    'total vo2max': 'vo2max totale',
+    'estimated cycling vo2max': 'vo2max estimée à vélo',
+    'vo2 used at threshold': 'vo2 utilisée au seuil',
+    'energy used per second': 'énergie utilisée par seconde',
+    'maximum aerobic power': 'puissance aérobie maximale',
+    'value from vo2 report': 'valeur du rapport vo2',
+    'latest daily weight': 'dernier poids quotidien',
+    vo2max: 'vo2max',
+    'running vo2max': 'vo2max course',
+    'cycling vo2max': 'vo2max vélo',
+    'cycling-specific source': 'source propre au vélo',
+    'unknown sport provenance': 'sport source inconnu',
+    'measured during treadmill test': 'mesurée pendant le test sur tapis',
+    'athlete default': "valeur par défaut de l'athlète",
+    'cross-modal adjustment': 'ajustement entre modalités',
+    'reduces running vo2max for cycling': 'réduit la vo2max en course pour le vélo',
+    'cycling-specific vo2max needs no adjustment':
+      "la vo2max propre au vélo n'a pas besoin d'ajustement",
+    'conservative adjustment for unknown sport provenance':
+      'ajustement prudent lorsque le sport source est inconnu',
+    'vo2max used at threshold': 'vo2max utilisée au seuil',
+    'estimated because the treadmill test did not find the second threshold':
+      "estimée car le test sur tapis n'a pas trouvé le second seuil",
+    'gross metabolic efficiency': 'rendement métabolique brut',
+    'literature prior': 'a priori de la littérature',
+    'measured metabolic efficiency': 'rendement métabolique mesuré',
+    'modeled 60-minute power': 'puissance modélisée sur 60 minutes',
+    'declared ftp': 'ftp déclarée',
+    'independent efforts': 'efforts indépendants',
+    samples: 'échantillons',
+    coverage: 'couverture',
+    'observation window': 'période observée',
+    medium: 'moyenne',
+    provisional: 'provisoire',
+    'no model': 'aucun modèle',
+    reset: 'réinit.',
+    'no heart data yet': 'pas encore de données cardiaques',
+    'map unavailable': 'carte indisponible',
+    'go back': 'retour',
+    'metrics & terms': 'mesures et termes',
+    activities: 'activités',
+    'filter activities': 'filtrer les activités',
+    'sort activities': 'trier les activités',
+    'sort by distance, cadence, pace': 'trier par distance, cadence, pace',
+    'no matches': 'aucun résultat',
+    'filter routes': 'filtrer les parcours',
+    'no routes': 'aucun parcours',
+    loading: 'chargement',
+    'no plan': 'aucun plan',
+    'no detail': 'aucun détail',
+    'no activities': 'aucune activité',
+    'no data': 'aucune donnée',
+    'no data available': 'aucune donnée disponible',
+    'go to page · toggle units...': "aller à une page · changer d'unités...",
+    'command palette': 'palette de commandes',
+    command: 'commande',
+    'no commands': 'aucune commande',
+    'imperial → metric': 'impérial → métrique',
+    'metric → imperial': 'métrique → impérial',
+    'panels · full screen': 'panneaux · plein écran',
+    'panels · windowed': 'panneaux · fenêtrés',
+    'power averages · zeros included': 'moyennes de puissance · zéros inclus',
+    'power averages · zeros excluded': 'moyennes de puissance · zéros exclus',
+    'distance · pace · weight · composition': 'distance · allure · poids · composition',
+    'overview · bars': "vue d'ensemble · barres",
+    tools: 'outils',
+    'gear · pace · fuel · calculator': 'matériel · allure · nutrition · calculateur',
+    analytics: 'analyses',
+    'charts · search': 'graphiques · recherche',
+    maps: 'cartes',
+    training: 'entraînement',
+    feed: 'flux',
+    on: 'journal',
+    'all activities · list': 'toutes les activités · liste',
+    'weight unit': 'unité de poids',
+    home: 'accueil',
+    running: 'course à pied',
+    swim: 'natation',
+    bike: 'vélo',
+    run: 'course',
+    walk: 'marche',
+    wearables: 'capteurs',
+    fuel: 'nutrition',
+    mandarins: 'mandarines',
+    apple: 'pomme',
+    banana: 'banane',
+    gear: 'matériel',
+    maintenance: 'entretien',
+    chains: 'chaînes',
+    chain: 'chaîne',
+    tires: 'pneus',
+    tire: 'pneu',
+    tube: 'chambre à air',
+    since: 'depuis',
+    waxed: 'cirée',
+    yes: 'oui',
+    no: 'non',
+    repaired: 'réparé',
+    reason: 'raison',
+    'gear ratios': 'rapports',
+    chainrings: 'plateaux',
+    cassette: 'cassette',
+    calculator: 'calculateur',
+    heat: 'densité',
+    hr: 'fc',
+    map: 'carte',
+    'triathlon calculator': 'calculateur triathlon',
+    average: 'moyenne',
+    projected: 'projetée',
+    projection: 'projection',
+    '28d trend': 'tendance sur 28 j',
+    'per week': 'par semaine',
+    '80% range': 'plage à 80 %',
+    'lactate threshold projection': 'projection du seuil lactique',
+    'declared heart-rate anchor': 'repère de fréquence cardiaque déclaré',
+    'training-derived LT2 proxy': "indice LT2 dérivé de l'entraînement",
+    'dashed line is projected from bike power':
+      'la ligne pointillée est une projection basée sur la puissance à vélo',
+    'vs current': 'vs actuel',
+    finish: 'arrivée',
+    'avg power': 'puiss moy',
+    'est power': 'puiss est',
+    'max power': 'puiss max',
+    'max speed': 'vitesse max',
+    energy: 'énergie',
+    'max hr': 'fc max',
+    wind: 'vent',
+    gust: 'rafale',
+    fueling: 'nutrition',
+    recovery: 'récupération',
+    consumed: 'ingéré',
+    fluid: 'hydratation',
+    target: 'objectif',
+    sweat: 'sudation',
+    sleep: 'sommeil',
+    slept: 'dormi',
+    hrv: 'vfc',
+    'resting hr': 'fc repos',
+    'total burn': 'dépense totale',
+    'active burn': 'dépense active',
+    rest: 'repos',
+    strength: 'renforcement',
+    freestyle: 'crawl',
+    breast: 'brasse',
+    back: 'dos',
+    fly: 'papillon',
+    mixed: 'mixte',
+    kick: 'jambes',
+    race: 'course',
+    'inspired by rauno': 'inspiré de rauno',
+    Close: 'Fermer',
+    olympic: 'olympique',
+    'Copy embed link': "copier le lien d'intégration",
+    copy: 'copier',
+    copied: 'copié',
+    'go to page · toggle units…': "aller à une page · changer d'unités…",
+    routes: 'parcours',
+    'sleep score': 'score de sommeil',
+    'time in bed': 'temps au lit',
+    'average hr': 'fc moyenne',
+    'average hrv': 'vfc moyenne',
+    'restless periods': "périodes d'agitation",
+    'sleep debt': 'dette de sommeil',
+    'sleep baseline': 'référence de sommeil',
+    'sleep target': 'objectif de sommeil',
+    'ambient temperature': 'température ambiante',
+    observed: 'observé',
+    acclimatisation: 'acclimatation',
+    'heat dose': 'dose thermique',
+    readiness: 'préparation',
+    'sleep stages': 'phases de sommeil',
+    deep: 'profond',
+    light: 'léger',
+    rem: 'paradoxal',
+    awake: 'éveil',
+    'no detail for this night': 'aucun détail pour cette nuit',
+    'rock bottom — no sleep recorded': 'nuit blanche — aucun sommeil enregistré',
+    bedtime: 'coucher',
+    'wake-up': 'réveil',
+    latency: 'latence',
+    'lowest hr': 'fc min',
+    breath: 'respiration',
+    'resting heart rate': 'fréquence cardiaque au repos',
+    'deep sleep': 'sommeil profond',
+    'rem sleep': 'sommeil paradoxal',
+    restfulness: 'tranquillité',
+    timing: 'horaire',
+    'total sleep': 'sommeil total',
+    'activity balance': "équilibre d'activité",
+    'body temperature': 'température corporelle',
+    'hrv balance': 'équilibre vfc',
+    'previous day activity': 'activité de la veille',
+    'previous night': 'nuit précédente',
+    'recovery index': 'indice de récupération',
+    'sleep balance': 'équilibre de sommeil',
+    'sleep regularity': 'régularité du sommeil',
+    age: 'âge',
+    feet: 'pieds',
+    metres: 'mètres',
+    'projected finish range, including both transitions':
+      "Le temps d'arrivée a 80 % de chances de se trouver dans cette plage. Les deux transitions sont incluses.",
+    'custom date missing': 'date perso manquante',
+    'radar sprint bike definition':
+      'Le sprint utilise ta meilleure puissance à vélo sur 5 secondes, divisée par ton poids. Une valeur plus haute signifie plus de puissance par kilogramme pendant un effort court.',
+    'radar sprint run definition':
+      'Le sprint utilise ta vitesse de course la plus rapide sur 30 secondes. Il montre ta vitesse maximale pendant un effort court.',
+    'radar sprint swim definition':
+      "Le sprint utilise la vitesse moyenne la plus rapide d'une séance de natation. Les données de piscine sont enregistrées par longueur, donc cette page n'estime pas un pic plus court au sein de la séance.",
+    'radar threshold bike definition':
+      'Le seuil utilise la FTP divisée par ton poids. La FTP estime la puissance à vélo que tu peux tenir pendant environ une heure.',
+    'radar threshold run definition':
+      'Le seuil utilise la vitesse de course la plus rapide que tu peux tenir pendant un effort soutenu, après un ajustement pour les côtes.',
+    'radar threshold swim definition':
+      "Le seuil utilise la vitesse critique de natation. Elle estime l'allure que tu peux tenir pendant une longue nage régulière à partir de tes efforts soutenus.",
+    'radar endurance definition':
+      "L'endurance utilise la charge d'entraînement de ce sport sur 42 jours. La note compare cette charge avec la part cible de ton entraînement total.",
+    'radar pace swim definition':
+      "L'allure utilise la meilleure allure moyenne valide d'une séance de natation, selon le temps actif. Moins de secondes par 100 mètres donne une note plus haute.",
+    'radar climb run definition':
+      'La grimpe utilise les {unit} de dénivelé gagnés par heure de course. Elle compte le temps en mouvement.',
+    'radar climb bike definition':
+      'La grimpe utilise les {unit} de dénivelé gagnés par heure de vélo. Elle compte le temps en mouvement.',
+    'radar cadence bike definition':
+      'La cadence compare ta fréquence moyenne de pédalage avec 90 tours par minute. La note baisse lorsque ta fréquence est au-dessus ou en dessous de 90.',
+    'radar cadence run definition':
+      'La cadence compare ta fréquence moyenne de pas avec 180 pas par minute. La note baisse lorsque ta fréquence est au-dessus ou en dessous de 180.',
+    'radar stroke rate swim definition':
+      'La fréquence de nage est la moyenne des fréquences calculées pour les séances qui contiennent un nombre de coups et une durée. Chaque fréquence divise le nombre de coups par le temps pendant lequel ils ont été enregistrés. La cible est de 30 coups par minute.',
+    'radar recovery definition':
+      'La récupération utilise ton score Oura moyen des 14 derniers jours. Si le score Oura manque, elle utilise la VFC.',
+    'radar stride run definition':
+      "La longueur de foulée est ta distance moyenne par pas sur 42 jours. Les mesures natives de l'Apple Watch sont prioritaires. Lorsqu'elles manquent, la valeur est estimée avec la vitesse et la cadence. La note indique où cette moyenne se situe dans ta plage enregistrée.",
+    'radar oscillation run definition':
+      "L'oscillation verticale est ton mouvement vertical moyen par pas sur 42 jours, mesuré par l'Apple Watch. La note est inversée dans ta plage enregistrée, donc moins de mouvement s'affiche plus loin du centre. L'allure, le terrain, la taille et le style de course influencent la mesure.",
+    'radar unit wkg definition':
+      '$\\mathrm{W/kg}$ signifie watts par kilogramme de poids. Un cycliste qui produit 270 W à 90 kg a 3,0 W/kg.',
+    'radar unit ctl definition':
+      "La CTL est ta charge d'entraînement quotidienne moyenne sur 42 jours. Les jours récents comptent davantage.",
+    'radar unit fth definition':
+      '$\\mathrm{ft/h}$ signifie pieds de dénivelé par heure. Cette page convertit les mètres en pieds avec $1\\,\\mathrm{m}=3.281\\,\\mathrm{ft}$.',
+    'radar unit mh definition':
+      '$\\mathrm{m/h}$ signifie mètres de dénivelé par heure. Cette page divise le dénivelé par le temps de montée et ramène le résultat à une heure.',
+    'radar unit mspeed definition':
+      '$\\mathrm{m/s}$ signifie mètres parcourus par seconde. Multiplie la valeur par 3,6 pour la convertir en kilomètres par heure.',
+    'radar unit s100m definition':
+      's/100 m signifie le nombre de secondes nécessaires pour nager 100 mètres. Une valeur plus basse signifie une allure plus rapide.',
+    'radar unit rpm definition':
+      'rpm signifie tours par minute. Cette unité mesure la vitesse de pédalage.',
+    'radar unit spm definition':
+      'spm signifie pas par minute. Cette unité mesure ta cadence de course.',
+    'radar unit strmin definition':
+      'str/min signifie coups par minute. La fréquence divise le nombre de coups par le temps pendant lequel ils ont été enregistrés.',
+    'radar unit readiness definition':
+      "La préparation est le score quotidien de récupération d'Oura, de 0 à 100. Elle utilise ton sommeil et ta VFC. Elle utilise aussi ta fréquence cardiaque au repos et ton activité récente.",
+    'radar unit ms definition':
+      'ms signifie millisecondes. La VFC mesure la variation du temps entre les battements. Une valeur au-dessus de ta plage habituelle peut indiquer une meilleure récupération.',
+    'radar unit stride definition':
+      'La longueur de foulée est stockée en mètres par pas. Le mode impérial la convertit en pieds avec 1 m = 3,281 ft.',
+    'radar unit oscillation definition':
+      "L'oscillation verticale est stockée en centimètres. Le mode impérial la convertit en pouces avec 1 in = 2,54 cm.",
+    'radar unit default definition':
+      "La valeur brute est la mesure d'origine utilisée pour calculer cette note de 0 à 100.",
+  },
+  gloss: {
+    tss: {
+      term: "score de stress d'entraînement (TSS)",
+      def: "Le TSS est la somme quotidienne du stress des séances. Chaque séance utilise le facteur d'intensité au carré, multiplié par la durée en heures et par 100. L'intensité est estimée à partir de la vitesse ajustée au seuil.",
+    },
+    cp: {
+      term: 'puissance critique (CP)',
+      def: "La puissance critique est l'asymptote de puissance soutenable ajustée aux efforts maximaux de 3, 7 et 12 minutes. Ce site l'estime à partir de fenêtres complètes de puissance mesurée et indique leur provenance.",
+    },
+    wprime: {
+      term: 'W′',
+      def: "W′ est la capacité de travail finie au-dessus de la puissance critique. Elle correspond à la pente du modèle puissance-durée et s'exprime en kilojoules.",
+    },
+    'torque effectiveness': {
+      term: 'efficacité du couple (TE)',
+      def: "L'efficacité du couple compare le couple positif qui entraîne la manivelle au couple négatif qui s'y oppose pendant chaque tour. Une valeur de 100 % signifie qu'aucun couple négatif n'a été enregistré. Interprète les tendances gauche et droite avec la puissance et la cadence; cette mesure n'a pas de cible universelle.",
+    },
+    'pedal smoothness': {
+      term: 'fluidité du pédalage (PS)',
+      def: "La fluidité du pédalage est la puissance moyenne divisée par la puissance maximale sur un tour de manivelle. Une valeur plus élevée signifie que la puissance est répartie plus uniformément sur le tour. Elle décrit la forme de l'application de la puissance; la puissance totale et le rendement sont des mesures distinctes.",
+    },
+    'power phase': {
+      term: 'phase de puissance (PP)',
+      def: "La phase de puissance est l'intervalle angulaire pendant lequel chaque jambe produit une force motrice. 0° correspond à 12 h et 180° à 6 h ; le début et la fin délimitent l'intervalle. Le graphique peut franchir 360°→0°, car le cycle de manivelle est circulaire.",
+    },
+    ctl: {
+      term: 'condition (CTL)',
+      def: "La condition représente ta charge d'entraînement quotidienne moyenne sur les 42 derniers jours. Les jours récents comptent davantage. Elle monte quand tu t'entraînes régulièrement et baisse quand tu t'entraînes moins.",
+    },
+    atl: {
+      term: 'fatigue (ATL)',
+      def: "La fatigue représente ta charge d'entraînement quotidienne moyenne sur les 7 derniers jours. Les jours récents comptent davantage. Une valeur haute signifie que tu t'es plus entraîné récemment.",
+    },
+    tsb: {
+      term: 'forme (TSB)',
+      def: 'La forme est la condition moins la fatigue. Une valeur positive signifie que ta charge récente est sous ta charge à long terme, donc tu devrais être plus frais. Une valeur négative signifie que ta charge récente est plus haute.',
+    },
+    acwr: {
+      term: 'ACWR',
+      def: "L'ACWR divise ta charge des 7 derniers jours par ta charge des 28 derniers jours. La plage cible va de 0,8 à 1,3. Une valeur au-dessus de 1,5 signifie que ta charge récente a monté rapidement.",
+    },
+    ramp: {
+      term: 'progression',
+      def: "La progression est le changement de condition d'une semaine à l'autre. Une valeur positive signifie que ta charge augmente. Un grand saut signifie que ta charge a augmenté rapidement.",
+    },
+    monotony: {
+      term: 'monotonie',
+      def: "La monotonie mesure à quel point tes charges quotidiennes se ressemblent pendant la semaine. Une valeur haute signifie que les journées ont des charges proches. Une valeur au-dessus d'environ 2, avec une charge hebdomadaire haute, est un signal d'alerte dans la méthode de Foster.",
+    },
+    strain: {
+      term: 'contrainte',
+      def: 'La contrainte est la charge hebdomadaire multipliée par la monotonie. Elle est haute lorsque la semaine a une charge haute et peu de variation entre les jours.',
+    },
+    load: {
+      term: 'charge',
+      def: "La charge estime la difficulté de chaque séance à partir de l'allure et de la durée. Environ 100 points représentent une heure au seuil. L'activité enregistre aussi chaque valeur de capteur. Cette note utilise seulement l'allure et la durée.",
+    },
+    score: {
+      term: 'préparation',
+      def: "La préparation est une note de 0 à 100. La condition comparée aux exigences de la course représente 45 %. La distance couverte à l'entraînement pour chaque segment représente 55 %.",
+    },
+    binding: {
+      term: 'segment limitant',
+      def: 'Le segment limitant est la discipline qui réduit le plus ta note de préparation. Il combine la part de la distance de course déjà couverte avec la date de ton dernier entraînement dans cette discipline. Travaille ce segment en premier.',
+    },
+    predtime: {
+      term: 'temps estimé',
+      def: "Le temps estimé est le temps d'arrivée pour les trois segments et les deux transitions. Le modèle d'allure prédit chaque segment. Pendant son chargement, l'estimation ajuste ton allure seuil à la distance de course. Chaque transition ajoute 5 minutes.",
+    },
+    conf: {
+      term: 'fiabilité',
+      def: 'La fiabilité indique la quantité de données récentes derrière une estimation. "firm" signifie que les efforts récents sont assez nombreux. "low" signifie que les efforts sont peu nombreux. "stale" signifie que le dernier effort date de plus de 45 jours. "prior" signifie que les données personnelles manquent, donc le calcul utilise une valeur de départ générale.',
+    },
+    threshold: {
+      term: 'allure seuil',
+      def: "L'allure seuil estime ton allure pour un effort d'environ une heure. Elle utilise tes séances les plus rapides et ajuste l'allure de course pour les côtes. Le modèle d'allure l'utilise comme point de départ.",
+    },
+    lactate: {
+      term: 'seuil lactique',
+      def: "La FCSL est le repère de fréquence cardiaque déclaré. Les valeurs par sport projettent sur 14 jours le seuil actuel d'allure ou de puissance à partir des tendances d'entraînement récentes. Leurs zones ombrées sont des plages du modèle à 80 %, pas des mesures du lactate sanguin ni des seuils ventilatoires mesurés.",
+    },
+    trend: {
+      term: "tendance d'allure",
+      def: 'La tendance indique si ton allure seuil devient plus rapide ou plus lente. Elle utilise tes séances récentes. La zone ombrée montre la plage des valeurs futures probables.',
+    },
+    weight: {
+      term: 'poids',
+      def: "Le poids vient de tes mesures quotidiennes. Il est utilisé dans les graphiques de récupération et dans les estimations d'énergie qui dépendent du poids.",
+    },
+    wtrend: {
+      term: 'tendance de poids',
+      def: 'La tendance de poids est le taux de changement hebdomadaire de ton poids enregistré. Une valeur négative signifie que ton poids baisse.',
+    },
+    wgoal: {
+      term: 'objectif de poids',
+      def: "L'objectif de poids vient de Garmin Connect. La différence est ton poids actuel moins ton objectif. La date estimée utilise ta tendance hebdomadaire et apparaît seulement lorsque tu te rapproches de l'objectif.",
+    },
+    bodyfat: {
+      term: 'masse grasse',
+      def: "La masse grasse est le pourcentage indiqué par la balance Garmin Index. Utilise la tendance au lieu d'une seule mesure, car l'hydratation peut changer le résultat d'environ 1 point de pourcentage.",
+    },
+    dexa: {
+      term: 'composition corporelle DEXA',
+      def: 'Le DEXA est un scan en laboratoire qui mesure la masse totale et sépare la masse grasse de la masse maigre. Il mesure aussi le contenu minéral osseux. Utilise le DEXA comme mesure principale de composition corporelle. La balance sert à suivre les changements quotidiens.',
+    },
+    bmi: {
+      term: 'IMC',
+      def: "L'IMC est ton poids en kilogrammes divisé par ta taille en mètres au carré. Les muscles peuvent augmenter l'IMC, donc lis cette valeur avec la masse grasse.",
+    },
+    ffmi: {
+      term: 'FFMI (indice de masse maigre)',
+      def: "L'indice de masse maigre est ta masse maigre en kilogrammes divisée par ta taille en mètres au carré. Le DEXA fournit la mesure principale. Les estimations quotidiennes utilisent le poids et la masse grasse de la balance Garmin Index.",
+    },
+    bmr: {
+      term: 'métabolisme de base (Katch McArdle)',
+      def: "Le métabolisme de base estime les calories que ton corps utilise chaque jour au repos. Cette page utilise la formule de Katch McArdle, qui part de la masse maigre. L'estimation change lorsque la balance Garmin Index indique une nouvelle valeur de masse grasse.",
+    },
+    effort: {
+      term: 'effort relatif',
+      def: "Le score d'effort relatif de Strava utilise la fréquence cardiaque ou ta propre note d'effort. Ce graphique additionne les scores de chaque semaine civile. La zone ombrée repose sur les trois semaines complètes précédentes.",
+    },
+    hrv: {
+      term: 'VFC',
+      def: "La VFC est la variation du temps entre les battements. Elle est mesurée en millisecondes. Ce graphique compare ta moyenne sur 7 jours avec ta référence personnelle sur 28 jours. Une valeur située à plus d'un écart type sous ta référence peut signaler une mauvaise récupération.",
+    },
+    rhr: {
+      term: 'fréquence cardiaque au repos',
+      def: "La fréquence cardiaque au repos est ta fréquence la plus basse pendant la nuit. Une hausse d'au moins 5 bpm, ou de plus d'un écart type au-dessus de ta référence sur 28 jours, peut être un signe précoce de fatigue ou de maladie.",
+    },
+    tempdev: {
+      term: 'écart de température',
+      def: "L'écart de température est la différence entre ta température cutanée et ta référence personnelle. Une hausse d'au moins 0,5 °C peut signaler une réponse du système immunitaire. Elle peut apparaître 24 à 48 heures avant les symptômes.",
+    },
+    ambienttemp: {
+      term: "température ambiante d'une séance",
+      def: "La température ambiante est l'estimation WeatherKit pondérée par la durée de la séance au centre du parcours. La température de l'appareil Strava remplit les données manquantes. Elle est distincte de l'écart de température cutanée Oura.",
+    },
+    heatstrain: {
+      term: 'indice de contrainte thermique CORE',
+      def: "CORE combine la température centrale et la température cutanée pour calculer un indice de contrainte thermique en temps réel. Les valeurs d'au moins 3,0 comptent dans l'exposition à la chaleur sur cette page.",
+    },
+    heatdose: {
+      term: "dose d'exposition à la chaleur",
+      def: "L'indice de contrainte thermique CORE d'au moins 3,0 fournit la dose principale. Une course ou une sortie à vélo avec GPS au-dessus de 22 °C fournit la dose de repli lorsque les données CORE sont absentes. Soixante minutes chaudes représentent une dose. L'indice vise 14 doses, reste stable pendant trois jours sans chaleur, puis baisse de 2,5 % par jour.",
+    },
+    heatacclimation: {
+      term: "indice d'acclimatation à la chaleur",
+      def: "Ce pourcentage suit d'abord la contrainte thermique CORE, puis l'exposition ambiante WeatherKit ou Strava. Il reste une estimation, car l'humidité, le rayonnement solaire, les vêtements, la transpiration, l'hydratation et l'exposition passive ne sont pas disponibles.",
+    },
+    sleepdebt: {
+      term: 'dette de sommeil',
+      def: 'La dette de sommeil additionne le temps dormi sous 7 heures pendant les 14 dernières nuits. Ce graphique utilise une cible de 7 heures. Les athlètes ont souvent besoin de 8 à 10 heures.',
+    },
+    overreaching: {
+      term: 'surmenage',
+      def: 'Le surmenage est signalé lorsque la VFC est basse pendant que la charge augmente rapidement. Ici, une VFC basse signifie au moins un écart type sous ta référence. Une hausse rapide signifie un ACWR élevé ou une progression hebdomadaire au-dessus de 10 %.',
+    },
+    oreadiness: {
+      term: 'préparation Oura',
+      def: 'La préparation Oura est une note quotidienne de 0 à 100. Une note de 85 ou plus est optimale. Une note de 70 à 84 est bonne. Une note sous 70 demande ton attention. Plusieurs jours sous 70 peuvent signaler une contrainte accumulée.',
+    },
+    vo2max: {
+      term: 'VO₂max',
+      def: "La VO₂max est la quantité maximale d'oxygène que ton corps peut utiliser pendant un effort intense. Elle est mesurée en millilitres par kilogramme par minute. La tendance sur 28 jours utilise les valeurs observées de la méthode la plus récente sur au plus 12 semaines. L'estimation à vélo part de la FTP, calcule la puissance aérobie maximale, puis estime la VO₂max.",
+    },
+    ftp: {
+      term: 'hypothèse FTP',
+      def: "La FTP est la puissance à vélo que tu pourrais tenir pendant environ une heure. Cette estimation vient d'un test de VO₂max sur tapis, donc elle passe de la course au vélo et reste peu fiable. Utilise tes zones de fréquence cardiaque jusqu'à ton prochain test de puissance à vélo.",
+    },
+    fitage: {
+      term: 'âge physiologique',
+      def: "L'âge physiologique est l'âge qui a la même VO₂max médiane dans les données de référence FRIEND pour les hommes. Ce graphique limite le résultat de 20 à 80 ans. Un âge physiologique plus bas signifie que ta VO₂max dépasse la médiane de ton âge réel.",
+    },
+    vam: {
+      term: 'VAM',
+      def: "La VAM est le dénivelé grimpé en une heure. Cette page la calcule avec le dénivelé et le temps en mouvement. Elle affiche des mètres par heure ou des pieds par heure selon ton choix d'unités.",
+    },
+    radar: {
+      term: 'aptitudes',
+      def: "Chaque sport a six notes de 0 à 100. Le sprint et le seuil utilisent la puissance ou la vitesse. L'endurance utilise 42 jours de charge d'entraînement. La course utilise la longueur de foulée, la cadence et l'oscillation verticale. Le vélo utilise la vitesse de grimpe et la cadence. La natation utilise l'allure et la fréquence de nage. Le vélo et la natation conservent la récupération. La ligne pointillée montre la note prévue dans 28 jours.",
+    },
+    hrzones: {
+      term: "répartition des zones d'entraînement",
+      def: "Ce panneau additionne le temps enregistré dans chaque zone pour la discipline et la période choisies. Le vélo alterne entre la fréquence cardiaque et sept zones de puissance basées sur la FTP. La course alterne entre la fréquence cardiaque et six zones d'allure Strava. La natation utilise la fréquence cardiaque. Les plages d'allure montrent les allures observées des tours affectés à chaque zone.",
+    },
+    activitytelemetry: {
+      term: 'télémétrie des activités',
+      def: "Chaque point représente une activité. La puissance distingue les valeurs mesurées des estimations. La cadence utilise les coups par minute en natation, les tours par minute à vélo et les pas par minute en course. La température cutanée et l'indice de contrainte thermique sont des moyennes CORE pondérées par la durée. Les mesures manquantes restent des espaces vides.",
+    },
+    ef: {
+      term: "facteur d'efficacité",
+      def: "Le facteur d'efficacité compare ton allure ou ta puissance avec ta fréquence cardiaque. À vélo, il divise la puissance normalisée par la fréquence cardiaque moyenne. La puissance normalisée donne plus de poids aux efforts intenses. En course, le calcul divise la vitesse ajustée pour les côtes par la fréquence cardiaque moyenne. Une valeur plus haute au même effort signifie plus de rendement par battement.",
+    },
+    decouple: {
+      term: 'découplage',
+      def: "Le découplage compare l'allure ou la puissance produite par battement entre les deux moitiés de la séance. Une valeur plus basse est meilleure. Une valeur sous 5 % signifie que l'effort est resté stable. Une valeur au-dessus de 10 % signifie une baisse pendant la seconde moitié.",
+    },
+    legdist: {
+      term: 'distance totale',
+      def: 'La distance totale est la distance parcourue dans ce sport pendant la saison choisie. La natation est affichée en mètres. Le vélo et la course utilisent le réglage en kilomètres ou en milles.',
+    },
+    legcount: {
+      term: 'séances',
+      def: 'Ce nombre est le total des séances enregistrées pour ce sport pendant la saison choisie.',
+    },
+    legtime: {
+      term: 'temps total',
+      def: 'Le temps total additionne le temps en mouvement de ces séances.',
+    },
+    herodist: {
+      term: 'total saison',
+      def: 'Le total saison additionne la distance des trois sports pendant la saison choisie. Il utilise le réglage en kilomètres ou en milles.',
+    },
+  },
+}
+
+const TRI_I18N: Record<Locale, TriDict> = { en, fr }
+
+export const triText = (target: Locale, key: string): string => TRI_I18N[target].ui[key] ?? key
+
+type Vo2SourceMethod = 'garmin' | 'apple' | 'bike' | 'run' | 'hrratio' | 'lab' | 'none'
+
+type Vo2BikeSourceText = {
+  ftpW: number
+  ftpSource: 'athlete' | 'strava' | 'derived'
+  mapW: number
+  weightKg: number
+}
+
+export const vo2SourceText = (
+  target: Locale,
+  method: Vo2SourceMethod,
+  bike: Vo2BikeSourceText | null,
+): string => {
+  if (method === 'garmin')
+    return target === 'fr'
+      ? "Cette valeur vient de Garmin Connect ou d'une saisie manuelle."
+      : 'This value comes from Garmin Connect or a manual entry.'
+  if (method === 'apple')
+    return target === 'fr'
+      ? "Cette mesure vient de l'Apple Watch."
+      : 'This is an Apple Watch measurement.'
+  if (method === 'run')
+    return target === 'fr'
+      ? 'Cette estimation utilise la vitesse de course et la fréquence cardiaque.'
+      : 'This estimate uses running speed and heart rate.'
+  if (method === 'hrratio')
+    return target === 'fr'
+      ? 'Cette estimation utilise les fréquences cardiaques maximale et au repos.'
+      : 'This estimate uses maximum and resting heart rate.'
+  if (method === 'lab')
+    return target === 'fr'
+      ? "Cette valeur vient d'un test d'effort progressif."
+      : 'This value comes from a graded exercise test.'
+  if (method === 'bike' && bike != null) {
+    const weight = bike.weightKg.toLocaleString(target === 'fr' ? 'fr-CA' : 'en-US', {
+      maximumFractionDigits: 1,
+    })
+    const source =
+      bike.ftpSource === 'athlete'
+        ? target === 'fr'
+          ? 'athlète'
+          : 'athlete'
+        : bike.ftpSource === 'strava'
+          ? 'Strava'
+          : target === 'fr'
+            ? 'estimée'
+            : 'estimated'
+    return target === 'fr'
+      ? `FTP ${bike.ftpW} W (${source}). La puissance aérobie maximale estimée est de ${bike.mapW} W. Le poids est de ${weight} kg.`
+      : `FTP ${bike.ftpW} W (${source}). Estimated maximum aerobic power is ${bike.mapW} W. Body weight is ${weight} kg.`
+  }
+  return target === 'fr'
+    ? 'Il manque les données de puissance ou de fréquence cardiaque.'
+    : 'There is no power or heart rate data.'
+}
+
+export const trendUnavailableText = (
+  target: Locale,
+  sampleSize: number | null,
+  daysSinceLastEffort: number | null,
+): string => {
+  if (sampleSize === 0)
+    return target === 'fr' ? "Aucun effort n'a été enregistré." : 'No efforts were recorded.'
+  if (daysSinceLastEffort === 0)
+    return target === 'fr'
+      ? "Le dernier effort date d'aujourd'hui."
+      : 'The latest effort was today.'
+  if (daysSinceLastEffort != null) {
+    const unit =
+      target === 'fr'
+        ? daysSinceLastEffort === 1
+          ? 'jour'
+          : 'jours'
+        : daysSinceLastEffort === 1
+          ? 'day'
+          : 'days'
+    return target === 'fr'
+      ? `Le dernier effort remonte à ${daysSinceLastEffort} ${unit}.`
+      : `The latest effort was ${daysSinceLastEffort} ${unit} ago.`
+  }
+  return target === 'fr' ? 'Données insuffisantes.' : 'Not enough data.'
+}
+
+export const powerCurveReferenceLabel = (target: Locale, year: number | null): string =>
+  year == null
+    ? triText(target, '6-week best')
+    : target === 'fr'
+      ? `meilleur de ${year}`
+      : `${year} best`
+
+type CriticalPowerSummary = {
+  criticalPowerWatts: number
+  wPrimeJoules: number
+  independentEffortCount: number
+  confidence: 'medium' | 'provisional'
+}
+
+export const criticalPowerSummaryParts = (
+  target: Locale,
+  estimate: CriticalPowerSummary,
+): { criticalPower: string; wPrime: string; evidence: string } => {
+  const cp = estimate.criticalPowerWatts.toLocaleString(target === 'fr' ? 'fr-CA' : 'en-US', {
+    maximumFractionDigits: 1,
+  })
+  const wPrime = (estimate.wPrimeJoules / 1_000).toLocaleString(
+    target === 'fr' ? 'fr-CA' : 'en-US',
+    { minimumFractionDigits: 1, maximumFractionDigits: 1 },
+  )
+  const efforts = estimate.independentEffortCount
+  if (target === 'fr')
+    return {
+      criticalPower: `eCP ${cp} W`,
+      wPrime: `eW′ ${wPrime} kJ`,
+      evidence: `${efforts} effort${efforts === 1 ? '' : 's'} indépendant${efforts === 1 ? '' : 's'} · ${estimate.confidence === 'medium' ? 'confiance moyenne' : 'provisoire'}`,
+    }
+  return {
+    criticalPower: `eCP ${cp} W`,
+    wPrime: `eW′ ${wPrime} kJ`,
+    evidence: `${efforts} independent effort${efforts === 1 ? '' : 's'} · ${estimate.confidence}`,
+  }
+}
+
+export const criticalPowerSummaryText = (
+  target: Locale,
+  estimate: CriticalPowerSummary,
+): string => {
+  const summary = criticalPowerSummaryParts(target, estimate)
+  return `${summary.criticalPower} · ${summary.wPrime}`
+}
+
+export const criticalPowerEvidenceText = (target: Locale, estimate: CriticalPowerSummary): string =>
+  criticalPowerSummaryParts(target, estimate).evidence
+
+export const glossFor = (target: Locale, key: string): Gloss | undefined =>
+  TRI_I18N[target].gloss[key] ?? en.gloss[key]
+
+export const glossKeys = (): string[] => Object.keys(en.gloss)

@@ -1,0 +1,109 @@
+/*
+ * layout.css — Content Width & Minimal Global Fixes
+ * Primary theme handles all UI chrome.
+ * This snippet ONLY handles:
+ * - Centered content width (780px)
+ * - Thin scrollbar
+ * - Workspace border cleanup
+ * - Responsive padding
+ */
+
+/* ═══════════════════════════════════════════
+   0. DESIGN TOKENS
+   ═══════════════════════════════════════════ */
+
+:root {
+  --ly-max-width:       780px;
+  --ly-side-padding:    3em;
+}
+
+/* ═══════════════════════════════════════════
+   1. CONTENT WIDTH — Centered note area
+   ═══════════════════════════════════════════ */
+
+/* Reading view */
+.markdown-preview-view .markdown-preview-section,
+.markdown-reading-view > div,
+.markdown-rendered > div {
+  max-width: var(--ly-max-width) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--ly-side-padding) !important;
+  padding-right: var(--ly-side-padding) !important;
+}
+
+/* Source view (live preview / source mode) */
+.markdown-source-view .cm-content {
+  max-width: var(--ly-max-width) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.markdown-source-view .cm-scroller {
+  padding-left: var(--ly-side-padding) !important;
+  padding-right: var(--ly-side-padding) !important;
+}
+
+.workspace-leaf-content[data-type="markdown"] .view-content {
+  overflow-x: hidden;
+}
+
+/* ═══════════════════════════════════════════
+   2. WORKSPACE BORDERS — Clean
+   ═══════════════════════════════════════════ */
+
+.workspace-leaf-content {
+  border: none !important;
+}
+
+/* ═══════════════════════════════════════════
+   3. SCROLLBAR — Thin
+   ═══════════════════════════════════════════ */
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.10);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* ═══════════════════════════════════════════
+   4. REDUCED MOTION
+   ═══════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0ms !important;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   5. RESPONSIVE — Narrow windows
+   ═══════════════════════════════════════════ */
+
+@media (max-width: 900px) {
+  :root {
+    --ly-side-padding: 1.5em;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --ly-side-padding: 0.8em;
+  }
+}

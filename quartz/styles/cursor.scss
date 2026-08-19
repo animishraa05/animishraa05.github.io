@@ -1,0 +1,239 @@
+:target {
+  scroll-margin-block-start: 20px;
+}
+
+.site-cursor,
+.site-cursor-bracket {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html.site-cursor-ready,
+  html.site-cursor-ready body,
+  html.site-cursor-ready body * {
+    cursor: none !important;
+  }
+
+  html.site-cursor-ready .site-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-tooltip);
+    display: block;
+    width: 24px;
+    height: 24px;
+    color: var(--dark);
+    opacity: 0;
+    pointer-events: none;
+    transform: translate3d(-52px, -52px, 0);
+    transition: opacity 90ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+  }
+
+  html.site-cursor-ready .site-cursor[data-visible='true'] {
+    opacity: 1;
+  }
+
+  html.site-cursor-ready .site-cursor-bracket {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-tooltip);
+    display: block;
+    color: var(--dark);
+    opacity: 0;
+    pointer-events: none;
+    transform: translate3d(-52px, -52px, 0);
+    transition: opacity 90ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  html.site-cursor-ready .site-cursor-bracket[data-visible='true'] {
+    opacity: 0.82;
+  }
+
+  .site-cursor-bracket::before,
+  .site-cursor-bracket::after {
+    position: absolute;
+    top: 50%;
+    width: 0.3rem;
+    height: calc(100% + 0.32rem);
+    pointer-events: none;
+    content: '';
+    transform: translateY(-50%);
+  }
+
+  .site-cursor-bracket::before {
+    right: calc(100% + 0.12rem);
+    background:
+      linear-gradient(currentColor, currentColor) left center / 1px 100% no-repeat,
+      linear-gradient(currentColor, currentColor) left top / 100% 1px no-repeat,
+      linear-gradient(currentColor, currentColor) left bottom / 100% 1px no-repeat;
+  }
+
+  .site-cursor-bracket::after {
+    left: calc(100% + 0.12rem);
+    background:
+      linear-gradient(currentColor, currentColor) right center / 1px 100% no-repeat,
+      linear-gradient(currentColor, currentColor) right top / 100% 1px no-repeat,
+      linear-gradient(currentColor, currentColor) right bottom / 100% 1px no-repeat;
+  }
+
+  html.site-cursor-ready .site-cursor[data-magnetic] {
+    transition:
+      opacity 90ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 140ms cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  html.site-cursor-ready .site-cursor[data-magnetic='release'] {
+    transition-duration: 90ms, 110ms;
+  }
+
+  .site-cursor-diamond,
+  .site-cursor-question,
+  .site-cursor-crosshair,
+  .site-cursor-line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    pointer-events: none;
+    transition:
+      opacity 120ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 120ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .site-cursor-diamond {
+    box-sizing: border-box;
+    width: 10px;
+    height: 10px;
+    border: 1px solid currentColor;
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
+  }
+
+  .site-cursor-question {
+    font-family: var(--codeFont);
+    font-size: 9px;
+    line-height: 1;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+
+  .site-cursor-crosshair {
+    width: 13px;
+    height: 13px;
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(45deg) scale(0.35);
+  }
+
+  .site-cursor-crosshair::before,
+  .site-cursor-crosshair::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    background: currentColor;
+    content: '';
+    transform: translate(-50%, -50%);
+  }
+
+  .site-cursor-crosshair::before {
+    width: 1px;
+    height: 13px;
+  }
+
+  .site-cursor-crosshair::after {
+    width: 13px;
+    height: 1px;
+  }
+
+  .site-cursor-line {
+    width: 1px;
+    height: 24px;
+    background: currentColor;
+    opacity: 0;
+    transform: translate(-50%, -50%) scaleY(0.12);
+  }
+
+  .site-cursor[data-mode='timeline'] .site-cursor-diamond {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(45deg) scale(0.18);
+  }
+
+  .site-cursor[data-mode='timeline'] .site-cursor-line {
+    background: #fc4c02;
+    opacity: 1;
+  }
+
+  .site-cursor[data-mode='text'] .site-cursor-diamond {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(45deg) scale(0.18);
+  }
+
+  .site-cursor[data-mode='text'] .site-cursor-line {
+    opacity: 1;
+  }
+
+  .site-cursor[data-mode='bracket'] .site-cursor-diamond {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(45deg) scale(0.65);
+  }
+
+  .site-cursor[data-mode='action'] .site-cursor-diamond {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(0) scale(0.18);
+  }
+
+  :is([data-site-cursor-action], [data-site-cursor-close], button[aria-label^='close' i])
+    :is([data-site-cursor-icon], svg) {
+    transition: transform 120ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  :is(
+      [data-site-cursor-action],
+      [data-site-cursor-close],
+      button[aria-label^='close' i]
+    )[data-site-cursor-active='true']
+    :is([data-site-cursor-icon], svg) {
+    transform: scale(1.14);
+  }
+
+  .site-cursor[data-mode='close'] .site-cursor-diamond {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(0) scale(0.18);
+  }
+
+  .site-cursor[data-mode='crosshair'] .site-cursor-diamond {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(45deg) scale(0.18);
+  }
+
+  .site-cursor[data-mode='crosshair'] .site-cursor-crosshair {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0) scale(1);
+  }
+
+  .site-cursor[data-mode='help'] .site-cursor-diamond {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(45deg) scale(1.35);
+  }
+
+  .site-cursor[data-mode='help'] .site-cursor-question {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.site-cursor-ready .site-cursor[data-magnetic],
+  .site-cursor-bracket,
+  :is([data-site-cursor-action], [data-site-cursor-close], button[aria-label^='close' i])
+    :is([data-site-cursor-icon], svg),
+  .site-cursor,
+  .site-cursor-diamond,
+  .site-cursor-question,
+  .site-cursor-crosshair,
+  .site-cursor-line {
+    transition: none;
+  }
+}

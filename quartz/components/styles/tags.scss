@@ -1,0 +1,44 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixin.scss' as *;
+
+ul.tags,
+menu.tags,
+menu.tags > li > ul {
+  list-style: none;
+  display: flex;
+  padding-left: 0;
+  gap: 0.4rem;
+  margin: 0;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+ul.tags {
+  margin: 1rem 0;
+}
+
+div.first {
+  padding-left: 0;
+}
+
+div.first,
+menu.tags {
+  grid-column: auto;
+}
+
+li.socials {
+  address {
+    font-style: normal;
+  }
+}
+
+.section-li > .section > .tags {
+  justify-content: flex-end;
+}
+
+ul.tags > li {
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0;
+  overflow-wrap: normal;
+}

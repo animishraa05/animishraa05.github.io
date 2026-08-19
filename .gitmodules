@@ -1,0 +1,3 @@
+[submodule "content/content"]
+	path = content/content
+	url = git@github.com:animishraa05/notes.git

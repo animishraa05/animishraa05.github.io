@@ -1,0 +1,1 @@
+[[OWASP]], [[GitOps]],[[Infrastructure Monitoring]],[[Kubernetes]],[[Docker]],[[Networking for Devops]],[[Nginx]],[[OWASP]],[[AWS]],[[CI CD]],[[Ansible]],,[[Terraform]],[[Consul]],[[git-cheat-sheet.pdf]],[[Service Mesh]]

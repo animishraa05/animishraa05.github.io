@@ -1,0 +1,397 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixin.scss' as *;
+@use './figure.scss' as *;
+
+.offset-heads-toy {
+  @include figure-frame('oht-figure', 36rem);
+
+  --oht-line: color-mix(in srgb, var(--gray) 24%, transparent);
+  --oht-surface-shadow:
+    0 0 0 1px var(--oht-line) inset, 0 18px 46px color-mix(in srgb, var(--dark) 7%, transparent);
+  --oht-panel-shadow: none;
+  --oht-note: color-mix(in srgb, var(--darkgray) 78%, var(--dark) 22%);
+  --oht-div: color-mix(in srgb, var(--gray) 28%, transparent);
+  --oht-head1: #fdb2a2;
+  --oht-head2: #cdd597;
+  --oht-surrogate: color-mix(in srgb, var(--gray) 70%, var(--darkgray) 30%);
+  --oht-grid-bg: color-mix(in srgb, var(--lightgray) 18%, var(--light));
+  --oht-grid-stroke: color-mix(in srgb, var(--gray) 32%, transparent);
+  --oht-tab-surface: color-mix(in srgb, var(--light) 86%, var(--lightgray));
+  --oht-tab-border: color-mix(in srgb, var(--lightgray) 78%, transparent);
+  --oht-tab-active: color-mix(in srgb, var(--lightgray) 70%, var(--light));
+}
+
+:root[saved-theme='dark'] .offset-heads-toy {
+  --oht-head1: color-mix(in srgb, #fdb2a2 78%, var(--lightgray));
+  --oht-head2: color-mix(in srgb, #cdd597 78%, var(--lightgray));
+  --oht-surrogate: color-mix(in srgb, var(--gray) 50%, var(--lightgray));
+  --oht-grid-bg: color-mix(in srgb, var(--lightgray) 22%, var(--dark));
+  --oht-grid-stroke: color-mix(in srgb, var(--gray) 22%, transparent);
+  --oht-tab-surface: color-mix(in srgb, var(--lightgray) 18%, var(--dark));
+  --oht-tab-border: color-mix(in srgb, var(--lightgray) 30%, transparent);
+  --oht-tab-active: color-mix(in srgb, var(--lightgray) 26%, var(--dark));
+}
+
+.oht-panels {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.1rem;
+  align-items: stretch;
+}
+
+.oht-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  min-width: 0;
+  padding: 0.85rem 0.9rem 0.9rem;
+  border-radius: var(--radius-none);
+  border: 0;
+  background: color-mix(in srgb, var(--light) 96%, transparent);
+}
+
+.oht-panel-head {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--oht-note);
+  font-size: 0.8rem;
+}
+
+.oht-panel-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--oht-note);
+
+  .katex {
+    font-size: 1em;
+    color: inherit;
+  }
+}
+
+.oht-swatch {
+  display: inline-block;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+
+  &.oht-swatch--head1 {
+    background: var(--oht-head1);
+  }
+  &.oht-swatch--head2 {
+    background: var(--oht-head2);
+  }
+  &.oht-swatch--surrogate {
+    background: var(--oht-surrogate);
+  }
+}
+
+.oht-grid {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: block;
+  border-radius: var(--radius-none);
+  background: var(--oht-grid-bg);
+
+  .oht-cell {
+    stroke: var(--oht-grid-stroke);
+    stroke-width: 0.025;
+    transition: fill-opacity 140ms ease-out;
+  }
+  .oht-cell--head1 {
+    fill: var(--oht-head1);
+  }
+  .oht-cell--head2 {
+    fill: var(--oht-head2);
+  }
+  .oht-cell--surrogate {
+    fill: var(--oht-surrogate);
+  }
+}
+
+.oht-fo {
+  @include figure-fo;
+  color: var(--oht-note);
+  font-size: 0.42px;
+
+  &.oht-fo--center {
+    justify-content: center;
+  }
+  &.oht-fo--start {
+    justify-content: flex-start;
+  }
+  &.oht-fo--end {
+    justify-content: flex-end;
+  }
+  &.oht-fo--vert {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+}
+
+.oht-panel-formula {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.35rem 0.4rem;
+  border-radius: var(--radius-none);
+  background: color-mix(in srgb, var(--lightgray) 35%, transparent);
+  font-size: 0.78rem;
+  color: var(--dark);
+  overflow-x: auto;
+  .katex {
+    font-size: 0.95em;
+  }
+}
+
+.oht-readout {
+  margin-top: 1.25rem;
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius-none);
+  border: 0;
+  background: color-mix(in srgb, var(--light) 96%, transparent);
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 1rem 1.5rem;
+  align-items: start;
+}
+
+.oht-formula {
+  grid-column: 1 / -1;
+  overflow-x: auto;
+  .katex-display {
+    margin: 0;
+  }
+}
+
+.oht-stats {
+  margin: 0;
+  display: grid;
+  grid-template-columns: max-content auto;
+  gap: 0.5rem 0.9rem;
+  color: var(--oht-note);
+  font-size: 0.85rem;
+  align-content: start;
+}
+
+.oht-stat-row {
+  display: contents;
+
+  dt {
+    color: var(--oht-note);
+    font-weight: 500;
+    .katex {
+      font-size: 1em;
+    }
+  }
+  dd {
+    margin: 0;
+    color: var(--dark);
+    font-variant-numeric: tabular-nums;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.35rem;
+  }
+}
+
+.oht-stat-val {
+  font-weight: 600;
+
+  .katex {
+    font-size: 1em;
+    color: inherit;
+  }
+
+  &.oht-stat-val--big {
+    font-size: 1.05rem;
+    color: var(--dark);
+  }
+  &.oht-stat-val--mono {
+    font-family: var(--codeFont);
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+}
+
+.oht-note {
+  margin: 0;
+  color: var(--oht-note);
+  font-size: 0.85rem;
+  line-height: 1.55;
+  .oht-math {
+    color: var(--dark);
+  }
+}
+
+.oht-controls {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.4fr) minmax(0, auto);
+  gap: 1rem 1.5rem;
+  align-items: center;
+}
+
+.oht-control {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+.oht-control--slider {
+  .oht-slider {
+    flex: 1 1 auto;
+    min-width: 0;
+    @include stableRangeControl;
+  }
+}
+
+.oht-control--actions {
+  justify-content: flex-end;
+}
+
+.oht-label {
+  color: var(--oht-note);
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  white-space: nowrap;
+}
+
+.oht-slider-value {
+  font-variant-numeric: tabular-nums;
+  color: var(--dark);
+  font-weight: 600;
+  min-width: 2rem;
+  text-align: right;
+
+  .katex {
+    font-size: 1em;
+    color: inherit;
+  }
+}
+
+.oht-toggle {
+  display: inline-flex;
+  align-items: stretch;
+  height: 1.55rem;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid var(--oht-tab-border);
+  border-radius: var(--radius-none);
+  background: var(--oht-tab-surface);
+}
+
+.oht-toggle-btn {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 0 0.78rem;
+  border: 0;
+  border-radius: 0;
+  background: var(--oht-tab-surface);
+  color: var(--gray);
+  cursor: pointer;
+  font-family: var(--codeFont);
+  font-size: 0.72rem;
+  line-height: 1;
+  white-space: nowrap;
+  transition:
+    background-color 140ms ease,
+    color 140ms ease;
+
+  &:not(:disabled):hover {
+    color: var(--dark);
+  }
+  &:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--oht-note) 50%, transparent);
+    outline-offset: -2px;
+  }
+  &.is-active {
+    background: var(--oht-tab-active);
+    color: var(--dark);
+  }
+  .katex {
+    font-size: 0.95em;
+    color: inherit;
+  }
+}
+
+.oht-btn {
+  appearance: none;
+  border: 0;
+  background: color-mix(in srgb, var(--light) 90%, var(--lightgray));
+  color: var(--dark);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  min-height: 2.5rem;
+  padding: 0.35rem 0.95rem;
+  border-radius: var(--radius-none);
+  cursor: pointer;
+  transition:
+    background 120ms ease-out,
+    transform 120ms ease-out;
+
+  &:hover {
+    background: var(--light);
+  }
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+.oht-caption {
+  @include figure-caption;
+
+  .oht-math {
+    @include figure-caption-math-gap;
+  }
+}
+
+.oht-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.oht-math .katex {
+  color: inherit;
+  font-size: 1em;
+}
+
+@container oht-figure (max-width: 760px) {
+  .oht-panels {
+    grid-template-columns: 1fr;
+  }
+  .oht-readout {
+    grid-template-columns: 1fr;
+  }
+  .oht-controls {
+    grid-template-columns: 1fr;
+  }
+  .oht-control--actions {
+    justify-content: flex-start;
+  }
+}
+
+@container oht-figure (max-width: 460px) {
+  .offset-heads-toy {
+    padding: 0;
+  }
+  .oht-panel {
+    padding: 0.7rem 0.7rem 0.75rem;
+  }
+}

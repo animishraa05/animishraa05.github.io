@@ -1,0 +1,345 @@
+import { isRecord, readNumber, readString } from '../../util/type-guards'
+
+const COMPASS = [
+  'N',
+  'NNE',
+  'NE',
+  'ENE',
+  'E',
+  'ESE',
+  'SE',
+  'SSE',
+  'S',
+  'SSW',
+  'SW',
+  'WSW',
+  'W',
+  'WNW',
+  'NW',
+  'NNW',
+]
+
+export interface WeatherActivity {
+  activityId: number
+  date: string
+  start: string
+  end: string
+  latitude: number
+  longitude: number
+  durationS: number
+  windKph: number | null
+  windDir: string | null
+  windDirDeg: number | null
+  windGustKph: number | null
+  temperatureC: number | null
+  temperatureSeries?: WeatherTemperatureSample[]
+  source: 'weatherkit'
+}
+
+export interface WeatherTemperatureSample {
+  elapsedS: number
+  temperatureC: number
+}
+
+export interface WeatherDay {
+  date: string
+  activityCount: number
+  durationS: number
+  windKph: number | null
+  windDir: string | null
+  windDirDeg: number | null
+  windGustKph: number | null
+}
+
+export interface WeatherCache {
+  version?: number
+  lastSync: number
+  current: WeatherSnapshot | null
+  activities: Record<string, WeatherActivity>
+  days: Record<string, WeatherDay>
+}
+
+export interface WeatherHour {
+  forecastStart: string
+  windSpeed: number
+  windDirection: number | null
+  windGust: number | null
+  temperature: number | null
+  conditionCode: string | null
+  precipitationChance: number | null
+  precipitationType: string | null
+}
+
+export interface WeatherSnapshot {
+  forecastStart: string
+  latitude: number
+  longitude: number
+  temperatureC: number | null
+  conditionCode: string | null
+  precipitationChance: number | null
+  precipitationType: string | null
+  source: 'weatherkit'
+}
+
+export interface WeatherActivityCandidate {
+  activityId: number
+  date: string
+  start: string
+  end: string
+  latitude: number
+  longitude: number
+  durationS: number
+}
+
+export function compassFromDegrees(degrees: number | null): string | null {
+  if (degrees == null || !Number.isFinite(degrees)) return null
+  const normalized = ((degrees % 360) + 360) % 360
+  return COMPASS[Math.round(normalized / 22.5) % COMPASS.length]
+}
+
+function round(value: number, dp = 0): number {
+  const f = 10 ** dp
+  return Math.round(value * f) / f
+}
+
+export function weatherSnapshotFromHours(
+  location: { latitude: number; longitude: number },
+  hours: readonly WeatherHour[],
+  atMs: number,
+): WeatherSnapshot | null {
+  if (!Number.isFinite(atMs)) return null
+  const nearest = hours
+    .map(hour => ({ hour, distance: Math.abs(Date.parse(hour.forecastStart) - atMs) }))
+    .filter(candidate => Number.isFinite(candidate.distance))
+    .sort((left, right) => left.distance - right.distance)[0]?.hour
+  if (!nearest) return null
+  return {
+    forecastStart: nearest.forecastStart,
+    latitude: round(location.latitude, 5),
+    longitude: round(location.longitude, 5),
+    temperatureC: nearest.temperature == null ? null : round(nearest.temperature, 1),
+    conditionCode: nearest.conditionCode,
+    precipitationChance:
+      nearest.precipitationChance == null
+        ? null
+        : round(Math.min(1, Math.max(0, nearest.precipitationChance)), 2),
+    precipitationType: nearest.precipitationType,
+    source: 'weatherkit',
+  }
+}
+
+function circularMeanDeg(values: { degrees: number; weight: number }[]): number | null {
+  let x = 0
+  let y = 0
+  for (const value of values) {
+    if (!Number.isFinite(value.degrees) || value.weight <= 0) continue
+    const radians = (value.degrees * Math.PI) / 180
+    x += Math.cos(radians) * value.weight
+    y += Math.sin(radians) * value.weight
+  }
+  if (x === 0 && y === 0) return null
+  return round(((Math.atan2(y, x) * 180) / Math.PI + 360) % 360)
+}
+
+export function weatherActivityFromHours(
+  candidate: WeatherActivityCandidate,
+  hours: WeatherHour[],
+): WeatherActivity | null {
+  const startMs = Date.parse(candidate.start)
+  const endMs = Date.parse(candidate.end)
+  if (!Number.isFinite(startMs) || !Number.isFinite(endMs) || endMs <= startMs) return null
+
+  let windTotal = 0
+  let windWeight = 0
+  let tempTotal = 0
+  let tempWeight = 0
+  let gust: number | null = null
+  const directions: { degrees: number; weight: number }[] = []
+  const temperatureSeries: WeatherTemperatureSample[] = []
+
+  for (const hour of hours) {
+    const hourStart = Date.parse(hour.forecastStart)
+    if (!Number.isFinite(hourStart)) continue
+    const hourEnd = hourStart + 3_600_000
+    const overlap = Math.max(0, Math.min(endMs, hourEnd) - Math.max(startMs, hourStart))
+    if (overlap <= 0) continue
+    windTotal += hour.windSpeed * overlap
+    windWeight += overlap
+    if (hour.temperature != null) {
+      tempTotal += hour.temperature * overlap
+      tempWeight += overlap
+      const elapsedS = round((Math.max(startMs, hourStart) - startMs) / 1000)
+      const sample = { elapsedS, temperatureC: round(hour.temperature, 1) }
+      const previous = temperatureSeries[temperatureSeries.length - 1]
+      if (previous?.elapsedS === elapsedS) temperatureSeries[temperatureSeries.length - 1] = sample
+      else temperatureSeries.push(sample)
+    }
+    if (hour.windGust != null) gust = Math.max(gust ?? 0, hour.windGust)
+    if (hour.windDirection != null)
+      directions.push({
+        degrees: hour.windDirection,
+        weight: overlap * Math.max(hour.windSpeed, 1),
+      })
+  }
+
+  if (windWeight <= 0) return null
+  const finalTemperature = temperatureSeries[temperatureSeries.length - 1]
+  if (finalTemperature && finalTemperature.elapsedS < candidate.durationS)
+    temperatureSeries.push({
+      elapsedS: candidate.durationS,
+      temperatureC: finalTemperature.temperatureC,
+    })
+  const windKph = round(windTotal / windWeight)
+  const windDirDeg = circularMeanDeg(directions)
+  return {
+    activityId: candidate.activityId,
+    date: candidate.date,
+    start: candidate.start,
+    end: candidate.end,
+    latitude: round(candidate.latitude, 5),
+    longitude: round(candidate.longitude, 5),
+    durationS: candidate.durationS,
+    windKph,
+    windDir: compassFromDegrees(windDirDeg),
+    windDirDeg,
+    windGustKph: gust == null ? null : round(gust),
+    temperatureC: tempWeight > 0 ? round(tempTotal / tempWeight) : null,
+    temperatureSeries,
+    source: 'weatherkit',
+  }
+}
+
+export function summarizeWeatherDays(
+  activities: Record<string, WeatherActivity>,
+): Record<string, WeatherDay> {
+  const groups = new Map<string, WeatherActivity[]>()
+  for (const activity of Object.values(activities)) {
+    const group = groups.get(activity.date) ?? []
+    group.push(activity)
+    groups.set(activity.date, group)
+  }
+
+  const days: Record<string, WeatherDay> = {}
+  for (const [date, group] of [...groups].sort((a, b) => a[0].localeCompare(b[0]))) {
+    let windTotal = 0
+    let windWeight = 0
+    let durationS = 0
+    let gust: number | null = null
+    const directions: { degrees: number; weight: number }[] = []
+    for (const activity of group) {
+      const weight = Math.max(1, activity.durationS)
+      durationS += activity.durationS
+      if (activity.windKph != null) {
+        windTotal += activity.windKph * weight
+        windWeight += weight
+      }
+      if (activity.windGustKph != null) gust = Math.max(gust ?? 0, activity.windGustKph)
+      if (activity.windDirDeg != null && activity.windKph != null)
+        directions.push({
+          degrees: activity.windDirDeg,
+          weight: weight * Math.max(activity.windKph, 1),
+        })
+    }
+    const windDirDeg = circularMeanDeg(directions)
+    days[date] = {
+      date,
+      activityCount: group.length,
+      durationS,
+      windKph: windWeight > 0 ? round(windTotal / windWeight) : null,
+      windDir: compassFromDegrees(windDirDeg),
+      windDirDeg,
+      windGustKph: gust,
+    }
+  }
+  return days
+}
+
+function readWeatherActivity(value: unknown): WeatherActivity | null {
+  if (!isRecord(value)) return null
+  const activityId = readNumber(value, 'activityId')
+  const date = readString(value, 'date')
+  const start = readString(value, 'start')
+  const end = readString(value, 'end')
+  const latitude = readNumber(value, 'latitude')
+  const longitude = readNumber(value, 'longitude')
+  const durationS = readNumber(value, 'durationS')
+  if (
+    activityId == null ||
+    !date ||
+    !start ||
+    !end ||
+    latitude == null ||
+    longitude == null ||
+    durationS == null
+  )
+    return null
+  const temperatureSeries: WeatherTemperatureSample[] = []
+  if (Array.isArray(value.temperatureSeries))
+    for (const sample of value.temperatureSeries) {
+      if (!isRecord(sample)) continue
+      const elapsedS = readNumber(sample, 'elapsedS')
+      const temperatureC = readNumber(sample, 'temperatureC')
+      if (
+        elapsedS == null ||
+        elapsedS < 0 ||
+        elapsedS > durationS ||
+        temperatureC == null ||
+        !Number.isFinite(temperatureC)
+      )
+        continue
+      temperatureSeries.push({ elapsedS, temperatureC })
+    }
+  temperatureSeries.sort((a, b) => a.elapsedS - b.elapsedS)
+  return {
+    activityId,
+    date,
+    start,
+    end,
+    latitude,
+    longitude,
+    durationS,
+    windKph: readNumber(value, 'windKph') ?? null,
+    windDir: readString(value, 'windDir') ?? null,
+    windDirDeg: readNumber(value, 'windDirDeg') ?? null,
+    windGustKph: readNumber(value, 'windGustKph') ?? null,
+    temperatureC: readNumber(value, 'temperatureC') ?? null,
+    temperatureSeries,
+    source: 'weatherkit',
+  }
+}
+
+function readWeatherSnapshot(value: unknown): WeatherSnapshot | null {
+  if (!isRecord(value)) return null
+  const forecastStart = readString(value, 'forecastStart')
+  const latitude = readNumber(value, 'latitude')
+  const longitude = readNumber(value, 'longitude')
+  if (!forecastStart || latitude == null || longitude == null) return null
+  const precipitationChance = readNumber(value, 'precipitationChance')
+  return {
+    forecastStart,
+    latitude,
+    longitude,
+    temperatureC: readNumber(value, 'temperatureC') ?? null,
+    conditionCode: readString(value, 'conditionCode') ?? null,
+    precipitationChance:
+      precipitationChance == null ? null : Math.min(1, Math.max(0, precipitationChance)),
+    precipitationType: readString(value, 'precipitationType') ?? null,
+    source: 'weatherkit',
+  }
+}
+
+export function parseWeatherCache(raw: unknown): WeatherCache | null {
+  if (!isRecord(raw) || !isRecord(raw.activities)) return null
+  const activities: Record<string, WeatherActivity> = {}
+  for (const [id, value] of Object.entries(raw.activities)) {
+    const activity = readWeatherActivity(value)
+    if (activity) activities[id] = activity
+  }
+  return {
+    version: readNumber(raw, 'version'),
+    lastSync: readNumber(raw, 'lastSync') ?? 0,
+    current: readWeatherSnapshot(raw.current),
+    activities,
+    days: summarizeWeatherDays(activities),
+  }
+}

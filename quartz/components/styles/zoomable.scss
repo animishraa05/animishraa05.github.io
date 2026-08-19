@@ -1,0 +1,212 @@
+@use '../../styles/variables.scss' as *;
+
+.zoomable {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.zoomable-placeholder {
+  display: block;
+  width: 100%;
+}
+
+.zoomable > .zoomable-content {
+  display: block;
+}
+
+.zoomable > .zoomable-content > figure,
+.zoomable > .zoomable-content > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.zoomable-trigger {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  margin: 0;
+  padding: 0;
+  background: color-mix(in srgb, var(--light) 88%, transparent);
+  border: 1px solid color-mix(in srgb, var(--gray) 32%, transparent);
+  border-radius: var(--radius-none);
+  cursor: zoom-in;
+  color: var(--darkgray);
+  opacity: 0;
+  transform: translateY(-2px);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease,
+    color 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease;
+  -webkit-appearance: none;
+  appearance: none;
+  font: inherit;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -7px;
+  }
+
+  & > svg {
+    width: 14px;
+    height: 14px;
+    display: block;
+  }
+
+  .zoomable-trigger-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    & > svg {
+      width: 14px;
+      height: 14px;
+      display: block;
+    }
+  }
+
+  .zoomable-trigger-icon--collapse {
+    display: none;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: var(--dark);
+    background: var(--light);
+    border-color: color-mix(in srgb, var(--gray) 52%, transparent);
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--secondary) 55%, transparent);
+    outline-offset: 2px;
+  }
+
+  &:active {
+    transform: translateY(0) scale(0.96);
+  }
+}
+
+.zoomable > .zoomable-trigger:hover,
+.zoomable > .zoomable-trigger:focus-visible,
+.zoomable.is-zoomed > .zoomable-trigger {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.zoomable.is-zoomed {
+  position: fixed;
+  inset: 4vh 4vw;
+  z-index: 1000;
+  margin: 0;
+  background: var(--light);
+  border-radius: var(--radius-none);
+  padding: 1.5rem 1.5rem 1rem;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+
+  & > .zoomable-content {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+  }
+
+  & > .zoomable-content > figure {
+    margin: 0;
+    border: 0;
+    background: var(--light);
+    padding: 0;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  & > .zoomable-trigger {
+    cursor: zoom-out;
+    background: color-mix(in srgb, var(--lightgray) 70%, transparent);
+
+    &:hover,
+    &:focus-visible {
+      background: var(--lightgray);
+    }
+
+    .zoomable-trigger-icon--expand {
+      display: none;
+    }
+
+    .zoomable-trigger-icon--collapse {
+      display: inline-flex;
+    }
+  }
+}
+
+.zoomable-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: color-mix(in srgb, var(--dark) 55%, transparent);
+  cursor: zoom-out;
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  animation: zoomable-backdrop-in 0.55s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+}
+
+@keyframes zoomable-backdrop-in {
+  to {
+    opacity: 1;
+  }
+}
+
+::view-transition-group(zoomable-active) {
+  animation-duration: 0.55s;
+  animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+::view-transition-image-pair(zoomable-active) {
+  isolation: auto;
+}
+
+::view-transition-old(zoomable-active) {
+  animation: none;
+  opacity: 0;
+  mix-blend-mode: normal;
+}
+
+::view-transition-new(zoomable-active) {
+  animation: none;
+  opacity: 1;
+  mix-blend-mode: normal;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zoomable-backdrop {
+    animation: none;
+    opacity: 1;
+  }
+
+  ::view-transition-group(zoomable-active),
+  ::view-transition-old(zoomable-active),
+  ::view-transition-new(zoomable-active) {
+    animation-duration: 0.01s;
+  }
+}
+
+@media #{$mobile} {
+  .zoomable.is-zoomed {
+    inset: 2vh 2vw;
+    padding: 1rem;
+  }
+}

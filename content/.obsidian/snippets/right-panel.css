@@ -1,0 +1,263 @@
+/*
+ * right-panel.css — Private Floating Panel
+ *
+ * USAGE:
+ *   Add `private-panel` to a note's frontmatter:
+ *
+ *   ---
+ *   cssclasses:
+ *     - private-panel
+ *   ---
+ *
+ *   Or toggle via: body.classList.toggle('has-private-panel')
+ *
+ *   The panel appears fixed on the right side.
+ *   Scroll it like a normal note — it floats above content.
+ */
+
+/* ═══════════════════════════════════════════
+   0. DESIGN TOKENS
+   ═══════════════════════════════════════════ */
+
+:root {
+  --rp-width:           420px;
+  --rp-bg:              rgba(22, 22, 30, 0.92);
+  --rp-border:          rgba(255, 255, 255, 0.08);
+  --rp-border-accent:   rgba(232, 164, 48, 0.30);
+  --rp-radius:          14px;
+  --rp-blur:            20px;
+  --rp-shadow:          0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--rp-border);
+  --rp-top:             60px;
+  --rp-bottom:          40px;
+  --rp-right:           16px;
+  --rp-z-index:         100;
+  --rp-padding:         24px;
+  --rp-transition:      250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ═══════════════════════════════════════════
+   1. PANEL STYLING
+   ═══════════════════════════════════════════ */
+
+/* When a note has cssclass: private-panel, style the preview */
+.markdown-preview-view.has-private-panel,
+body.has-private-panel .markdown-preview-view {
+
+  /* Override the note's own rendering to become the panel */
+  position: fixed !important;
+  top: var(--rp-top) !important;
+  right: var(--rp-right) !important;
+  bottom: var(--rp-bottom) !important;
+  width: var(--rp-width) !important;
+  max-width: var(--rp-width) !important;
+  min-width: var(--rp-width) !important;
+  height: auto !important;
+  max-height: calc(100vh - var(--rp-top) - var(--rp-bottom)) !important;
+
+  /* Glass morphism */
+  background: var(--rp-bg) !important;
+  backdrop-filter: blur(var(--rp-blur)) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(var(--rp-blur)) saturate(150%) !important;
+  border: 1px solid var(--rp-border) !important;
+  border-radius: var(--rp-radius) !important;
+  box-shadow: var(--rp-shadow) !important;
+
+  /* Content */
+  padding: var(--rp-padding) !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+
+  /* Layering */
+  z-index: var(--rp-z-index) !important;
+
+  /* Typography tweaks for panel context */
+  font-size: 0.95em !important;
+  line-height: 1.65 !important;
+
+  /* Transition for show/hide */
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+  transition:
+    opacity var(--rp-transition),
+    transform var(--rp-transition) !important;
+}
+
+/* ═══════════════════════════════════════════
+   2. PANEL SCROLLBAR
+   ═══════════════════════════════════════════ */
+
+.markdown-preview-view.has-private-panel::-webkit-scrollbar,
+body.has-private-panel .markdown-preview-view::-webkit-scrollbar {
+  width: 4px;
+}
+
+.markdown-preview-view.has-private-panel::-webkit-scrollbar-track,
+body.has-private-panel .markdown-preview-view::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.markdown-preview-view.has-private-panel::-webkit-scrollbar-thumb,
+body.has-private-panel .markdown-preview-view::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.10);
+  border-radius: 2px;
+}
+
+/* ═══════════════════════════════════════════
+   3. PANEL HEADER — First heading
+   ═══════════════════════════════════════════ */
+
+.markdown-preview-view.has-private-panel h1:first-child,
+body.has-private-panel .markdown-preview-view h1:first-child {
+  font-size: 1.1em;
+  margin-top: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--rp-border);
+  color: var(--rp-border-accent);
+}
+
+/* ═══════════════════════════════════════════
+   4. PANEL HEADING ACCENT DOT
+   ═══════════════════════════════════════════ */
+
+.markdown-preview-view.has-private-panel::before,
+body.has-private-panel .markdown-preview-view::before {
+  content: '●';
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 8px;
+  color: rgba(232, 164, 48, 0.6);
+  z-index: 1;
+}
+
+/* ═══════════════════════════════════════════
+   5. HIDE PANEL — Toggle class
+   ═══════════════════════════════════════════ */
+
+body.hide-private-panel .markdown-preview-view.has-private-panel {
+  opacity: 0 !important;
+  transform: translateX(20px) !important;
+  pointer-events: none !important;
+}
+
+/* ═══════════════════════════════════════════
+   6. PANEL CONTENT STYLES
+   ═══════════════════════════════════════════ */
+
+.markdown-preview-view.has-private-panel blockquote,
+body.has-private-panel .markdown-preview-view blockquote {
+  border-left: 2px solid var(--rp-border-accent);
+  background: rgba(232, 164, 48, 0.05);
+  padding: 6px 10px;
+  border-radius: 0 6px 6px 0;
+  margin: 8px 0;
+  font-size: 0.92em;
+  color: var(--text-muted);
+}
+
+.markdown-preview-view.has-private-panel code,
+body.has-private-panel .markdown-preview-view code {
+  font-size: 0.82em;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.markdown-preview-view.has-private-panel ul,
+body.has-private-panel .markdown-preview-view ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.markdown-preview-view.has-private-panel li,
+body.has-private-panel .markdown-preview-view li {
+  padding-left: 1.2em;
+  position: relative;
+  margin-bottom: 3px;
+}
+
+.markdown-preview-view.has-private-panel li::before,
+body.has-private-panel .markdown-preview-view li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--rp-border-accent);
+  font-weight: 700;
+}
+
+.markdown-preview-view.has-private-panel hr,
+body.has-private-panel .markdown-preview-view hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--rp-border), transparent);
+  margin: 12px 0;
+}
+
+.markdown-preview-view.has-private-panel h2,
+body.has-private-panel .markdown-preview-view h2 {
+  font-size: 0.95em;
+  color: var(--text-muted);
+  margin-top: 14px;
+  margin-bottom: 6px;
+}
+
+.markdown-preview-view.has-private-panel h3,
+body.has-private-panel .markdown-preview-view h3 {
+  font-size: 0.88em;
+  color: var(--text-faint);
+  margin-top: 10px;
+}
+
+.markdown-preview-view.has-private-panel p,
+body.has-private-panel .markdown-preview-view p {
+  margin: 6px 0;
+  color: var(--text-muted);
+}
+
+.markdown-preview-view.has-private-panel strong,
+body.has-private-panel .markdown-preview-view strong {
+  color: var(--text-normal);
+}
+
+/* ═══════════════════════════════════════════
+   7. SOURCE VIEW — Also works in editor
+   ═══════════════════════════════════════════ */
+
+/* In source mode, the editor itself becomes the panel */
+body.has-private-panel .markdown-source-view.mod-cm6 {
+  position: fixed !important;
+  top: var(--rp-top) !important;
+  right: var(--rp-right) !important;
+  bottom: var(--rp-bottom) !important;
+  width: var(--rp-width) !important;
+  max-width: var(--rp-width) !important;
+  height: auto !important;
+  max-height: calc(100vh - var(--rp-top) - var(--rp-bottom)) !important;
+
+  background: var(--rp-bg) !important;
+  backdrop-filter: blur(var(--rp-blur)) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(var(--rp-blur)) saturate(150%) !important;
+  border: 1px solid var(--rp-border) !important;
+  border-radius: var(--rp-radius) !important;
+  box-shadow: var(--rp-shadow) !important;
+  z-index: var(--rp-z-index) !important;
+
+  font-size: 0.85em !important;
+}
+
+/* ═══════════════════════════════════════════
+   8. KEYBOARD HINT
+   ═══════════════════════════════════════════ */
+
+/*
+ * To toggle the panel via hotkey, create a CSS snippet
+ * that toggles the body class:
+ *
+ *   body.has-private-panel { ... }
+ *
+ * Or use Obsidian's command palette with a plugin that
+ * toggles body classes (e.g., "Body Class" plugin).
+ *
+ * Without plugins: add/remove `cssclasses: [private-panel]`
+ * from the note's frontmatter.
+ */
