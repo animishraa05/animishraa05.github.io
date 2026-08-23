@@ -1,7 +1,7 @@
 {
-  "cssTheme": "Monokai",
+  "cssTheme": "Nord",
   "baseFontSize": 21,
-  "theme": "moonstone",
+  "theme": "obsidian",
   "translucency": false,
   "nativeMenus": false,
   "textFontFamily": "AtkynsonMono Nerd Font Mono",

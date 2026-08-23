@@ -1,9 +1,9 @@
 ---
-title: "Find the Smallest Divisor Given a Threshold"
-link: "https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/"
-topic: "Array"
+title: "Longest Substring Without Repeating Characters"
+link: "https://leetcode.com/problems/longest-substring-without-repeating-characters/"
+topic: "Hash Table"
 type: problem
-created: 2026-08-19
+created: 2026-08-23
 ---
 
 ## Approach

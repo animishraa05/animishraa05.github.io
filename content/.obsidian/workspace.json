@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "60e3e514156bebfc",
+        "id": "9cab013f758bff89",
         "type": "tabs",
         "children": [
           {
-            "id": "71e1d05cf6b519af",
+            "id": "6d8fe827d430db10",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Private/Interview/Introduction.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Introduction"
             }
           }
         ]
@@ -95,6 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "cram Architecture.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -162,6 +167,16 @@
               "icon": "lucide-list",
               "title": "Outline"
             }
+          },
+          {
+            "id": "6da0da77171cd4e0",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
           }
         ]
       }
@@ -172,24 +187,41 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-git:Open Git source control": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "omnisearch:Omnisearch": false,
+      "mermaid-tools:Open Mermaid Toolbar": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "obsidian-media-db-plugin:Add new Media DB entry": false
     }
   },
-  "active": "71e1d05cf6b519af",
+  "active": "6d8fe827d430db10",
   "lastOpenFiles": [
+    "cram Architecture.md",
+    "watchlist hub.base",
+    "Media DB/series/The Mentalist (2008–2015).md",
+    "Media DB/series",
+    "terms.md",
+    "privacy.md",
+    "Media DB/movies/Fight Club (1999).md",
+    "Media DB/movies/Interstellar (2014).md",
+    "Media DB/movies/No Country for Old Men (2007).md",
+    "Media DB/movies/Manchester by the Sea (2016).md",
     "index.md",
+    "Media DB/movies",
+    "Media DB",
+    "movies/reviews.md",
+    "movies/index.md",
     "movies.md",
     "colophon.md",
-    "terms.md",
     "wiki.md",
     "wiki/system-design.md",
-    "movies/index.md",
     "backend/projects.md",
     "backend/databases.md",
     "backend/systems.md",
@@ -202,15 +234,7 @@
     "ml/projects.md",
     "ml/papers.md",
     "notes/Welcome.md",
-    "ml/concepts.md",
-    "ml/index.md",
     "ml",
-    "movies/watchlist.md",
-    "movies/reviews.md",
-    "movies",
-    "PatternsDSA.md",
-    "AGENTS.md",
-    "privacy.md",
-    "wiki/log.md"
+    "movies"
   ]
 }

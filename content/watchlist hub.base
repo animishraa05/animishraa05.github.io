@@ -1,0 +1,23 @@
+views:
+  - type: cards
+    name: movies
+    filters:
+      and:
+        - file.folder == "Media DB/movies"
+    sort:
+      - property: file.ctime
+        direction: ASC
+    image: note.image
+    cardSize: 300
+    imageAspectRatio: 1.5
+  - type: cards
+    name: series
+    filters:
+      and:
+        - file.folder == "Media DB/series"
+    sort:
+      - property: file.ctime
+        direction: ASC
+    image: note.image
+    cardSize: 300
+    imageAspectRatio: 1.5
