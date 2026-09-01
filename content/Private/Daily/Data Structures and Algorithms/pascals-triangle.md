@@ -51,7 +51,7 @@ Time: O(numRows^2) to generate all numbers. Space: O(numRows^2) to store the res
 
 ## Edge Cases
 <!-- Inputs that break the naive solution. Talk extensively about edge cases—what they are, why they break the naive solution, and how the optimal code handles them. -->
-1. numRows = 1. Returns [[1]].
+1. numRows = 1. Returns [[Private/computer-networks/1]].
 
 ## Notes
 <!-- Thought Process & Recognition: Explain the exact train of thought and mental model required while solving it. How do I recognize this specific tag/logic when I see it? Frame it in general terms so the entire topic becomes easier for me. Provide a lot of concrete examples for easier explanation. If helpful, fetch and embed relevant images or diagrams from the web that relate to the solution. -->

@@ -16,7 +16,7 @@ Welcome to the syllabus and index for **Computer Networks**.
 - [[07_The_Data_Link_Layer]]
 - [[08_The_Network_Layer]]
 - [[09_The_Transport_Layer]]
-- [[1]]
+- [[Private/computer-networks/1]]
 - [[10_The_Application_Layer]]
 - [[11_Domain_Name_System]]
 - [[12_Hypertext_Transfer_Protocol]]

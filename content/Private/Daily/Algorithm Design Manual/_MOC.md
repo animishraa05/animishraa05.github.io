@@ -7,4 +7,4 @@ tags: [moc]
 Welcome to the syllabus and index for **Algorithm Design Manual**.
 
 ## 📄 Notes
-- [[1]]
+- [[Private/Daily/Algorithm Design Manual/1]]

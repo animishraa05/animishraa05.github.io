@@ -1,13 +1,15 @@
 {
-  "cssTheme": "Nord",
+  "cssTheme": "Typomagical",
   "baseFontSize": 21,
-  "theme": "obsidian",
+  "theme": "moonstone",
   "translucency": false,
   "nativeMenus": false,
   "textFontFamily": "AtkynsonMono Nerd Font Mono",
   "interfaceFontFamily": "Atkinson Hyperlegible Mono",
   "monospaceFontFamily": "JetBrains Mono",
-  "enabledCssSnippets": [],
+  "enabledCssSnippets": [
+    "graph-beautifier"
+  ],
   "baseFontSizeAction": true,
   "showRibbon": false,
   "showViewHeader": false
