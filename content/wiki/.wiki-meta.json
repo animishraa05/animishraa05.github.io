@@ -1,1 +1,152 @@
-{}
+{
+  "6e691fdaa99b56143bccb92512dc743c4cff605a751d4aee6b7cbccde141d22a": {
+    "source_path": "sources/imgen.md",
+    "ingested": "2026-04-12",
+    "topic": "imgen",
+    "concepts_count": 10
+  },
+  "df6b7317584b11460784e6d7e09c7e4cd99ab76ece3e99939157c9229e793fbf": {
+    "source_path": "sources/io.md",
+    "ingested": "2026-04-30",
+    "topic": "io",
+    "concepts_count": 50
+  },
+  "508c8cddd40b569e5490907c6aaff2400db50b84a062b8432ec80fecfaf17106": {
+    "source_path": "sources/Django.md",
+    "ingested": "2026-08-09",
+    "topic": "django",
+    "concepts_count": 28
+  },
+  "9a3a787b9085485012dfa93dfea8badbd036c8faaaf8a12caa5bc38412e34546": {
+    "source_path": "sources/Lsp.md",
+    "ingested": "2026-04-12",
+    "topic": "lsp",
+    "concepts_count": 7
+  },
+  "18e684c70168987f22fdc4cc18c54af69e6cc182d78d11833a6dd121117764c8": {
+    "source_path": "sources/COMPREHENSIVE_REPORT.md",
+    "ingested": "2026-04-14",
+    "topic": "comprehensive-report",
+    "concepts_count": 11
+  },
+  "0ba0df86460a883d6f0e21f27ab820e0522dfc3f8329b54b7d7cdbbdb01d6058": {
+    "source_path": "sources/WirelessN.md",
+    "ingested": "2026-04-21",
+    "topic": "wireless-n",
+    "concepts_count": 25
+  },
+  "56dd787550493efe80cd18b5c5371404f2d4a922b83df88a504263a997dd414f": {
+    "source_path": "sources/Backend Engineering Basics.md",
+    "ingested": "2026-04-12",
+    "topic": "backend-engineering-basics",
+    "concepts_count": 18
+  },
+  "dfdc41d2743237dbd07e5dc623c91bac5ec1944e3955b28110a0f400bd4db3bd": {
+    "source_path": "sources/Strings.md",
+    "ingested": "2026-07-05",
+    "topic": "strings",
+    "concepts_count": 22
+  },
+  "73cddc5461e2a268cc3e0cfbfd723f2891012c83a107595100abd6c0f233d58a": {
+    "source_path": "sources/compilerdesign.md",
+    "ingested": "2026-05-13",
+    "topic": "compilerdesign",
+    "concepts_count": 34
+  },
+  "35321f00ad0ddf3919012ac92858c19c3d1d8fe101e6c7ccd3a64a1bb37a00bb": {
+    "source_path": "sources/YBlog - Learn Vim Progressively.md",
+    "ingested": "2026-04-12",
+    "topic": "learn-vim-progressively",
+    "concepts_count": 11
+  },
+  "5fb8bb05d4d6f45eb6708b94efd83de8d97922c89c0334cb86ff28613080f9e0": {
+    "source_path": "sources/OS.md",
+    "ingested": "2026-06-11",
+    "topic": "os",
+    "concepts_count": 25
+  },
+  "9aacc6855208ebc7da2265e2feb2bec7a6f1ade244f51886556482b31bcf6978": {
+    "source_path": "sources/https.md",
+    "ingested": "2026-04-30",
+    "topic": "https",
+    "concepts_count": 29
+  },
+  "1391d11b116c629534aead887f5452da7c2f44e158eba14a1f7bfd1425360851": {
+    "source_path": "sources/Theory of computation.md",
+    "ingested": "2026-04-11",
+    "topic": "theory-of-computation",
+    "concepts_count": 20
+  },
+  "0ac19b55901bee3c69a089061530efff0a7876212fe85603a721ed1645c30977": {
+    "source_path": "sources/Understanding HTTP for Backend Engineers Where It All Starts.md",
+    "ingested": "2026-04-12",
+    "topic": "understanding-http-for-backend-engineers",
+    "concepts_count": 7
+  },
+  "a5f8502b4842d46f7702d4ecd6845025ab28ff7b7c8d1f03bebf114f6da39b74": {
+    "source_path": "sources/java3.md",
+    "ingested": "2026-05-13",
+    "topic": "java3",
+    "concepts_count": 42
+  },
+  "970677b8156d0aadee611d19d0e8cbecd924a4ecc7af70d163c9bbcab9676d71": {
+    "source_path": "sources/data-science",
+    "ingested": "unknown",
+    "topic": "data-science",
+    "concepts_count": 16
+  },
+  "187d86dbe9bb74dfaa24f7f302b2a8551a2fa874f7ee85a67a56259916128b22": {
+    "source_path": "sources/ejb",
+    "ingested": "unknown",
+    "topic": "ejb",
+    "concepts_count": 116
+  },
+  "388710d0b5d510a85c2bced8a734e03107a28121761724362822aa3fd1acb742": {
+    "source_path": "sources/system-design",
+    "ingested": "unknown",
+    "topic": "system-design",
+    "concepts_count": 40
+  },
+  "528091dc2d420ded92cf9ef80b2d8dafba2d2bcb575f3a7e4fb15a11f38f55e8": {
+    "source_path": "sources/data-warehouse",
+    "ingested": "unknown",
+    "topic": "data-warehouse",
+    "concepts_count": 40
+  },
+  "49bf7736da11cade33eec0a8a34a7883d8e908a4ab58ed0dbbf02c6c80f3bddf": {
+    "source_path": "sources/backend-nd-frontend",
+    "ingested": "unknown",
+    "topic": "backend-nd-frontend",
+    "concepts_count": 8
+  },
+  "9adf9ae4c6b64219853996804db84f15bef1688e24bd3318b6e3ab334f194a43": {
+    "source_path": "sources/computer-architecture",
+    "ingested": "unknown",
+    "topic": "computer-architecture",
+    "concepts_count": 32
+  },
+  "7cfbcac1876dc2706d09eed994db50090dc8ae24501d4f569f48b216067f73f8": {
+    "source_path": "sources/decision-tree",
+    "ingested": "unknown",
+    "topic": "decision-tree",
+    "concepts_count": 21
+  },
+  "fefdcdb71779b768562667473b56f837b5c9391f0d2b3edcf38f0c1e5a9c499b": {
+    "source_path": "sources/networking",
+    "ingested": "unknown",
+    "topic": "networking",
+    "concepts_count": 3
+  },
+  "38a0963a6364b09ad867aa9a66c6d009673c21e182015461da236ec361877f77": {
+    "source_path": "sources/java",
+    "ingested": "unknown",
+    "topic": "java",
+    "concepts_count": 64
+  },
+  "ff2082aa78aea80a27cb4fb91f0350153702c16dce790a77f0bb0bfbf6899977": {
+    "source_path": "sources/cn",
+    "ingested": "unknown",
+    "topic": "cn",
+    "concepts_count": 41
+  }
+}

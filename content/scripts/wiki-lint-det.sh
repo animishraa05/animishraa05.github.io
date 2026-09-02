@@ -83,6 +83,7 @@ while read count link; do
 concept: $(echo "$base" | sed 's/-/ /g' | awk '{for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2)}1')
 aliases: []
 tags: [dev]
+draft: true
 created: $(date +%Y-%m-%d)
 updated: $(date +%Y-%m-%d)
 ---
@@ -195,7 +196,14 @@ for md in $all_mds; do
         DOT_ERRORS=$((DOT_ERRORS+1))
     fi
     if grep -q '^## Sources' "$md" 2>/dev/null; then
-        echo "  ! LLM tell ## Sources: $md"
+        python3 -c "
+import re, sys
+content = open('$md', 'r', errors='ignore').read()
+cleaned = re.sub(r'\n## Sources\n.*?(?=\n#+ |\Z)', '', content, flags=re.DOTALL).rstrip() + '\n'
+if cleaned != content:
+    open('$md', 'w').write(cleaned)
+    print('  ~ Auto-stripped ## Sources: $md')
+" 2>/dev/null || true
         LLM_TELLS=$((LLM_TELLS+1))
     fi
     if grep -q '> \[!question' "$md" 2>/dev/null || grep -q 'Active Recall' "$md" 2>/dev/null; then

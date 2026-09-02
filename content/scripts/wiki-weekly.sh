@@ -54,16 +54,11 @@ echo -e "${YELLOW}Step 2: Sharded deep lint (2 topics, lint-deep agent)...${NC}"
 bash "$SCRIPT_DIR/wiki-lint.sh" --deep 2>&1 | tee /tmp/wiki-weekly-deep.log || echo -e "${YELLOW}Deep lint hit quota — will retry next week${NC}"
 
 echo ""
-echo -e "${YELLOW}Step 3: MOCs + index consistency...${NC}"
+echo -e "${YELLOW}Step 3: MOCs...${NC}"
 bash "$SCRIPT_DIR/generate-wiki-mocs.sh" 2>&1 | tee /tmp/wiki-weekly-mocs.log || true
-if [ -f "$SCRIPT_DIR/wiki-rebuild-index.sh" ]; then
-    bash "$SCRIPT_DIR/wiki-rebuild-index.sh" 2>&1 | tee /tmp/wiki-weekly-index.log || true
-else
-    echo -e "${YELLOW}Index check: running deterministic index check...${NC}"
-    topic_count="$(ls -1d "$WIKI_DIR"/*/ 2>/dev/null | wc -l)"
-    echo "Topics: $topic_count"
-fi
-echo -e "${GREEN}MOC/index check done.${NC}"
+topic_count="$(ls -1d "$WIKI_DIR"/*/ 2>/dev/null | wc -l)"
+echo -e "${GREEN}MOC refresh done. ($topic_count topics)${NC}"
+echo -e "${CYAN}Note: wiki/index.md is curated manually — not auto-rebuilt.${NC}"
 
 echo ""
 echo -e "${YELLOW}Step 4: Changes to commit...${NC}"

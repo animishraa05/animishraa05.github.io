@@ -70,21 +70,8 @@ Now answer this question using the wiki:
 Follow the QUERY.md process step by step:
 1. Read wiki/index.md first to find relevant pages
 2. Read every relevant concept, synthesis, and source summary page fully
-3. Synthesize an answer with [[wikilinks]] as citations (Quartz-clean, human teach tone)
+3. Synthesize an answer in plain prose with [[wikilinks]] as inline citations — human teach tone, no headers
 4. Flag any gaps the wiki can't answer → append to wiki/open-questions.md
 
 $SAVE_INSTRUCTION
-
-Use this output format:
-
-### Operation: query
-### Question: $QUESTION
-
-[Answer in prose with wiki links]
-
-**Sources used:**
-- [[page-name|Page Name]] — contribution
-
-**Gaps / open questions added:**
-- [list or 'none']
 "

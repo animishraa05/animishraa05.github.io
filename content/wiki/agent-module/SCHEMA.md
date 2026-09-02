@@ -266,7 +266,6 @@ Every concept page must have sections in this exact order:
 8. Key Properties
 9. Connections
 10. Edge Cases & Gotchas
-11. Sources
 
 Do not reorder. Do not rename. Do not skip required sections.
 

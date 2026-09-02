@@ -22,11 +22,12 @@ Before writing a single file:
 
 Read the source and identify atomic concepts. An atomic concept is a distinct idea, mechanism, pattern, or principle that can stand alone as a page.
 
-**Target: 18-20 concepts per source.** This is a quality target, not a quota.
+**Target: 25 concepts minimum per source.** Extract every distinct idea, mechanism, pattern, and principle.
 
-- If the source genuinely contains more, extract more
-- If the source is thin, stop at what's actually there — do not pad or invent subdivisions to hit a number
+- If the source genuinely contains more, extract more — there is no upper limit
+- If the source is thin, decompose broader concepts into finer atomic pieces — do not stop short of 25
 - Each concept should be something a reader would search for independently
+- This is a hard floor: the ingest shell gate will fail if you produce fewer than 25 pages
 
 Write your concept list as scratch notes before creating any files. This prevents mid-ingest rethinking.
 
