@@ -2,8 +2,6 @@
 concept: Browser Rendering
 aliases: [page rendering, browser engine, rendering pipeline]
 tags: [dev, browser]
-sources_count: 1
-last_source: https.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -72,7 +70,3 @@ digraph G {
 - `display: none` removes element from render tree
 - `visibility: hidden` keeps element in render tree (takes space)
 - Forced synchronous layout (reading layout properties in JS) is slow
-
-## Sources
-
-- [[https-summary|HTTP HTTPS DNS URL Source]]

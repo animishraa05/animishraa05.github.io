@@ -70,7 +70,3 @@ digraph MasterSlave {
 - **Replication lag** — under heavy write load, slaves can fall seconds or minutes behind, serving stale data to users.
 - **Split-brain on async failover** — if the old master comes back after a slave is promoted, two masters may accept writes. Use fencing or STONITH to prevent this.
 - **Not all storage engines support it** — MySQL MyISAM does not support replication the same way InnoDB does; check engine compatibility.
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]]

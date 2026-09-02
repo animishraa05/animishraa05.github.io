@@ -3,8 +3,6 @@ title: Vim Repetition
 concept:
 aliases: [dot command, repetition, counts, N<command>]
 tags: [dev, vim]
-sources_count: 1
-last_source: YBlog - Learn Vim Progressively.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -56,7 +54,3 @@ Two repetition mechanisms: the dot command (`.`) repeats the last change; numeri
 - [[vim-modes|Vim Modes]] — Repetition works in Normal mode
 - [[vim-search-navigation|Navigation]] — `N` prefix repeats search
 - [[vim-macros|Macros]] — More complex repetition with recording
-
-## Sources
-
-- [[learn-vim-progressively-summary|YBlog - Learn Vim Progressively]]

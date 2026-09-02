@@ -92,7 +92,3 @@ graph semantic_java_platform {
 - **Platform-specific code**: Native methods via JNI break platform independence
 - **JVM fragmentation**: Different vendors have different performance characteristics
 - **Not all JVMs are equal**: Embedded vs server JVMs have different startup and optimization profiles
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — platform independence and JVM fundamentals

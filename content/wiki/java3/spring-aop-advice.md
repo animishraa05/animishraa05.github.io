@@ -77,7 +77,3 @@ digraph advice_types {
 - **Return value modification**: @AfterReturning can't change the return value (only read it); use @Around to wrap and modify
 - **Exception swallowing**: @Around can catch and suppress exceptions — accidentally hiding errors
 - **ProceedingJoinPoint**: Only available in @Around advice; casting JoinPoint to ProceedingJoinPoint in other advice types throws ClassCastException
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — AOP advice types

@@ -78,7 +78,3 @@ graph semantic_association {
 - **Association vs Dependency**: Association is a structural relationship (field reference); dependency is a temporary relationship (method parameter)
 - **Circular references**: Bidirectional associations can create circular references, complicating garbage collection and serialization
 - **Navigability**: Not all associations need to be bidirectional — uni-directional reduces coupling
-
-## Sources
-
-- [[java2-summary|Java OOP Concepts — Source Summary]] — association as relationship between independent objects

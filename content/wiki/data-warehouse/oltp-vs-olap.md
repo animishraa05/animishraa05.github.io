@@ -2,8 +2,6 @@
 concept: OLTP vs OLAP
 aliases: [OLTP vs OLAP, OLTP and OLAP, transaction vs analytical processing]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -124,7 +122,3 @@ graph semantic_oltp_vs_olap {
 - **Don't run OLAP queries on OLTP:** This is the most common mistake — a single complex analytical query can lock tables and bring down a production system.
 - **Data staleness is expected:** OLAP data is never real-time; it reflects the last ETL cycle. This is by design, not a bug.
 - **The same data, different structure:** OLAP data originates from OLTP — it's the same underlying business data, just restructured for analysis.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — 5-point comparison, application areas, memory formula

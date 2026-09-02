@@ -51,6 +51,3 @@ digraph single_channel {
 - Device starvation: high-priority device may wait long if low-priority device is using DMA
 - No concurrent DMA transfers — can't overlap disk read with network packet send
 - Some single-channel DMACs support "chaining" — auto-program next transfer after current one
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

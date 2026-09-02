@@ -3,8 +3,6 @@ title: Variational Autoencoder (VAE)
 concept: vae
 aliases: [latent space, encoder-decoder]
 tags: [ai, ml]
-sources_count: 1
-last_source: imgen.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -52,7 +50,3 @@ Standard SDXL uses 4 channels in latent space (R, G, B, plus one extra). Flux us
 - Fine details (text strokes, fine textures) blur during compression
 - 4-channel VAEs lose more than 16-channel ones
 - Decoder quality matters as much as encoder
-
-## Sources
-
-- [[imgen-summary]]

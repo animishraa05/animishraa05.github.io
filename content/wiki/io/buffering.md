@@ -2,8 +2,6 @@
 concept: Buffering
 aliases: [I/O Buffering, Buffer Cache]
 tags: [systems, io]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -56,7 +54,3 @@ digraph buffer {
 - Buffer overflow if consumer too slow
 - Buffer too small = frequent I/O operations
 - Buffer too large = wasted memory
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

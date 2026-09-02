@@ -49,6 +49,3 @@ digraph register_addr {
 - Limited registers — compiler must manage register allocation carefully
 - Register spilling: when no free registers, must spill to memory (slow)
 - Some ISAs have special registers (stack pointer, program counter) with restrictions
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

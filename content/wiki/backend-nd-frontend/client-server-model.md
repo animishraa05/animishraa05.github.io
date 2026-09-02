@@ -3,8 +3,6 @@ title: Client-Server Model
 concept: client-server-model
 aliases: [client-server architecture]
 tags: [systems, client-server]
-sources_count: 1
-last_source: front-end-and-back-end-wikipedia
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -60,7 +58,3 @@ This separation allows scaling—multiple clients can connect to one server, and
 - Server failure affects all connected clients
 - Requires well-designed APIs for communication
 - Security considerations for network communication
-
-## Sources
-
-- [[front-end-and-back-end-wikipedia-summary|Front End and Back End — Wikipedia]]

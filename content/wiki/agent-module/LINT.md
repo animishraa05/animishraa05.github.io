@@ -25,14 +25,14 @@ Work in this order. Each pass builds on the previous one.
 
 ### Pass 1 — Resolve Deferred Backlinks
 
-Search all pages for `<!-- TODO: add backlink here -->` comments.
+Search all pages for `` comments.
 
 For each one:
 
 1. Identify the target page referenced on that line
 2. Open the target page
 3. Add a link back to the current page in the target's Connections section
-4. Remove the `<!-- TODO: add backlink here -->` comment
+4. Remove the `` comment
 5. Update `updated:` in the target's frontmatter
 
 Log count: "Resolved N deferred backlinks"
@@ -54,7 +54,6 @@ A stub page is:
 ---
 concept: Concept Name
 tags: [domain-tag]
-status: stub
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
 ---

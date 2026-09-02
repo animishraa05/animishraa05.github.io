@@ -98,7 +98,3 @@ graph semantic_use_cases {
 - For palindrome rearrangement: the constraint is "at most one character has odd count" — this Phase 2 check is a simple filter
 - For "character that appears more than n/2 times" (majority element): Boyer-Moore voting is more efficient than hashing — recognizing when NOT to hash is also important
 - For problems with very large alphabets (Unicode), hashing is necessary but may benefit from specialized data structures (e.g., trie for prefix frequencies)
-
-## Sources
-
-- [[strings-summary|Strings (Character Hashing in C++)]]

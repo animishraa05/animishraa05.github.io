@@ -2,8 +2,6 @@
 concept: ETL Pipeline DWH
 aliases: [ETL pipeline DWH, extract transform load warehouse, DWH backend process]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -110,7 +108,3 @@ graph semantic_etl_pipeline {
 - **Full load vs. incremental:** Full loads rebuild the entire warehouse (slow but safe); incremental loads only process changes (fast but complex to implement correctly).
 - **Load failure recovery:** Without checkpoints, a 10-hour load that fails at hour 9.5 must restart completely.
 - **Schema evolution:** When source systems change their schema, ETL pipelines must be updated — this is a common maintenance burden.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — ETL four phases, backend process details

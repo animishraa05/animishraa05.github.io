@@ -3,8 +3,6 @@ title: Vim Splits
 concept:
 aliases: [split, vsplit, window, pane, :split, :vsplit]
 tags: [dev, vim]
-sources_count: 1
-last_source: YBlog - Learn Vim Progressively.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -50,7 +48,3 @@ Split commands:
 - [[vim-basic-commands|Survival Commands]] — Buffer commands apply in splits
 - [[vim-visual-selection|Visual Selection]] — Works across splits
 - [[vim-modes|Vim Modes]] — All commands work in split windows
-
-## Sources
-
-- [[learn-vim-progressively-summary|YBlog - Learn Vim Progressively]]

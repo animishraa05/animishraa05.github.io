@@ -3,8 +3,6 @@ title: HTTP
 concept: true
 aliases: [Hypertext Transfer Protocol]
 tags: [networking, http]
-sources_count: 1
-last_source: understanding-http-for-backend-engineers
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -46,7 +44,3 @@ Key architectural decisions:
 - HTTP is text-based in 1.x—binary data must be encoded (Base64)
 - Without state management, every request must re-authenticate
 - Servers cannot push data to clients without WebSockets or polling
-
-## Sources
-
-- [[understanding-http-for-backend-engineers-summary|Understanding HTTP for Backend Engineers]]

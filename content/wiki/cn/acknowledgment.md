@@ -50,6 +50,3 @@ digraph G {
 - ACK loss can cause unnecessary retransmission (sender times out)
 - Duplicate ACKs can signal packet loss (used in TCP fast retransmit)
 - Piggybacked ACKs may be delayed if no data to send (timer limits delay)
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

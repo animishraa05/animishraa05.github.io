@@ -2,8 +2,6 @@
 concept: Device Controller
 aliases: [I/O Controller, Hardware Controller]
 tags: [systems, io]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -75,7 +73,3 @@ digraph controller {
 - Local buffer size limits transfer size per operation
 - Status register must be read before another command is issued
 - Some controllers have buggy implementations causing race conditions
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

@@ -2,8 +2,6 @@
 concept: DNS Hierarchy
 aliases: [DNS server hierarchy, root TLD authoritative, DNS tree]
 tags: [networking, dns]
-sources_count: 1
-last_source: https.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -72,7 +70,3 @@ digraph G {
 - Some countries operate their own root servers (not part of ICANN)
 - DNS hijacking can redirect at any hierarchy level
 - Anycast allows multiple servers to share the same IP address
-
-## Sources
-
-- [[https-summary|HTTP HTTPS DNS URL Source]]

@@ -71,7 +71,3 @@ digraph distributed_tracing {
 - **Sensitive data**: Spans may inadvertently capture sensitive data (SQL queries, request bodies) — sanitize span tags
 - **Clock skew**: Services on different machines have slightly different clocks — Zipkin adjusts using client/server send/receive timestamps
 - **End-to-end setup**: Requires all services to participate — one service without tracing breaks the trace chain
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Distributed tracing with Zipkin

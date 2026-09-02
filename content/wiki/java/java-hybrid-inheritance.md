@@ -78,7 +78,3 @@ graph semantic_hybrid_inheritance {
 
 - **Complexity**: Hybrid inheritance is the most complex form — overuse leads to unmaintainable hierarchies
 - **Method resolution order**: Java uses class-before-interface rule: the concrete class's implementation beats any default method
-
-## Sources
-
-- [[java2-summary|Java OOP Concepts — Source Summary]] — hybrid inheritance through interface

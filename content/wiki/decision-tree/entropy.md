@@ -2,8 +2,6 @@
 concept: Entropy
 aliases: [Shannon entropy, information entropy, uncertainty measure]
 tags: [ml, decision-trees]
-sources_count: 1
-last_source: dtree.md
 created: 2026-05-06
 updated: 2026-05-06
 ---
@@ -81,7 +79,3 @@ digraph entropy {
 - **Multi-class scaling**: Entropy increases with the number of classes even at maximum impurity
 - **Computation cost**: Logarithm calculations are more expensive than Gini's squaring
 - **Not scale-invariant**: Entropy depends on proportions, not absolute counts — a 50/50 split of 10 samples has the same entropy as 50/50 of 10,000
-
-## Sources
-
-- [[dtree-summary|Decision Tree in Machine Learning]] — entropy definition, formula, and worked example with X = {a,a,a,b,b,b,b,b}

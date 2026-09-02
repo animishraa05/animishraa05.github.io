@@ -80,7 +80,3 @@ graph semantic_java_structure {
 - **Wrong signature**: Changing any modifier breaks JVM lookup
 - **Args can be null in some environments**, though normally an empty array
 - **Static context**: main is static — no access to instance fields without creating objects
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — program structure and main method

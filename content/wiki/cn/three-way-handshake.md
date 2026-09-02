@@ -53,6 +53,3 @@ digraph G {
 - SYN flood attacks can exhaust server resources with half-open connections
 - Retransmission of SYN occurs if timeout expires without SYN-ACK
 - Simultaneous open (both sides send SYN first) is handled by TCP as a special case
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

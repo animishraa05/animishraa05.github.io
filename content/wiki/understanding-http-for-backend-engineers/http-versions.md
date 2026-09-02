@@ -3,8 +3,6 @@ title: HTTP Versions
 concept: true
 aliases: [HTTP 1.0, HTTP 1.1, HTTP 2.0, HTTP 3.0]
 tags: [networking, http]
-sources_count: 1
-last_source: understanding-http-for-backend-engineers
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -67,7 +65,3 @@ HTTP has evolved through four major versions, each adding performance and capabi
 - HTTP/2 doesn't require encryption (but browsers only support h2 over TLS)
 - HTTP/3 still has limited server support
 - HTTP/1.1 pipelining was disabled due to bugs—HTTP/2 fixed this
-
-## Sources
-
-- [[understanding-http-for-backend-engineers-summary|Understanding HTTP for Backend Engineers]]

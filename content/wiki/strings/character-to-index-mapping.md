@@ -88,11 +88,11 @@ graph semantic_char_to_index {
 
 ## Connections
 
-- Built from: [[direct-array-access|Direct Array Access]] — relies on ASCII values being contiguous integers <!-- TODO: add backlink here -->
+- Built from: [[direct-array-access|Direct Array Access]] — relies on ASCII values being contiguous integers
 - Builds into: [[frequency-array|Frequency Array]] — the mapping is required to index the frequency array
 - Builds into: [[index-to-character-conversion|Index-to-Character Conversion]] — the mathematical inverse operation
-- Contrasts with: [[ascii-math-elimination|ASCII Math Elimination]] — hash maps remove the need for this conversion entirely <!-- TODO: add backlink here -->
-- Related: [[known-range-assumption|Known Range Assumption]] — only works when character range is known and contiguous <!-- TODO: add backlink here -->
+- Contrasts with: [[ascii-math-elimination|ASCII Math Elimination]] — hash maps remove the need for this conversion entirely
+- Related: [[known-range-assumption|Known Range Assumption]] — only works when character range is known and contiguous
 
 ## Edge Cases & Gotchas
 
@@ -101,7 +101,3 @@ graph semantic_char_to_index {
 - Mixing cases silently produces wrong results — 'A' maps to -32 (wraps around for unsigned, negative for signed)
 - C++ `char` may be signed or unsigned depending on platform — `ch - 'a'` with negative `char` values is implementation-defined
 - The mapping assumes ASCII; EBCDIC systems do not have contiguous letters
-
-## Sources
-
-- [[strings-summary|Strings (Character Hashing in C++)]]

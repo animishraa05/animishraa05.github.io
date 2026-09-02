@@ -2,8 +2,6 @@
 concept: Data Transformation
 aliases: [transformation, reshaping]
 tags: [ml, data-science]
-sources_count: 1
-last_source: ds.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -47,6 +45,3 @@ digraph G {
 - One-hot encoding high-cardinality categoricals creates dimensionality explosion
 - Standardization before train/test split causes information leakage
 - Log transforms fail on zero or negative values without adjustment
-
-## Sources
-- [[ds-summary|Data Science Book Summary]]

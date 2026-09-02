@@ -2,8 +2,6 @@
 concept: Disk Management
 aliases: [Disk Administration, Storage Management]
 tags: [systems, storage]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -56,7 +54,3 @@ digraph disk_mgmt {
 - Formatting erases all data — always backup first
 - Some file systems (ZFS) do their own bad block management
 - Partition alignment matters for SSD performance (4K alignment)
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

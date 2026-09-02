@@ -62,6 +62,3 @@ digraph transparent_dma {
 - Complex hardware required to monitor bus usage and arbitrate fairly
 - Not suitable for time-critical transfers (no guaranteed completion time)
 - May never complete if CPU never releases bus (starvation)
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

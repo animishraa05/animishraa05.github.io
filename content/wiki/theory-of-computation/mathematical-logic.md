@@ -54,6 +54,3 @@ digraph G {
 - Gödel's incompleteness theorems — any sufficiently powerful logical system cannot be both consistent and complete
 - First-order logic is undecidable (no algorithm can determine truth of arbitrary statements)
 - Second-order logic is even more expressive but loses completeness
-
-## Sources
-- [[theory-of-computation-wikipedia|Theory of Computation Wikipedia]]

@@ -2,8 +2,6 @@
 concept: Minimum Shift Keying
 aliases: [MSK, minimum-shift-keying, continuous-phase-FSK]
 tags: [networking, modulation]
-sources_count: 1
-last_source: WirelessN.md
 created: 2026-04-21
 updated: 2026-04-21
 ---
@@ -43,6 +41,3 @@ The smooth waveform avoids sharp discontinuities, which means no high-frequency 
 - The continuous phase property is critical — even small timing errors can break orthogonality
 - MSK and offset-QPSK (OQPSK) are closely related; OQPSK uses the same even/odd bit splitting method
 - In practice, MSK is filtered with a Gaussian filter before transmission to further smooth transitions
-
-## Sources
-- [[wireless-n-summary|WirelessN.md]]

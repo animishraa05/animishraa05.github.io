@@ -44,6 +44,3 @@ The near/far effect is fundamentally different from the other two: it is caused 
 - [[near-far-terminal|Near/Far Terminal Effect]] — drowning out of weak signals
 - [[maca|MACA]] — the protocol that solves hidden/exposed terminal
 - [[csma-cd|CSMA/CD]] — the wired protocol that fails in wireless
-
-## Sources
-- WirelessN.md — Jochen Schiller "Mobile Communications" ch 3

@@ -2,8 +2,6 @@
 concept: CDATA Hack for XML
 aliases: [CDATA, XML CDATA wrapping]
 tags: [dev, ejb]
-sources_count: 1
-last_source: EJb4.md
 created: 2026-04-28
 updated: 2026-04-28
 ---
@@ -54,6 +52,3 @@ digraph G {
 - `]]>` cannot appear inside a CDATA section (it would end the CDATA prematurely)
 - CDATA is not the same as XML entity escaping (`&lt;` and `&gt;`) — both work but CDATA is cleaner for large code blocks
 - Forgetting CDATA causes cryptic XML parse errors during EJB deployment
-
-## Sources
-- [[EJb4-summary|EJb4.md Source Summary]]

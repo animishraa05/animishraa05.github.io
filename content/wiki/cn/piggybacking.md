@@ -53,6 +53,3 @@ digraph G {
 - Piggyback timer too long can cause unnecessary retransmissions (sender times out)
 - Piggyback timer too short reduces effectiveness (separate ACK sent anyway)
 - In asymmetric traffic (one side mostly receiving), piggybacking is less effective
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

@@ -64,12 +64,3 @@ class ContactForm(forms.Form):
 ## Edge Cases & Gotchas
 
 - Never trust `request.POST` data directly; always access validated data via `form.cleaned_data`.
-
-## Active Recall Questions
-
-> [!question]- What method must be called on a bound form to trigger validation?
-> `is_valid()`
-
-## Sources
-
-- [[django-summary|Source: Django Learning Roadmap]] — HTML forms, validation, clean methods

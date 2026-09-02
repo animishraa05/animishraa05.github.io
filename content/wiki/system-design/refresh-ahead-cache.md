@@ -68,7 +68,3 @@ digraph RefreshAhead {
 - **Wasted refreshes**: Predictions for entries that are never accessed again waste CPU and database I/O. This can degrade overall system throughput if prediction accuracy is low.
 - **Cold start**: Refresh-ahead has no access history for new entries, so it cannot predict them — they will still experience a cold miss on first access.
 - **Oscillation risk**: If prediction logic is too aggressive, the cache may constantly refresh entries, reducing effective TTL and increasing database load without benefit.
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]]

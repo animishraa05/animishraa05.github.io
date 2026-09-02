@@ -44,6 +44,3 @@ RISC (Reduced Instruction Set Computer) and CISC (Complex Instruction Set Comput
 - [[micro-ops|Micro-ops]] — how modern CISC implements RISC internally
 - [[arm-architecture|ARM Architecture]] — popular RISC example
 - [[x86-architecture|x86 Architecture]] — popular CISC example
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

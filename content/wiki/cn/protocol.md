@@ -52,6 +52,3 @@ digraph G {
 - Protocol specification vs implementation: specs can be ambiguous leading to interop issues
 - Protocol ossification: widely deployed protocols become hard to change (e.g., TCP)
 - Versioning: protocols need backward compatibility as they evolve
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

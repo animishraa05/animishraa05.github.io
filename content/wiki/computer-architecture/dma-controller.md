@@ -54,6 +54,3 @@ digraph dmac {
 - Cache coherency: CPU cache may not see DMAC-written data (need cache flush/invalidate)
 - Wrong register programming (bad address/count) can corrupt memory
 - Some systems have limited DMA channels — resource contention possible
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

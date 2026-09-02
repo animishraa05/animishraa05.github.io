@@ -4,8 +4,6 @@ aliases: [Theory of Automata]
 tags: [theory, branch]
 created: 2026-04-11
 updated: 2026-04-11
-confidence: high
-status: stable
 ---
 
 ## The Problem
@@ -44,11 +42,6 @@ The term comes from Greek "αυτόματα" meaning "something that does things
 
 - More powerful automata can simulate less powerful ones
 - The Chomsky hierarchy classifies languages by the automata that recognize them
-
-## Sources
-
-- [[theory-of-computation-wikipedia|Theory of computation - Wikipedia]]
-
 ## Why This Matters
 
 Automata theory provides the framework for understanding computational power and classifying problems. It bridges abstract machines with formal languages and forms the foundation for computability theory.

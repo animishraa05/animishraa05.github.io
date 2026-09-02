@@ -67,12 +67,3 @@ django-admin startproject myproject
 
 - Can be overkill for very small microservices.
 - Has a steeper learning curve initially due to its "magic" and strict conventions.
-
-## Active Recall Questions
-
-> [!question]- What is Django's primary purpose?
-> To build server-side web applications rapidly by providing built-in modules.
-
-## Sources
-
-- [[django-summary|Source: Django Learning Roadmap]] — core definitions and architecture

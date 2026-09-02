@@ -63,12 +63,3 @@ class ArticleListView(ListView):
 
 - Method resolution order (MRO) in complex multi-inheritance CBVs can make debugging difficult.
 - FBVs are often better for complex, non-standard business logic where CBVs would require overriding too many methods.
-
-## Active Recall Questions
-
-> [!question]- How do you connect a Class-Based View to a URL pattern?
-> By calling the `as_view()` method on the class in `urls.py`.
-
-## Sources
-
-- [[django-summary|Source: Django Learning Roadmap]] — generic views, mixins, CRUD views

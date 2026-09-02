@@ -55,6 +55,3 @@ digraph G {
 - Not all procedures are algorithms — must terminate (halting problem shows some procedures don't)
 - Algorithm ≠ program — algorithms are abstract, programs are concrete implementations
 - Nondeterministic algorithms allow "guessing" — basis for NP complexity class
-
-## Sources
-- [[theory-of-computation-wikipedia|Theory of Computation Wikipedia]]

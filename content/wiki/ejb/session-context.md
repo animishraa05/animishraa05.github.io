@@ -2,8 +2,6 @@
 concept: SessionContext
 aliases: [EJB SessionContext, getEJBObject, getEJBLocalObject]
 tags: [dev, ejb]
-sources_count: 1
-last_source: ejb6.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -60,6 +58,3 @@ digraph G {
 - **Null check**: Context may be null before `setSessionContext()` called
 - **Runtime only**: Context not available during `new` (only after container injects)
 - **Method restrictions**: Can't call `getEJBObject()` in `ejbCreate()` (EJB object not associated yet)
-
-## Sources
-- [[ejb6-summary|EJB6 Source Summary]]

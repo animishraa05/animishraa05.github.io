@@ -65,7 +65,3 @@ digraph WriteThrough {
 - **Write amplification**: Every write hits both cache and DB, doubling write operations compared to a direct DB write.
 - **No stale-data protection for direct DB writes**: If another process writes directly to the database (bypassing the cache), the cache still becomes stale.
 - **Higher write latency**: The client blocks until both cache and DB acknowledge, making writes slower than write-behind or cache-aside.
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]]

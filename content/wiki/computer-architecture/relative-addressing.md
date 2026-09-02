@@ -51,6 +51,3 @@ digraph relative {
 - Offset range is limited (can't jump too far with short relative)
 - PC value used is typically after instruction fetch (PC = next instruction)
 - Negative offsets for backward jumps (loops)
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

@@ -2,8 +2,6 @@
 concept: Forms ModelForms
 aliases: [Django Forms, ModelForms, Form Validation, django.forms]
 tags: [dev, django]
-sources_count: 1
-last_source: Django.md
 created: 2026-08-09
 updated: 2026-08-09
 ---
@@ -121,7 +119,3 @@ graph semantic_forms_modelforms {
 - **`save(commit=False)`**: Must call `instance.save()` manually; M2M needs `form.save_m2m()` after
 - **File uploads**: Need `enctype="multipart/form-data"` on `<form>`; `request.FILES` separate from `request.POST`
 - **Formset management form**: Hidden `TOTAL_FORMS`, `INITIAL_FORMS` required; `can_delete=True` adds `DELETE` checkbox
-
-## Sources
-
-- [[django-summary|Django Learning Roadmap]]

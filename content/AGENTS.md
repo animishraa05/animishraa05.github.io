@@ -62,35 +62,49 @@ content/
 
 ---
 
-## Page Rules
+## Page Rules — Quartz-public (human teach, no LLM fingerprints)
 
-### 1. Every concept page must have:
+### 1. Every concept page must have (exact order, public body):
 
-- YAML frontmatter with: concept, aliases, tags, sources_count, last_source, created, updated
-- "The Problem" section — why this concept exists
-- "Core Idea" section — minimum viable definition
-- "How It Works" section — mechanism, not just description
-- "Visual Explanation" section — a Graphviz (DOT) diagram explaining the concept's structure, flow, or relationships. Use ` ```dot ` blocks.
-- "Key Properties" section — bullet points
-- "Connections" section — wiki links to related concepts (4+ minimum)
-- "Edge Cases & Gotchas" section — where this fails, common misconceptions
-- "Sources" section — wiki links to source summaries
+```yaml
+---
+concept: Human Name
+aliases: [alt1, alt2]           # 1-2 natural, not keyword stuffing
+tags: [domain, subdomain]       # first tag MUST be domain tag
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
+# internal provenance (hidden from Quartz via .wiki-meta.json, NOT in body):
+# sources_count, last_source, content_hash managed in wiki/.wiki-meta.json
+---
+```
 
-### 2. Every synthesis page must have:
+Body sections in order:
+1. `## The Problem` — easy language, why you care (2-3 lines, teach a friend)
+2. `## Formal Definition` — textbook citation inline `Per Tanenbaum / MDN / Wikipedia: "..."` — no Sources section
+3. `## Explanation` — plain human story, 2-4 sentences
+4. `## How It Works` — 4-8 numbered steps, mechanism
+5. `## Visual Explanation` — ONE Graphviz DOT ` ```dot ` digraph, `rankdir=LR/TB`, 4-8 nodes, labeled edges, concept vocab, `node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]`
+6. `## Semantic Network` — ONE Graphviz DOT ` ```dot ` `graph semantic_* { layout=neato; THIS [fillcolor="#ffd700"] }` — 5-10 real pages, gold center, blue prereq, green builds-into, orange contrasts, gray related
+7. `## Key Properties` or `## Objectives` or `## Functions` or `## Pros & Cons` — pick ONE compatible with concept, 4-6 bullets
+8. `## Real-World Example` — one minimal ` ```cpp|python|bash ` or story, human runnable
+9. `## Connections` — 4+ `[[page|Name]] — one-line why` (no `<!-- TODO -->` comments in body)
+10. `## Edge Cases & Gotchas` — 2-3 pitfalls
 
-- YAML frontmatter with: title, type, tags, created, updated
+DO NOT include in public body: `Sources` section, `Active Recall` callouts, `<!-- TODO: add backlink -->`, `status: stub` markers, `Aliases:` heavy lists. Provenance lives in hidden summary + `.wiki-meta.json`.
+
+### 2. Every synthesis page must have (Quartz-public):
+
+- YAML frontmatter with: title, type (`comparison|deep-dive|analysis`), tags, created, updated
 - Clear framing: what is being compared/analyzed
-- Structured comparison (not just descriptions side by side)
-- Insights that go beyond individual concept pages
-- Connections back to concept pages
+- Structured comparison (table or dimensions)
+- Insight that goes beyond individual pages
+- Connections back to ALL compared concept pages
+- Same diagram hygiene: optional single DOT if helpful, no Sources/Active Recall
 
-### 3. Every source summary must have:
+### 3. Internal tracking (hidden from Quartz via `draft: true` + `quartz.config.ts ignorePatterns`):
 
-- YAML frontmatter with: source, source_path, content_hash, ingested, concepts_count
-- What concepts were extracted
-- Which wiki pages were created or updated
-- Key takeaways from this source
-- Open questions this source raises (add to wiki/open-questions.md)
+- Every source summary `wiki/[topic]/[topic]-summary.md` has `draft: true`, frontmatter `source, source_path, content_hash, ingested, concepts_count`, lists created/updated pages + key takeaways. Never rendered on site.
+- `wiki/.wiki-meta.json` — ledger `{source_hash: {source_path, ingested, concepts: []}}` for dedup. `wiki/log.md`, `wiki/open-questions.md`, `wiki/SCHEMA.md`, `wiki/MAINTENANCE.md`, `wiki/agent-module/**` are `ignorePatterns` — internal only.
 
 ---
 
@@ -151,32 +165,22 @@ tags: [ejb, session-bean]     ← WRONG — ejb is not a domain tag
 
 ### When ingesting a new source:
 
-1. Read the source from `sources/[filename]`
-2. Identify all atomic concepts — **no upper limit, lower limit is 25**. Extract every distinct idea, mechanism, pattern, or principle that appears meaningfully in the source. You MUST create at least 25 concept/synthesis pages per source (excluding the summary page). If the source is thin, decompose broader concepts into finer atomic pieces to meet the minimum.
-3. Determine the topic folder name (from source filename, kebab-case)
-4. Create the topic folder in `wiki/` if it doesn't exist
-5. For each concept:
-   - Check if `wiki/[topic-folder]/[concept].md` exists (in THIS folder or ANY folder)
-   - If YES: update it — merge new info, flag contradictions, strengthen
-   - If NO: create it in the current topic folder
-6. Create a source summary in `wiki/[topic-folder]/`
-7. Create/update synthesis pages in `wiki/[topic-folder]/`
-8. Update `wiki/index.md` — add topic name, wiki link, and one-line description only. Do NOT add page counts, a Stats section, agent-module references, or update the `updated:` date in frontmatter.
-9. Append to `wiki/log.md` with a brief personal note. Do NOT include page counts or structured tracking data. Format: `## [YYYY-MM-DD] — What was studied or learned`
-10. **Verify the count**: Before finishing, confirm the topic folder has at least 25 concept/synthesis files (excluding the summary). If not, decompose further until the minimum is met.
+1. Read the source from `sources/[filename]`, compute `sha256sum`, check `wiki/.wiki-meta.json` — if hash exists, SKIP unless `--force` is passed
+2. Identify all atomic concepts — **25-30 minimum, no upper limit**. Extract every distinct idea, mechanism, pattern, principle. You MUST create at least 25 concept/synthesis pages per source (excluding the summary). If thin, decompose broader concepts into finer atomic pieces. Human teach tone, easy words.
+3. Determine topic folder name (source filename, kebab-case), create `wiki/[topic]/` if needed
+4. For each concept: check if `wiki/**/[concept].md` exists anywhere — if YES update+merge, if NO create in current topic folder. Every page follows Page Rules: The Problem → Formal Definition (with citation) → 2 DOT diagrams → Properties/Objectives/Functions → Real-World Example → no Sources/TODO in body
+5. Create source summary `wiki/[topic]/[topic]-summary.md` with `draft: true` (hidden from Quartz) + append ledger entry to `wiki/.wiki-meta.json`
+6. Create/update 1-3 synthesis pages in `wiki/[topic]/` if natural tensions exist
+7. Create/update `wiki/[topic]/[topic]-moc.md` (Map of Content) via `generate-wiki-mocs.sh` logic
+8. Run `consolidate_images.py` tail if source had images, then `wiki-lint-det.sh --topic=[topic]` deterministic fix (broken stubs, orphans)
+9. Update `wiki/index.md` — one table row per topic, wiki link + one-line human description only. No Stats/agent-module refs, no `updated:` bump.
+10. Append to `wiki/log.md` + `wiki/open-questions.md` (2-4 open questions). Verify count: `ls wiki/[topic]/*.md | grep -v summary | wc -l` must be 25-30, else decompose further. Fail ingest if still <25.
 
-### When running a lint:
+### When running a lint (hybrid: deterministic + sharded LLM, handles 2000+ files):
 
-1. Check ALL topic folders in `wiki/` for:
-   - Orphan pages (zero inbound links)
-   - Broken wiki links
-   - Contradictions between pages (even across topic folders)
-   - Stale claims superseded by newer info
-   - Thin pages (1-2 lines that need fleshing out)
-   - Missing Connections sections
-   - Wrong tags (first tag must be a domain tag)
-2. Report findings and fix what you can
-3. Append to `wiki/log.md` with a brief note on what was fixed. Format: `## [YYYY-MM-DD] — Lint: [scope]`
+1. **Deterministic pre-pass (`scripts/wiki-lint-det.sh` — full wiki, no LLM, <5s):** grep all `[[links]]`, verify file exists → broken list; stub auto-create if link appears ≥2 times (heuristic), else flag; orphan zero-inbound → inject Related link from same topic MOC; tag domain check; missing The Problem/Formal Definition/2×DOT/missing Connections<4 → flag.
+2. **Sharded LLM pass (2-3 topics/week round-robin, fits free tier):** run `opencode --agent lint-deep` ONLY on shard `wiki/[topic]/` for contradictions (Pass 5) + thin fleshing (Pass 6). Full coverage monthly.
+3. Report findings and fix what you can; append to `wiki/log.md` Format: `## [YYYY-MM-DD] — Lint: [scope]` with counts: `Resolved: N broken (M stubs), N orphans, N tags` + `Flagged: ...`
 
 ### When answering a query:
 

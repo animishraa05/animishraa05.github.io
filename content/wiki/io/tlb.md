@@ -2,8 +2,6 @@
 concept: TLB
 aliases: [Translation Lookaside Buffer, Address Translation Cache]
 tags: [systems, memory]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -61,7 +59,3 @@ digraph tlb {
 - TLB flush on context switch hurts performance
 - Some entries can be wired (never flushed, for kernel)
 - TLB miss handling is in hardware or software depending on architecture
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

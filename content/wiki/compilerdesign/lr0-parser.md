@@ -80,7 +80,3 @@ graph semantic_lr0 {
 - **Reduce/reduce conflicts:** Two different productions can be reduced in the same state — ambiguous grammar or design issue
 - **LR(0) ⊂ SLR ⊂ LALR ⊂ CLR:** Every LR(0) grammar is SLR, but most practical grammars need LALR or CLR
 - **State explosion:** Even LR(0) can produce many states for real grammars — though far fewer than CLR(1)
-
-## Sources
-
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers LR(0) parser as the simplest LR variant

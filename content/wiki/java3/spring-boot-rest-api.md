@@ -75,7 +75,3 @@ digraph rest_api {
 - **Content-type mismatch**: Client sends wrong Content-Type → 415 Unsupported Media Type
 - **Versioning**: URL path versioning (`/v1/users`) vs header versioning (`Accept: application/vnd.company.v1+json`)
 - **CORS**: Browsers block cross-origin requests; `@CrossOrigin` or `WebMvcConfigurer.addCorsMappings()` to allow
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — REST API development with Spring Boot

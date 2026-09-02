@@ -83,7 +83,3 @@ graph semantic_aggregation {
 - **Null container**: If the container is destroyed, the aggregated objects may lose one reference but continue to exist via other references
 - **Memory leaks**: Holding references to aggregated objects longer than needed can prevent garbage collection
 - **Serialization complexity**: Aggregated objects may need special handling during serialization to avoid deep-copying independent objects
-
-## Sources
-
-- [[java2-summary|Java OOP Concepts — Source Summary]] — aggregation as weak has-a with Company/Employees example

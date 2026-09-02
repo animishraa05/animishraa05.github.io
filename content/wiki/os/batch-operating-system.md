@@ -2,10 +2,6 @@
 concept: Batch Operating System
 aliases: [batch processing, batch OS, batch system]
 tags: [systems, os]
-status: draft
-confidence: high
-sources_count: 1
-last_source: OS.md
 created: 2026-06-11
 updated: 2026-06-11
 ---
@@ -99,7 +95,3 @@ graph semantic_batch_os {
 - A batch with a long-running job delays all subsequent jobs — no preemption
 - Debugging was extremely painful: if a job failed, the programmer got a printout (core dump) hours later
 - No priority mechanism — FIFO processing within the batch, though priority batch scheduling was later developed
-
-## Sources
-
-- [[os-summary|OS Source Summary]]

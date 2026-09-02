@@ -90,7 +90,3 @@ graph semantic_liveliness {
 - **Precise vs conservative:** The analysis must be conservative — if it cannot determine liveness precisely, it assumes the variable is live
 - **Aliasing:** Through pointers, assignments to `*p` may affect any variable — the analysis must be conservative
 - **Optimization interaction:** Dead code elimination from liveness analysis can enable further optimizations, and vice versa
-
-## Sources
-
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers liveliness analysis in data flow analysis

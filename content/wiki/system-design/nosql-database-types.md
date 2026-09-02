@@ -76,7 +76,3 @@ digraph NoSQLTypes {
 - **Wrong tool for the job** — using a document store for deeply relational data (e.g., accounting systems) leads to application-level join spaghetti and data inconsistency.
 - **NoSQL does not mean no schema** — while schemas are flexible at write time, the application code implicitly defines a schema that must be managed; schema drift is a real problem.
 - **Eventual consistency surprises** — reading your own write may return stale data; this breaks user expectations in applications like social media or e-commerce.
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]]

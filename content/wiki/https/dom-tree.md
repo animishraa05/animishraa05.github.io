@@ -2,8 +2,6 @@
 concept: DOM Tree
 aliases: [Document Object Model, DOM, HTML tree]
 tags: [dev, browser]
-sources_count: 1
-last_source: https.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -74,7 +72,3 @@ digraph G {
 - `document.write()` during parsing can break things
 - Large DOM = slow rendering and JS operations
 - DOM is not the same as HTML source (parser fixes errors)
-
-## Sources
-
-- [[https-summary|HTTP HTTPS DNS URL Source]]

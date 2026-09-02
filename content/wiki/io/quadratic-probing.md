@@ -2,8 +2,6 @@
 concept: Quadratic Probing
 aliases: [Quadratic Search, Quadratic Hashing]
 tags: [systems, data-structures]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -57,7 +55,3 @@ digraph quad {
 - May not probe all table slots (unlike linear probing)
 - Table size should be prime for best coverage
 - Secondary clustering: same initial hash = same probe sequence
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

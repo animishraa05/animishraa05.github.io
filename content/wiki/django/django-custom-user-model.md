@@ -64,12 +64,3 @@ class CustomUser(AbstractUser):
 
 - Attempting to switch to a Custom User Model in the middle of a project with an existing database is extraordinarily difficult and involves complex manual database surgery.
 - Best practice: Always start a new Django project with a Custom User Model, even if you don't add fields to it immediately.
-
-## Active Recall Questions
-
-> [!question]- When is the optimal time to set up a Custom User Model?
-> At the very beginning of the project, before running any database migrations.
-
-## Sources
-
-- [[django-summary|Source: Django Learning Roadmap]] — advanced django, authentication

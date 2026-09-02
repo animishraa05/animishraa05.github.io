@@ -49,6 +49,3 @@ digraph G {
 - Sequence number space is finite (wraps around) — must be large enough to avoid ambiguity
 - Initial sequence numbers are randomly chosen to avoid confusion with old connections
 - TCP sequence numbers increment by bytes, not segments
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

@@ -4,8 +4,6 @@ aliases: [Formal Languages]
 tags: [theory, automata]
 created: 2026-04-11
 updated: 2026-04-11
-confidence: high
-status: stable
 ---
 
 ## The Problem
@@ -44,7 +42,3 @@ Languages are classified in a hierarchy (Chomsky hierarchy) based on the complex
 
 - A language can be infinite even with a finite description (grammar)
 - The same language can be described by different grammars
-
-## Sources
-
-- [[theory-of-computation-wikipedia|Theory of computation - Wikipedia]]

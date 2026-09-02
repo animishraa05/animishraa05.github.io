@@ -3,8 +3,6 @@ title: Text Rendering Problem in Diffusion Models
 concept: text-rendering-problem
 aliases: [bad text generation, garbled text, spelling errors in images]
 tags: [ai, diffusion]
-sources_count: 1
-last_source: imgen.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -55,7 +53,3 @@ Diffusion models work in a compressed "latent space" created by a VAE (Variation
 - Numbers fail more than letters (0 vs O confusion)
 - Multi-language text (Hindi + English) is even harder
 - Sans-serif fonts render better than serif (fewer fine details to lose)
-
-## Sources
-
-- [[imgen-summary]]

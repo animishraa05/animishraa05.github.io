@@ -81,12 +81,12 @@ graph semantic_unordered_map {
 
 ## Connections
 
-- Built from: [[hash-map-flexibility|Hash Map Flexibility]] — unordered_map supports diverse key types <!-- TODO: add backlink here -->
-- Built from: [[hash-collision-overhead|Hash Collision Overhead]] — the performance tradeoff of hash maps <!-- TODO: add backlink here -->
+- Built from: [[hash-map-flexibility|Hash Map Flexibility]] — unordered_map supports diverse key types
+- Built from: [[hash-collision-overhead|Hash Collision Overhead]] — the performance tradeoff of hash maps
 - Builds into: [[two-phase-hashing|Two-Phase Hashing Paradigm]] — maps are one implementation choice for Phase 1
 - Builds into: [[anagram-detection-via-hashing|Anagram Detection]] — maps are ideal when character set is unknown
 - Contrasts with: [[frequency-array|Frequency Array]] — array is faster for small known ranges; map is more flexible
-- Related: [[ascii-math-elimination|ASCII Math Elimination]] — maps eliminate the need for index conversion <!-- TODO: add backlink here -->
+- Related: [[ascii-math-elimination|ASCII Math Elimination]] — maps eliminate the need for index conversion
 
 ## Edge Cases & Gotchas
 
@@ -95,7 +95,3 @@ graph semantic_unordered_map {
 - `unordered_map` is not ordered — if you need sorted output, use `map` (O(log n) per operation) or sort the result
 - For small datasets (like lowercase-only strings), a map is slower than a frequency array despite both being O(1) — the constant factors matter
 - Memory per entry is higher than an array slot due to key storage, hash table overhead, and pointer chains
-
-## Sources
-
-- [[strings-summary|Strings (Character Hashing in C++)]]

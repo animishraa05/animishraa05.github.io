@@ -2,8 +2,6 @@
 concept: Bidirectional vs Unidirectional Relationships
 aliases: [Relationship Directionality, Bidirectional, Unidirectional]
 tags: [dev, ejb]
-sources_count: 1
-last_source: EJb4.md
 created: 2026-04-28
 updated: 2026-04-28
 ---
@@ -85,6 +83,3 @@ digraph G {
 - Unidirectional limits queries — can't do "find all orders for this shipment" if Shipment doesn't know about Order
 - CMP container doesn't enforce directionality at compile time — misconfiguration found at deploy time
 - Object directionality doesn't require matching database directionality (EJB abstracts this)
-
-## Sources
-- [[EJb4-summary|EJb4.md Source Summary]]

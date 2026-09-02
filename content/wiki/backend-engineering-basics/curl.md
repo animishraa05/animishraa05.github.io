@@ -2,8 +2,6 @@
 concept: curl
 aliases: [curl client, command line HTTP client, HTTP tool]
 tags: [dev, tools]
-sources_count: 1
-last_source: Backend Engineering Basics.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -50,7 +48,3 @@ Example: `curl https://example.com` sends `GET / HTTP/1.1` and prints the HTML r
 - Default timeout may be too long for failing servers
 - Use -L to follow redirects
 - For complex APIs, tools like Postman may be more convenient than curl
-
-## Sources
-
-- [[backend-engineering-basics-summary|Backend Engineering Basics]]

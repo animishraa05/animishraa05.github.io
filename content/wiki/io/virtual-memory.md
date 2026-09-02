@@ -2,8 +2,6 @@
 concept: Virtual Memory
 aliases: [Virtual Memory System, VM]
 tags: [systems, memory]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -70,7 +68,3 @@ digraph vm {
 - Thrashing: too much swapping, system becomes very slow
 - OOM killer: Linux kills processes when memory exhausted
 - Swap on SSD wears out flash cells
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

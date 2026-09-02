@@ -2,8 +2,6 @@
 concept: Device Driver
 aliases: [Driver, Device Driver Software]
 tags: [systems, io]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -63,7 +61,3 @@ digraph device_driver {
 - Driver must handle concurrent requests properly (reentrant code)
 - Missing drivers result in "unknown device" errors
 - Driver version must match kernel version exactly
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

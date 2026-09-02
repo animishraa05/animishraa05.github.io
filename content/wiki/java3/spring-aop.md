@@ -74,7 +74,3 @@ digraph spring_aop {
 - **Self-injection**: Use `@Autowired MyService self` + `@Lazy` to enable AOP for internal calls
 - **Performance**: @Around advice adds overhead to every matched method — use judiciously
 - **Proxy exposure**: If the target casts `this` in its methods, it gets the raw object, not the proxy
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Spring AOP overview, implementation

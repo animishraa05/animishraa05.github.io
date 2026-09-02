@@ -69,7 +69,3 @@ digraph G {
 - **Write loss**: If a node accepts a write and crashes before propagating it, that write may be lost entirely.
 - **Not a good default**: Weak consistency is a deliberate trade-off for extreme performance requirements. Using it accidentally (e.g., misconfigured replication) leads to data loss and hard-to-debug heisenbugs.
 - **Hard to test**: Since behavior is non-deterministic, weak consistency bugs are notoriously difficult to reproduce in test environments.
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]]

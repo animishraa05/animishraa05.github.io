@@ -4,8 +4,6 @@ aliases: [Recursion Theory]
 tags: [theory, branch]
 created: 2026-04-11
 updated: 2026-04-11
-confidence: high
-status: stable
 ---
 
 ## The Problem
@@ -44,11 +42,6 @@ Computability theory is closely related to mathematical logic's recursion theory
 
 - "Undecidable" means no algorithm exists—not just that no one has found one
 - Some problems are undecidable even though individual instances may be solvable
-
-## Sources
-
-- [[theory-of-computation-wikipedia|Theory of computation - Wikipedia]]
-
 ## Why This Matters
 
 Computability theory defines the fundamental limits of what computers can do. Knowing a problem is undecidable saves time trying to find a solution that doesn't exist.

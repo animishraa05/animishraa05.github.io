@@ -2,8 +2,6 @@
 concept: Antenna Types
 aliases: [isotropic-antenna, dipole-antenna, directional-antenna, sectorized-antenna, diversity-antenna]
 tags: [networking, wireless]
-sources_count: 1
-last_source: WirelessN.md
 created: 2026-04-21
 updated: 2026-04-21
 ---
@@ -64,6 +62,3 @@ Antennas are classified by their radiation pattern: isotropic (theoretical perfe
 - MIMO (used in 4G/LTE and Wi-Fi) is a multi-antenna system that combines diversity with spatial multiplexing
 - Sectorized antennas require precise azimuth pointing (for 120° sectors, ±60° from center)
 - Diversity and MIMO are different: diversity improves reliability, MIMO improves throughput
-
-## Sources
-- [[wireless-n-summary|WirelessN.md]]

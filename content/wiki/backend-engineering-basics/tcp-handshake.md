@@ -2,8 +2,6 @@
 concept: TCP Handshake
 aliases: [TCP three-way handshake, SYN, SYN-ACK, ACK]
 tags: [networking, tcp]
-sources_count: 2
-last_source: https.md
 created: 2026-04-12
 updated: 2026-04-30
 ---
@@ -48,7 +46,3 @@ This happens before TLS handshake (for HTTPS) and before any HTTP request. It's 
 - SYN flood attacks exploit the half-open state
 - TLS 1.3 reduces handshake to 1 round trip (1-RTT) vs 2 in TLS 1.2
 - UDP doesn't have handshake—it's unreliable but faster
-
-## Sources
-
-- [[backend-engineering-basics-summary|Backend Engineering Basics]]

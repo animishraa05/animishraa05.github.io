@@ -2,7 +2,6 @@
 title: Parsing Techniques Compared — LL(1), LR(0), SLR, CLR, LALR
 type: synthesis
 tags: [dev, compiler-design]
-status: draft
 created: 2026-05-13
 updated: 2026-05-13
 ---

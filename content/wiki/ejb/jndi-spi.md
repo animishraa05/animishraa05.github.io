@@ -2,8 +2,6 @@
 concept: JNDI Service Provider Interface
 aliases: [JNDI SPI, Service Provider Interface]
 tags: [dev, ejb, jndi]
-sources_count: 1
-last_source: ejb6.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -72,6 +70,3 @@ digraph G {
 - **Version compatibility**: Provider must match JNDI version
 - **Connection pooling**: Provider may or may not implement connection pooling
 - **Thread safety**: Provider implementations must be thread-safe
-
-## Sources
-- [[ejb6-summary|EJB6 Source Summary]]

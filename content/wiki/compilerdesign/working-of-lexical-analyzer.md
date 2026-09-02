@@ -84,7 +84,3 @@ graph semantic_lexer_working {
 - **Maximal munch ambiguity:** In C, `++x` is parsed as `++ x` (pre-increment), but `+ +x` is `+ + x` — the lexer chooses the longest match
 - **Context-sensitive lexing:** C's `typedef` creates identifiers that are syntactically type names — the lexer may need a symbol table to disambiguate
 - **Buffer management:** When a token spans across buffer boundaries (rare but possible), the lexer must handle stitching
-
-## Sources
-
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers the working of lexical analyzer with input buffering and lookahead

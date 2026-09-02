@@ -2,8 +2,6 @@
 concept: JAX-RPC
 aliases: [Java API for XML RPC, JSR 101]
 tags: [dev, ejb, web-services]
-sources_count: 1
-last_source: ejb6.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -63,6 +61,3 @@ digraph G {
 - **SOAP complexity**: XML serialization has overhead
 - **EJB endpoint overhead**: Full container services may be unnecessary for simple services
 - **WS-* standards**: Many additional specs beyond core JAX-RPC
-
-## Sources
-- [[ejb6-summary|EJB6 Source Summary]]

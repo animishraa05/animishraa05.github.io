@@ -55,7 +55,3 @@ The line between abstract classes and interfaces has blurred significantly since
 - [[java-interfaces|Java Interfaces]] — interface mechanism in detail
 - [[java-inheritance|Java Inheritance]] — both depend on inheritance for implementation
 - [[java-polymorphism|Java Polymorphism]] — both enable polymorphic behavior
-
-## Sources
-
-- [[java2-summary|Java OOP Concepts — Source Summary]] — abstract class vs interface for abstraction

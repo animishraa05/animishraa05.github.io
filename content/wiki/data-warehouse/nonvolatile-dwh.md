@@ -2,8 +2,6 @@
 concept: Nonvolatile Data Warehouse
 aliases: [nonvolatile DWH, read-only warehouse, append-only warehouse]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -103,7 +101,3 @@ graph semantic_nonvolatile {
 - **Correcting errors is hard:** If bad data was loaded, you cannot simply UPDATE it. You must either append a corrected record or reload the entire batch.
 - **Storage cost:** Since data is never deleted, the warehouse grows indefinitely. Archival policies (moving old data to cheaper storage) are essential.
 - **Not suitable for operational queries:** By design, the warehouse cannot answer "what is the current state?" questions — only "what was the state at time X?"
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — nonvolatile characteristic, separation from operational environment

@@ -2,8 +2,6 @@
 concept: Java Message Service (JMS)
 aliases: [JMS, Java Message Service API]
 tags: [dev, ejb]
-sources_count: 1
-last_source: EJb4.md
 created: 2026-04-28
 updated: 2026-04-28
 ---
@@ -57,6 +55,3 @@ digraph G {
 - Not all MOM features are exposed through JMS — some vendor-specific features need proprietary APIs
 - JMS providers must be configured by administrator before application can use them
 - ConnectionFactory and Destination must be looked up via JNDI — they are not created programmatically
-
-## Sources
-- [[EJb4-summary|EJb4.md Source Summary]]

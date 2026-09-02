@@ -63,8 +63,3 @@ digraph top_down {
 - **Left factoring:** Common prefixes in alternatives cause FIRST conflicts — factored out to create `A → αB` where `B → β₁ | β₂`
 - **LL(1) limitation:** Not all languages can be parsed with LL(1) — some require LL(k) or LR parsing
 - **Backtracking:** Naive recursive descent with backtracking has exponential worst-case time; predictive parsing avoids this
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers classification of top-down parsers
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers recursive descent, predictive parser, LL(1) parsing

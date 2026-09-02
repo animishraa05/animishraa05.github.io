@@ -2,8 +2,6 @@
 concept: Co-Channel Interference
 aliases: [co-channel-interference, co-channel-reduction-factor]
 tags: [networking, interference]
-sources_count: 1
-last_source: WirelessN.md
 created: 2026-04-21
 updated: 2026-04-21
 ---
@@ -43,6 +41,3 @@ Co-channel interference is the interference between signals from co-channel cell
 - C/I requirements vary with modulation scheme; higher-order modulation needs higher C/I
 - Power control helps maintain C/I by adjusting mobile transmit power
 - Soft handoff in CDMA provides macro-diversity, which also reduces co-channel interference
-
-## Sources
-- [[wireless-n-summary|WirelessN.md]]

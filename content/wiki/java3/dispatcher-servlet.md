@@ -78,7 +78,3 @@ digraph dispatcher_servlet {
 - **Static resources**: DispatcherServlet must be configured to pass through static resources (CSS, JS) — use `<mvc:resources>` or default servlet handler
 - **404 without mapping**: No HandlerMapping match results in 404 — check servlet mapping URL patterns
 - **Application context hierarchy**: DispatcherServlet creates its own WebApplicationContext (child of root context); only sees beans in its own context
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — DispatcherServlet in Spring MVC

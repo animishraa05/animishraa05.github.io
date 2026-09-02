@@ -67,7 +67,3 @@ digraph jpaRepository_hierarchy {
 - **getById() vs findById()**: `getById()` returns a reference (proxy, lazy); `findById()` returns Optional (eager loading)
 - **deleteInBatch vs deleteAll**: `deleteInBatch()` uses one JPQL DELETE query; `deleteAll()` loads each entity and calls EntityManager.remove()
 - **Transactional behavior**: Repository methods are @Transactional(readOnly=true) for reads, @Transactional for writes
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — JpaRepository, repository hierarchy

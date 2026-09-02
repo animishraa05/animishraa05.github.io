@@ -3,8 +3,6 @@ title: Vim Macros
 concept:
 aliases: [macro, recording, qa, register, replay]
 tags: [dev, vim]
-sources_count: 1
-last_source: YBlog - Learn Vim Progressively.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -54,7 +52,3 @@ Example: Numbered list
 - [[vim-modes|Vim Modes]] — Recording works in Normal mode
 - [[vim-visual-selection|Visual Selection]] — Can record visual selections
 - [[vim-rectangular-blocks|Block Selection]] — Can be combined with macros
-
-## Sources
-
-- [[learn-vim-progressively-summary|YBlog - Learn Vim Progressively]]

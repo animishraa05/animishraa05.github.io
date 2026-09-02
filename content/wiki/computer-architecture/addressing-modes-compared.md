@@ -44,6 +44,3 @@ Different addressing modes exist to efficiently access data in different scenari
 - [[register-indirect-with-displacement|Register+Displacement]] — struct fields
 - [[relative-addressing|Relative Addressing]] — PC-relative branches
 - [[stack-addressing|Stack Addressing]] — stack operations
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

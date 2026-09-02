@@ -53,6 +53,3 @@ digraph risc {
 - More instructions means more memory bandwidth needed
 - Not always faster — depends on compiler quality and workload
 - Modern x86 CPUs translate CISC instructions to RISC-like micro-ops internally
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

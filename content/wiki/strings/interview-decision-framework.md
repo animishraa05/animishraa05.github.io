@@ -81,9 +81,9 @@ graph semantic_decision_framework {
 ## Connections
 
 - Built from: [[known-range-assumption|Known Range Assumption]] — the range check is the first decision step
-- Built from: [[memory-efficiency-array|Memory Efficiency of Array]] — memory is a decision factor <!-- TODO: add backlink here -->
+- Built from: [[memory-efficiency-array|Memory Efficiency of Array]] — memory is a decision factor
 - Built from: [[hash-map-flexibility|Hash Map Flexibility]] — flexibility is the deciding factor for unknown ranges
-- Builds into: [[character-hashing-use-cases|Character Hashing Use Cases]] — the framework applies to every use case <!-- TODO: add backlink here -->
+- Builds into: [[character-hashing-use-cases|Character Hashing Use Cases]] — the framework applies to every use case
 - Contrasts with: [[hash-collision-overhead|Hash Collision Overhead]] — maps pay a collision cost that arrays avoid
 - Related: [[ascii-math-elimination|ASCII Math Elimination]] — one reason to choose maps
 
@@ -94,7 +94,3 @@ graph semantic_decision_framework {
 - The "hash map is O(1)" claim is average-case, not worst-case — a good candidate mentions this nuance
 - For strings with only a few characters (n < 10), the overhead of any data structure may dominate — a simple loop without hashing could be faster
 - The framework assumes you need to solve a frequency problem — if the problem doesn't require frequencies (e.g., simple character presence check), a `std::set` or `bool` array is more appropriate
-
-## Sources
-
-- [[strings-summary|Strings (Character Hashing in C++)]]

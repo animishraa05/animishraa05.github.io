@@ -2,8 +2,6 @@
 concept: Multipath Propagation
 aliases: [multipath-fading, multipath-effect]
 tags: [networking, wireless]
-sources_count: 1
-last_source: WirelessN.md
 created: 2026-04-21
 updated: 2026-04-21
 ---
@@ -42,6 +40,3 @@ The delay spread (difference between earliest and latest arriving paths) determi
 - High-speed mobility (e.g., in a car) causes rapidly changing multipath patterns
 - Simple amplitude-based received signal strength indicators (RSSI) cannot distinguish multipath components
 - OFDM (used in Wi-Fi, 4G, 5G) converts one wide band into many narrow subcarriers, each less affected by frequency-selective multipath
-
-## Sources
-- [[wireless-n-summary|WirelessN.md]]

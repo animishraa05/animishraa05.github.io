@@ -2,8 +2,6 @@
 concept: Mobile Ad Hoc Network
 aliases: [MANET, ad-hoc-network, mobile-mesh]
 tags: [networking, manet]
-sources_count: 1
-last_source: WirelessN.md
 created: 2026-04-21
 updated: 2026-04-21
 ---
@@ -53,6 +51,3 @@ A Mobile Ad Hoc Network (MANET) is a self-configuring network of mobile devices 
 - Battery is the primary constraint — routing must balance energy
 - Security is critical: routing attacks (black holes, worm holes) are easy to launch
 - Not suitable for real-time applications without explicit QoS support
-
-## Sources
-- [[wireless-n-summary|WirelessN.md]]

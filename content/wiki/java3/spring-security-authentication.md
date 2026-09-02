@@ -76,7 +76,3 @@ digraph auth_flow {
 - **ROLE_ prefix**: `hasRole('ADMIN')` automatically checks for `ROLE_ADMIN`; `hasAuthority('ADMIN')` checks for exact string
 - **ThreadLocal cleanup**: SecurityContextHolder is ThreadLocal — in async processing, the context doesn't propagate automatically
 - **Blank passwords**: `PasswordEncoder` should throw exception for blank/null passwords, not silently accept
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Authentication and authorization in Spring Security

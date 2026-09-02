@@ -48,6 +48,3 @@ digraph big_endian {
 - Less efficient for x86 CPUs (must convert to Little Endian for arithmetic)
 - Conversion needed when receiving network data on Little Endian systems
 - Not all RISC chips use Big Endian (ARM is Little Endian, MIPS can be either)
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

@@ -77,7 +77,3 @@ digraph lifecycle_order {
 - **Tag inheritance**: Tags are inherited from parent classes and interfaces
 - **@Disabled vs @Ignore (JUnit 4)**: JUnit 5 uses @Disabled; JUnit 4 used @Ignore — don't confuse them
 - **Execution order**: Tests should not depend on order, but if needed, use @TestMethodOrder(MethodName/OrderAnnotation/Random)
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — JUnit lifecycle annotations

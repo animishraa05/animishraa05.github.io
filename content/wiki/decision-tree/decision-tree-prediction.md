@@ -2,8 +2,6 @@
 concept: Decision Tree Prediction
 aliases: [tree traversal, inference, prediction path, classify instance]
 tags: [ml, decision-trees]
-sources_count: 1
-last_source: dtree.md
 created: 2026-05-06
 updated: 2026-05-06
 ---
@@ -80,7 +78,3 @@ digraph decision_tree_prediction {
 - **Tree depth**: Very deep trees require many comparisons per prediction, slowing inference
 - **Contradictory paths**: Two similar instances may reach different leaves if they differ on a single critical feature
 - **No confidence score**: The basic prediction returns a class, not a probability (unless leaf stores class distribution)
-
-## Sources
-
-- [[dtree-summary|Decision Tree in Machine Learning]] — prediction example: Sunny + High Humidity → Swimming

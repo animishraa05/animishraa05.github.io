@@ -2,8 +2,6 @@
 concept: "Local Home Interface"
 aliases: [EJBLocalHome, LocalHome]
 tags: [dev, ejb]
-sources_count: 1
-last_source: ejb5.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -65,6 +63,3 @@ public interface HelloLocalHome extends javax.ejb.EJBLocalHome {
     // Note: No RemoteException!
 }
 ```
-
-## Sources
-- [[ejb5-summary|EJB5 Source Summary]]

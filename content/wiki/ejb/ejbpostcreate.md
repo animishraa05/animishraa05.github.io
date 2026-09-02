@@ -36,7 +36,3 @@ What happens after the bean creates a database record but before the bean is ful
 
 - Don't perform database operations here—`ejbCreate()` already inserted the record
 - Don't assume the transaction is committed yet
-
-## Sources
-
-- [[ejb-continued-summary|EJbContinued]]

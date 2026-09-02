@@ -44,6 +44,3 @@ Schedule: `30 21 * * *` = 21:30 UTC = 03:00 IST (next day)—lowest traffic peri
 - **Pip install on startup**: Adds 30-60 seconds to container startup time
 - **Metadata database**: Needs separate PostgreSQL for Airflow's own state
 - **No built-in data quality**: Just file existence checks—need Great Expectations for deep validation
-
-## Sources
-- [[../comprehensive-report-summary|FoodFlow Analytics Comprehensive Report]]

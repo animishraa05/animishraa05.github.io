@@ -2,8 +2,6 @@
 concept: Information Gain
 aliases: [IG, mutual information, information content]
 tags: [ml, decision-trees]
-sources_count: 1
-last_source: dtree.md
 created: 2026-05-06
 updated: 2026-05-06
 ---
@@ -80,7 +78,3 @@ digraph information_gain {
 - **Zero IG**: If an attribute has the same value for all instances, IG = 0 and it should not be selected
 - **Rounding errors**: Near-zero IG values may appear positive due to floating point precision
 - **Not normalized**: IG values are absolute, not relative — a gain of 0.1 may be significant for one dataset but negligible for another
-
-## Sources
-
-- [[dtree-summary|Decision Tree in Machine Learning]] — Information Gain definition, formula, and age-splitting example

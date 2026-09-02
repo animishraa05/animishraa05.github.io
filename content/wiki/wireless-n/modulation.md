@@ -2,8 +2,6 @@
 concept: Modulation
 aliases: [digital-modulation, analog-modulation]
 tags: [networking, modulation]
-sources_count: 1
-last_source: WirelessN.md
 created: 2026-04-21
 updated: 2026-04-21
 ---
@@ -43,6 +41,3 @@ Modulation is the process of encoding digital information onto a high-frequency 
 - High-order modulation (e.g., 256-QAM) requires very clean signal conditions
 - Phase modulation (PSK) is more robust to amplitude noise than ASK
 - MSK and GMSK are used in cellular systems because of their spectral efficiency and constant envelope (power efficiency)
-
-## Sources
-- [[wireless-n-summary|WirelessN.md]]

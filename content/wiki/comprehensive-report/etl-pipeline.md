@@ -2,8 +2,6 @@
 concept: ETL Pipeline
 aliases: [ETL, extract transform load, data pipeline]
 tags: [database, data-engineering]
-sources_count: 2
-last_source: dw1.md
 created: 2026-04-14
 updated: 2026-05-04
 ---
@@ -51,7 +49,3 @@ ETL (Extract, Transform, Load) is a three-phase data pipeline that reads raw dat
 - **Reference date staleness**: Hardcoded 2024-12-31 makes tenure values incorrect over time
 - **Full refresh limitation**: Doesn't scale to millions of rows—in production use incremental UPSERT
 - **No watermark tracking**: Simple REPLACE loses ability to process only new records
-## Sources
-
-- [[../comprehensive-report-summary|FoodFlow Analytics Comprehensive Report]]
-- [[dw1-summary|Data Warehouse — Definitions, Architecture, ETL, OLAP]] — four-phase ETL process, data scrubbing, loading with checkpoints, refresh techniques

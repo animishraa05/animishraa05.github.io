@@ -2,8 +2,6 @@
 concept: Wireless Network
 aliases: [wireless-networking, mobile-communications]
 tags: [networking, wireless]
-sources_count: 1
-last_source: WirelessN.md
 created: 2026-04-21
 updated: 2026-04-21
 ---
@@ -43,6 +41,3 @@ Wireless networks operate in regulated frequency bands (e.g., 800 MHz–900 MHz 
 - Rain and atmospheric conditions can absorb radio waves (especially at higher frequencies)
 - The same frequency cannot be reused in adjacent cells without causing co-channel interference
 - Mobile devices have limited battery power — transmission must be energy-efficient
-
-## Sources
-- [[wireless-n-summary|WirelessN.md]]

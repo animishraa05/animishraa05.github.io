@@ -2,8 +2,6 @@
 concept: DNS Root Server
 aliases: [root server, DNS root, root nameserver]
 tags: [networking, dns]
-sources_count: 1
-last_source: https.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -64,7 +62,3 @@ digraph G {
 - Root servers are heavily DDoS protected
 - Some countries operate alternative root systems (not ICANN-recognized)
 - Anycast allows multiple physical servers to share one IP
-
-## Sources
-
-- [[https-summary|HTTP HTTPS DNS URL Source]]

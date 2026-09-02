@@ -75,7 +75,3 @@ digraph spring_data_jpa {
 - **N+1 with findAll**: Default `findAll` fetches associations lazily — consider `@EntityGraph` or `JOIN FETCH` in `@Query`
 - **Transaction boundaries**: Repository methods are transactional by default, but service-layer transactions should wrap multiple repo calls
 - **Proxy limitation**: Repository proxies can't intercept internal method calls (method calls within the same class bypass the proxy)
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Spring Data JPA, JpaRepository, query methods, pagination, sorting

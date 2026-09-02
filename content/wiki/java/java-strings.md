@@ -86,7 +86,3 @@ graph semantic_strings {
 - **Substring memory leak** (pre-Java 7): `substring()` shared the underlying char array, preventing GC
 - **intern() caution**: Calling `intern()` explicitly can cause performance issues in large heaps
 - **Null strings**: Calling methods on null String throws NullPointerException
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — strings and immutability

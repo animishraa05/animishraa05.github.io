@@ -2,7 +2,6 @@
 title: Load Balancer vs Reverse Proxy — Infrastructure Component Comparison
 type: synthesis
 tags: [systems, infrastructure]
-status: draft
 created: 2026-05-15
 updated: 2026-05-15
 ---

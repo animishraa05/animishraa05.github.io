@@ -4,8 +4,6 @@ aliases: []
 tags: [theory, undecidability]
 created: 2026-04-11
 updated: 2026-04-11
-confidence: high
-status: stable
 ---
 
 ## The Problem
@@ -43,11 +41,6 @@ All such properties are undecidable—proving many problems are unsolvable witho
 
 - The theorem applies to properties of the function computed, not the program's syntax
 - Trivial properties (always true/false) are still decidable
-
-## Sources
-
-- [[theory-of-computation-wikipedia|Theory of computation - Wikipedia]]
-
 ## Why This Matters
 
 Rice's theorem tells us that any non-trivial property of program behavior is undecidable. This fundamental limit applies to program verification, malware detection, and many other areas.

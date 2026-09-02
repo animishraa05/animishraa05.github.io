@@ -67,7 +67,3 @@ digraph compiler_pass {
 - **Hybrid approaches:** Modern compilers like GCC and LLVM are multi-pass but use efficient in-memory IR, not files between passes
 - **Pascal is single-pass:** Pascal was designed specifically to allow single-pass compilation — no forward references without explicit forward declaration
 - **Multi-pass enables optimization:** Dead code elimination, constant propagation, and loop transformations all require multiple passes to analyze
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers single-pass vs two-pass compiler design

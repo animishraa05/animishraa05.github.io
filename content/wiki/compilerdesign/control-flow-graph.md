@@ -92,7 +92,3 @@ graph semantic_cfg {
 - **Dead code:** Blocks unreachable from the entry are dead code and can be removed
 - **Critical edges:** Edges from blocks with multiple successors to blocks with multiple predecessors — they complicate code motion optimizations
 - **CFG explosion:** For large programs, the CFG can have thousands of nodes — iterative analysis must be efficient
-
-## Sources
-
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers control flow graphs in intermediate code generation

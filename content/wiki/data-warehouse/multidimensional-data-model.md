@@ -2,8 +2,6 @@
 concept: Multidimensional Data Model
 aliases: [multidimensional model, data cube, fact and dimension, dimensional model]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -111,7 +109,3 @@ graph semantic_multidimensional {
 - **Dimension explosion:** Adding more dimensions exponentially increases the number of cells. A cube with 5 dimensions of cardinality 100 each has 10 billion cells.
 - **Visualization limit:** Humans can visualize up to 3 dimensions easily. Beyond that, the model is mathematical but not intuitive.
 - **Cube vs. table:** The multidimensional model is a conceptual model; it is implemented using star/snowflake schemas in relational databases.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — multidimensional model, data cube, facts and dimensions

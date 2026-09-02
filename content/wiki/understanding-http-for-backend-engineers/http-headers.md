@@ -3,8 +3,6 @@ title: HTTP Headers
 concept: true
 aliases: [HTTP Header Fields]
 tags: [networking, http]
-sources_count: 1
-last_source: understanding-http-for-backend-engineers
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -65,7 +63,3 @@ Enhance security:
 - Custom headers can use `X-` prefix but this is now discouraged
 - Headers are case-insensitive but conventionally Title-Case
 - Large header values can cause issues with some proxies
-
-## Sources
-
-- [[understanding-http-for-backend-engineers-summary|Understanding HTTP for Backend Engineers]]

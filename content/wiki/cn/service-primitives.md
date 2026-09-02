@@ -55,6 +55,3 @@ digraph G {
 - Not all primitives are used for every service (connectionless may not need confirm)
 - Primitive ordering matters — must follow the request-indication-response-confirm pattern
 - Some implementations combine primitives (e.g., synchronous calls that block until confirm)
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

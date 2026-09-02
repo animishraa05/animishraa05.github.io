@@ -4,8 +4,6 @@ aliases: [Java Database Connectivity, Database Driver, Connection Pooling]
 tags: [dev, java]
 created: 2026-05-13
 updated: 2026-05-13
-sources_count: 2
-last_source: java3.md
 ---
 
 ## The Problem
@@ -89,8 +87,3 @@ graph semantic_jdbc {
 - **SQL injection**: Never concatenate user input into SQL — always use PreparedStatement
 - **Connection pool exhaustion**: Long-running transactions or missing close() calls exhaust the pool
 - **Driver class loading**: In modern JDBC 4+, drivers auto-register via ServiceLoader (no Class.forName() needed)
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — JDBC
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — CRUD, statements, transactions

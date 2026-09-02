@@ -2,8 +2,6 @@
 concept: Session Bean Relationships
 aliases: [Session Bean Persistence, Session Bean DB Relationships]
 tags: [dev, ejb]
-sources_count: 1
-last_source: EJb4.md
 created: 2026-04-28
 updated: 2026-04-28
 ---
@@ -68,6 +66,3 @@ digraph G {
 - Stateful SB holding state across method calls can impact scalability (uses passivation)
 - Stateless SB must marshal all data back per method call (no state retained)
 - Entity beans (CMP) are the preferred choice for complex relationships
-
-## Sources
-- [[EJb4-summary|EJb4.md Source Summary]]

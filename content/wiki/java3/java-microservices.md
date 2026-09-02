@@ -84,7 +84,3 @@ digraph microservices {
 - **Testing complexity**: End-to-end testing requires running all services — use contract testing (Pact)
 - **Operational overhead**: Monitoring, logging, deploying many services requires mature DevOps practices
 - **Debugging**: A single user request spans multiple services — distributed tracing is essential
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Java microservices, architecture, inter-service communication

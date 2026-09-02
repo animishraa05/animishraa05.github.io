@@ -4,8 +4,6 @@ aliases: [Asymptotic Notation, Landau Symbols]
 tags: [theory, complexity]
 created: 2026-04-11
 updated: 2026-04-11
-confidence: high
-status: stable
 ---
 
 ## The Problem
@@ -47,7 +45,3 @@ The notation focuses on dominant terms, ignoring lower-order terms and constants
 - Big O gives upper bound—actual performance may be better
 - Constants matter in practice for small inputs
 - Must consider best, average, and worst case
-
-## Sources
-
-- [[theory-of-computation-wikipedia|Theory of computation - Wikipedia]]

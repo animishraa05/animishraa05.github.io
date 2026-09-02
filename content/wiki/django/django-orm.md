@@ -58,12 +58,3 @@ adult_students = Student.objects.filter(age__gt=20)
 
 - "N+1 query problem": Accessing related objects in a loop without using `select_related` or `prefetch_related` causes severe performance issues.
 - Very complex analytical queries might still require raw SQL for performance reasons.
-
-## Active Recall Questions
-
-> [!question]- What does it mean that Django QuerySets are "lazy"?
-> They do not execute the database query until the data is actually needed/evaluated.
-
-## Sources
-
-- [[django-summary|Source: Django Learning Roadmap]] — ORM mastery, filtering, related objects

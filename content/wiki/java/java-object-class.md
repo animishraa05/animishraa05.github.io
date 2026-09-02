@@ -84,7 +84,3 @@ graph semantic_object_class {
 - **clone() is tricky**: It performs a shallow copy; overriding requires implementing `Cloneable`
 - **finalize() is unreliable**: Not guaranteed to run; use try-with-resources or Cleaner instead
 - **toString() default**: `ClassName@1a2b3c4d` is usually not human-readable
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — Object class

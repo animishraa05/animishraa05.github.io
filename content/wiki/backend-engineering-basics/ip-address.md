@@ -2,8 +2,6 @@
 concept: IP Address
 aliases: [IP, internet protocol address, IPv4, IPv6]
 tags: [networking, addressing]
-sources_count: 1
-last_source: Backend Engineering Basics.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -47,7 +45,3 @@ When you type "google.com", DNS resolves it to an IP like 142.250.183.46. Your c
 - Private IP addresses cannot be accessed directly from the internet ( NAT required)
 - IP addresses can change (dynamic allocation)—that's why we use domain names
 - IPv4 address exhaustion led to IPv6 adoption
-
-## Sources
-
-- [[backend-engineering-basics-summary|Backend Engineering Basics]]

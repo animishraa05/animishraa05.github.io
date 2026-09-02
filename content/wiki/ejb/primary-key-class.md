@@ -2,8 +2,6 @@
 concept: Primary Key Class
 aliases: [PK class, Composite Key, Primary Key Wrapper]
 tags: [dev, ejb]
-sources_count: 1
-last_source: EJb4.md
 created: 2026-04-28
 updated: 2026-04-28
 ---
@@ -65,6 +63,3 @@ digraph G {
 - Wrapper class must have a no-arg constructor (container instantiates it via reflection)
 - Changing from simple to composite key requires updating `ejbPostCreate()` and home interface method signatures
 - The PK class must be available in the EJB jar's classpath
-
-## Sources
-- [[EJb4-summary|EJb4.md Source Summary]]

@@ -2,8 +2,6 @@
 concept: TLS Handshake
 aliases: [TLS, SSL, transport layer security, SSL handshake, HTTPS handshake]
 tags: [security, tls]
-sources_count: 2
-last_source: https.md
 created: 2026-04-12
 updated: 2026-04-30
 ---
@@ -50,7 +48,3 @@ After handshake, all data is encrypted using the agreed-upon cipher (e.g., AES-2
 - TLS termination usually happens at reverse proxy (Nginx), not at the app
 - TLS 1.3 is faster (1 round trip vs 2 in TLS 1.2)
 - Man-in-the-middle attacks are trivial on HTTP, nearly impossible on HTTPS
-
-## Sources
-
-- [[backend-engineering-basics-summary|Backend Engineering Basics]]

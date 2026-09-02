@@ -78,7 +78,3 @@ graph semantic_custom_exceptions {
 - **Too many exception types**: Proliferating custom exceptions creates maintenance burden
 - **Wrapper exceptions**: Throwing custom exception wrapping the original cause preserves the stack trace
 - **Checked exception fatigue**: Overusing checked custom exceptions makes APIs painful to use
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — custom exceptions

@@ -63,6 +63,3 @@ digraph G {
 - A5/1 encryption was broken — modern attacks can decrypt GSM traffic in real-time
 - GSM operates in multiple frequency bands globally (850/900/1800/1900 MHz) — devices must support regional bands
 - Circuit-switched nature makes GSM inefficient for data — GPRS/EDGE added later
-
-## Sources
-- [[wireless-n-summary|Wireless Networks Source Summary]]

@@ -68,12 +68,3 @@ def register_user(request):
 ## Edge Cases & Gotchas
 
 - Passing Django ORM objects (like a user instance) to a Celery task is dangerous because the object might change in the DB before the task runs. Always pass the primary key (`user_id`) instead, and let the task fetch the fresh object from the DB.
-
-## Active Recall Questions
-
-> [!question]- Why should you pass an object's ID to a Celery task instead of the object itself?
-> Because the task runs asynchronously, and the object's state in the database might change between the time the task is queued and when it is executed.
-
-## Sources
-
-- [[django-summary|Source: Django Learning Roadmap]] — advanced django, background jobs

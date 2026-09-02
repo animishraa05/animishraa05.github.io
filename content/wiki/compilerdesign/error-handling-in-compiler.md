@@ -61,8 +61,3 @@ digraph error_handling {
 - **Cascading errors:** One error can cause a cascade of spurious errors — if a semicolon is missing, the parser may report dozens of subsequent errors before recovering
 - **Recovery is heuristic:** No error recovery strategy works perfectly for all languages or all error types
 - **IDE integration:** Modern development relies on incremental compilation and real-time error checking — different error reporting strategy than batch compilation
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers error handling as a key compiler objective and component
-- [[cd2-summary|Compiler Design for GATE Exam]] — GATE exam coverage of error handling in compilers

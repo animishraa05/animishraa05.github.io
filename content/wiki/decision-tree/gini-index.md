@@ -2,8 +2,6 @@
 concept: Gini Index
 aliases: [Gini impurity, Gini coefficient, Gini measure]
 tags: [ml, decision-trees]
-sources_count: 1
-last_source: dtree.md
 created: 2026-05-06
 updated: 2026-05-06
 ---
@@ -78,7 +76,3 @@ digraph gini_index {
 - **Multi-class scaling**: Maximum Gini increases with more classes: $1 - 1/c$ for $c$ classes
 - **Near-pure insensitivity**: When nodes are nearly pure, Gini changes are very small, which can cause premature stopping
 - **Not information-theoretic**: Unlike entropy, Gini has no connection to information theory or bits
-
-## Sources
-
-- [[dtree-summary|Decision Tree in Machine Learning]] — Gini Index definition, formula, properties, and comparison to entropy

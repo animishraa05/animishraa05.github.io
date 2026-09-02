@@ -33,6 +33,3 @@ Before any data is sent, a **dedicated physical path** is established through th
 - **Scalability limit** — the number of simultaneous circuits is bounded by the number of physical channels
 - **Not just telephony** — optical networks (WDM) use circuit-switching-like wavelength reservation
 - **Modern hybrid** — MPLS and ATM blend circuit-switching predictability with packet-switching flexibility
-
-## Sources
-- [[../sources/computer-networks-intro-summary|Computer Networks — Introduction (raw source)]]

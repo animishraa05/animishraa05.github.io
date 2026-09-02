@@ -2,8 +2,6 @@
 concept: Poison Message
 aliases: [poison message loop, rollback loop]
 tags: [dev, ejb]
-sources_count: 1
-last_source: EJb4.md
 created: 2026-04-28
 updated: 2026-04-28
 ---
@@ -68,6 +66,3 @@ digraph G {
 - `setRollbackOnly()` is the programmatic way to cause a poison message (besides throwing exceptions)
 - Some MOMs have configurable "max retries" before moving message to DLQ
 - Poison messages also occur with BMP entity beans that rollback transactions repeatedly
-
-## Sources
-- [[EJb4-summary|EJb4.md Source Summary]]

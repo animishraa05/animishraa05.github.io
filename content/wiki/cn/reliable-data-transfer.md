@@ -60,6 +60,3 @@ digraph G {
 - Ack loss can cause unnecessary retransmission (handled by duplicate detection)
 - Retransmission timeout tuning is critical — too short causes unnecessary retrans, too long adds latency
 - Duplicate packets must be detected and discarded
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

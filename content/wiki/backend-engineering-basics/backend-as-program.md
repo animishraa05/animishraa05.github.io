@@ -2,8 +2,6 @@
 concept: Backend as Program
 aliases: [backend software, backend service]
 tags: [systems, backend]
-sources_count: 1
-last_source: Backend Engineering Basics.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -47,7 +45,3 @@ The key insight: your laptop can be a server. Running `python -m http.server 800
 - A single server can handle many clients simultaneously because each gets its own socket connection
 - Without proper error handling, one crashed request shouldn't crash the entire server
 - The server must handle concurrent requests—either through threading, async, or event loops
-
-## Sources
-
-- [[backend-engineering-basics-summary|Backend Engineering Basics]]

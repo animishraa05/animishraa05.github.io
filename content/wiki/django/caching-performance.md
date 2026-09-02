@@ -2,8 +2,6 @@
 concept: Caching Performance
 aliases: [Caching, Performance Optimization, Django Cache Framework, Redis]
 tags: [dev, django]
-sources_count: 1
-last_source: Django.md
 created: 2026-08-09
 updated: 2026-08-09
 ---
@@ -119,7 +117,3 @@ graph semantic_caching_performance {
 - **Cache invalidation**: Hard problem; versioned keys (`cache.set(f'v{version}:key', val)`) or signals on model save
 - **Query optimization order**: `select_related` before `filter`; `prefetch_related` with `Prefetch` object for filtered prefetch
 - **Celery serialization**: Default pickle; use `json` serializer for security; task args must be JSON-serializable
-
-## Sources
-
-- [[django-summary|Django Learning Roadmap]]

@@ -2,8 +2,6 @@
 concept: GSM Services
 aliases: [bearer-services, tele-services, supplementary-services]
 tags: [networking, gsm]
-sources_count: 1
-last_source: WirelessN.md
 created: 2026-04-21
 updated: 2026-04-21
 ---
@@ -56,6 +54,3 @@ GSM defines three categories of services: bearer services (transparent data tran
 - MMS requires WAP infrastructure and is distinct from SMS
 - Bearer services in early GSM (9.6 kbps) were very slow by modern standards
 - GPRS (2.5G) dramatically improved bearer services with packet switching
-
-## Sources
-- [[wireless-n-summary|WirelessN.md]]

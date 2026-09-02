@@ -7,60 +7,35 @@ tags: [meta, index]
 
 ---
 
-## Backend & Systems
+## Topics
 
 | Topic | Description |
-| --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| [[ejb/ejb-source-summary\|EJB]] | Enterprise JavaBeans — session beans, entity beans, persistence, JNDI, JMS, transactions |
-| [[django/django-summary\|Django]] | Python web framework — models, views, templates, ORM, routing, DRF |
-| [[java/java1-summary\|Java]] | Java language fundamentals — OOP, collections, concurrency, I/O, exceptions |
-| [[java3/java3-summary\|Java 3]] | Advanced Java — Spring, Hibernate, web frameworks |
-| [[backend-engineering-basics/backend-engineering-basics-summary\|Backend Basics]] | Server-side engineering fundamentals — HTTP, DNS, sockets, auth |
-| [[io/io-summary\|I/O Systems]] | Operating system I/O — scheduling, memory, disk, interrupts |
-| [[system-design/readmemd-summary\|System Design]] | Scalable architecture patterns — CAP, caching, load balancing |
-| [[lsp/lsp-summary\|LSP]] | Language Server Protocol |
-
-## Networking
-
-| Topic | Description |
-| ------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
-| [[cn/layered-model\|Computer Networks]] | TCP/IP, OSI model, protocols, reliable data transfer |
-| [[networking/packet-switching\|Networking]] | Packet switching, circuit switching, broadcast links |
-| [[wireless-n/wireless-n-summary\|Wireless Networking]] | Wireless protocols, physical layer, 802.11 |
-| [[https/https-summary\|HTTPS]] | HTTP security, TLS, certificates |
-| [[understanding-http-for-backend-engineers/understanding-http-for-backend-engineers-summary\|HTTP Deep Dive]] | HTTP protocol internals for backend engineers |
-| [[backend-nd-frontend/front-end-and-back-end-wikipedia-summary\|Frontend & Backend]] | Front-end / back-end separation patterns |
-
-## Theory & Computation
-
-| Topic | Description |
-| ---------------------------------------------------------------------- | -------------------------------------------------------- |
-| [[compilerdesign/compilerdesign-summary\|Compiler Design]] | Lexical analysis, parsing, code generation, optimization |
-| [[theory-of-computation/theory-of-computation\|Theory of Computation]] | Automata, formal languages, Turing machines |
-| [[decision-tree/dtree-summary\|Decision Trees]] | Decision tree algorithms, entropy, pruning |
-
-## Data & AI
-
-| Topic | Description |
-| ------------------------------------------------------------------------- | ---------------------------------------------------- |
-| [[data-warehouse/dw1-summary\|Data Warehousing]] | ETL, dimensional modeling, OLAP |
-| [[data-science/ds-summary\|Data Science]] | Statistics, analysis, visualization |
-| [[comprehensive-report/comprehensive-report-summary\|FoodFlow Analytics]] | Data engineering case study — Prophet, ETL pipelines |
-| [[imgen/imgen-summary\|Image Generation]] | Diffusion models, image synthesis |
-
-## Systems & Architecture
-
-| Topic | Description |
-| ---------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| [[os/os-moc\|Operating Systems]] | OS fundamentals — kernel, system calls, modes, architectures, virtualization, OS types |
-| [[computer-architecture/instruction-set\|Computer Architecture]] | CPU design, memory hierarchy, instruction sets |
-
-## Other
-
-| Topic | Description |
-| ---------------------------------------- | ------------------------------------ |
-| [[learn-vim-progressively/learn-vim-progressively-summary\|Vim]] | Vim progression — basics to advanced |
-| [[strings/strings-moc\|Strings (Character Hashing)]] | Character frequency counting, two-phase hashing, arrays vs hash maps in C++ |
+| --- | --- |
+| [[backend-engineering-basics/backend-engineering-basics-moc\|backend-engineering-basics]] | Map of Content for **Backend Engineering Basics** — 15 concepts. Start here to navigate backend-engineering-basics. (15 pages) |
+| [[backend-nd-frontend/backend-nd-frontend-moc\|backend-nd-frontend]] | Map of Content for **Backend Nd Frontend** — 7 concepts. Start here to navigate backend-nd-frontend. (8 pages) |
+| [[cn/cn-moc\|cn]] | Map of Content for **Cn** — 41 concepts. Start here to navigate cn. (41 pages) |
+| [[compilerdesign/compilerdesign-moc\|compilerdesign]] | Map of Content for **Compilerdesign** — 55 concepts. Start here to navigate compilerdesign. (55 pages) |
+| [[comprehensive-report/comprehensive-report-moc\|comprehensive-report]] | Map of Content for **Comprehensive Report** — 10 concepts. Start here to navigate comprehensive-report. (10 pages) |
+| [[computer-architecture/computer-architecture-moc\|computer-architecture]] | Map of Content for **Computer Architecture** — 29 concepts. Start here to navigate computer-architecture. (32 pages) |
+| [[data-science/data-science-moc\|data-science]] | Map of Content for **Data Science** — 16 concepts. Start here to navigate data-science. (16 pages) |
+| [[data-warehouse/data-warehouse-moc\|data-warehouse]] | Map of Content for **Data Warehouse** — 40 concepts. Start here to navigate data-warehouse. (40 pages) |
+| [[decision-tree/decision-tree-moc\|decision-tree]] | Map of Content for **Decision Tree** — 21 concepts. Start here to navigate decision-tree. (21 pages) |
+| [[django/django-moc\|django]] | Map of Content for **Django** — 41 concepts. Start here to navigate django. (42 pages) |
+| [[ejb/ejb-moc\|ejb]] | Map of Content for **Ejb** — 115 concepts. Start here to navigate ejb. (116 pages) |
+| [[https/https-moc\|https]] | Map of Content for **Https** — 30 concepts. Start here to navigate https. (30 pages) |
+| [[imgen/imgen-moc\|imgen]] | Map of Content for **Imgen** — 13 concepts. Start here to navigate imgen. (13 pages) |
+| [[io/io-moc\|io]] | Map of Content for **Io** — 54 concepts. Start here to navigate io. (60 pages) |
+| [[java/java-moc\|java]] | Map of Content for **Java** — 64 concepts. Start here to navigate java. (64 pages) |
+| [[java3/java3-moc\|java3]] | Map of Content for **Java3** — 44 concepts. Start here to navigate java3. (45 pages) |
+| [[learn-vim-progressively/learn-vim-progressively-moc\|learn-vim-progressively]] | Map of Content for **Learn Vim Progressively** — 11 concepts. Start here to navigate learn-vim-progressively. (11 pages) |
+| [[lsp/lsp-moc\|lsp]] | Map of Content for **Lsp** — 7 concepts. Start here to navigate lsp. (7 pages) |
+| [[networking/networking-moc\|networking]] | Map of Content for **Networking** — 3 concepts. Start here to navigate networking. (3 pages) |
+| [[os/os-moc\|os]] | Operating System — ChatGPT Conversation (25 pages) |
+| [[strings/strings-moc\|strings]] | Strings — character hashing and frequency patterns (23 pages) |
+| [[system-design/system-design-moc\|system-design]] | Map of Content for **System Design** — 40 concepts. Start here to navigate system-design. (40 pages) |
+| [[theory-of-computation/theory-of-computation-moc\|theory-of-computation]] | Map of Content for **Theory Of Computation** — 19 concepts. Start here to navigate theory-of-computation. (20 pages) |
+| [[understanding-http-for-backend-engineers/understanding-http-for-backend-engineers-moc\|understanding-http-for-backend-engineers]] | Map of Content for **Understanding Http For Backend Engineers** — 7 concepts. Start here to navigate understanding-htt (7 pages) |
+| [[wireless-n/wireless-n-moc\|wireless-n]] | Map of Content for **Wireless N** — 33 concepts. Start here to navigate wireless-n. (35 pages) |
 
 ---
 

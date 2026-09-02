@@ -2,8 +2,6 @@
 concept: DMA
 aliases: [Direct Memory Access, DMA Controller]
 tags: [systems, io]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -61,7 +59,3 @@ digraph dma {
 - Wrong DMA setup (bad address/size) can corrupt memory
 - Some systems have limited DMA channels (resource contention)
 - Cache coherency issues — CPU cache may not see DMA-written data
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

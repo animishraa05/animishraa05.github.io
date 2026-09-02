@@ -2,8 +2,6 @@
 concept: "EJB-JAR File"
 aliases: [ejb-jar, EJB JAR, enterprise jar]
 tags: [dev, ejb]
-sources_count: 1
-last_source: ejb5.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -67,6 +65,3 @@ digraph EJbJar {
 - **Missing `ejb-jar.xml`**: Container rejects the JAR—deployment fails
 - **Classpath issues**: All dependencies must be in the JAR or server classpath
 - **Vendor-specific files**: Some containers need extra files in `META-INF/` (e.g., `weblogic-ejb-jar.xml`)
-
-## Sources
-- [[ejb5-summary|EJB5 Source Summary]]

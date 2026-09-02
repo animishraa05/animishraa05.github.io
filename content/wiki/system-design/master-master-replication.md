@@ -63,7 +63,3 @@ digraph MasterMaster {
 - **Write conflicts** — two masters accepting concurrent writes to the same row can produce conflicting values; resolution strategies (LWW, application-merge, CRDT) each have tradeoffs.
 - **Replication loops** — a write from Master A replicated to Master B may replicate back to Master A unless the system tracks which origin a change came from.
 - **Higher write latency** — synchronous multi-master requires each write to be acknowledged by all masters, increasing p99 write latency significantly.
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]]

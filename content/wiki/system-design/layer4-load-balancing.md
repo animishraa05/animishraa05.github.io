@@ -62,7 +62,3 @@ digraph layer4_lb {
 - L4 LB cannot route based on HTTP headers, cookies, or URL paths — all servers must be interchangeable
 - Sticky sessions require client IP hashing or a separate session store since the LB cannot read cookies
 - NAT rewrites break some protocols that embed IP addresses in the payload (FTP, SIP) without protocol-specific helpers
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]] — load balancing section in the Scalability chapter

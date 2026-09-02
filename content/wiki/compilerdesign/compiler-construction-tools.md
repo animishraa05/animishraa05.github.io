@@ -62,7 +62,3 @@ digraph compiler_tools {
 - **Tool dependencies:** Generated code often requires libraries from the tool (e.g., yacc's yyparse needs yylex from lex)
 - **LALR limitations:** Yacc uses LALR(1) which cannot handle all grammars — ambiguous or LR(1)-only grammars need workarounds
 - **Modern alternatives:** ANTLR generates LL(*) parsers for multiple languages; LLVM provides code generation IR tools
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers compiler construction tools as part of introduction

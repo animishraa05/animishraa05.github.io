@@ -65,7 +65,3 @@ digraph ServiceDiscovery {
 - **Cached stale entries** — if a service crashes without deregistering, the registry may return a dead instance until the next health check.
 - **Thundering herd on registry** — if every client aggressively re-queries on failure, the registry can be overwhelmed; client-side caching with TTL is essential.
 - **Consistency vs. availability tradeoff** — highly available registries (eventually consistent) may return stale data; strongly consistent registries (Paxos/Raft based) add write latency.
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]]

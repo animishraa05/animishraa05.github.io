@@ -78,7 +78,3 @@ graph semantic_compile_time_poly {
 - **Ambiguous call**: If two overloads are equally applicable (e.g., `method(Integer)` and `method(String)` with `null`), the compiler reports ambiguity
 - **Widening + boxing chain**: Widening followed by boxing is not supported — `int` cannot widen then autobox to `Long`
 - **Varargs ambiguity**: Overloading with varargs can create ambiguous calls — the compiler cannot distinguish `method(int...)` from `method(Integer...)` with `null`
-
-## Sources
-
-- [[java2-summary|Java OOP Concepts — Source Summary]] — compile-time polymorphism, method overloading

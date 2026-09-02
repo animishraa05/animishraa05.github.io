@@ -4,8 +4,6 @@ aliases: [Chomsky Hierarchy of Languages]
 tags: [theory, automata, classification]
 created: 2026-04-11
 updated: 2026-04-11
-confidence: high
-status: stable
 ---
 
 ## The Problem
@@ -45,7 +43,3 @@ Each type is a proper subset of the previous type, creating nested inclusions.
 
 - Higher in the hierarchy means more powerful but more complex to process
 - Regular languages are efficient but limited in what they can express
-
-## Sources
-
-- [[theory-of-computation-wikipedia|Theory of computation - Wikipedia]]

@@ -59,8 +59,3 @@ digraph ambiguous_grammar {
 - **Ambiguity detection is undecidable:** There is no algorithm that can determine whether an arbitrary CFG is ambiguous
 - **Yacc/Bison resolution:** By default, yacc resolves shift-reduce conflicts in favor of shift — this may not always be what the user wants
 - **Disambiguating rules:** Associativity declarations (`%left`, `%right`) and precedence levels resolve ambiguity without grammar rewriting
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers ambiguous grammar as a key concept in syntax analysis
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers ambiguous grammar and grammar classification

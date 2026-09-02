@@ -63,7 +63,3 @@ digraph layer7_lb {
 - TLS termination at the LB means the LB must manage certificates, adding key management complexity
 - L7 LB is slower than L4 under high load because it terminates connections and inspects payloads
 - WebSocket connections require special handling — the LB must recognize the upgrade header and switch to tunnel mode
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]] — load balancing section in the Scalability chapter

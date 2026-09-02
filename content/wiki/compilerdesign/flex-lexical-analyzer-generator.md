@@ -57,7 +57,3 @@ digraph flex_flow {
 - **Performance:** Generated lexers are DFA-based, so they run in O(n) time relative to input length
 - **Portability:** `lex.yy.c` is standard C, compilable on any system with a C compiler
 - **Flex vs Lex:** Flex is faster and generates more efficient code than the original Lex
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers Flex as a lexical analyzer generator tool

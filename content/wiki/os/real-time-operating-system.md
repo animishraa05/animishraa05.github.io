@@ -2,10 +2,6 @@
 concept: Real-Time Operating System
 aliases: [RTOS, real-time OS, hard real-time, soft real-time]
 tags: [systems, os]
-status: draft
-confidence: high
-sources_count: 1
-last_source: OS.md
 created: 2026-06-11
 updated: 2026-06-11
 ---
@@ -99,7 +95,3 @@ graph semantic_rtos {
 - An RTOS does NOT mean "very fast" — it means "predictably timed" — a general-purpose OS can have higher average throughput
 - Hard real-time requires end-to-end analysis: sensor → processing → actuator, not just the scheduler
 - Linux with PREEMPT_RT is a soft real-time variant — it is not a hard RTOS
-
-## Sources
-
-- [[os-summary|OS Source Summary]]

@@ -2,8 +2,6 @@
 concept: true
 aliases: []
 tags: [dev, neovim]
-sources_count: 1
-last_source: lsp
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -45,7 +43,3 @@ An LSP Client is a Neovim object representing an active connection to a language
 - Dynamic registration can add capabilities after LspAttach
 - Stopped clients return nil from get_client_by_id
 - Request cancellation triggers LspRequest event with type=cancel
-
-## Sources
-
-- [[lsp-summary|LSP — Neovim Documentation]]

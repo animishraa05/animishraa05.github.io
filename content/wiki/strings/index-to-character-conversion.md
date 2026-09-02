@@ -90,7 +90,7 @@ graph semantic_index_to_char {
 - Built from: [[character-to-index-mapping|Character-to-Index Mapping]] — index-to-character is the mathematical inverse of character-to-index
 - Builds into: [[most-frequent-character|Most Frequent Character]] — after finding the max index, convert back to character
 - Builds into: [[frequency-array|Frequency Array]] — used during the traversal phase to produce output
-- Contrasts with: [[map-traversal-method|Hash Map Traversal Method]] — maps store key-value pairs directly, no conversion needed <!-- TODO: add backlink here -->
+- Contrasts with: [[map-traversal-method|Hash Map Traversal Method]] — maps store key-value pairs directly, no conversion needed
 
 ## Edge Cases & Gotchas
 
@@ -98,7 +98,3 @@ graph semantic_index_to_char {
 - Indices outside 0–25 produce non-alphabetic characters (e.g., i=26 → '{')
 - Forgetting this step and printing raw indices is a common beginner mistake
 - When using uppercase mapping (`ch - 'A'`), the reverse must use `i + 'A'`
-
-## Sources
-
-- [[strings-summary|Strings (Character Hashing in C++)]]

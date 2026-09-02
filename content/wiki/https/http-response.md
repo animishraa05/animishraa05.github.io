@@ -2,8 +2,6 @@
 concept: HTTP Response
 aliases: [HTTP reply, server response, 200 OK]
 tags: [networking, http]
-sources_count: 1
-last_source: https.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -70,7 +68,3 @@ digraph G {
 - 301/302 redirects cause browser to make a new request
 - 304 Not Modified uses cached version (saves bandwidth)
 - Chunked transfer encoding streams large responses
-
-## Sources
-
-- [[https-summary|HTTP HTTPS DNS URL Source]]

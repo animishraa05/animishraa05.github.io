@@ -81,7 +81,3 @@ graph semantic_packages {
 - **Import ordering**: No functional impact — pure style convention
 - **Package and module**: Java 9+ modules add another layer of encapsulation above packages
 - **Wildcard import does not import subpackages**: `import java.*` does not import `java.util.*`
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — packages

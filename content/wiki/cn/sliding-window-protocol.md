@@ -54,6 +54,3 @@ digraph G {
 - Window size must be less than sequence number space to avoid ambiguity
 - Selective vs Go-Back-N: different strategies for handling lost packets
 - Zero window: receiver can advertise window=0 to stop sender completely
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

@@ -40,7 +40,3 @@ When an entity bean instance is pooled and reused to represent different databas
 - Must be called on the EntityContext, not on `this`
 - Pooled beans don't have an identity until activated
 - If called when context is null, throws IllegalStateException
-
-## Sources
-
-- [[ejb-continued-summary|EJbContinued]]

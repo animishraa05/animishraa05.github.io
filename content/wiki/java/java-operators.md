@@ -86,7 +86,3 @@ graph semantic_operators {
 - **String + int concatenates**: `"Result: " + 42` = "Result: 42" (not "Result: 0")
 - **== compares references for objects**: Use `.equals()` for value comparison
 - **Bitwise vs logical**: `&` and `|` do not short-circuit; `&&` and `||` do
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — operator types and usage

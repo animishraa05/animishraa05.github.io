@@ -54,6 +54,3 @@ digraph G {
 - Checksum is optional in IPv4 (unlike TCP which always has it)
 - No backpressure — sender can overwhelm receiver
 - Fragmentation happens at IP layer, not UDP layer
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

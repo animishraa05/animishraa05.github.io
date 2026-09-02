@@ -73,7 +73,3 @@ digraph G {
 - **Quorum failure**: If a majority of nodes are lost during partition, the system becomes read-only or entirely unavailable until the partition resolves.
 - **Tail latency in normal operation**: The synchronous replication quorum means the slowest node in the quorum determines write latency.
 - **Not all CP is equal**: Some CP systems (e.g., ZooKeeper) prioritize partition recovery speed, while others (e.g., traditional RDBMS with sync replication) may remain unavailable for longer.
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]]

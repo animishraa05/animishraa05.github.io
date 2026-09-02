@@ -35,7 +35,3 @@ The four pillars are not independent — they reinforce each other. Encapsulatio
 - [[java-abstraction|Java Abstraction]] — complexity management
 - [[java-interfaces|Java Interfaces]] — abstraction through contracts
 - [[java-access-modifiers|Access Modifiers]] — the mechanism for encapsulation
-
-## Sources
-
-- [[java2-summary|Java OOP Concepts — Source Summary]] — four OOP pillars overview

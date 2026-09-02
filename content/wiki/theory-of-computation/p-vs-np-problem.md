@@ -4,8 +4,6 @@ aliases: [P = NP Question, P NP Problem]
 tags: [theory, open-problem]
 created: 2026-04-11
 updated: 2026-04-11
-confidence: high
-status: evolving
 ---
 
 ## The Problem
@@ -40,11 +38,6 @@ All P problems are in NP, but whether NP ⊆ P (i.e., P = NP) is unknown. If P =
 
 - Even if P = NP, the polynomial might be too large to be practical
 - Cryptography assumes P ≠ NP
-
-## Sources
-
-- [[theory-of-computation-wikipedia|Theory of computation - Wikipedia]]
-
 ## Why This Matters
 
 The P vs NP problem is the most important open problem in computer science. Its resolution would revolutionize computing, cryptography, and our ability to solve complex optimization problems.

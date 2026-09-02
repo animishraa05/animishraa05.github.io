@@ -68,7 +68,3 @@ digraph ReverseProxy {
 - **Single point of failure** — if the reverse proxy goes down, the entire service is unreachable; always deploy at least two in an active-passive or active-active configuration.
 - **Request buffering** — large uploads can exhaust proxy memory; configure request size limits or stream directly to backends.
 - **Latency overhead** — every request passes through an extra hop; this is negligible in most cases but matters for ultra-low-latency systems.
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]]

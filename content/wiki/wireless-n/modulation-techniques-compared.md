@@ -40,6 +40,3 @@ In practice, all modern digital systems have moved beyond standard FSK: FSK → 
 - [[minimum-shift-keying|MSK]] — continuous-phase FSK
 - [[modulation|Modulation]] — foundational concept
 - [[spread-spectrum|Spread Spectrum]] — modulation technique that spreads signal across wide bandwidth
-
-## Sources
-- WirelessN.md — Jochen Schiller "Mobile Communications" ch 2

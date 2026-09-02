@@ -2,8 +2,6 @@
 concept: DNS Authoritative Server
 aliases: [authoritative nameserver, authoritative DNS, master DNS]
 tags: [networking, dns]
-sources_count: 1
-last_source: https.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -64,7 +62,3 @@ digraph G {
 - TTL affects how long resolvers cache the answer
 - Secondary servers sync from primary (zone transfer)
 - Anycast used by large providers for global coverage
-
-## Sources
-
-- [[https-summary|HTTP HTTPS DNS URL Source]]

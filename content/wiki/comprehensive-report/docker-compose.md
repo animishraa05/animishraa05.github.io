@@ -44,6 +44,3 @@ Example (FoodFlow services):
 - **Startup order**: Even with `depends_on`, fast-starting services may fail if slow starters aren't ready
 - **Resource limits**: No CPU/memory limits by default—containers can consume host resources
 - **Secrets**: Credentials in docker-compose.yml visible to anyone with file access—use Docker secrets in production
-
-## Sources
-- [[../comprehensive-report-summary|FoodFlow Analytics Comprehensive Report]]

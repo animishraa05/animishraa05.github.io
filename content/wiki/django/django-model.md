@@ -61,12 +61,3 @@ class Student(models.Model):
 
 - Changing a model requires making and applying migrations; the database doesn't magically update.
 - N+1 query problems can occur if relationships are not queried efficiently using `select_related` or `prefetch_related`.
-
-## Active Recall Questions
-
-> [!question]- How does Django translate a Model into a database table?
-> Through the migration system, specifically using `makemigrations` and `migrate`.
-
-## Sources
-
-- [[django-summary|Source: Django Learning Roadmap]] — model definition and data integrity

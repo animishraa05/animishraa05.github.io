@@ -3,8 +3,6 @@ title: Back End
 concept: back-end
 aliases: [backend, server-side, server]
 tags: [dev, backend]
-sources_count: 1
-last_source: front-end-and-back-end-wikipedia
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -65,7 +63,3 @@ In web development, back end includes server languages (PHP, Python, Ruby, Java,
 - Database bottlenecks can cripple performance
 - Security vulnerabilities in back end expose all data
 - Must validate all input—even from trusted front ends
-
-## Sources
-
-- [[front-end-and-back-end-wikipedia-summary|Front End and Back End — Wikipedia]]

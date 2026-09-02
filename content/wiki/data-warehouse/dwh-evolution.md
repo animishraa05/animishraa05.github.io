@@ -2,8 +2,6 @@
 concept: DWH Evolution
 aliases: [data warehouse evolution, history of data warehousing, 60s to 90s DWH]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -102,7 +100,3 @@ graph semantic_evolution {
 - **Pre-history:** Before the 1960s, data analysis was entirely manual — paper records and human calculation.
 - **The term "data warehouse":** Coined by Bill Inmon in the early 1990s, formalizing concepts that had been evolving for decades.
 - **Parallel developments:** The evolution described is specific to business intelligence; scientific computing had its own parallel evolution.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — evolution from 60s to 90s

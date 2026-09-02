@@ -2,8 +2,6 @@
 concept: Admin Panel
 aliases: [Django Admin, Admin Interface, django.contrib.admin]
 tags: [dev, django]
-sources_count: 1
-last_source: Django.md
 created: 2026-08-09
 updated: 2026-08-09
 ---
@@ -115,7 +113,3 @@ graph semantic_admin_panel {
 - **M2M inlines**: Require `through` model for inline editing; default M2M widget is multi-select
 - **Custom save logic**: Override `save_model()` not `save()` to respect admin workflow
 - **Production exposure**: Admin at `/admin/` is a target; use `ADMIN_URL` obfuscation, IP whitelist, 2FA
-
-## Sources
-
-- [[django-summary|Django Learning Roadmap]]

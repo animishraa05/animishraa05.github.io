@@ -72,7 +72,3 @@ digraph bean_lifecycle {
 - **Circular dependency**: Constructor injection + circular dependency causes BeanCurrentlyInCreationException; use setter injection or @Lazy
 - **PostConstruct in proxy**: `@PostConstruct` in a proxy-wrapped bean runs on the target, not the proxy
 - **Scope mismatch**: Injecting a shorter-lived bean (request) into a longer-lived bean (singleton) requires scoped proxy (`@Scope(proxyMode=ScopedProxyMode.TARGET_CLASS)`)
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Bean lifecycle, custom bean scopes

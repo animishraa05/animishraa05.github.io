@@ -2,8 +2,6 @@
 concept: Data Warehouse Definition
 aliases: [data warehouse, DWH, data warehousing, Inmon definition]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -97,7 +95,3 @@ graph semantic_data_warehouse_definition {
 - **"Nonvolatile" is not "immutable":** Data is refreshed periodically — new data is appended, not old data modified.
 - **Data warehouse is not a data lake:** Warehouses require structured, cleaned data; lakes accept raw, unstructured data.
 - **Misconception:** A warehouse is not just "a big database." The four characteristics (subject-oriented, integrated, time-variant, nonvolatile) are what make it a warehouse.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — Inmon's definition, four characteristics, DWH benefits, and evolution

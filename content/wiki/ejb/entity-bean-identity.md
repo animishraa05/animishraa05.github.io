@@ -2,8 +2,6 @@
 concept: "Entity Bean Identity"
 aliases: [entity bean primary key, EJB identity]
 tags: [dev, ejb, entity-bean]
-sources_count: 1
-last_source: ejb5.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -62,6 +60,3 @@ digraph Identity {
 - **Composite primary keys**: Sometimes PK has multiple fields—need a custom `PK` class
 - **Identity crisis in pool**: Pooled entity beans can represent different records at different times (container swaps the data)
 - **`getPrimaryKey()` not for clients**: It's for BMP beans to know which record to access
-
-## Sources
-- [[ejb5-summary|EJB5 Source Summary]]

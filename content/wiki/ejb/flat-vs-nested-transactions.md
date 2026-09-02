@@ -2,8 +2,6 @@
 concept: Flat vs Nested Transactions
 aliases: [Flat Transaction, Nested Transaction, Transaction Models]
 tags: [dev, ejb]
-sources_count: 1
-last_source: EJb4.md
 created: 2026-04-28
 updated: 2026-04-28
 ---
@@ -77,6 +75,3 @@ digraph G {
 - Flat transactions are the only officially supported model in EJB 2.x
 - The trip-planning example helps understand why nested would be useful, but you can't use them in EJB
 - Chained transactions and sagas are also unsupported in EJB
-
-## Sources
-- [[EJb4-summary|EJb4.md Source Summary]]

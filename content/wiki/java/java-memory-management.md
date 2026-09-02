@@ -82,7 +82,3 @@ graph semantic_memory {
 - **OutOfMemoryError**: Heap is full and GC cannot reclaim enough space
 - **Metaspace** (Java 8+): Replaces PermGen — grows dynamically by default, but can still exhaust native memory
 - **Memory leak**: Objects held by unintended references prevent GC — common with collections, listeners, caches
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — memory management

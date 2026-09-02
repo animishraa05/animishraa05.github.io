@@ -2,8 +2,6 @@
 concept: FCFS
 aliases: [First Come First Serve, FCFS Disk Scheduling]
 tags: [systems, storage]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -54,7 +52,3 @@ digraph fcfs {
 - Can cause wild swings across disk (poor performance)
 - No consideration of seek distance
 - Simple but often impractical for real systems
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

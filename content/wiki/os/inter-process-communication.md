@@ -2,10 +2,6 @@
 concept: Inter-Process Communication
 aliases: [IPC, message passing, inter-process communication mechanism]
 tags: [systems, os]
-status: draft
-confidence: high
-sources_count: 1
-last_source: OS.md
 created: 2026-06-11
 updated: 2026-06-11
 ---
@@ -106,7 +102,3 @@ graph semantic_ipc {
 - Pipes are unidirectional by default — bidirectional communication requires two pipes
 - Performance of IPC is critical in microkernels: L4 microkernel optimizes IPC to ~50-100 instructions per call
 - Deadlocks can occur if two processes wait on each other's IPC responses indefinitely
-
-## Sources
-
-- [[os-summary|OS Source Summary]]

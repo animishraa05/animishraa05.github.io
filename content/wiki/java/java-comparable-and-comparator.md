@@ -84,7 +84,3 @@ graph semantic_comparison {
 - **compareTo must be reflexive**: a.compareTo(a) must return 0
 - **compareTo consistency with equals**: Inconsistent classes break Set/Map contracts
 - **compare returns int**: Overflow risk when subtracting values — use `Integer.compare()` instead
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — Comparable and Comparator

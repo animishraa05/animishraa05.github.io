@@ -2,8 +2,6 @@
 concept: Data Warehouse
 aliases: [DW, OLAP, analytical database]
 tags: [database, data-warehouse]
-sources_count: 2
-last_source: dw1.md
 created: 2026-04-14
 updated: 2026-05-04
 ---
@@ -45,7 +43,3 @@ In FoodFlow:
 - **Data freshness**: Batch-loaded data is inherently stale—in production consider streaming
 - **Storage cost**: Duplicate data (source + warehouse) doubles storage needs
 - **Query performance**: Without proper indexes, analytical queries can be slow
-## Sources
-
-- [[../comprehensive-report-summary|FoodFlow Analytics Comprehensive Report]]
-- [[dw1-summary|Data Warehouse — Definitions, Architecture, ETL, OLAP]] — Inmon's definition, four characteristics, server models, DWH benefits

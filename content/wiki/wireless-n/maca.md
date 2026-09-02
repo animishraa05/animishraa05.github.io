@@ -2,8 +2,6 @@
 concept: MACA Protocol
 aliases: [MACA, multiple-access-with-collision-avoidance]
 tags: [networking, mac]
-sources_count: 1
-last_source: WirelessN.md
 created: 2026-04-21
 updated: 2026-04-21
 ---
@@ -44,6 +42,3 @@ MACA is a MAC protocol that solves the hidden terminal problem through a four-wa
 - Not all hidden node scenarios are solved — nodes that cannot hear RTS or CTS (third-order hidden nodes) remain problematic
 - Control packet collisions still occur with pure Aloha within RTS/CTS exchange
 - In practice, RTS/CTS is only enabled for data frames exceeding a certain length threshold
-
-## Sources
-- [[wireless-n-summary|WirelessN.md]]

@@ -2,8 +2,6 @@
 concept: DWH Application Areas
 aliases: [data warehouse applications, DWH use cases, industry applications]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -125,7 +123,3 @@ graph semantic_applications {
 - **Industry-specific schemas:** Each industry may require different dimension designs (e.g., Telecom needs time-of-day dimensions, Finance needs currency dimensions).
 - **Regulatory compliance:** Finance and Insurance applications must comply with data retention and privacy regulations.
 - **Real-time needs:** Some applications (e.g., fraud detection) may require near-real-time data, pushing the boundaries of the warehouse's periodic refresh model.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — seven industry application areas

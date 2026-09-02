@@ -64,7 +64,3 @@ digraph Estimates {
 - **Orders of magnitude matter, exact numbers don't** — if your estimate is off by 2x, that's fine; if it's off by 100x, the design is likely infeasible.
 - **Latency numbers are for the median** — p99 latency can be 10-100x worse due to GC pauses, network jitter, and queueing; always add headroom.
 - **Throughput ≠ latency** — a system can handle 10K QPS (good throughput) but have 500ms p99 latency (bad); estimate both independently.
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]]

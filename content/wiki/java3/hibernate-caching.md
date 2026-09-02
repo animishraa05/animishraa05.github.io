@@ -69,7 +69,3 @@ digraph hibernate_cache {
 - **Query cache invalidation**: Any insert/update/delete on a cached query's table invalidates the entire query cache region
 - **Cluster consistency**: Distributed L2 caches (Redis) need careful serialization and invalidation strategies
 - **Debugging overhead**: Cached results hide database-level changes during development; always clear both caches during testing
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Hibernate caching overview

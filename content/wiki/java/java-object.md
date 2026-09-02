@@ -85,7 +85,3 @@ graph semantic_object {
 - **Object identity vs equality**: `==` compares references (identity); `.equals()` compares content (equality by default uses == unless overridden)
 - **Mutable vs immutable objects**: Object state can be mutable (changeable) or immutable (unchangeable after construction)
 - **Object lifespan**: Objects become eligible for garbage collection when no reachable references point to them
-
-## Sources
-
-- [[java2-summary|Java OOP Concepts — Source Summary]] — object as unit with state, behavior, identity; Dog/Tommy example

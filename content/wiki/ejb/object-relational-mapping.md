@@ -41,8 +41,3 @@ Object-Relational Mapping (O/R mapping) is the technology of converting in-memor
 - Complex object relationships (inheritance, nested objects) are challenging
 - Performance can vary based on mapping strategy
 - Tool-specific quirks and limitations
-
-## Sources
-
-- [[ejb-source-summary|EJB Source]]
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Hibernate ORM implementation

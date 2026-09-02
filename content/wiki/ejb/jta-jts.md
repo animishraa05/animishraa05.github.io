@@ -2,8 +2,6 @@
 concept: JTA and JTS
 aliases: [Java Transaction API, Java Transaction Service]
 tags: [dev, ejb, transactions]
-sources_count: 1
-last_source: ejb6.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -62,6 +60,3 @@ digraph G {
 - **Timeout**: Transactions can timeout, causing rollback
 - **Nested transactions**: J2EE uses flat transactions, not nested
 - **Resource enlistment**: Resources must support XA for distributed transactions
-
-## Sources
-- [[ejb6-summary|EJB6 Source Summary]]

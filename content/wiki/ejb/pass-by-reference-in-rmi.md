@@ -54,6 +54,3 @@ digraph G {
 - Only Remote objects can be passed by reference
 - Latency: Calls can fail or be slow
 - Security: Remote object on client must be accessible
-
-## Sources
-- [[ejb3-summary|EJB3 Source Summary]]

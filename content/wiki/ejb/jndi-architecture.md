@@ -2,8 +2,6 @@
 concept: JNDI Architecture
 aliases: [Java Naming and Directory Interface Architecture, JNDI API vs SPI]
 tags: [dev, ejb, jndi]
-sources_count: 1
-last_source: ejb6.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -79,6 +77,3 @@ digraph G {
 - **Performance**: JNDI lookups have overhead; cache references when possible
 - **Federated directories**: Can be complex to configure and debug
 - **InitialContext**: Must be configured with correct environment properties for the provider
-
-## Sources
-- [[ejb6-summary|EJB6 Source Summary]]

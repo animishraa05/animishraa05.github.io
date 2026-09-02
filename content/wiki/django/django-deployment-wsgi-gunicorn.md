@@ -61,12 +61,3 @@ gunicorn myproject.wsgi:application --bind 0.0.0.0:8000 --workers 3
 ## Edge Cases & Gotchas
 
 - A missing or misconfigured `ALLOWED_HOSTS` setting in production will cause Django to block all incoming requests and return 400 Bad Request errors.
-
-## Active Recall Questions
-
-> [!question]- Why do we use Nginx in front of Gunicorn in production?
-> Because Nginx is highly optimized for buffering requests, handling SSL, and serving static files directly, protecting Gunicorn from slow clients.
-
-## Sources
-
-- [[django-summary|Source: Django Learning Roadmap]] — deployment, Gunicorn, Nginx

@@ -2,8 +2,6 @@
 concept: Normalized vs Denormalized Database Schema
 aliases: [Database Normalization, Schema Design Tradeoff, Space-Time Tradeoff]
 tags: [dev, database]
-sources_count: 1
-last_source: EJb4.md
 created: 2026-04-28
 updated: 2026-04-28
 ---
@@ -75,6 +73,3 @@ digraph G {
 - Denormalized schemas risk data inconsistency (if duplicated data is updated in one place but not another)
 - Normalized schemas with many JOINs can be slow for complex relationship navigation
 - CMP container generates different SQL based on which schema you use
-
-## Sources
-- [[EJb4-summary|EJb4.md Source Summary]]

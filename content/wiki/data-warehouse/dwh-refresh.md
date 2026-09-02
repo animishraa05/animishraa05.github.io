@@ -2,8 +2,6 @@
 concept: DWH Refresh
 aliases: [data warehouse refresh, incremental refresh, warehouse synchronization, data shipping, transaction shipping]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -118,7 +116,3 @@ graph semantic_refresh {
 - **Data Shipping vs. Transaction Shipping:** Data Shipping sends the actual changed data; Transaction Shipping sends the transaction log entries. Data Shipping is simpler; Transaction Shipping preserves transaction semantics.
 - **Conflicting updates:** If a source record is updated twice between refresh cycles, only the final state may be captured (unless the technique preserves all intermediate states).
 - **Schema mismatch during refresh:** If the source schema changes between refresh cycles, the ETL pipeline must be updated first.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — refresh policies, data shipping, transaction shipping

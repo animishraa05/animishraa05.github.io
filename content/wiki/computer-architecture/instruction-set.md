@@ -49,6 +49,3 @@ digraph instruction_set {
 - ISA is not implementation — two CPUs with same ISA can have different performance
 - Backward compatibility: new CPUs must support old ISA (lots of legacy baggage)
 - Modern CPUs may add extensions (SSE, AVX, NEON) to base ISA
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

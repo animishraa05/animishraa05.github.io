@@ -2,10 +2,6 @@
 concept: User Mode
 aliases: [user space, unprivileged mode, Ring 3]
 tags: [systems, os]
-status: draft
-confidence: high
-sources_count: 1
-last_source: OS.md
 created: 2026-06-11
 updated: 2026-06-11
 ---
@@ -99,7 +95,3 @@ graph semantic_user_mode {
 - User mode programs CAN crash without taking down the OS — this is the whole point of the separation
 - Some CPU architectures have more than two privilege levels (e.g., x86 has 4 rings) but most OSes use only Ring 0 and Ring 3
 - Modern browsers use sandboxing to further restrict user-mode processes, creating additional security layers
-
-## Sources
-
-- [[os-summary|OS Source Summary]]

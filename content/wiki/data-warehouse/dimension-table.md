@@ -2,8 +2,6 @@
 concept: Dimension Table
 aliases: [dimension table, descriptive attributes, dimension attributes]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -110,7 +108,3 @@ graph semantic_dimension_table {
 - **Slowly Changing Dimensions (SCDs):** When a dimension attribute changes (customer moves), the warehouse must decide whether to overwrite (Type 1), add a new row (Type 2), or add a new column (Type 3).
 - **Junk dimensions:** Low-cardinality flags (e.g., "is_returned", "is_expedited") are sometimes combined into a single "junk dimension" to avoid creating many small dimension tables.
 - **Role-playing dimensions:** The same dimension table (e.g., Date) can be joined to a fact table multiple times with different roles (order_date, ship_date, delivery_date).
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — dimension table, attributes, hierarchies

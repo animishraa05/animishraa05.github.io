@@ -38,7 +38,3 @@ When the EJB container creates a new entity bean instance for the pool, how does
 
 - Do NOT perform database operations here
 - Do NOT assume the bean is associated with any data
-
-## Sources
-
-- [[ejb-continued-summary|EJbContinued]]

@@ -4,8 +4,6 @@ aliases: [EJB Entity Bean]
 tags: [dev, ejb, persistence]
 created: 2026-04-11
 updated: 2026-04-28
-sources_count: 2
-last_source: EJbContinued.md
 ---
 
 ## The Problem
@@ -47,8 +45,3 @@ An entity bean is a persistent object that represents business data stored in pe
 - Entity beans represent data, not business logic
 - Not suitable for complex workflow or algorithms (use session beans for that)
 - The difference between entity bean instance and entity bean data is important
-
-## Sources
-
-- [[ejb-source-summary|EJB Source]]
-- [[ejb-continued-summary|EJbContinued]]

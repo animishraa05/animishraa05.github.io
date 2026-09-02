@@ -51,6 +51,3 @@ digraph indirect_addr {
 - Register must contain valid address (null/invalid pointer causes exception)
 - Two memory accesses: slower than direct addressing
 - Register value can change at runtime (unlike direct addressing)
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

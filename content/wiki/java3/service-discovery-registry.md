@@ -77,7 +77,3 @@ digraph service_registry {
 - **Cache staleness**: Client-cached instance lists may point to dead instances — use circuit breakers and retries
 - **Bootstrap problem**: Clients need to know registry location before they can discover services — use well-known DNS or static config
 - **Multi-datacenter**: Registry should prefer instances in the same datacenter/region (zone affinity) to reduce latency
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Service discovery and registration in microservices

@@ -64,7 +64,3 @@ digraph active_passive_failover {
 - Split-brain scenario: both servers think the other is dead and both become active, causing data corruption
 - Heartbeat network itself can be a single point of failure — redundant heartbeat links recommended
 - Stateful services (in-memory sessions) are lost on failover unless backed by shared storage
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]] — failover patterns from the Scalability section

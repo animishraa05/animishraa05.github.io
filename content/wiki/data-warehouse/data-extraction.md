@@ -2,8 +2,6 @@
 concept: Data Extraction DWH
 aliases: [data extraction, extracting data from sources, DWH extraction phase]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -105,7 +103,3 @@ graph semantic_extraction {
 - **Incremental vs. full extraction:** Full extraction pulls everything each time (slow, safe); incremental extraction only pulls changes since last run (fast, complex to implement).
 - **Legacy system access:** Old systems may lack modern APIs, requiring custom connectors or screen-scraping techniques.
 - **Partial extraction:** If a source is unavailable during extraction, the warehouse will have incomplete data for that cycle.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — extraction phase, five source categories

@@ -50,6 +50,3 @@ digraph addressing_mode {
 - Some modes are slower (indirect, indexed) due to extra memory accesses
 - Not all CPUs support all addressing modes (RISC typically has fewer)
 - Invalid addressing mode encoding causes illegal instruction exception
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

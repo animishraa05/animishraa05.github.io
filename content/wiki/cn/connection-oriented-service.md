@@ -64,6 +64,3 @@ digraph G {
 - State maintenance consumes memory on both endpoints
 - Connection state can be lost during network failures requiring re-establishment
 - Not suitable for bursty, small messages where setup cost dominates
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

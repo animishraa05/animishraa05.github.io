@@ -53,6 +53,3 @@ digraph indexed_addr {
 - Index register must be set correctly before use (common bug: forgetting to increment)
 - Address calculation may overflow (base + index exceeds address space)
 - Requires more hardware (adder for address calculation)
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

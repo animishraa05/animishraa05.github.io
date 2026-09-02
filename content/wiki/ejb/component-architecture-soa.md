@@ -2,8 +2,6 @@
 concept: "Component Architecture & SOA"
 aliases: [SOA, Service-Oriented Architecture, component architecture]
 tags: [dev, ejb]
-sources_count: 1
-last_source: ejb5.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -74,6 +72,3 @@ digraph ComponentArchitecture {
 - Over-decomposition leads to **distributed monolith**—too many tiny components with complex dependencies
 - Network overhead: Component calls cross process/JVM boundaries (unlike monolithic in-process calls)
 - Versioning: Updating a component interface can break all dependent applications
-
-## Sources
-- [[ejb5-summary|EJB5 Source Summary]]

@@ -2,8 +2,6 @@
 concept: Frequency Reuse
 aliases: [frequency-reuse-pattern, co-channel-reuse-factor]
 tags: [networking, cellular]
-sources_count: 1
-last_source: WirelessN.md
 created: 2026-04-21
 updated: 2026-04-21
 ---
@@ -44,6 +42,3 @@ Capacity is directly proportional to the number of times the cluster pattern is 
 - N must be chosen to balance interference vs. capacity; N=7 is a conservative but common choice
 - In practice, frequency reuse planning is complex due to irregular terrain and building shadowing
 - Handoff zones at cell boundaries must be carefully designed to avoid dropped calls
-
-## Sources
-- [[wireless-n-summary|WirelessN.md]]

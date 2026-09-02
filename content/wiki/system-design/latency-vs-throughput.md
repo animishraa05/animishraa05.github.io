@@ -76,7 +76,3 @@ digraph G {
 - **Tail latency matters**: Average latency hides outliers. P99 latency spikes often cause user-perceived slowness even when the average looks fine.
 - **Throughput vs bandwidth**: Throughput is completed operations; bandwidth is capacity. You can have high bandwidth but low throughput due to protocol overhead or lock contention.
 - **Coordinated omission**: If you exclude slow requests from measurements, reported latency looks artificially low — a common benchmarking mistake.
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]]

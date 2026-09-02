@@ -2,8 +2,6 @@
 concept: "Don't Rely on ejbRemove()"
 aliases: [ejbRemove unreliability, cleanup in EJB]
 tags: [dev, ejb]
-sources_count: 1
-last_source: ejb5.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -58,6 +56,3 @@ digraph EjbRemove {
 - **Shopping cart example**: If `ejbRemove()` isn't called, abandoned carts stay in DB forever—need a cleanup job
 - **Database connections**: Don't close them in `ejbRemove()`—use `ejbPassivate()` or let container manage pooling
 - **Exam trick question**: "Where should you put critical cleanup code?" → Answer: Nowhere in the bean—use external utilities
-
-## Sources
-- [[ejb5-summary|EJB5 Source Summary]]

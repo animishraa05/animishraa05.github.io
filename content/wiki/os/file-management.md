@@ -2,10 +2,6 @@
 concept: File Management
 aliases: [file system, filesystem, storage management, VFS]
 tags: [systems, os]
-status: draft
-confidence: high
-sources_count: 1
-last_source: OS.md
 created: 2026-06-11
 updated: 2026-06-11
 ---
@@ -100,7 +96,3 @@ graph semantic_file_management {
 - Fragmentation slows down file access over time — SSDs handle fragmentation differently than HDDs (seek time penalty is negligible on SSDs)
 - Maximum file size and maximum volume size vary by file system (FAT32: 4 GB per file; ext4: 16 TB; NTFS: 256 TB)
 - Hard links vs symlinks: hard links share the same inode (same data), symlinks are path-based references (can dangle or cross file systems)
-
-## Sources
-
-- [[os-summary|OS Source Summary]]

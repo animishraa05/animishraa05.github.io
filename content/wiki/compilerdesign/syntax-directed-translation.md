@@ -58,8 +58,3 @@ digraph sdt {
 - **Action ordering:** In bottom-up parsing, actions at the end of the production execute at reduce time — actions in the middle need special handling (split productions)
 - **Inherited attributes:** When attributes flow down the parse tree, the order of execution must be carefully managed
 - **Side effects:** Actions can have side effects (printing, emitting code) — these must be ordered correctly to produce the right output
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers syntax-directed translation as a key compiler topic
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers SDT, SDT schemes, and SDT applications

@@ -41,7 +41,3 @@ Activation is the process where the container deserializes a previously passivat
 - Activation is slower than direct method calls on active beans
 - External resources may need to be re-acquired (e.g., database connections)
 - State serialization must be serializable (implement Serializable)
-
-## Sources
-
-- [[ejb-source-summary|EJB Source]]

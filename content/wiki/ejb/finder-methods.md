@@ -42,7 +42,3 @@ Finder methods are special methods on entity beans that search the database and 
 - Don't confuse with `ejbCreate()` which inserts new records
 - Can return empty Collection but typically throw FinderException if not found
 - Must NOT call `getPrimaryKey()` in finders—bean has no identity yet
-
-## Sources
-
-- [[ejb-continued-summary|EJbContinued]]

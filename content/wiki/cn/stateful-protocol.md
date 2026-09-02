@@ -49,6 +49,3 @@ digraph G {
 - Server memory exhaustion from too many concurrent connections (DoS risk)
 - State loss during crash requires connection reset
 - State synchronization in load-balanced environments is challenging
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

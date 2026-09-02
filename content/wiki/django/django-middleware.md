@@ -69,12 +69,3 @@ MIDDLEWARE = [
 
 - Slow middleware slows down every single request in the application.
 - Incorrect ordering (e.g., placing Auth before Sessions) will break the application.
-
-## Active Recall Questions
-
-> [!question]- In what order are middleware evaluated for responses?
-> Bottom-to-top (reverse order of the `MIDDLEWARE` setting list).
-
-## Sources
-
-- [[django-summary|Source: Django Learning Roadmap]] — advanced django, request processing

@@ -2,8 +2,6 @@
 concept: Binary Semaphore
 aliases: [Mutex, Binary Semaphore Mutex]
 tags: [systems, concurrency]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -56,7 +54,3 @@ digraph binary_sem {
 - Busy-waiting implementation wastes CPU (better to block/sleep)
 - Must be acquired and released by same process
 - Forgetting signal() causes deadlock
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

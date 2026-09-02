@@ -2,8 +2,6 @@
 concept: Recursive DNS
 aliases: [recursive resolver, DNS resolver, recursive query]
 tags: [networking, dns]
-sources_count: 1
-last_source: https.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -72,7 +70,3 @@ digraph G {
 - DNS over HTTPS (DoH) encrypts queries to recursive resolver
 - Some resolvers filter malicious domains (Quad9)
 - Recursion can be disabled (authoritative-only servers)
-
-## Sources
-
-- [[https-summary|HTTP HTTPS DNS URL Source]]

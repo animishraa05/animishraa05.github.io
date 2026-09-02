@@ -55,7 +55,3 @@ digraph unambiguous {
 - **Inherently ambiguous languages:** Some languages are inherently ambiguous — every grammar for them is ambiguous (e.g., `{aⁿbⁿcᵐdᵐ | n,m ≥ 0} ∪ {aⁿbᵐcᵐdⁿ | n,m ≥ 0}`)
 - **Disambiguating rules:** Yacc/Bison use `%left`, `%right`, `%nonassoc` to resolve ambiguity without rewriting the grammar
 - **Ambiguity ≠ non-determinism:** A grammar can be unambiguous but still not parsable by LL(1) or LR(1) — parser class and ambiguity are separate concerns
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers ambiguous grammar as a companion concept

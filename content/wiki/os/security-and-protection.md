@@ -2,10 +2,6 @@
 concept: Security and Protection
 aliases: [OS security, access control, memory protection, system security]
 tags: [systems, os]
-status: draft
-confidence: high
-sources_count: 1
-last_source: OS.md
 created: 2026-06-11
 updated: 2026-06-11
 ---
@@ -99,7 +95,3 @@ graph semantic_security_protection {
 - TOCTOU (Time of Check to Time of Use) races can subvert permission checks — a file permission is checked, then the file is replaced before use
 - Side-channel attacks (Spectre, Meltdown) exploit CPU speculation to read protected kernel memory — hardware-level protection was insufficient against these
 - Zero-day vulnerabilities in the kernel itself bypass all OS security layers — defense-in-depth (SELinux, sandboxing, containerization) mitigates the blast radius
-
-## Sources
-
-- [[os-summary|OS Source Summary]]

@@ -2,8 +2,6 @@
 concept: Counting Semaphore
 aliases: [Counting Semaphore, Resource Semaphore]
 tags: [systems, concurrency]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -60,7 +58,3 @@ digraph counting_sem {
 - Initializing to wrong N causes resource leaks or errors
 - Must ensure signal() is called exactly once per wait()
 - Priority inversion can happen with multiple priority levels
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

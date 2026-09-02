@@ -2,8 +2,6 @@
 concept: wait Operation
 aliases: [P Operation, Down Operation, semWait]
 tags: [systems, concurrency]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -58,7 +56,3 @@ digraph wait_op {
 - Busy-waiting implementation wastes CPU (better to sleep)
 - Must be atomic — can't be interrupted mid-execution
 - Forgetting to call wait() causes race conditions
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

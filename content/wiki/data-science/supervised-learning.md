@@ -2,8 +2,6 @@
 concept: Supervised Learning
 aliases: [supervised, predictive modeling]
 tags: [ml, data-science]
-sources_count: 2
-last_source: dtree.md
 created: 2026-04-30
 updated: 2026-05-06
 ---
@@ -54,7 +52,3 @@ digraph G {
 - Class imbalance: rare classes get ignored by models optimizing overall accuracy
 - Concept drift: relationship between X and y changes over time
 - Covariate shift: training and test data have different feature distributions
-
-## Sources
-- [[ds-summary|Data Science Book Summary]]
-- [[dtree-summary|Decision Tree in Machine Learning]] — decision trees as a supervised algorithm family

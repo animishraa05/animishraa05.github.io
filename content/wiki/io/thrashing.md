@@ -2,8 +2,6 @@
 concept: Thrashing
 aliases: [Memory Thrashing, Swap Thrashing]
 tags: [systems, memory]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -56,7 +54,3 @@ digraph thrashing {
 - Can cascade: thrashing in one process causes others to thrash too
 - Monitor page fault rate to detect early
 - Fix: suspend/kill processes, or add more RAM
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

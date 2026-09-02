@@ -67,12 +67,3 @@ class Post(models.Model):
 ## Edge Cases & Gotchas
 
 - If you override the default `objects` manager, Django's admin panel might filter out data you wanted to see. It is often safer to add a secondary custom manager.
-
-## Active Recall Questions
-
-> [!question]- What is the name of the default manager provided by Django on all models?
-> `objects`
-
-## Sources
-
-- [[django-summary|Source: Django Learning Roadmap]] — custom managers, ORM mastery

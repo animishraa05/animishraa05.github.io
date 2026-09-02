@@ -2,7 +2,6 @@
 title: SQL vs NoSQL — Database Paradigm Comparison
 type: synthesis
 tags: [systems, database]
-status: draft
 created: 2026-05-15
 updated: 2026-05-15
 ---

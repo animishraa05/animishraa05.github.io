@@ -2,8 +2,6 @@
 concept: DNS
 aliases: [Domain Name System, domain resolution, DNS lookup]
 tags: [networking, dns]
-sources_count: 2
-last_source: https.md
 created: 2026-04-12
 updated: 2026-04-30
 ---
@@ -48,7 +46,3 @@ This happens in milliseconds. DNS uses caching heavily—once resolved, subseque
 - DNS can be slow for first-time lookups—that's why browsers cache aggressively
 - Changing DNS records can take time to propagate (TTL)
 - Some networks block certain DNS queries
-
-## Sources
-
-- [[backend-engineering-basics-summary|Backend Engineering Basics]]

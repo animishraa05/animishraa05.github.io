@@ -75,7 +75,3 @@ digraph G {
 - **Superlinear scaling**: Some systems scale better than linearly (e.g., caching clusters where more nodes reduce cache contention). This is rare and often transient.
 - **Performance hides poor scalability**: A fast single node can mask the need to scale until load spikes reveal the bottleneck.
 - **Amdahl's Law applies**: The serial portion of any workload caps maximum speedup, no matter how many resources are added.
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]]

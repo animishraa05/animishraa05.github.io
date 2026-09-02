@@ -55,6 +55,3 @@ digraph G {
 - Propagation delay causes collisions: device may sense idle while a transmission is in progress but hasn't arrived yet
 - "Hidden terminal" problem in wireless (not solved by CSMA alone)
 - Efficiency depends on propagation delay vs packet transmission time
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

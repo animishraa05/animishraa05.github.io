@@ -3,8 +3,6 @@ title: LoRA Fine-tuning for Brand Consistency
 concept: lora-finetuning
 aliases: [low-rank adaptation, adapter weights]
 tags: [ai, ml]
-sources_count: 1
-last_source: imgen.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -60,7 +58,3 @@ LoRA adds two small matrices (rank r, typically 8-16) that approximate the weigh
 - LoRA good for style, weak for exact product shapes
 - Need quality training data (20-50 consistent images)
 - Too many LoRAs = management overhead
-
-## Sources
-
-- [[imgen-summary]]

@@ -55,7 +55,3 @@ The stateless session bean lifecycle has three states: Does Not Exist, Method-Re
 
 - Don't rely on ejbRemove()—it may never be called if container crashes
 - Stateless beans can be pre-created at startup (not lazily created)
-
-## Sources
-
-- [[ejb-source-summary|EJB Source]]

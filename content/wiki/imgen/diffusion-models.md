@@ -3,8 +3,6 @@ title: Diffusion Models
 concept: diffusion-models
 aliases: [ddpm, ddims, generative models]
 tags: [ai, ml]
-sources_count: 1
-last_source: imgen.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -62,7 +60,3 @@ In practice, you start with random noise and run 25-50 denoising steps. At each 
 - Slow inference (25-50 steps per image)
 - High-frequency details (like text) are hardest to generate
 - Mode collapse possible if training data insufficient
-
-## Sources
-
-- [[imgen-summary]]

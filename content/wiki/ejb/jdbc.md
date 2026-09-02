@@ -4,8 +4,6 @@ aliases: [Java Database Connectivity]
 tags: [dev, database]
 created: 2026-04-28
 updated: 2026-04-28
-sources_count: 2
-last_source: java3.md
 ---
 
 ## The Problem
@@ -40,8 +38,3 @@ JDBC (Java Database Connectivity) is a standard Java API that provides universal
 
 - Must close connections, statements, and result sets properly
 - Use PreparedStatement to prevent SQL injection
-
-## Sources
-
-- [[ejb-continued-summary|EJbContinued]]
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — CRUD operations, statement types, transactions

@@ -2,8 +2,6 @@
 concept: Reader-Writer Problem
 aliases: [Readers-Writers Problem]
 tags: [systems, concurrency]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -56,7 +54,3 @@ digraph rw {
 - Writer starvation: readers keep arriving, writer never gets access
 - Reader starvation: writer locks resource, new readers blocked
 - readCount must be protected by mutex (it's a shared variable)
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

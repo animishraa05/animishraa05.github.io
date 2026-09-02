@@ -2,8 +2,6 @@
 concept: Entropy Calculation
 aliases: [entropy formula, entropy computation, Shannon entropy calculation]
 tags: [ml, decision-trees]
-sources_count: 1
-last_source: dtree.md
 created: 2026-05-06
 updated: 2026-05-06
 ---
@@ -80,7 +78,3 @@ digraph entropy_calculation {
 - **Single-class shortcut**: If only one class exists, skip computation — entropy is 0
 - **Large datasets**: Counting can overflow with huge datasets; use incremental or streaming approaches
 - **Negative zero**: Some implementations may produce -0.0; normalize to 0.0 for consistency
-
-## Sources
-
-- [[dtree-summary|Decision Tree in Machine Learning]] — worked example: X = {a,a,a,b,b,b,b,b} yielding H(X) = 0.954

@@ -65,12 +65,3 @@ INSTALLED_APPS = [
 ## Edge Cases & Gotchas
 
 - If an app is not added to `INSTALLED_APPS`, Django will not recognize its models or templates.
-
-## Active Recall Questions
-
-> [!question]- How do you let the Django project know about a newly created app?
-> By adding it to the `INSTALLED_APPS` list in `settings.py`.
-
-## Sources
-
-- [[django-summary|Source: Django Learning Roadmap]] — app creation and registration

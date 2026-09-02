@@ -2,8 +2,6 @@
 concept: Unsupervised Learning
 aliases: [unsupervised, descriptive modeling]
 tags: [ml, data-science]
-sources_count: 1
-last_source: ds.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -50,6 +48,3 @@ digraph G {
 - Cluster interpretation: assigning meaning to clusters is subjective
 - Initialization sensitivity: many algorithms (k-means) depend on random starts
 - Curse of dimensionality: distance-based methods fail in high-dimensional spaces
-
-## Sources
-- [[ds-summary|Data Science Book Summary]]

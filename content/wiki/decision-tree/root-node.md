@@ -2,8 +2,6 @@
 concept: Root Node
 aliases: [root, top node, first split]
 tags: [ml, decision-trees]
-sources_count: 1
-last_source: dtree.md
 created: 2026-05-06
 updated: 2026-05-06
 ---
@@ -69,7 +67,3 @@ digraph root_node {
 - **No good split**: If no attribute reduces impurity, the root becomes a leaf immediately (majority vote)
 - **Sensitive to data changes**: Adding or removing a few samples can change which attribute is selected as root
 - **Single point of failure**: A bad root choice cannot be corrected by later splits
-
-## Sources
-
-- [[dtree-summary|Decision Tree in Machine Learning]] — root node as starting point with Income example

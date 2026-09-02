@@ -2,8 +2,6 @@
 concept: Regression
 aliases: [regression analysis, continuous prediction]
 tags: [ml, data-science]
-sources_count: 2
-last_source: dtree.md
 created: 2026-04-30
 updated: 2026-05-06
 ---
@@ -51,7 +49,3 @@ digraph G {
 - Multicollinearity: correlated features distort coefficient estimates
 - Outliers: heavily influence linear regression (consider robust regression)
 - Non-linearity: linear regression fails when true relationship is curved
-
-## Sources
-- [[ds-summary|Data Science Book Summary]]
-- [[dtree-summary|Decision Tree in Machine Learning]] — regression via decision tree leaf mean values

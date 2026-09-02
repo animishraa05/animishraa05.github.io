@@ -64,7 +64,3 @@ digraph REST {
 - **Over-fetching / under-fetching**: REST responses return fixed resource representations, which may include unnecessary fields (over-fetching) or miss needed data (under-fetching). GraphQL or sparse fieldsets address this.
 - **No standard for partial updates**: PUT replaces the entire resource; PATCH semantics vary. Clients must understand which verb and representation to use.
 - **Statelessness shifts complexity**: Session state must be stored client-side or in an external store (e.g., Redis), pushing complexity out of the server.
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]]

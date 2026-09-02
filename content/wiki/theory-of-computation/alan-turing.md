@@ -4,8 +4,6 @@ aliases: [A. M. Turing]
 tags: [theory, computability]
 created: 2026-04-11
 updated: 2026-04-11
-confidence: high
-status: stable
 ---
 
 ## The Problem
@@ -40,11 +38,6 @@ The Turing machine became the standard model for computability theory.
 - Built from: [[turing-machine|Turing Machine]]
 - Builds into: [[computability-theory|Computability Theory]], [[halting-problem|Halting Problem]], [[artificial-intelligence|Artificial Intelligence]]
 - Related: [[alonzo-church|Alonzo Church]], [[church-turing-thesis|Church-Turing Thesis]]
-
-## Sources
-
-- [[theory-of-computation-wikipedia|Theory of computation - Wikipedia]]
-
 ## Why This Matters
 
 Turing's work defined what computation means. His machine model is the foundation of computer science, and his ideas about machine intelligence continue to shape AI today.

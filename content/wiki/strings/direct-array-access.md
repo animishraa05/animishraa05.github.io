@@ -77,9 +77,9 @@ graph semantic_direct_access {
 
 - Built from: [[character-to-index-mapping|Character-to-Index Mapping]] — direct access requires valid indices via conversion
 - Builds into: [[frequency-array|Frequency Array]] — direct access is the fundamental advantage of arrays
-- Builds into: [[memory-efficiency-array|Memory Efficiency of Array]] — minimal overhead per slot enables cache efficiency <!-- TODO: add backlink here -->
-- Contrasts with: [[hash-collision-overhead|Hash Collision Overhead]] — hash maps trade direct access for flexibility <!-- TODO: add backlink here -->
-- Related: [[known-range-assumption|Known Range Assumption]] — direct access requires known, bounded ranges <!-- TODO: add backlink here -->
+- Builds into: [[memory-efficiency-array|Memory Efficiency of Array]] — minimal overhead per slot enables cache efficiency
+- Contrasts with: [[hash-collision-overhead|Hash Collision Overhead]] — hash maps trade direct access for flexibility
+- Related: [[known-range-assumption|Known Range Assumption]] — direct access requires known, bounded ranges
 
 ## Edge Cases & Gotchas
 
@@ -88,7 +88,3 @@ graph semantic_direct_access {
 - For negative indices (from incorrect `ch - 'a'` on uppercase), the behavior is undefined
 - Cache misses can still occur for very large arrays (but for freq[26], the entire array fits in a single cache line)
 - Direct access assumes contiguous allocation — vectors also provide this, but with heap allocation overhead
-
-## Sources
-
-- [[strings-summary|Strings (Character Hashing in C++)]]

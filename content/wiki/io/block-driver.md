@@ -2,8 +2,6 @@
 concept: Block Driver
 aliases: [Block Device Driver]
 tags: [systems, io]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -58,7 +56,3 @@ digraph block_driver {
 - Block size must match device's physical block size (or be properly translated)
 - Misaligned block accesses hurt performance on some devices
 - Some "block" devices are actually flash-backed and have different characteristics
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

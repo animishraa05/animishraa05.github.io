@@ -96,7 +96,3 @@ graph semantic_sdt_apps {
 - **Side effects:** Actions with side effects (like entering symbol table entries) must execute exactly once per construct
 - **Error recovery:** When the parser recovers from an error, previously executed actions may have created incomplete symbol table entries
 - **SDT vs separate pass:** The "action during parsing" model works for simple translation; complex optimizations need separate passes
-
-## Sources
-
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers applications of syntax-directed translations

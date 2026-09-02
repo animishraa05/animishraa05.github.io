@@ -84,8 +84,3 @@ graph semantic_methods {
 - **Varargs overloading**: Calling `method(null)` with a varargs parameter is ambiguous
 - **Return after finally**: A `return` in `finally` overrides any previous return
 - **Recursive depth**: Deep recursion causes `StackOverflowError`
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — method fundamentals
-- [[java2-summary|Java OOP Concepts — Source Summary]] — method as collection of statements for a task

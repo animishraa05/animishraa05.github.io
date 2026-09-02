@@ -67,6 +67,3 @@ digraph G {
 - **Black box** — hard to interpret why a neural network makes a specific decision
 - **Data hungry** — need large datasets and significant compute to train effectively
 - **Adversarial examples** — small perturbations can fool networks into wrong predictions
-
-## Sources
-- [[imgen-summary|Image Generation Source Summary]]

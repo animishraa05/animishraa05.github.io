@@ -2,8 +2,6 @@
 concept: ROLAP Server
 aliases: [ROLAP, relational OLAP, relational online analytical processing]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -107,7 +105,3 @@ graph semantic_rolap {
 - **Query caching:** Some ROLAP implementations cache query results to improve performance for repeated queries.
 - **Not suitable for real-time analysis:** Dynamic SQL execution adds significant latency — ROLAP is better for scheduled reports than interactive dashboards.
 - **Index dependency:** ROLAP performance heavily depends on proper indexing of the relational tables.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — ROLAP definition, advantages, disadvantages

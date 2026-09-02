@@ -80,7 +80,3 @@ graph semantic_wrappers {
 - **NullPointerException**: Unboxing a null wrapper throws NPE: `Integer x = null; int y = x;` crashes
 - **Performance penalty**: Autoboxing creates unnecessary objects in loops — use primitives for math-heavy code
 - **Cache boundary**: `Integer.valueOf(200) != Integer.valueOf(200)` is true (outside cache range)
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — wrapper classes and autoboxing

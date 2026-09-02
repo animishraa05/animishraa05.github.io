@@ -38,7 +38,3 @@ How does an entity bean delete its database record when a client calls remove() 
 - Different from session bean `ejbRemove()`—that deletes the bean from RAM, this deletes database data
 - Must call `getPrimaryKey()` because bean instances are pooled and reused
 - No parameters are passed—bean's identity must be queried from context
-
-## Sources
-
-- [[ejb-continued-summary|EJbContinued]]

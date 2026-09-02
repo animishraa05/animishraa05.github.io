@@ -82,7 +82,3 @@ graph semantic_peephole {
 - **Oversized window:** A larger window catches more patterns but costs more to match — most implementations keep it small
 - **Architecture-specific:** A peephole optimization on x86 may not apply to ARM — patterns must be defined per target
 - **Safety:** Must preserve program semantics — pattern matching must be conservative about flags and condition codes
-
-## Sources
-
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers peephole optimization as a code optimization technique

@@ -59,7 +59,3 @@ digraph semantic_analysis {
 - **Type coercion:** Languages like C automatically convert int to float — the analyzer must insert implicit type conversion nodes
 - **Duck typing:** Dynamically typed languages defer type checking to runtime — semantic analysis in their compilers is lighter
 - **Function overloading:** The semantic analyzer must resolve which overloaded function is being called based on argument types
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers semantic analysis as the third compiler phase

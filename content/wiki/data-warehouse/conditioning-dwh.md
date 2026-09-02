@@ -2,8 +2,6 @@
 concept: Conditioning DWH
 aliases: [data conditioning, type conversion DWH, data type casting]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -113,7 +111,3 @@ graph semantic_conditioning {
 - **Date format ambiguity:** "03/04/2024" could be March 4 or April 3. The warehouse must enforce a canonical date format.
 - **Overflow:** Converting a large integer to a smaller type (e.g., BIGINT to INT) can cause overflow errors.
 - **Null handling:** Some source types have no equivalent null value (e.g., primitive types). The warehouse must decide on sentinel values.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — conditioning as transformation sub-process

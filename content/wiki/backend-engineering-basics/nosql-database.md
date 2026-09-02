@@ -2,8 +2,6 @@
 concept: NoSQL Database
 aliases: [NoSQL, non-relational database, document database, key-value store]
 tags: [database, nosql]
-sources_count: 1
-last_source: Backend Engineering Basics.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -47,7 +45,3 @@ Example: A user document might have `{name: "ani", followers: 1200}` in one reco
 - Eventual consistency can be confusing (data may not appear immediately)
 - Less powerful querying than SQL—can't do complex aggregations easily
 - Schema-less means no compile-time validation—bugs can slip into production
-
-## Sources
-
-- [[backend-engineering-basics-summary|Backend Engineering Basics]]

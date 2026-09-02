@@ -2,8 +2,6 @@
 concept: "Distributed Objects"
 aliases: [RMI objects, network objects]
 tags: [dev, ejb, rmi]
-sources_count: 1
-last_source: ejb5.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -65,6 +63,3 @@ digraph DistributedObjects {
 - **Serialization overhead**: Parameters must be serializable for network transfer
 - **Latency**: Network calls are 100-1000x slower than in-process calls
 - **Stateless beans preferred for distributed access**: No client-specific state to transfer
-
-## Sources
-- [[ejb5-summary|EJB5 Source Summary]]

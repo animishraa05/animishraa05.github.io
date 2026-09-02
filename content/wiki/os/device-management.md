@@ -2,10 +2,6 @@
 concept: Device Management
 aliases: [I/O management, device control, device driver subsystem]
 tags: [systems, os]
-status: draft
-confidence: high
-sources_count: 1
-last_source: OS.md
 created: 2026-06-11
 updated: 2026-06-11
 ---
@@ -97,7 +93,3 @@ graph semantic_device_management {
 - DMA can bypass the CPU and write data directly to memory — while efficient, it creates security concerns (a malicious device could modify kernel memory)
 - Device drivers are the largest source of OS bugs (more than the kernel core) because they are written by third parties with varying quality
 - Power management requires close coordination between device drivers and the kernel (e.g., suspending a disk when unused)
-
-## Sources
-
-- [[os-summary|OS Source Summary]]

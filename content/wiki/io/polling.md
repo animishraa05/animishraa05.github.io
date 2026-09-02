@@ -2,8 +2,6 @@
 concept: Polling
 aliases: [Busy Waiting, Polling I/O]
 tags: [systems, io]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -59,7 +57,3 @@ digraph polling {
 - May miss events if polling interval is too long
 - Useful for small embedded systems without interrupt controllers
 - High throughput for bulk transfers (once polled, transfer quickly)
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

@@ -51,6 +51,3 @@ digraph G {
 - Negotiation failure: if peers can't agree on parameters, link isn't established
 - Authentication failure terminates the connection
 - LCP is layered on top of the bare serial link (no framing — PPP provides framing)
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

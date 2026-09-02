@@ -52,6 +52,3 @@ digraph G {
 - ICMP messages are not guaranteed to be delivered (they're best-effort like IP)
 - Some firewalls block ICMP, breaking path MTU discovery and network diagnostics
 - ICMP redirect messages can be security risks and are often disabled
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

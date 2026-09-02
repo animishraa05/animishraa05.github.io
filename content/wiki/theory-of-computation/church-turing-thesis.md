@@ -4,8 +4,6 @@ aliases: [Church-Turing Hypothesis]
 tags: [theory, foundations]
 created: 2026-04-11
 updated: 2026-04-11
-confidence: high
-status: stable
 ---
 
 ## The Problem
@@ -44,11 +42,6 @@ All have been proven equivalent, strengthening confidence in the thesis.
 
 - The thesis is not provable because "intuitively computable" is not formally defined
 - Some models (like oracles) can compute beyond Turing machines—but these aren't "ordinary" computation
-
-## Sources
-
-- [[theory-of-computation-wikipedia|Theory of computation - Wikipedia]]
-
 ## Why This Matters
 
 The Church-Turing thesis defines what we mean by "computable." When we say a problem is unsolvable, we mean unsolvable by a Turing machine—which means unsolvable by any algorithm.

@@ -3,8 +3,6 @@ title: Hybrid LLM-Guided Diffusion Pipeline
 concept: hybrid-pipeline
 aliases: [llm-guided diffusion, hybrid image generation]
 tags: [ai, diffusion]
-sources_count: 1
-last_source: imgen.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -61,7 +59,3 @@ User Brief (natural language)
 - **LLM quality determines everything**: A mediocre prompt decomposer ruins downstream output
 - **Latency compounding**: Each LLM call adds 1-3 seconds; pipeline needs async handling
 - **CLIP vs T5 tradeoff**: CLIP faster but character-blind; T5 slower but spelling-aware
-
-## Sources
-
-- [[imgen-summary]]

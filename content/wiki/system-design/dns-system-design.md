@@ -72,7 +72,3 @@ digraph dns_resolution {
 - DNS propagation delays mean changes to records take time (up to 48 hours for TTL expiration everywhere)
 - DNS is vulnerable to cache poisoning attacks if DNSSEC is not implemented
 - CNAME records cannot coexist with other record types at the same DNS node — use ALIAS or ANAME records instead
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]] — DNS section in the Scalability chapter

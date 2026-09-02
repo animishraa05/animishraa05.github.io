@@ -2,8 +2,6 @@
 concept: Models ORM
 aliases: [Django Models, ORM, Object-Relational Mapping, django.db.models]
 tags: [dev, django]
-sources_count: 1
-last_source: Django.md
 created: 2026-08-09
 updated: 2026-08-09
 ---
@@ -122,7 +120,3 @@ graph semantic_models_orm {
 - **Default mutable**: `default=[]` shares list across instances; use `default=list` or `default=lambda: []`
 - **Migration reversibility**: `RunSQL`/`RunPython` need reverse code; data migrations can break rollback
 - **Abstract base classes**: `abstract = True` in Meta prevents table creation; fields inherited
-
-## Sources
-
-- [[django-summary|Django Learning Roadmap]]

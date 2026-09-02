@@ -72,7 +72,3 @@ digraph form_handling {
 - **Nested properties**: `@Valid` on nested objects requires cascading validation (`@Valid` on the nested field)
 - **Conversion errors**: Type mismatch (e.g., "abc" for int field) goes to BindingResult as a FieldError
 - **Custom validators**: Implement `Validator` interface and register; or use `@Pattern` for simple regex validation
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Form handling in Spring MVC

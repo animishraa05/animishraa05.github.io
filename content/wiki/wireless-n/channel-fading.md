@@ -2,8 +2,6 @@
 concept: Channel Fading
 aliases: [signal-fading, Rayleigh-fading, Rician-fading]
 tags: [networking, wireless]
-sources_count: 1
-last_source: WirelessN.md
 created: 2026-04-21
 updated: 2026-04-21
 ---
@@ -41,6 +39,3 @@ Fading typically follows statistical distributions: Rayleigh fading when there i
 - Fading margins (extra signal power) must be built into link budgets to ensure reliable communication
 - Simple path loss models (free space) do not account for fading — realistic models need shadowing and multipath components
 - Diversity combining (selection, maximal ratio combining) can provide 10–30 dB of improvement
-
-## Sources
-- [[wireless-n-summary|WirelessN.md]]

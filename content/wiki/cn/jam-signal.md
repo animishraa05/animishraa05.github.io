@@ -54,6 +54,3 @@ digraph G {
 - Jam signal itself could theoretically collide (rare, handled by backoff)
 - Only works on wired shared media (not in switched/full-duplex networks)
 - Slot time determines minimum jam signal duration
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

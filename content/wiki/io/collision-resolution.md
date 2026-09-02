@@ -2,8 +2,6 @@
 concept: Collision Resolution
 aliases: [Hash Collision Handling, Collision Handling]
 tags: [systems, data-structures]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -64,7 +62,3 @@ digraph collision {
 - Clustering in probing → many consecutive occupied slots
 - Deletion in open addressing is tricky (can't just remove, need tombstones)
 - Load factor > 0.7 → performance drops sharply
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

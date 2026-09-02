@@ -62,8 +62,3 @@ digraph tac {
 - **Addressing modes:** TAC abstracts away target-specific addressing — the code generator handles the mapping
 - **Symbolic labels:** TAC uses symbolic labels for jumps — these must be resolved to actual addresses during code generation
 - **Three-address vs SSA:** Static single assignment (SSA) form extends TAC by ensuring every variable is assigned exactly once — more powerful for optimization
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers three-address code as a key intermediate representation
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers TAC in intermediate code generation

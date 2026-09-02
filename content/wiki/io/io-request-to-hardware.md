@@ -2,8 +2,6 @@
 concept: I/O Request to Hardware Operation
 aliases: [Transforming I/O Request, I/O Request Transformation]
 tags: [systems, io]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -65,7 +63,3 @@ digraph io_flow {
 - Disk may return errors (bad sector) that must be handled at each layer
 - Concurrent I/O requests require proper queue management
 - DMA setup failure falls back to programmed I/O (very slow)
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

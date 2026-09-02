@@ -71,12 +71,3 @@ class UserViewSet(viewsets.ModelViewSet):
 ## Edge Cases & Gotchas
 
 - N+1 query problems are very common in DRF Serializers if `select_related` is not used in the ViewSet queryset.
-
-## Active Recall Questions
-
-> [!question]- What component in DRF is roughly equivalent to a Django Form?
-> The Serializer (it handles validation and data conversion).
-
-## Sources
-
-- [[django-summary|Source: Django Learning Roadmap]] — serializers, viewsets, API routing

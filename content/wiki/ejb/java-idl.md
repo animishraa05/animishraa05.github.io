@@ -2,8 +2,6 @@
 concept: Java IDL
 aliases: [Interface Definition Language, CORBA Integration]
 tags: [dev, ejb, corba]
-sources_count: 1
-last_source: ejb6.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -61,6 +59,3 @@ digraph G {
 - **Complexity**: CORBA has steep learning curve
 - **IIOP firewall issues**: IIOP may be blocked by firewalls
 - **Modern alternative**: Use REST or gRPC for cross-language communication
-
-## Sources
-- [[ejb6-summary|EJB6 Source Summary]]

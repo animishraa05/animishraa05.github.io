@@ -2,8 +2,6 @@
 concept: J2EE Specification
 aliases: [Java 2 Platform Enterprise Edition Specification]
 tags: [dev, ejb, j2ee]
-sources_count: 1
-last_source: ejb6.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -72,6 +70,3 @@ digraph G {
 - **Version mismatches**: Mixing APIs from different J2EE versions causes issues
 - **Vendor extensions**: Vendors may add proprietary features beyond the spec
 - **Compliance != Compatibility**: Technically compliant products may still differ
-
-## Sources
-- [[ejb6-summary|EJB6 Source Summary]]

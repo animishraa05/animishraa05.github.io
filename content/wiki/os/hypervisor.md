@@ -2,10 +2,6 @@
 concept: Hypervisor
 aliases: [virtual machine monitor, VMM, Type 1 hypervisor, Type 2 hypervisor]
 tags: [systems, os]
-status: draft
-confidence: high
-sources_count: 1
-last_source: OS.md
 created: 2026-06-11
 updated: 2026-06-11
 ---
@@ -103,7 +99,3 @@ graph semantic_hypervisor {
 - Paravirtualization (guest OS knows it's virtualized and uses special hypercalls) can outperform full hardware emulation
 - Nested virtualization (running a hypervisor inside a VM) is possible but complex and slow
 - The "hypervisor" is NOT the same as a "virtual machine" — the hypervisor creates and manages VMs, it is not itself a VM
-
-## Sources
-
-- [[os-summary|OS Source Summary]]

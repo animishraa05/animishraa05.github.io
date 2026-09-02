@@ -69,7 +69,3 @@ digraph SQLTuning {
 - **Premature optimization** — tuning queries that run once a day for 200ms is a waste of effort; profile first to find the real bottlenecks.
 - **Index overkill** — too many indexes slow down writes significantly and increase disk usage; a table with 10 indexes on 1M rows can see 3x slower inserts.
 - **Query cache invalidation** — MySQL query cache is invalidated on every write to the table; on write-heavy tables, the cache does more harm than good.
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]]

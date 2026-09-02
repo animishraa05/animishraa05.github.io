@@ -50,6 +50,3 @@ digraph G {
 - NAK loss can still require timeout-based recovery as backup
 - Some protocols (TCP) don't use explicit NAKs — use duplicate ACKs instead to signal loss
 - NAK storms: if many packets lost, many NAKs can add to congestion
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

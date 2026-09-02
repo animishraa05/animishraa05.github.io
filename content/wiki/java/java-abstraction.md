@@ -2,8 +2,6 @@
 concept: Java Abstraction
 aliases: [Abstract Class, Abstract Method, Data Abstraction, Interface Abstraction]
 tags: [dev, java]
-sources_count: 2
-last_source: java2-summary
 created: 2026-05-13
 updated: 2026-05-13
 ---
@@ -89,8 +87,3 @@ graph semantic_abstraction {
 - **Cannot be final**: An abstract class cannot be declared `final` (contradictory — abstraction requires extension)
 - **Performance**: Virtual method dispatch for abstract methods has minimal overhead (single vtable lookup)
 - **Interfaces with default methods (Java 8+)**: Interfaces can now have default and static methods, blurring the line with abstract classes
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — abstraction, inheritance, interfaces
-- [[java2-summary|Java OOP Concepts — Source Summary]] — expanded abstraction with real-world metaphors

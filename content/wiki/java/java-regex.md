@@ -80,7 +80,3 @@ graph semantic_regex {
 - **Backslash escaping in strings**: `\d` in regex becomes `"\\d"` in Java string literals
 - **Matcher.reset()**: Reuse a matcher on new input without creating a new Pattern
 - **matches() vs find()**: `matches()` requires the entire string to match; `find()` looks for a substring
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — regex

@@ -2,8 +2,6 @@
 concept: Data Wrangling
 aliases: [data munging, wrangling]
 tags: [ml, data-science]
-sources_count: 1
-last_source: ds.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -47,6 +45,3 @@ digraph G {
 - Inconsistent cleaning across train/test sets causes leakage
 - Assuming data types without validation (e.g., numeric IDs as integers)
 - Not documenting wrangling steps for reproducibility
-
-## Sources
-- [[ds-summary|Data Science Book Summary]]

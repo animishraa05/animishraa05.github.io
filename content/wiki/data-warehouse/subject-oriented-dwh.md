@@ -2,8 +2,6 @@
 concept: Subject-Oriented Data Warehouse
 aliases: [subject-oriented, subject-oriented DWH, subject-oriented design]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -104,7 +102,3 @@ graph semantic_subject_oriented {
 - **Subject definition varies:** Different departments may define "Customer" differently (e.g., Marketing includes prospects, Sales only includes buyers). Resolution requires business-level agreement.
 - **Not the same as normalization:** Subject-oriented means "organized by business topic," not "normalized to 3NF." In fact, subject-oriented warehouses are often denormalized.
 - **Evolves over time:** New subjects emerge as business needs change — the warehouse schema must accommodate new subjects without breaking existing ones.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — Inmon's definition, subject-oriented explanation

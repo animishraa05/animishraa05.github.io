@@ -2,8 +2,6 @@
 concept: Data Modeling
 aliases: [modeling, predictive modeling]
 tags: [ml, data-science]
-sources_count: 1
-last_source: ds.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -47,6 +45,3 @@ digraph G {
 - Underfitting: model is too simple to capture underlying patterns
 - Data leakage: information from test set inadvertently used during training
 - Ignoring model assumptions: linear models assume linear relationships
-
-## Sources
-- [[ds-summary|Data Science Book Summary]]

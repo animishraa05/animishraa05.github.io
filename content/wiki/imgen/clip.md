@@ -3,8 +3,6 @@ title: CLIP Text Encoder
 concept: clip
 aliases: [contrastive learning, vision-language]
 tags: [ai, ml]
-sources_count: 1
-last_source: imgen.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -49,7 +47,3 @@ CLIP was trained on natural image-text pairs (captions, descriptions). It learne
 - Character-blind: "Lakme", "LAKME", "lakme" = same vector
 - 77 token limit = struggles with very long prompts
 - Semantic focus misses fine details like letter shapes
-
-## Sources
-
-- [[imgen-summary]]

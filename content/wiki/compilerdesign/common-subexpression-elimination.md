@@ -80,7 +80,3 @@ graph semantic_cse {
 - **Cost trade-off:** CSE increases register pressure by keeping more values live — may slow down register allocation
 - **Global CSE complexity:** Available-expression analysis is more complex than reaching-definitions analysis because expressions involve multiple variables
 - **Partial redundancy:** When an expression is available on some paths but not all — partial redundancy elimination (PRE) is a more sophisticated optimization
-
-## Sources
-
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers common subexpression elimination as a code optimization technique

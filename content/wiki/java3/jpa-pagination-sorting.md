@@ -72,7 +72,3 @@ digraph pagination {
 - **Sort injection**: `Sort.by("lastName")` — property names are validated, not directly interpolated; but still validate user input for sort fields
 - **Sort direction**: Default is ASC; specify `.descending()` for descending
 - **0-indexed pages**: `page=0` is the first page — this often confuses frontend developers who expect 1-indexed pages
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Pagination and sorting with Spring Data JPA

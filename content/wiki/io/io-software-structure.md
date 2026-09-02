@@ -2,8 +2,6 @@
 concept: I/O Software Structure
 aliases: [I/O Software Layers, I/O Software Architecture]
 tags: [systems, io]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -64,7 +62,3 @@ digraph io_layers {
 - Device-independent layer must know enough about devices to do buffering correctly
 - Error handling must propagate correctly up through all layers
 - Some devices bypass layers (e.g., memory-mapped I/O)
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

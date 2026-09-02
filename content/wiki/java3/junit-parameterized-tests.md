@@ -81,7 +81,3 @@ digraph parameterized {
 - **Large CSV files**: @CsvFileSource for large datasets — but test data in CSV may be harder to maintain than inline
 - **Argument name in display name**: Use `{0}`, `{1}`, etc. in the `name` attribute of @ParameterizedTest to reference arguments
 - **Null handling**: Primitive parameters can't accept null — use `Integer` instead of `int` for nullable tests
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — JUnit parameterized tests

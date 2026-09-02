@@ -49,6 +49,3 @@ digraph stack {
 - Stack overflow: pushing too much data exceeds stack size
 - Stack underflow: popping when stack is empty
 - Stack grows toward other memory — must manage stack size carefully
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

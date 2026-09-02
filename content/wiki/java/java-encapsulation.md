@@ -2,8 +2,6 @@
 concept: Java Encapsulation
 aliases: [Data Hiding, Getters and Setters, Information Hiding, Protective Shield]
 tags: [dev, java]
-sources_count: 2
-last_source: java2-summary
 created: 2026-05-13
 updated: 2026-05-13
 ---
@@ -87,8 +85,3 @@ graph semantic_encapsulation {
 - **Mutable objects in getters**: Returning a reference to a mutable internal object exposes state — return a defensive copy
 - **Anemic domain model**: Too many getters/setters without behavior is not true encapsulation
 - **Over-encapsulation**: Making everything private without reason increases code complexity
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — encapsulation
-- [[java2-summary|Java OOP Concepts — Source Summary]] — protective shield metaphor

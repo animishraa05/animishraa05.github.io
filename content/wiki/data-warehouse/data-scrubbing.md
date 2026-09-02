@@ -2,8 +2,6 @@
 concept: Data Scrubbing
 aliases: [data scrubbing, data standardization, value encoding, attribute mapping]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -124,7 +122,3 @@ graph semantic_scrubbing {
 - **Over-standardization:** Aggressively mapping similar-but-different values to the same code can lose important distinctions.
 - **Name resolution ambiguity:** "John Smith" in one system may not be the same as "J. Smith" in another — automated resolution can create false matches.
 - **Performance cost:** Scrubbing millions of records through multiple mapping rules is computationally expensive.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — data scrubbing techniques, examples from source

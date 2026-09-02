@@ -2,8 +2,6 @@
 concept: SCAN Scheduling
 aliases: [Elevator Algorithm, SCAN Disk Scheduling]
 tags: [systems, storage]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -58,7 +56,3 @@ digraph scan {
 - High response time for requests at the edges (must wait for full sweep)
 - May go to disk end unnecessarily (solved by LOOK)
 - Better for heavy load than SSTF
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

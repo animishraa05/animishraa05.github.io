@@ -2,8 +2,6 @@
 concept: Database Migrations
 aliases: [Migrations, Schema Migrations, django.db.migrations]
 tags: [dev, django]
-sources_count: 1
-last_source: Django.md
 created: 2026-08-09
 updated: 2026-08-09
 ---
@@ -113,7 +111,3 @@ graph semantic_database_migrations {
 - **Large table ALTER**: Adding column with default locks table; use `AddField` → `RunSQL` (no default) → `AlterField`
 - **Historical model drift**: `RunPython` using current model instead of `apps.get_model()` breaks future migrations
 - **Swap app models**: `swappable = 'AUTH_USER_MODEL'` requires special handling in migrations
-
-## Sources
-
-- [[django-summary|Django Learning Roadmap]]

@@ -65,7 +65,3 @@ digraph active_active_failover {
 - Session affinity (sticky sessions) becomes harder — requests from one user may hit different servers
 - Both servers must have consistent state or share storage to avoid data divergence
 - Failover capacity is only 50% — if one server dies, the remaining server must handle full load
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]] — failover patterns from the Scalability section

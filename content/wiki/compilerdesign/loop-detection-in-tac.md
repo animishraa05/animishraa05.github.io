@@ -69,7 +69,3 @@ digraph loop_detection {
 - **Outer vs inner loops:** When loops are nested, the inner loop should be optimized first (maximizes benefit)
 - **Infinite loops:** A loop with no exit edge — the compiler must detect this to avoid infinite optimization
 - **Loop-invariant code:** Instructions inside the loop that produce the same value every iteration — should be moved to the pre-header
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers loop detection in three-address code

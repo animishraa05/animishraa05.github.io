@@ -2,8 +2,6 @@
 concept: true
 aliases: []
 tags: [dev, neovim]
-sources_count: 1
-last_source: lsp
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -44,7 +42,3 @@ Semantic Tokens are LSP protocol extensions that let servers provide additional 
 - Servers may use non-standard types/modifiers beyond the specification
 - Disable by clearing highlight groups in ColorScheme autocmd
 - LspTokenUpdate only supports highlight_token() call; other uses experimental
-
-## Sources
-
-- [[lsp-summary|LSP — Neovim Documentation]]

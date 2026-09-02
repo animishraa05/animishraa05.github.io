@@ -55,6 +55,3 @@ digraph G {
 - For stateless beans, create() typically returns same pooled instance
 - For entity beans, finder methods return bean references identified by primary key
 - Home is NOT the bean itself — it's just the factory
-
-## Sources
-- [[ejb3-summary|EJB3 Source Summary]]

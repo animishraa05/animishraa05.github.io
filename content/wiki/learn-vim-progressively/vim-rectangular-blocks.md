@@ -3,8 +3,6 @@ title: Vim Rectangular Blocks
 concept:
 aliases: [block selection, rectangular blocks, column selection, Ctrl-v]
 tags: [dev, vim]
-sources_count: 1
-last_source: YBlog - Learn Vim Progressively.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -61,7 +59,3 @@ Window commands:
 - [[vim-macros|Macros]] — Can record block selection operations
 - [[vim-text-objects|Text Objects]] — Alternative selection syntax
 - [[vim-splits|Vim Splits]] — Related window functionality
-
-## Sources
-
-- [[learn-vim-progressively-summary|YBlog - Learn Vim Progressively]]

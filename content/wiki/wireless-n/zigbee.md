@@ -2,8 +2,6 @@
 concept: ZigBee
 aliases: [IEEE-802-15-4]
 tags: [networking, wpan]
-sources_count: 1
-last_source: WirelessN.md
 created: 2026-04-21
 updated: 2026-04-21
 ---
@@ -58,6 +56,3 @@ ZigBee (IEEE 802.15.4) is an ultra-low-power wireless personal area network (WPA
 - Range is shorter than Wi-Fi or sub-GHz alternatives
 - Bluetooth Low Energy (BLE) is now a strong competitor in the IoT space
 - ZigBee and BLE are not interoperable — separate ecosystems
-
-## Sources
-- [[wireless-n-summary|WirelessN.md]]

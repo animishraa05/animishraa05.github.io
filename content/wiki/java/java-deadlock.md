@@ -79,7 +79,3 @@ graph semantic_deadlock {
 - **Resource starvation**: A thread is perpetually denied access to a resource (not deadlock but equally bad)
 - **Nested monitors**: synchronized block inside another synchronized block on different locks creates deadlock risk
 - **Deadlock recovery is impractical**: Prevention and avoidance are better than detection
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — deadlock in multithreading

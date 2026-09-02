@@ -2,8 +2,6 @@
 concept: Session Authentication
 aliases: [session, session-based auth, cookies, session cookie]
 tags: [security, authentication]
-sources_count: 1
-last_source: Backend Engineering Basics.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -48,7 +46,3 @@ The session ID is just a random string—the actual user data stays on the serve
 - Cookies are vulnerable to XSS if not HttpOnly—attacker can steal session ID
 - CSRF attacks can exploit sessions—need CSRF tokens
 - Session hijacking—use secure, HttpOnly cookies and consider regenerating IDs
-
-## Sources
-
-- [[backend-engineering-basics-summary|Backend Engineering Basics]]

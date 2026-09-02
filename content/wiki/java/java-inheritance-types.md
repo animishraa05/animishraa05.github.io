@@ -94,7 +94,3 @@ graph semantic_inheritance_types {
 - **Diamond problem**: If classes A and B both define the same method, and C extends both, which does C use? Java avoids this by forbidding multiple class inheritance
 - **Interface default methods (Java 8+)**: If two interfaces define the same default method, the implementing class must override it to resolve ambiguity
 - **Cyclic inheritance**: Java does not allow a class to extend itself, directly or indirectly
-
-## Sources
-
-- [[java2-summary|Java OOP Concepts — Source Summary]] — five types of inheritance in Java

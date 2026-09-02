@@ -2,8 +2,6 @@
 concept: "Application vs System Exceptions"
 aliases: [EJB exception handling, application exceptions, system exceptions]
 tags: [dev, ejb]
-sources_count: 1
-last_source: ejb5.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -67,6 +65,3 @@ digraph ExceptionHandling {
 - **Unchecked exceptions are system exceptions**: `RuntimeException` subclasses are treated as system exceptions
 - **Don't rely on `ejbRemove()` for cleanup**: If a system exception occurs, `ejbRemove()` may never be called
 - **Transparent failover**: Some containers redirect to another bean for stateless beans after system exceptions
-
-## Sources
-- [[ejb5-summary|EJB5 Source Summary]]

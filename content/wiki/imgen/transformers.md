@@ -55,6 +55,3 @@ digraph G {
 - **Quadratic complexity** — attention is O(n²) in sequence length; limits context window
 - **No recurrence** — needs positional encoding to understand token order
 - **Data and compute hungry** — large transformers require massive resources to train
-
-## Sources
-- [[imgen-summary|Image Generation Source Summary]]

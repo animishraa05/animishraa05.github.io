@@ -59,7 +59,3 @@ digraph token_structure {
 - **Keywords vs Identifiers:** In most languages, keywords are reserved and not usable as identifiers — the lexer checks this
 - **Maximal munch:** `>=` is one token, not `>` then `=`
 - **Semicolons and delimiters:** Even single characters like `;` are tokens — the parser needs them for grammar structure
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — defines tokens as the unit of lexical analysis output

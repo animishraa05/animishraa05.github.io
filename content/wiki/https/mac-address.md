@@ -2,8 +2,6 @@
 concept: MAC Address
 aliases: [Media Access Control, hardware address, physical address]
 tags: [networking, ethernet]
-sources_count: 1
-last_source: https.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -63,7 +61,3 @@ digraph G {
 - VPNs hide your real MAC address
 - Wi-Fi uses MAC filtering for access control (easily bypassed)
 - Random MAC addresses used by some devices for privacy
-
-## Sources
-
-- [[https-summary|HTTP HTTPS DNS URL Source]]

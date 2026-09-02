@@ -53,6 +53,3 @@ digraph G {
 - No delivery guarantees — applications must handle loss
 - Datagram size limits (UDP: 65,507 bytes minus IP header; practical limit often 1,500 bytes due to MTU)
 - Fragmentation at IP layer if datagram exceeds MTU
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

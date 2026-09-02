@@ -68,7 +68,3 @@ digraph CacheAside {
 - **Cache stampede**: If many requests miss simultaneously (e.g., after TTL expiry), all hit the database at once. Mitigate with mutex locks or early recomputation.
 - **Stale data**: If the database is updated directly (bypassing cache), the cache serves stale data until TTL expiry.
 - **Thundering herd**: A popular key's TTL expiry can trigger a database overload from concurrent misses.
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]]

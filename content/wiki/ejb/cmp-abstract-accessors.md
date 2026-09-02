@@ -2,8 +2,6 @@
 concept: CMP Abstract Accessors and Methods
 aliases: [CMP abstract getters/setters, ejbSelect, home business methods]
 tags: [dev, ejb]
-sources_count: 1
-last_source: EJb4.md
 created: 2026-04-28
 updated: 2026-04-28
 ---
@@ -56,6 +54,3 @@ digraph G {
 - Forgetting to define the EJB-QL query for an ejbSelect method causes deployment error
 - Abstract methods cannot have method bodies — must be purely declared
 - Home methods cannot access instance fields (they operate at class level, not on a specific bean)
-
-## Sources
-- [[EJb4-summary|EJb4.md Source Summary]]

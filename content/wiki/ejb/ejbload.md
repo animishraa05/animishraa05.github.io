@@ -40,7 +40,3 @@ How does an entity bean synchronize its in-memory state with the database when t
 - Not called on every method—only when loading from DB is needed
 - Called BEFORE business methods in the ready state
 - Don't confuse with `ejbActivate()` which acquires resources, not data
-
-## Sources
-
-- [[ejb-continued-summary|EJbContinued]]

@@ -47,6 +47,3 @@ digraph immediate {
 - Large constants make instructions longer (affects code size)
 - Constant can't be changed at runtime (it's part of the instruction)
 - Limited range: constant size limited by instruction format (e.g., 16-bit immediate)
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

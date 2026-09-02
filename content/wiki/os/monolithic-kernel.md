@@ -2,10 +2,6 @@
 concept: Monolithic Kernel
 aliases: [monolithic architecture, big kernel, Linux kernel model]
 tags: [systems, os]
-status: draft
-confidence: high
-sources_count: 1
-last_source: OS.md
 created: 2026-06-11
 updated: 2026-06-11
 ---
@@ -113,7 +109,3 @@ graph semantic_monolithic_kernel {
 - The line between monolithic and microkernel is blurry: Linux can load/unload drivers dynamically, while some microkernels allow loading kernel extensions
 - Monolithic kernels are NOT inherently less secure — the attack surface is larger, but the code has been battle-tested for decades (Linux)
 - Windows NT uses a hybrid kernel — some services run in kernel mode, some in user mode — occupying a middle ground
-
-## Sources
-
-- [[os-summary|OS Source Summary]]

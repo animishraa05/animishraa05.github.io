@@ -62,12 +62,3 @@ for book in books:
 
 - Using `select_related` on too many relations can create massive, slow SQL JOINs.
 - `prefetch_related` consumes more Python memory because it stores all the related objects in RAM.
-
-## Active Recall Questions
-
-> [!question]- Which optimization method uses a SQL JOIN: select_related or prefetch_related?
-> `select_related`.
-
-## Sources
-
-- [[django-summary|Source: Django Learning Roadmap]] — performance, ORM mastery

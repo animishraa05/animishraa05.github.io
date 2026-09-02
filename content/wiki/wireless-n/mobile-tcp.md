@@ -2,8 +2,6 @@
 concept: Mobile TCP
 aliases: [mobile-transport-layer, indirect-tcp, snooping-tcp]
 tags: [networking, transport]
-sources_count: 1
-last_source: WirelessN.md
 created: 2026-04-21
 updated: 2026-04-21
 ---
@@ -57,6 +55,3 @@ Mobile TCP adaptations modify the standard TCP protocol to handle wireless link 
 - Snooping TCP: FA crash loses buffered packets
 - Mobile IP and Mobile TCP address different problems: network vs. transport layer
 - For real-time traffic (voice), TCP is fundamentally wrong — UDP with FEC/Raptor codes is better
-
-## Sources
-- [[wireless-n-summary|WirelessN.md]]

@@ -2,8 +2,6 @@
 concept: Feature Engineering
 aliases: [feature creation, feature extraction]
 tags: [ml, data-science]
-sources_count: 1
-last_source: ds.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -48,6 +46,3 @@ digraph G {
 - Overfitting: engineering too many features for small datasets
 - Feature importance illusion: correlated features distort importance rankings
 - Ignoring feature stability: features that change meaning over time
-
-## Sources
-- [[ds-summary|Data Science Book Summary]]

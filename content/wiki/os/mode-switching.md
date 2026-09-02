@@ -2,10 +2,6 @@
 concept: Mode Switching
 aliases: [context switch mode, user-kernel transition, privilege level switch]
 tags: [systems, os]
-status: draft
-confidence: high
-sources_count: 1
-last_source: OS.md
 created: 2026-06-11
 updated: 2026-06-11
 ---
@@ -96,7 +92,3 @@ graph semantic_mode_switching {
 - Too many mode switches degrade performance — this is why `read(fd, buf, 4096)` is better than 4096 calls to `read(fd, byte, 1)`
 - Some kernel bypass techniques (DPDK, io_uring) reduce mode switches by allowing user-space to directly interact with hardware in controlled ways
 - Virtual machines add another layer: VM exits cause a switch from guest kernel mode to host hypervisor mode
-
-## Sources
-
-- [[os-summary|OS Source Summary]]

@@ -2,8 +2,6 @@
 concept: Enrichment DWH
 aliases: [data enrichment, augmenting operational data, external data augmentation]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -95,7 +93,3 @@ graph semantic_enrichment {
 - **Privacy and compliance:** Enriching customer data with external sources may trigger privacy regulations (GDPR, CCPA).
 - **Identifier matching accuracy:** Inexact matching (fuzzy address matching, partial name matching) can create incorrect merges.
 - **External data staleness:** Survey data and demographic data become outdated. Enrichment must be refreshed periodically.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — enrichment as transformation sub-process

@@ -69,7 +69,3 @@ digraph RPC {
 - **Network failures are invisible**: The local-call abstraction hides network partitions, timeouts, and partial failures. RPC calls can fail silently or hang.
 - **Versioning hell**: Evolving the interface contract requires coordinated deployment of both client and server. Use schema evolution features (e.g., Protobuf field tags) to mitigate.
 - **Performance overhead**: Marshaling, network round-trips, and connection management add latency compared to in-process calls. Batch calls or use streaming for high-throughput scenarios.
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]]

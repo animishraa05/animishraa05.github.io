@@ -71,7 +71,3 @@ digraph availability_parallel_sequence {
 - Components are rarely perfectly independent — shared power supplies, network links, or data centers create common-mode failures that violate the parallel model
 - The parallel formula assumes instant failover, but real failover has non-zero downtime that reduces effective availability
 - Very long dependency chains (many sequential components) degrade availability drastically — a system with ten 99.9% components in series is only 99.0% available
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]] — availability section on combining component availability

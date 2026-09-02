@@ -53,6 +53,3 @@ digraph G {
 - High packet loss causes many unnecessary retransmissions
 - Window size must be less than sequence number space/2 to avoid ambiguity
 - Receiver simplicity comes at cost of bandwidth efficiency
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

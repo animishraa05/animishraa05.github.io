@@ -2,8 +2,6 @@
 concept: Backend Architecture
 aliases: [system architecture, backend stack, software architecture]
 tags: [systems, architecture]
-sources_count: 1
-last_source: Backend Engineering Basics.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -49,7 +47,3 @@ The API server is the central hub—it receives requests, orchestrates logic, an
 - Distributed systems introduce new failure modes
 - Data consistency across layers is hard (cache invalidation)
 - Too many layers adds complexity—balance with your scale
-
-## Sources
-
-- [[backend-engineering-basics-summary|Backend Engineering Basics]]

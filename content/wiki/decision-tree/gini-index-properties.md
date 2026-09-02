@@ -2,8 +2,6 @@
 concept: Gini Index Properties
 aliases: [Gini characteristics, Gini features, Gini behavior]
 tags: [ml, decision-trees]
-sources_count: 1
-last_source: dtree.md
 created: 2026-05-06
 updated: 2026-05-06
 ---
@@ -68,7 +66,3 @@ digraph gini_properties {
 - **Sklearn default**: If you don't specify a criterion, sklearn uses "gini" — this may not be optimal for your data
 - **Not comparable to entropy values**: A Gini of 0.3 does not correspond to an entropy of 0.3; they use different scales
 - **Ties with entropy**: In most practical cases, Gini and entropy produce the same splits despite different values
-
-## Sources
-
-- [[dtree-summary|Decision Tree in Machine Learning]] — six specific Gini Index properties listed and explained

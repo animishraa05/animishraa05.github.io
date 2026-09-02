@@ -83,7 +83,3 @@ digraph spring_cloud {
 - **Gateway latency**: Every request goes through the gateway, adding latency — avoid putting heavy logic in gateway filters
 - **Bootstrap context**: Spring Cloud uses `bootstrap.yml` (loaded before application.yml) for config server location — easy to misconfigure
 - **Version compatibility**: Spring Cloud releases are coordinated (2020.0.x, 2021.0.x, etc.) — Spring Boot version must match the cloud release train
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Spring Cloud overview, service discovery, load balancing, tracing

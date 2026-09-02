@@ -2,8 +2,6 @@
 concept: "EJB Client JAR"
 aliases: [EJB-client jar, client jar file]
 tags: [dev, ejb]
-sources_count: 1
-last_source: ejb5.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -64,6 +62,3 @@ digraph ClientJAR {
 - **Mostly obsolete**: Modern deployments use Web Services or REST—not EJB direct clients
 - **Laziness prevails**: Most deployers just give clients the full EJB-JAR (easier)
 - **Applet environment**: Only critical use case—applets have very limited disk space
-
-## Sources
-- [[ejb5-summary|EJB5 Source Summary]]

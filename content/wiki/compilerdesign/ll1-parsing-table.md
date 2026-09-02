@@ -85,7 +85,3 @@ graph semantic_ll1_table {
 - **Left recursion:** Left-recursive grammars produce multiple entries in the table — must eliminate left recursion first
 - **Left factoring:** Common prefixes produce FIRST conflicts — solved by left-factoring the grammar (e.g., `A → αβ₁ | αβ₂` becomes `A → αA', A' → β₁ | β₂`)
 - **Table size:** Number of rows = count of non-terminals, columns = count of terminals — grows with grammar size
-
-## Sources
-
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers construction of LL(1) parsing tables

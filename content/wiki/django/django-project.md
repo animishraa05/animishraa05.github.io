@@ -58,12 +58,3 @@ django-admin startproject config .
 ## Edge Cases & Gotchas
 
 - Hardcoding logic inside the project's root URLs or settings is considered bad practice; logic belongs in apps.
-
-## Active Recall Questions
-
-> [!question]- What file in a Django project contains global configurations like database settings?
-> `settings.py`
-
-## Sources
-
-- [[django-summary|Source: Django Learning Roadmap]] — project structure and configuration

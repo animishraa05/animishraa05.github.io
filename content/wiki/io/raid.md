@@ -2,8 +2,6 @@
 concept: RAID
 aliases: [Redundant Array of Independent Disks, Disk Reliability]
 tags: [systems, storage]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -67,7 +65,3 @@ digraph raid {
 - RAID is not backup — accidental deletion still propagates
 - RAID rebuild after failure is I/O intensive (risky if another disk fails)
 - Software RAID vs Hardware RAID (hardware has battery-backed cache)
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

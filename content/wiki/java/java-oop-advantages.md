@@ -81,7 +81,3 @@ graph semantic_oop_advantages {
 
 - **Over-engineering**: The structure and abstraction that make OOP powerful for large systems add unnecessary complexity to small programs
 - **Reuse isn't free**: Inheritance creates coupling between parent and child — changes to parent can break children
-
-## Sources
-
-- [[java2-summary|Java OOP Concepts — Source Summary]] — OOP advantages over procedural programming

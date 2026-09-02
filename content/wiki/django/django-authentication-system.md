@@ -63,12 +63,3 @@ def secret_page(request):
 ## Edge Cases & Gotchas
 
 - It is extremely difficult to switch to a Custom User Model mid-project. It is best practice to configure a Custom User Model in `settings.py` before running the very first migration.
-
-## Active Recall Questions
-
-> [!question]- What is the difference between Authentication and Authorization in Django?
-> Authentication verifies identity (who you are), Authorization verifies permissions (what you can do).
-
-## Sources
-
-- [[django-summary|Source: Django Learning Roadmap]] — login, sessions, password hashing, permissions

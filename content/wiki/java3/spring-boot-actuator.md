@@ -75,7 +75,3 @@ digraph actuator {
 - **Security**: Exposing `/actuator/shutdown` without authentication allows anyone to stop the application
 - **Performance impact**: High-frequency metrics collection (every 1ms) can impact performance; use appropriate export intervals
 - **Health cascading**: If a downstream service is DOWN, the application reports DOWN — configure health indicator thresholds
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Spring Boot Actuator

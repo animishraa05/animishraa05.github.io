@@ -2,8 +2,6 @@
 concept: DWH Gateway
 aliases: [data warehouse gateway, ODBC, JDBC, OLE-DB, database gateway]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -113,7 +111,3 @@ graph semantic_gateway {
 - **Performance overhead:** Gateway translation adds a layer of abstraction that can slow down bulk extraction. Native bulk-copy tools may be faster for large volumes.
 - **Security concerns:** Gateway connections require credentials for each source system — credential management becomes a security challenge.
 - **OLE-DB is deprecated:** Microsoft has deprecated OLE-DB in favor of newer APIs, but it remains in legacy systems.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — gateway definition, ODBC/JDBC/OLE-DB examples

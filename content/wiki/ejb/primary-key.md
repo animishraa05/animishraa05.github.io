@@ -55,7 +55,3 @@ digraph G {
 - **Composite keys** — need custom PrimaryKeyClass with proper equals() and hashCode()
 - **Auto-generated keys** — database can generate (e.g., AUTO_INCREMENT), must sync to bean
 - **Changing PK** — don't change primary key after creation; it breaks identity
-
-## Sources
-- [[ejb-source-summary|EJB Source Summary]]
-- [[EJb4-summary|EJB4 Source Summary]]

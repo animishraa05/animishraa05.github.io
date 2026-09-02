@@ -2,8 +2,6 @@
 concept: HTTP Request
 aliases: [HTTP GET, HTTP POST, request message]
 tags: [networking, http]
-sources_count: 1
-last_source: https.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -70,7 +68,3 @@ digraph G {
 - Large headers can cause issues (proxy limits)
 - Missing Host header fails in HTTP/1.1
 - Request smuggling possible with malformed headers
-
-## Sources
-
-- [[https-summary|HTTP HTTPS DNS URL Source]]

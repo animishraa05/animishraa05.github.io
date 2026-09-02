@@ -2,8 +2,6 @@
 concept: DNS Lookup
 aliases: [DNS resolution, domain to IP, DNS query]
 tags: [networking, dns]
-sources_count: 1
-last_source: https.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -84,7 +82,3 @@ digraph G {
 - Cache poisoning attacks exploit trust in DNS responses
 - Some ISPs hijack failed DNS lookups to show ads
 - DNS over HTTPS (DoH) encrypts DNS queries for privacy
-
-## Sources
-
-- [[https-summary|HTTP HTTPS DNS URL Source]]

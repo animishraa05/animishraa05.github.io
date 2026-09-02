@@ -2,8 +2,6 @@
 concept: Decision Tree Interpretability
 aliases: [explainable tree, white-box model, transparent model, rule extraction]
 tags: [ml, decision-trees]
-sources_count: 1
-last_source: dtree.md
 created: 2026-05-06
 updated: 2026-05-06
 ---
@@ -68,7 +66,3 @@ digraph interpretability {
 - **Post-pruning helps**: Reducing tree depth after training improves interpretability at the cost of accuracy
 - **Feature interactions hidden**: While individual paths are clear, the global pattern across all paths may not be obvious
 - **Not always honest**: An interpretable model can still be wrong; interpretability ≠ correctness
-
-## Sources
-
-- [[dtree-summary|Decision Tree in Machine Learning]] — interpretability cited as a key advantage of decision trees

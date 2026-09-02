@@ -59,8 +59,3 @@ digraph first_follow {
 - **Nullable non-terminals:** Non-terminals that derive ε complicate FIRST computation — ε propagates through chains
 - **Left recursion:** Left-recursive grammars cause infinite loops in FIRST computation — must be eliminated first
 - **LL(1) conflicts:** FIRST/FIRST conflict (two productions start with same token) or FIRST/FOLLOW conflict (production can derive ε and the next token is in FOLLOW) make a grammar not LL(1)
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers FIRST and FOLLOW as part of syntax analysis
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers FIRST and FOLLOW sets in syntax analysis

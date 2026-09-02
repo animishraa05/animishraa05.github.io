@@ -42,7 +42,3 @@ A *stateless* *session* bean is a session bean that holds conversations that spa
 - Cannot maintain client-specific data between calls
 - If container reuses instance, previous call's data is lost
 - Stateless beans can still have instance variables—just don't rely on them persisting
-
-## Sources
-
-- [[ejb-source-summary|EJB Source]]

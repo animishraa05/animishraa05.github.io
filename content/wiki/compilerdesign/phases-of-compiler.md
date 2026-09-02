@@ -64,8 +64,3 @@ digraph compiler_phases {
 - **Phases vs Passes:** A single pass can combine multiple phases (e.g., lexical and syntax analysis often interleave)
 - **Phase ordering:** Code optimization can span multiple passes or even be optional for simple compilers
 - **Symbol table access:** All phases read/write the symbol table — it is not a phase but a supporting data structure used throughout
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — describes the six-phase structure of a compiler
-- [[cd2-summary|Compiler Design for GATE Exam]] — exam-focused overview of compiler phases

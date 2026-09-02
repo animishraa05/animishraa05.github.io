@@ -35,6 +35,3 @@ Every machine on the network receives every transmission. Each packet contains a
 - **Privacy** — in unencrypted broadcast networks, any node can eavesdrop on any other node's traffic
 - **Modern Ethernet** — switched Ethernet appears point-to-point but uses broadcast ARP and DHCP at the link layer
 - **Not the same as broadcast addressing** — sending to a special "all nodes" address is a deliberate broadcast, not the physical property of the medium
-
-## Sources
-- [[../sources/computer-networks-intro-summary|Computer Networks — Introduction (raw source)]]

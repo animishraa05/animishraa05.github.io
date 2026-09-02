@@ -2,8 +2,6 @@
 concept: Port
 aliases: [network port, port number, service port]
 tags: [networking, ports]
-sources_count: 1
-last_source: Backend Engineering Basics.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -47,7 +45,3 @@ Example: connecting to 142.250.183.46:443 means: connect to machine 142.250.183.
 - Ports below 1024 require root/admin privileges on Unix systems
 - Firewall rules can block specific ports
 - Port conflicts cause "address already in use" errors
-
-## Sources
-
-- [[backend-engineering-basics-summary|Backend Engineering Basics]]

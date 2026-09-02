@@ -77,7 +77,3 @@ digraph spring_boot {
 - **DevTools**: `spring-boot-devtools` enables live reload but should NEVER be included in production builds
 - **Context path**: By default, server runs on root context; set `server.servlet.context-path=/myapp` in properties
 - **Profile-specific config**: `application-dev.properties` overrides `application.properties` when `spring.profiles.active=dev`
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Spring Boot overview, architecture, configuration

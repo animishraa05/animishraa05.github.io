@@ -2,8 +2,6 @@
 concept: JMS Programming Model
 aliases: [JMS Client View, JMS Pipeline]
 tags: [dev, ejb]
-sources_count: 1
-last_source: EJb4.md
 created: 2026-04-28
 updated: 2026-04-28
 ---
@@ -66,6 +64,3 @@ digraph G {
 - JNDI lookups (steps 1 and 4) can be expensive — cache them if possible
 - Transactions are per-session, not per-connection
 - Using wrong interface flavor (Queue vs Topic) for your destination causes runtime errors
-
-## Sources
-- [[EJb4-summary|EJb4.md Source Summary]]

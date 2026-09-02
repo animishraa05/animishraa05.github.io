@@ -2,8 +2,6 @@
 concept: Frequency Shift Keying
 aliases: [FSK, frequency-shift-keying]
 tags: [networking, modulation]
-sources_count: 1
-last_source: WirelessN.md
 created: 2026-04-21
 updated: 2026-04-21
 ---
@@ -43,6 +41,3 @@ Minimum orthogonal separation: Δf = 1/(2T) where T is the bit duration. This is
 - All modern cellular systems use continuous-phase schemes (MSK, GMSK, QPSK)
 - The phase reset problem means receiver complexity is higher for standard FSK
 - GMSK applies a Gaussian filter before modulation to further smooth the frequency transitions
-
-## Sources
-- [[wireless-n-summary|WirelessN.md]]

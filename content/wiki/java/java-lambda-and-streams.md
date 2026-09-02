@@ -80,7 +80,3 @@ graph semantic_lambdas {
 - **Stateful lambdas**: Avoid mutable state in lambda bodies (not thread-safe)
 - **Performance**: Streams have overhead vs loops for simple operations — use for complex pipelines
 - **parallelStream() pitfalls**: Shared mutable state in parallel streams causes data races
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — lambda expressions and streams

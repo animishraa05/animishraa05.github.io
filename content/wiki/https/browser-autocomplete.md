@@ -2,8 +2,6 @@
 concept: Browser Autocomplete
 aliases: [address bar autocomplete, URL suggestions, predictive text]
 tags: [dev, browser]
-sources_count: 1
-last_source: https.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -64,7 +62,3 @@ digraph G {
 - Corrupt history database can break autocomplete
 - Some browsers share data across devices (synced)
 - Autocomplete can leak visited sites (privacy concern)
-
-## Sources
-
-- [[https-summary|HTTP HTTPS DNS URL Source]]

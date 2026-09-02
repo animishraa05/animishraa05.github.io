@@ -2,8 +2,6 @@
 concept: URL Dispatcher
 aliases: [URL Routing, URLconf, URL Configuration, django.urls]
 tags: [dev, django]
-sources_count: 1
-last_source: Django.md
 created: 2026-08-09
 updated: 2026-08-09
 ---
@@ -111,7 +109,3 @@ graph semantic_url_dispatcher {
 - **Catch-all patterns**: `path('<path:resource>/', ...)` at end prevents 404s but hides bugs
 - **Namespace collisions**: Missing `app_name` in included URLconf breaks reversal
 - **Converter precedence**: More specific patterns must come before general ones (`<int:pk>` before `<str:slug>`)
-
-## Sources
-
-- [[django-summary|Django Learning Roadmap]]

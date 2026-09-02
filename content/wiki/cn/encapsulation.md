@@ -52,6 +52,3 @@ digraph G {
 - Overhead: each layer adds bytes, reducing effective payload size
 - MTU limits: encapsulated packet must fit link-layer MTU (may require fragmentation)
 - Tunneling: encapsulation can nest (e.g., PPPoE encapsulates PPP in Ethernet)
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

@@ -2,8 +2,6 @@
 concept: Java Inheritance
 aliases: [extends, super, Is-A Relationship, Subclass, Superclass, Generalization]
 tags: [dev, java]
-sources_count: 2
-last_source: java2-summary
 created: 2026-05-13
 updated: 2026-05-13
 ---
@@ -85,8 +83,3 @@ graph semantic_inheritance {
 - **Covariant return types**: Overriding methods can return a subtype of the original return type
 - **Constructor order**: Parent constructor runs before child constructor body
 - **Multiple inheritance of classes**: Java explicitly forbids this to avoid the diamond problem; use interfaces instead
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — inheritance, extends, super
-- [[java2-summary|Java OOP Concepts — Source Summary]] — types of inheritance, is-a hierarchy examples

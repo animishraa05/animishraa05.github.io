@@ -50,7 +50,3 @@ digraph G {
 - Only for stateful session beans and entity beans (NOT stateless)
 - Don't do business logic here — just resource reinitialization
 - If this method throws an exception, the bean may be discarded
-
-## Sources
-- [[ejb-source-summary|EJB Source Summary]]
-- [[ejb5-summary|EJB5 Source Summary]]

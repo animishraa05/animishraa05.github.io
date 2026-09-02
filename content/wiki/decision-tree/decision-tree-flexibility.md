@@ -2,8 +2,6 @@
 concept: Decision Tree Flexibility
 aliases: [versatile tree, multi-task tree, adaptive tree]
 tags: [ml, decision-trees]
-sources_count: 1
-last_source: dtree.md
 created: 2026-05-06
 updated: 2026-05-06
 ---
@@ -78,7 +76,3 @@ digraph decision_tree_flexibility {
 - **Regression trees produce step functions**: Predictions are piecewise constant, not smooth
 - **Classification requires discrete classes**: Trees cannot natively handle multi-label classification
 - **Flexibility ≠ performance**: Being able to handle many tasks doesn't mean being best at any one
-
-## Sources
-
-- [[dtree-summary|Decision Tree in Machine Learning]] — "flexibility" cited as a key advantage of decision trees

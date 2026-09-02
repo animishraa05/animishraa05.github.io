@@ -50,7 +50,3 @@ The distinction is fundamentally about **lifecycle responsibility**. Aggregation
 - [[java-composition|Composition]] — strong association with dependent lifecycles
 - [[java-association|Association]] — the parent concept of both
 - [[java-encapsulation|Encapsulation]] — both rely on encapsulation to manage internal state
-
-## Sources
-
-- [[java2-summary|Java OOP Concepts — Source Summary]] — aggregation vs composition comparison

@@ -2,8 +2,6 @@
 concept: Loading DWH
 aliases: [data warehouse loading, batch load, DWH load process]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -104,7 +102,3 @@ graph semantic_loading {
 - **Foreign key violations:** If dimension tables are not loaded before fact tables, FK constraints will fail. Load order matters.
 - **Index rebuild cost:** After bulk loading, indexes must be rebuilt — this can take as long as the load itself.
 - **Disk space:** Batch loading requires temporary space for sorting and staging. Insufficient disk space causes load failure.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — loading phase, checkpoint mechanism, load issues

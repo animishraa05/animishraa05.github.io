@@ -2,8 +2,6 @@
 concept: "Session Bean Subtypes"
 aliases: [stateful vs stateless, session bean types]
 tags: [dev, ejb, session-bean]
-sources_count: 1
-last_source: ejb5.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -70,6 +68,3 @@ digraph SessionSubtypes {
 - **Stateless can have instance variables**: Just not client-specific state (e.g., a shared DB connection factory is fine)
 - **Switching types**: Change `<session-type>` in XML—no code changes needed (declarative)
 - **Stateless for Web Services**: Since EJB 2.1, stateless beans can expose Web Service endpoints
-
-## Sources
-- [[ejb5-summary|EJB5 Source Summary]]

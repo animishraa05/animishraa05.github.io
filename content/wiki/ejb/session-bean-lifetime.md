@@ -2,8 +2,6 @@
 concept: "Session Bean Lifetime"
 aliases: [session bean scope, session bean duration]
 tags: [dev, ejb, session-bean]
-sources_count: 1
-last_source: ejb5.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -63,6 +61,3 @@ digraph SessionLifetime {
 - **Don't store critical data in session beans**: If server crashes, it's gone
 - **Stateless beans may be destroyed after EVERY method call**: Don't expect data to persist between calls
 - **Timeout values are configurable**: Deployer sets session timeout in vendor-specific config
-
-## Sources
-- [[ejb5-summary|EJB5 Source Summary]]

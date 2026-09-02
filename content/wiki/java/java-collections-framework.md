@@ -100,7 +100,3 @@ graph semantic_collections {
 - **No primitive collections**: Each element requires a wrapper object — memory overhead
 - **Hash collision performance**: HashMap degrades to O(n) with bad hash codes or hash collisions
 - **Null handling**: Some implementations (TreeSet, TreeMap) do not allow null elements
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — collections framework

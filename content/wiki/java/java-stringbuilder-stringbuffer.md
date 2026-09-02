@@ -80,7 +80,3 @@ graph semantic_mutable_strings {
 - **StringBuffer overhead**: Synchronization adds ~3-5x overhead; don't use in single-threaded code
 - **length vs capacity**: `length()` returns actual content length; internal buffer may be larger
 - **Thread safety is per-method only**: Compound operations (check-then-act) still need external synchronization
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — StringBuilder and StringBuffer

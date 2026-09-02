@@ -59,8 +59,3 @@ digraph bottom_up {
 - **Reduce/Reduce conflicts:** Two different productions could reduce the same handle
 - **Table size:** Canonical LR(1) tables can be enormous — LALR merges states to reduce size at the cost of some power
 - **Error recovery:** Detecting errors earlier in LR parsing vs LL is different — LR detects at reduce time
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers bottom-up parsing as part of syntax analysis
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers classification of bottom-up parsers

@@ -75,7 +75,7 @@ graph semantic_ascii_elimination {
 ## Connections
 
 - Built from: [[hash-map-flexibility|Hash Map Flexibility]] — the ability to use diverse key types enables this
-- Builds into: [[unordered-map-frequency|Unordered Map for Frequency Counting]] — maps use direct keys without conversion <!-- TODO: add backlink here -->
+- Builds into: [[unordered-map-frequency|Unordered Map for Frequency Counting]] — maps use direct keys without conversion
 - Contrasts with: [[character-to-index-mapping|Character-to-Index Mapping]] — arrays require explicit conversion; maps eliminate it
 - Contrasts with: [[index-to-character-conversion|Index-to-Character Conversion]] — maps don't need the reverse conversion either
 - Related: [[known-range-assumption|Known Range Assumption]] — arrays need known ranges; maps eliminate this assumption
@@ -87,7 +87,3 @@ graph semantic_ascii_elimination {
 - Deleting the ASCII math does not mean deleting all constraints — the map's hash function must handle the key type correctly (all standard types are supported in C++)
 - For custom key types (e.g., structs), a custom hash function must be provided — ASCII math elimination only applies to built-in types
 - The elimination is conceptual, not architectural — internally the map still converts the key to an index; it just hides this from the programmer
-
-## Sources
-
-- [[strings-summary|Strings (Character Hashing in C++)]]

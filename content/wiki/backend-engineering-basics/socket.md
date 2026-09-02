@@ -2,8 +2,6 @@
 concept: Socket
 aliases: [network socket, TCP socket, socket connection]
 tags: [networking, socket]
-sources_count: 2
-last_source: https.md
 created: 2026-04-12
 updated: 2026-04-30
 ---
@@ -49,7 +47,3 @@ The socket is essentially a file-like interface managed by the OS kernel. You re
 - Socket buffers can overflow if data isn't consumed fast enough (backpressure)
 - Network partitions can leave sockets in unclear states—timeouts matter
 - Non-blocking sockets are used in high-performance servers (Node.js event loop)
-
-## Sources
-
-- [[backend-engineering-basics-summary|Backend Engineering Basics]]

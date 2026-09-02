@@ -65,7 +65,3 @@ digraph scoping {
 - **Static scoping with dynamic features:** Closures and first-class functions mix static scoping with runtime binding — variables captured in a closure are determined statically
 - **Dynamic scoping issues:** Makes programs harder to reason about — a function's behavior depends on who calls it
 - **Scope holes:** In some languages, a variable declared in a scope shadows outer declarations — the outer variable becomes inaccessible in the inner scope
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers static and dynamic scoping in runtime environments

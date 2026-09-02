@@ -41,7 +41,3 @@ Passivation is the process where the container serializes a stateful session bea
 - Resources like database connections should be released before passivation
 - Don't rely on ejbPassivate() for critical cleanup either
 - Performance impact when activation occurs
-
-## Sources
-
-- [[ejb-source-summary|EJB Source]]

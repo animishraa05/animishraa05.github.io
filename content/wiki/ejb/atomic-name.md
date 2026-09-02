@@ -2,8 +2,6 @@
 concept: Atomic Name
 aliases: [Simple Name, Indivisible Name]
 tags: [dev, ejb, jndi]
-sources_count: 1
-last_source: ejb6.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -54,6 +52,3 @@ digraph G {
 - **Special characters**: Some characters may have special meaning in compound name syntax
 - **Length limits**: Providers may impose limits on atomic name length
 - **Reserved words**: Some names may be reserved by the provider
-
-## Sources
-- [[ejb6-summary|EJB6 Source Summary]]

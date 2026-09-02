@@ -51,6 +51,3 @@ digraph G {
 - Mostly replaced by PPPoE for modern broadband (DSL, fiber)
 - No error correction — only detection via FCS
 - MRU negotiation can fail if peers disagree on maximum size
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

@@ -86,7 +86,3 @@ graph semantic_executor {
 - **Task submission inside tasks**: Tasks submitted from within running tasks can cause thread pool deadlock
 - **CachedThreadPool unbounded**: `newCachedThreadPool()` creates threads without bound under load
 - **ForkJoinPool work stealing**: Each worker has its own deque — steals from others when idle
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — executor framework and thread pools

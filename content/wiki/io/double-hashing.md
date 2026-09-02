@@ -2,8 +2,6 @@
 concept: Double Hashing
 aliases: [Double Hash, Two Hash Functions]
 tags: [systems, data-structures]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -59,7 +57,3 @@ digraph doublehash {
 - h₂(k) must never be 0 (would infinite loop)
 - Table size should be prime for complete coverage
 - Most complex to implement of the three probing methods
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

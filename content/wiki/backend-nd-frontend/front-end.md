@@ -3,8 +3,6 @@ title: Front End
 concept: front-end
 aliases: [frontend, client-side, presentation layer]
 tags: [dev, frontend]
-sources_count: 1
-last_source: front-end-and-back-end-wikipedia
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -62,7 +60,3 @@ In web development, front end includes HTML, CSS, JavaScript, frameworks (React,
 - Client-side validation can be bypassed—always validate on back end
 - Browser differences require cross-browser testing and workarounds
 - Performance optimization critical ( Largest Contentful Paint, Time to Interactive )
-
-## Sources
-
-- [[front-end-and-back-end-wikipedia-summary|Front End and Back End — Wikipedia]]

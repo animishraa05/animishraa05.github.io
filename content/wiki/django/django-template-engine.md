@@ -64,12 +64,3 @@ A template is like a form letter (mad libs). The structure of the letter is stat
 ## Edge Cases & Gotchas
 
 - Complex business logic should not reside in templates. If it requires complex filtering or calculation, do it in the View or Model.
-
-## Active Recall Questions
-
-> [!question]- Why doesn't Django allow executing arbitrary Python code inside templates?
-> To enforce separation of concerns, keeping business logic in views/models and only presentation logic in templates.
-
-## Sources
-
-- [[django-summary|Source: Django Learning Roadmap]] — template variables, tags, and inheritance

@@ -2,8 +2,6 @@
 concept: HTTP Protocol
 aliases: [HTTP, Hypertext Transfer Protocol, HTTP request, HTTP response]
 tags: [networking, http]
-sources_count: 2
-last_source: Backend Engineering Basics.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -50,8 +48,3 @@ HTTP is stateless—each request is independent. Servers don't remember previous
 - No inherent state—every request must re-authenticate or send session tokens
 - Headers have size limits, bodies can be arbitrarily large
 - Without keep-alive, every request needs a new TCP connection (slow)
-
-## Sources
-
-- [[backend-engineering-basics-summary|Backend Engineering Basics]]
-- [[understanding-http-for-backend-engineers-summary|Understanding HTTP for Backend Engineers]]

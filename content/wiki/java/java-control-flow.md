@@ -79,7 +79,3 @@ graph semantic_control_flow {
 - **Switch fall-through**: Missing `break` causes execution to continue into the next case
 - **String switch compiles differently**: JVM uses hashCode + equals under the hood
 - **Ternary nesting**: Nested ternaries reduce readability — prefer if-else for complex conditions
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — decision-making constructs

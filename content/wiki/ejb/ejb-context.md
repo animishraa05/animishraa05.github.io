@@ -2,8 +2,6 @@
 concept: "EJB Context"
 aliases: [EJBContext, SessionContext, EntityContext]
 tags: [dev, ejb]
-sources_count: 1
-last_source: ejb5.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -75,6 +73,3 @@ public class HelloBean implements SessionBean {
     }
 }
 ```
-
-## Sources
-- [[ejb5-summary|EJB5 Source Summary]]

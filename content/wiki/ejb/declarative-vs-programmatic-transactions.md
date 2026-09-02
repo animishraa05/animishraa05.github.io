@@ -2,8 +2,6 @@
 concept: Declarative vs Programmatic Transactions
 aliases: [CMT vs BMT, CMT vs BMT Comparison, Container vs Bean Managed Transactions]
 tags: [dev, ejb]
-sources_count: 1
-last_source: EJb4.md
 created: 2026-04-28
 updated: 2026-04-28
 ---
@@ -74,6 +72,3 @@ digraph G {
 - BMT requires careful handling: forgetting commit() leaves transaction open
 - CMT transactions apply to entire method (can't have mini-transactions)
 - Client-initiated transactions are separate from BMT/CMT (client controls, bean still uses BMT/CMT internally)
-
-## Sources
-- [[EJb4-summary|EJb4.md Source Summary]]

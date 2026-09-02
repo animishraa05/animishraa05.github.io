@@ -64,8 +64,3 @@ digraph linker_loader {
 - **Link order matters:** Some linkers resolve symbols left-to-right — wrong order causes "undefined reference" errors
 - **Circular dependencies:** Libraries that depend on each other can cause linking failures — requires careful library organization
 - **Loading time:** Dynamic linking adds startup overhead; static linking creates larger executables but faster startup
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers linker and loader as part of runtime environments
-- [[cd2-summary|Compiler Design for GATE Exam]] — GATE exam coverage of linking and loading

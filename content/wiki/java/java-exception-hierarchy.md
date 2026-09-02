@@ -80,7 +80,3 @@ graph semantic_exception_hierarchy {
 - **Catching Exception**: Catches RuntimeException too — can hide bugs
 - **Exception swallowing**: Empty catch blocks silently discard errors
 - **Finally vs return**: finally block executes even if try has a return statement
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — exception hierarchy

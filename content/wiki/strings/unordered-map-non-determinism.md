@@ -77,7 +77,7 @@ graph semantic_non_determinism {
 
 - Built from: [[hash-collision-overhead|Hash Collision Overhead]] — bucket layout drives iteration order
 - Built from: [[hash-map-flexibility|Hash Map Flexibility]] — the flexibility tradeoff includes non-determinism
-- Builds into: [[map-traversal-method|Hash Map Traversal Method]] — traversal must account for unspecified order <!-- TODO: add backlink here -->
+- Builds into: [[map-traversal-method|Hash Map Traversal Method]] — traversal must account for unspecified order
 - Contrasts with: [[frequency-array|Frequency Array]] — arrays give predictable, index-based order
 - Related: [[interview-decision-framework|Array vs Hash Map Decision Framework]] — determinism is a decision factor
 
@@ -88,7 +88,3 @@ graph semantic_non_determinism {
 - For "first non-repeating character" problems, re-traversing the original string (not the map) avoids the ordering issue entirely
 - If the problem says "print frequencies in any order," unordered_map is fine; if it says "print in alphabetical order," use an array or a sorted container
 - The non-determinism is a concern for reproducibility in debugging — a bug that depends on iteration order may not reproduce consistently
-
-## Sources
-
-- [[strings-summary|Strings (Character Hashing in C++)]]

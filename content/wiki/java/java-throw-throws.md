@@ -80,7 +80,3 @@ graph semantic_throw_throws {
 - **Overriding and throws**: Subclass cannot add new checked exception types to throws clause
 - **Exception chaining**: Use `throw new Cause(e)` or `initCause()` to wrap exceptions
 - **throws Exception**: Too broad — defeats the purpose of checked exceptions
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — throw and throws

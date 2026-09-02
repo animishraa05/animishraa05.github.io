@@ -42,7 +42,3 @@ How does an entity bean create a new entity in the database when a client calls 
 - Must return a primary key, not the bean itself
 - Only called when creating NEW database records (not for existing)
 - After `ejbCreate()` returns, the bean is no longer in pool—it has specific data
-
-## Sources
-
-- [[ejb-continued-summary|EJbContinued]]

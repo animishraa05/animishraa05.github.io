@@ -2,8 +2,6 @@
 concept: JNDI Binding
 aliases: [Name Binding, Binding]
 tags: [dev, ejb, jndi]
-sources_count: 1
-last_source: ejb6.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -61,6 +59,3 @@ digraph G {
 - **Null bindings**: Binding null may be allowed or may throw exception
 - **Object serialization**: Bound objects must be serializable for some providers
 - **Garbage collection**: Binding keeps a reference to the object (prevents GC)
-
-## Sources
-- [[ejb6-summary|EJB6 Source Summary]]

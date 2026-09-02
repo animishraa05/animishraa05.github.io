@@ -49,6 +49,3 @@ digraph G {
 - Doesn't identify which specific packets are missing (just the last contiguous one)
 - TCP selective ACK (SACK) option extends cumulative ACK to identify gaps
 - Duplicate ACKs (same cumulative ACK repeated) can signal packet loss
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

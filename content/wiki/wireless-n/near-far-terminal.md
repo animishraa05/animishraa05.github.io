@@ -2,8 +2,6 @@
 concept: Near/Far Terminal Effect
 aliases: [near-far-problem, near-far-effect]
 tags: [networking, mac]
-sources_count: 1
-last_source: WirelessN.md
 created: 2026-04-21
 updated: 2026-04-21
 ---
@@ -45,6 +43,3 @@ In CDMA systems, the near/far effect is particularly devastating because all use
 - In CDMA, one strong user can degrade the entire cell's capacity
 - Power control loops must be fast enough to handle rapid mobility
 - Near/far is a fundamental reason why CDMA required sophisticated power control before being deployed
-
-## Sources
-- [[wireless-n-summary|WirelessN.md]]

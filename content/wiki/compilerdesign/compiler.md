@@ -86,8 +86,3 @@ graph semantic_compiler {
 - **Compiler vs Cross-Compiler:** A compiler that runs on one platform but generates code for a different platform is a cross-compiler
 - **Just-In-Time Compilation:** Modern JVMs use JIT compilation — bytecode is compiled to native code at runtime, blurring the line between compiler and interpreter
 - **Incremental Compilation:** Not all compilers recompile everything — many (like javac) support incremental compilation for faster development cycles
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — core definition, objectives, and architecture of compilers
-- [[cd2-summary|Compiler Design for GATE Exam]] — GATE exam context and weightage

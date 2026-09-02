@@ -2,8 +2,6 @@
 concept: JAXP
 aliases: [Java API for XML Parsing, XML Parsing]
 tags: [dev, ejb, xml]
-sources_count: 1
-last_source: ejb6.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -62,6 +60,3 @@ digraph G {
 - **SAX complexity**: Event-based model is harder to program
 - **Parser configuration**: Must ensure correct parser is on classpath
 - **Namespace support**: Proper namespace handling requires care
-
-## Sources
-- [[ejb6-summary|EJB6 Source Summary]]

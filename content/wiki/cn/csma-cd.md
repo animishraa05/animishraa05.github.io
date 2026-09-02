@@ -54,6 +54,3 @@ digraph G {
 - Only works on wired networks (can't detect collision in wireless due to hidden terminal)
 - Not used in modern full-duplex Ethernet (switches eliminate collisions)
 - Maximum network diameter limited by collision detection time (slot time)
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

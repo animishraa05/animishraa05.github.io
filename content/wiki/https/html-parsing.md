@@ -2,8 +2,6 @@
 concept: HTML Parsing
 aliases: [HTML parsing, DOM construction, tokenization]
 tags: [dev, browser]
-sources_count: 1
-last_source: https.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -67,7 +65,3 @@ digraph G {
 - `document.write()` during parsing can break things
 - Malformed HTML gets "fixed" (may not match intent)
 - Table parsing is especially complex
-
-## Sources
-
-- [[https-summary|HTTP HTTPS DNS URL Source]]

@@ -66,7 +66,3 @@ digraph ioc_container {
 - **Memory**: Eager initialization means all singleton beans stay in memory even if unused in the current request
 - **BeanFactory vs ApplicationContext**: Never use raw BeanFactory in modern Spring unless memory is constrained; ApplicationContext is always preferred
 - **Configuration precedence**: Java config > annotations > XML — mixing them requires understanding the override order
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — IoC Container, BeanFactory, ApplicationContext

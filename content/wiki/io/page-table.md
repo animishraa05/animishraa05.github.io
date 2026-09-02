@@ -2,8 +2,6 @@
 concept: Page Table
 aliases: [Page Table Mapping, Virtual to Physical Mapping]
 tags: [systems, memory]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -56,7 +54,3 @@ digraph page_table {
 - Single-level page table can be huge (1M entries for 4GB process with 4KB pages)
 - Multi-level page tables add levels of indirection
 - Page table walks are slow (4 memory accesses for 4-level paging)
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

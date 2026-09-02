@@ -4,8 +4,6 @@ aliases: [EJB Pooling, Resource Pooling]
 tags: [dev, ejb, performance]
 created: 2026-04-11
 updated: 2026-04-29
-sources_count: 3
-last_source: ejb6.md
 ---
 
 ## The Problem
@@ -80,9 +78,3 @@ digraph G {
 - **State clearing**: Container must strip client data before returning to pool
 - **Crash**: Server crashes bypass normal pool return—may lose state
 - **Database connections**: Also pooled separately from bean instances
-
-## Sources
-
-- [[ejb-source-summary|EJB Source]]
-- [[ejb6-summary|EJB6 Source Summary]]
-- [[ejb-continued-summary|EJB Continued Summary]]

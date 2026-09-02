@@ -61,12 +61,3 @@ This is a conceptual architecture, implemented internally by Django's `WSGIHandl
 ## Edge Cases & Gotchas
 
 - Middleware order in `settings.py` is critical. Request phase executes top-down, response phase executes bottom-up.
-
-## Active Recall Questions
-
-> [!question]- In what order does middleware execute during the request and response phases?
-> Top-down for requests, bottom-up for responses.
-
-## Sources
-
-- [[django-summary|Source: Django Learning Roadmap]] — request response lifecycle step

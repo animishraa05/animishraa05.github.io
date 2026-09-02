@@ -67,7 +67,3 @@ digraph Sharding {
 - **Resharding complexity** — adding a new shard with a naive hash(N) strategy requires reshuffling most data; consistent hashing reduces but doesn't eliminate this.
 - **Skewed shards** — if the shard key is poorly chosen, one shard may get 80% of traffic while others sit idle.
 - **Cross-shard queries** — operations that span multiple shards require scatter-gather (query all shards and merge results), which is slow and complex.
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]]

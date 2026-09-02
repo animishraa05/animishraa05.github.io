@@ -2,8 +2,6 @@
 concept: Information Gain Calculation
 aliases: [IG computation, information gain formula, gain computation]
 tags: [ml, decision-trees]
-sources_count: 1
-last_source: dtree.md
 created: 2026-05-06
 updated: 2026-05-06
 ---
@@ -88,7 +86,3 @@ digraph ig_calculation {
 - **All same values**: If an attribute has the same value for all instances, only one child exists and IG = 0
 - **Precision accumulation**: Repeated floating point operations can accumulate rounding errors in deep trees
 - **Tie-breaking**: Multiple attributes may have identical IG; a deterministic tie-breaking rule is needed
-
-## Sources
-
-- [[dtree-summary|Decision Tree in Machine Learning]] — worked example with features X, Y, Z showing Y has maximum IG

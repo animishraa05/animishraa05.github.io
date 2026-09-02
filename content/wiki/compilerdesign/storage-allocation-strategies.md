@@ -67,7 +67,3 @@ digraph storage_allocation {
 - **Memory leaks:** Heap memory not freed — managed languages use GC to prevent this
 - **Recursion requires stack:** Without dynamic allocation (stack or heap), recursive functions cannot work because each call needs separate local variables
 - **Fragmentation:** Heap allocation can fragment memory, causing allocation failures even when enough total free memory exists
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers storage allocation strategies in runtime environments

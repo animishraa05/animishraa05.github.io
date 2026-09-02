@@ -76,7 +76,3 @@ digraph hibernate_annotations {
 - **Default column names**: Auto-generated column names follow naming strategy; explicit `@Column(name)` avoids surprises
 - **GenerationType.IDENTITY**: Disables batch inserts because the DB must generate the ID before Hibernate knows it
 - **@Enumerated(ORDINAL)**: Default is ORDINAL (numeric), which breaks if enum ordering changes — prefer STRING
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Hibernate annotations

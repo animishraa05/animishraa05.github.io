@@ -90,7 +90,3 @@ graph semantic_retrieval_phase {
 - Most frequent character with ties: which character do you return? The problem usually expects any or the first; clarify with the interviewer
 - For maps, traversal order is non-deterministic — do not rely on order for correctness
 - For anagrams, comparing two maps must account for characters present in one but not the other
-
-## Sources
-
-- [[strings-summary|Strings (Character Hashing in C++)]]

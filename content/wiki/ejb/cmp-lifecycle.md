@@ -2,8 +2,6 @@
 concept: CMP Entity Bean Lifecycle
 aliases: [CMP lifecycle, CMP vs BMP lifecycle]
 tags: [dev, ejb]
-sources_count: 1
-last_source: EJb4.md
 created: 2026-04-28
 updated: 2026-04-28
 ---
@@ -62,6 +60,3 @@ digraph G {
 - `ejbSelect()` running in Pool state is a subtle detail often missed in exams
 - Entity beans don't passivate like stateful session beans — they go to Pool, not Passive state
 - The lifecycle is the same for CMP and BMP, but the implementation of callbacks differs completely
-
-## Sources
-- [[EJb4-summary|EJb4.md Source Summary]]

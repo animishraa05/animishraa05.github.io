@@ -3,8 +3,6 @@ title: Vim Visual Selection
 concept:
 aliases: [visual mode, visual select, v, V, Ctrl-v]
 tags: [dev, vim]
-sources_count: 1
-last_source: YBlog - Learn Vim Progressively.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -60,7 +58,3 @@ For block selection across lines:
 - [[vim-macros|Macros]] — Record actions on visual selection
 - [[vim-rectangular-blocks|Block Selection]] — Special case of visual block mode
 - [[vim-text-objects|Text Objects]] — Alternative selection syntax
-
-## Sources
-
-- [[learn-vim-progressively-summary|YBlog - Learn Vim Progressively]]

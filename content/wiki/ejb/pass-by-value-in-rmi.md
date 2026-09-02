@@ -54,6 +54,3 @@ digraph G {
 - Constructor is NOT called during reconstruction
 - Performance: Large objects are expensive to serialize
 - This is different from Java's "pass reference by value" for local calls
-
-## Sources
-- [[ejb3-summary|EJB3 Source Summary]]

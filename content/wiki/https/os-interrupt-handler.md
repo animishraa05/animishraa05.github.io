@@ -2,8 +2,6 @@
 concept: OS Interrupt Handler
 aliases: [interrupt handler, interrupt service routine, ISR]
 tags: [systems, os]
-sources_count: 1
-last_source: https.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -62,7 +60,3 @@ digraph G {
 - Nested interrupts require careful handling
 - Missing handler = interrupt ignored (or panic)
 - Shared IRQs (multiple devices on one IRQ) need demultiplexing
-
-## Sources
-
-- [[https-summary|HTTP HTTPS DNS URL Source]]

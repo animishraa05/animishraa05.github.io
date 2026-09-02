@@ -2,8 +2,6 @@
 concept: Function-Based Views
 aliases: [FBV, Function View, django.views]
 tags: [dev, django]
-sources_count: 1
-last_source: Django.md
 created: 2026-08-09
 updated: 2026-08-09
 ---
@@ -107,7 +105,3 @@ graph semantic_function_based_views {
 - **Method safety**: Forgetting to check `request.method` leads to GET-side effects
 - **Code duplication**: Similar CRUD views repeat boilerplate; CBVs/DRF reduce this
 - **Large functions**: Complex views become hard to maintain; split into services/helpers
-
-## Sources
-
-- [[django-summary|Django Learning Roadmap]]

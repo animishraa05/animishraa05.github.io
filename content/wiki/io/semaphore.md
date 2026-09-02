@@ -2,8 +2,6 @@
 concept: Semaphore
 aliases: [Semaphores, P and V Operations]
 tags: [systems, concurrency]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -59,7 +57,3 @@ digraph semaphore {
 - Busy waiting in some implementations wastes CPU
 - Deadlock if processes wait for each other circularly
 - Priority inversion: high-priority process blocked by lower-priority holder
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

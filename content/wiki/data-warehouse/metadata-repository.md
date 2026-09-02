@@ -2,8 +2,6 @@
 concept: Metadata Repository
 aliases: [metadata repository, DWH metadata repository, warehouse metadata store]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -121,7 +119,3 @@ graph semantic_metadata_repo {
 - **Repository becomes stale:** If the warehouse schema changes and the repository is not updated, tools relying on it will break.
 - **Access control:** The repository itself needs security — not all users should see all metadata (e.g., ETL transformation rules may be sensitive).
 - **Versioning:** When transformation rules change, the repository should track both old and new versions for audit purposes.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — metadata repository components

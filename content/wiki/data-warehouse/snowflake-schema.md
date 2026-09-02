@@ -2,8 +2,6 @@
 concept: Snowflake Schema
 aliases: [snowflake schema, normalized star schema, normalized dimension]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -101,7 +99,3 @@ graph semantic_snowflake {
 - **Over-normalization:** Normalizing every dimension attribute creates a complex schema that is hard to understand and maintain. Only normalize large, highly redundant dimensions.
 - **When to use snowflake:** Best when storage cost is a significant concern and query performance requirements are moderate.
 - **Hybrid approach:** Some dimensions can be normalized (snowflake) while others remain denormalized (star) — a "partially snowflaked" schema.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — snowflake schema, normalization, space savings

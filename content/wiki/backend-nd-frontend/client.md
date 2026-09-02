@@ -3,8 +3,6 @@ title: Client
 concept: client
 aliases: [client computer]
 tags: [systems, client]
-sources_count: 1
-last_source: front-end-and-back-end-wikipedia
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -51,7 +49,3 @@ Clients can be web browsers, mobile apps, desktop applications, or any software 
 - Cannot securely store secrets (tokens, keys)
 - Limited by device capabilities
 - Network dependency affects functionality
-
-## Sources
-
-- [[front-end-and-back-end-wikipedia-summary|Front End and Back End — Wikipedia]]

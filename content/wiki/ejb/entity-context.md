@@ -40,7 +40,3 @@ Entity Context is an interface that provides the entity bean instance with acces
 - Pooled instances don't have a context until associated with an EJB object
 - Calling `getPrimaryKey()` before `setEntityContext()` will fail
 - Context is null when bean is in the pool
-
-## Sources
-
-- [[ejb-continued-summary|EJbContinued]]

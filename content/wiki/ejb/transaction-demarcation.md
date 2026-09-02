@@ -2,8 +2,6 @@
 concept: Transaction Demarcation in EJB
 aliases: [BMT, CMT, Bean-Managed Transactions, Container-Managed Transactions, Transaction Styles]
 tags: [dev, ejb]
-sources_count: 1
-last_source: EJb4.md
 created: 2026-04-28
 updated: 2026-04-28
 ---
@@ -78,6 +76,3 @@ digraph G {
 - Forgetting to call commit() in BMT causes transaction to never complete
 - Client-initiated transactions over WAN have high rollback rates due to network failures
 - BMT allows mini-transactions within a method; CMT/Client-Initiated apply to entire method
-
-## Sources
-- [[EJb4-summary|EJb4.md Source Summary]]

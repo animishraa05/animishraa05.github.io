@@ -3,8 +3,6 @@ title: API
 concept: api
 aliases: [application programming interface, web api]
 tags: [networking, api]
-sources_count: 1
-last_source: front-end-and-back-end-wikipedia
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -55,7 +53,3 @@ APIs can also reduce front-end processing load using different back-end services
 - Rate limiting prevents abuse
 - Error handling must be consistent
 - Documentation essential for API consumers
-
-## Sources
-
-- [[front-end-and-back-end-wikipedia-summary|Front End and Back End — Wikipedia]]

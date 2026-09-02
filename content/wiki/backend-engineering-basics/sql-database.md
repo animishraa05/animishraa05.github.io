@@ -2,8 +2,6 @@
 concept: SQL Database
 aliases: [relational database, RDBMS, SQL, structured query language]
 tags: [database, sql]
-sources_count: 1
-last_source: Backend Engineering Basics.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -47,7 +45,3 @@ Example: `SELECT * FROM users WHERE name = 'ani'` returns all rows from users ta
 - Horizontal scaling is harder than NoSQL—sharding adds complexity
 - Complex joins can be slow on large datasets
 - Object-relational impedance mismatch—mapping objects to tables is work
-
-## Sources
-
-- [[backend-engineering-basics-summary|Backend Engineering Basics]]

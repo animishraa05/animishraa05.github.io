@@ -60,12 +60,3 @@ Static files are like the paint and furniture of a house. `collectstatic` is lik
 
 - Misunderstanding the difference between `STATIC_URL` (web address) and `STATIC_ROOT` (hard drive path) is a very common beginner mistake.
 - Running Django in production with `DEBUG=False` will immediately break static files if Nginx isn't configured, because Django stops serving them.
-
-## Active Recall Questions
-
-> [!question]- What command gathers all static assets into a single folder for production?
-> `python manage.py collectstatic`
-
-## Sources
-
-- [[django-summary|Source: Django Learning Roadmap]] — static & media files, deployment

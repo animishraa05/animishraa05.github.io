@@ -94,7 +94,3 @@ graph semantic_map_traversal {
 - Using `auto` instead of `auto&` copies each pair — O(n) extra work for large maps
 - For ordered output, copy to a vector and sort, or use `std::map` (which has O(log n) operations)
 - The loop variable `.first` and `.second` can be confusing to beginners — use structured bindings: `auto& [key, value] : freq`
-
-## Sources
-
-- [[strings-summary|Strings (Character Hashing in C++)]]

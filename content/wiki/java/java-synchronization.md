@@ -82,7 +82,3 @@ graph semantic_synchronization {
 - **Synchronized is reentrant**: The same thread can acquire the same lock multiple times without blocking
 - **Performance cost**: Synchronized blocks have overhead — use for the smallest scope needed
 - **Lock starvation**: Low-priority threads may never acquire a contended lock
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — synchronization and thread safety

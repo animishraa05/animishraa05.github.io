@@ -51,11 +51,6 @@ tags: [dev, http]
 
 - How does HTTP/3 impact server-side implementation differences?
 - When should engineers prefer PATCH over PUT in practical API design?
-
-## Sources
-
-This source summary links to all concept pages it created
-
 ## Connections
 
 - [[http|HTTP]] — protocol covered

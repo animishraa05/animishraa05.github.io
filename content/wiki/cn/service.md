@@ -53,6 +53,3 @@ digraph G {
 - Service primitives are often implemented as API calls (e.g., socket API)
 - Service changes require updating all upper layers that use it
 - A single service can have multiple protocol implementations
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

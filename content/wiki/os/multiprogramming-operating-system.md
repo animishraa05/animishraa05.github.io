@@ -2,10 +2,6 @@
 concept: Multiprogramming Operating System
 aliases: [multiprogramming, multi-programming, degree of multiprogramming]
 tags: [systems, os]
-status: draft
-confidence: high
-sources_count: 1
-last_source: OS.md
 created: 2026-06-11
 updated: 2026-06-11
 ---
@@ -98,7 +94,3 @@ graph semantic_multiprogramming {
 - Without memory protection, one program could corrupt another program's memory — this was a real problem in early systems
 - Multiprogramming assumes I/O wait dominates execution time — CPU-bound workloads (pure computation, no I/O) get less benefit
 - Students often confuse multiprogramming with multitasking: multiprogramming maximizes CPU utilization; multitasking provides responsive user experience
-
-## Sources
-
-- [[os-summary|OS Source Summary]]

@@ -4,8 +4,6 @@ aliases: [Halting Problem for Turing Machines]
 tags: [theory, undecidability]
 created: 2026-04-11
 updated: 2026-04-11
-confidence: high
-status: stable
 ---
 
 ## The Problem
@@ -44,11 +42,6 @@ This is one of the most important results in computability theory.
 
 - The problem is undecidable for Turing machines, but some specific programs can be analyzed
 - Knowing individual instances are solvable doesn't make the general problem solvable
-
-## Sources
-
-- [[theory-of-computation-wikipedia|Theory of computation - Wikipedia]]
-
 ## Why This Matters
 
 The halting problem proves that there are limits to what algorithms can know. This fundamental result shapes how we think about program analysis, verification, and the boundaries of computation.

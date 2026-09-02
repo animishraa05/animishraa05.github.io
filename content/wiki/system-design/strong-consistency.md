@@ -71,7 +71,3 @@ digraph G {
 - **Performance cliff under contention**: Strong consistency requires global ordering of writes. Under high contention, this serialization becomes a bottleneck and throughput collapses.
 - **Not truly linearizable in practice**: Many systems advertise strong consistency but use clock-based ordering, which can fail under clock skew. True linearizability (e.g., Spanner's TrueTime) is rare and expensive.
 - **Multi-region cost**: Synchronous replication across geographic regions is extremely slow (speed of light latency). Global strong consistency is impractical for most systems — multi-master or eventual consistency is preferred.
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]]

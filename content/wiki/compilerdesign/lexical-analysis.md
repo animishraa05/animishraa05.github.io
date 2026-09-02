@@ -58,8 +58,3 @@ digraph lexical_analysis {
 - **Maximal munch:** When multiple token patterns match, the lexer picks the longest match (e.g., `==` is one token, not `=` followed by `=` )
 - **Lookahead:** Some languages require lookahead to disambiguate tokens (e.g., C's `++x` vs `+ +x`)
 - **Context-sensitive lexing:** In some languages, the same character sequence can be different token types depending on context (typedef names in C)
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers lexical analysis as the first compiler phase
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers lexer working and input buffering

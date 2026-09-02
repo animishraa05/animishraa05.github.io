@@ -3,8 +3,6 @@ title: T5 Text Encoder
 concept: t5-encoder
 aliases: [T5-XXL, character-aware encoding]
 tags: [ai, ml]
-sources_count: 1
-last_source: imgen.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -54,7 +52,3 @@ Flux uses BOTH CLIP and T5 simultaneously:
 - Slower than CLIP encoding
 - Doesn't "understand" images — only text
 - Need to pair with CLIP for best results
-
-## Sources
-
-- [[imgen-summary]]

@@ -2,8 +2,6 @@
 concept: Data Visualization
 aliases: [visualization, data viz]
 tags: [ml, data-science]
-sources_count: 1
-last_source: ds.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -47,6 +45,3 @@ digraph G {
 - Over-plotting in scatter plots hides density and patterns
 - Color blindness: red-green comparisons are inaccessible
 - Chart junk: unnecessary decorations distract from the data
-
-## Sources
-- [[ds-summary|Data Science Book Summary]]

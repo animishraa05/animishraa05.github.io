@@ -2,8 +2,6 @@
 concept: "EJB Development Lifecycle"
 aliases: [EJB build process, EJB development steps, 8-step EJB process]
 tags: [dev, ejb]
-sources_count: 1
-last_source: ejb5.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -63,6 +61,3 @@ digraph EJBLifecycle {
 - **Forgetting step 2**: Without `ejb-jar.xml`, container doesn't know about your beans
 - **Classpath issues**: Step 3 needs EJB APIs (javax.ejb.*) in classpath
 - **Vendor tools automate**: Modern IDEs (Eclipse, IntelliJ) automate steps 2-4
-
-## Sources
-- [[ejb5-summary|EJB5 Source Summary]]

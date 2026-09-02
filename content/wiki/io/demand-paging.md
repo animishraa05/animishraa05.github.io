@@ -2,8 +2,6 @@
 concept: Demand Paging
 aliases: [On-Demand Paging, Lazy Loading Pages]
 tags: [systems, memory]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -59,7 +57,3 @@ digraph demand {
 - Too many page faults = thrashing
 - Page fault handling overhead (~1ms for disk read)
 - Critical processes may need pages locked in RAM (mlock)
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

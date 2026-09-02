@@ -71,12 +71,3 @@ TEMPLATES = [
 ## Edge Cases & Gotchas
 
 - Since context processors run on *every* template render, putting a slow database query inside one will globally degrade the performance of the entire application.
-
-## Active Recall Questions
-
-> [!question]- How do you make a variable available to every single template without returning it from every view?
-> By writing a Context Processor.
-
-## Sources
-
-- [[django-summary|Source: Django Learning Roadmap]] — template engine, variables

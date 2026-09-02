@@ -2,8 +2,6 @@
 concept: Template Engine
 aliases: [Django Templates, DTL, Django Template Language]
 tags: [dev, django]
-sources_count: 1
-last_source: Django.md
 created: 2026-08-09
 updated: 2026-08-09
 ---
@@ -115,7 +113,3 @@ graph semantic_template_engine {
 - **Silent failures**: Missing variables render as empty string (configurable via `string_if_invalid`)
 - **`|safe` danger**: Marking user-controlled data as safe enables XSS; only use on trusted content
 - **Performance**: Uncached template loading hits filesystem on every request; use `cached.Loader` in production
-
-## Sources
-
-- [[django-summary|Django Learning Roadmap]]

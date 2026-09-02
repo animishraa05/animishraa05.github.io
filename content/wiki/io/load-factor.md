@@ -2,8 +2,6 @@
 concept: Load Factor
 aliases: [Hash Table Load Factor, alpha]
 tags: [systems, data-structures]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -56,7 +54,3 @@ digraph load_factor {
 - High load factor causes performance collapse
 - Resizing requires rehashing ALL elements (expensive)
 - Chaining tolerates higher load factors than probing
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

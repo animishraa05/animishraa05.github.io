@@ -2,8 +2,6 @@
 concept: Interrupt Handler
 aliases: [Interrupt Service Routine, ISR]
 tags: [systems, io]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -63,7 +61,3 @@ digraph interrupt {
 - Nested interrupts require careful stack management
 - Lost interrupts (device interrupts before handler is registered) cause hangs
 - Interrupt storms (too many rapid interrupts) can freeze the system
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

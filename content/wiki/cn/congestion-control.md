@@ -57,6 +57,3 @@ digraph G {
 - Bufferbloat: large router buffers hide congestion, causing high latency
 - TCP fairness: different TCP variants compete differently for bandwidth
 - Congestion control vs congestion avoidance: detection vs prevention strategies
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

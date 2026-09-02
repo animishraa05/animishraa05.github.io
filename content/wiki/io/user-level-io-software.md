@@ -2,8 +2,6 @@
 concept: User-Level I/O Software
 aliases: [User I/O, Application I/O]
 tags: [systems, io]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -59,7 +57,3 @@ digraph user_io {
 - User-space buffering can delay writes (must flush explicitly)
 - System call overhead for each I/O operation (mitigated by buffering)
 - Library functions may mask errors — always check return values
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

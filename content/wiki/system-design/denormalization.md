@@ -70,7 +70,3 @@ digraph Denormalization {
 - **Data drift** — if one copy of the data is updated but another is not, queries return inconsistent results; write atomicity is critical.
 - **Storage bloat** — redundant copies increase disk usage; factor in at least 2x–3x storage for heavily denormalized schemas.
 - **Update anomaly complexity** — a single logical change (user changes their name) may need to update dozens of denormalized copies across multiple tables or databases.
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]]

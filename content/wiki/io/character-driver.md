@@ -2,8 +2,6 @@
 concept: Character Driver
 aliases: [Character Device Driver]
 tags: [systems, io]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -58,7 +56,3 @@ digraph char_driver {
 - High interrupt rate for fast character streams (use FIFO buffers)
 - Some character devices support limited "seek" (e.g., tape drives)
 - Character devices don't support memory-mapped I/O typically
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

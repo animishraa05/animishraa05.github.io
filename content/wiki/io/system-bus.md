@@ -2,8 +2,6 @@
 concept: System Bus
 aliases: [System Bus, Computer Bus]
 tags: [systems, io]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -71,7 +69,3 @@ digraph system_bus {
 - Bus contention: multiple devices wanting the bus simultaneously
 - Bus mastering: devices (like DMA) can become bus masters
 - Modern systems have switched fabrics (PCIe) instead of shared buses
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

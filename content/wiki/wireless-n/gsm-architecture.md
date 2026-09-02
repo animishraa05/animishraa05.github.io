@@ -2,8 +2,6 @@
 concept: GSM Architecture
 aliases: [GSM, global-system-for-mobile]
 tags: [networking, gsm]
-sources_count: 1
-last_source: WirelessN.md
 created: 2026-04-21
 updated: 2026-04-21
 ---
@@ -51,6 +49,3 @@ GSM architecture is organized into three hierarchical subsystems: RSS (Radio Sub
 - Sectoring: 3 sectors per cell is common; reduces co-channel interference by factor of 3
 - GSM frequency bands: GSM 900 (890–915/935–960 MHz), GSM 1800 (1710–1785/1805–1880 MHz), GSM 1900 (1850–1910/1930–1990 MHz)
 - GSM-Rail (GSM-R): specialized variant for railroad control with priority calls and VGCS/VBS
-
-## Sources
-- [[wireless-n-summary|WirelessN.md]]

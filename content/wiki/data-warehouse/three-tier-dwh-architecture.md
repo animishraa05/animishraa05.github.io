@@ -2,8 +2,6 @@
 concept: Three-Tier Data Warehouse Architecture
 aliases: [three-tier DWH architecture, 3-tier warehouse, DWH architecture]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -125,7 +123,3 @@ graph semantic_three_tier {
 - **Maintenance overhead:** Three separate layers require coordinated management and version control.
 - **Tier 2 is the bottleneck:** The OLAP server's performance determines the end-user experience. If cubes are not pre-computed, queries will be slow.
 - **Virtual warehouse skips Tier 1 storage:** In a virtual architecture, there is no physical warehouse — queries are routed directly to source systems.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — three-tier architecture, gateways, ETL flow

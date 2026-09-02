@@ -66,7 +66,3 @@ digraph tdd_cycle {
 - **Testing private methods**: Don't test private methods directly — test the public API that uses them
 - **Integration vs unit**: TDD works best at the unit level; integration tests follow different patterns
 - **Red phase must fail**: If the test passes before implementation, it tests the wrong thing or duplicates an existing test
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Test-driven development with JUnit and Mockito

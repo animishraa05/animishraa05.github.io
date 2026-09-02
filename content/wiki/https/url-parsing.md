@@ -2,8 +2,6 @@
 concept: URL Parsing
 aliases: [URL breakdown, parse URL, URL components]
 tags: [networking, url]
-sources_count: 1
-last_source: https.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -70,7 +68,3 @@ digraph G {
 - URLs with non-ASCII characters need percent-encoding
 - Trailing slashes can sometimes change server behavior
 - Browser address bar "pretty prints" URLs (hides protocol, simplifies display)
-
-## Sources
-
-- [[https-summary|HTTP HTTPS DNS URL Source]]

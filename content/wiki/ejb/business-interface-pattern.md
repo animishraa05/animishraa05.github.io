@@ -2,8 +2,6 @@
 concept: "Business Interface Pattern"
 aliases: [business methods interface, EJB business interface]
 tags: [dev, ejb]
-sources_count: 1
-last_source: ejb5.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -70,6 +68,3 @@ digraph BusinessInterface {
 - **`RemoteException` leakage**: Business interface meant for both remote and local still declares `RemoteException`—local clients don't need it
 - **EJB 3.x+ solves this**: Uses `@Local` and `@Remote` annotations—no need for this pattern
 - **Not mandatory**: Most developers just let the container verify at deployment time (not compile time)
-
-## Sources
-- [[ejb5-summary|EJB5 Source Summary]]

@@ -3,8 +3,6 @@ title: HTTP Status Codes
 concept: true
 aliases: [Status Codes, Response Codes]
 tags: [networking, http]
-sources_count: 1
-last_source: understanding-http-for-backend-engineers
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -65,7 +63,3 @@ public ResponseEntity<Note> createNote(@RequestBody NoteRequest req) {
 - 401 vs 403: 401 = not authenticated, 403 = authenticated but no permission
 - 204 has no body—don't try to return JSON with 204
 - 304 must not include response body (browser uses cached version)
-
-## Sources
-
-- [[understanding-http-for-backend-engineers-summary|Understanding HTTP for Backend Engineers]]

@@ -3,8 +3,6 @@ title: Flux Architecture
 concept: flux-architecture
 aliases: [FLUX.1-dev, flow matching, DiT]
 tags: [ai, diffusion]
-sources_count: 1
-last_source: imgen.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -59,7 +57,3 @@ Flux uses flow matching training instead of traditional DDPM. This produces shar
 - VRAM intensive — needs A100 or equivalent for comfortable inference
 - T5-XXL loading adds latency (~3 seconds)
 - Quality degrades significantly below 16GB VRAM without optimization
-
-## Sources
-
-- [[imgen-summary]]

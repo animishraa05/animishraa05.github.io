@@ -2,8 +2,6 @@
 concept: RMI-IIOP
 aliases: [RMI over IIOP, Internet Inter-ORB Protocol]
 tags: [dev, ejb, rmi]
-sources_count: 1
-last_source: ejb6.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -57,6 +55,3 @@ digraph G {
 - **RemoteException**: Forgetting to declare it causes compile error
 - **Firewall issues**: IIOP may be blocked (use HTTP tunneling if needed)
 - **Appendix A**: See full RMI-IIOP details there
-
-## Sources
-- [[ejb6-summary|EJB6 Source Summary]]

@@ -78,7 +78,3 @@ graph semantic_oop_disadvantages {
 - **Not anti-OOP**: These are tradeoffs, not dealbreakers — OOP is usually the right choice for large, evolving systems
 - **Premature abstraction**: Creating deep class hierarchies for future needs that never materialize is the biggest source of OOP overhead
 - **Performance vs productivity tradeoff**: OOP's memory and CPU overhead is usually dwarfed by developer productivity gains
-
-## Sources
-
-- [[java2-summary|Java OOP Concepts — Source Summary]] — OOP disadvantages

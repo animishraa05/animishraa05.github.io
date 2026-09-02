@@ -2,8 +2,6 @@
 concept: "Persistence Concepts"
 aliases: [object persistence, Java persistence mechanisms]
 tags: [dev, ejb, database]
-sources_count: 1
-last_source: ejb5.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -66,6 +64,3 @@ digraph Persistence {
 - **Serialization is easier but limiting**: Good for simple caching, bad for business data
 - **ORM has a learning curve**: Mapping complex object relationships to tables requires skill
 - **JDO (Java Data Objects)**: Alternative to EJB entity beans for persistence (portable across databases)
-
-## Sources
-- [[ejb5-summary|EJB5 Source Summary]]

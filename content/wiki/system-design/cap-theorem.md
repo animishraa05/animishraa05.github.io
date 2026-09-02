@@ -80,7 +80,3 @@ digraph G {
 - **PACELC extension**: CAP only considers partitions. PACELC adds that even without a partition (Else), there's a latency-consistency trade-off. Most systems don't operate in partition mode.
 - **CA is misleading**: Single-node systems aren't distributed. Therefore, real distributed systems are either CP or AP.
 - **Partition recovery is not automatic**: When a partition heals, reconciliation logic is needed — stale writes may conflict, and resolution strategies (last-write-wins, CRDTs, etc.) must be in place.
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]]

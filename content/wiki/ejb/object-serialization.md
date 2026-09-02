@@ -62,6 +62,3 @@ digraph G {
 - Identity is lost: original != deserialized (different memory addresses)
 - Security risk: Deserialization can execute malicious code
 - Performance cost: Slow and CPU/memory intensive
-
-## Sources
-- [[ejb3-summary|EJB3 Source Summary]]

@@ -82,7 +82,3 @@ graph semantic_iterator {
 - **remove() before next()**: IllegalStateException if next() hasn't been called
 - **Fail-fast is not guaranteed**: It's a best-effort detection mechanism, not a guarantee
 - **LegacyEnumeration**: Older collections (Vector, Hashtable) use Enumeration, not Iterator
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — iterator

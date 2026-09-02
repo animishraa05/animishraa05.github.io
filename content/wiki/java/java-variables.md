@@ -78,7 +78,3 @@ graph semantic_variables {
 - **Default values are not zero for local variables** — the compiler rejects uninitialized locals
 - **Blank final variables**: `final` instance variables can be left uninitialized if assigned in every constructor
 - **Effectively final**: Variables that are not declared final but never reassigned are "effectively final" (used in lambdas)
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — variable declaration and scope

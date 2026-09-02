@@ -2,8 +2,6 @@
 concept: Account Bean BMP Example
 aliases: [BMP Entity Bean Example, Bank Account Entity Bean]
 tags: [dev, ejb, bmp]
-sources_count: 1
-last_source: ejb6.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -101,6 +99,3 @@ digraph G {
 - **Home methods**: Run on pooled bean, not associated with specific EJB object
 - **Resource reference**: Must configure `jdbc/bmp-account` in container-specific descriptor
 - **12-mark question**: Focus on interfaces, PK class, XML—not full JDBC code
-
-## Sources
-- [[ejb6-summary|EJB6 Source Summary]]

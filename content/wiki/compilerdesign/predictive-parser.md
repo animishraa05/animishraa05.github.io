@@ -84,7 +84,3 @@ graph semantic_predictive {
 - **ε-productions:** Handled by using FOLLOW sets — when a non-terminal can derive ε, the parser matches its FOLLOW set
 - **Error detection:** Errors are detected when the table entry is empty — error recovery routines can use the stack to skip tokens
 - **LL(1) limitation:** Not all grammars are LL(1) — operator precedence and certain if-then-else constructs require more lookahead
-
-## Sources
-
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers predictive parsing as a key parsing technique

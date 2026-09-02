@@ -2,8 +2,6 @@
 concept: Network Driver
 aliases: [Network Interface Driver, NIC Driver]
 tags: [systems, io]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -62,7 +60,3 @@ digraph net_driver {
 - Packet drop under high load (driver must handle ring exhaustion)
 - DMA mapping must handle scattered packet buffers (SG DMA)
 - Some NICs have buggy offload features — may need disabling
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

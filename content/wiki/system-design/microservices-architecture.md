@@ -76,7 +76,3 @@ digraph Microservices {
 - **Distributed monolith anti-pattern** — services that are tightly coupled via shared databases or chatty APIs defeat the purpose of microservices.
 - **Operational complexity** — deploying 10 services is harder than deploying 1; requires container orchestration (Kubernetes), service mesh, and observability tooling.
 - **Data consistency** — transactions spanning multiple services require sagas or eventual consistency; no cross-service ACID.
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]]

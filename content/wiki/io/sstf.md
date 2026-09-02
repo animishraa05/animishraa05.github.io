@@ -2,8 +2,6 @@
 concept: SSTF
 aliases: [Shortest Seek Time First, SSTF Disk Scheduling]
 tags: [systems, storage]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -56,7 +54,3 @@ digraph sstf {
 - Starvation: requests at disk edges may never be served if center is busy
 - Not optimal globally (greedy choice)
 - Must recalculate distances after each service
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

@@ -64,12 +64,3 @@ def create_user_profile(sender, instance, created, **kwargs):
 
 - Misconception: People think signals are asynchronous background tasks. They are not. They run sequentially and can drastically slow down an API response.
 - Can lead to "spaghetti code" where it's hard to trace why a profile was mysteriously created when a user was saved.
-
-## Active Recall Questions
-
-> [!question]- Do Django signals execute asynchronously in the background?
-> No, they execute synchronously in the same thread as the sender.
-
-## Sources
-
-- [[django-summary|Source: Django Learning Roadmap]] — performance and advanced django

@@ -2,8 +2,6 @@
 concept: One-to-Many Relationship in EJB
 aliases: [1:N Relationship, One-to-Many Cardinality]
 tags: [dev, ejb]
-sources_count: 1
-last_source: EJb4.md
 created: 2026-04-28
 updated: 2026-04-28
 ---
@@ -69,6 +67,3 @@ digraph G {
 - CMP Collection is managed by container — don't try to instantiate it yourself
 - Lazy loading: container may not populate Collection until you access it (performance implication)
 - Removing from Collection in CMP: must also handle the database foreign key update
-
-## Sources
-- [[EJb4-summary|EJb4.md Source Summary]]

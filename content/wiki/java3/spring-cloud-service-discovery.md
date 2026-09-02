@@ -73,7 +73,3 @@ digraph service_discovery {
 - **Zone affinity**: Eureka supports zones for regional deployment — clients prefer instances in the same zone
 - **Default port**: Eureka server runs on port 8761 by default — change via `server.port` in configuration
 - **Stale cache**: Client caches the registry — use appropriate refresh intervals or manual eviction in failure scenarios
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Service discovery, Eureka, load balancing

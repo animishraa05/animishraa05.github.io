@@ -55,6 +55,3 @@ digraph G {
 - Fragmentation can occur when packet exceeds MTU (Maximum Transmission Unit)
 - NAT (Network Address Translation) complicates end-to-end addressing
 - IPv4 address exhaustion led to IPv6 development
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

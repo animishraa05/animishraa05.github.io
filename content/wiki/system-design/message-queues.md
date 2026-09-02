@@ -64,7 +64,3 @@ digraph MessageQueues {
 - **Message ordering**: Most queues do not guarantee strict FIFO ordering under high concurrency. Use a FIFO queue or sequence IDs if order matters.
 - **Duplicate messages**: At-least-once delivery guarantees can result in duplicate processing. Workers should be idempotent.
 - **Poison pills**: Malformed messages that cause workers to fail repeatedly can block the queue. Implement dead-letter queues to isolate them.
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]]

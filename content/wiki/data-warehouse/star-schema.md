@@ -2,8 +2,6 @@
 concept: Star Schema
 aliases: [star schema, dimensional model, Kimball model, fact and dimension tables]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -112,7 +110,3 @@ graph semantic_star_schema {
 - **Slowly Changing Dimensions:** When a dimension attribute changes (customer moves cities), SCD techniques determine whether to overwrite, add a new row, or track history.
 - **Not suitable for OLTP:** Star schema is optimized for reads, not writes. Using it for transactional operations leads to data integrity issues.
 - **Degenerate dimensions:** Some low-cardinality attributes (order number, invoice number) are kept in the fact table rather than creating a separate dimension.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — star schema, denormalization, Kimball's dimensional modeling

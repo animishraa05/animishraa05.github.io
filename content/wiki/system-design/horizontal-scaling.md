@@ -68,7 +68,3 @@ digraph horizontal_scaling {
 - Statelessness is hard for legacy applications that assume local file system access or in-memory session state
 - Auto-scaling can cause thundering herds if new instances all hit the database simultaneously on startup
 - Horizontal scaling does not help with database writes — those require sharding or read replicas
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]] — scaling section covering horizontal vs vertical approaches

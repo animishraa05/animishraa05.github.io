@@ -2,10 +2,6 @@
 concept: Kernel Mode
 aliases: [kernel space, privileged mode, supervisor mode, Ring 0]
 tags: [systems, os]
-status: draft
-confidence: high
-sources_count: 1
-last_source: OS.md
 created: 2026-06-11
 updated: 2026-06-11
 ---
@@ -98,7 +94,3 @@ graph semantic_kernel_mode {
 - Kernel mode is NOT the same as the "OS" — it is a CPU privilege level, not a visual or conceptual layer
 - A bug in a kernel-mode device driver can crash the OS even if the kernel itself is perfect — this is why microkernels move drivers to user space
 - Some CPUs support virtualization extensions (Intel VT-x, AMD-V) that add a "root mode" below Ring 0 for hypervisors
-
-## Sources
-
-- [[os-summary|OS Source Summary]]

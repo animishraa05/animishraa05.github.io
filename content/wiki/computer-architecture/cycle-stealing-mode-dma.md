@@ -57,6 +57,3 @@ digraph cycle_stealing {
 - More bus arbitration overhead than burst mode — each transfer needs bus request/grant
 - If CPU is very active, DMA transfer can take a long time (many cycles "stolen")
 - I/O device may underrun if DMA can't keep up due to CPU bus usage
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

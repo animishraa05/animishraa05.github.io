@@ -2,8 +2,6 @@
 concept: Backend Framework
 aliases: [web framework, application framework, backend library]
 tags: [dev, framework]
-sources_count: 1
-last_source: Backend Engineering Basics.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -48,7 +46,3 @@ When you write `app.get("/users", handler)`, the framework handles the socket, p
 - Frameworks add abstraction cost—understand what's happening underneath
 - Production deployments need reverse proxies (Nginx) for TLS, load balancing
 - Framework choice affects performance but fundamentals transfer between them
-
-## Sources
-
-- [[backend-engineering-basics-summary|Backend Engineering Basics]]

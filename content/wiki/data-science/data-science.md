@@ -2,8 +2,6 @@
 concept: Data Science
 aliases: [data science, ds]
 tags: [ml, data-science]
-sources_count: 1
-last_source: ds.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -50,6 +48,3 @@ digraph G {
 - Overfitting models to training data
 - Ignoring domain expertise in favor of pure technical approaches
 - Neglecting data quality issues in raw sources
-
-## Sources
-- [[ds-summary|Data Science Book Summary]]

@@ -2,8 +2,6 @@
 concept: JSP
 aliases: [JavaServer Pages, JSP Technology]
 tags: [dev, ejb, web]
-sources_count: 2
-last_source: java3.md
 created: 2026-04-29
 updated: 2026-05-13
 ---
@@ -70,7 +68,3 @@ digraph G {
 - **First-access delay**: Compilation happens on first access
 - **Chapter 22**: See EJB with JSP examples there
 - **Modern alternative**: Consider Facelets/Thymeleaf in modern apps
-
-## Sources
-- [[ejb6-summary|EJB6 Source Summary]]
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — JSP lifecycle, directives, EL, JSTL, implicit objects

@@ -3,8 +3,6 @@ title: Vim Basic Survival Commands
 concept:
 aliases: [basic commands, survival commands, vim commands]
 tags: [dev, vim]
-sources_count: 1
-last_source: YBlog - Learn Vim Progressively.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -53,7 +51,3 @@ Recommended additions:
 - [[vim-text-objects|Text Objects]] — Extend deletion/selection beyond single lines
 - [[vim-search-navigation|Navigation]] — Moving efficiently within lines and files
 - [[vim-repetition|Repetition]] — Repeat commands with counts
-
-## Sources
-
-- [[learn-vim-progressively-summary|YBlog - Learn Vim Progressively]]

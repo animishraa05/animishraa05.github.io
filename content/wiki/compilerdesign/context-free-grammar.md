@@ -67,7 +67,3 @@ digraph cfg {
 - **Left recursion:** Top-down parsers enter infinite loops with left-recursive productions (A → Aα)
 - **Ambiguity:** A grammar may be ambiguous even though the language is not — the grammar must be rewritten
 - **Grammar transformations:** Left recursion elimination and left factoring are common transformations to make grammars parseable
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers CFG classification for syntax analysis

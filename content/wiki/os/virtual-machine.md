@@ -2,10 +2,6 @@
 concept: Virtual Machine
 aliases: [VM, guest OS, virtual computer, system VM]
 tags: [systems, os]
-status: draft
-confidence: high
-sources_count: 1
-last_source: OS.md
 created: 2026-06-11
 updated: 2026-06-11
 ---
@@ -98,7 +94,3 @@ graph semantic_virtual_machine {
 - Memory overcommitment (allocating more virtual RAM than physical RAM) works but can cause swapping thrashing
 - Timekeeping inside VMs can drift — the guest OS reads an emulated timer, not the real hardware clock
 - Nested virtualization (running a hypervisor inside a VM) is possible but slow without specific CPU feature support
-
-## Sources
-
-- [[os-summary|OS Source Summary]]

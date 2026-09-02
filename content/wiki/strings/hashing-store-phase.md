@@ -79,7 +79,7 @@ graph semantic_store_phase {
 ## Connections
 
 - Built from: [[frequency-array|Frequency Array]] — one implementation choice for Phase 1
-- Built from: [[unordered-map-frequency|Unordered Map for Frequency]] — another implementation choice for Phase 1 <!-- TODO: add backlink here -->
+- Built from: [[unordered-map-frequency|Unordered Map for Frequency]] — another implementation choice for Phase 1
 - Builds into: [[two-phase-hashing|Two-Phase Hashing Paradigm]] — Phase 1 is the first half of the paradigm
 - Builds into: [[hashing-retrieval-phase|Hashing Retrieval Phase]] — Phase 1 feeds data into Phase 2
 - Related: [[character-to-index-mapping|Character-to-Index Mapping]] — used only in the array variant of Phase 1
@@ -90,7 +90,3 @@ graph semantic_store_phase {
 - For strings with a single character, the structure has one entry — still correct
 - For maps, repeated `freq[ch]++` calls may trigger rehashing (amortized O(1), but costly)
 - Phase 1 cannot answer any question about the data until it completes — it is purely a gathering phase
-
-## Sources
-
-- [[strings-summary|Strings (Character Hashing in C++)]]

@@ -52,6 +52,3 @@ Each dimension is scored 1-5 using NTILE(5), then combined into 9 actionable seg
 - **Zero orders**: Customers with no orders require LEFT JOIN, result in NULL/zero values
 - **Equal-frequency binning**: NTILE creates equal groups, not equal ranges—outliers affect scores
 - **Static segmentation**: Updates only when ETL runs—not real-time
-
-## Sources
-- [[../comprehensive-report-summary|FoodFlow Analytics Comprehensive Report]]

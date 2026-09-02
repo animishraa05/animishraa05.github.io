@@ -2,8 +2,6 @@
 concept: Decision Tree Splitting
 aliases: [tree split, data partitioning, node splitting]
 tags: [ml, decision-trees]
-sources_count: 1
-last_source: dtree.md
 created: 2026-05-06
 updated: 2026-05-06
 ---
@@ -72,7 +70,3 @@ digraph decision_tree_splitting {
 - **Threshold sensitivity**: Small changes in continuous thresholds can dramatically alter split quality
 - **Categorical explosion**: Attributes with many unique values (like IDs) can create artificially high Information Gain
 - **No split improvement**: If no attribute improves purity, the node becomes a leaf instead of splitting
-
-## Sources
-
-- [[dtree-summary|Decision Tree in Machine Learning]] — splitting illustrated with Income, Age, and Previous Purchases examples

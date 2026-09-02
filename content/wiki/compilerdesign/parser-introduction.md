@@ -61,8 +61,3 @@ digraph parser_intro {
 - **Lookahead:** More lookahead gives more power (LL(1) vs LL(k)) but increases table size
 - **Grammar class determines parser:** LR grammars are more powerful than LL grammars — LR parsers can handle more language constructs
 - **Left recursion:** Top-down parsers cannot handle left recursion without entering infinite loops
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — introduces parsing as part of syntax analysis
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers types of parsers and parser classification

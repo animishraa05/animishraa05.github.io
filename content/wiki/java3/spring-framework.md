@@ -78,7 +78,3 @@ digraph spring_framework {
 - **Circular dependencies**: Bean A depends on B which depends on A causes container startup failure; use setter injection or @Lazy
 - **Proxy limitations**: Spring AOP (JDK dynamic proxies) only intercepts public method calls on Spring-managed beans
 - **Over-autowiring**: Auto-wiring everything makes dependency graphs implicit and hard to trace
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Spring Framework overview, architecture, IoC, DI

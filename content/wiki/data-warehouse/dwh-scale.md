@@ -2,8 +2,6 @@
 concept: DWH Scale
 aliases: [data warehouse scale, warehouse size, terabytes petabytes exabytes zettabytes, DWH volume]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -98,7 +96,3 @@ graph semantic_scale {
 - **Scale is not just storage:** Query performance, ETL throughput, and refresh time all scale non-linearly.
 - **Compression reduces effective scale:** Modern columnar databases compress data 5-10×, making a petabyte warehouse occupy only 100-200 TB of physical storage.
 - **Archive tiering:** Not all data needs to be on fast storage. Old data can be moved to cheaper archival storage while remaining queryable.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — scale hierarchy from terabytes to zettabytes

@@ -62,8 +62,3 @@ digraph op_precedence {
 - **Non-operator grammars:** If the grammar has adjacent non-terminals, operator precedence parsing cannot handle it
 - **Limited scope:** Best for expressions, not suitable for full programming language syntax
 - **Precedence table size:** Grows with the number of operators — for large languages, the table becomes unwieldy
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers operator grammar and precedence parser
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers operator precedence parser as a bottom-up parser type

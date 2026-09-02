@@ -2,8 +2,6 @@
 concept: Metadata Management Challenges
 aliases: [metadata management, DWH metadata challenges, metadata governance]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -121,7 +119,3 @@ graph semantic_metadata_challenges {
 - **Tool consolidation helps:** Using fewer vendors reduces metadata interoperability challenges.
 - **Metadata quality initiatives:** Some organizations implement metadata quality audits similar to data quality audits.
 - **Emerging standards:** While no universal standard exists, initiatives like the OMG's Common Warehouse Metamodel (CWM) attempt to address interoperability.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — metadata management challenges

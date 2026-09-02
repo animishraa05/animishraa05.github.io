@@ -3,8 +3,6 @@ title: Full Stack
 concept: full-stack
 aliases: [full-stack developer]
 tags: [dev, full-stack]
-sources_count: 1
-last_source: front-end-and-back-end-wikipedia
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -57,7 +55,3 @@ The developer can work on any part of the application, from user interface to da
 - Full stack is a spectrum—nobody knows everything
 - Deep expertise in one area often more valuable than shallow knowledge everywhere
 - Technology constantly changes—continuous learning required
-
-## Sources
-
-- [[front-end-and-back-end-wikipedia-summary|Front End and Back End — Wikipedia]]

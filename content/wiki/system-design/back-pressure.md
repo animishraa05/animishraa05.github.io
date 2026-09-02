@@ -65,7 +65,3 @@ digraph BackPressure {
 - **Retry storms**: Without jitter, all clients retry simultaneously, creating a thundering herd on the queue. Always add random jitter to backoff intervals.
 - **Queue sizing**: Too small a queue underutilizes workers; too large defeats the purpose. Size based on expected worker drain rate and acceptable latency.
 - **No back pressure on workers**: If workers themselves slow down (e.g., due to DB contention), back pressure at the queue level doesn't protect upstream resources.
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]]

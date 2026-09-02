@@ -2,8 +2,6 @@
 concept: Decision Tree Stopping Conditions
 aliases: [tree termination, base cases, when to stop splitting]
 tags: [ml, decision-trees]
-sources_count: 1
-last_source: dtree.md
 created: 2026-05-06
 updated: 2026-05-06
 ---
@@ -82,7 +80,3 @@ digraph stopping_conditions {
 - **Late stopping**: Too lenient conditions produce deep, overfit trees
 - **Empty node paradox**: When no instances reach a node, the prediction is essentially a guess based on the parent
 - **Attribute reuse**: Some implementations allow reusing attributes, which can prevent the "no attributes" condition from ever triggering
-
-## Sources
-
-- [[dtree-summary|Decision Tree in Machine Learning]] — three stopping conditions: pure class, no attributes, no instances

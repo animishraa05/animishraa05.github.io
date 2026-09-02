@@ -78,7 +78,3 @@ digraph auto_config {
 - **Starter conflicts**: Conflicting starters (e.g., two embedded DBs on classpath) can cause startup failures
 - **Exclusion**: Exclude auto-configuration classes with `@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)`
 - **Performance**: Auto-configuration evaluation happens at startup — hundreds of conditional checks can slow cold starts
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Auto-configuration, starters

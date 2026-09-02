@@ -2,8 +2,6 @@
 concept: Cross-Validation
 aliases: [k-fold, CV]
 tags: [ml, data-science]
-sources_count: 1
-last_source: ds.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -51,6 +49,3 @@ digraph G {
 - Data leakage: preprocessing (normalization) must be done inside each fold
 - Stratification: for classification, ensure each fold has representative class proportions
 - Small datasets: leave-one-out CV (k=n) can have high variance despite being "exact"
-
-## Sources
-- [[ds-summary|Data Science Book Summary]]

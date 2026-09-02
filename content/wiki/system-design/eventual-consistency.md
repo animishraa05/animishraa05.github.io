@@ -69,7 +69,3 @@ digraph G {
 - **Write conflicts**: Concurrent writes to different replicas may produce conflicts that require reconciliation (last-write-wins, CRDTs, application-level merging).
 - **Staleness bounds are application-defined**: DNS uses TTLs to bound inconsistency. Without explicit bounds, staleness can grow arbitrarily under heavy load or network issues.
 - **Read-your-write consistency is not guaranteed**: A client that writes to one node and immediately reads from another may not see its own write. Session consistency or quorum reads can mitigate this.
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]]

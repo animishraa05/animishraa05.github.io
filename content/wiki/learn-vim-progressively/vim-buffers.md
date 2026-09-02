@@ -3,8 +3,6 @@ title: Vim Buffers
 concept:
 aliases: [buffer, :e, :bn, :bp, :w, :q]
 tags: [dev, vim]
-sources_count: 1
-last_source: YBlog - Learn Vim Progressively.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -52,7 +50,3 @@ Basic buffer commands:
 - [[vim-basic-commands|Survival Commands]] — Basic save/quit
 - [[vim-modes|Vim Modes]] — Works in Normal mode
 - [[vim-macros|Macros]] — Can record buffer operations
-
-## Sources
-
-- [[learn-vim-progressively-summary|YBlog - Learn Vim Progressively]]

@@ -55,6 +55,3 @@ digraph G {
 - Head-of-line blocking: lost packet delays all subsequent packets even if received
 - SYN flood attacks exploit connection setup state
 - TCP meltdown: aggressive retransmission in poor networks can worsen congestion
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

@@ -44,6 +44,3 @@ DMA can operate in three different modes, each balancing transfer speed, CPU res
 - [[dma|DMA]] — the underlying mechanism
 - [[dma-controller|DMA Controller]] — hardware that implements these modes
 - [[cpu|CPU]] — affected differently by each mode
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

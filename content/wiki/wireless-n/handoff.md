@@ -2,8 +2,6 @@
 concept: Handoff
 aliases: [handover, handoff-types, hard-handoff, soft-handoff]
 tags: [networking, cellular]
-sources_count: 1
-last_source: WirelessN.md
 created: 2026-04-21
 updated: 2026-04-21
 ---
@@ -51,6 +49,3 @@ Handoff is the process of transferring an active call from one base station to a
 - Handoff latency must be minimal to avoid perceptive gaps in voice
 - In CDMA, soft handoff creates a macro-diversity benefit — combining signals from multiple BTSs improves quality
 - Hard handoff in GSM was acceptable for 2G voice but problematic for 3G data
-
-## Sources
-- [[wireless-n-summary|WirelessN.md]]

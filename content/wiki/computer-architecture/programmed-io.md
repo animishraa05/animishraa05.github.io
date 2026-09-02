@@ -52,6 +52,3 @@ digraph programmed_io {
 - For very small data sizes, Programmed I/O can be faster than DMA setup overhead
 - Some embedded systems use Programmed I/O exclusively (no DMA controller)
 - CPU cache effects: repeated loads/stores may pollute cache during PIO
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

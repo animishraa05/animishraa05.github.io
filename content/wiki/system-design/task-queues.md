@@ -66,7 +66,3 @@ digraph TaskQueues {
 - **Task idempotency**: Retries can cause duplicate execution. Design tasks to be idempotent or use a deduplication mechanism.
 - **Worker death**: If a worker dies mid-task, the task is lost or stuck. Use task acknowledgements and visibility timeouts to re-queue.
 - **Task starvation**: Long-running tasks can block workers from picking up short tasks. Use separate queues or priority queues to mitigate.
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]]

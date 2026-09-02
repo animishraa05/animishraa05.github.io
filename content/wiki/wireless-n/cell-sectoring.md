@@ -2,8 +2,6 @@
 concept: Cell Sectoring
 aliases: [sectoring, cell-sectoring]
 tags: [networking, cellular]
-sources_count: 1
-last_source: WirelessN.md
 created: 2026-04-21
 updated: 2026-04-21
 ---
@@ -45,6 +43,3 @@ The effective reuse factor improves by a factor equal to the number of sectors: 
 - Requires careful RF planning to ensure uniform coverage
 - Sector boundaries are not static — they shift with traffic load and seasonal foliage
 - Ping-pong handovers can occur at sector boundaries
-
-## Sources
-- [[wireless-n-summary|WirelessN.md]]

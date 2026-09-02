@@ -63,7 +63,3 @@ digraph push_cdn {
 - Cache invalidation is difficult — if content needs to be removed, you must explicitly purge it from all CDN edges
 - Pushing content that nobody ever requests wastes CDN storage
 - If the push mechanism fails, stale content remains served until manually invalidated
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]] — CDN section in the Scalability chapter

@@ -2,8 +2,6 @@
 concept: GPRS
 aliases: [general-packet-radio-service, 2-5G]
 tags: [networking, gsm]
-sources_count: 1
-last_source: WirelessN.md
 created: 2026-04-21
 updated: 2026-04-21
 ---
@@ -49,6 +47,3 @@ GPRS (General Packet Radio Service) adds packet-switching capability to the exis
 - First-gen GPRS was often sold as "wireless internet" with poor throughput
 - Billing: early GPRS was charged per packet (kilobyte), causing bill shocks
 - Handover between voice and data: GSM handles voice first; data gets preempted
-
-## Sources
-- [[wireless-n-summary|WirelessN.md]]

@@ -2,8 +2,6 @@
 concept: JavaMail
 aliases: [Java Mail API, Email from Java]
 tags: [dev, ejb, email]
-sources_count: 1
-last_source: ejb6.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -61,6 +59,3 @@ digraph G {
 - **SMTP configuration**: Must configure SMTP host correctly
 - **Authentication**: SMTP may require username/password
 - **Not covered**: The source book does not cover JavaMail in detail
-
-## Sources
-- [[ejb6-summary|EJB6 Source Summary]]

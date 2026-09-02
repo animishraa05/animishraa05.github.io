@@ -73,7 +73,3 @@ graph semantic_single_inheritance {
 - **Builds into:** [[java-multilevel-inheritance|Multilevel Inheritance]] — single steps can be chained
 - **Contrasts with:** [[java-hierarchical-inheritance|Hierarchical Inheritance]] — single vs multiple children from one parent
 - **Related:** [[java-inheritance-types|Inheritance Types]] — the broader classification of which single is a part
-
-## Sources
-
-- [[java2-summary|Java OOP Concepts — Source Summary]] — single inheritance

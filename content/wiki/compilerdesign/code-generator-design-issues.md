@@ -72,7 +72,3 @@ digraph code_gen_issues {
 - **Aliasing:** If two variables point to the same memory location, the code generator cannot freely reorder operations
 - **Peculiar instructions:** Some ISAs have complex instructions (string copy, CRC, SIMD) that require careful pattern matching
 - **Self-modifying code:** Rarely needed, but some dynamic code systems require the generator to produce position-independent code
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers issues in code generator design

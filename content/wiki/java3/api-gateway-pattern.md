@@ -77,7 +77,3 @@ digraph api_gateway_pattern {
 - **Gateway bloat**: Avoid putting business logic in the gateway — it should only handle cross-cutting concerns
 - **BFF vs single gateway**: Single gateway works for simple architectures; BFF scales better with diverse client requirements
 - **WebSocket and gRPC**: Gateway must support non-HTTP protocols if services use WebSocket or gRPC
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — API Gateway pattern

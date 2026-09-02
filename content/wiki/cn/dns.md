@@ -58,6 +58,3 @@ digraph G {
 - DNS cache poisoning can redirect users to malicious sites
 - DNS over HTTPS (DoH) encrypts queries for privacy
 - Zone transfers use TCP, not UDP, due to large data sizes
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

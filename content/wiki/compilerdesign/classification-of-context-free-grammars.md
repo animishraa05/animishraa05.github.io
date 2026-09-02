@@ -90,7 +90,3 @@ graph semantic_cfg_class {
 - **LR(0) < SLR < LALR < CLR:** Within LR family, each subclass handles a larger set of grammars
 - **Grammar transformation:** Left-recursive grammars can be mechanically transformed to non-left-recursive, but the resulting grammar may be harder to read
 - **Inherently ambiguous languages:** Some languages are inherently ambiguous — no unambiguous grammar exists for them
-
-## Sources
-
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers classification of context-free grammars for parsing

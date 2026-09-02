@@ -2,8 +2,6 @@
 concept: DNS Cache
 aliases: [DNS caching, cached DNS, DNS cache levels]
 tags: [networking, dns]
-sources_count: 1
-last_source: https.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -76,7 +74,3 @@ digraph G {
 - TTL too long = slow propagation of DNS changes
 - TTL too short = unnecessary load on DNS servers
 - `ipconfig /flushdns` clears Windows DNS cache
-
-## Sources
-
-- [[https-summary|HTTP HTTPS DNS URL Source]]

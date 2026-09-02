@@ -242,14 +242,6 @@ Minimum 4 connections. Each must have a brief explanation of the relationship.
 - When does this fail or break down?
 - What hidden assumptions does it rely on?
 - What do people commonly misunderstand about it?
-
-## Sources
-
-- [[../topic-name-summary|Human readable source name]]
-```
-
----
-
 ## Rendering Rules
 
 1. **Mathematics:** Use LaTeX inline (`$x^2$`) or display (`$$...$$`). Never use images for math.

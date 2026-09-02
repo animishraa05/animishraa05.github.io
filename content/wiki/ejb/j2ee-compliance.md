@@ -2,8 +2,6 @@
 concept: J2EE Compliance
 aliases: [J2EE Certified, TCK, Test Compatibility Kit]
 tags: [dev, ejb, j2ee]
-sources_count: 1
-last_source: ejb6.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -66,6 +64,3 @@ digraph G {
 - **Human nature of competition**: Vendors may interpret ambiguous specs differently
 - **Version lag**: Some vendors slow to implement new J2EE versions
 - **Proprietary extensions**: Vendors add features beyond spec, creating lock-in
-
-## Sources
-- [[ejb6-summary|EJB6 Source Summary]]

@@ -2,8 +2,6 @@
 concept: JNDI Naming Concepts
 aliases: [JNDI Names, Atomic Name, Compound Name, Binding, Context, Subcontext]
 tags: [dev, ejb, jndi]
-sources_count: 1
-last_source: ejb6.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -81,6 +79,3 @@ digraph G {
 - **Context destruction**: Destroying a context may not destroy its subcontexts
 - **Lazy loading**: Large contexts may load bindings lazily
 - **Compound name parsing**: Be careful with provider-specific parsing rules
-
-## Sources
-- [[ejb6-summary|EJB6 Source Summary]]

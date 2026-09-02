@@ -42,7 +42,3 @@ A session bean is a server-side component that represents work being performed f
 - Session beans cannot survive application server crashes
 - If client times out, container may destroy the session bean
 - Do not rely on ejbRemove() for critical cleanup—it may never be called if container crashes
-
-## Sources
-
-- [[ejb-source-summary|EJB Source]]

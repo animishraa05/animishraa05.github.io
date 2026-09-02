@@ -64,7 +64,3 @@ digraph object_code {
 - **Position-independent code (PIC):** Shared libraries use PIC where all addresses are relative to the program counter — requires different object code structure
 - **Link-time optimization (LTO):** Modern compilers can defer optimization to link time, keeping IR in object files
 - **Debug info formats:** DWARF (Unix) or CodeView (Windows) — these can significantly increase object file size
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — introduces object code as the compilation output

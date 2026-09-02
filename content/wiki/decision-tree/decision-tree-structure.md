@@ -2,8 +2,6 @@
 concept: Decision Tree Structure
 aliases: [decision tree anatomy, tree components, tree nodes]
 tags: [ml, decision-trees]
-sources_count: 1
-last_source: dtree.md
 created: 2026-05-06
 updated: 2026-05-06
 ---
@@ -77,7 +75,3 @@ digraph decision_tree_structure {
 - **Missing structural info**: The structure itself doesn't indicate confidence — a leaf with 1 sample looks the same as one with 1000
 - **Ordering matters**: The same dataset can produce structurally different trees depending on which attribute is chosen first
 - **Empty branches**: Some attribute values may not appear in the training data, creating structural gaps
-
-## Sources
-
-- [[dtree-summary|Decision Tree in Machine Learning]] — source of tree anatomy, node types, and structural explanation

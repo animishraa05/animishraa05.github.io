@@ -3,8 +3,6 @@ title: Vim Modes
 concept:
 aliases: [mode, normal mode, insert mode, visual mode, command mode]
 tags: [dev, vim]
-sources_count: 1
-last_source: YBlog - Learn Vim Progressively.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -49,7 +47,3 @@ Key mappings:
 - [[vim-text-objects|Text Objects]] — Selection commands that require Visual mode
 - [[vim-visual-selection|Visual Selection]] — Modes for selecting text blocks
 - [[vim-macros|Macros]] — Recording in Normal mode
-
-## Sources
-
-- [[learn-vim-progressively-summary|YBlog - Learn Vim Progressively]]

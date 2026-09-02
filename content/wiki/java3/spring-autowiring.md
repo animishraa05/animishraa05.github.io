@@ -70,7 +70,3 @@ digraph autowiring {
 - **Field injection in unit tests**: Need reflection or Spring test runner; constructor injection avoids this entirely
 - **Circular dependency with constructor injection**: Unresolvable — use @Lazy on one side or switch to setter injection
 - **@Autowired on final fields**: Fails because Spring uses reflection to set fields but final fields can't be set via reflection after construction
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Spring autowiring

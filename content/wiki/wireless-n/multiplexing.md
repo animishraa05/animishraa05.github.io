@@ -2,8 +2,6 @@
 concept: Multiplexing
 aliases: [frequency-division-multiplexing, time-division-multiplexing]
 tags: [networking, multiplexing]
-sources_count: 1
-last_source: WirelessN.md
 created: 2026-04-21
 updated: 2026-04-21
 ---
@@ -39,6 +37,3 @@ Multiplexing is the technique of combining multiple signals into a single shared
 - CDMA is interference-limited — adding more users degrades quality for all users (soft capacity)
 - TDMA requires precise synchronization — clock drift can cause slot misalignment
 - CDMA codes must be orthogonal to minimize self-interference
-
-## Sources
-- [[wireless-n-summary|WirelessN.md]]

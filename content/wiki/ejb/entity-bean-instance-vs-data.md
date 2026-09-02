@@ -2,8 +2,6 @@
 concept: "Entity Bean Instance vs Data"
 aliases: [entity bean in-memory vs persistent, entity bean terminology]
 tags: [dev, ejb, entity-bean]
-sources_count: 1
-last_source: ejb5.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -66,6 +64,3 @@ digraph InstanceVsData {
 - **Stale data**: If another client modifies the DB directly, in-memory instance has old data (until next `ejbLoad()`)
 - **Instance pooling**: The same Java instance might represent Ray's account now, Bob's account later (container reuses instances)
 - **Transparent to client**: Client doesn't know or care about instance vs data distinction—they just call methods
-
-## Sources
-- [[ejb5-summary|EJB5 Source Summary]]

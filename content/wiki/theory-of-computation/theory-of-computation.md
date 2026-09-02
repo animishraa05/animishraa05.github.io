@@ -4,8 +4,6 @@ aliases: [ToC, theoretical computer science]
 tags: [theory, foundations]
 created: 2026-04-11
 updated: 2026-04-11
-confidence: high
-status: stable
 ---
 
 ## The Problem
@@ -43,11 +41,6 @@ Computer scientists use mathematical abstractions called models of computation t
 
 - The potentially infinite memory of a Turing machine seems unrealizable, but any decidable problem only requires finite memory
 - The field abstracts away practical constraints to focus on fundamental limits
-
-## Sources
-
-- [[theory-of-computation-wikipedia|Theory of computation - Wikipedia]]
-
 ## Why This Matters
 
 Understanding computational limits informs what problems are tractable, guides algorithm design, and shapes the entire field of computer science.

@@ -2,8 +2,6 @@
 concept: Attribute Selection Measures
 aliases: [splitting criteria, attribute selection, feature selection metric]
 tags: [ml, decision-trees]
-sources_count: 1
-last_source: dtree.md
 created: 2026-05-06
 updated: 2026-05-06
 ---
@@ -79,7 +77,3 @@ digraph attribute_selection {
 - **Ties are common**: Multiple attributes may score equally; tie-breaking affects tree structure
 - **Measure choice matters**: Some datasets respond better to Gini, others to IG — no universal winner
 - **No interaction detection**: Cannot detect that two weak attributes together would be strong
-
-## Sources
-
-- [[dtree-summary|Decision Tree in Machine Learning]] — identifies Information Gain and Gini Index as the two popular measures

@@ -76,8 +76,3 @@ graph semantic_interfaces {
 - **Interface constants**: Fields in interfaces are implicitly `public static final`
 - **FunctionalInterface annotation**: `@FunctionalInterface` is a documentation aid — the compiler validates single abstract method
 - **Sealed interfaces** (Java 17+): Restrict which classes can implement an interface
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — interfaces
-- [[java2-summary|Java OOP Concepts — Source Summary]] — interfaces provide 100% abstraction

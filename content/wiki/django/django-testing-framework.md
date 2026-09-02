@@ -68,12 +68,3 @@ class ItemModelTest(TestCase):
 ## Edge Cases & Gotchas
 
 - If your code communicates with an external API (like Stripe), your tests will actually hit the real API and charge money unless you use "Mocking" to fake the external response.
-
-## Active Recall Questions
-
-> [!question]- Why doesn't running Django tests delete your local development data?
-> Because the test runner creates a separate, isolated test database for the duration of the tests.
-
-## Sources
-
-- [[django-summary|Source: Django Learning Roadmap]] — testing, unit tests, mock, fixtures

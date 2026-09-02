@@ -2,8 +2,6 @@
 concept: LOOK Scheduling
 aliases: [LOOK Disk Scheduling, Elevator LOOK]
 tags: [systems, storage]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -56,7 +54,3 @@ digraph look {
 - Must track the furthest request in each direction
 - Slightly more complex than SCAN
 - Default in many modern OSs
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

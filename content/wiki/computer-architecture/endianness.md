@@ -51,6 +51,3 @@ digraph endianness {
 - Single bytes are not affected by endianness
 - Mixing systems with different endianness causes data corruption
 - Some CPUs are bi-endian (can switch mode) — software must track current mode
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

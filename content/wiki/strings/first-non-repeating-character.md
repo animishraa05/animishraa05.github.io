@@ -98,7 +98,3 @@ graph semantic_first_non_repeat {
 - Case sensitivity: 'A' and 'a' are different characters — the hash structure treats them separately
 - For strings with only one unique character appearing once (e.g., "aaaabbbbccccd"): 'd' is the answer
 - The naive solution without hashing is O(n²) — the hash structure reduces this to O(n)
-
-## Sources
-
-- [[strings-summary|Strings (Character Hashing in C++)]]

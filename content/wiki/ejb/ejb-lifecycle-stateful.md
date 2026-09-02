@@ -66,7 +66,3 @@ The stateful session bean lifecycle has four states: Does Not Exist, Ready, Pass
 
 - Don't rely on ejbRemove() or ejbPassivate() for critical cleanup
 - External resources (DB connections) should be released in passivate and re-acquired in activate
-
-## Sources
-
-- [[ejb-source-summary|EJB Source]]

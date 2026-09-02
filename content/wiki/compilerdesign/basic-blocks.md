@@ -87,7 +87,3 @@ graph semantic_bb {
 - **Overlapping blocks:** Blocks cannot overlap — each instruction belongs to exactly one block
 - **Critical edges:** Edges from a block with multiple successors to a block with multiple predecessors are called critical edges — they complicate optimization
 - **Unreachable code:** Instructions after an unconditional jump (but before the next leader) are unreachable — dead code elimination can remove them
-
-## Sources
-
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers basic blocks in intermediate code generation

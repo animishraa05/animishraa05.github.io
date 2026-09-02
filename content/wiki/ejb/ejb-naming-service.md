@@ -2,8 +2,6 @@
 concept: "EJB Naming Service"
 aliases: [JNDI tree, EJB registry, naming and directory service]
 tags: [dev, ejb, jndi]
-sources_count: 1
-last_source: ejb5.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -60,6 +58,3 @@ digraph NamingService {
 - **JNDI properties are environment-specific**: Different containers need different factory/URL settings
 - **Network partition**: If naming service is unreachable, all lookups fail
 - **Nickname collisions**: Two beans with same JNDI name cause deployment errors
-
-## Sources
-- [[ejb5-summary|EJB5 Source Summary]]

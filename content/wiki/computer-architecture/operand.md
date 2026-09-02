@@ -49,6 +49,3 @@ digraph operand {
 - Operand count varies by instruction type (ADD has 2-3, JUMP has 1, NOP has 0)
 - Invalid operand (bad address, null pointer) causes exceptions
 - Some operands are implicit (stack instructions use SP implicitly)
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

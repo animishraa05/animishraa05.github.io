@@ -3,8 +3,6 @@ title: ControlNet
 concept: controlnet
 aliases: [spatial conditioning, control models]
 tags: [ai, diffusion]
-sources_count: 1
-last_source: imgen.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -54,7 +52,3 @@ When we render "Made by Lakme" as a black-on-white image and pass it to ControlN
 - Scale too high = looks pasted on
 - Scale too low = doesn't follow constraints
 - Additional VRAM needed
-
-## Sources
-
-- [[imgen-summary]]

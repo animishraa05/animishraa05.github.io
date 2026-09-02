@@ -2,8 +2,6 @@
 concept: Spread Spectrum
 aliases: [spread-spectrum-techniques, FHSS, DSSS]
 tags: [networking, spread-spectrum]
-sources_count: 1
-last_source: WirelessN.md
 created: 2026-04-21
 updated: 2026-04-21
 ---
@@ -48,6 +46,3 @@ There are two primary techniques:
 - FHSS hop sequences must be synchronized between transmitter and receiver; losing sync loses communication
 - FHSS devices must hop fast enough to avoid being jammed on any single frequency
 - DSSS spreading codes must have good autocorrelation properties to minimize ISI
-
-## Sources
-- [[wireless-n-summary|WirelessN.md]]

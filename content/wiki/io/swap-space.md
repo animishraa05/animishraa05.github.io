@@ -2,8 +2,6 @@
 concept: Swap Space
 aliases: [Swap Partition, Virtual Memory Swap]
 tags: [systems, storage]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -57,7 +55,3 @@ digraph swap {
 - Swap on SSD wears out flash cells (limited write endurance)
 - Too much swapping = thrashing (spending all time swapping, not working)
 - Some systems allow disabling swap (risky — OOM killer may activate)
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

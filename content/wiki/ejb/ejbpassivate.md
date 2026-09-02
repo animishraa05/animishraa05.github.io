@@ -52,6 +52,3 @@ digraph G {
 - Only for stateful session beans (NOT stateless, NOT entity beans)
 - Don't do business logic here — just cleanup
 - If this method throws an exception, passivation fails and bean stays in memory
-
-## Sources
-- [[ejb-source-summary|EJB Source Summary]]

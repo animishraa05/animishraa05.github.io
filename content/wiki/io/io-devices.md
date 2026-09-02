@@ -2,8 +2,6 @@
 concept: I/O Devices
 aliases: [Input/Output Devices, Peripheral Devices]
 tags: [systems, io]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -73,7 +71,3 @@ digraph io_devices {
 - Some devices are both input and output (touchscreen, modem)
 - Block devices may emulate character devices for certain operations
 - Device classification blurs with modern hardware (GPU does both compute and output)
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

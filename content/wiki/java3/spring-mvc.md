@@ -75,7 +75,3 @@ digraph spring_mvc {
 - **@ModelAttribute vs @RequestParam**: @ModelAttribute binds complex objects; @RequestParam binds single parameters
 - **ViewResolver chaining**: Multiple ViewResolvers with order priority — first match wins
 - **async requests**: DeferredResult and Callable for long-lived async processing in controllers
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Spring MVC overview, architecture

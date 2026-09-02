@@ -2,8 +2,6 @@
 concept: Householding DWH
 aliases: [householding, household grouping, address-based deduplication]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -105,7 +103,3 @@ graph semantic_householding {
 - **Address changes:** When a household moves, the system must recognize the new address as the same household.
 - **Privacy concerns:** Grouping individuals by address may raise privacy issues, especially in regulated industries.
 - **False matches:** Fuzzy matching can incorrectly group unrelated people at similar addresses (e.g., "123 Main St" vs "123 Main St NE").
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — householding definition, cost savings example

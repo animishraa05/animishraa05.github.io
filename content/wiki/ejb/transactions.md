@@ -2,8 +2,6 @@
 concept: Transactions in EJB
 aliases: [ACID, Transaction Properties, EJB Transactions]
 tags: [dev, ejb]
-sources_count: 1
-last_source: EJb4.md
 created: 2026-04-28
 updated: 2026-04-28
 ---
@@ -58,6 +56,3 @@ digraph G {
 - Entity beans transaction spans ejbLoad → methods → ejbStore (not per individual method)
 - If each entity bean method is a separate transaction, performance suffers (too many DB reads/writes)
 - Client-initiated transactions over network have higher rollback rates (network failures)
-
-## Sources
-- [[EJb4-summary|EJb4.md Source Summary]]

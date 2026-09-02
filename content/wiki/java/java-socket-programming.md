@@ -82,7 +82,3 @@ graph semantic_sockets {
 - **Half-close**: `shutdownOutput()` allows reading after writing is done
 - **Thread per connection**: Doesn't scale to thousands of connections — use NIO selectors instead
 - **Firewall/NAT**: Socket connections may fail due to firewalls blocking ports
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — socket programming

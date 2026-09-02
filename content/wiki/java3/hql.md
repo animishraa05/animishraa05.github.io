@@ -73,7 +73,3 @@ digraph hql_flow {
 - **HQL vs SQL mindset**: HQL operates on entities, not rows — `select e.firstName, e.lastName` returns `Object[]`, not entities
 - **Positional parameters**: `?` positional params are deprecated in Hibernate 5+ in favor of `:named` parameters
 - **Scalar queries**: Aggregate results need proper typing — `query.getSingleResult()` returns `Long` for COUNT, not `Integer`
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — HQL and Native SQL queries

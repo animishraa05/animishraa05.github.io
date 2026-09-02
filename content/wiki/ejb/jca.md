@@ -2,8 +2,6 @@
 concept: J2EE Connector Architecture
 aliases: [JCA, Connector Architecture, Resource Adapters]
 tags: [dev, ejb, integration]
-sources_count: 1
-last_source: ejb6.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -64,6 +62,3 @@ digraph G {
 - **Transaction propagation**: XA transactions across EIS systems can be complex
 - **Connection pooling**: Adapter must properly implement connection management
 - **JCA versions**: JCA 1.5 added Message Inflow (for MDBs)
-
-## Sources
-- [[ejb6-summary|EJB6 Source Summary]]

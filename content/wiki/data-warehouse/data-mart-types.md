@@ -2,8 +2,6 @@
 concept: Data Mart Types
 aliases: [data mart, dependent data mart, independent data mart, hybrid data mart, top-down approach, bottom-up approach]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -121,7 +119,3 @@ graph semantic_data_mart {
 - **Integration cost:** Integrating independent data marts into a central warehouse later is complex and expensive.
 - **Too many marts:** Creating too many data marts becomes a maintenance nightmare — each needs its own ETL pipeline.
 - **Dependent mart latency:** Dependent marts are one ETL cycle behind the central warehouse, adding latency.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — data mart definition, three types, top-down vs. bottom-up

@@ -4,8 +4,6 @@ aliases: [computational model]
 tags: [theory, foundations]
 created: 2026-04-11
 updated: 2026-04-11
-confidence: high
-status: stable
 ---
 
 ## The Problem
@@ -44,7 +42,3 @@ The Turing machine is preferred because it is simple to formulate, can be analyz
 
 - All reasonable models of computation are equivalent (Church-Turing thesis)
 - The infinite memory of Turing machines is idealized—any decidable problem needs only finite memory
-
-## Sources
-
-- [[theory-of-computation-wikipedia|Theory of computation - Wikipedia]]

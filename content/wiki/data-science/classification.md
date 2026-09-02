@@ -2,8 +2,6 @@
 concept: Classification
 aliases: [classifier, categorical prediction]
 tags: [ml, data-science]
-sources_count: 2
-last_source: dtree.md
 created: 2026-04-30
 updated: 2026-05-06
 ---
@@ -51,7 +49,3 @@ digraph G {
 - Threshold choice: default 0.5 may not be optimal for asymmetric costs
 - Multiclass vs multilabel: one example can belong to multiple categories (different problem)
 - Calibration: predicted probabilities may not match true probabilities
-
-## Sources
-- [[ds-summary|Data Science Book Summary]]
-- [[dtree-summary|Decision Tree in Machine Learning]] — classification via decision tree leaf nodes

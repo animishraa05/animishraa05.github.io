@@ -61,7 +61,3 @@ digraph availability_nines {
 - Nines are calculated over a full year — a single prolonged outage can blow through the entire budget
 - "Five 9s" is extraordinarily difficult in practice, requiring redundant everything (power, network, servers, data centers)
 - Partial outages (degraded but not down) are often excluded from SLA calculations, masking real availability
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]] — availability section with nines calculation

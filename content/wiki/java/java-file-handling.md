@@ -88,7 +88,3 @@ graph semantic_file_io {
 - **File not closed**: Resource leak — always use try-with-resources
 - **File.separator**: Use `File.separator` or `Paths.get()` for cross-platform paths
 - **Large files**: Reading entire files into memory causes OOM — use streaming
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — file handling

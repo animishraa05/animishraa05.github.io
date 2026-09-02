@@ -55,6 +55,3 @@ digraph G {
 - Zero-window condition: receiver advertises window=0, sender must probe periodically
 - Silly window syndrome: small window updates can cause inefficient small transmissions
 - Flow control doesn't prevent network congestion — that's congestion control's job
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

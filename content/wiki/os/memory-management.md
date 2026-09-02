@@ -2,10 +2,6 @@
 concept: Memory Management
 aliases: [memory allocation, virtual memory manager, MMU]
 tags: [systems, os]
-status: draft
-confidence: high
-sources_count: 1
-last_source: OS.md
 created: 2026-06-11
 updated: 2026-06-11
 ---
@@ -97,7 +93,3 @@ graph semantic_memory_management {
 - Thrashing occurs when the system spends more time swapping pages to/from disk than executing code — the system effectively freezes
 - Fragmentation: external fragmentation (free memory split into small chunks) can prevent large allocations despite total free space being sufficient
 - Kernel memory is separate from user memory and cannot be swapped out — a bug in kernel memory management can crash the OS
-
-## Sources
-
-- [[os-summary|OS Source Summary]]

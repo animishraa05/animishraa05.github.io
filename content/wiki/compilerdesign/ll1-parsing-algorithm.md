@@ -89,7 +89,3 @@ graph semantic_ll1_algo {
 - **Synchronization:** For error recovery, the algorithm can skip tokens until it finds one in FOLLOW(A) — called panic-mode recovery
 - **Infinite loop:** If the grammar contains left recursion or cycles (`A → A`), the algorithm may loop forever — the table should prevent this for LL(1) grammars
 - **Table size limitation:** Real languages may need large tables — but LL(1) tables are much smaller than LR(1) tables
-
-## Sources
-
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers the LL(1) parsing algorithm and its steps

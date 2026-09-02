@@ -75,7 +75,3 @@ digraph spring_security {
 - **SecurityContext persistence**: In web apps, SecurityContext is stored in the HTTP session — ensure session management is configured
 - **Async security**: `@Async` methods lose SecurityContext — use `SecurityContextRunnable` or `DelegatingSecurityContextAsyncTaskExecutor`
 - **Whitelabel error page**: Spring Security's default error page appears when access is denied — customize with proper error handling
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Spring Security, authentication, authorization, architecture

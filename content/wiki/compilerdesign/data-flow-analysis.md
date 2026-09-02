@@ -68,8 +68,3 @@ digraph data_flow {
 - **Pointers and aliasing:** When variables can be accessed through pointers, tracking definitions becomes imprecise
 - **Control flow complexity:** Irreducible control flow (gotos, multiple entries) complicates data-flow analysis
 - **Array accesses:** `a[i]` and `a[j]` may or may not access the same location if i ≠ j — analysis must be conservative
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers data-flow analysis in compiler design
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers liveliness analysis, CSE, and constant propagation

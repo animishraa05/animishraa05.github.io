@@ -2,8 +2,6 @@
 concept: Message-Driven Bean (MDB)
 aliases: [MDB, MessageDrivenBean]
 tags: [dev, ejb]
-sources_count: 1
-last_source: EJb4.md
 created: 2026-04-28
 updated: 2026-04-28
 ---
@@ -62,6 +60,3 @@ digraph G {
 - Weak typing means you must check message type with `instanceof` at runtime
 - MDBs cannot be called directly via RMI — only through message destinations
 - From EJB 2.1+, can consume non-JMS messages via JCA resource adapters
-
-## Sources
-- [[EJb4-summary|EJb4.md Source Summary]]

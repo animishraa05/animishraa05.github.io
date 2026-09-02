@@ -2,8 +2,6 @@
 concept: Keyboard Interrupt
 aliases: [key press, scan code, keyboard controller]
 tags: [systems, hardware]
-sources_count: 1
-last_source: https.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -63,7 +61,3 @@ digraph G {
 - USB keyboards don't use hardware interrupts (polling)
 - Some keys have two-byte scan codes (extended keys)
 - Interrupt storms can overwhelm CPU (too many fast keypresses)
-
-## Sources
-
-- [[https-summary|HTTP HTTPS DNS URL Source]]

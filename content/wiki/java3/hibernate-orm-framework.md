@@ -97,7 +97,3 @@ graph semantic_hibernate {
 - **Open Session in View**: Keeping a session open during view rendering can cause LazyInitializationException
 - **equals() and hashCode()**: Must implement correctly for entities in collections, but primary keys change before persist
 - **Version field**: Optimistic locking requires a `@Version` annotated field
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Hibernate ORM framework, CRUD, mapping, annotations

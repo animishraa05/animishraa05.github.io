@@ -2,8 +2,6 @@
 concept: DWH Server Models
 aliases: [data warehouse server models, enterprise warehouse, virtual warehouse, centralized warehouse]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -116,7 +114,3 @@ graph semantic_server_models {
 - **Hybrid approaches:** Many companies use a combination — Enterprise warehouse for corporate reporting, Data Marts for departmental analysis.
 - **Cost progression:** Virtual (cheapest) → Tiered (moderate) → Enterprise (most expensive to build, but cheapest per-query at scale).
 - **Network dependency:** Centralized warehouses are highly dependent on network connectivity — a network failure blocks all analysis.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — three server models, advantages and disadvantages

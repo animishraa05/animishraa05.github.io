@@ -57,6 +57,3 @@ digraph G {
 - In local calls, Remote Interface overhead can be avoided by using Local Interface
 - EJB 3.x uses POJOs with annotations — explicit interfaces less required
 - The interface should only declare business methods, not lifecycle methods
-
-## Sources
-- [[ejb3-summary|EJB3 Source Summary]]

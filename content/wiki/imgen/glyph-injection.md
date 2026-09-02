@@ -3,8 +3,6 @@ title: Glyph Injection via ControlNet
 concept: glyph-injection
 aliases: [glyph control, text shape enforcement]
 tags: [ai, diffusion]
-sources_count: 1
-last_source: imgen.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -59,7 +57,3 @@ The `controlnet_scale` parameter (0.0-1.0) controls how strongly ControlNet over
 - Position must be specified (center, top-left, etc.)
 - Scale too high = text looks "pasted on", not integrated
 - Scale too low = spell errors return
-
-## Sources
-
-- [[imgen-summary]]

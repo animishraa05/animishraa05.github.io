@@ -2,8 +2,6 @@
 concept: CSS Parsing
 aliases: [CSSOM, CSS parsing, style parsing]
 tags: [dev, browser]
-sources_count: 1
-last_source: https.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -64,7 +62,3 @@ digraph G {
 - `@import` causes additional network requests (slow)
 - Invalid CSS silently fails (no error thrown)
 - Large stylesheets = slow CSSOM construction
-
-## Sources
-
-- [[https-summary|HTTP HTTPS DNS URL Source]]

@@ -3,8 +3,6 @@ title: Vim Text Objects
 concept:
 aliases: [text objects, textobjects, zone selection, ci", ca", etc]
 tags: [dev, vim]
-sources_count: 1
-last_source: YBlog - Learn Vim Progressively.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -58,7 +56,3 @@ Common objects:
 - [[vim-basic-commands|Survival Commands]] — Use operators like `d`, `y`
 - [[vim-visual-selection|Visual Selection]] — Text objects extend selection
 - [[vim-repetition|Repetition]] — Can repeat text object operations
-
-## Sources
-
-- [[learn-vim-progressively-summary|YBlog - Learn Vim Progressively]]

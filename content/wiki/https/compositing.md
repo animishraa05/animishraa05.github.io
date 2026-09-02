@@ -2,8 +2,6 @@
 concept: Compositing
 aliases: [layer composition, composite layers, GPU compositing]
 tags: [dev, browser]
-sources_count: 1
-last_source: https.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -69,7 +67,3 @@ digraph G {
 - Layer promotion with `will-change` can backfire
 - Compositing doesn't fix slow JavaScript
 - Not all CSS properties trigger compositing
-
-## Sources
-
-- [[https-summary|HTTP HTTPS DNS URL Source]]

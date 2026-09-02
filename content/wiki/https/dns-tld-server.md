@@ -2,8 +2,6 @@
 concept: DNS TLD Server
 aliases: [TLD server, top-level domain server, .com server]
 tags: [networking, dns]
-sources_count: 1
-last_source: https.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -63,7 +61,3 @@ digraph G {
 - Some TLDs have more stringent policies (.gov, .edu)
 - Country-code TLDs (.uk, .jp) have local governance
 - New gTLDs (.app, .dev) added regularly
-
-## Sources
-
-- [[https-summary|HTTP HTTPS DNS URL Source]]

@@ -87,7 +87,3 @@ graph semantic_gc {
 - **Finalization**: `finalize()` is deprecated (Java 9+) — use Cleaner or try-with-resources
 - **GC logs**: Enable with `-Xlog:gc*` for tuning — critical for diagnosing memory issues
 - **Object resurrection**: In finalize(), an object can make itself reachable again (avoid this pattern)
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — garbage collection

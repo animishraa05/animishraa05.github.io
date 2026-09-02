@@ -71,7 +71,3 @@ digraph spel {
 - **Performance**: Complex SpEL expressions are evaluated on every access — avoid in hot paths
 - **Method invocation**: Only public methods on beans can be called; private/static methods require T() type operator
 - **Security**: SpEL can call any bean method and access any property — never use user-provided input in SpEL expressions (security risk)
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — SpEL overview

@@ -2,8 +2,6 @@
 concept: Class-Based Views
 aliases: [CBV, Class-Based Views, Generic Views, django.views.generic]
 tags: [dev, django]
-sources_count: 1
-last_source: Django.md
 created: 2026-08-09
 updated: 2026-08-09
 ---
@@ -114,7 +112,3 @@ graph semantic_class_based_views {
 - **MRO conflicts**: Multiple mixins overriding same method — order in class declaration matters
 - **`context_object_name`**: `ListView` uses `object_list`; `DetailView` uses `object`; customize for clarity
 - **Form kwargs**: `CreateView`/`UpdateView` pass `instance` to form; `get_form_kwargs()` for extra data
-
-## Sources
-
-- [[django-summary|Django Learning Roadmap]]

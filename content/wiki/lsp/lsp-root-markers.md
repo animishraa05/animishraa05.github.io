@@ -2,8 +2,6 @@
 concept: true
 aliases: []
 tags: [dev, neovim]
-sources_count: 1
-last_source: lsp
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -44,7 +42,3 @@ Root Markers are files or directories (like `.git`, `package.json`, `pyproject.t
 - Search traverses upward until root filesystem or found
 - Polyglot projects may need careful marker ordering
 - Some languages have specific markers (e.g., `.clangd` for clangd)
-
-## Sources
-
-- [[lsp-summary|LSP — Neovim Documentation]]

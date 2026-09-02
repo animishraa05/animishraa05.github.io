@@ -80,7 +80,3 @@ digraph junit_flow {
 - **Test ordering**: Tests should be independent — don't rely on execution order; use `@TestMethodOrder` if order matters
 - **Mockito annotations**: `@ExtendWith(MockitoExtension.class)` enables @Mock and @InjectMocks
 - **Static methods in tests**: @BeforeAll and @AfterAll must be static (unless using PER_CLASS lifecycle)
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — JUnit 5, unit testing, test-driven development

@@ -2,8 +2,6 @@
 concept: "Serialization vs ORM"
 aliases: [Java serialization vs object-relational mapping]
 tags: [dev, ejb, database]
-sources_count: 1
-last_source: ejb5.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -86,6 +84,3 @@ digraph SerVsORM {
 - **Serialization version UID**: If you change the class, deserialization fails without `serialVersionUID`
 - **ORM impedance mismatch**: Object model ≠ relational model (inheritance, collections are hard to map)
 - **EJB 3.x uses JPA**: Java Persistence API—modern evolution of EJB entity beans + ORM
-
-## Sources
-- [[ejb5-summary|EJB5 Source Summary]]

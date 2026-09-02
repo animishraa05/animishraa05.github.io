@@ -96,14 +96,6 @@ _2-3 thought-provoking questions to test retention. Hide the answers using Obsid
 
 > [!question]- What happens if...?
 > _Answer goes here._
-
-## Sources
-
-- [[topic-name-summary|Source: Full Title]] — what this source contributed
-````
-
----
-
 ## Template 2 — Synthesis Page
 
 ```markdown

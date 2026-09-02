@@ -52,6 +52,3 @@ digraph G {
 - Only works on wired networks — wireless can't detect collisions (hidden terminal problem)
 - Maximum network length limited by propagation delay (must detect collision in time)
 - Modern Ethernet switches use full-duplex — no collisions, CSMA/CD obsolete in practice
-
-## Sources
-- [[wireless-n-summary|Wireless Networks Source Summary]]

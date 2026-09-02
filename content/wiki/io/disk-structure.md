@@ -2,8 +2,6 @@
 concept: Disk Structure
 aliases: [Hard Disk Structure, Disk Geometry]
 tags: [systems, storage]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -69,7 +67,3 @@ digraph disk {
 - Sectors aren't always 512B — modern disks use 4KB physical sectors
 - Zone bit recording: outer tracks have more sectors than inner tracks
 - Bad sectors must be remapped (handled by disk firmware)
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

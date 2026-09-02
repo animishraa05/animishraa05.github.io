@@ -3,8 +3,6 @@ title: Server
 concept: server
 aliases: [server computer]
 tags: [systems, server]
-sources_count: 1
-last_source: front-end-and-back-end-wikipedia
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -52,7 +50,3 @@ Servers can be physical machines, virtual machines, or containers. They typicall
 - Server downtime affects all clients
 - Security critical—servers are attack targets
 - Performance bottlenecks can affect all users
-
-## Sources
-
-- [[front-end-and-back-end-wikipedia-summary|Front End and Back End — Wikipedia]]

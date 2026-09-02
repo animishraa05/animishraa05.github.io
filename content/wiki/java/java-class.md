@@ -86,7 +86,3 @@ graph semantic_class {
 - **Nested classes**: Inner classes, static nested classes, local classes, and anonymous classes have different rules
 - **Default constructor disappears**: If you define any constructor, the default no-arg constructor is not provided
 - **Class name vs filename**: The public class name must match the filename (case-sensitive on case-sensitive systems)
-
-## Sources
-
-- [[java2-summary|Java OOP Concepts — Source Summary]] — class as blueprint, Car/BMW/Mercedes/Audi example

@@ -2,8 +2,6 @@
 concept: One-to-One Relationship in EJB
 aliases: [1:1 Relationship, One-to-One Cardinality]
 tags: [dev, ejb]
-sources_count: 1
-last_source: EJb4.md
 created: 2026-04-28
 updated: 2026-04-28
 ---
@@ -67,6 +65,3 @@ digraph G {
 - BMP requires JNDI lookup + findByPrimaryKey in ejbLoad (extra code/overhead)
 - CMP relationships are defined in deployment descriptor, not Java code
 - Wrong directionality (unidirectional when you need bidirectional) limits navigation
-
-## Sources
-- [[EJb4-summary|EJb4.md Source Summary]]

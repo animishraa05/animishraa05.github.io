@@ -84,7 +84,3 @@ graph semantic_rd {
 - **Backtracking overhead:** Naive backtracking recursive descent can have exponential worst-case time
 - **Error reporting:** Hand-written parsers can produce better error messages than generated parsers, but require careful coding
 - **Grammar changes:** Changing the grammar requires rewriting the corresponding functions — parser generators handle this automatically
-
-## Sources
-
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers recursive descent parser as a type of top-down parser

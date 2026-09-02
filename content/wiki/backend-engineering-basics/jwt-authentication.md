@@ -2,8 +2,6 @@
 concept: JWT Authentication
 aliases: [JWT, JSON Web Token, token-based auth, bearer token]
 tags: [security, authentication]
-sources_count: 1
-last_source: Backend Engineering Basics.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -50,7 +48,3 @@ JWT has three parts: header (algorithm), payload (claims), signature (verificati
 - Token size larger than session ID (more bandwidth)
 - No logout on server—you can only expire tokens on client
 - Need to handle token refresh (short-lived access + long-lived refresh tokens)
-
-## Sources
-
-- [[backend-engineering-basics-summary|Backend Engineering Basics]]

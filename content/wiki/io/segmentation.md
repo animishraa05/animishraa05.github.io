@@ -2,8 +2,6 @@
 concept: Segmentation
 aliases: [Segmented Memory, Variable-Size Partitioning]
 tags: [systems, memory]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -55,7 +53,3 @@ digraph seg {
 - External fragmentation: gaps between segments
 - Segment table overhead per process
 - Segment bounds checking required (hardware)
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

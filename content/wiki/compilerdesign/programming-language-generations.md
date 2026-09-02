@@ -56,7 +56,3 @@ digraph lang_generations {
 - **Classification is rough:** Some languages span generations (Python is 3GL with some 4GL characteristics)
 - **JIT blurs the line:** Java is compiled to bytecode (3GL→intermediate) then JIT-compiled to native at runtime
 - **Modern trend:** Most new languages compile to an intermediate representation (bytecode, WASM) rather than directly to machine code
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers generations of programming languages

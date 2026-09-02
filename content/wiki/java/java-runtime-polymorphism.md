@@ -81,7 +81,3 @@ graph semantic_runtime_poly {
 - **Private methods are not polymorphic**: They are not inherited, so they cannot be overridden
 - **Constructors cannot be overridden**: Each class has its own constructors; superclass constructors are called via super()
 - **Bridge methods**: When covariance interacts with generics, the compiler generates bridge methods to maintain polymorphism
-
-## Sources
-
-- [[java2-summary|Java OOP Concepts — Source Summary]] — runtime polymorphism, speak() example

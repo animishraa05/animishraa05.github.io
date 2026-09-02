@@ -52,6 +52,3 @@ digraph G {
 - Higher layers must implement reliability if needed (TCP does this on top of IP)
 - Packet loss is expected and must be handled by applications or transport layer
 - "Best effort" doesn't mean "no effort" — routers still try their best to forward
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

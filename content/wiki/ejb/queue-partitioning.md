@@ -2,8 +2,6 @@
 concept: Queue Partitioning for Business Processing
 aliases: [Queue Partitioning, Cluster Queue Separation, Dev vs Prod Queues]
 tags: [dev, ejb]
-sources_count: 1
-last_source: EJb4.md
 created: 2026-04-28
 updated: 2026-04-28
 ---
@@ -61,6 +59,3 @@ digraph G {
 - Queue names must be known at deployment time (configured in MDB deployment)
 - If one queue gets all the traffic, that cluster may be overwhelmed while other is idle
 - Not true dynamic load balancing — routing decision made before queue insertion
-
-## Sources
-- [[EJb4-summary|EJb4.md Source Summary]]

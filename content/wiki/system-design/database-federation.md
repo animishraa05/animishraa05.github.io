@@ -70,7 +70,3 @@ digraph Federation {
 - **Cross-domain queries** — a report that needs user names and product names requires two database queries and application-level join, which is slower than a SQL JOIN.
 - **Uneven load distribution** — one domain (users) may have 100x the traffic of another (analytics), requiring different infrastructure per federation.
 - **Transaction boundaries** — an operation that updates both users and forums cannot use a cross-database ACID transaction; requires a saga or eventual consistency pattern.
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]]

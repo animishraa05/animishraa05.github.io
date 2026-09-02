@@ -61,8 +61,3 @@ digraph syntax_analysis {
 - **Left recursion:** Top-down parsers cannot handle left-recursive grammars — must be eliminated
 - **Ambiguity:** An ambiguous grammar can produce two different parse trees for the same program
 - **Error recovery strategies:** Panic mode (skip tokens until sync token found), phrase-level recovery, error productions
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers syntax analysis as the second compiler phase
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers syntax analysis, CFG classification, and parsing

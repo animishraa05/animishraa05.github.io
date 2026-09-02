@@ -84,7 +84,3 @@ graph semantic_arraylist {
 - **SubList is a view**: `subList()` returns a view backed by the original list — modifying either affects both
 - **trimToSize()**: Reduces capacity to current size to save memory
 - **Not synchronized**: Use `Collections.synchronizedList()` or `CopyOnWriteArrayList` for thread safety
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — ArrayList

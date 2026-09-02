@@ -2,8 +2,6 @@
 concept: "EJB Roles"
 aliases: [Bean Provider, Application Assembler, EJB Deployer, System Administrator, Container Provider]
 tags: [dev, ejb]
-sources_count: 1
-last_source: ejb5.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -61,6 +59,3 @@ digraph EJBRoles {
 - In small teams, one person may wear multiple roles (Bean Provider + Assembler + Deployer)
 - Container Provider role is only for big vendors (Oracle, IBM, Red Hat)—most developers are Bean Providers
 - Miscommunication between Assembler and Deployer causes deployment failures
-
-## Sources
-- [[ejb5-summary|EJB5 Source Summary]]

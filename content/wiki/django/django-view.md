@@ -62,12 +62,3 @@ def hello(request):
 
 - Forgetting to return a response object will cause an error.
 - Putting too much logic in the view (Fat Views) makes code hard to maintain; logic should often be pushed to the model or service layer.
-
-## Active Recall Questions
-
-> [!question]- What is the primary responsibility of a Django View?
-> To process business logic, handle the incoming HTTP request, and return an HTTP response.
-
-## Sources
-
-- [[django-summary|Source: Django Learning Roadmap]] — views component explanation

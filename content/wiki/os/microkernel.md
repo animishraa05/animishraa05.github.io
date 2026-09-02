@@ -2,10 +2,6 @@
 concept: Microkernel
 aliases: [μkernel, minimal kernel, modular kernel]
 tags: [systems, os]
-status: draft
-confidence: high
-sources_count: 1
-last_source: OS.md
 created: 2026-06-11
 updated: 2026-06-11
 ---
@@ -108,7 +104,3 @@ graph semantic_microkernel {
 - The IPC overhead can be mitigated with hardware acceleration (like L4's fast IPC) but is still higher than function calls
 - Pure microkernels are rare in mainstream computing — most consumer OSes use hybrid or monolithic kernels
 - MINIX 3 was designed as a "highly reliable" microkernel OS and influenced Intel's Management Engine (ME)
-
-## Sources
-
-- [[os-summary|OS Source Summary]]

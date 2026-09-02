@@ -50,6 +50,3 @@ digraph G {
 - Blocking vs non-blocking sockets: blocking waits, non-blocking returns immediately
 - Socket descriptor leaks if `close()` isn't called (resource exhaustion)
 - Different socket types: stream (TCP), datagram (UDP), raw sockets
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

@@ -2,8 +2,6 @@
 concept: Pluggable Message Providers
 aliases: [JCA 1.5, J2EE Connector Architecture, Resource Adapters for MDB]
 tags: [dev, ejb]
-sources_count: 1
-last_source: EJb4.md
 created: 2026-04-28
 updated: 2026-04-28
 ---
@@ -63,6 +61,3 @@ digraph G {
 - Writing custom resource adapters requires deep knowledge of JCA 1.5 specification
 - JAX-RPC only supports SOAP 1.1 and is not asynchronous — JCA is the solution for async non-SOAP
 - Each message type needs its own listener interface implemented by the MDB
-
-## Sources
-- [[EJb4-summary|EJb4.md Source Summary]]

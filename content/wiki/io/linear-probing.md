@@ -2,8 +2,6 @@
 concept: Linear Probing
 aliases: [Linear Search, Open Addressing]
 tags: [systems, data-structures]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -58,7 +56,3 @@ digraph linear_probe {
 - Performance drops sharply when load factor > 0.7
 - Deletion needs tombstones (can't just clear slot)
 - Table must be resized when getting full
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

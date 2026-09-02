@@ -53,6 +53,3 @@ digraph G {
 - Window size must be <= sequence number space/2 to avoid ambiguity
 - More complex state management at receiver
 - NAK generation and handling adds complexity
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

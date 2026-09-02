@@ -62,12 +62,3 @@ urlpatterns = [
 
 - Forgetting the trailing slash can cause unexpected 404s depending on the `APPEND_SLASH` setting.
 - Overlapping patterns: A broad pattern at the top might accidentally catch URLs meant for patterns below it.
-
-## Active Recall Questions
-
-> [!question]- Which component decides which View should handle an incoming request?
-> The URL Dispatcher.
-
-## Sources
-
-- [[django-summary|Source: Django Learning Roadmap]] — routing mechanism and lifecycle

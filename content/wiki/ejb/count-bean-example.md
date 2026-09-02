@@ -2,8 +2,6 @@
 concept: Count Bean Example
 aliases: [Stateful Session Bean Example, CountBean]
 tags: [dev, ejb]
-sources_count: 1
-last_source: ejb6.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -72,6 +70,3 @@ digraph G {
 - **`this` danger**: Never pass `this` to other beans—use `getEJBObject()`
 - **Pool limit**: Container-specific setting controls when passivation occurs
 - **Server crash**: Passivated state may be lost if server crashes
-
-## Sources
-- [[ejb6-summary|EJB6 Source Summary]]

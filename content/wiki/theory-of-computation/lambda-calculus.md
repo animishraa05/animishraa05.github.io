@@ -4,8 +4,6 @@ aliases: [λ-calculus]
 tags: [theory, models]
 created: 2026-04-11
 updated: 2026-04-11
-confidence: high
-status: stable
 ---
 
 ## The Problem
@@ -44,11 +42,6 @@ Computation proceeds through **beta reduction** - replacing variables in the fun
 
 - Lambda calculus has no native numbers or data structures—they must be encoded
 - Some terms have no normal form (don't reduce to a final value)
-
-## Sources
-
-- [[theory-of-computation-wikipedia|Theory of computation - Wikipedia]]
-
 ## Why This Matters
 
 Lambda calculus is the foundation for functional programming languages (Lisp, Haskell) and provides a pure mathematical model of computation based on functions rather than state machines.

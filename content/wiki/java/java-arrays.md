@@ -85,7 +85,3 @@ graph semantic_arrays {
 - **Clone is shallow**: `array.clone()` on an object array copies references, not objects
 - **Jagged arrays are arrays of arrays**: `int[][]` where each sub-array can have different lengths
 - **Zero-length array is valid**: `new int[0]` is useful for returning empty results
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — arrays

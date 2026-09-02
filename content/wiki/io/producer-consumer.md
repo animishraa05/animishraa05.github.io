@@ -2,8 +2,6 @@
 concept: Producer-Consumer Problem
 aliases: [Bounded Buffer Problem, Producer-Consumer]
 tags: [systems, concurrency]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -58,7 +56,3 @@ digraph prod_cons {
 - Wrong semaphore order can cause deadlock (always mutex last in, first out)
 - Buffer must be protected by mutex during access
 - Can be extended to multiple producers/consumers
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

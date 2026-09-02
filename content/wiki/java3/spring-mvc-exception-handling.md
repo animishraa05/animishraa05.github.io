@@ -70,7 +70,3 @@ digraph exception_handling {
 - **Async exceptions**: Exceptions in @Async methods or DeferredResult need separate handling (AsyncExceptionHandler)
 - **ResponseStatusException**: Spring 5+ provides `ResponseStatusException` for programmatic status + reason without custom exception classes
 - **Security exceptions**: Spring Security exceptions are handled by the Security filter chain, not ControllerAdvice
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Exception handling in Spring MVC

@@ -79,7 +79,3 @@ digraph G {
 - **Conflict resolution is hard**: Last-write-wins can silently discard data. CRDTs avoid data loss but are complex to implement. Application-level merging (e.g., collaborative editing) may require user intervention.
 - **Stale reads can compound**: If many reads traverse a chain of eventually-consistent replicas, staleness can accumulate beyond expected bounds.
 - **Not appropriate for all data**: Financial transactions, inventory counts, and lock services generally cannot tolerate AP behavior.
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]]

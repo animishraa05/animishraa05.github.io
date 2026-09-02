@@ -2,8 +2,6 @@
 concept: Entity Bean Transaction Rules
 aliases: [Entity Bean CMT, EJB Transaction Golden Rule, BMP/CMP Transaction Restriction]
 tags: [dev, ejb]
-sources_count: 1
-last_source: EJb4.md
 created: 2026-04-28
 updated: 2026-04-28
 ---
@@ -64,6 +62,3 @@ digraph G {
 - Solution: make transactions span multiple method calls (using transaction attributes)
 - BMP developers often mistakenly try BMT — it's explicitly illegal in EJB spec
 - Entity beans don't control when ejbLoad/ejbStore are called — container does
-
-## Sources
-- [[EJb4-summary|EJb4.md Source Summary]]

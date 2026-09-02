@@ -58,6 +58,3 @@ digraph burst_dma {
 - Not suitable for systems requiring low-latency CPU response
 - Some systems limit maximum burst size to prevent excessive CPU blocking
 - Cache coherency issues still apply — CPU cache may be stale after burst
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

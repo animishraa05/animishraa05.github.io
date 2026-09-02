@@ -68,8 +68,3 @@ digraph lr_family {
 - **LALR reduce/reduce conflicts:** Merging states can introduce reduce/reduce conflicts that didn't exist in CLR — rare but possible
 - **Grammar class hierarchy:** Every SLR grammar is LALR, every LALR grammar is LR(1), but not vice versa
 - **Yacc uses LALR:** Most parser generators use LALR(1) — it handles nearly all programming language constructs
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers SLR, CLR, and LALR parsers in syntax analysis
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers LR parser family including LR(0)

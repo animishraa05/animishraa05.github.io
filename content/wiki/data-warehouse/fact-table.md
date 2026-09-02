@@ -2,8 +2,6 @@
 concept: Fact Table
 aliases: [fact table, measurable metrics, business events table]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -109,7 +107,3 @@ graph semantic_fact_table {
 - **Non-additive measures:** Some measures (e.g., ratios, percentages) cannot be meaningfully summed. These require special handling.
 - **Fact table granularity:** Choosing the right granularity (daily vs. monthly, per-transaction vs. per-day) is a critical design decision that cannot be easily changed later.
 - **Surrogate keys:** Fact tables use surrogate (integer) keys, not natural keys, for performance and to handle slowly changing dimensions.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — fact table definition, measures, foreign keys

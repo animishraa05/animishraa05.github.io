@@ -85,7 +85,3 @@ graph semantic_access_modifiers {
 - **Reflection bypasses access modifiers**: `setAccessible(true)` breaks encapsulation at runtime
 - **Default is not "friendly"**: Officially called package-private — no keyword; absence of modifier means default
 - **Nested classes**: Private members of outer class are accessible to inner classes
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — access modifiers

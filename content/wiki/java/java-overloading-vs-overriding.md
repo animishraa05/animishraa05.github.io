@@ -52,7 +52,3 @@ Overloading and overriding serve completely different purposes despite both invo
 - [[java-runtime-polymorphism|Runtime Polymorphism]] — overriding mechanism
 - [[java-polymorphism|Java Polymorphism]] — the parent concept of both
 - [[java-methods|Java Methods]] — the method declaration is the common foundation
-
-## Sources
-
-- [[java2-summary|Java OOP Concepts — Source Summary]] — compile-time vs runtime polymorphism

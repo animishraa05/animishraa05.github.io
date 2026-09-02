@@ -82,7 +82,3 @@ graph semantic_const_prop {
 - **Conditional constant propagation:** When a variable is constant on one branch but not another, the analysis must handle this precisely
 - **Sparse conditional constant propagation (SCCP):** A more powerful form that simultaneously tracks constants and reachability
 - **Not always beneficial:** Propagating a constant may increase code size (different constants propagated to different uses) without runtime benefit
-
-## Sources
-
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers constant propagation as a data-flow analysis and optimization technique

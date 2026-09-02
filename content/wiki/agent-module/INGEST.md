@@ -49,7 +49,7 @@ For each concept in your list:
 **Deferred linking rule:** Add outbound `[[links]]` freely. Do NOT go back to other files to add backlinks during ingest — this is expensive and error-prone. Instead, mark where a backlink is needed with a comment on the same line:
 
 ```markdown
-- **Related:** [[packet-switching|Packet Switching]] <!-- TODO: add backlink here -->
+- **Related:** [[packet-switching|Packet Switching]]
 ```
 
 These are resolved in the next lint pass.
@@ -201,10 +201,6 @@ Rules:
 concept: Human-Readable Concept Name
 aliases: [alt name, acronym, common misspelling]
 tags: [domain-tag, subtopic]
-status: stub | draft | complete
-confidence: high | medium | low | contested
-sources_count: 1
-last_source: source-filename
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
 ---
@@ -217,7 +213,6 @@ updated: YYYY-MM-DD
 title: A vs B — What Makes Them Different
 type: synthesis
 tags: [domain-tag, subtopic]
-status: stub | draft | complete
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
 ---

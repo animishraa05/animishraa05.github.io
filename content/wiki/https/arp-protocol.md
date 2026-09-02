@@ -2,8 +2,6 @@
 concept: ARP Protocol
 aliases: [Address Resolution Protocol, IP to MAC, ARP lookup]
 tags: [networking, arp]
-sources_count: 1
-last_source: https.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -64,7 +62,3 @@ digraph G {
 - ARP cache poisoning is a common attack vector
 - Large networks can have many ARP entries (router burden)
 - No authentication—anyone can reply to ARP queries
-
-## Sources
-
-- [[https-summary|HTTP HTTPS DNS URL Source]]

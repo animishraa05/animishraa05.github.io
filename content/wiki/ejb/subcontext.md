@@ -2,8 +2,6 @@
 concept: Subcontext
 aliases: [Subcontext, Nested Context]
 tags: [dev, ejb, jndi]
-sources_count: 1
-last_source: ejb6.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -58,6 +56,3 @@ digraph G {
 - **Circular references**: Avoid creating circular subcontext structures
 - **Provider support**: Not all providers support subcontext creation
 - **Deep hierarchies**: Very deep nesting may impact performance
-
-## Sources
-- [[ejb6-summary|EJB6 Source Summary]]

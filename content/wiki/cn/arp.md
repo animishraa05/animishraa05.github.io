@@ -51,6 +51,3 @@ digraph G {
 - ARP spoofing/poisoning: attacker can send fake ARP replies to intercept traffic
 - ARP cache timeout: entries expire and must be re-resolved
 - Doesn't work across routers (routers don't forward broadcasts)
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

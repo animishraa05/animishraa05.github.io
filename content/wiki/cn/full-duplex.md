@@ -49,6 +49,3 @@ digraph G {
 - Not all links support full-duplex (some wireless is half-duplex due to single radio)
 - Full-duplex Ethernet requires point-to-point links (no shared medium)
 - Asymmetric data rates: one side may send much more than the other
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

@@ -2,10 +2,6 @@
 concept: CPU Privilege Rings
 aliases: [protection rings, Ring 0, Ring 3, privilege levels]
 tags: [systems, os]
-status: draft
-confidence: high
-sources_count: 1
-last_source: OS.md
 created: 2026-06-11
 updated: 2026-06-11
 ---
@@ -95,7 +91,3 @@ graph semantic_cpu_privilege_rings {
 - Virtualization extensions (Intel VT-x, AMD-V) add a ring below 0 called "Ring -1" (VMX root) for hypervisors
 - ARM architectures have EL0 (user), EL1 (kernel), EL2 (hypervisor), EL3 (secure monitor) — a different naming but same concept
 - A program cannot simply "lower" its CPL — the CPU prevents this; only an interrupt/syscall gate can change CPL to a more privileged level
-
-## Sources
-
-- [[os-summary|OS Source Summary]]

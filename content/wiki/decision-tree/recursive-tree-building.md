@@ -2,8 +2,6 @@
 concept: Recursive Tree Building
 aliases: [top-down induction, recursive partitioning, tree induction algorithm]
 tags: [ml, decision-trees]
-sources_count: 1
-last_source: dtree.md
 created: 2026-05-06
 updated: 2026-05-06
 ---
@@ -77,7 +75,3 @@ digraph recursive_tree_building {
 - **Data fragmentation**: Deep recursion produces very small subsets that may not generalize
 - **Attribute exhaustion**: Running out of attributes before reaching purity forces majority vote leaves
 - **Memory growth**: Each recursive call holds its own data subset; deep trees consume significant memory
-
-## Sources
-
-- [[dtree-summary|Decision Tree in Machine Learning]] — recursive construction steps and stopping conditions for tree building

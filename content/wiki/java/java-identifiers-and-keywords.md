@@ -80,7 +80,3 @@ graph semantic_java_ids {
 - **`true`, `false`, `null` are literals, not keywords** — but still cannot be used as identifiers
 - **`var` is not a keyword** — it is a "reserved type name" with special inference behavior
 - **Dollar signs in identifiers** are legal but strongly discouraged (used by compiler-generated code)
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — identifiers and naming rules

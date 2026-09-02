@@ -93,11 +93,11 @@ graph semantic_two_phase_hashing {
 ## Connections
 
 - Built from: [[hashing-store-phase|Hashing Store Phase]] — Phase 1 is the foundation
-- Built from: [[hashing-retrieval-phase|Hashing Retrieval Phase]] — Phase 2 is the query layer <!-- TODO: add backlink here -->
+- Built from: [[hashing-retrieval-phase|Hashing Retrieval Phase]] — Phase 2 is the query layer
 - Builds into: [[most-frequent-character|Most Frequent Character]] — uses Phase 1 + Phase 2 (traverse struct for max)
 - Builds into: [[first-non-repeating-character|First Non-Repeating Character]] — uses Phase 1 + Phase 2 (re-traverse string)
 - Builds into: [[anagram-detection-via-hashing|Anagram Detection]] — uses Phase 1 for two strings + Phase 2 (compare)
-- Related: [[character-hashing-use-cases|Character Hashing Use Cases]] — catalog of problems following this pattern <!-- TODO: add backlink here -->
+- Related: [[character-hashing-use-cases|Character Hashing Use Cases]] — catalog of problems following this pattern
 
 ## Edge Cases & Gotchas
 
@@ -105,7 +105,3 @@ graph semantic_two_phase_hashing {
 - For first non-repeating character, Phase 2 re-traverses the original string, not the hash structure — a common confusion point
 - For anagram detection, Phase 1 runs twice (once per string), then Phase 2 compares — the phases apply per-string
 - Overlapping Phase 1 and 2 can be more efficient but harder to reason about
-
-## Sources
-
-- [[strings-summary|Strings (Character Hashing in C++)]]

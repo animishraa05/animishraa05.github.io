@@ -2,10 +2,6 @@
 concept: Kernel
 aliases: [OS kernel, kernel space, core]
 tags: [systems, os]
-status: draft
-confidence: high
-sources_count: 1
-last_source: OS.md
 created: 2026-06-11
 updated: 2026-06-11
 ---
@@ -101,7 +97,3 @@ graph semantic_kernel {
 - A kernel panic (Linux) or BSOD (Windows) occurs when the kernel encounters a fatal error — any bug in kernel mode can crash the entire system
 - Microkernels reduce crash surface by moving services to user space, but pay a performance cost from IPC overhead
 - Modern Linux uses a monolithic kernel with dynamically loadable modules, blurring the pure monolithic vs microkernel distinction
-
-## Sources
-
-- [[os-summary|OS Source Summary]]

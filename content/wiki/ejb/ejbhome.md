@@ -37,7 +37,3 @@ How do entity beans perform global operations that aren't specific to any single
 
 - Cannot call `getPrimaryKey()` in home methods—bean has no identity
 - Don't confuse with instance-specific business methods
-
-## Sources
-
-- [[ejb-continued-summary|EJbContinued]]

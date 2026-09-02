@@ -52,6 +52,3 @@ digraph G {
 - Very inefficient on long-RTT links (satellite: RTT is seconds, sender idle most of time)
 - Duplicate packets possible if ACK is lost (handled by sequence numbers)
 - Utilization = (packet transmission time) / (RTT + transmission time) — very low for high RTT
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

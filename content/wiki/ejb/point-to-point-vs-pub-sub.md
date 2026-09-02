@@ -2,8 +2,6 @@
 concept: Point-to-Point vs Publish/Subscribe Messaging
 aliases: [PTP vs Pub/Sub, Queue vs Topic, JMS Messaging Models]
 tags: [dev, ejb]
-sources_count: 1
-last_source: EJb4.md
 created: 2026-04-28
 updated: 2026-04-28
 ---
@@ -87,6 +85,3 @@ digraph G {
 - PTP with multiple consumers: you can't predict which consumer gets which message
 - Mixing Queue and Topic interfaces (e.g., using `QueueSender` with a Topic) causes runtime errors
 - Durable subscribers in Pub/Sub must be explicitly created and have a unique client ID
-
-## Sources
-- [[EJb4-summary|EJb4.md Source Summary]]

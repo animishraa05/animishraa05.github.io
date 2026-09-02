@@ -2,8 +2,6 @@
 concept: Underfitting
 aliases: [under-fit, high bias]
 tags: [ml, data-science]
-sources_count: 1
-last_source: ds.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -50,6 +48,3 @@ digraph G {
 - Excessive regularization (L1/L2 penalty too high) causes underfitting
 - Feature scaling issues can make models appear to underfit
 - Wrong model family: linear model for highly nonlinear data
-
-## Sources
-- [[ds-summary|Data Science Book Summary]]

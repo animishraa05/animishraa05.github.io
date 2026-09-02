@@ -97,8 +97,8 @@ graph semantic_frequency_array {
 - Builds into: [[two-phase-hashing|Two-Phase Hashing]] — frequency arrays are the storage mechanism in Phase 1
 - Builds into: [[most-frequent-character|Most Frequent Character]] — traversing the array finds the max frequency
 - Builds into: [[anagram-detection-via-hashing|Anagram Detection]] — comparing two frequency arrays checks anagrams
-- Contrasts with: [[unordered-map-frequency|Unordered Map for Frequency]] — maps offer flexibility but with hashing overhead <!-- TODO: add backlink here -->
-- Related: [[direct-array-access|Direct Array Access]] — no hashing means truly direct memory access <!-- TODO: add backlink here -->
+- Contrasts with: [[unordered-map-frequency|Unordered Map for Frequency]] — maps offer flexibility but with hashing overhead
+- Related: [[direct-array-access|Direct Array Access]] — no hashing means truly direct memory access
 
 ## Edge Cases & Gotchas
 
@@ -107,7 +107,3 @@ graph semantic_frequency_array {
 - Array size must match the domain — `freq[26]` fails for extended ASCII or Unicode
 - Iterating all 26 slots when only 3 characters appeared wastes time (minor but relevant for sparse data)
 - The array stores frequencies, not positions — cannot directly answer "where does character X first appear?"
-
-## Sources
-
-- [[strings-summary|Strings (Character Hashing in C++)]]

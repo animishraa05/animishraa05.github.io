@@ -2,8 +2,6 @@
 concept: Device-Independent I/O Software
 aliases: [Device-Independent Layer, Generic I/O Software]
 tags: [systems, io]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -59,7 +57,3 @@ digraph dev_indep {
 - Buffer cache size affects performance — too small means frequent disk reads
 - Error reporting must be consistent across device types
 - Device naming conventions vary by OS (Linux vs Windows)
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

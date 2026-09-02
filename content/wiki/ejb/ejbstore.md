@@ -38,7 +38,3 @@ How does an entity bean persist its modified in-memory state back to the databas
 
 - Called by container, not by client directly
 - Don't confuse with `ejbPassivate()` which releases resources, not saves data
-
-## Sources
-
-- [[ejb-continued-summary|EJbContinued]]

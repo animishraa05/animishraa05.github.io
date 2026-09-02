@@ -58,6 +58,3 @@ digraph G {
 - Can't count arbitrarily (e.g., can't recognize aⁿbⁿ for arbitrary n)
 - NFAs can be converted to DFAs (but may require exponentially more states)
 - Regular expressions in programming are often MORE powerful than formal regular languages
-
-## Sources
-- [[theory-of-computation-wikipedia|Theory of Computation Wikipedia]]

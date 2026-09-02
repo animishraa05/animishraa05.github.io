@@ -60,8 +60,3 @@ digraph symbol_table {
 - **Nested scopes:** Same name can refer to different variables in different scopes — lookup must search from innermost to outermost
 - **Forward references:** In languages allowing forward references (C), the symbol entry may be created before its full type is known
 - **Overloaded functions:** C++/Java allow multiple functions with the same name but different parameters — the symbol table must store multiple entries with different signatures
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers symbol table as a key compiler component
-- [[cd2-summary|Compiler Design for GATE Exam]] — GATE exam coverage of symbol tables in compilers

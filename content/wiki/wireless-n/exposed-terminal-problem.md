@@ -2,8 +2,6 @@
 concept: Exposed Terminal Problem
 aliases: [exposed-node, exposed-terminal]
 tags: [networking, mac]
-sources_count: 1
-last_source: WirelessN.md
 created: 2026-04-21
 updated: 2026-04-21
 ---
@@ -42,6 +40,3 @@ The key insight: if the intended receivers are sufficiently separated, simultane
 - It mainly affects throughput (capacity), not call success rates
 - Directional antennas can help — C can transmit in a direction different from B's reception zone
 - RTS/CTS helps resolve both hidden and exposed terminal problems by explicitly announcing receiver locations
-
-## Sources
-- [[wireless-n-summary|WirelessN.md]]

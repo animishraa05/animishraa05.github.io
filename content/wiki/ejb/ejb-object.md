@@ -62,6 +62,3 @@ digraph G {
 - If container fails, EJB Object cannot communicate with bean
 - EJB Object pooling is possible for stateless beans, but each stateful bean has its own EJB Object
 - The "EJB Object" is conceptually similar to a Stub in RMI
-
-## Sources
-- [[ejb3-summary|EJB3 Source Summary]]

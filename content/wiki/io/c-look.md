@@ -2,8 +2,6 @@
 concept: C-LOOK
 aliases: [Circular LOOK, C-LOOK Disk Scheduling]
 tags: [systems, storage]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -57,7 +55,3 @@ digraph clook {
 - Needs to track first and last request
 - Most practical for real-world workloads
 - Often the default disk scheduler
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

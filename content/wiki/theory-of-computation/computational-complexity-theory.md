@@ -4,8 +4,6 @@ aliases: [Complexity Theory]
 tags: [theory, branch]
 created: 2026-04-11
 updated: 2026-04-11
-confidence: high
-status: stable
 ---
 
 ## The Problem
@@ -43,11 +41,6 @@ Problems are grouped into complexity classes (P, NP, PSPACE, etc.) based on reso
 
 - A problem being "hard" doesn't mean it's impossible—just that it requires lots of resources
 - Polynomial vs exponential time is a crucial distinction in practice
-
-## Sources
-
-- [[theory-of-computation-wikipedia|Theory of computation - Wikipedia]]
-
 ## Why This Matters
 
 Complexity theory guides algorithm design and informs which problems are tractable in practice. The P vs NP problem is one of the most important open questions in computer science.

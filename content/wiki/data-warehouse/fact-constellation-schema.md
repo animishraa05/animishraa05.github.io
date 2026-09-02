@@ -2,8 +2,6 @@
 concept: Fact Constellation Schema
 aliases: [fact constellation, galaxy schema, multiple fact tables]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -110,7 +108,3 @@ graph semantic_constellation {
 - **Dimension conformance:** Shared dimensions must have consistent definitions across all fact tables. If "Time" means different things in Sales vs. Shipping, cross-process analysis fails.
 - **Implementation challenge:** Galaxy schemas are difficult to design and maintain — they are the most complex of the three schema types.
 - **When to use:** Only needed for enterprise-level companies with genuinely distinct but related business processes.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — fact constellation, galaxy schema, shared dimensions

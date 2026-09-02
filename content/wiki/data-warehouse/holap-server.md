@@ -2,8 +2,6 @@
 concept: HOLAP Server
 aliases: [HOLAP, hybrid OLAP, hybrid online analytical processing]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -110,7 +108,3 @@ graph semantic_holap {
 - **Configuration complexity:** Administrators must carefully choose which aggregations to pre-compute — wrong choices waste storage or provide no performance benefit.
 - **Stale aggregations:** When detailed data is refreshed, MOLAP aggregations must be re-computed, adding refresh latency.
 - **Not a panacea:** HOLAP inherits weaknesses from both ROLAP (slow detail queries) and MOLAP (storage overhead for aggregations).
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — HOLAP as combination of ROLAP and MOLAP

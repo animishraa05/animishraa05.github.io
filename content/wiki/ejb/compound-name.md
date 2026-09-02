@@ -2,8 +2,6 @@
 concept: Compound Name
 aliases: [Path Name, Composite Name]
 tags: [dev, ejb, jndi]
-sources_count: 1
-last_source: ejb6.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -60,6 +58,3 @@ digraph G {
 - **Escaping**: Special characters in atomic names may need escaping in compound names
 - **Absolute vs relative**: Some compound names are relative to a context
 - **Parsing errors**: Incorrect syntax causes `InvalidNameException`
-
-## Sources
-- [[ejb6-summary|EJB6 Source Summary]]

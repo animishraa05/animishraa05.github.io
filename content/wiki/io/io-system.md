@@ -2,8 +2,6 @@
 concept: I/O System
 aliases: [Input/Output System, I/O Subsystem]
 tags: [systems, io]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -68,7 +66,3 @@ digraph io_system {
 - Interrupt storms can overwhelm the CPU if devices generate too many interrupts
 - Some devices don't support interrupts and require polling
 - DMA conflicts can occur if the DMA controller isn't properly programmed
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

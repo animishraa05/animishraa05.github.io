@@ -2,8 +2,6 @@
 concept: Bluetooth
 aliases: [bluetooth-standard, IEEE-802-15-1]
 tags: [networking, wpan]
-sources_count: 1
-last_source: WirelessN.md
 created: 2026-04-21
 updated: 2026-04-21
 ---
@@ -58,6 +56,3 @@ Bluetooth (IEEE 802.15.1) is a wireless personal area network (WPAN) standard fo
 - Range is limited (10 m) — not suitable for longer-range applications
 - Security was weak in early versions (Bluetooth 1.0); PIN-based pairing was vulnerable
 - BLE (Bluetooth Low Energy) is a different physical layer from classic Bluetooth
-
-## Sources
-- [[wireless-n-summary|WirelessN.md]]

@@ -2,10 +2,6 @@
 concept: Process Management
 aliases: [process scheduling, CPU scheduling, process lifecycle]
 tags: [systems, os]
-status: draft
-confidence: high
-sources_count: 1
-last_source: OS.md
 created: 2026-06-11
 updated: 2026-06-11
 ---
@@ -98,7 +94,3 @@ graph semantic_process_management {
 - Infinite loops in user mode can be preempted by timer interrupts — the scheduler reclaims control
 - Priority inversion can occur when a high-priority process waits for a resource held by a low-priority process (solved by priority inheritance)
 - Zombie processes (terminated but not waited on by parent) and orphan processes (parent terminated before child) are edge cases the OS must handle
-
-## Sources
-
-- [[os-summary|OS Source Summary]]

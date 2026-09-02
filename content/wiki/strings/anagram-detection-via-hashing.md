@@ -114,7 +114,3 @@ graph semantic_anagram {
 - Unicode characters: arrays cannot handle this — must use hash maps
 - Whitespace and punctuation: the problem typically specifies whether to ignore these
 - Sorting approach (O(n log n)) is simpler to code but slower — hashing is the interview-optimized answer
-
-## Sources
-
-- [[strings-summary|Strings (Character Hashing in C++)]]

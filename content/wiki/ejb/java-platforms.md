@@ -2,8 +2,6 @@
 concept: Java Platforms
 aliases: [J2ME, J2SE, J2EE, Java Platform Hierarchy]
 tags: [dev, ejb, java]
-sources_count: 1
-last_source: ejb6.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -54,6 +52,3 @@ digraph G {
 - **J2SE in J2EE**: J2EE products must pass J2SE tests too
 - **Modern names**: J2ME → Java ME, J2SE → Java SE, J2EE → Java EE
 - **Android**: Not part of this hierarchy—uses different APIs
-
-## Sources
-- [[ejb6-summary|EJB6 Source Summary]]

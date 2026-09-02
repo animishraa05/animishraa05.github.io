@@ -84,7 +84,3 @@ graph semantic_hashmap {
 - **Hash collision performance**: Bad hashCode() implementation degrades performance to O(n)
 - **Rehashing cost**: When the map resizes, all entries are rehashed — an O(n) operation
 - **Not thread-safe**: Use `ConcurrentHashMap` for concurrent access
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — HashMap

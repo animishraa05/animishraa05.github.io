@@ -65,7 +65,3 @@ digraph query_methods {
 - **Distinct**: `findDistinctBy...` for distinct results
 - **IgnoreCase**: Works only on String comparisons; added after property: `findByLastNameIgnoreCase`
 - **Nested property ambiguity**: `findByAddressZipCode` assumes `address.zipCode` property; if `addressZipCode` is a direct property, it won't find it — disambiguate with `findByAddress_ZipCode`
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — JPA query methods

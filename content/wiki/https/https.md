@@ -2,8 +2,6 @@
 concept: HTTPS
 aliases: [HTTP over TLS, secure HTTP, encrypted HTTP]
 tags: [security, https]
-sources_count: 1
-last_source: https.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -62,7 +60,3 @@ digraph G {
 - Certificate expiration breaks HTTPS (browser warning)
 - TLS 1.3 is faster (1-RTT handshake)
 - Some networks block HTTPS (deep packet inspection)
-
-## Sources
-
-- [[https-summary|HTTP HTTPS DNS URL Source]]

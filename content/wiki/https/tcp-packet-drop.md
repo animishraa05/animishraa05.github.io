@@ -2,8 +2,6 @@
 concept: TCP Packet Drop
 aliases: [packet loss, dropped packet, TCP retransmission]
 tags: [networking, tcp]
-sources_count: 1
-last_source: https.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -65,7 +63,3 @@ digraph G {
 - Too-long timeout = slow recovery
 - Congestion collapse if many TCP flows don't back off
 - Some networks drop packets intentionally (policing)
-
-## Sources
-
-- [[https-summary|HTTP HTTPS DNS URL Source]]

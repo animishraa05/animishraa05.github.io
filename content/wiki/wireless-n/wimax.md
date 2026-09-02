@@ -2,8 +2,6 @@
 concept: WiMAX
 aliases: [IEEE-802-16, wimax-standard]
 tags: [networking, wlan]
-sources_count: 1
-last_source: WirelessN.md
 created: 2026-04-21
 updated: 2026-04-21
 ---
@@ -60,6 +58,3 @@ WiMAX (IEEE 802.16) is a metropolitan area wireless broadband standard providing
 - Many WiMAX operators migrated to LTE
 - Line-of-sight fixed WiMAX (802.16-2004) was an alternative to DSL but never scaled
 - Mobile WiMAX (802.16e) was the first 4G contender but lost to LTE
-
-## Sources
-- [[wireless-n-summary|WirelessN.md]]

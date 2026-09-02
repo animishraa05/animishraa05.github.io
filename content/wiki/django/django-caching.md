@@ -65,12 +65,3 @@ def homepage(request):
 
 - Caching dynamic, user-specific data (like a shopping cart) globally will cause users to see other users' data.
 - "Cache Invalidation is one of the two hard things in computer science." Knowing when to delete cache is harder than setting it.
-
-## Active Recall Questions
-
-> [!question]- What happens during a "Cache Miss"?
-> The system fails to find the data in the cache, forces the expensive computation to happen, and then stores the new result in the cache.
-
-## Sources
-
-- [[django-summary|Source: Django Learning Roadmap]] — performance, redis

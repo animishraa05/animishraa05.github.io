@@ -71,8 +71,3 @@ digraph attributed_sdt {
 - **L-attributed ≠ all inherited:** Not all grammars with inherited attributes are L-attributed — the restriction on attribute dependencies is strict
 - **Bottom-up evaluation of L-attributed:** Possible with explicit action placement in the grammar (annotation markers), but requires grammar transformation
 - **Real compiler usage:** Most real compilers use a mix — type information from SDTs combined with separate semantic analysis passes
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers S-attributed and L-attributed SDTs
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers synthesized vs inherited attributes

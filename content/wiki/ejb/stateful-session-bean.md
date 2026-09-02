@@ -42,7 +42,3 @@ A stateful session bean is a session bean designed to service business processes
 - Heavy on memory—can cause scalability issues with many concurrent users
 - Container may passivate even if you don't explicitly request it
 - State lost if client times out or container crashes
-
-## Sources
-
-- [[ejb-source-summary|EJB Source]]

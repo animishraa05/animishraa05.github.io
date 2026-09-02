@@ -86,7 +86,3 @@ graph semantic_multithreading {
 - **Race conditions**: Multiple threads reading/writing shared data without synchronization
 - **Visibility issues**: Changes by one thread may not be visible to others without happens-before guarantees
 - **Daemon threads terminated abruptly**: Daemon threads are killed when no user threads remain
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — multithreading fundamentals

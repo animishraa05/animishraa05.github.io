@@ -4,8 +4,6 @@ aliases: [TM]
 tags: [theory, models]
 created: 2026-04-11
 updated: 2026-04-11
-confidence: high
-status: stable
 ---
 
 ## The Problem
@@ -46,11 +44,6 @@ Any problem that can be solved by a computer can be solved by a Turing machine. 
 
 - The infinite tape is an abstraction—in practice, any useful computation needs finite memory
 - Not the only model; lambda calculus, register machines are all equivalent
-
-## Sources
-
-- [[theory-of-computation-wikipedia|Theory of computation - Wikipedia]]
-
 ## Why This Matters
 
 The Turing machine is the foundation for all computability theory. It defines what we mean by "computable" and provides the tool to prove limits like the undecidability of the halting problem.

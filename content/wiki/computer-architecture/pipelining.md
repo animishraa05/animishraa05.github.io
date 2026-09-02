@@ -54,6 +54,3 @@ digraph pipeline {
 - Branch prediction: need to guess which way a branch goes to keep pipeline full
 - Pipeline flush: when a branch is mispredicted, partially executed instructions must be discarded
 - RISC pipelines are deeper (more stages) than CISC (which are often translated to micro-ops first)
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

@@ -3,8 +3,6 @@ title: HTTP Methods
 concept: true
 aliases: [HTTP Verbs]
 tags: [networking, http]
-sources_count: 1
-last_source: understanding-http-for-backend-engineers
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -57,7 +55,3 @@ public class NoteController {
 - Use PATCH for most updates—PUT replaces entirely
 - POST creates new resources; calling twice typically creates two records
 - DELETE is idempotent—deleting already-deleted resource returns same response
-
-## Sources
-
-- [[understanding-http-for-backend-engineers-summary|Understanding HTTP for Backend Engineers]]

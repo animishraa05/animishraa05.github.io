@@ -54,6 +54,3 @@ digraph G {
 - VC state at routers means router failures break all active VCs
 - VC ID spaces are link-local, requiring translation at each hop
 - Not used in modern IP networks (uses datagram approach instead)
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

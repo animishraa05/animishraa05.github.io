@@ -81,7 +81,3 @@ graph semantic_loops {
 - **Off-by-one errors**: Using `<=` instead of `<` in loop conditions
 - **Concurrent modification**: Modifying a collection while iterating with for-each throws `ConcurrentModificationException`
 - **Performance**: Enhanced for-each on arrays is identical to index-based loops after compilation
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — loop constructs

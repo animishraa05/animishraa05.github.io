@@ -2,8 +2,6 @@
 concept: OLAP Servers
 aliases: [OLAP servers, ROLAP, MOLAP, HOLAP, specialized SQL servers, OLAP types]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -118,7 +116,3 @@ graph semantic_olap_servers {
 - **MOLAP vendor lock-in:** MDDBs are proprietary — migrating from one MOLAP vendor to another requires rebuilding all cubes.
 - **ROLAP SQL complexity:** For complex roll-ups across many dimensions, ROLAP generates extremely complex SQL that may not execute efficiently.
 - **Specialized SQL servers are niche:** Products like columnar databases (e.g., Redshift, BigQuery) are modern equivalents of specialized SQL servers.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — four OLAP server types, ROLAP vs. MOLAP comparison

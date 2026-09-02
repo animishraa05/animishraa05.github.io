@@ -2,8 +2,6 @@
 concept: "Why Bean Doesn't Implement Component Interface"
 aliases: [bean interface design, EJB object vs bean class]
 tags: [dev, ejb]
-sources_count: 1
-last_source: ejb5.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -77,6 +75,3 @@ digraph BeanInterface {
 - **Local interface problem**: The business interface pattern still causes local interfaces to throw `RemoteException`—annoying but tolerable
 - **Not mandatory**: You CAN implement the component interface—it's just not recommended
 - **Modern EJB (3.x+)**: Uses annotations (`@Remote`, `@Local`)—this problem is largely solved
-
-## Sources
-- [[ejb5-summary|EJB5 Source Summary]]

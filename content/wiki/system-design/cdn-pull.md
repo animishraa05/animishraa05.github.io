@@ -65,7 +65,3 @@ digraph pull_cdn {
 - Thundering herd problem: if popular content expires simultaneously, a flood of origin requests hits the server
 - Pull CDNs contribute to origin traffic on first access — large content (videos) causes significant origin load on first requests
 - TTL tuning is critical — too short defeats caching, too long serves stale content
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]] — CDN section in the Scalability chapter

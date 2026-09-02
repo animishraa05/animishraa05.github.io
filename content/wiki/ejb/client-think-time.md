@@ -2,8 +2,6 @@
 concept: Client Think Time
 aliases: [Think Time, User Think Time]
 tags: [dev, ejb, performance]
-sources_count: 1
-last_source: ejb6.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -63,6 +61,3 @@ digraph G {
 - **API clients**: May not have think time (continuous requests)
 - **Timeout**: Session may timeout during long think time
 - **Stateful beans**: Have dedicated state, can't leverage think time for pooling
-
-## Sources
-- [[ejb6-summary|EJB6 Source Summary]]

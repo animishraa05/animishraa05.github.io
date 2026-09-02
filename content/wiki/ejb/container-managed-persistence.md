@@ -42,7 +42,3 @@ With container-managed persistence (CMP), the EJB container automatically handle
 - Less control over exact SQL generated
 - Vendor-specific tools may be required for mapping
 - May not support all database features
-
-## Sources
-
-- [[ejb-source-summary|EJB Source]]

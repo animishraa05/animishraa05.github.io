@@ -2,8 +2,6 @@
 concept: Disk Scheduling
 aliases: [Disk Scheduling Algorithms, I/O Scheduling]
 tags: [systems, storage]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -59,7 +57,3 @@ digraph disk_sched {
 - SSTF can cause starvation for requests at disk edges
 - Request merging (adjacent sectors) can improve throughput
 - Modern disks do their own scheduling (NCQ) — OS scheduling may be ignored
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

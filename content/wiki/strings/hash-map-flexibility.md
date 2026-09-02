@@ -79,8 +79,8 @@ graph semantic_hash_map_flexibility {
 
 ## Connections
 
-- Built from: [[hash-collision-overhead|Hash Collision Overhead]] — flexibility requires hash functions, which can collide <!-- TODO: add backlink here -->
-- Builds into: [[unordered-map-frequency|Unordered Map for Frequency Counting]] — maps are the concrete implementation <!-- TODO: add backlink here -->
+- Built from: [[hash-collision-overhead|Hash Collision Overhead]] — flexibility requires hash functions, which can collide
+- Builds into: [[unordered-map-frequency|Unordered Map for Frequency Counting]] — maps are the concrete implementation
 - Builds into: [[ascii-math-elimination|ASCII Math Elimination]] — flexibility enables direct key usage
 - Contrasts with: [[known-range-assumption|Known Range Assumption]] — arrays sacrifice flexibility for the assumption
 - Contrasts with: [[memory-efficiency-array|Memory Efficiency of Array]] — flexibility costs memory
@@ -92,7 +92,3 @@ graph semantic_hash_map_flexibility {
 - Floating-point keys are problematic: NaN != NaN per IEEE 754, so lookup fails
 - Pointer keys hash by address, not by value — two different pointers with the same value are different keys
 - The flexibility argument cuts both ways: too flexible means type errors surface at runtime or as linker errors
-
-## Sources
-
-- [[strings-summary|Strings (Character Hashing in C++)]]

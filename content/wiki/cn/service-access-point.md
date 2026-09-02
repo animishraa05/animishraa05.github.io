@@ -52,6 +52,3 @@ digraph G {
 - SAP exhaustion (e.g., running out of ports) prevents new connections
 - SAP addressing must be unique within a system (e.g., IP+port combination)
 - Some SAPs are connection-oriented, others connectionless
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

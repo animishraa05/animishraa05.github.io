@@ -74,7 +74,3 @@ digraph spring_controller {
 - **@PathVariable vs @RequestParam**: Path variables identify resources; request params filter/ paginate
 - **@ResponseBody + String**: Returns the string itself, not a view name — common confusion with @Controller
 - **Method-level vs class-level @RequestMapping**: Class-level is the prefix; method-level defines the specific endpoint
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Spring Controller, @RequestMapping, @RequestParam, @RestController

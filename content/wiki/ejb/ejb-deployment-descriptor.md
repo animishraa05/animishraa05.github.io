@@ -58,6 +58,3 @@ digraph G {
 - Different servers may have server-specific descriptors
 - Descriptor errors can cause deployment failures
 - Security: Ensure DD is not world-readable in production
-
-## Sources
-- [[ejb3-summary|EJB3 Source Summary]]

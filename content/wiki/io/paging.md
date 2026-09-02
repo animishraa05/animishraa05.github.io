@@ -2,8 +2,6 @@
 concept: Paging
 aliases: [Memory Paging, Paged Memory Management]
 tags: [systems, memory]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -73,7 +71,3 @@ digraph paging {
 - Internal fragmentation: last page partially filled wastes space
 - Page table size grows with process size (use multi-level page tables)
 - Every memory access needs page table lookup (slow → use TLB)
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

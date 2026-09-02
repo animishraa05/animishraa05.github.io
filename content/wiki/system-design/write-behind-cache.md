@@ -64,7 +64,3 @@ digraph WriteBehind {
 - **Data loss on cache failure**: If the cache node crashes before flushing writes to the database, unpersisted data is lost. Requires replication or persistent caching layers to mitigate.
 - **Inconsistency window**: Readers may see data in the cache that hasn't yet been written to the database. Downstream systems querying the DB directly will not see the update.
 - **Write ordering**: If the cache reorders or coalesces writes, the database may receive updates in a different order than the application issued them.
-
-## Sources
-
-- [[readmemd-summary|System Design Primer Summary]]

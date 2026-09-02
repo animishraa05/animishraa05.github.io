@@ -2,8 +2,6 @@
 concept: Static Media Files
 aliases: [Static Files, Media Files, django.contrib.staticfiles, MEDIA_ROOT, STATIC_ROOT]
 tags: [dev, django]
-sources_count: 1
-last_source: Django.md
 created: 2026-08-09
 updated: 2026-08-09
 ---
@@ -119,7 +117,3 @@ graph semantic_static_media_files {
 - **Media URL collision**: `MEDIA_URL` must not overlap `STATIC_URL`; use distinct prefixes
 - **User upload validation**: `FileField` doesn't validate content type by default; add `FileExtensionValidator`, magic bytes check
 - **WhiteNoise + manifest**: WhiteNoise works with manifest storage but needs `WHITENOISE_MANIFEST_STRICT = False` for missing files
-
-## Sources
-
-- [[django-summary|Django Learning Roadmap]]

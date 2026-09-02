@@ -2,8 +2,6 @@
 concept: EJB Query Language (EJB-QL)
 aliases: [EJB-QL, EJB QL]
 tags: [dev, ejb]
-sources_count: 1
-last_source: EJb4.md
 created: 2026-04-28
 updated: 2026-04-28
 ---
@@ -62,6 +60,3 @@ digraph G {
 - EJB-QL syntax differs from JPQL (Java Persistence Query Language) in later JPA specs
 - EJB-QL only works with CMP 2.0+ entity beans; BMP beans use raw JDBC
 - Queries are validated at deployment time, not at compile time
-
-## Sources
-- [[EJb4-summary|EJb4.md Source Summary]]

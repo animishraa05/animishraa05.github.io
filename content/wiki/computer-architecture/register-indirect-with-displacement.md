@@ -53,6 +53,3 @@ digraph displacement {
 - Displacement is limited (typically 8 or 16 bits in instruction encoding)
 - Register must contain valid base address
 - Common in RISC: `lw $t0, 4($sp)` (MIPS load with displacement)
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

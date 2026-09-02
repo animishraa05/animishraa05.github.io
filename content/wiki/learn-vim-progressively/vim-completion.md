@@ -3,8 +3,6 @@ title: Vim Completion
 concept:
 aliases: [completion, word completion, Ctrl-n, Ctrl-p, insert completion]
 tags: [dev, vim]
-sources_count: 1
-last_source: YBlog - Learn Vim Progressively.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -53,7 +51,3 @@ Workflow:
 - [[vim-modes|Vim Modes]] — Completion in Insert mode
 - [[vim-basic-commands|Survival Commands]] — Insert mode basics
 - [[vim-repetition|Repetition]] — Can repeat insertions
-
-## Sources
-
-- [[learn-vim-progressively-summary|YBlog - Learn Vim Progressively]]

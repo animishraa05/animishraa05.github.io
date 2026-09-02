@@ -2,8 +2,6 @@
 concept: Page Fault
 aliases: [Page Fault Exception, Minor/Major Page Fault]
 tags: [systems, memory]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -63,7 +61,3 @@ digraph pagefault {
 - Invalid access (segfault) raises SIGSEGV, not page fault
 - Copy-on-write: page fault used to duplicate pages
 - Page fault handling is expensive (disk I/O)
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

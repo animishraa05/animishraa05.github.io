@@ -2,8 +2,6 @@
 concept: "Location Transparency"
 aliases: [JNDI location transparency, write once run anywhere EJB]
 tags: [dev, ejb, jndi]
-sources_count: 1
-last_source: ejb5.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -58,6 +56,3 @@ digraph LocationTransparency {
 - **JNDI properties still machine-specific**: `Context.PROVIDER_URL` specifies naming service location—but this is configuration, not code
 - **Network partition**: If JNDI service is unreachable, lookup fails (even if bean is running)
 - **Nickname collisions**: Two beans with same JNDI name cause deployment errors
-
-## Sources
-- [[ejb5-summary|EJB5 Source Summary]]

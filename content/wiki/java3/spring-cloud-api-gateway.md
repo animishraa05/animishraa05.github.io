@@ -74,7 +74,3 @@ digraph api_gateway {
 - **CORS**: Gateway must handle CORS at the edge — configure `spring.cloud.gateway.globalcors`
 - **Latency**: Each filter adds latency — keep filter chains lean
 - **Gateway as SPOF**: The gateway is a single point of entry — deploy multiple instances behind a load balancer
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — API Gateway with Spring Cloud

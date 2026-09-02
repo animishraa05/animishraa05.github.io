@@ -2,8 +2,6 @@
 concept: Hashing
 aliases: [Hash Table, Hash Function]
 tags: [systems, data-structures]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -57,7 +55,3 @@ digraph hashing {
 - High load factor (>0.7) dramatically increases collisions
 - Rehashing needed when table gets too full
 - Worst case: all keys hash to same index
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

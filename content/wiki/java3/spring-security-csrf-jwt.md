@@ -80,7 +80,3 @@ digraph security_protection {
 - **CORS vs CSRF**: CORS is about cross-origin access; CSRF is about request forgery — they address different threats
 - **Bearer token storage**: Storing JWT in localStorage is vulnerable to XSS; httpOnly cookies are safer but require CSRF protection
 - **JWT size**: Large JWT tokens with many claims can exceed header size limits — keep claims minimal
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — CSRF, CORS, JWT in Spring Security

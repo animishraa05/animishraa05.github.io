@@ -2,8 +2,6 @@
 concept: Authentication System
 aliases: [Django Auth, User Authentication, django.contrib.auth]
 tags: [dev, django]
-sources_count: 1
-last_source: Django.md
 created: 2026-08-09
 updated: 2026-08-09
 ---
@@ -127,7 +125,3 @@ graph semantic_auth_system {
 - **Session fixation**: `login()` rotates session key; `SESSION_COOKIE_HTTPONLY`, `SECURE` should be True in prod
 - **Permission caching**: `user.get_all_permissions()` caches; `user.has_perm()` uses cache; `user = User.objects.get(...)` refreshes
 - **`is_active` flag**: Inactive users can't login; `authenticate()` returns None for inactive users
-
-## Sources
-
-- [[django-summary|Django Learning Roadmap]]

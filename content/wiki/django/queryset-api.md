@@ -2,8 +2,6 @@
 concept: QuerySet API
 aliases: [QuerySet, Django ORM Queries, django.db.models.QuerySet]
 tags: [dev, django]
-sources_count: 1
-last_source: Django.md
 created: 2026-08-09
 updated: 2026-08-09
 ---
@@ -119,7 +117,3 @@ graph semantic_queryset_api {
 - **`len(qs)` vs `qs.count()`**: `len()` evaluates and caches; `count()` always does `SELECT COUNT(*)`
 - **`exists()` vs `bool(qs)`**: `exists()` does `SELECT 1 ... LIMIT 1`; `bool()` evaluates full QuerySet
 - **M2M `filter()` vs `exclude()`**: `Post.objects.filter(tags__name='django')` vs `exclude(tags__name='django')` — `exclude` matches posts with NO matching tags, not posts where ALL tags don't match
-
-## Sources
-
-- [[django-summary|Django Learning Roadmap]]

@@ -57,6 +57,3 @@ digraph G {
 - Pass-by-value for normal objects, pass-by-reference for Remote objects
 - Class must be available on both client and server
 - Not used much today — replaced by REST, gRPC, SOAP
-
-## Sources
-- [[ejb3-summary|EJB3 Source Summary]]

@@ -56,7 +56,7 @@ fi
 
 cd "$CONTENT_DIR"
 
-opencode run "
+opencode run --agent query "
 You are a wiki maintenance agent. Read these files first:
 
 1. $AGENTS_FILE — master behavioral rules
@@ -70,8 +70,8 @@ Now answer this question using the wiki:
 Follow the QUERY.md process step by step:
 1. Read wiki/index.md first to find relevant pages
 2. Read every relevant concept, synthesis, and source summary page fully
-3. Synthesize an answer with [[wikilinks]] as citations
-4. Flag any gaps the wiki can't answer
+3. Synthesize an answer with [[wikilinks]] as citations (Quartz-clean, human teach tone)
+4. Flag any gaps the wiki can't answer → append to wiki/open-questions.md
 
 $SAVE_INSTRUCTION
 

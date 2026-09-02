@@ -76,7 +76,3 @@ digraph jdbc_template {
 - **No lazy loading**: All fields must be explicitly selected; no proxy-based lazy loading
 - **SQL injection**: Always use parameterized queries (`?` or `:param`), never concatenate user input into SQL strings
 - **DataSource configuration**: JdbcTemplate needs a properly configured DataSource bean; Spring Boot auto-configures one
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Spring JDBC Template, NamedParameterJdbcTemplate

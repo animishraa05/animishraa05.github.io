@@ -85,7 +85,7 @@ graph semantic_memory_efficiency {
 
 ## Connections
 
-- Built from: [[direct-array-access|Direct Array Access]] — contiguous memory enables efficient addressing <!-- TODO: add backlink here -->
+- Built from: [[direct-array-access|Direct Array Access]] — contiguous memory enables efficient addressing
 - Builds into: [[frequency-array|Frequency Array]] — memory efficiency is a key advantage of arrays
 - Builds into: [[interview-decision-framework|Array vs Hash Map Decision Framework]] — memory is a decision factor
 - Contrasts with: [[hash-collision-overhead|Hash Collision Overhead]] — maps pay for collision resolution structures
@@ -98,7 +98,3 @@ graph semantic_memory_efficiency {
 - If only 3 out of 26 characters appear, the array still uses all 104 bytes — no savings from sparsity
 - The memory advantage reverses for sparse data over a large domain: a hash map storing only the 3 appearing characters uses less memory than a full array of the domain
 - For multibyte encodings (UTF-8), neither freq[26] nor a simple char map works — the key type must handle variable-length sequences
-
-## Sources
-
-- [[strings-summary|Strings (Character Hashing in C++)]]

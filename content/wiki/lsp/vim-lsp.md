@@ -2,8 +2,6 @@
 concept: true
 aliases: [vim.lsp]
 tags: [dev, neovim]
-sources_count: 1
-last_source: lsp
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -45,7 +43,3 @@ Neovim needs a built-in way to connect to LSP servers without requiring external
 - Global keymaps are created unconditionally on startup
 - Default buffer-local settings (omnifunc, tagfunc, formatexpr) can conflict with other plugins
 - Large workspaces: file watching can cause performance issues on Linux
-
-## Sources
-
-- [[lsp-summary|LSP — Neovim Documentation]]

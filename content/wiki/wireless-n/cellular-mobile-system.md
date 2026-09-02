@@ -2,8 +2,6 @@
 concept: Cellular Mobile System
 aliases: [cellular-network, cellular-system]
 tags: [networking, cellular]
-sources_count: 1
-last_source: WirelessN.md
 created: 2026-04-21
 updated: 2026-04-21
 ---
@@ -46,6 +44,3 @@ Key concepts: **Frequency Reuse** (same frequencies in distant cells), **Cell Sp
 - Cell boundaries are not clean hexagons — they overlap and change with traffic and conditions
 - Very small cells (micro-cells) require more base stations, increasing infrastructure cost
 - Too many small cells cause excessive handoffs, degrading quality
-
-## Sources
-- [[wireless-n-summary|WirelessN.md]]

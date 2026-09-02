@@ -2,8 +2,6 @@
 concept: Servlets
 aliases: [Java Servlet, Servlet Technology]
 tags: [dev, ejb, web]
-sources_count: 2
-last_source: java3.md
 created: 2026-04-29
 updated: 2026-05-13
 ---
@@ -67,7 +65,3 @@ digraph G {
 - **Session management**: Servlets can use HTTP sessions but EJBs shouldn't
 - **Filter ordering**: Filter execution order follows web.xml declaration order
 - **async supported**: Servlet 3.0+ supports async processing for long-lived connections
-
-## Sources
-- [[ejb6-summary|EJB6 Source Summary]]
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — servlet lifecycle, filters, CRUD, session management

@@ -2,8 +2,6 @@
 concept: Overfitting
 aliases: [over-fit, memorization]
 tags: [ml, data-science]
-sources_count: 1
-last_source: ds.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -51,6 +49,3 @@ digraph G {
 - Data augmentation and regularization can mask underlying overfitting
 - Validation set overfitting: tuning hyperparameters too aggressively on validation set
 - Multiple comparison problem: testing many models increases chance of "significant" overfitting
-
-## Sources
-- [[ds-summary|Data Science Book Summary]]

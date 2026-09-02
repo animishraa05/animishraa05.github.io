@@ -65,8 +65,3 @@ digraph optimization {
 - **Optimization can hide bugs:** Some optimizations exploit undefined behavior in languages like C, causing working debug builds to break in optimized builds
 - **Diminishing returns:** Higher optimization levels (O3 vs O2) often yield marginal gains with significantly longer compile times
 - **Code size vs speed:** Some optimizations (loop unrolling, function inlining) increase code size for speed — must be tuned per application
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers code optimization as a phase of compilation
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers peephole, machine-dependent/independent optimization

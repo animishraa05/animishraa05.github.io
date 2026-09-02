@@ -2,8 +2,6 @@
 concept: Many-to-Many Relationship in EJB
 aliases: [M:N Relationship, Many-to-Many Cardinality]
 tags: [dev, ejb]
-sources_count: 1
-last_source: EJb4.md
 created: 2026-04-28
 updated: 2026-04-28
 ---
@@ -84,6 +82,3 @@ digraph G {
 - Junction table must be manually managed in BMP (SQL INSERT/DELETE for associations)
 - CMP container generates junction table SQL — you never see it
 - Adding/removing from Collection in CMP may trigger multiple SQL operations (performance consideration)
-
-## Sources
-- [[EJb4-summary|EJb4.md Source Summary]]

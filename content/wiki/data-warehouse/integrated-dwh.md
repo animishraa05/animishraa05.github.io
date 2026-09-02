@@ -2,8 +2,6 @@
 concept: Integrated Data Warehouse
 aliases: [integrated DWH, data integration, heterogeneous data integration]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -104,7 +102,3 @@ graph semantic_integrated_dwh {
 - **Integration is not deduplication:** Standardizing "M" and "Male" to "M" is integration; realizing two records are the same person is deduplication. Both are needed but are different processes.
 - **Loss of source fidelity:** Once integrated, the original source format is lost unless explicitly preserved in metadata.
 - **Conflicting business rules:** Two source systems may apply different business rules (e.g., different revenue recognition policies). Integration must decide which rule "wins."
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — integration as characteristic, data scrubbing examples

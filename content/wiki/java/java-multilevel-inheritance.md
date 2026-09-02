@@ -73,7 +73,3 @@ graph semantic_multilevel_inheritance {
 
 - **Deep hierarchy**: 3+ levels of inheritance is often a design smell — favor composition over deep inheritance
 - **Fragile base class problem**: Changes at the top of the chain can break classes multiple levels down
-
-## Sources
-
-- [[java2-summary|Java OOP Concepts — Source Summary]] — multilevel inheritance

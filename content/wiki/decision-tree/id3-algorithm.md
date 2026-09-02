@@ -2,8 +2,6 @@
 concept: ID3 Algorithm
 aliases: [Iterative Dichotomiser, ID3 tree induction, basic decision tree algorithm]
 tags: [ml, decision-trees]
-sources_count: 1
-last_source: dtree.md
 created: 2026-05-06
 updated: 2026-05-06
 ---
@@ -81,7 +79,3 @@ digraph id3_algorithm {
 - **Continuous features**: ID3 cannot natively handle numerical features (requires discretization or C4.5)
 - **Missing values**: ID3 has no built-in mechanism for handling missing data
 - **Multi-valued bias**: Favors attributes with many distinct values (addressed by C4.5's Gain Ratio)
-
-## Sources
-
-- [[dtree-summary|Decision Tree in Machine Learning]] — ID3 steps: root initialization, IG selection, recursive construction, stopping conditions

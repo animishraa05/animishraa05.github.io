@@ -2,8 +2,6 @@
 concept: Internal Node
 aliases: [decision node, test node, intermediate node]
 tags: [ml, decision-trees]
-sources_count: 1
-last_source: dtree.md
 created: 2026-05-06
 updated: 2026-05-06
 ---
@@ -75,7 +73,3 @@ digraph internal_node {
 - **Exhausted attributes**: If all features have been used on a path, remaining internal nodes must use majority vote
 - **Depth explosion**: Internal nodes can proliferate, creating trees too deep to interpret
 - **Overfitting risk**: Each internal node adds complexity; too many internal nodes memorize training data
-
-## Sources
-
-- [[dtree-summary|Decision Tree in Machine Learning]] — internal nodes as attribute tests in customer prediction example

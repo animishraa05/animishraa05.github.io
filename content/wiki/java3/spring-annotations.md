@@ -79,7 +79,3 @@ digraph spring_annotations {
 - **Ambiguous stereotypes**: @Repository adds translation of persistence exceptions; @Service and @Component are functionally identical
 - **Proxy mode**: Annotations on methods only work when called through the Spring proxy — internal method calls bypass them
 - **Annotation vs XML override**: XML bean definitions can override annotation-based configurations if both are present
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Spring annotations

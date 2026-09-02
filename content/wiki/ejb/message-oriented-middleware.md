@@ -2,8 +2,6 @@
 concept: Message-Oriented Middleware (MOM)
 aliases: [MOM, Message Middleman]
 tags: [dev, ejb]
-sources_count: 1
-last_source: EJb4.md
 created: 2026-04-28
 updated: 2026-04-28
 ---
@@ -60,6 +58,3 @@ digraph G {
 - Not all MOM products support the same features — JMS abstracts common features only
 - Guaranteed delivery requires message persistence (disk I/O cost)
 - "Fire-and-forget" means client has no idea if message processing succeeded
-
-## Sources
-- [[EJb4-summary|EJb4.md Source Summary]]

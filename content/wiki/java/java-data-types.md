@@ -80,7 +80,3 @@ graph semantic_java_types {
 - **char != byte**: char is 16-bit Unicode, not a single byte
 - **Floating-point precision**: `float` has ~7 decimal digits, `double` has ~15 — rounding errors are common
 - **Division by zero**: Integer types throw `ArithmeticException`; floating-point returns Infinity or NaN
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — data types coverage

@@ -2,8 +2,6 @@
 concept: Decision Tree Preprocessing
 aliases: [low preprocessing, minimal data preparation, tree preprocessing]
 tags: [ml, decision-trees]
-sources_count: 1
-last_source: dtree.md
 created: 2026-05-06
 updated: 2026-05-06
 ---
@@ -71,7 +69,3 @@ digraph decision_tree_preprocessing {
 - **High-cardinality categories**: An attribute with 10,000 unique values can cause overfitting even in trees
 - **Missing data handling varies**: Not all tree implementations handle missing values — check your library
 - **Still benefits from cleaning**: Removing irrelevant features speeds up training and reduces overfitting
-
-## Sources
-
-- [[dtree-summary|Decision Tree in Machine Learning]] — "low preprocessing needs" cited as a key advantage

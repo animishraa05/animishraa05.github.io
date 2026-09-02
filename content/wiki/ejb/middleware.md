@@ -65,6 +65,3 @@ digraph G {
 - Vendor differences: Different servers may implement differently
 - Trade-off: Control vs convenience
 - Not always needed: Simple apps may not need full middleware
-
-## Sources
-- [[ejb3-summary|EJB3 Source Summary]]

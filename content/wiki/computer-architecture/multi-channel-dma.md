@@ -54,6 +54,3 @@ digraph multi_channel {
 - More expensive to implement than single-channel DMA
 - Channel allocation: need strategy to assign channels to devices (static vs dynamic)
 - Some channels may be reserved for specific devices (e.g., cascade channel)
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

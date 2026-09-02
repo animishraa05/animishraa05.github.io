@@ -80,7 +80,3 @@ graph semantic_constructors {
 - **Constructor in enum**: Always private — cannot create enum instances externally
 - **Default field values**: Instance fields initialize to defaults before constructor body runs
 - **final fields**: Must be assigned by the end of every constructor (or compile error)
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — constructors

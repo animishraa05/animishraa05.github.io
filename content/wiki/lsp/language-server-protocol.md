@@ -2,8 +2,6 @@
 concept: true
 aliases: []
 tags: [dev, neovim]
-sources_count: 1
-last_source: lsp
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -45,7 +43,3 @@ The Language Server Protocol (LSP) is a protocol that defines communication betw
 - Not all servers implement all features—check capabilities
 - Large projects may have performance issues with file watching
 - Dynamic registration allows servers to add capabilities after initialization
-
-## Sources
-
-- [[lsp-summary|LSP — Neovim Documentation]]

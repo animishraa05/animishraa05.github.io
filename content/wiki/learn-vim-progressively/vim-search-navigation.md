@@ -3,8 +3,6 @@ title: Vim Search and Navigation
 concept:
 aliases: [navigation, search, motion, word moves, pattern search]
 tags: [dev, vim]
-sources_count: 1
-last_source: YBlog - Learn Vim Progressively.md
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -71,7 +69,3 @@ WORD vs word: word = alphanumeric + underscore; WORD = whitespace-separated
 - [[vim-repetition|Repetition]] — Combine with counts
 - [[vim-modes|Vim Modes]] — All work in Normal mode
 - [[vim-visual-selection|Visual Selection]] — Can use as motions
-
-## Sources
-
-- [[learn-vim-progressively-summary|YBlog - Learn Vim Progressively]]

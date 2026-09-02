@@ -53,6 +53,3 @@ digraph G {
 - Strict layering can reduce efficiency (extra headers, processing)
 - Some modern protocols blur layer boundaries (e.g., MPLS)
 - TCP/IP model is descriptive (how internet works), OSI is prescriptive (how it should work)
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

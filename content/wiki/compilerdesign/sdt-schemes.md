@@ -80,7 +80,3 @@ graph semantic_sdt_schemes {
 - **Side effect ordering:** When multiple actions have side effects, the order must be carefully designed
 - **Action dependencies:** An action may reference values from symbols before and after it — placement matters
 - **LL vs LR compatibility:** SDT schemes are natural for LL parsing (left-to-right execution) but require care with bottom-up parsers
-
-## Sources
-
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers syntax-directed translation schemes

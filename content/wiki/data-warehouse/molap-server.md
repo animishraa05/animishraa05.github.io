@@ -2,8 +2,6 @@
 concept: MOLAP Server
 aliases: [MOLAP, multidimensional OLAP, MDDB, multidimensional database]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -100,7 +98,3 @@ graph semantic_molap {
 - **Refresh latency:** When warehouse data is refreshed, MOLAP cubes must be re-computed — this can take hours.
 - **Vendor lock-in:** MDDB formats are proprietary — migrating data between MOLAP vendors requires re-extraction and re-computation.
 - **No detailed data:** MOLAP cannot answer "show me all individual transactions" — it only stores aggregated data.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — MOLAP definition, MDDB, sparse matrix, advantages, disadvantages

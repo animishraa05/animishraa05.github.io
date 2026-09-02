@@ -2,8 +2,6 @@
 concept: Node Purity
 aliases: [subset purity, class purity, homogeneous subset]
 tags: [ml, decision-trees]
-sources_count: 1
-last_source: dtree.md
 created: 2026-05-06
 updated: 2026-05-06
 ---
@@ -73,7 +71,3 @@ digraph node_purity {
 - **Near-purity is common**: Real-world data rarely achieves perfect purity; thresholds must be set
 - **Purity ≠ accuracy**: A pure node may be "pure" but wrong if the training data has errors
 - **Class skew**: In imbalanced datasets, a node can appear pure by being dominated by the majority class
-
-## Sources
-
-- [[dtree-summary|Decision Tree in Machine Learning]] — purity as the goal of splitting ("create pure subsets")

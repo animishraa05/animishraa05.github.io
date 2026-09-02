@@ -52,6 +52,3 @@ digraph G {
 - If a layer detects an error (bad checksum), it may discard the packet
 - Some layers may not have a header to remove (e.g., physical layer)
 - Tunneling requires recursive decapsulation (decapsulate inner packet)
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

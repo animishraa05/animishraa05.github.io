@@ -2,10 +2,6 @@
 concept: Operating System
 aliases: [OS, system software, general-purpose OS]
 tags: [systems, os]
-status: draft
-confidence: high
-sources_count: 1
-last_source: OS.md
 created: 2026-06-11
 updated: 2026-06-11
 ---
@@ -99,7 +95,3 @@ graph semantic_operating_system {
 - An OS can be running but appear frozen if the GUI hangs — the kernel may still be functioning
 - Embedded systems often run without a full OS (bare-metal) or with a lightweight RTOS, not a general-purpose OS
 - Containerized environments share the host OS kernel — this is fundamentally different from VMs which each have their own OS
-
-## Sources
-
-- [[os-summary|OS Source Summary]]

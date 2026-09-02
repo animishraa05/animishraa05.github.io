@@ -2,8 +2,6 @@
 concept: HSTS
 aliases: [HTTP Strict Transport Security, HSTS check, security shortcut]
 tags: [security, https]
-sources_count: 1
-last_source: https.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -68,7 +66,3 @@ digraph G {
 - Max-age expiry requires re-visit to refresh policy
 - `includeSubDomains` can break subdomains not ready for HTTPS
 - Cannot be disabled by user even if site has issues (must wait for expiry)
-
-## Sources
-
-- [[https-summary|HTTP HTTPS DNS URL Source]]

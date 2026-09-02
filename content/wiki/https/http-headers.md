@@ -2,8 +2,6 @@
 concept: HTTP Headers
 aliases: [HTTP header fields, request headers, response headers]
 tags: [networking, http]
-sources_count: 1
-last_source: https.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -78,7 +76,3 @@ digraph G {
 - Header injection attacks possible with untrusted input
 - Some headers are hop-by-hop (not forwarded by proxies)
 - Duplicate headers may be merged or cause errors
-
-## Sources
-
-- [[https-summary|HTTP HTTPS DNS URL Source]]

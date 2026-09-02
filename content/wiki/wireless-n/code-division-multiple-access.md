@@ -2,8 +2,6 @@
 concept: CDMA
 aliases: [code-division-multiple-access, spread-spectrum-cdma]
 tags: [networking, cdma]
-sources_count: 1
-last_source: WirelessN.md
 created: 2026-04-21
 updated: 2026-04-21
 ---
@@ -44,6 +42,3 @@ CDMA (Code Division Multiple Access) is a spread-spectrum digital cellular techn
 - Without power control, the near/far effect limits capacity to a handful of users
 - First CDMA networks (IS-95) had capacity close to GSM; 3G CDMA (WCDMA) significantly improved
 - Processing gain (Spreading factor) decreases as data rates increase
-
-## Sources
-- [[wireless-n-summary|WirelessN.md]]

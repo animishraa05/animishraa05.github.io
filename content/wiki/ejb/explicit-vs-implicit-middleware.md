@@ -2,8 +2,6 @@
 concept: "Explicit vs Implicit Middleware"
 aliases: [middleware types, developer-managed vs container-managed middleware]
 tags: [dev, ejb, middleware]
-sources_count: 1
-last_source: ejb5.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -65,6 +63,3 @@ digraph MiddlewareComparison {
 - **Debugging is harder with implicit middleware**: When something fails, is it your code or the container?
 - **Less control**: You can't fine-tune threading or connection pools—container decides
 - **Vendor lock-in**: Implicit middleware behavior varies across vendors (though standard APIs stay same)
-
-## Sources
-- [[ejb5-summary|EJB5 Source Summary]]

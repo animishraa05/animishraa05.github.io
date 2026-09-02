@@ -2,8 +2,6 @@
 concept: "EJB Verification & Generation"
 aliases: [container verification, stub generation, EJB code generation]
 tags: [dev, ejb]
-sources_count: 1
-last_source: ejb5.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -80,6 +78,3 @@ digraph VerificationGeneration {
 - **Generated classes are container-specific**: You can't take JBoss-generated stubs and use them on WebLogic
 - **Verification happens at deployment, not compile time**: Your code compiles fine, but deployment fails
 - **Some containers generate lazily**: EJB Object might be generated on first client lookup, not at deployment
-
-## Sources
-- [[ejb5-summary|EJB5 Source Summary]]

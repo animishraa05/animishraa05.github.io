@@ -2,8 +2,6 @@
 concept: signal Operation
 aliases: [V Operation, Up Operation, semSignal]
 tags: [systems, concurrency]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -58,7 +56,3 @@ digraph signal_op {
 - Calling signal() without holding resource is a bug
 - Must be atomic — can't be interrupted
 - Forgetting signal() causes deadlock (resource never released)
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

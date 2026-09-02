@@ -70,8 +70,3 @@ digraph runtime_env {
 - **Garbage collection:** Managed languages (Java, C#) include GC in the runtime — the compiler must generate GC-friendly code
 - **Setjmp/Longjmp:** Non-local jumps bypass normal stack frame unwinding — compilers must handle this carefully
 - **Trampolines and thunks:** Dynamic dispatch (virtual functions) requires runtime support from the environment
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers runtime environments as a compiler topic
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers runtime environment and activation records

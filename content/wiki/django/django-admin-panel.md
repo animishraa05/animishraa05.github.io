@@ -62,12 +62,3 @@ admin.site.register(Student)
 ## Edge Cases & Gotchas
 
 - It is not meant to be a customer-facing dashboard. Customizing it heavily to act as a frontend app is an anti-pattern.
-
-## Active Recall Questions
-
-> [!question]- Who is the intended user of the Django Admin Panel?
-> Trusted internal staff/administrators, not external clients or end-users.
-
-## Sources
-
-- [[django-summary|Source: Django Learning Roadmap]] — registering models, custom admin, filters

@@ -83,7 +83,3 @@ graph semantic_composition {
 - **Circular composition**: A Room cannot contain a House that contains the same Room — this creates reference cycles
 - **Composition vs Aggregation in code**: The difference is in object creation — if created externally and passed in, it's aggregation; if created in the constructor, it's composition
 - **Serialization**: Serializing a composed object serializes all its parts; deserialization reconstructs the entire graph
-
-## Sources
-
-- [[java2-summary|Java OOP Concepts — Source Summary]] — composition as strong association, House/Rooms example

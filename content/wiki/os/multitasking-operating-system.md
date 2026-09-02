@@ -2,10 +2,6 @@
 concept: Multitasking Operating System
 aliases: [time-sharing, time-sharing system, preemptive multitasking]
 tags: [systems, os]
-status: draft
-confidence: high
-sources_count: 1
-last_source: OS.md
 created: 2026-06-11
 updated: 2026-06-11
 ---
@@ -102,7 +98,3 @@ graph semantic_multitasking {
 - CPU-bound tasks can starve I/O-bound tasks if not properly prioritized — modern schedulers use multi-level feedback queues to balance this
 - Multitasking does NOT mean parallel execution on a single core — it is rapid interleaving; true parallelism requires multiple cores
 - The illusion of simultaneity breaks under heavy load — the system becomes sluggish (high load average)
-
-## Sources
-
-- [[os-summary|OS Source Summary]]

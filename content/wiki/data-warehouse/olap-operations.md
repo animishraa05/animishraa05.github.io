@@ -2,8 +2,6 @@
 concept: OLAP Operations
 aliases: [OLAP operations, roll-up, drill-down, slice, dice, pivot, cube operations]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -120,7 +118,3 @@ graph semantic_olap_ops {
 - **Slice vs. Dice distinction:** Slice = one dimension, one condition (2D result). Dice = multiple dimensions, multiple conditions (3D sub-cube result).
 - **Pivot does not change data:** Pivoting only rearranges the visual presentation. The underlying data values are unchanged.
 - **Drill-down requires detail:** You can only drill down if the warehouse stores data at the lower granularity level.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — five OLAP operations, concept hierarchies

@@ -2,8 +2,6 @@
 concept: Scoring DWH
 aliases: [data scoring, probability computation DWH, predictive scoring]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -96,7 +94,3 @@ graph semantic_scoring {
 - **Score interpretation:** A score of 0.7 does not mean 70% certainty in all cases — calibration is needed.
 - **Data bias:** If the training data is biased, the scores will be biased. This can lead to unfair targeting decisions.
 - **Computational cost:** Scoring millions of records with complex models can significantly extend ETL run times.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — scoring as transformation sub-process

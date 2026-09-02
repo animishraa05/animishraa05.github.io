@@ -86,7 +86,3 @@ graph semantic_collision_overhead {
 - A maliciously crafted input can trigger many collisions, causing O(n²) behavior — hash DoS attack
 - The "average O(1)" claim assumes the hash function is well-distributed — never guaranteed for arbitrary keys
 - Rehashing invalidates all iterators — a subtle bug when interleaving Phase 1 traversal with Phase 2
-
-## Sources
-
-- [[strings-summary|Strings (Character Hashing in C++)]]

@@ -80,7 +80,3 @@ digraph hibernate_mapping {
 - **equals/hashCode**: Never use the auto-generated ID in hashCode() before persisting — null ID causes inconsistent behavior in collections
 - **EAGER fetch overuse**: Loading an entity with multiple EAGER collections creates a Cartesian product query
 - **Join table naming**: If `@JoinTable` name is unspecified, Hibernate generates a default; explicit naming avoids surprises
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — One-to-one, one-to-many, many-to-many mapping

@@ -62,6 +62,3 @@ digraph G {
 - Packet loss goes undetected unless application implements checking
 - No backpressure mechanism — can overwhelm receiver or network
 - Out-of-order delivery requires application-level reordering
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

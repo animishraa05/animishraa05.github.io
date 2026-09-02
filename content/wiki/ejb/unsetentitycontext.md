@@ -34,7 +34,3 @@ When the EJB container needs to reduce the pool size and destroy a bean instance
 ## Edge Cases & Gotchas
 
 - Don't perform database operations—call `ejbRemove()` first if needed
-
-## Sources
-
-- [[ejb-continued-summary|EJbContinued]]

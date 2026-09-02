@@ -2,8 +2,6 @@
 concept: Time-Variant Data Warehouse
 aliases: [time-variant DWH, historical data warehouse, time-variant characteristic]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -99,7 +97,3 @@ graph semantic_time_variant {
 - **Time zone complexity:** Global businesses must handle multiple time zones consistently — UTC is the standard choice.
 - **"Time variant" ≠ "real-time":** Warehouses are periodically refreshed (nightly, weekly), not updated in real-time. The historical data is always slightly behind the operational systems.
 - **Changing definitions over time:** A "customer" may be defined differently in 2019 vs. 2024. The warehouse must handle evolving business definitions.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — time-variant characteristic, historical perspective

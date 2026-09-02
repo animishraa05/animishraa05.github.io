@@ -2,8 +2,6 @@
 concept: DWH Benefits
 aliases: [data warehouse benefits, advantages of DWH, why data warehouse]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -111,7 +109,3 @@ graph semantic_benefits {
 - **Benefits require proper design:** A poorly designed warehouse (wrong schema, bad ETL) will not deliver these benefits.
 - **Time to value:** Benefits are not immediate — the warehouse must be populated with sufficient historical data before analysis becomes meaningful.
 - **User adoption:** Benefits are only realized if users actually use the warehouse. Training and tool accessibility are critical.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — seven benefits of data warehousing

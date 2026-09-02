@@ -52,6 +52,3 @@ GROUP BY c.customer_id, c.full_name, c.city
 - **Zero orders**: LEFT JOIN includes customers who registered but never ordered—they have CLV = 0
 - **Cancelled orders**: Filter by `status = 'Delivered'` to exclude cancelled/refunded orders
 - **Static calculation**: CLV updates only when ETL runs—not real-time
-
-## Sources
-- [[../comprehensive-report-summary|FoodFlow Analytics Comprehensive Report]]

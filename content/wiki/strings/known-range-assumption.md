@@ -93,7 +93,3 @@ graph semantic_known_range {
 - Extended ASCII (128–255) breaks int freq[256] if char is signed (values become negative)
 - Unicode characters may be multi-byte in C++ — neither freq[26] nor unordered_map<char,int> handles this correctly; use unordered_map<string,int> for UTF-8 strings
 - The assumption can be partially satisfied with a translation table (mapping arbitrary characters to dense indices), but this is rarely worth the complexity
-
-## Sources
-
-- [[strings-summary|Strings (Character Hashing in C++)]]

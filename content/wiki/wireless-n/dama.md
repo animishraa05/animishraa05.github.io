@@ -2,8 +2,6 @@
 concept: DAMA Protocol
 aliases: [DAMA, demand-assigned-multiple-access, reservation-aloha]
 tags: [networking, mac]
-sources_count: 1
-last_source: WirelessN.md
 created: 2026-04-21
 updated: 2026-04-21
 ---
@@ -51,6 +49,3 @@ DAMA (Demand Assigned Multiple Access) is a combination of random access (Aloha)
 - PRMA: voice activity detection is critical — if a voice call ends but the speaker is silent (no packet), the reservation is released
 - PRMA drop probability must be kept very low (e.g., 1%) for voice quality
 - PRMA requires a voice activity detector to efficiently use slots during silence periods
-
-## Sources
-- [[wireless-n-summary|WirelessN.md]]

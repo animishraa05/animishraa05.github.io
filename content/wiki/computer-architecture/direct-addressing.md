@@ -49,6 +49,3 @@ digraph direct_addr {
 - Address is fixed at compile time (can't change at runtime)
 - Limited address range (e.g., 16-bit address = 64KB max)
 - Position-independent code can't use direct addressing (addresses change)
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

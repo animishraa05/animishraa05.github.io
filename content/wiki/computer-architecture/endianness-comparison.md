@@ -54,6 +54,3 @@ Data:      78     56     34     12
 - [[network-byte-order|Network Byte Order]] — Big Endian for TCP/IP
 - [[memory|Memory]] — where bytes are stored
 - [[multi-byte-data|Multi-Byte Data]] — what endianness applies to
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

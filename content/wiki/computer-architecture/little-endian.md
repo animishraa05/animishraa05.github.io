@@ -48,6 +48,3 @@ digraph little_endian {
 - Harder for humans to debug (memory dump shows reversed bytes)
 - Must convert to Big Endian when sending data over network
 - Casting tricks: `(char*)&int32` gives LSB directly on Little Endian (not portable!)
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

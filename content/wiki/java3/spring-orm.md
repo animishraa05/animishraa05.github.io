@@ -72,7 +72,3 @@ digraph spring_orm {
 - **SessionFactory per data source**: Multiple databases require separate SessionFactory beans
 - **Hibernate version conflicts**: Spring Boot manages Hibernate version; manual dependency management can cause incompatibilities
 - **DDL auto in production**: Never use `hibernate.hbm2ddl.auto=create` or `update` in production — use `validate` or Flyway/Liquibase
-
-## Sources
-
-- [[java3-summary|Advanced Java Tutorial — Source Summary]] — Spring ORM integration with Hibernate

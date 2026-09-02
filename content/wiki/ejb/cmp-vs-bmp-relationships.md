@@ -61,6 +61,3 @@ This synthesis compares how BMP (Bean-Managed Persistence) and CMP (Container-Ma
 - [[bidirectional-vs-unidirectional|Bidirectional vs Unidirectional]] — directionality concept
 - [[cmp-abstract-accessors|CMP Abstract Accessors]] — CMP's method declarations
 - [[ejb-ql|EJB-QL]] — CMP uses EJB-QL for relationship queries
-
-## Sources
-- [[EJb4-summary|EJb4.md Source Summary]]

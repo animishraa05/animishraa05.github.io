@@ -2,10 +2,6 @@
 concept: Distributed Operating System
 aliases: [distributed OS, distributed system, distributed computing]
 tags: [systems, os]
-status: draft
-confidence: high
-sources_count: 1
-last_source: OS.md
 created: 2026-06-11
 updated: 2026-06-11
 ---
@@ -101,7 +97,3 @@ graph semantic_distributed_os {
 - True distributed OSes (Plan 9, Amoeba) never achieved mainstream adoption — most modern systems use "networked OS" + middleware
 - Latency across nodes is orders of magnitude higher than local memory access — distributed algorithms must account for this
 - Partial failure is the defining challenge: some nodes may fail while others continue, and the system must detect and handle this gracefully
-
-## Sources
-
-- [[os-summary|OS Source Summary]]

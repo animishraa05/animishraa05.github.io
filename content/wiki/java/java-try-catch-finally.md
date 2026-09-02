@@ -81,7 +81,3 @@ graph semantic_try_catch {
 - **System.exit() bypasses finally**: Calling `System.exit()` in try prevents finally from running
 - **Catching too broadly**: `catch (Exception e)` catches RuntimeException too — masks bugs
 - **Resource leak**: Pre-Java 7, forgetting to close resources in finally caused leaks
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — exception handling

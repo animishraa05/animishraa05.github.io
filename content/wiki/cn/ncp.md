@@ -53,6 +53,3 @@ digraph G {
 - If NCP fails, network-layer communication doesn't work even though link is up
 - IPCP assigns IP addresses dynamically (like DHCP but within PPP)
 - NCP can be terminated independently of LCP (e.g., renegotiate IP address)
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

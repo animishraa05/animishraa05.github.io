@@ -69,8 +69,3 @@ digraph shift_reduce {
 - **Handle identification:** The handle is always at the top of the stack — never buried — in viable prefix parsing
 - **Conflict resolution in Yacc:** Yacc resolves shift/reduce conflicts in favor of shift, reduce/reduce in favor of the first production listed
 - **Default reductions:** In ambiguous situations, the parser may make a default choice that doesn't match the language designer's intent
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers shift-reduce parser as a type of bottom-up parser
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers shift-reduce parsing as a bottom-up parsing technique

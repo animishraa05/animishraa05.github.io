@@ -131,6 +131,3 @@ digraph G {
 - **Version differences**: J2EE 1.4 vs Java EE 5+ have different API versions
 - **Modern replacements**: JAX-RPC → JAX-WS, Java IDL rarely used today
 - **Spring alternative**: Modern apps use Spring which abstracts many of these
-
-## Sources
-- [[ejb6-summary|EJB6 Source Summary]]

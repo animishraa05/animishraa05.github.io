@@ -2,8 +2,6 @@
 concept: Testing
 aliases: [Django Testing, Unit Tests, Test Client, pytest-django]
 tags: [dev, django]
-sources_count: 1
-last_source: Django.md
 created: 2026-08-09
 updated: 2026-08-09
 ---
@@ -123,7 +121,3 @@ graph semantic_testing {
 - **`assertNumQueries`**: Counts all queries including middleware; use `with self.assertNumQueries(2):` context manager
 - **Migrations in tests**: `migrate` runs automatically; `--nomigrations` speeds up but may miss migration bugs
 - **Static/media in tests**: `MEDIA_ROOT` should use temp dir; `STATICFILES_STORAGE` = `StaticFilesStorage` (no manifest)
-
-## Sources
-
-- [[django-summary|Django Learning Roadmap]]

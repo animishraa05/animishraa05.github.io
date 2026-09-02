@@ -2,8 +2,6 @@
 concept: true
 aliases: []
 tags: [dev, neovim]
-sources_count: 1
-last_source: lsp
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -47,7 +45,3 @@ LSP Configuration in Neovim uses `vim.lsp.config()` to define server settings, w
 - Using `vim.lsp.config['name']` has side-effect of resolving config
 - Prefer `vim.lsp.is_enabled()` to check status without resolving
 - Place configs in `after/lsp/` to override plugin defaults
-
-## Sources
-
-- [[lsp-summary|LSP — Neovim Documentation]]

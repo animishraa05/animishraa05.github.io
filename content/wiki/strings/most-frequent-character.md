@@ -101,8 +101,8 @@ $$ \text{character} = k \text{ where } (k, \max) \in H $$
 - Built from: [[hashing-retrieval-phase|Hashing Retrieval Phase]] — traversing structure for max is a Phase 2 pattern
 - Built from: [[two-phase-hashing|Two-Phase Hashing Paradigm]] — follows the store-then-query pattern
 - Built from: [[frequency-array|Frequency Array]] — one implementation choice for Phase 1
-- Builds into: [[character-hashing-use-cases|Character Hashing Use Cases]] — a canonical example problem <!-- TODO: add backlink here -->
-- Contrasts with: [[first-non-repeating-character|First Non-Repeating Character]] — same Phase 1, different Phase 2 traversal <!-- TODO: add backlink here -->
+- Builds into: [[character-hashing-use-cases|Character Hashing Use Cases]] — a canonical example problem
+- Contrasts with: [[first-non-repeating-character|First Non-Repeating Character]] — same Phase 1, different Phase 2 traversal
 - Related: [[index-to-character-conversion|Index-to-Character Conversion]] — needed to convert the max index back to a character
 
 ## Edge Cases & Gotchas
@@ -112,7 +112,3 @@ $$ \text{character} = k \text{ where } (k, \max) \in H $$
 - Single character string: the answer is that character — works correctly in both structures
 - All characters appear once: the first character in traversal order wins (for maps, this is non-deterministic)
 - For hash maps, if tied characters exist, the result depends on internal bucket order — non-deterministic across runs
-
-## Sources
-
-- [[strings-summary|Strings (Character Hashing in C++)]]

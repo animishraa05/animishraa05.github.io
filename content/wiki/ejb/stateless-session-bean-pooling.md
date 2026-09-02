@@ -2,8 +2,6 @@
 concept: "Stateless Session Bean Pooling"
 aliases: [stateless pooling, method-ready pool]
 tags: [dev, ejb, session-bean]
-sources_count: 1
-last_source: ejb5.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -64,6 +62,3 @@ digraph Pooling {
 - **Don't store client data in instance variables**: Next client might get your bean with old data
 - **Pool size tuning**: Too small = clients wait; too large = wasted RAM
 - **`ejbRemove()` may never be called**: Container may just clear the bean for reuse instead of destroying it
-
-## Sources
-- [[ejb5-summary|EJB5 Source Summary]]

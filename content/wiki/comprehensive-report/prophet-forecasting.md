@@ -53,6 +53,3 @@ forecast = m.predict(future)
 - **No baseline comparison**: Can't tell if Prophet beats naive forecast without comparison
 - **Limited regressors**: Only `is_weekend` used—could benefit from holidays, promotions
 - **Single model**: No model versioning or A/B testing
-
-## Sources
-- [[../comprehensive-report-summary|FoodFlow Analytics Comprehensive Report]]

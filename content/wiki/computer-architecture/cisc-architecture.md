@@ -53,6 +53,3 @@ digraph cisc {
 - Slower clock speeds due to complex hardware
 - Many instructions are rarely used (wasted silicon)
 - Modern x86 CPUs are "RISC inside" — they translate CISC instructions to micro-ops
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

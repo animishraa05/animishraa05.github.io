@@ -62,12 +62,3 @@ python manage.py migrate
 
 - Deleting migration files manually can cause the database state and Django state to fall out of sync, requiring complex manual fixes.
 - Adding a non-nullable field to an existing table requires providing a default value.
-
-## Active Recall Questions
-
-> [!question]- What is the difference between makemigrations and migrate?
-> `makemigrations` creates the instruction file based on model changes, while `migrate` actually executes those instructions on the database.
-
-## Sources
-
-- [[django-summary|Source: Django Learning Roadmap]] — database module, makemigrations, migrate

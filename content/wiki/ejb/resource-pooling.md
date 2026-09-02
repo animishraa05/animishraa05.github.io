@@ -2,8 +2,6 @@
 concept: Resource Pooling
 aliases: [Connection Pooling, Database Connection Pool]
 tags: [dev, ejb, performance]
-sources_count: 1
-last_source: ejb6.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -68,6 +66,3 @@ digraph G {
 - **Pool exhaustion**: All connections busy → clients wait or fail
 - **Transaction scope**: Connection must remain same within transaction
 - **Pool sizing**: Too small = wait; too large = waste memory
-
-## Sources
-- [[ejb6-summary|EJB6 Source Summary]]

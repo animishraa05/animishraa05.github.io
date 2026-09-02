@@ -2,8 +2,6 @@
 concept: GPU Rendering
 aliases: [hardware acceleration, GPU acceleration, graphics rendering]
 tags: [dev, browser]
-sources_count: 1
-last_source: https.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -63,7 +61,3 @@ digraph G {
 - GPU memory is limited—too many layers cause issues
 - Not all CSS properties are GPU-accelerated
 - `transform` and `opacity` are the best for animations
-
-## Sources
-
-- [[https-summary|HTTP HTTPS DNS URL Source]]

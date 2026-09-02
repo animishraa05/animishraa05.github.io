@@ -67,7 +67,3 @@ digraph code_generation {
 - **Register spilling:** When there are more live variables than registers, some must be spilled to memory — frequent spilling destroys performance
 - **Strange instructions:** Some architectures have complex instructions (VLIW, SIMD) that require careful pattern matching during instruction selection
 - **PIC vs absolute code:** Position-independent code requires different addressing strategies than absolute code
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers code generation as the final phase of compilation

@@ -2,8 +2,6 @@
 concept: Hidden Terminal Problem
 aliases: [hidden-node, hidden-terminal]
 tags: [networking, mac]
-sources_count: 1
-last_source: WirelessN.md
 created: 2026-04-21
 updated: 2026-04-21
 ---
@@ -44,6 +42,3 @@ Standard CSMA fails because carrier sense only detects local transmissions, not 
 - The RTS/CTS handshake reduces efficiency due to extra control packets
 - Not all wireless protocols use collision avoidance (802.11b uses CSMA/CA with ACK instead)
 - In dense ad hoc networks, hidden terminals can form chains of 3+ nodes
-
-## Sources
-- [[wireless-n-summary|WirelessN.md]]

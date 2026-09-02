@@ -73,7 +73,3 @@ graph semantic_multiple_inheritance {
 
 - **Default method conflict**: If two interfaces define the same default method, the class must override it
 - **Static methods in interfaces**: Interface static methods are not inherited, avoiding ambiguity
-
-## Sources
-
-- [[java2-summary|Java OOP Concepts — Source Summary]] — multiple inheritance through interface

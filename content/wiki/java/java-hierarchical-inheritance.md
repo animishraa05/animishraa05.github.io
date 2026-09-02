@@ -76,7 +76,3 @@ graph semantic_hierarchical_inheritance {
 
 - **Sibling coupling**: Siblings should not depend on each other's behavior — if they do, the hierarchy is wrong
 - **Refactoring difficulty**: Changing the parent interface affects all children simultaneously
-
-## Sources
-
-- [[java2-summary|Java OOP Concepts — Source Summary]] — hierarchical inheritance, Animal/Dog/Cat/Cow example

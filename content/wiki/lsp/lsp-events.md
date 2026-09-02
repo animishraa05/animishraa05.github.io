@@ -2,8 +2,6 @@
 concept: true
 aliases: []
 tags: [dev, neovim]
-sources_count: 1
-last_source: lsp
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -44,7 +42,3 @@ LSP Events are Neovim autocmd events triggered during LSP client lifecycle: LspA
 - LspDetach is the place to remove buffer-local autocmds (like format on save)
 - LspRequest with type=complete deletes pending request after handler runs
 - LspTokenUpdate is experimental beyond calling highlight_token()
-
-## Sources
-
-- [[lsp-summary|LSP — Neovim Documentation]]

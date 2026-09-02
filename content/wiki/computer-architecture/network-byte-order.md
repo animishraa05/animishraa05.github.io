@@ -51,6 +51,3 @@ digraph network_byte_order {
 - Only matters for multi-byte data (don't convert single bytes!)
 - Some protocols (like HTTP) use text, not binary — no endianness issue
 - Modern systems: always use `htons()`/`htonl()` even if same endianness (portable code)
-
-## Sources
-- [[computer-architecture-summary|Computer Architecture Source Summary]]

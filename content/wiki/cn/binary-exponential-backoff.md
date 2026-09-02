@@ -51,6 +51,3 @@ digraph G {
 - Maximum backoff limit prevents excessive wait times
 - Many collisions can still cause long delays (exponential growth)
 - Not used in modern full-duplex Ethernet (no collisions to back off from)
-
-## Sources
-- [[cn-summary|Computer Networks Gemini Conversation]]

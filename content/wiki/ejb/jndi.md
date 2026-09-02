@@ -63,6 +63,3 @@ digraph G {
 - JNDI lookups have performance cost
 - In EJB 3.x, @EJB annotation often replaces manual lookup
 - Security: Ensure JNDI tree is properly configured in production
-
-## Sources
-- [[ejb3-summary|EJB3 Source Summary]]

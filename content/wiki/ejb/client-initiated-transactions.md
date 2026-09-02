@@ -2,8 +2,6 @@
 concept: Client-Initiated Transactions
 aliases: [Client-Controlled Transactions, Client Transaction Demarcation]
 tags: [dev, ejb]
-sources_count: 1
-last_source: EJb4.md
 created: 2026-04-28
 updated: 2026-04-28
 ---
@@ -57,6 +55,3 @@ digraph G {
 - Client must have access to JTA (Java Transaction API) to begin/commit
 - If the bean also uses BMT internally, there are nested transaction scopes (but not true nested tx per EJB spec)
 - Not recommended for remote clients over unreliable networks (high rollback rate)
-
-## Sources
-- [[EJb4-summary|EJb4.md Source Summary]]

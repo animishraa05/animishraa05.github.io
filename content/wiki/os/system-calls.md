@@ -2,10 +2,6 @@
 concept: System Calls
 aliases: [syscall, system call interface, kernel API]
 tags: [systems, os]
-status: draft
-confidence: high
-sources_count: 1
-last_source: OS.md
 created: 2026-06-11
 updated: 2026-06-11
 ---
@@ -100,7 +96,3 @@ graph semantic_system_calls {
 - Too many small system calls kills performance: reading a file one byte at a time causes a syscall per byte, while buffered reading uses one syscall per buffer
 - Some system calls block (e.g., `read` from a socket with no data) — the process is suspended until data arrives
 - Students often confuse function call (user mode only) with system call (requires kernel mode switch) — the key distinction is privilege escalation
-
-## Sources
-
-- [[os-summary|OS Source Summary]]

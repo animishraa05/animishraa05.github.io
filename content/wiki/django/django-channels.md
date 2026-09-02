@@ -66,12 +66,3 @@ class ChatConsumer(WebsocketConsumer):
 
 - Adds significant architectural complexity; deploying ASGI servers with Redis is much harder than a standard WSGI app.
 - Mixing synchronous ORM calls inside asynchronous consumers can block the event loop and crash the server if not wrapped with `database_sync_to_async`.
-
-## Active Recall Questions
-
-> [!question]- What protocol does Django Channels introduce support for?
-> WebSockets.
-
-## Sources
-
-- [[django-summary|Source: Django Learning Roadmap]] — advanced django, WebSockets, ASGI

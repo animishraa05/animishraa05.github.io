@@ -2,8 +2,6 @@
 concept: C-SCAN
 aliases: [Circular SCAN, C-SCAN Disk Scheduling]
 tags: [systems, storage]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -59,7 +57,3 @@ digraph cscan {
 - Return jump wastes time (no requests serviced)
 - Still may not be optimal for all workloads
 - Good for real-time systems (predictable)
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

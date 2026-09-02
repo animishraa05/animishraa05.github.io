@@ -37,6 +37,3 @@ Break the data into small chunks called **packets**. Each packet carries the des
 - **Packet loss** — if a router's buffer is full, it drops packets; higher layers must detect and retransmit
 - **Head-of-line blocking** — a delayed packet at the front of a queue can block packets behind it
 - **Not the same as message switching** — message switching sends the entire message as one unit; packet switching breaks it into smaller pieces
-
-## Sources
-- [[../sources/computer-networks-intro-summary|Computer Networks — Introduction (raw source)]]

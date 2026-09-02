@@ -2,8 +2,6 @@
 concept: Hash Function
 aliases: [Hash Algorithm, Scattering Function]
 tags: [systems, data-structures]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -66,7 +64,3 @@ digraph hash_fn {
 - String hashing must handle variable lengths
 - Cryptographic hash functions are overkill for hash tables (too slow)
 - Changing hash function requires rehashing entire table
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

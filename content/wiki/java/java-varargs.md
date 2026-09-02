@@ -80,7 +80,3 @@ graph semantic_varargs {
 - **Generic varargs**: `@SafeVarargs` annotation suppresses heap pollution warnings
 - **Performance**: Each call creates a new array — avoid in hot loops
 - **Overriding**: Overriding a varargs method with a non-varargs method (or vice versa) is a compile error
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — varargs

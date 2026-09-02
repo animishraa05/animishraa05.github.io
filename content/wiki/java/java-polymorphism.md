@@ -2,8 +2,6 @@
 concept: Java Polymorphism
 aliases: [Method Overloading, Method Overriding, Dynamic Dispatch, Static Dispatch, Many Forms]
 tags: [dev, java]
-sources_count: 2
-last_source: java2-summary
 created: 2026-05-13
 updated: 2026-05-13
 ---
@@ -93,8 +91,3 @@ graph semantic_polymorphism {
 - **Overloaded methods with same erasure**: Generics can cause ambiguity after type erasure
 - **Covariance**: In Java 5+, overriding methods can return a more specific type
 - **Bridge methods**: Compiler generates bridge methods when covariance interacts with generics
-
-## Sources
-
-- [[java1-summary|Java Tutorial — Source Summary]] — polymorphism
-- [[java2-summary|Java OOP Concepts — Source Summary]] — speak() example, types of polymorphism

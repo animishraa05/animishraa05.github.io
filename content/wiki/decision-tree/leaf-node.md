@@ -2,8 +2,6 @@
 concept: Leaf Node
 aliases: [terminal node, end node, prediction node]
 tags: [ml, decision-trees]
-sources_count: 1
-last_source: dtree.md
 created: 2026-05-06
 updated: 2026-05-06
 ---
@@ -72,7 +70,3 @@ digraph leaf_node {
 - **Empty leaves**: Can occur when a branch has no training data; defaults to parent's majority class
 - **Imbalanced leaf predictions**: A leaf may be dominated by one class but still contain minority class errors
 - **Leaf depth variance**: Some leaves may be 2 levels deep, others 20 — leading to inconsistent prediction confidence
-
-## Sources
-
-- [[dtree-summary|Decision Tree in Machine Learning]] — leaf nodes as final predictions ("Purchase" / "No Purchase")

@@ -2,8 +2,6 @@
 concept: Separate Chaining
 aliases: [Chaining, Closed Addressing]
 tags: [systems, data-structures]
-sources_count: 1
-last_source: io.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -59,7 +57,3 @@ digraph chaining {
 - Extra memory for linked list pointers
 - Poor hash function → all keys in one chain
 - Best when hash function distributes uniformly
-
-## Sources
-
-- [[io-summary|I/O System Source Summary]]

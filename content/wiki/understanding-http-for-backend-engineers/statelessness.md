@@ -3,8 +3,6 @@ title: Statelessness
 concept: true
 aliases: [HTTP Statelessness]
 tags: [networking, http]
-sources_count: 1
-last_source: understanding-http-for-backend-engineers
 created: 2026-04-12
 updated: 2026-04-12
 ---
@@ -50,7 +48,3 @@ public ResponseEntity<User> getUser(
 - Stateful applications require tokens/cookies sent with every request
 - Without state management, users would re-authenticate on every action
 - Performance cost of re-sending data is acceptable given scale benefits
-
-## Sources
-
-- [[understanding-http-for-backend-engineers-summary|Understanding HTTP for Backend Engineers]]

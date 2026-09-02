@@ -2,8 +2,6 @@
 concept: Metadata in DWH
 aliases: [metadata, data about data, warehouse metadata, business metadata, technical metadata, operational metadata]
 tags: [database, data-warehouse]
-sources_count: 1
-last_source: dw1.md
 created: 2026-05-04
 updated: 2026-05-04
 ---
@@ -128,7 +126,3 @@ graph semantic_metadata {
 - **No industry standards:** There are no widely accepted standards for metadata management, making vendor interoperability difficult.
 - **Metadata staleness:** If metadata is not updated when the warehouse changes, it becomes actively misleading.
 - **Business vs. Technical gap:** Business users need business metadata; developers need technical metadata. Bridging the gap requires deliberate effort.
-
-## Sources
-
-- [[dw1-summary|Source: Data Warehouse — Definitions, Architecture, ETL, OLAP]] — metadata categories, repository contents, roles, challenges

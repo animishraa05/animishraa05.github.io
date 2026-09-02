@@ -2,8 +2,6 @@
 concept: JNDI Context
 aliases: [Context, Naming Context]
 tags: [dev, ejb, jndi]
-sources_count: 1
-last_source: ejb6.md
 created: 2026-04-29
 updated: 2026-04-29
 ---
@@ -63,6 +61,3 @@ digraph G {
 - **Concurrent access**: Context operations may not be thread-safe
 - **Lazy loading**: Large contexts may not load all bindings immediately
 - **Context destruction**: Destroying a context may not recursively destroy subcontexts
-
-## Sources
-- [[ejb6-summary|EJB6 Source Summary]]

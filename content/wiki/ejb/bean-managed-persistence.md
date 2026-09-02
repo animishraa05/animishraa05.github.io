@@ -42,7 +42,3 @@ With bean-managed persistence (BMP), the developer writes explicit JDBC code (or
 - More error-prone than CMP
 - Database-specific code may reduce portability
 - Must handle transactions manually in some cases
-
-## Sources
-
-- [[ejb-source-summary|EJB Source]]

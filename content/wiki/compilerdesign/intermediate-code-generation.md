@@ -58,8 +58,3 @@ digraph icg {
 - **IR forms vary:** Some compilers use multiple IR forms at different levels of abstraction
 - **Addressing modes:** Machine-independent IR may not capture all target-specific addressing modes — the code generator handles this mapping
 - **SSA vs TAC:** SSA form simplifies optimization but requires phi-nodes; TAC is simpler but requires extra data-flow analysis for optimizations
-
-## Sources
-
-- [[compilerdesign-summary|Compiler Design Tutorial]] — covers intermediate code generation as a key compiler phase
-- [[cd2-summary|Compiler Design for GATE Exam]] — covers basic blocks and control flow graphs in ICG

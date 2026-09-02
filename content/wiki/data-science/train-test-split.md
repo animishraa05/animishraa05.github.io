@@ -2,8 +2,6 @@
 concept: Train-Test Split
 aliases: [train test validation, data splitting]
 tags: [ml, data-science]
-sources_count: 1
-last_source: ds.md
 created: 2026-04-30
 updated: 2026-04-30
 ---
@@ -51,6 +49,3 @@ digraph G {
 - Small datasets: single split gives high-variance performance estimates
 - Non-IID data: time series or clustered data require special splitting strategies
 - Test set overfitting: tuning hyperparameters on test set invalidates the estimate
-
-## Sources
-- [[ds-summary|Data Science Book Summary]]
