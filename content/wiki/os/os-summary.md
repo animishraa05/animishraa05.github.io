@@ -1,5 +1,5 @@
 ---
-source: Operating System — ChatGPT Conversation
+source: Operating System
 source_path: sources/OS.md
 content_hash: 5fb8bb05d4d6f45eb6708b94efd83de8d97922c89c0334cb86ff28613080f9e0
 ingested: 2026-06-11

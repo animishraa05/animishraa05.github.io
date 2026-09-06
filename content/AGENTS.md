@@ -171,7 +171,7 @@ tags: [ejb, session-bean]     ← WRONG — ejb is not a domain tag
 4. For each concept: check if `wiki/**/[concept].md` exists anywhere — if YES update+merge, if NO create in current topic folder. Every page follows Page Rules: The Problem → Formal Definition (with citation) → 2 DOT diagrams → Properties/Objectives/Functions → Real-World Example → no Sources/TODO in body
 5. Create source summary `wiki/[topic]/[topic]-summary.md` with `draft: true` (hidden from Quartz) + append ledger entry to `wiki/.wiki-meta.json`
 6. Create/update 1-3 synthesis pages in `wiki/[topic]/` if natural tensions exist
-7. Create/update `wiki/[topic]/[topic]-moc.md` (Map of Content) via `generate-wiki-mocs.sh` logic
+7. Create/update `wiki/[topic]/index.md` (Map of Content) via `generate-wiki-mocs.sh` logic
 8. Run `consolidate_images.py` tail if source had images, then `wiki-lint-det.sh --topic=[topic]` deterministic fix (broken stubs, orphans)
 9. Update `wiki/index.md` — one table row per topic, wiki link + one-line human description only. No Stats/agent-module refs, no `updated:` bump.
 10. Append to `wiki/log.md` + `wiki/open-questions.md` (2-4 open questions). Verify count: `ls wiki/[topic]/*.md | grep -v summary | wc -l` must be 25-30, else decompose further. Fail ingest if still <25.
