@@ -85,7 +85,7 @@ else
     for d in "$WIKI_DIR"/*/; do
         topic="$(basename "$d")"
         [ "$topic" = "agent-module" ] && continue
-        [ -f "$WIKI_DIR/$topic/$topic-moc.md" ] && continue
+        [ -f "$WIKI_DIR/$topic/index.md" ] && continue
         if ls "$d"*.md >/dev/null 2>&1; then
             generate_moc "$topic"
         fi

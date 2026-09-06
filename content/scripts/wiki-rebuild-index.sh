@@ -32,16 +32,16 @@ emit_section() {
     echo "| --- | --- |" >> "$tmp"
     for t in "${topics[@]}"; do
         moc_desc=""
-        if [ -f "$WIKI_DIR/$t/$t-moc.md" ]; then
-            moc_desc="$(grep -m1 "^> Map" "$WIKI_DIR/$t/$t-moc.md" 2>/dev/null | sed 's/^> //' | head -c 120 || echo "")"
+        if [ -f "$WIKI_DIR/$t/index.md" ]; then
+            moc_desc="$(grep -m1 "^> Map" "$WIKI_DIR/$t/index.md" 2>/dev/null | sed 's/^> //' | head -c 120 || echo "")"
         fi
         summary_desc=""
         if [ -f "$WIKI_DIR/$t/$t-summary.md" ]; then
             summary_desc="$(grep -m1 "^source:" "$WIKI_DIR/$t/$t-summary.md" 2>/dev/null | sed 's/source:\s*//' | head -c 120 || echo "")"
         fi
         desc="${moc_desc:-${summary_desc:-$t}}"
-        count="$(ls -1 "$WIKI_DIR/$t"/*.md 2>/dev/null | grep -v summary | grep -v moc | wc -l | tr -d ' ')"
-        echo "| [[$t/$t-moc\|${t}]] | $desc ($count pages) |" >> "$tmp"
+        count="$(ls -1 "$WIKI_DIR/$t"/*.md 2>/dev/null | grep -v summary | grep -v 'index\.md' | wc -l | tr -d ' ')"
+        echo "| [[$t/index\|${t}]] | $desc ($count pages) |" >> "$tmp"
     done
 }
 

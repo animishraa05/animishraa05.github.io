@@ -24,7 +24,7 @@ echo -e "${CYAN}Topics:${NC} $TOPICS"
 ALL_MD="$(find "$WIKI_DIR" -name '*.md' -not -path '*/agent-module/*' | sort)"
 TOTAL="$(echo "$ALL_MD" | wc -l | tr -d ' ')"
 SUMMARY_COUNT="$(echo "$ALL_MD" | grep -c '\-summary\.md' || true)"
-MOC_COUNT="$(echo "$ALL_MD" | grep -c '\-moc\.md' || true)"
+MOC_COUNT="$(echo "$ALL_MD" | grep -c '/index\.md' || true)"
 CONCEPT_COUNT=$(( TOTAL - SUMMARY_COUNT - MOC_COUNT ))
 
 echo -e "${CYAN}Pages:${NC}  $TOTAL total  ($CONCEPT_COUNT concept/synthesis, $MOC_COUNT MOCs, $SUMMARY_COUNT summaries)"
@@ -121,7 +121,7 @@ printf "  %-40s %s\n" "───────────────────
 for dir in "$WIKI_DIR"/*/; do
     t="$(basename "$dir")"
     [ "$t" = "agent-module" ] && continue
-    count="$(ls -1 "$dir"*.md 2>/dev/null | grep -v 'summary\|-moc' | wc -l | tr -d ' ')"
+    count="$(ls -1 "$dir"*.md 2>/dev/null | grep -v 'summary\|index\.md' | wc -l | tr -d ' ')"
     printf "  %-40s %s\n" "$t" "$count"
 done
 

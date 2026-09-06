@@ -165,7 +165,7 @@ for md in $all_mds; do
     if grep -qi "\[\[$base" "$inbound_tmp" 2>/dev/null; then continue; fi
     if grep -qi "\[\[$(echo "$rel" | sed 's/\.md$//')" "$inbound_tmp" 2>/dev/null; then continue; fi
     topic="$(basename "$(dirname "$md")")"
-    moc="$(find "$WIKI_DIR/$topic" -name "*-moc.md" 2>/dev/null | head -1)"
+    moc="$(find "$WIKI_DIR/$topic" -name "index.md" 2>/dev/null | head -1)"
     if [ -n "$moc" ] && [ -f "$moc" ]; then
         if ! grep -q "\[\[$base" "$moc" 2>/dev/null; then
             echo "" >> "$moc"
