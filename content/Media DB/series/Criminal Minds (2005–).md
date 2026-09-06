@@ -7,7 +7,7 @@ year: 2005–
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0452046/
 id: tt0452046
-plot: The FBI's Behavioral Analysis Unit in Quantico helps police solve violent serial crimes using profiling. Team members analyze evidence and psychology to catch unknown subjects, but their demanding work affects personal lives.
+plot: "The FBI's Behavioral Analysis Unit in Quantico helps police solve violent serial crimes using profiling. Team members analyze evidence and psychology to catch unknown subjects, but their demanding work affects personal lives."
 genres:
   - Crime
   - Drama

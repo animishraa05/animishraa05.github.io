@@ -7,7 +7,7 @@ year: "2002"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0268978/
 id: tt0268978
-plot: A mathematical genius, John Nash made an astonishing discovery early in his career and stood on the brink of international acclaim. But Nash soon found himself on a harrowing journey of self-discovery.
+plot: "A mathematical genius, John Nash made an astonishing discovery early in his career and stood on the brink of international acclaim. But Nash soon found himself on a harrowing journey of self-discovery."
 genres:
   - Biography
   - Drama

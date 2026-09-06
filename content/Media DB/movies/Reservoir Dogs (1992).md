@@ -7,7 +7,7 @@ year: "1992"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0105236/
 id: tt0105236
-plot: When a simple jewelry heist goes horribly wrong, the surviving criminals begin to suspect that one of them is a police informant.
+plot: "When a simple jewelry heist goes horribly wrong, the surviving criminals begin to suspect that one of them is a police informant."
 genres:
   - Crime
   - Thriller

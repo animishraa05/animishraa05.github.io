@@ -7,7 +7,7 @@ year: "1942"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0035446/
 id: tt0035446
-plot: During the German occupation of Poland, an acting troupe becomes embroiled in a Polish soldier's efforts to track down a German spy.
+plot: "During the German occupation of Poland, an acting troupe becomes embroiled in a Polish soldier's efforts to track down a German spy."
 genres:
   - Comedy
   - Romance

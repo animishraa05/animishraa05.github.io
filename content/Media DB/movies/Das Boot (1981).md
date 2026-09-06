@@ -7,7 +7,7 @@ year: "1981"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0082096/
 id: tt0082096
-plot: A German U-boat stalks the frigid waters of the North Atlantic as its young crew experience the sheer terror and claustrophobic life of a submariner in World War II.
+plot: "A German U-boat stalks the frigid waters of the North Atlantic as its young crew experience the sheer terror and claustrophobic life of a submariner in World War II."
 genres:
   - Drama
   - War

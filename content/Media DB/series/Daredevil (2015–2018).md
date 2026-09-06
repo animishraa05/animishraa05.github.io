@@ -7,7 +7,7 @@ year: "2015–2018"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt3322312/
 id: tt3322312
-plot: A blind lawyer by day, vigilante by night. Matt Murdock fights the crime of New York as Daredevil.
+plot: "A blind lawyer by day, vigilante by night. Matt Murdock fights the crime of New York as Daredevil."
 genres:
   - Action
   - Crime

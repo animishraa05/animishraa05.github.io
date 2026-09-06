@@ -7,7 +7,7 @@ year: "2006–2008"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0994314/
 id: tt0994314
-plot: After being given a mysterious power to control others, an outcast prince becomes the masked leader of the rebellion against an all-powerful empire.
+plot: "After being given a mysterious power to control others, an outcast prince becomes the masked leader of the rebellion against an all-powerful empire."
 genres:
   - Animation
   - Action

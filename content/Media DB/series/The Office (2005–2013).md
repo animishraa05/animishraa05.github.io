@@ -7,7 +7,7 @@ year: "2005–2013"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0386676/
 id: tt0386676
-plot: A mockumentary on a group of typical office workers, where the workday consists of ego clashes, inappropriate behavior, tedium and romance.
+plot: "A mockumentary on a group of typical office workers, where the workday consists of ego clashes, inappropriate behavior, tedium and romance."
 genres:
   - Comedy
 director:

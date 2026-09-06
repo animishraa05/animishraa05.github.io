@@ -7,7 +7,7 @@ year: "2006"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0482571/
 id: tt0482571
-plot: Two friends and fellow magicians become bitter enemies after a sudden tragedy. As they devote themselves to this rivalry, they make sacrifices that bring them fame but, with terrible consequences.
+plot: "Two friends and fellow magicians become bitter enemies after a sudden tragedy. As they devote themselves to this rivalry, they make sacrifices that bring them fame but, with terrible consequences."
 genres:
   - Drama
   - Mystery

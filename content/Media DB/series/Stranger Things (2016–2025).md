@@ -7,7 +7,7 @@ year: "2016–2025"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt4574334/
 id: tt4574334
-plot: In 1980s Indiana, a group of young friends witness supernatural forces and secret government exploits. As they search for answers, the children unravel a series of extraordinary mysteries.
+plot: "In 1980s Indiana, a group of young friends witness supernatural forces and secret government exploits. As they search for answers, the children unravel a series of extraordinary mysteries."
 genres:
   - Drama
   - Fantasy

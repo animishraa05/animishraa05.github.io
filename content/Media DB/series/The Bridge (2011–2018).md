@@ -7,7 +7,7 @@ year: "2011–2018"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1733785/
 id: tt1733785
-plot: When a body is found on the bridge between Denmark and Sweden, right on the border, Danish inspector Martin Rohde and Swedish Saga Norén have to share jurisdiction and work together to find the killer.
+plot: "When a body is found on the bridge between Denmark and Sweden, right on the border, Danish inspector Martin Rohde and Swedish Saga Norén have to share jurisdiction and work together to find the killer."
 genres:
   - Crime
   - Mystery

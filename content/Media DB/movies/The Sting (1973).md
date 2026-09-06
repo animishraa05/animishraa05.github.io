@@ -7,7 +7,7 @@ year: "1973"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0070735/
 id: tt0070735
-plot: Two grifters team up to pull off the ultimate con.
+plot: "Two grifters team up to pull off the ultimate con."
 genres:
   - Comedy
   - Crime

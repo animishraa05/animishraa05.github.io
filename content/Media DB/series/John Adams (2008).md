@@ -7,7 +7,7 @@ year: "2008"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0472027/
 id: tt0472027
-plot: The life of one of the USA's Founding Fathers, its second President, and his role in the nation's first 50 years.
+plot: "The life of one of the USA's Founding Fathers, its second President, and his role in the nation's first 50 years."
 genres:
   - Biography
   - Drama

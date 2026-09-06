@@ -7,7 +7,7 @@ year: "1959"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0052618/
 id: tt0052618
-plot: A Jewish prince is betrayed and sent into slavery by a Roman friend in 1st-century Jerusalem, but it's not long before he regains his freedom and comes back for revenge.
+plot: "A Jewish prince is betrayed and sent into slavery by a Roman friend in 1st-century Jerusalem, but it's not long before he regains his freedom and comes back for revenge."
 genres:
   - Adventure
   - Drama

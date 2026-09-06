@@ -1,13 +1,13 @@
 ---
 type: movie
 subType: ""
-title: Avengers: Infinity War
-englishTitle: Avengers: Infinity War
+title: "Avengers: Infinity War"
+englishTitle: "Avengers: Infinity War"
 year: "2018"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt4154756/
 id: tt4154756
-plot: The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.
+plot: "The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe."
 genres:
   - Action
   - Adventure

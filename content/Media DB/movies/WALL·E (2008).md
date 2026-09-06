@@ -7,7 +7,7 @@ year: "2008"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0910970/
 id: tt0910970
-plot: A robot who is responsible for cleaning a waste-covered Earth meets another robot and falls in love with her. Together, they set out on a journey that will alter the fate of mankind.
+plot: "A robot who is responsible for cleaning a waste-covered Earth meets another robot and falls in love with her. Together, they set out on a journey that will alter the fate of mankind."
 genres:
   - Animation
   - Adventure

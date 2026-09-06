@@ -7,7 +7,7 @@ year: "1998–2007"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0163507/
 id: tt0163507
-plot: Improvisational comedy competition show in which four members of the regular cast as comedians and often with guest appearances with other comedians and celebrities and members of the audience perform various comic games and sketc...
+plot: "Improvisational comedy competition show in which four members of the regular cast as comedians and often with guest appearances with other comedians and celebrities and members of the audience perform various comic games and sketc..."
 genres:
   - Comedy
   - Game-Show

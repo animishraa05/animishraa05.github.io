@@ -7,7 +7,7 @@ year: "1989–1996"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0121220/
 id: tt0121220
-plot: The adventures of Earth's martial arts defender, Son Goku, continue with a new family and the revelation of his alien origins. Now Goku and his allies must defend the planet from an onslaught of new extraterrestrial enemies.
+plot: "The adventures of Earth's martial arts defender, Son Goku, continue with a new family and the revelation of his alien origins. Now Goku and his allies must defend the planet from an onslaught of new extraterrestrial enemies."
 genres:
   - Animation
   - Action

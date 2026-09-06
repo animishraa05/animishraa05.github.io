@@ -1,7 +1,7 @@
 ---
 title: Vim Buffers
 concept:
-aliases: [buffer, :e, :bn, :bp, :w, :q]
+aliases: "[buffer, :e, :bn, :bp, :w, :q]"
 tags: [dev, vim]
 created: 2026-04-12
 updated: 2026-04-12

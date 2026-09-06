@@ -1,13 +1,13 @@
 ---
 type: series
 subType: ""
-title: Rurouni Kenshin: Trust and Betrayal
-englishTitle: Rurouni Kenshin: Trust and Betrayal
+title: "Rurouni Kenshin: Trust and Betrayal"
+englishTitle: "Rurouni Kenshin: Trust and Betrayal"
 year: "1999"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0203082/
 id: tt0203082
-plot: In the era of Japan's Meiji Restoration, an assassin regains his humanity.
+plot: "In the era of Japan's Meiji Restoration, an assassin regains his humanity."
 genres:
   - Animation
   - Action

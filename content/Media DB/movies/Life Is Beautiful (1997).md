@@ -7,7 +7,7 @@ year: "1997"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0118799/
 id: tt0118799
-plot: When an open-minded Jewish waiter and his son become victims of the Holocaust, he uses a perfect mixture of will, humor and imagination to protect his son from the dangers around their camp.
+plot: "When an open-minded Jewish waiter and his son become victims of the Holocaust, he uses a perfect mixture of will, humor and imagination to protect his son from the dangers around their camp."
 genres:
   - Comedy
   - Drama

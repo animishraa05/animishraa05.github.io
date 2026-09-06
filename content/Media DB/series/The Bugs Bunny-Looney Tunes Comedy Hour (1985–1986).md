@@ -7,7 +7,7 @@ year: "1985–1986"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0088491/
 id: tt0088491
-plot: A Saturday morning series, collecting of some of the most popular classic cartoons from the Looney Tunes catalogue.
+plot: "A Saturday morning series, collecting of some of the most popular classic cartoons from the Looney Tunes catalogue."
 genres:
   - Animation
   - Family

@@ -7,7 +7,7 @@ year: "1979"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0079470/
 id: tt0079470
-plot: Born on the original Christmas day in the stable next door to Jesus Christ, Brian of Nazareth spends his life being mistaken for the messiah.
+plot: "Born on the original Christmas day in the stable next door to Jesus Christ, Brian of Nazareth spends his life being mistaken for the messiah."
 genres:
   - Comedy
 director:

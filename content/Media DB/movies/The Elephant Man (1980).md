@@ -7,7 +7,7 @@ year: "1980"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0080678/
 id: tt0080678
-plot: A Victorian surgeon rescues a heavily-disfigured and mistreated young man working as a sideshow freak, who gradually reveals his capacity for kindness, intelligence and sophistication.
+plot: "A Victorian surgeon rescues a heavily-disfigured and mistreated young man working as a sideshow freak, who gradually reveals his capacity for kindness, intelligence and sophistication."
 genres:
   - Biography
   - Drama

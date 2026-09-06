@@ -7,7 +7,7 @@ year: "2018"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt6763664/
 id: tt6763664
-plot: Flashing between past and present, a fractured family confronts haunting memories of their old home and the terrifying events that drove them from it.
+plot: "Flashing between past and present, a fractured family confronts haunting memories of their old home and the terrifying events that drove them from it."
 genres:
   - Drama
   - Horror

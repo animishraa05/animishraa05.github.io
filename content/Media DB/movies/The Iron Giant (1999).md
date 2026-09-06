@@ -7,7 +7,7 @@ year: "1999"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0129167/
 id: tt0129167
-plot: A young boy befriends a giant robot from outer space that a paranoid government agent wants to destroy.
+plot: "A young boy befriends a giant robot from outer space that a paranoid government agent wants to destroy."
 genres:
   - Animation
   - Action

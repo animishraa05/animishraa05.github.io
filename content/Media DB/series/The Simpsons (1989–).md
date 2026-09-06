@@ -7,7 +7,7 @@ year: "1989–"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0096697/
 id: tt0096697
-plot: The satiric half-hour adventures of a working-class family in the misfit city of Springfield.
+plot: "The satiric half-hour adventures of a working-class family in the misfit city of Springfield."
 genres:
   - Animation
   - Comedy

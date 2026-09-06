@@ -7,7 +7,7 @@ year: "2014–2022"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt4082744/
 id: tt4082744
-plot: The lives of two eccentric metal detectorists, who spend their days plodding along ploughed tracks and open fields, hoping to disturb the tedium by unearthing the fortune of a lifetime.
+plot: "The lives of two eccentric metal detectorists, who spend their days plodding along ploughed tracks and open fields, hoping to disturb the tedium by unearthing the fortune of a lifetime."
 genres:
   - Comedy
 director:

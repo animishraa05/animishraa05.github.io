@@ -7,7 +7,7 @@ year: "1974"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0071562/
 id: tt0071562
-plot: The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.
+plot: "The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate."
 genres:
   - Crime
   - Drama

@@ -7,7 +7,7 @@ year: "2013–2017"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2297757/
 id: tt2297757
-plot: Nathan Fielder uses his business degree and life experiences to, in unorthodox ways, help real small businesses turn a profit.
+plot: "Nathan Fielder uses his business degree and life experiences to, in unorthodox ways, help real small businesses turn a profit."
 genres:
   - Documentary
   - Comedy

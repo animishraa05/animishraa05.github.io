@@ -7,7 +7,7 @@ year: "2011"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1291584/
 id: tt1291584
-plot: The youngest son of an alcoholic former boxer returns home, where he's trained by his father for competition in a mixed martial arts tournament - a path that puts the fighter on a collision course with his estranged, older brother.
+plot: "The youngest son of an alcoholic former boxer returns home, where he's trained by his father for competition in a mixed martial arts tournament - a path that puts the fighter on a collision course with his estranged, older brother."
 genres:
   - Action
   - Drama

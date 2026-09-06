@@ -7,7 +7,7 @@ year: "2001–2004"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0275137/
 id: tt0275137
-plot: Seven of the most formidable heroes form arguably the most powerful team ever.
+plot: "Seven of the most formidable heroes form arguably the most powerful team ever."
 genres:
   - Animation
   - Action

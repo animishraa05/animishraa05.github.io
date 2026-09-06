@@ -7,7 +7,7 @@ year: "2013–2021"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2467372/
 id: tt2467372
-plot: Comedy series following the exploits of Det. Jake Peralta and his diverse, lovable colleagues as they police the NYPD's 99th Precinct.
+plot: "Comedy series following the exploits of Det. Jake Peralta and his diverse, lovable colleagues as they police the NYPD's 99th Precinct."
 genres:
   - Comedy
   - Crime

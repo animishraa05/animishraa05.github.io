@@ -7,7 +7,7 @@ year: "1994"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0111161/
 id: tt0111161
-plot: After a banker is sentenced to life in Shawshank Prison, he forms an unlikely friendship with a seasoned inmate and clings to hope amid cruelty and corruption.
+plot: "After a banker is sentenced to life in Shawshank Prison, he forms an unlikely friendship with a seasoned inmate and clings to hope amid cruelty and corruption."
 genres:
   - Drama
 director:

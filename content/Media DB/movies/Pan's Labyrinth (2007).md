@@ -7,7 +7,7 @@ year: "2007"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0457430/
 id: tt0457430
-plot: In 1944 Francoist Spain, an imaginative young girl meets a faun who tells her she's a princess and that she must prove her worthiness by completing three dangerous tasks.
+plot: "In 1944 Francoist Spain, an imaginative young girl meets a faun who tells her she's a princess and that she must prove her worthiness by completing three dangerous tasks."
 genres:
   - Drama
   - Fantasy

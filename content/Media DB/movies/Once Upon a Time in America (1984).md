@@ -7,7 +7,7 @@ year: "1984"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0087843/
 id: tt0087843
-plot: A former Prohibition-era Jewish gangster returns to the Lower East Side of Manhattan 35 years later, where he must once again confront the ghosts and regrets of his old life.
+plot: "A former Prohibition-era Jewish gangster returns to the Lower East Side of Manhattan 35 years later, where he must once again confront the ghosts and regrets of his old life."
 genres:
   - Crime
   - Drama

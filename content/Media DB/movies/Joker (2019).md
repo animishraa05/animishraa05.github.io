@@ -7,7 +7,7 @@ year: "2019"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt7286456/
 id: tt7286456
-plot: Arthur Fleck, a party clown and a failed stand-up comedian, leads an impoverished life with his ailing mother. However, when society shuns him and brands him as a freak, he decides to embrace the life of chaos in Gotham City.
+plot: "Arthur Fleck, a party clown and a failed stand-up comedian, leads an impoverished life with his ailing mother. However, when society shuns him and brands him as a freak, he decides to embrace the life of chaos in Gotham City."
 genres:
   - Crime
   - Drama

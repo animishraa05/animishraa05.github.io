@@ -7,7 +7,7 @@ year: "2014–"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt3530232/
 id: tt3530232
-plot: Former Daily Show host and correspondent John Oliver brings his persona to this weekly news satire program.
+plot: "Former Daily Show host and correspondent John Oliver brings his persona to this weekly news satire program."
 genres:
   - Comedy
   - News

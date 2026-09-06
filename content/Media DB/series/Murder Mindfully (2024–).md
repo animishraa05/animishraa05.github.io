@@ -7,7 +7,7 @@ year: 2024–
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt30217222/
 id: tt30217222
-plot: A lawyer attends a mindfulness retreat to restore work-life balance but unexpectedly becomes a murderer and mastermind for the mob.
+plot: "A lawyer attends a mindfulness retreat to restore work-life balance but unexpectedly becomes a murderer and mastermind for the mob."
 genres:
   - Comedy
   - Crime

@@ -7,7 +7,7 @@ year: "2019"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt6751668/
 id: tt6751668
-plot: Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.
+plot: "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan."
 genres:
   - Drama
   - Thriller

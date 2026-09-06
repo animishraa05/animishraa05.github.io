@@ -1,13 +1,13 @@
 ---
 type: movie
 subType: ""
-title: The Lord of the Rings: The Two Towers
-englishTitle: The Lord of the Rings: The Two Towers
+title: "The Lord of the Rings: The Two Towers"
+englishTitle: "The Lord of the Rings: The Two Towers"
 year: "2002"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0167261/
 id: tt0167261
-plot: While Frodo and Sam edge closer to Mordor with the help of the shifty Gollum, the divided fellowship makes a stand against Sauron's new ally, Saruman, and his hordes of Isengard.
+plot: "While Frodo and Sam edge closer to Mordor with the help of the shifty Gollum, the divided fellowship makes a stand against Sauron's new ally, Saruman, and his hordes of Isengard."
 genres:
   - Adventure
   - Drama

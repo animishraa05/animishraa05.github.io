@@ -7,7 +7,7 @@ year: "2009–2020"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1442437/
 id: tt1442437
-plot: Three different, but related, families face trials and tribulations in their own uniquely comedic ways.
+plot: "Three different, but related, families face trials and tribulations in their own uniquely comedic ways."
 genres:
   - Comedy
   - Drama

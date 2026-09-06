@@ -7,7 +7,7 @@ year: "1995"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0112641/
 id: tt0112641
-plot: In Las Vegas, two best friends--a casino executive and a Mafia enforcer--compete for a gambling empire and a fast-living, fast-loving socialite.
+plot: "In Las Vegas, two best friends--a casino executive and a Mafia enforcer--compete for a gambling empire and a fast-living, fast-loving socialite."
 genres:
   - Crime
   - Drama

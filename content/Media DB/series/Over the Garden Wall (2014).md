@@ -7,7 +7,7 @@ year: "2014"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt3718778/
 id: tt3718778
-plot: Two brothers find themselves lost in a mysterious land and try to find their way home.
+plot: "Two brothers find themselves lost in a mysterious land and try to find their way home."
 genres:
   - Animation
   - Short

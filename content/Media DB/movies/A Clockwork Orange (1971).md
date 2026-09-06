@@ -7,7 +7,7 @@ year: "1971"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0066921/
 id: tt0066921
-plot: Alex DeLarge and his droogs barbarize a decaying near-future.
+plot: "Alex DeLarge and his droogs barbarize a decaying near-future."
 genres:
   - Crime
   - Sci-Fi

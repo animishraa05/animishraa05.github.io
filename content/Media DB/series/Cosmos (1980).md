@@ -7,7 +7,7 @@ year: "1980"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0081846/
 id: tt0081846
-plot: Astronomer Carl Sagan leads us on an engaging guided tour of the various elements and cosmological theories of the universe.
+plot: "Astronomer Carl Sagan leads us on an engaging guided tour of the various elements and cosmological theories of the universe."
 genres:
   - Documentary
 director:

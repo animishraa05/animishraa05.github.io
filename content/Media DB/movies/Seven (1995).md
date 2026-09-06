@@ -7,7 +7,7 @@ year: "1995"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0114369/
 id: tt0114369
-plot: Two detectives try to track down a serial killer who chooses his victims based on the Seven Deadly Sins.
+plot: "Two detectives try to track down a serial killer who chooses his victims based on the Seven Deadly Sins."
 genres:
   - Crime
   - Drama

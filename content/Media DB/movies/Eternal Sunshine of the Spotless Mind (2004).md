@@ -7,7 +7,7 @@ year: "2004"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0338013/
 id: tt0338013
-plot: When their relationship turns sour, a couple undergoes a medical procedure to have each other erased from their memories forever.
+plot: "When their relationship turns sour, a couple undergoes a medical procedure to have each other erased from their memories forever."
 genres:
   - Drama
   - Romance

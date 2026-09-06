@@ -7,7 +7,7 @@ year: "1976"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0075148/
 id: tt0075148
-plot: A small-time Philadelphia boxer gets a supremely rare chance to fight the world heavyweight champion in a bout in which he strives to go the distance for his self-respect.
+plot: "A small-time Philadelphia boxer gets a supremely rare chance to fight the world heavyweight champion in a bout in which he strives to go the distance for his self-respect."
 genres:
   - Drama
   - Sport

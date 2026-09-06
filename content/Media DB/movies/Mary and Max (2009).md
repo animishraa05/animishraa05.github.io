@@ -7,7 +7,7 @@ year: "2009"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0978762/
 id: tt0978762
-plot: In 1976 Melbourne, a lonely 8-year-old girl strikes up a correspondence with an unlikely pen pal: a severely obese 44-year-old New Yorker with Asperger's syndrome.
+plot: "In 1976 Melbourne, a lonely 8-year-old girl strikes up a correspondence with an unlikely pen pal: a severely obese 44-year-old New Yorker with Asperger's syndrome."
 genres:
   - Animation
   - Comedy

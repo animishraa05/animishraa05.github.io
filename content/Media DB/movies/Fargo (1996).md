@@ -7,7 +7,7 @@ year: "1996"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0116282/
 id: tt0116282
-plot: Minnesota car salesman Jerry Lundegaard's inept crime falls apart due to his and his henchmen's bungling and the persistent police work of the quite pregnant Marge Gunderson.
+plot: "Minnesota car salesman Jerry Lundegaard's inept crime falls apart due to his and his henchmen's bungling and the persistent police work of the quite pregnant Marge Gunderson."
 genres:
   - Crime
   - Drama

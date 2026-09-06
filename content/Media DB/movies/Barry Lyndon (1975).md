@@ -7,7 +7,7 @@ year: "1975"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0072684/
 id: tt0072684
-plot: An Irish rogue wins the heart of a rich widow and assumes her dead husband's aristocratic position in 18th-century England.
+plot: "An Irish rogue wins the heart of a rich widow and assumes her dead husband's aristocratic position in 18th-century England."
 genres:
   - Adventure
   - Drama

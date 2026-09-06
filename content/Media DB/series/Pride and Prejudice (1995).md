@@ -7,7 +7,7 @@ year: "1995"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0112130/
 id: tt0112130
-plot: While the arrival of wealthy gentlemen sends her marriage-minded mother into a frenzy, willful and opinionated Elizabeth Bennet matches wits with haughty Mr. Darcy.
+plot: "While the arrival of wealthy gentlemen sends her marriage-minded mother into a frenzy, willful and opinionated Elizabeth Bennet matches wits with haughty Mr. Darcy."
 genres:
   - Drama
   - Romance

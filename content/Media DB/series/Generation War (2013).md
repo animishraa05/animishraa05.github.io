@@ -7,7 +7,7 @@ year: "2013"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1883092/
 id: tt1883092
-plot: Five friends go out to war and promise each other to be back for Christmas.
+plot: "Five friends go out to war and promise each other to be back for Christmas."
 genres:
   - Action
   - Drama

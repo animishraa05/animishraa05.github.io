@@ -7,7 +7,7 @@ year: 2014–2017
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2375692/
 id: tt2375692
-plot: Captain Flint and his pirates hunt treasure and fight for the survival of New Providence Island.
+plot: "Captain Flint and his pirates hunt treasure and fight for the survival of New Providence Island."
 genres:
   - Action
   - Adventure

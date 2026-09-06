@@ -7,7 +7,7 @@ year: "1924"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0015324/
 id: tt0015324
-plot: A film projectionist longs to be a detective, and puts his meagre skills to work when he is framed by a rival for stealing his girlfriend's father's pocketwatch.
+plot: "A film projectionist longs to be a detective, and puts his meagre skills to work when he is framed by a rival for stealing his girlfriend's father's pocketwatch."
 genres:
   - Action
   - Comedy

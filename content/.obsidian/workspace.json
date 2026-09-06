@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "235725b3bed77caa",
+        "id": "5cc8362f7de019f2",
         "type": "tabs",
         "children": [
           {
-            "id": "e86605ae44f6234f",
+            "id": "eddfe8e40b7fe1ec",
             "type": "leaf",
             "state": {
               "type": "bases",
               "state": {
                 "file": "watchlist hub.base",
-                "viewName": "series"
+                "viewName": "movies"
               },
               "icon": "lucide-layout-grid",
               "title": "watchlist hub"
@@ -212,10 +212,12 @@
       "obsidian-media-db-plugin:Add new Media DB entry": false
     }
   },
-  "active": "e86605ae44f6234f",
+  "active": "eddfe8e40b7fe1ec",
   "lastOpenFiles": [
-    "Media DB/series/Murder Mindfully (2024–).md",
+    "Media DB/movies/Life of Pi (2012).md",
     "watchlist hub.base",
+    "Media DB/series/Black Sails (2014–2017).md",
+    "Media DB/series/Murder Mindfully (2024–).md",
     "Media DB/movies/The Pursuit of Happyness (2006).md",
     "Media DB/series/Silicon Valley (2014–2019).md",
     "wiki/wireless-n/index.md",
@@ -238,8 +240,6 @@
     "wiki/data-warehouse/index.md",
     "wiki/data-science/index.md",
     "wiki/computer-architecture/index.md",
-    "wiki/comprehensive-report/index.md",
-    "wiki/compilerdesign/index.md",
     "imdb_env/bin/playwright",
     "imdb_env/lib/python3.14/site-packages/playwright/sync_api/__pycache__/_generated.cpython-314.pyc",
     "imdb_env/lib/python3.14/site-packages/playwright/sync_api/__pycache__/_context_manager.cpython-314.pyc",

@@ -7,7 +7,7 @@ year: "1957"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0051201/
 id: tt0051201
-plot: A veteran British barrister must defend his client in a murder trial that has surprise after surprise.
+plot: "A veteran British barrister must defend his client in a murder trial that has surprise after surprise."
 genres:
   - Crime
   - Drama

@@ -7,7 +7,7 @@ year: "2014"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2267998/
 id: tt2267998
-plot: The husband of a missing woman becomes the main suspect in her disappearance.
+plot: "The husband of a missing woman becomes the main suspect in her disappearance."
 genres:
   - Drama
   - Mystery

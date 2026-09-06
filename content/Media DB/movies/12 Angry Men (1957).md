@@ -7,7 +7,7 @@ year: "1957"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0050083/
 id: tt0050083
-plot: The jury in a New York City murder trial is frustrated by a single member whose skeptical caution forces them to more carefully consider the evidence before jumping to a hasty verdict.
+plot: "The jury in a New York City murder trial is frustrated by a single member whose skeptical caution forces them to more carefully consider the evidence before jumping to a hasty verdict."
 genres:
   - Crime
   - Drama

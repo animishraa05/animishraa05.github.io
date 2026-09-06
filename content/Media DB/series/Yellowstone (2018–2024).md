@@ -7,7 +7,7 @@ year: 2018–2024
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt4236770/
 id: tt4236770
-plot: A ranching family in Montana faces off against others encroaching on their land.
+plot: "A ranching family in Montana faces off against others encroaching on their land."
 genres:
   - Drama
   - Western

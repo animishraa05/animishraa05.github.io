@@ -7,7 +7,7 @@ year: "1962"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0056172/
 id: tt0056172
-plot: The story of T.E. Lawrence, the English officer who successfully united and led the diverse, often warring, Arab tribes during World War I in order to fight the Turks.
+plot: "The story of T.E. Lawrence, the English officer who successfully united and led the diverse, often warring, Arab tribes during World War I in order to fight the Turks."
 genres:
   - Adventure
   - Biography

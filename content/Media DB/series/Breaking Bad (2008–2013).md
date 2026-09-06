@@ -7,7 +7,7 @@ year: "2008–2013"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0903747/
 id: tt0903747
-plot: A chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine with a former student to secure his family's future.
+plot: "A chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine with a former student to secure his family's future."
 genres:
   - Crime
   - Drama

@@ -7,7 +7,7 @@ year: 2008–2015
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1196946/
 id: tt1196946
-plot: Famous "psychic", Patrick Jane, outs himself as a fake, and using his heightened observational skills and impeccable knowledge of the human psyche, he works with the police so he can find "Red John", the madman who killed his family.
+plot: "Famous \"psychic\", Patrick Jane, outs himself as a fake, and using his heightened observational skills and impeccable knowledge of the human psyche, he works with the police so he can find \"Red John\", the madman who killed his family."
 genres:
   - Crime
   - Drama

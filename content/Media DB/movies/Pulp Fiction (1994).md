@@ -7,7 +7,7 @@ year: "1994"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0110912/
 id: tt0110912
-plot: The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.
+plot: "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption."
 genres:
   - Crime
   - Drama

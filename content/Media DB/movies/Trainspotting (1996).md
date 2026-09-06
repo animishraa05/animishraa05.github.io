@@ -7,7 +7,7 @@ year: "1996"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0117951/
 id: tt0117951
-plot: Renton, deeply immersed in the Edinburgh drug scene, tries to clean up and get out despite the allure of drugs and the influence of friends.
+plot: "Renton, deeply immersed in the Edinburgh drug scene, tries to clean up and get out despite the allure of drugs and the influence of friends."
 genres:
   - Crime
   - Drama

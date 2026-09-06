@@ -7,7 +7,7 @@ year: "1981"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0082971/
 id: tt0082971
-plot: In 1936, archaeologist Indiana Jones is tasked by Army Intelligence to help locate a legendary ancient power, the Ark of Covenant, before the Nazis get it first.
+plot: "In 1936, archaeologist Indiana Jones is tasked by Army Intelligence to help locate a legendary ancient power, the Ark of Covenant, before the Nazis get it first."
 genres:
   - Action
   - Adventure

@@ -7,7 +7,7 @@ year: "2017–2023"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt5788792/
 id: tt5788792
-plot: After her husband leaves her, young mother of two Miriam "Midge" Maisel discovers that she has a talent for stand-up comedy. Could this be her calling?
+plot: "After her husband leaves her, young mother of two Miriam \"Midge\" Maisel discovers that she has a talent for stand-up comedy. Could this be her calling?"
 genres:
   - Comedy
   - Drama

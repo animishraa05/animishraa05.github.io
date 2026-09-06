@@ -7,7 +7,7 @@ year: "2011"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1832382/
 id: tt1832382
-plot: A married couple are faced with a difficult decision - to improve the life of their child by moving to another country or to stay in Iran and look after a deteriorating parent who has Alzheimer's disease.
+plot: "A married couple are faced with a difficult decision - to improve the life of their child by moving to another country or to stay in Iran and look after a deteriorating parent who has Alzheimer's disease."
 genres:
   - Drama
 director:

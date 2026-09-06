@@ -7,7 +7,7 @@ year: "2017"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt3315342/
 id: tt3315342
-plot: In a future where mutants are nearly extinct, an elderly and weary Logan leads a quiet life. But when Laura, a mutant child pursued by scientists, comes to him for help, he must get her to safety.
+plot: "In a future where mutants are nearly extinct, an elderly and weary Logan leads a quiet life. But when Laura, a mutant child pursued by scientists, comes to him for help, he must get her to safety."
 genres:
   - Action
   - Drama

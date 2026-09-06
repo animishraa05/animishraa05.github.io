@@ -1,7 +1,7 @@
 ---
 title: Vim Splits
 concept:
-aliases: [split, vsplit, window, pane, :split, :vsplit]
+aliases: "[split, vsplit, window, pane, :split, :vsplit]"
 tags: [dev, vim]
 created: 2026-04-12
 updated: 2026-04-12

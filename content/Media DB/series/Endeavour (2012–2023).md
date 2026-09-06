@@ -7,7 +7,7 @@ year: "2012–2023"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2701582/
 id: tt2701582
-plot: Set from 1965 into the 1970s, the show follows Endeavour Morse in his early years as a police constable. Working alongside his senior partner DI Fred Thursday, Morse engages in a number of investigations around Oxford.
+plot: "Set from 1965 into the 1970s, the show follows Endeavour Morse in his early years as a police constable. Working alongside his senior partner DI Fred Thursday, Morse engages in a number of investigations around Oxford."
 genres:
   - Crime
   - Drama

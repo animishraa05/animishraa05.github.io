@@ -7,7 +7,7 @@ year: "1961"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0055630/
 id: tt0055630
-plot: A crafty ronin comes to a town divided by two criminal gangs and decides to play them against each other to free the town.
+plot: "A crafty ronin comes to a town divided by two criminal gangs and decides to play them against each other to free the town."
 genres:
   - Action
   - Drama

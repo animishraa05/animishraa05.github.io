@@ -7,7 +7,7 @@ year: "1973–1974"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0071075/
 id: tt0071075
-plot: A groundbreaking 26-part documentary series narrated by the actor Laurence Olivier about the deadliest conflict in history, World War II.
+plot: "A groundbreaking 26-part documentary series narrated by the actor Laurence Olivier about the deadliest conflict in history, World War II."
 genres:
   - Documentary
   - History

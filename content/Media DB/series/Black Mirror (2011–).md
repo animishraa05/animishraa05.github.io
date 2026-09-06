@@ -7,7 +7,7 @@ year: "2011–"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2085059/
 id: tt2085059
-plot: Featuring stand-alone dramas -- sharp, suspenseful, satirical tales that explore techno-paranoia -- "Black Mirror" is a contemporary reworking of "The Twilight Zone" with stories that tap into the collective unease about the moder...
+plot: "Featuring stand-alone dramas -- sharp, suspenseful, satirical tales that explore techno-paranoia -- \"Black Mirror\" is a contemporary reworking of \"The Twilight Zone\" with stories that tap into the collective unease about the moder..."
 genres:
   - Crime
   - Drama

@@ -7,7 +7,7 @@ year: "2011–"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2100976/
 id: tt2100976
-plot: Q, Sal, Joe and Murr are real-life best friends who love challenging each other to the most outrageous dares and stunts ever caught on hidden camera.
+plot: "Q, Sal, Joe and Murr are real-life best friends who love challenging each other to the most outrageous dares and stunts ever caught on hidden camera."
 genres:
   - Comedy
   - Reality-TV

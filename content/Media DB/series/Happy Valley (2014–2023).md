@@ -7,7 +7,7 @@ year: "2014–2023"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt3428912/
 id: tt3428912
-plot: Yorkshire-based crime drama centering on the personal and professional life of Police Sergeant Catherine Cawood.
+plot: "Yorkshire-based crime drama centering on the personal and professional life of Police Sergeant Catherine Cawood."
 genres:
   - Crime
   - Drama

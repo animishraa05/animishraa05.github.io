@@ -7,7 +7,7 @@ year: "2015"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2528254/
 id: tt2528254
-plot: The year is 1990, the rave scene has just entered England. The sound of the Stone roses lurks toward Shaun and the gang. This means that Woody and Lol are living in a domestic bliss, they are happy again. But this year will see hu...
+plot: "The year is 1990, the rave scene has just entered England. The sound of the Stone roses lurks toward Shaun and the gang. This means that Woody and Lol are living in a domestic bliss, they are happy again. But this year will see hu..."
 genres:
   - Comedy
   - Crime

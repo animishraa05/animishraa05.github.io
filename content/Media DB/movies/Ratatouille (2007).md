@@ -7,7 +7,7 @@ year: "2007"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0382932/
 id: tt0382932
-plot: A rat who can cook makes an unusual alliance with a young kitchen worker at a famous Paris restaurant.
+plot: "A rat who can cook makes an unusual alliance with a young kitchen worker at a famous Paris restaurant."
 genres:
   - Animation
   - Adventure

@@ -7,7 +7,7 @@ year: "1995–1998"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0111958/
 id: tt0111958
-plot: Three misfit priests and their housekeeper live on Craggy Island, not the peaceful and quiet part of Ireland that it seems to be.
+plot: "Three misfit priests and their housekeeper live on Craggy Island, not the peaceful and quiet part of Ireland that it seems to be."
 genres:
   - Comedy
 director:

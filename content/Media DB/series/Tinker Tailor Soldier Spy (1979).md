@@ -7,7 +7,7 @@ year: "1979"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0080297/
 id: tt0080297
-plot: In the bleak days of the Cold War, espionage veteran George Smiley is forced out of semi-retirement to uncover a Soviet agent within MI6's echelons.
+plot: "In the bleak days of the Cold War, espionage veteran George Smiley is forced out of semi-retirement to uncover a Soviet agent within MI6's echelons."
 genres:
   - Drama
   - Mystery

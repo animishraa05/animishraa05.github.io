@@ -7,7 +7,7 @@ year: "2010–2015"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1489428/
 id: tt1489428
-plot: Enforcing his own brand of justice, U.S. Marshal Raylan Givens, a strong-willed, quiet law-man haunted by his past, returns to his native town to see that justice is served to those in need.
+plot: "Enforcing his own brand of justice, U.S. Marshal Raylan Givens, a strong-willed, quiet law-man haunted by his past, returns to his native town to see that justice is served to those in need."
 genres:
   - Action
   - Crime

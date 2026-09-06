@@ -7,7 +7,7 @@ year: "1957"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0050976/
 id: tt0050976
-plot: A knight returning to Sweden after the Crusades seeks answers about life, death, and the existence of God as he plays chess against the Grim Reaper during the Black Plague.
+plot: "A knight returning to Sweden after the Crusades seeks answers about life, death, and the existence of God as he plays chess against the Grim Reaper during the Black Plague."
 genres:
   - Drama
   - Fantasy

@@ -7,7 +7,7 @@ year: "2015–2022"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt3230854/
 id: tt3230854
-plot: The disappearance of rich-girl-turned-political-activist links the lives of Ceres detective, accidental ship captain and U.N. politician. Amidst political tension between Earth, Mars and the Belt, they unravel the greatest conspir...
+plot: "The disappearance of rich-girl-turned-political-activist links the lives of Ceres detective, accidental ship captain and U.N. politician. Amidst political tension between Earth, Mars and the Belt, they unravel the greatest conspir..."
 genres:
   - Drama
   - Mystery

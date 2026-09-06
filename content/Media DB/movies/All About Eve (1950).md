@@ -7,7 +7,7 @@ year: "1950"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0042192/
 id: tt0042192
-plot: A seemingly timid but secretly ruthless ingénue insinuates herself into the lives of an aging Broadway star and her circle of theater friends.
+plot: "A seemingly timid but secretly ruthless ingénue insinuates herself into the lives of an aging Broadway star and her circle of theater friends."
 genres:
   - Drama
 director:

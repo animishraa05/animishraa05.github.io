@@ -7,7 +7,7 @@ year: "1986–1987"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0086831/
 id: tt0086831
-plot: James Hacker was propelled along the corridors of power to the very pinnacle of politics - Number 10.
+plot: "James Hacker was propelled along the corridors of power to the very pinnacle of politics - Number 10."
 genres:
   - Comedy
 director:

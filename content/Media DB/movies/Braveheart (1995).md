@@ -7,7 +7,7 @@ year: "1995"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0112573/
 id: tt0112573
-plot: Scottish warrior William Wallace leads his countrymen in a rebellion to free his homeland from the tyranny of King Edward I of England.
+plot: "Scottish warrior William Wallace leads his countrymen in a rebellion to free his homeland from the tyranny of King Edward I of England."
 genres:
   - Biography
   - Drama

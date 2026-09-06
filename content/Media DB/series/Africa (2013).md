@@ -7,7 +7,7 @@ year: "2013"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2571774/
 id: tt2571774
-plot: Africa, the world's wildest continent. David Attenborough takes an awe-inspiring journey through one of the most diverse places in the world. We visit deserts, savannas, and jungles and meet up with some of Africa's amazing wildlife.
+plot: "Africa, the world's wildest continent. David Attenborough takes an awe-inspiring journey through one of the most diverse places in the world. We visit deserts, savannas, and jungles and meet up with some of Africa's amazing wildlife."
 genres:
   - Documentary
 director:

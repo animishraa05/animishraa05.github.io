@@ -7,7 +7,7 @@ year: "2003–2019"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0367279/
 id: tt0367279
-plot: Level-headed son Michael Bluth takes over family affairs after his father is imprisoned. But the rest of his spoiled, dysfunctional family are making his job unbearable.
+plot: "Level-headed son Michael Bluth takes over family affairs after his father is imprisoned. But the rest of his spoiled, dysfunctional family are making his job unbearable."
 genres:
   - Comedy
 director:

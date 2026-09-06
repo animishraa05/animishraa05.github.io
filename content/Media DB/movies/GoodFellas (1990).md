@@ -7,7 +7,7 @@ year: "1990"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0099685/
 id: tt0099685
-plot: The story of Henry Hill and his life in the mafia, covering his relationship with his wife Karen and his mob partners Jimmy Conway and Tommy DeVito.
+plot: "The story of Henry Hill and his life in the mafia, covering his relationship with his wife Karen and his mob partners Jimmy Conway and Tommy DeVito."
 genres:
   - Biography
   - Crime

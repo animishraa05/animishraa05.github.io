@@ -7,7 +7,7 @@ year: "2003–2004"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0421357/
 id: tt0421357
-plot: When a failed alchemical ritual leaves brothers Edward and Alphonse Elric with severely damaged bodies, they begin searching for the one thing that can save them: the fabled philosopher's stone.
+plot: "When a failed alchemical ritual leaves brothers Edward and Alphonse Elric with severely damaged bodies, they begin searching for the one thing that can save them: the fabled philosopher's stone."
 genres:
   - Animation
   - Action

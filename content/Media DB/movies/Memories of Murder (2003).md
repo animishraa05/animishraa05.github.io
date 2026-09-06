@@ -7,7 +7,7 @@ year: "2003"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0353969/
 id: tt0353969
-plot: In a small Korean province in 1986, two detectives struggle with the case of multiple young women being found raped and murdered by an unknown culprit.
+plot: "In a small Korean province in 1986, two detectives struggle with the case of multiple young women being found raped and murdered by an unknown culprit."
 genres:
   - Crime
   - Drama

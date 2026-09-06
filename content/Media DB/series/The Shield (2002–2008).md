@@ -7,7 +7,7 @@ year: "2002–2008"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0286486/
 id: tt0286486
-plot: A gang of corrupt Los Angeles Police Department cops uses illegal methods to maintain law and order, whilst engaging in a series of undercover dealings secretly in order to get rich.
+plot: "A gang of corrupt Los Angeles Police Department cops uses illegal methods to maintain law and order, whilst engaging in a series of undercover dealings secretly in order to get rich."
 genres:
   - Crime
   - Drama

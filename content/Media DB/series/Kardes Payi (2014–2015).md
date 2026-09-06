@@ -7,7 +7,7 @@ year: "2014–2015"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt3671754/
 id: tt3671754
-plot: The two brothers have a plumbing company and they are trying to invent something that would make the world a better place.
+plot: "The two brothers have a plumbing company and they are trying to invent something that would make the world a better place."
 genres:
   - Comedy
   - Drama

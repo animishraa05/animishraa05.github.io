@@ -1,13 +1,13 @@
 ---
 type: movie
 subType: ""
-title: The Lord of the Rings: The Fellowship of the Ring
-englishTitle: The Lord of the Rings: The Fellowship of the Ring
+title: "The Lord of the Rings: The Fellowship of the Ring"
+englishTitle: "The Lord of the Rings: The Fellowship of the Ring"
 year: "2001"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0120737/
 id: tt0120737
-plot: A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.
+plot: "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron."
 genres:
   - Adventure
   - Drama

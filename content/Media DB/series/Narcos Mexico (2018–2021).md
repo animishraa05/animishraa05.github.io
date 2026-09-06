@@ -1,13 +1,13 @@
 ---
 type: series
 subType: ""
-title: Narcos: Mexico
-englishTitle: Narcos: Mexico
+title: "Narcos: Mexico"
+englishTitle: "Narcos: Mexico"
 year: "2018–2021"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt8714904/
 id: tt8714904
-plot: The rise of the Guadalajara Cartel as an American DEA agent learns the danger of targeting narcos in Mexico.
+plot: "The rise of the Guadalajara Cartel as an American DEA agent learns the danger of targeting narcos in Mexico."
 genres:
   - Biography
   - Crime

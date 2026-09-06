@@ -7,7 +7,7 @@ year: "2011"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1675434/
 id: tt1675434
-plot: After he becomes a quadriplegic from a paragliding accident, an aristocrat hires a young man from the projects to be his caregiver.
+plot: "After he becomes a quadriplegic from a paragliding accident, an aristocrat hires a young man from the projects to be his caregiver."
 genres:
   - Comedy
   - Drama

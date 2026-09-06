@@ -7,7 +7,7 @@ year: 1998–2004
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0159206/
 id: tt0159206
-plot: Four career women navigate life in NYC. Carrie writes about relationships, Charlotte runs an art gallery, Miranda practices law, and Samantha excels in PR. Each brings unique views on love, work, and friendship.
+plot: "Four career women navigate life in NYC. Carrie writes about relationships, Charlotte runs an art gallery, Miranda practices law, and Samantha excels in PR. Each brings unique views on love, work, and friendship."
 genres:
   - Comedy
   - Drama

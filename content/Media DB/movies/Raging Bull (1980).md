@@ -7,7 +7,7 @@ year: "1980"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0081398/
 id: tt0081398
-plot: The life of boxer Jake LaMotta, whose violence and temper that led him to the top in the ring destroyed his life outside of it.
+plot: "The life of boxer Jake LaMotta, whose violence and temper that led him to the top in the ring destroyed his life outside of it."
 genres:
   - Biography
   - Drama

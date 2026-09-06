@@ -7,7 +7,7 @@ year: "1995"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0113247/
 id: tt0113247
-plot: 24 hours in the lives of three young men in the French suburbs the day after a violent riot.
+plot: "24 hours in the lives of three young men in the French suburbs the day after a violent riot."
 genres:
   - Crime
   - Drama

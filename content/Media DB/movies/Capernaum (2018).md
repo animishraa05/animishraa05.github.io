@@ -7,7 +7,7 @@ year: "2018"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt8267604/
 id: tt8267604
-plot: While serving a five-year sentence for a violent crime, a 12-year-old boy sues his parents for neglect.
+plot: "While serving a five-year sentence for a violent crime, a 12-year-old boy sues his parents for neglect."
 genres:
   - Drama
 director:

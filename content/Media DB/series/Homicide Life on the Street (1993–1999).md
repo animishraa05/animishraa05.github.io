@@ -1,13 +1,13 @@
 ---
 type: series
 subType: ""
-title: Homicide: Life on the Street
-englishTitle: Homicide: Life on the Street
+title: "Homicide: Life on the Street"
+englishTitle: "Homicide: Life on the Street"
 year: "1993–1999"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0106028/
 id: tt0106028
-plot: An American police procedural television series chronicling the work of a fictional version of the Baltimore Police Department's Homicide Unit.
+plot: "An American police procedural television series chronicling the work of a fictional version of the Baltimore Police Department's Homicide Unit."
 genres:
   - Crime
   - Drama

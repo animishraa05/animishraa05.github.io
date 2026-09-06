@@ -7,7 +7,7 @@ year: "2012–2014"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1870479/
 id: tt1870479
-plot: A newsroom undergoes some changes in its workings and morals as a new team is brought in, bringing unexpected results for its existing news anchor.
+plot: "A newsroom undergoes some changes in its workings and morals as a new team is brought in, bringing unexpected results for its existing news anchor."
 genres:
   - Drama
 director:

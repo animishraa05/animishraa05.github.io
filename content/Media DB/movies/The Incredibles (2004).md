@@ -7,7 +7,7 @@ year: "2004"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0317705/
 id: tt0317705
-plot: While trying to lead a quiet suburban life, a family of undercover superheroes are forced into action to save the world.
+plot: "While trying to lead a quiet suburban life, a family of undercover superheroes are forced into action to save the world."
 genres:
   - Animation
   - Action

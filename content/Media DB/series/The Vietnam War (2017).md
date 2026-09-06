@@ -7,7 +7,7 @@ year: "2017"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1877514/
 id: tt1877514
-plot: A documentary series chronicling the Vietnam War through archival footage and firsthand accounts from soldiers, civilians, and leaders on all sides, tracing its origins, major events, and enduring impact on the United States and V...
+plot: "A documentary series chronicling the Vietnam War through archival footage and firsthand accounts from soldiers, civilians, and leaders on all sides, tracing its origins, major events, and enduring impact on the United States and V..."
 genres:
   - Documentary
   - History

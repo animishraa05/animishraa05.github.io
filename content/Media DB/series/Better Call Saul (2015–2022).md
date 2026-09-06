@@ -7,7 +7,7 @@ year: "2015–2022"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt3032476/
 id: tt3032476
-plot: Albuquerque lawyer Jimmy McGill scrapes for clients and respect, but every win drags him closer to shady deals, dangerous players, and the alter ego Saul Goodman.
+plot: "Albuquerque lawyer Jimmy McGill scrapes for clients and respect, but every win drags him closer to shady deals, dangerous players, and the alter ego Saul Goodman."
 genres:
   - Crime
   - Drama

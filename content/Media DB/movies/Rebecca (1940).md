@@ -7,7 +7,7 @@ year: "1940"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0032976/
 id: tt0032976
-plot: A self-conscious woman juggles adjusting to her new role as an aristocrat's wife and avoiding being intimidated by his first wife's spectral presence.
+plot: "A self-conscious woman juggles adjusting to her new role as an aristocrat's wife and avoiding being intimidated by his first wife's spectral presence."
 genres:
   - Drama
   - Mystery

@@ -7,7 +7,7 @@ year: "2015"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2096673/
 id: tt2096673
-plot: After young Riley is uprooted from her Midwest life and moved to San Francisco, her emotions, Joy, Fear, Anger, Disgust, and Sadness, conflict on how best to navigate a new city, house, and school.
+plot: "After young Riley is uprooted from her Midwest life and moved to San Francisco, her emotions, Joy, Fear, Anger, Disgust, and Sadness, conflict on how best to navigate a new city, house, and school."
 genres:
   - Animation
   - Adventure

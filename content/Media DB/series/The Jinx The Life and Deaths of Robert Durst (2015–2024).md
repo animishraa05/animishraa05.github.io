@@ -1,13 +1,13 @@
 ---
 type: series
 subType: ""
-title: The Jinx: The Life and Deaths of Robert Durst
-englishTitle: The Jinx: The Life and Deaths of Robert Durst
+title: "The Jinx: The Life and Deaths of Robert Durst"
+englishTitle: "The Jinx: The Life and Deaths of Robert Durst"
 year: "2015–2024"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt4299972/
 id: tt4299972
-plot: Filmmaker Andrew Jarecki examines the complicated life of reclusive real estate icon Robert Durst, the key suspect in a series of unsolved crimes.
+plot: "Filmmaker Andrew Jarecki examines the complicated life of reclusive real estate icon Robert Durst, the key suspect in a series of unsolved crimes."
 genres:
   - Documentary
   - Biography

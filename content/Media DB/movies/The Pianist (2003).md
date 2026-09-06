@@ -7,7 +7,7 @@ year: "2003"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0253474/
 id: tt0253474
-plot: During WWII, acclaimed Polish musician Wladyslaw faces various struggles as he loses contact with his family. As the situation worsens, he hides in the ruins of Warsaw in order to survive.
+plot: "During WWII, acclaimed Polish musician Wladyslaw faces various struggles as he loses contact with his family. As the situation worsens, he hides in the ruins of Warsaw in order to survive."
 genres:
   - Biography
   - Drama

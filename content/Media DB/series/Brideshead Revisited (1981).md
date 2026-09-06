@@ -7,7 +7,7 @@ year: "1981"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0083390/
 id: tt0083390
-plot: The life, friendships and romances of the protagonist Charles Ryder-including his friendship with the Flytes, a family of wealthy English Catholics who live in a palatial mansion called Brideshead Castle.
+plot: "The life, friendships and romances of the protagonist Charles Ryder-including his friendship with the Flytes, a family of wealthy English Catholics who live in a palatial mansion called Brideshead Castle."
 genres:
   - Drama
   - Romance

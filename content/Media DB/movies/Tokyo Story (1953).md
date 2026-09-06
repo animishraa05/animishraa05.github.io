@@ -7,7 +7,7 @@ year: "1953"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0046438/
 id: tt0046438
-plot: An old couple visit their children and grandchildren in the city, but receive little attention.
+plot: "An old couple visit their children and grandchildren in the city, but receive little attention."
 genres:
   - Drama
 director:

@@ -1,13 +1,13 @@
 ---
 type: movie
 subType: ""
-title: Star Wars: Episode VI - Return of the Jedi
-englishTitle: Star Wars: Episode VI - Return of the Jedi
+title: "Star Wars: Episode VI - Return of the Jedi"
+englishTitle: "Star Wars: Episode VI - Return of the Jedi"
 year: "1983"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0086190/
 id: tt0086190
-plot: After rescuing Han Solo from Jabba the Hutt, the Rebel Alliance attempts to destroy the second Death Star while Luke struggles to help Darth Vader back from the dark side.
+plot: "After rescuing Han Solo from Jabba the Hutt, the Rebel Alliance attempts to destroy the second Death Star while Luke struggles to help Darth Vader back from the dark side."
 genres:
   - Action
   - Adventure

@@ -1,13 +1,13 @@
 ---
 type: series
 subType: ""
-title: Avatar: The Last Airbender
-englishTitle: Avatar: The Last Airbender
+title: "Avatar: The Last Airbender"
+englishTitle: "Avatar: The Last Airbender"
 year: "2005–2008"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0417299/
 id: tt0417299
-plot: In a war-torn world of elemental powers, a young boy reawakens to undertake a dangerous mystic quest to fulfill his destiny as the Avatar, and bring peace to the world.
+plot: "In a war-torn world of elemental powers, a young boy reawakens to undertake a dangerous mystic quest to fulfill his destiny as the Avatar, and bring peace to the world."
 genres:
   - Animation
   - Action

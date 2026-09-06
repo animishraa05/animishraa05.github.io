@@ -7,7 +7,7 @@ year: "1957"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0050986/
 id: tt0050986
-plot: After living a life marked by coldness, an aging professor is forced to confront the emptiness of his existence.
+plot: "After living a life marked by coldness, an aging professor is forced to confront the emptiness of his existence."
 genres:
   - Drama
   - Romance

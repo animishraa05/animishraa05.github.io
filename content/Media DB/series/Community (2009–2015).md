@@ -7,7 +7,7 @@ year: "2009–2015"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1439629/
 id: tt1439629
-plot: A suspended lawyer is forced to enroll in a community college with an eccentric staff and student body.
+plot: "A suspended lawyer is forced to enroll in a community college with an eccentric staff and student body."
 genres:
   - Comedy
 director:

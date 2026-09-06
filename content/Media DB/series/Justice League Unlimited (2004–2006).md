@@ -7,7 +7,7 @@ year: "2004–2006"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt6025022/
 id: tt6025022
-plot: A continuation of the Justice League animated series finds the original members of the team joined in their battle against crime and evil by dozens of other heroes from the DC comics universe.
+plot: "A continuation of the Justice League animated series finds the original members of the team joined in their battle against crime and evil by dozens of other heroes from the DC comics universe."
 genres:
   - Animation
   - Action

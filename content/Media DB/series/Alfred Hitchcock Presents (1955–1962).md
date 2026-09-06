@@ -7,7 +7,7 @@ year: "1955–1962"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0047708/
 id: tt0047708
-plot: Stories of terror, horror and suspense presented by Alfred Hitchcock.
+plot: "Stories of terror, horror and suspense presented by Alfred Hitchcock."
 genres:
   - Crime
   - Drama

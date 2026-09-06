@@ -7,7 +7,7 @@ year: "2001"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0185906/
 id: tt0185906
-plot: The story of Easy Company of the U.S. Army 101st Airborne Division and their mission in World War II Europe, from Operation Overlord to V-J Day.
+plot: "The story of Easy Company of the U.S. Army 101st Airborne Division and their mission in World War II Europe, from Operation Overlord to V-J Day."
 genres:
   - Action
   - Drama

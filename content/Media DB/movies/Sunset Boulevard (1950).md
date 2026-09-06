@@ -7,7 +7,7 @@ year: "1950"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0043014/
 id: tt0043014
-plot: A screenwriter develops a dangerous relationship with a faded film star determined to make a triumphant return.
+plot: "A screenwriter develops a dangerous relationship with a faded film star determined to make a triumphant return."
 genres:
   - Drama
   - Film-Noir

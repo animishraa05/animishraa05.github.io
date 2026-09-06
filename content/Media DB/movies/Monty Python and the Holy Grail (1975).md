@@ -7,7 +7,7 @@ year: "1975"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0071853/
 id: tt0071853
-plot: King Arthur and his Knights of the Round Table embark on a surreal, low-budget search for the Holy Grail, encountering many, very silly obstacles.
+plot: "King Arthur and his Knights of the Round Table embark on a surreal, low-budget search for the Holy Grail, encountering many, very silly obstacles."
 genres:
   - Adventure
   - Comedy

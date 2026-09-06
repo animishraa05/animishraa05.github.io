@@ -7,7 +7,7 @@ year: "2010–2014"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0979432/
 id: tt0979432
-plot: An Atlantic City politician plays both sides of the law by conspiring with gangsters during the Prohibition era.
+plot: "An Atlantic City politician plays both sides of the law by conspiring with gangsters during the Prohibition era."
 genres:
   - Crime
   - Drama

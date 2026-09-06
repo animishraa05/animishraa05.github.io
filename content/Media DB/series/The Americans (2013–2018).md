@@ -7,7 +7,7 @@ year: "2013–2018"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2149175/
 id: tt2149175
-plot: At the height of the Cold War, married KGB spies pose as Americans in Washington, D.C.
+plot: "At the height of the Cold War, married KGB spies pose as Americans in Washington, D.C."
 genres:
   - Crime
   - Drama

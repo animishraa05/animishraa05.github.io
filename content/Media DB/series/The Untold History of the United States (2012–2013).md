@@ -7,7 +7,7 @@ year: "2012–2013"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1494191/
 id: tt1494191
-plot: Oliver Stone's re-examination of under-reported events in American history.
+plot: "Oliver Stone's re-examination of under-reported events in American history."
 genres:
   - Documentary
   - History

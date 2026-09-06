@@ -7,7 +7,7 @@ year: "2020"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt10272386/
 id: tt10272386
-plot: A man refuses all assistance from his daughter as he ages. When he tries to understand what is happening around him, he begins to doubt his loved ones, his own mind and even the fabric of his reality.
+plot: "A man refuses all assistance from his daughter as he ages. When he tries to understand what is happening around him, he begins to doubt his loved ones, his own mind and even the fabric of his reality."
 genres:
   - Drama
   - Mystery

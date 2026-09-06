@@ -7,7 +7,7 @@ year: "2010–2018"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1305826/
 id: tt1305826
-plot: A 12-year-old boy and his best friend, a wise 28-year-old dog with magical powers, go on a series of surreal adventures in a remote future.
+plot: "A 12-year-old boy and his best friend, a wise 28-year-old dog with magical powers, go on a series of surreal adventures in a remote future."
 genres:
   - Animation
   - Action

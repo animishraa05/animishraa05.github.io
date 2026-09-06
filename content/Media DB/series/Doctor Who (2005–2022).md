@@ -7,7 +7,7 @@ year: "2005–2022"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0436992/
 id: tt0436992
-plot: Continuing on from Doctor Who (1963), this revival follows the further adventures of the Doctor and their companions as they encounter various alien threats and save civilizations on different planets and time periods.
+plot: "Continuing on from Doctor Who (1963), this revival follows the further adventures of the Doctor and their companions as they encounter various alien threats and save civilizations on different planets and time periods."
 genres:
   - Adventure
   - Drama

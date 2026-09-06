@@ -1,13 +1,13 @@
 ---
 type: series
 subType: ""
-title: Ghost in the Shell: Stand Alone Complex
-englishTitle: Ghost in the Shell: Stand Alone Complex
+title: "Ghost in the Shell: Stand Alone Complex"
+englishTitle: "Ghost in the Shell: Stand Alone Complex"
 year: "2002–2005"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0346314/
 id: tt0346314
-plot: The futuristic adventures of a female cyborg counter intelligence agent and her support team.
+plot: "The futuristic adventures of a female cyborg counter intelligence agent and her support team."
 genres:
   - Animation
   - Action

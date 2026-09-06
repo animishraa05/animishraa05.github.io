@@ -7,7 +7,7 @@ year: "1953"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0046268/
 id: tt0046268
-plot: In a decrepit South American village, four men are hired to transport an urgent nitroglycerine shipment without the equipment that would make it safe.
+plot: "In a decrepit South American village, four men are hired to transport an urgent nitroglycerine shipment without the equipment that would make it safe."
 genres:
   - Adventure
   - Drama

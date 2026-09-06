@@ -7,7 +7,7 @@ year: "2019"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1950186/
 id: tt1950186
-plot: American car designer Carroll Shelby and driver Ken Miles battle corporate interference and the laws of physics to build a revolutionary race car for Ford in order to defeat Ferrari at the 24 Hours of Le Mans in 1966.
+plot: "American car designer Carroll Shelby and driver Ken Miles battle corporate interference and the laws of physics to build a revolutionary race car for Ford in order to defeat Ferrari at the 24 Hours of Le Mans in 1966."
 genres:
   - Action
   - Biography

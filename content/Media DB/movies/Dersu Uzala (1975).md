@@ -7,7 +7,7 @@ year: "1975"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0071411/
 id: tt0071411
-plot: An explorer is sent on an expedition to the snowy Siberian wilderness and makes friends with a seasoned local hunter.
+plot: "An explorer is sent on an expedition to the snowy Siberian wilderness and makes friends with a seasoned local hunter."
 genres:
   - Adventure
   - Biography

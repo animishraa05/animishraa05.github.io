@@ -7,7 +7,7 @@ year: "2016"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt5425186/
 id: tt5425186
-plot: Louis C.K.'s Eugene O'Neill-esque dramatic web series about two cousins, introverted Horace and mentally ill Pete, the current owners of their family's Irish bar "Horace and Pete's", and their dysfunctional family and friends.
+plot: "Louis C.K.'s Eugene O'Neill-esque dramatic web series about two cousins, introverted Horace and mentally ill Pete, the current owners of their family's Irish bar \"Horace and Pete's\", and their dysfunctional family and friends."
 genres:
   - Comedy
   - Drama

@@ -7,7 +7,7 @@ year: "1969"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0064116/
 id: tt0064116
-plot: A mysterious stranger with a harmonica teams up with a notorious desperado to protect a beautiful widow and her land from a ruthless assassin in the employ of a railroad tycoon.
+plot: "A mysterious stranger with a harmonica teams up with a notorious desperado to protect a beautiful widow and her land from a ruthless assassin in the employ of a railroad tycoon."
 genres:
   - Drama
   - Western

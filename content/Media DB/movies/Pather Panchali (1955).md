@@ -7,7 +7,7 @@ year: "1955"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0048473/
 id: tt0048473
-plot: Impoverished priest Harihar Ray, dreaming of a better life for himself and his family, leaves his rural Bengal village in search of work.
+plot: "Impoverished priest Harihar Ray, dreaming of a better life for himself and his family, leaves his rural Bengal village in search of work."
 genres:
   - Drama
 director:

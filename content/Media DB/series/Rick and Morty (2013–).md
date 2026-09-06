@@ -7,7 +7,7 @@ year: "2013–"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2861424/
 id: tt2861424
-plot: The fractured domestic lives of a nihilistic mad scientist and his anxious grandson are further complicated by their inter-dimensional misadventures.
+plot: "The fractured domestic lives of a nihilistic mad scientist and his anxious grandson are further complicated by their inter-dimensional misadventures."
 genres:
   - Animation
   - Adventure

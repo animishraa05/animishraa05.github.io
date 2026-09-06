@@ -1,6 +1,6 @@
 ---
 concept: Many-to-Many Relationship in EJB
-aliases: [M:N Relationship, Many-to-Many Cardinality]
+aliases: "[M:N Relationship, Many-to-Many Cardinality]"
 tags: [dev, ejb]
 created: 2026-04-28
 updated: 2026-04-28

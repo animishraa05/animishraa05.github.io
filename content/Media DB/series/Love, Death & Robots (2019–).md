@@ -7,7 +7,7 @@ year: "2019–"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt9561862/
 id: tt9561862
-plot: A collection of animated short stories that span various genres including science fiction, fantasy, horror and comedy.
+plot: "A collection of animated short stories that span various genres including science fiction, fantasy, horror and comedy."
 genres:
   - Animation
   - Short

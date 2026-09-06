@@ -7,7 +7,7 @@ year: "1995–2003"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0280249/
 id: tt0280249
-plot: Dragon Ball tells the tale of a young warrior by the name of Son Goku, a young peculiar boy with a tail who embarks on a quest to become stronger and learns of the Dragon Balls, when, once all 7 are gathered, grant any wish of cho...
+plot: "Dragon Ball tells the tale of a young warrior by the name of Son Goku, a young peculiar boy with a tail who embarks on a quest to become stronger and learns of the Dragon Balls, when, once all 7 are gathered, grant any wish of cho..."
 genres:
   - Animation
   - Action

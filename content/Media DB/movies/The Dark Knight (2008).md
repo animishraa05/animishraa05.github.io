@@ -7,7 +7,7 @@ year: "2008"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0468569/
 id: tt0468569
-plot: When a menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman, James Gordon and Harvey Dent must work together to put an end to the madness.
+plot: "When a menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman, James Gordon and Harvey Dent must work together to put an end to the madness."
 genres:
   - Action
   - Crime

@@ -7,7 +7,7 @@ year: 2014–2019
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2575988/
 id: tt2575988
-plot: Follows the struggle of Richard Hendricks, a Silicon Valley engineer trying to build his own company called Pied Piper.
+plot: "Follows the struggle of Richard Hendricks, a Silicon Valley engineer trying to build his own company called Pied Piper."
 genres:
   - Comedy
 writer:

@@ -7,7 +7,7 @@ year: "1994"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0108855/
 id: tt0108855
-plot: The last installment of Sherlock Holmes' investigations.
+plot: "The last installment of Sherlock Holmes' investigations."
 genres:
   - Crime
   - Drama

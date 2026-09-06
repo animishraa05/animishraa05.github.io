@@ -7,7 +7,7 @@ year: "2006–2007"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0877057/
 id: tt0877057
-plot: An intelligent high school student goes on a secret crusade to eliminate criminals from the world after discovering a notebook capable of killing anyone whose name is written into it.
+plot: "An intelligent high school student goes on a secret crusade to eliminate criminals from the world after discovering a notebook capable of killing anyone whose name is written into it."
 genres:
   - Animation
   - Crime

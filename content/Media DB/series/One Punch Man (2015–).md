@@ -7,7 +7,7 @@ year: "2015–"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt4508902/
 id: tt4508902
-plot: The story of Saitama, a hero that does it just for fun &amp; can defeat his enemies with a single punch.
+plot: "The story of Saitama, a hero that does it just for fun &amp; can defeat his enemies with a single punch."
 genres:
   - Animation
   - Action

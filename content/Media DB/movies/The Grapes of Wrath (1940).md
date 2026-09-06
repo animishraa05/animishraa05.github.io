@@ -7,7 +7,7 @@ year: "1940"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0032551/
 id: tt0032551
-plot: An Oklahoma family, driven off their farm by the poverty and hopelessness of the Dust Bowl, joins the westward migration to California, suffering the misfortunes of the homeless in the Great Depression.
+plot: "An Oklahoma family, driven off their farm by the poverty and hopelessness of the Dust Bowl, joins the westward migration to California, suffering the misfortunes of the homeless in the Great Depression."
 genres:
   - Drama
 director:

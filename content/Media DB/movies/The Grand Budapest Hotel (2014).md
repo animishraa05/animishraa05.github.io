@@ -7,7 +7,7 @@ year: "2014"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2278388/
 id: tt2278388
-plot: A writer encounters the owner of an aging high-class hotel, who tells him of his early years serving as a lobby boy in the hotel's glorious years under an exceptional concierge.
+plot: "A writer encounters the owner of an aging high-class hotel, who tells him of his early years serving as a lobby boy in the hotel's glorious years under an exceptional concierge."
 genres:
   - Comedy
   - Drama

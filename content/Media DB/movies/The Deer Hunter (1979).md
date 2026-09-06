@@ -7,7 +7,7 @@ year: "1979"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0077416/
 id: tt0077416
-plot: The lives of a group of friends are forever changed by the Vietnam War.
+plot: "The lives of a group of friends are forever changed by the Vietnam War."
 genres:
   - Drama
   - War

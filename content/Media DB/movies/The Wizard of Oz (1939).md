@@ -7,7 +7,7 @@ year: "1939"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0032138/
 id: tt0032138
-plot: Young Dorothy Gale and her dog Toto are swept away by a tornado from their Kansas farm to the magical Land of Oz and embark on a quest with three new friends to see the Wizard, who can return her to her home and fulfill the others...
+plot: "Young Dorothy Gale and her dog Toto are swept away by a tornado from their Kansas farm to the magical Land of Oz and embark on a quest with three new friends to see the Wizard, who can return her to her home and fulfill the others..."
 genres:
   - Adventure
   - Family

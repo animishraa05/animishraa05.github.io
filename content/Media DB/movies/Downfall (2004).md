@@ -7,7 +7,7 @@ year: "2004"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0363163/
 id: tt0363163
-plot: Traudl Junge, the final secretary for Adolf Hitler, tells of the Nazi dictator's final days in his Berlin bunker at the end of WWII.
+plot: "Traudl Junge, the final secretary for Adolf Hitler, tells of the Nazi dictator's final days in his Berlin bunker at the end of WWII."
 genres:
   - Biography
   - Drama

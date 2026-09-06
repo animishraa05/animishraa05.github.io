@@ -7,7 +7,7 @@ year: "2012–2026"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2303687/
 id: tt2303687
-plot: Drama series following the investigations of AC-12, a controversial police anti-corruption unit tasked with bringing corrupt police officers to justice.
+plot: "Drama series following the investigations of AC-12, a controversial police anti-corruption unit tasked with bringing corrupt police officers to justice."
 genres:
   - Crime
   - Drama

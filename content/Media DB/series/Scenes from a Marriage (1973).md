@@ -7,7 +7,7 @@ year: "1973"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0070644/
 id: tt0070644
-plot: Ten years within the marriage of Marianne and Johan.
+plot: "Ten years within the marriage of Marianne and Johan."
 genres:
   - Drama
 director:

@@ -7,7 +7,7 @@ year: "1990"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0095765/
 id: tt0095765
-plot: Salvatore, a famous film director, returns to his hometown for the funeral of the local theater's film projectionist, Alfredo. He reminisces about his life as a young boy falling in love with cinema.
+plot: "Salvatore, a famous film director, returns to his hometown for the funeral of the local theater's film projectionist, Alfredo. He reminisces about his life as a young boy falling in love with cinema."
 genres:
   - Drama
   - Romance

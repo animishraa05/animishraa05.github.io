@@ -7,7 +7,7 @@ year: "2005"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0476735/
 id: tt0476735
-plot: The family of a left-wing journalist is torn apart after the military coup of Turkey in 1980.
+plot: "The family of a left-wing journalist is torn apart after the military coup of Turkey in 1980."
 genres:
   - Drama
   - Family

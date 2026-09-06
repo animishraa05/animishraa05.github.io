@@ -7,7 +7,7 @@ year: "1963–1989"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0056751/
 id: tt0056751
-plot: The adventures in time and space of the Doctor, a Time Lord who changes appearance and personality by regenerating when near death, and is joined by companions in battles against aliens and other megalomaniacs.
+plot: "The adventures in time and space of the Doctor, a Time Lord who changes appearance and personality by regenerating when near death, and is joined by companions in battles against aliens and other megalomaniacs."
 genres:
   - Adventure
   - Drama

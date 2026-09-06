@@ -7,7 +7,7 @@ year: "2019"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt4729430/
 id: tt4729430
-plot: A simple act of kindness always sparks another, even in a frozen, faraway place. When Smeerensburg's new postman, Jesper, befriends toymaker Klaus, their gifts melt an age-old feud and deliver a sleigh full of holiday traditions.
+plot: "A simple act of kindness always sparks another, even in a frozen, faraway place. When Smeerensburg's new postman, Jesper, befriends toymaker Klaus, their gifts melt an age-old feud and deliver a sleigh full of holiday traditions."
 genres:
   - Animation
   - Adventure

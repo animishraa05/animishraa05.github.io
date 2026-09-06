@@ -7,7 +7,7 @@ year: "1975"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0073486/
 id: tt0073486
-plot: A rebellious convict is sent to a psychiatric hospital for evaluation in 1963 Oregon, and encourages his docile companions to take more control of their lives and defy the tyrannical head nurse.
+plot: "A rebellious convict is sent to a psychiatric hospital for evaluation in 1963 Oregon, and encourages his docile companions to take more control of their lives and defy the tyrannical head nurse."
 genres:
   - Drama
 director:

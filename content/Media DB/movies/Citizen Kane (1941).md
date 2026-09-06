@@ -7,7 +7,7 @@ year: "1941"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0033467/
 id: tt0033467
-plot: Following the death of publishing tycoon Charles Foster Kane, reporters scramble to uncover the meaning of his final utterance: 'Rosebud.'
+plot: "Following the death of publishing tycoon Charles Foster Kane, reporters scramble to uncover the meaning of his final utterance: 'Rosebud.'"
 genres:
   - Drama
   - Mystery

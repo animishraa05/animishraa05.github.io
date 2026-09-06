@@ -7,7 +7,7 @@ year: "1952"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0044741/
 id: tt0044741
-plot: A bureaucrat tries to find meaning in his life after he discovers he has terminal cancer.
+plot: "A bureaucrat tries to find meaning in his life after he discovers he has terminal cancer."
 genres:
   - Drama
 director:

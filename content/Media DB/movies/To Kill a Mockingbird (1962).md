@@ -7,7 +7,7 @@ year: "1962"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0056592/
 id: tt0056592
-plot: A widowed lawyer in Depression-era Alabama defends a black man against a false rape charge while teaching his young children about the sad reality of prejudice.
+plot: "A widowed lawyer in Depression-era Alabama defends a black man against a false rape charge while teaching his young children about the sad reality of prejudice."
 genres:
   - Crime
   - Drama

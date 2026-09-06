@@ -7,7 +7,7 @@ year: "2000–2024"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0264235/
 id: tt0264235
-plot: Larry David stars as an over-the-top version of himself in this comedy series that shows how seemingly trivial details of day-to-day life can precipitate a catastrophic chain of events.
+plot: "Larry David stars as an over-the-top version of himself in this comedy series that shows how seemingly trivial details of day-to-day life can precipitate a catastrophic chain of events."
 genres:
   - Comedy
 director:

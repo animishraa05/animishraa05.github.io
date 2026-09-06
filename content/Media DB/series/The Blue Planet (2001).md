@@ -7,7 +7,7 @@ year: "2001"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0296310/
 id: tt0296310
-plot: Five years in the making, taking a look at the rich tapestry of life in the world's oceans.
+plot: "Five years in the making, taking a look at the rich tapestry of life in the world's oceans."
 genres:
   - Documentary
 director:

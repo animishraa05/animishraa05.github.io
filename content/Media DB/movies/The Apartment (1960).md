@@ -7,7 +7,7 @@ year: "1960"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0053604/
 id: tt0053604
-plot: A Manhattan insurance clerk tries to rise in his company by letting its executives use his apartment for trysts, but office politics and his own romantic hopes complicate matters.
+plot: "A Manhattan insurance clerk tries to rise in his company by letting its executives use his apartment for trysts, but office politics and his own romantic hopes complicate matters."
 genres:
   - Comedy
   - Drama

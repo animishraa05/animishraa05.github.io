@@ -7,7 +7,7 @@ year: "1999"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0169547/
 id: tt0169547
-plot: A sexually frustrated suburban father has a mid-life crisis after becoming infatuated with his daughter's best friend.
+plot: "A sexually frustrated suburban father has a mid-life crisis after becoming infatuated with his daughter's best friend."
 genres:
   - Drama
 director:

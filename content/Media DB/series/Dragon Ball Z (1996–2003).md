@@ -7,7 +7,7 @@ year: "1996–2003"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0214341/
 id: tt0214341
-plot: With the help of the powerful Dragonballs, a team of fighters led by the saiyan warrior Goku defend the planet earth from extraterrestrial enemies.
+plot: "With the help of the powerful Dragonballs, a team of fighters led by the saiyan warrior Goku defend the planet earth from extraterrestrial enemies."
 genres:
   - Animation
   - Action

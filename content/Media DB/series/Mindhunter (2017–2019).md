@@ -7,7 +7,7 @@ year: "2017–2019"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt5290382/
 id: tt5290382
-plot: In the late 1970s, two FBI agents broaden the realm of criminal science by investigating the psychology behind murder and end up getting too close to real-life monsters.
+plot: "In the late 1970s, two FBI agents broaden the realm of criminal science by investigating the psychology behind murder and end up getting too close to real-life monsters."
 genres:
   - Crime
   - Drama

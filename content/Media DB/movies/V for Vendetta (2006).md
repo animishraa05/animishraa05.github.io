@@ -7,7 +7,7 @@ year: "2006"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0434409/
 id: tt0434409
-plot: A young woman living in a dystopian society meets a shadowy freedom fighter who is plotting to overthrow their tyrannical government.
+plot: "A young woman living in a dystopian society meets a shadowy freedom fighter who is plotting to overthrow their tyrannical government."
 genres:
   - Action
   - Drama

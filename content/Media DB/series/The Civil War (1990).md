@@ -7,7 +7,7 @@ year: "1990"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0098769/
 id: tt0098769
-plot: A comprehensive survey of the American Civil War.
+plot: "A comprehensive survey of the American Civil War."
 genres:
   - Documentary
   - History

@@ -7,7 +7,7 @@ year: "1986–1988"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0090509/
 id: tt0090509
-plot: Sherlock Holmes and Dr Watson solve the mysteries of the devil's foot, Silver Blaze, Wisteria Lodge and the Bruce-Partington Plans.
+plot: "Sherlock Holmes and Dr Watson solve the mysteries of the devil's foot, Silver Blaze, Wisteria Lodge and the Bruce-Partington Plans."
 genres:
   - Crime
   - Drama

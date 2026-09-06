@@ -7,7 +7,7 @@ year: "2017–2026"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt3920596/
 id: tt3920596
-plot: The apparently-perfect lives of upper-class mothers of students at a prestigious elementary school unravel to the point of murder when a single mother moves to their quaint California beach town.
+plot: "The apparently-perfect lives of upper-class mothers of students at a prestigious elementary school unravel to the point of murder when a single mother moves to their quaint California beach town."
 genres:
   - Crime
   - Drama

@@ -7,7 +7,7 @@ year: "1965"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0059742/
 id: tt0059742
-plot: A young novice is sent by her convent in 1930s Austria to become a governess to the seven children of a widowed naval officer.
+plot: "A young novice is sent by her convent in 1930s Austria to become a governess to the seven children of a widowed naval officer."
 genres:
   - Biography
   - Drama

@@ -7,7 +7,7 @@ year: "2004"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0381681/
 id: tt0381681
-plot: Nine years after Jesse and Celine first met, they encounter each other again on the French leg of Jesse's book tour.
+plot: "Nine years after Jesse and Celine first met, they encounter each other again on the French leg of Jesse's book tour."
 genres:
   - Drama
   - Romance

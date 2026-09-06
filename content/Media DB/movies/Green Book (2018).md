@@ -7,7 +7,7 @@ year: "2018"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt6966692/
 id: tt6966692
-plot: A working-class Italian-American bouncer becomes the driver for an African-American classical pianist on a tour of venues through the 1960s American South.
+plot: "A working-class Italian-American bouncer becomes the driver for an African-American classical pianist on a tour of venues through the 1960s American South."
 genres:
   - Biography
   - Comedy

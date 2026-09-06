@@ -7,7 +7,7 @@ year: "2018–2019"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt6077448/
 id: tt6077448
-plot: A link in their pasts leads an honest cop to a fugitive gang boss, whose cryptic warning spurs the officer on a quest to save Mumbai from cataclysm.
+plot: "A link in their pasts leads an honest cop to a fugitive gang boss, whose cryptic warning spurs the officer on a quest to save Mumbai from cataclysm."
 genres:
   - Action
   - Crime

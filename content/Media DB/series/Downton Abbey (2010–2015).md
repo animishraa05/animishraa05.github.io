@@ -7,7 +7,7 @@ year: "2010–2015"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1606375/
 id: tt1606375
-plot: A chronicle of the lives of the British aristocratic Crawley family and their servants in the early twentieth century.
+plot: "A chronicle of the lives of the British aristocratic Crawley family and their servants in the early twentieth century."
 genres:
   - Drama
   - Romance

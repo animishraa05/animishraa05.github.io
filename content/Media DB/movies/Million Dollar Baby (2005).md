@@ -7,7 +7,7 @@ year: "2005"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0405159/
 id: tt0405159
-plot: Frankie, an ill-tempered old coach, reluctantly agrees to train aspiring boxer Maggie. Impressed with her determination and talent, he helps her become the best and the two soon form a close bond.
+plot: "Frankie, an ill-tempered old coach, reluctantly agrees to train aspiring boxer Maggie. Impressed with her determination and talent, he helps her become the best and the two soon form a close bond."
 genres:
   - Drama
   - Sport

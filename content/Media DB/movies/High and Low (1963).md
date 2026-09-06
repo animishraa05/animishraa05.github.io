@@ -7,7 +7,7 @@ year: "1963"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0057565/
 id: tt0057565
-plot: An executive of a Yokohama shoe company becomes a victim of extortion when his chauffeur's son is kidnapped by mistake and held for ransom.
+plot: "An executive of a Yokohama shoe company becomes a victim of extortion when his chauffeur's son is kidnapped by mistake and held for ransom."
 genres:
   - Crime
   - Drama

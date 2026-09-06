@@ -7,7 +7,7 @@ year: "2009"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0361748/
 id: tt0361748
-plot: In Nazi-occupied France during World War II, a plan to assassinate Nazi leaders by a group of Jewish U.S. soldiers coincides with a theatre owner's vengeful plans for the same.
+plot: "In Nazi-occupied France during World War II, a plan to assassinate Nazi leaders by a group of Jewish U.S. soldiers coincides with a theatre owner's vengeful plans for the same."
 genres:
   - Adventure
   - Drama

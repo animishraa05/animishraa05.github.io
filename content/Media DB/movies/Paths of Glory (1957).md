@@ -7,7 +7,7 @@ year: "1957"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0050825/
 id: tt0050825
-plot: A colonel defends three of his soldiers in a court-martial after they abandon a suicidal attack.
+plot: "A colonel defends three of his soldiers in a court-martial after they abandon a suicidal attack."
 genres:
   - Drama
   - War

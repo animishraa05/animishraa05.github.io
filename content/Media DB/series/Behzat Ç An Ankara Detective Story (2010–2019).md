@@ -1,13 +1,13 @@
 ---
 type: series
 subType: ""
-title: Behzat Ç: An Ankara Detective Story
-englishTitle: Behzat Ç: An Ankara Detective Story
+title: "Behzat Ç: An Ankara Detective Story"
+englishTitle: "Behzat Ç: An Ankara Detective Story"
 year: "2010–2019"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1795096/
 id: tt1795096
-plot: An inharmonious police team in Ankara Police Force and its discredited police chief fight crime.
+plot: "An inharmonious police team in Ankara Police Force and its discredited police chief fight crime."
 genres:
   - Crime
   - Drama

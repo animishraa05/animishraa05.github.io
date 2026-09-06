@@ -7,7 +7,7 @@ year: "2012–"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2244495/
 id: tt2244495
-plot: Eric Andre tries to host a talk show in a bizarre environment, where he is sometimes the player of pranks and sometimes the victim.
+plot: "Eric Andre tries to host a talk show in a bizarre environment, where he is sometimes the player of pranks and sometimes the victim."
 genres:
   - Comedy
   - Talk-Show

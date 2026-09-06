@@ -7,7 +7,7 @@ year: "2018–"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt7920978/
 id: tt7920978
-plot: A man diagnosed with Alzheimer's decides to punish criminals.
+plot: "A man diagnosed with Alzheimer's decides to punish criminals."
 genres:
   - Crime
   - Drama

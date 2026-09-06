@@ -1,13 +1,13 @@
 ---
 type: series
 subType: ""
-title: Batman: The Animated Series
-englishTitle: Batman: The Animated Series
+title: "Batman: The Animated Series"
+englishTitle: "Batman: The Animated Series"
 year: "1992–1995"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0103359/
 id: tt0103359
-plot: Billionaire Bruce Wayne secretly operates as Batman, a vigilante who battles a rouges' gallery of criminals and supervillains in Gotham City with the aid of various sidekicks and allies.
+plot: "Billionaire Bruce Wayne secretly operates as Batman, a vigilante who battles a rouges' gallery of criminals and supervillains in Gotham City with the aid of various sidekicks and allies."
 genres:
   - Animation
   - Action

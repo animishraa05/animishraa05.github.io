@@ -7,7 +7,7 @@ year: "1989"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0096639/
 id: tt0096639
-plot: Two former Texas Rangers renew their spirit of adventure as they and several other residents of a small Texas town join a cattle drive to the Montana Territory.
+plot: "Two former Texas Rangers renew their spirit of adventure as they and several other residents of a small Texas town join a cattle drive to the Montana Territory."
 genres:
   - Adventure
   - Drama

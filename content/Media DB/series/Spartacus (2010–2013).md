@@ -7,7 +7,7 @@ year: "2010–2013"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1442449/
 id: tt1442449
-plot: The life of Spartacus, the gladiator who led a rebellion against the Romans.
+plot: "The life of Spartacus, the gladiator who led a rebellion against the Romans."
 genres:
   - Action
   - Adventure

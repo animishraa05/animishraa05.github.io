@@ -7,7 +7,7 @@ year: "2016–"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt5712554/
 id: tt5712554
-plot: Jeremy, Richard and James embark on an adventure across the globe, driving new and exciting automobiles from manufacturers all over the world.
+plot: "Jeremy, Richard and James embark on an adventure across the globe, driving new and exciting automobiles from manufacturers all over the world."
 genres:
   - Adventure
   - Comedy

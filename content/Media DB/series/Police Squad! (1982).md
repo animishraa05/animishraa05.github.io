@@ -7,7 +7,7 @@ year: "1982"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0083466/
 id: tt0083466
-plot: Sight gags, puns and non-sequiturs ensue as Sgt. Det. Lt. Frank Drebin and his colleagues at Police Squad - a special section of the Police Force - solve various puzzling cases.
+plot: "Sight gags, puns and non-sequiturs ensue as Sgt. Det. Lt. Frank Drebin and his colleagues at Police Squad - a special section of the Police Force - solve various puzzling cases."
 genres:
   - Comedy
   - Crime

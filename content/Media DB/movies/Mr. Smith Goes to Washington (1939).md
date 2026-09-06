@@ -7,7 +7,7 @@ year: "1939"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0031679/
 id: tt0031679
-plot: A naive youth leader is appointed to fill a vacancy in the U.S. Senate. His idealistic plans promptly collide with corruption at home and subterfuge from his hero in Washington, but he tries to forge ahead despite attacks on his c...
+plot: "A naive youth leader is appointed to fill a vacancy in the U.S. Senate. His idealistic plans promptly collide with corruption at home and subterfuge from his hero in Washington, but he tries to forge ahead despite attacks on his c..."
 genres:
   - Comedy
   - Drama

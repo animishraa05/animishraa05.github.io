@@ -7,7 +7,7 @@ year: "2004"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0395169/
 id: tt0395169
-plot: Paul Rusesabagina, a hotel manager, houses over a thousand Tutsi refugees during their struggle against the Hutu militia in Rwanda, Africa.
+plot: "Paul Rusesabagina, a hotel manager, houses over a thousand Tutsi refugees during their struggle against the Hutu militia in Rwanda, Africa."
 genres:
   - Biography
   - Drama

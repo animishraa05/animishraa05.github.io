@@ -7,7 +7,7 @@ year: "1986–1989"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0161952/
 id: tt0161952
-plot: A group a young warriors known as 'Saints', each in possession of a 'cloth' guarded by a different constellation, must protect the reincarnation of the goddess Athena as she attempts to keep the Earth from being destroyed by evil ...
+plot: "A group a young warriors known as 'Saints', each in possession of a 'cloth' guarded by a different constellation, must protect the reincarnation of the goddess Athena as she attempts to keep the Earth from being destroyed by evil ..."
 genres:
   - Animation
   - Action

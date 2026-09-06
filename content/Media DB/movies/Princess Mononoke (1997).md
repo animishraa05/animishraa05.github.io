@@ -7,7 +7,7 @@ year: "1997"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0119698/
 id: tt0119698
-plot: While seeking to cure himself of a curse, young warrior Ashitaka stumbles into a conflict between the people of Iron Town and Princess Mononoke, a girl raised by wolves, who will stop at nothing to prevent the destruction of her h...
+plot: "While seeking to cure himself of a curse, young warrior Ashitaka stumbles into a conflict between the people of Iron Town and Princess Mononoke, a girl raised by wolves, who will stop at nothing to prevent the destruction of her h..."
 genres:
   - Animation
   - Adventure

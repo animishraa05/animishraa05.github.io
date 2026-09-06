@@ -7,7 +7,7 @@ year: "1946"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0038650/
 id: tt0038650
-plot: An angel is sent from Heaven to help a desperately frustrated businessman see the value of his own life.
+plot: "An angel is sent from Heaven to help a desperately frustrated businessman see the value of his own life."
 genres:
   - Drama
   - Family

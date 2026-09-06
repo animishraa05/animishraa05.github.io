@@ -7,7 +7,7 @@ year: "2005–"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0472954/
 id: tt0472954
-plot: Five friends with big egos and small brains are the proprietors of an Irish pub in Philadelphia.
+plot: "Five friends with big egos and small brains are the proprietors of an Irish pub in Philadelphia."
 genres:
   - Comedy
 director:

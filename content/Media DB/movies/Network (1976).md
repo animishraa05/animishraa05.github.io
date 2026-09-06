@@ -7,7 +7,7 @@ year: "1976"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0074958/
 id: tt0074958
-plot: A television network cynically exploits a deranged former anchor's ravings and revelations about mass media for its own profit, but finds that his message may be difficult to control.
+plot: "A television network cynically exploits a deranged former anchor's ravings and revelations about mass media for its own profit, but finds that his message may be difficult to control."
 genres:
   - Drama
 director:

@@ -7,7 +7,7 @@ year: "2021"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt15097216/
 id: tt15097216
-plot: When a tribal man is arrested for a case of alleged theft, his wife turns to a human-rights lawyer to help bring justice.
+plot: "When a tribal man is arrested for a case of alleged theft, his wife turns to a human-rights lawyer to help bring justice."
 genres:
   - Crime
   - Drama

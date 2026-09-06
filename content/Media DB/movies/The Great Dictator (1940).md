@@ -7,7 +7,7 @@ year: "1940"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0032553/
 id: tt0032553
-plot: Dictator Adenoid Hynkel tries to expand his empire while a poor Jewish barber tries to avoid persecution from Hynkel's regime.
+plot: "Dictator Adenoid Hynkel tries to expand his empire while a poor Jewish barber tries to avoid persecution from Hynkel's regime."
 genres:
   - Comedy
   - Drama

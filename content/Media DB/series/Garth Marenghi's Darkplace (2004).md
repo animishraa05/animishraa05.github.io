@@ -7,7 +7,7 @@ year: "2004"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0397150/
 id: tt0397150
-plot: This parody series is an unearthed 80s horror/drama, complete with poor production values, awful dialogue and hilarious violence. The series is set in a Hospital in Romford, which is situated over the gates of Hell.
+plot: "This parody series is an unearthed 80s horror/drama, complete with poor production values, awful dialogue and hilarious violence. The series is set in a Hospital in Romford, which is situated over the gates of Hell."
 genres:
   - Comedy
   - Fantasy

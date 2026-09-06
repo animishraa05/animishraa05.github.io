@@ -7,7 +7,7 @@ year: "2006"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0795176/
 id: tt0795176
-plot: A documentary series on the wildlife found on Earth. Each episode covers a different habitat: deserts, mountains, deep oceans, shallow seas, forests, caves, polar regions, fresh water, plains and jungles. Narrated by David Attenbo...
+plot: "A documentary series on the wildlife found on Earth. Each episode covers a different habitat: deserts, mountains, deep oceans, shallow seas, forests, caves, polar regions, fresh water, plains and jungles. Narrated by David Attenbo..."
 genres:
   - Documentary
   - Family

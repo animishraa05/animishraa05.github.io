@@ -7,7 +7,7 @@ year: "1928"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0019254/
 id: tt0019254
-plot: In 1431, Jeanne d'Arc is placed on trial on charges of heresy, and the ecclesiastical jurists attempt to force her to recant her claims of holy visions.
+plot: "In 1431, Jeanne d'Arc is placed on trial on charges of heresy, and the ecclesiastical jurists attempt to force her to recant her claims of holy visions."
 genres:
   - Biography
   - Drama

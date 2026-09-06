@@ -7,7 +7,7 @@ year: "2011–2023"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1831164/
 id: tt1831164
-plot: It is an unique and heartwarming show follows the extraordinary journey of a couple named Leyla and Mecnun. With Ali Atay portraying Mecnun and Ezgi Asaroglu as Leyla, the series has garnered a massive fan base and critical acclaim.
+plot: "It is an unique and heartwarming show follows the extraordinary journey of a couple named Leyla and Mecnun. With Ali Atay portraying Mecnun and Ezgi Asaroglu as Leyla, the series has garnered a massive fan base and critical acclaim."
 genres:
   - Adventure
   - Comedy

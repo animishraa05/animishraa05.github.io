@@ -7,7 +7,7 @@ year: "2006"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0454921/
 id: tt0454921
-plot: A struggling salesman takes custody of his son as he's poised to begin a life-changing professional career.
+plot: "A struggling salesman takes custody of his son as he's poised to begin a life-changing professional career."
 genres:
   - Biography
   - Drama

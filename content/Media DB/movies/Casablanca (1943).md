@@ -7,7 +7,7 @@ year: "1943"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0034583/
 id: tt0034583
-plot: A cynical expatriate American cafe owner struggles to decide whether or not to help his former lover and her fugitive husband escape the Nazis in French Morocco.
+plot: "A cynical expatriate American cafe owner struggles to decide whether or not to help his former lover and her fugitive husband escape the Nazis in French Morocco."
 genres:
   - Drama
   - Romance

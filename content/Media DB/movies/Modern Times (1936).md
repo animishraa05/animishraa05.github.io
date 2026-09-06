@@ -7,7 +7,7 @@ year: "1936"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0027977/
 id: tt0027977
-plot: The Tramp struggles to live in modern industrial society with the help of a young homeless woman.
+plot: "The Tramp struggles to live in modern industrial society with the help of a young homeless woman."
 genres:
   - Comedy
   - Drama

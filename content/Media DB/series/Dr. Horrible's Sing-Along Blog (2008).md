@@ -7,7 +7,7 @@ year: "2008"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1227926/
 id: tt1227926
-plot: An aspiring supervillain must balance his career and his pursuit of a beautiful do-gooder.
+plot: "An aspiring supervillain must balance his career and his pursuit of a beautiful do-gooder."
 genres:
   - Short
   - Comedy

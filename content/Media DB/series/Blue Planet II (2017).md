@@ -7,7 +7,7 @@ year: "2017"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt6769208/
 id: tt6769208
-plot: David Attenborough returns to the world's oceans in this sequel to the acclaimed documentary filming rare and unusual creatures of the deep, as well as documenting the problems our oceans face.
+plot: "David Attenborough returns to the world's oceans in this sequel to the acclaimed documentary filming rare and unusual creatures of the deep, as well as documenting the problems our oceans face."
 genres:
   - Documentary
 director:

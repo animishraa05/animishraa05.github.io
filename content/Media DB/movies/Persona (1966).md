@@ -7,7 +7,7 @@ year: "1966"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0060827/
 id: tt0060827
-plot: A nurse is put in charge of a mute actress and finds that their personae are melding together.
+plot: "A nurse is put in charge of a mute actress and finds that their personae are melding together."
 genres:
   - Drama
   - Thriller

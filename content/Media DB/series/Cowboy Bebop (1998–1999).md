@@ -7,7 +7,7 @@ year: "1998–1999"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0213338/
 id: tt0213338
-plot: The futuristic misadventures and tragedies of an easygoing bounty hunter and his partners.
+plot: "The futuristic misadventures and tragedies of an easygoing bounty hunter and his partners."
 genres:
   - Animation
   - Action

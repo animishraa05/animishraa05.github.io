@@ -7,7 +7,7 @@ year: "2004–"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1230180/
 id: tt1230180
-plot: A foul-mouthed nerd reviews bad video games.
+plot: "A foul-mouthed nerd reviews bad video games."
 genres:
   - Action
   - Comedy

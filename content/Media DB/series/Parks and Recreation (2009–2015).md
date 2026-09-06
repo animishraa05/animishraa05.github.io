@@ -7,7 +7,7 @@ year: "2009–2015"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1266020/
 id: tt1266020
-plot: The absurd antics of an Indiana town's public officials as they pursue sundry projects to make their city a better place.
+plot: "The absurd antics of an Indiana town's public officials as they pursue sundry projects to make their city a better place."
 genres:
   - Comedy
 director:

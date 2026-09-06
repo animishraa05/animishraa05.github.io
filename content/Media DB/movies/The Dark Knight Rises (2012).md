@@ -7,7 +7,7 @@ year: "2012"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1345836/
 id: tt1345836
-plot: Bane, an imposing terrorist, attacks Gotham City and disrupts its eight-year-long period of peace. This forces Bruce Wayne to come out of hiding and don the cape and cowl of Batman again.
+plot: "Bane, an imposing terrorist, attacks Gotham City and disrupts its eight-year-long period of peace. This forces Bruce Wayne to come out of hiding and don the cape and cowl of Batman again."
 genres:
   - Action
   - Crime

@@ -7,7 +7,7 @@ year: "2010"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1130884/
 id: tt1130884
-plot: Two US marshals are sent to a mental institution on an inhospitable island in order to investigate the disappearance of a patient.
+plot: "Two US marshals are sent to a mental institution on an inhospitable island in order to investigate the disappearance of a patient."
 genres:
   - Drama
   - Mystery

@@ -7,7 +7,7 @@ year: "2019–2023"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt7767422/
 id: tt7767422
-plot: A teenage boy with a sex-therapist mother teams up with a high-school classmate to set up an underground sex-therapy clinic at school.
+plot: "A teenage boy with a sex-therapist mother teams up with a high-school classmate to set up an underground sex-therapy clinic at school."
 genres:
   - Comedy
   - Drama

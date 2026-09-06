@@ -7,7 +7,7 @@ year: "2008"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0995832/
 id: tt0995832
-plot: A Rolling Stone reporter, embedded with The 1st Recon Marines chronicles his experiences during the first wave of the American-led assault on Baghdad in 2003.
+plot: "A Rolling Stone reporter, embedded with The 1st Recon Marines chronicles his experiences during the first wave of the American-led assault on Baghdad in 2003."
 genres:
   - Drama
   - War

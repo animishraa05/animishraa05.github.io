@@ -1,6 +1,6 @@
 ---
 concept: One-to-Many Relationship in EJB
-aliases: [1:N Relationship, One-to-Many Cardinality]
+aliases: "[1:N Relationship, One-to-Many Cardinality]"
 tags: [dev, ejb]
 created: 2026-04-28
 updated: 2026-04-28

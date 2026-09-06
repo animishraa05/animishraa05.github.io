@@ -7,7 +7,7 @@ year: "2007"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0469494/
 id: tt0469494
-plot: A story of family, religion, hatred, oil and madness, focusing on a turn-of-the-century prospector in the early days of the business.
+plot: "A story of family, religion, hatred, oil and madness, focusing on a turn-of-the-century prospector in the early days of the business."
 genres:
   - Drama
 director:

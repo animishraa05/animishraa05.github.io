@@ -7,7 +7,7 @@ year: "1944"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0036775/
 id: tt0036775
-plot: An insurance representative is seduced by a dissatisfied housewife into a scheme of insurance fraud and murder that arouses the suspicion of his colleague, a claims investigator.
+plot: "An insurance representative is seduced by a dissatisfied housewife into a scheme of insurance fraud and murder that arouses the suspicion of his colleague, a claims investigator."
 genres:
   - Crime
   - Drama

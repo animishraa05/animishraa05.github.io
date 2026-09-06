@@ -7,7 +7,7 @@ year: "2003–2018"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0417373/
 id: tt0417373
-plot: The bizarre escapades of pseudo-heroic scientist Dr. Rusty Venture, his competent, high-strung bodyguard, and his two overenthusiastic sons.
+plot: "The bizarre escapades of pseudo-heroic scientist Dr. Rusty Venture, his competent, high-strung bodyguard, and his two overenthusiastic sons."
 genres:
   - Animation
   - Action

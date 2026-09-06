@@ -1,13 +1,13 @@
 ---
 type: movie
 subType: ""
-title: Spider-Man: Into the Spider-Verse
-englishTitle: Spider-Man: Into the Spider-Verse
+title: "Spider-Man: Into the Spider-Verse"
+englishTitle: "Spider-Man: Into the Spider-Verse"
 year: "2018"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt4633694/
 id: tt4633694
-plot: Teen Miles Morales becomes the Spider-Man of his universe and must join with five spider-powered individuals from other dimensions to stop a threat for all realities.
+plot: "Teen Miles Morales becomes the Spider-Man of his universe and must join with five spider-powered individuals from other dimensions to stop a threat for all realities."
 genres:
   - Animation
   - Action

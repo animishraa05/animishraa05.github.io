@@ -7,7 +7,7 @@ year: "1994"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0110357/
 id: tt0110357
-plot: Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself.
+plot: "Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself."
 genres:
   - Animation
   - Adventure

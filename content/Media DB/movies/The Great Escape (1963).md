@@ -7,7 +7,7 @@ year: "1963"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0057115/
 id: tt0057115
-plot: Allied officers in a German prisoner of war camp during World War II make a daring plan for a mass escape by hundreds of POWs hoping to draw German personnel and resources away from combat operations.
+plot: "Allied officers in a German prisoner of war camp during World War II make a daring plan for a mass escape by hundreds of POWs hoping to draw German personnel and resources away from combat operations."
 genres:
   - Adventure
   - Drama

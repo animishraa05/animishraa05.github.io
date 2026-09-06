@@ -7,7 +7,7 @@ year: "1987"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0092324/
 id: tt0092324
-plot: In the Regency era, Mr E. Blackadder serves as butler to the foppish numskull Prince George amidst the fads and crazes of the time.
+plot: "In the Regency era, Mr E. Blackadder serves as butler to the foppish numskull Prince George amidst the fads and crazes of the time."
 genres:
   - Comedy
 director:

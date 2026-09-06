@@ -7,7 +7,7 @@ year: "2018–"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt7259746/
 id: tt7259746
-plot: A new Fab Five set out to Atlanta to help some of the city's people refine their wardrobes, grooming, diet, cultural pursuits, and home décor.
+plot: "A new Fab Five set out to Atlanta to help some of the city's people refine their wardrobes, grooming, diet, cultural pursuits, and home décor."
 genres:
   - Reality-TV
 director:

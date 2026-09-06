@@ -7,7 +7,7 @@ year: "2017"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt4093826/
 id: tt4093826
-plot: Picks up 25 years after the inhabitants of a quaint northwestern town are stunned when their homecoming queen is murdered.
+plot: "Picks up 25 years after the inhabitants of a quaint northwestern town are stunned when their homecoming queen is murdered."
 genres:
   - Crime
   - Drama

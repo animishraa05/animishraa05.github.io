@@ -1,6 +1,6 @@
 ---
 concept: One-to-One Relationship in EJB
-aliases: [1:1 Relationship, One-to-One Cardinality]
+aliases: "[1:1 Relationship, One-to-One Cardinality]"
 tags: [dev, ejb]
 created: 2026-04-28
 updated: 2026-04-28

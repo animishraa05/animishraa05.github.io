@@ -7,7 +7,7 @@ year: "1948"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0040897/
 id: tt0040897
-plot: Two down-on-their-luck Americans searching for work in 1920s Mexico convince an old prospector to help them mine for gold in the Sierra Madre Mountains.
+plot: "Two down-on-their-luck Americans searching for work in 1920s Mexico convince an old prospector to help them mine for gold in the Sierra Madre Mountains."
 genres:
   - Adventure
   - Drama

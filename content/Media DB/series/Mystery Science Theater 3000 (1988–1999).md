@@ -7,7 +7,7 @@ year: "1988–1999"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0094517/
 id: tt0094517
-plot: In the not-too-distant future Joel Robinson is held captive by Dr. Forrester and TV's Frank, forced to watch B-Grade movies on the Satellite of Love with the help of his robot friends: Cambot, Gypsy, Tom Servo and Crow T. Robot.
+plot: "In the not-too-distant future Joel Robinson is held captive by Dr. Forrester and TV's Frank, forced to watch B-Grade movies on the Satellite of Love with the help of his robot friends: Cambot, Gypsy, Tom Servo and Crow T. Robot."
 genres:
   - Comedy
   - Sci-Fi

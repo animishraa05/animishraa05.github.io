@@ -7,7 +7,7 @@ year: "2000"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0180093/
 id: tt0180093
-plot: The drug-induced utopias of four Coney Island people are shattered when their addictions run deep.
+plot: "The drug-induced utopias of four Coney Island people are shattered when their addictions run deep."
 genres:
   - Drama
 director:

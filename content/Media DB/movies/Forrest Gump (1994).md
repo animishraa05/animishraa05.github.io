@@ -7,7 +7,7 @@ year: "1994"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0109830/
 id: tt0109830
-plot: The history of the United States from the 1950s to the '70s unfolds from the perspective of an Alabama man with an IQ of 75, who yearns to be reunited with his childhood sweetheart.
+plot: "The history of the United States from the 1950s to the '70s unfolds from the perspective of an Alabama man with an IQ of 75, who yearns to be reunited with his childhood sweetheart."
 genres:
   - Drama
   - Romance

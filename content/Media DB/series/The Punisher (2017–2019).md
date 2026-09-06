@@ -7,7 +7,7 @@ year: "2017–2019"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt5675620/
 id: tt5675620
-plot: After his revenge on those who murdered his family, aimless Marine veteran Frank Castle finds a new meaning in life as a vigilante known as "The Punisher".
+plot: "After his revenge on those who murdered his family, aimless Marine veteran Frank Castle finds a new meaning in life as a vigilante known as \"The Punisher\"."
 genres:
   - Action
   - Crime

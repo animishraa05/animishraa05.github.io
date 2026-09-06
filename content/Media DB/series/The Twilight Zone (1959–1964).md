@@ -7,7 +7,7 @@ year: "1959–1964"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0052520/
 id: tt0052520
-plot: Classic American Anthology series created by Rod Serling, featuring standalone stories of science fiction, fantasy, and horror, each with a twist ending or moral lesson.
+plot: "Classic American Anthology series created by Rod Serling, featuring standalone stories of science fiction, fantasy, and horror, each with a twist ending or moral lesson."
 genres:
   - Drama
   - Fantasy

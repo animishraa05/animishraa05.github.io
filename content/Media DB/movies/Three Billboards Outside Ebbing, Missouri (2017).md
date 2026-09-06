@@ -7,7 +7,7 @@ year: "2017"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt5027774/
 id: tt5027774
-plot: A mother personally challenges the local authorities to solve her daughter's murder when they fail to catch the culprit.
+plot: "A mother personally challenges the local authorities to solve her daughter's murder when they fail to catch the culprit."
 genres:
   - Comedy
   - Crime

@@ -7,7 +7,7 @@ year: "2013"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2024544/
 id: tt2024544
-plot: In the antebellum United States, Solomon Northup, a free black man from upstate New York, is abducted and sold into slavery.
+plot: "In the antebellum United States, Solomon Northup, a free black man from upstate New York, is abducted and sold into slavery."
 genres:
   - Biography
   - Drama

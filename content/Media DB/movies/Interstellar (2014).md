@@ -7,7 +7,7 @@ year: "2014"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0816692/
 id: tt0816692
-plot: When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.
+plot: "When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans."
 genres:
   - Adventure
   - Drama

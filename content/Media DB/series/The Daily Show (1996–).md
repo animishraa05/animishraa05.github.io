@@ -7,7 +7,7 @@ year: "1996–"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0115147/
 id: tt0115147
-plot: A comedy news show featuring humorous takes on top stories.
+plot: "A comedy news show featuring humorous takes on top stories."
 genres:
   - Comedy
   - News

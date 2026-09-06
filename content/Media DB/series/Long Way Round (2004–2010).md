@@ -7,7 +7,7 @@ year: "2004–2010"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0403778/
 id: tt0403778
-plot: Ewan McGregor and Charley Boorman embark on a grueling quest to motorbike from London to New York. Going east through Europe, Asia and then to Alaska, they experience different cultures and have to overcome the elements and advers...
+plot: "Ewan McGregor and Charley Boorman embark on a grueling quest to motorbike from London to New York. Going east through Europe, Asia and then to Alaska, they experience different cultures and have to overcome the elements and advers..."
 genres:
   - Documentary
   - Adventure

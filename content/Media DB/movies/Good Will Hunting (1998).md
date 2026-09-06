@@ -7,7 +7,7 @@ year: "1998"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0119217/
 id: tt0119217
-plot: A therapist counsels Will Hunting, a janitor with a genius IQ.
+plot: "A therapist counsels Will Hunting, a janitor with a genius IQ."
 genres:
   - Drama
   - Romance

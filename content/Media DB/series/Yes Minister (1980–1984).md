@@ -7,7 +7,7 @@ year: "1980–1984"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0080306/
 id: tt0080306
-plot: The Right Honorable James Hacker has landed the plum job of Cabinet Minister to the Department of Administration. At last he is in a position of power and can carry out some long-needed reforms, or so he thinks.
+plot: "The Right Honorable James Hacker has landed the plum job of Cabinet Minister to the Department of Administration. At last he is in a position of power and can carry out some long-needed reforms, or so he thinks."
 genres:
   - Comedy
 director:

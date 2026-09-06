@@ -7,7 +7,7 @@ year: "2014"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt3011894/
 id: tt3011894
-plot: Six short stories that explore the extremities of human behavior involving people in distress.
+plot: "Six short stories that explore the extremities of human behavior involving people in distress."
 genres:
   - Comedy
   - Drama

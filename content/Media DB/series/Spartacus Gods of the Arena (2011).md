@@ -1,13 +1,13 @@
 ---
 type: series
 subType: ""
-title: Spartacus: Gods of the Arena
-englishTitle: Spartacus: Gods of the Arena
+title: "Spartacus: Gods of the Arena"
+englishTitle: "Spartacus: Gods of the Arena"
 year: "2011"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1758429/
 id: tt1758429
-plot: In the time before the arrival of Spartacus, the House of Batiatus faces many challenges from competitors, and within its own household.
+plot: "In the time before the arrival of Spartacus, the House of Batiatus faces many challenges from competitors, and within its own household."
 genres:
   - Action
   - Adventure

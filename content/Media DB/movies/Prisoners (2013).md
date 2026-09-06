@@ -7,7 +7,7 @@ year: "2013"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1392214/
 id: tt1392214
-plot: A desperate father takes the law into his own hands after police fail to find two kidnapped girls.
+plot: "A desperate father takes the law into his own hands after police fail to find two kidnapped girls."
 genres:
   - Crime
   - Drama

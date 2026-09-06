@@ -7,7 +7,7 @@ year: "1998"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0120586/
 id: tt0120586
-plot: A European-American man is released from prison and now a changed man and hopes to prevent his younger brother from following in his footsteps.
+plot: "A European-American man is released from prison and now a changed man and hopes to prevent his younger brother from following in his footsteps."
 genres:
   - Crime
   - Drama

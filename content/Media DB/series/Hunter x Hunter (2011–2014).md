@@ -7,7 +7,7 @@ year: "2011–2014"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2098220/
 id: tt2098220
-plot: Gon Freecss aspires to become a Hunter, an exceptional being capable of greatness. With his friends and his potential, he seeks out his father, who left him when he was younger.
+plot: "Gon Freecss aspires to become a Hunter, an exceptional being capable of greatness. With his friends and his potential, he seeks out his father, who left him when he was younger."
 genres:
   - Animation
   - Action

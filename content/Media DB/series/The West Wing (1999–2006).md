@@ -7,7 +7,7 @@ year: "1999–2006"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0200276/
 id: tt0200276
-plot: Follows US president Josiah Bartlet and his administration as they tackle various political issues in order to maintain peace and harmony in the nation.
+plot: "Follows US president Josiah Bartlet and his administration as they tackle various political issues in order to maintain peace and harmony in the nation."
 genres:
   - Drama
 director:

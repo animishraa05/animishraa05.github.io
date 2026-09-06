@@ -7,7 +7,7 @@ year: "1990"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0098825/
 id: tt0098825
-plot: The schemes of a ruthlessly ambitious British politician who will stop at nothing to get to the top.
+plot: "The schemes of a ruthlessly ambitious British politician who will stop at nothing to get to the top."
 genres:
   - Drama
 director:

@@ -1,13 +1,13 @@
 ---
 type: movie
 subType: ""
-title: Star Wars: Episode IV - A New Hope
-englishTitle: Star Wars: Episode IV - A New Hope
+title: "Star Wars: Episode IV - A New Hope"
+englishTitle: "Star Wars: Episode IV - A New Hope"
 year: "1977"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0076759/
 id: tt0076759
-plot: Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth ...
+plot: "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth ..."
 genres:
   - Action
   - Adventure

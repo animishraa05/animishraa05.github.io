@@ -7,7 +7,7 @@ year: "1979"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0078748/
 id: tt0078748
-plot: After investigating a mysterious transmission of unknown origin, the crew of a commercial spacecraft encounters a deadly lifeform.
+plot: "After investigating a mysterious transmission of unknown origin, the crew of a commercial spacecraft encounters a deadly lifeform."
 genres:
   - Horror
   - Sci-Fi

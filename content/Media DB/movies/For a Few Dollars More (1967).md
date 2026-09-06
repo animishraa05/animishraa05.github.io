@@ -7,7 +7,7 @@ year: "1967"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0059578/
 id: tt0059578
-plot: Two bounty killers with similar intentions but different motivations team up to take down a psychotic Mexican outlaw before he and his gang can carry out an audacious bank robbery.
+plot: "Two bounty killers with similar intentions but different motivations team up to take down a psychotic Mexican outlaw before he and his gang can carry out an audacious bank robbery."
 genres:
   - Drama
   - Western

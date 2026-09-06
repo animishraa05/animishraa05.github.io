@@ -7,7 +7,7 @@ year: "1959"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0053125/
 id: tt0053125
-plot: A New York City advertising executive goes on the run after being mistaken for a government agent by a group of foreign spies, and falls for a woman whose loyalties he begins to doubt.
+plot: "A New York City advertising executive goes on the run after being mistaken for a government agent by a group of foreign spies, and falls for a woman whose loyalties he begins to doubt."
 genres:
   - Adventure
   - Drama

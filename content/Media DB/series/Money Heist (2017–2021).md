@@ -7,7 +7,7 @@ year: "2017–2021"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt6468322/
 id: tt6468322
-plot: An unusual group of robbers attempt to carry out the most perfect robbery in Spanish history - stealing 2.4 billion euros from the Royal Mint of Spain.
+plot: "An unusual group of robbers attempt to carry out the most perfect robbery in Spanish history - stealing 2.4 billion euros from the Royal Mint of Spain."
 genres:
   - Action
   - Crime

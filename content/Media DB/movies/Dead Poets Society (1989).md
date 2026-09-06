@@ -7,7 +7,7 @@ year: "1989"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0097165/
 id: tt0097165
-plot: Maverick teacher John Keating returns in 1959 to the prestigious New England boys' boarding school where he was once a star student, using poetry to embolden his pupils to new heights of self-expression.
+plot: "Maverick teacher John Keating returns in 1959 to the prestigious New England boys' boarding school where he was once a star student, using poetry to embolden his pupils to new heights of self-expression."
 genres:
   - Comedy
   - Drama

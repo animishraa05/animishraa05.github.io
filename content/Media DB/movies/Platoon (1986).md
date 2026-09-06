@@ -7,7 +7,7 @@ year: "1986"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0091763/
 id: tt0091763
-plot: Chris Taylor, a neophyte recruit in Vietnam, finds himself caught in a battle of wills between two sergeants, one good and the other evil. A shrewd examination of the brutality of war and the duality of man in conflict.
+plot: "Chris Taylor, a neophyte recruit in Vietnam, finds himself caught in a battle of wills between two sergeants, one good and the other evil. A shrewd examination of the brutality of war and the duality of man in conflict."
 genres:
   - Drama
   - War

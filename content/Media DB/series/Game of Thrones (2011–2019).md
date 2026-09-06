@@ -7,7 +7,7 @@ year: "2011–2019"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0944947/
 id: tt0944947
-plot: Nine noble families fight for control over the lands of Westeros, while an ancient enemy returns after being dormant for millennia.
+plot: "Nine noble families fight for control over the lands of Westeros, while an ancient enemy returns after being dormant for millennia."
 genres:
   - Action
   - Adventure

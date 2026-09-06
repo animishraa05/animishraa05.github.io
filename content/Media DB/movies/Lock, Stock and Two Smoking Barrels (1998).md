@@ -7,7 +7,7 @@ year: "1998"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0120735/
 id: tt0120735
-plot: When four small-time criminals lose a rigged poker game against a London kingpin, he gives them one week to settle their enormous debt.
+plot: "When four small-time criminals lose a rigged poker game against a London kingpin, he gives them one week to settle their enormous debt."
 genres:
   - Comedy
   - Crime

@@ -7,7 +7,7 @@ year: "1983"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0086250/
 id: tt0086250
-plot: In the 1980s, a determined criminal-minded Cuban immigrant becomes the biggest drug smuggler in Miami, and is eventually undone by his own drug addiction.
+plot: "In the 1980s, a determined criminal-minded Cuban immigrant becomes the biggest drug smuggler in Miami, and is eventually undone by his own drug addiction."
 genres:
   - Crime
   - Drama

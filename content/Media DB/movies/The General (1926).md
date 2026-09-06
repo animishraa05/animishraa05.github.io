@@ -7,7 +7,7 @@ year: "1926"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0017925/
 id: tt0017925
-plot: After being rejected by the Confederate military, not realizing it was due to his crucial civilian role, an engineer must single-handedly recapture his beloved locomotive after it is seized by Union spies and return it through ene...
+plot: "After being rejected by the Confederate military, not realizing it was due to his crucial civilian role, an engineer must single-handedly recapture his beloved locomotive after it is seized by Union spies and return it through ene..."
 genres:
   - Action
   - Adventure

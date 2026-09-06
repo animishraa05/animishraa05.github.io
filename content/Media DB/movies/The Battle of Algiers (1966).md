@@ -7,7 +7,7 @@ year: "1966"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0058946/
 id: tt0058946
-plot: In the 1950s, fear and violence escalate as the people of Algiers fight for independence from the French government.
+plot: "In the 1950s, fear and violence escalate as the people of Algiers fight for independence from the French government."
 genres:
   - Drama
   - War

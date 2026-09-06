@@ -7,7 +7,7 @@ year: "1993"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0107207/
 id: tt0107207
-plot: An Irish man's coerced confession to an I.R.A. bombing he did not commit results in the imprisonment of his father as well. Meanwhile, a British lawyer fights to clear their names and free them.
+plot: "An Irish man's coerced confession to an I.R.A. bombing he did not commit results in the imprisonment of his father as well. Meanwhile, a British lawyer fights to clear their names and free them."
 genres:
   - Biography
   - Crime

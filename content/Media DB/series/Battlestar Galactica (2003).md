@@ -7,7 +7,7 @@ year: "2003"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0314979/
 id: tt0314979
-plot: Following the destruction of the Twelve Colonies of Kobol by the Cylons, a rag-tag fugitive fleet of the last remnants of mankind flees the pursuing Cylons while simultaneously searching for their true home: Earth.
+plot: "Following the destruction of the Twelve Colonies of Kobol by the Cylons, a rag-tag fugitive fleet of the last remnants of mankind flees the pursuing Cylons while simultaneously searching for their true home: Earth."
 genres:
   - Action
   - Adventure

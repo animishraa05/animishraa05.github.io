@@ -7,7 +7,7 @@ year: "2006–2011"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0758745/
 id: tt0758745
-plot: A drama that follows the lives of the Dillon Panthers, one of the nation's best high school football teams, and their head coach Eric Taylor.
+plot: "A drama that follows the lives of the Dillon Panthers, one of the nation's best high school football teams, and their head coach Eric Taylor."
 genres:
   - Drama
   - Sport

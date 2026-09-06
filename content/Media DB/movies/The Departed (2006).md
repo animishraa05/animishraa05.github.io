@@ -7,7 +7,7 @@ year: "2006"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0407887/
 id: tt0407887
-plot: An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston.
+plot: "An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston."
 genres:
   - Crime
   - Drama

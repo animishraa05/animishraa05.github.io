@@ -7,7 +7,7 @@ year: "1992"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0103639/
 id: tt0103639
-plot: A kind-hearted street urchin and a power-hungry Grand Vizier vie for a magic lamp that has the power to make their deepest wishes come true.
+plot: "A kind-hearted street urchin and a power-hungry Grand Vizier vie for a magic lamp that has the power to make their deepest wishes come true."
 genres:
   - Animation
   - Adventure

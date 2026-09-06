@@ -7,7 +7,7 @@ year: "1977–1986"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0075537/
 id: tt0075537
-plot: A diverse group of immigrants and foreigners learn English at an adult education school in London.
+plot: "A diverse group of immigrants and foreigners learn English at an adult education school in London."
 genres:
   - Comedy
 director:

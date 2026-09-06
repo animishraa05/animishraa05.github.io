@@ -7,7 +7,7 @@ year: "1997–1999"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0118266/
 id: tt0118266
-plot: The further and darker adventures of Batman with a new Robin, a closer association with Batgirl and the previous Robin now as Nightwing.
+plot: "The further and darker adventures of Batman with a new Robin, a closer association with Batgirl and the previous Robin now as Nightwing."
 genres:
   - Animation
   - Action

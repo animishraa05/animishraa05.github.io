@@ -7,7 +7,7 @@ year: "2007"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0986264/
 id: tt0986264
-plot: A young boy is thought to be nothing but a lazy troublemaker until the new art teacher has the patience and compassion to discover the real problem behind his struggles in school.
+plot: "A young boy is thought to be nothing but a lazy troublemaker until the new art teacher has the patience and compassion to discover the real problem behind his struggles in school."
 genres:
   - Drama
   - Family

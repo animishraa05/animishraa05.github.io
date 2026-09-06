@@ -7,7 +7,7 @@ year: "1976"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0075314/
 id: tt0075314
-plot: A mentally unstable veteran works as a nighttime taxi driver in New York City, where the perceived decadence and sleaze fuels his urge for violent action.
+plot: "A mentally unstable veteran works as a nighttime taxi driver in New York City, where the perceived decadence and sleaze fuels his urge for violent action."
 genres:
   - Crime
   - Drama

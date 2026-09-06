@@ -7,7 +7,7 @@ year: "1996–1998"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0182629/
 id: tt0182629
-plot: The adventures of a young wandering swordsman who stumbles upon a struggling martial arts school in Meiji era Japan.
+plot: "The adventures of a young wandering swordsman who stumbles upon a struggling martial arts school in Meiji era Japan."
 genres:
   - Animation
   - Action

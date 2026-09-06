@@ -7,7 +7,7 @@ year: "2016"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2119532/
 id: tt2119532
-plot: World War II American Army Medic Desmond T. Doss, serving during the Battle of Okinawa, refuses to kill people and becomes the first man in American history to receive the Medal of Honor without firing a shot.
+plot: "World War II American Army Medic Desmond T. Doss, serving during the Battle of Okinawa, refuses to kill people and becomes the first man in American history to receive the Medal of Honor without firing a shot."
 genres:
   - Biography
   - Drama

@@ -7,7 +7,7 @@ year: "2010"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1255953/
 id: tt1255953
-plot: Twins journey to the Middle East to discover their family history and fulfill their mother's last wishes.
+plot: "Twins journey to the Middle East to discover their family history and fulfill their mother's last wishes."
 genres:
   - Drama
   - Mystery

@@ -1,13 +1,13 @@
 ---
 type: series
 subType: ""
-title: Star Trek: The Next Generation
-englishTitle: Star Trek: The Next Generation
+title: "Star Trek: The Next Generation"
+englishTitle: "Star Trek: The Next Generation"
 year: "1987–1994"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0092455/
 id: tt0092455
-plot: Set almost 100 years after Captain Kirk's five-year mission, a new generation of Starfleet officers sets off in the U.S.S. Enterprise-D on its own mission to go where no one has gone before.
+plot: "Set almost 100 years after Captain Kirk's five-year mission, a new generation of Starfleet officers sets off in the U.S.S. Enterprise-D on its own mission to go where no one has gone before."
 genres:
   - Action
   - Adventure

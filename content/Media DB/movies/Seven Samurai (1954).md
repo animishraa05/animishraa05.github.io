@@ -7,7 +7,7 @@ year: "1954"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0047478/
 id: tt0047478
-plot: Farmers from a village exploited by bandits hire a veteran samurai for protection, and he gathers six other samurai to join him.
+plot: "Farmers from a village exploited by bandits hire a veteran samurai for protection, and he gathers six other samurai to join him."
 genres:
   - Action
   - Drama

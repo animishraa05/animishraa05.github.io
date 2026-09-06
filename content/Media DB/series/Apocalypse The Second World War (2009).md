@@ -1,13 +1,13 @@
 ---
 type: series
 subType: ""
-title: Apocalypse: The Second World War
-englishTitle: Apocalypse: The Second World War
+title: "Apocalypse: The Second World War"
+englishTitle: "Apocalypse: The Second World War"
 year: "2009"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1508238/
 id: tt1508238
-plot: This six-part series traces the Second World War, from the rise of the Nazis to the surrender of the Japanese, with detailed portraits of key figures.
+plot: "This six-part series traces the Second World War, from the rise of the Nazis to the surrender of the Japanese, with detailed portraits of key figures."
 genres:
   - Documentary
   - History

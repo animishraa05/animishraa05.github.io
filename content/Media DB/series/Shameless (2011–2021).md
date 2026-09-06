@@ -7,7 +7,7 @@ year: "2011–2021"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1586680/
 id: tt1586680
-plot: A scrappy, feisty, fiercely loyal Chicago family makes no apologies.
+plot: "A scrappy, feisty, fiercely loyal Chicago family makes no apologies."
 genres:
   - Comedy
   - Drama

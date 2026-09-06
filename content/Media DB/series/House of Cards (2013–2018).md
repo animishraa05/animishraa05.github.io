@@ -7,7 +7,7 @@ year: "2013–2018"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1856010/
 id: tt1856010
-plot: A Congressman works with his equally conniving wife to exact revenge on the people who betrayed him.
+plot: "A Congressman works with his equally conniving wife to exact revenge on the people who betrayed him."
 genres:
   - Drama
   - Thriller

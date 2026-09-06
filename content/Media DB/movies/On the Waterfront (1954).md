@@ -7,7 +7,7 @@ year: "1954"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0047296/
 id: tt0047296
-plot: An ex-prize fighter turned New Jersey longshoreman struggles to stand up to his corrupt union bosses, including his older brother, as he starts to connect with the grieving sister of one of the syndicate's victims.
+plot: "An ex-prize fighter turned New Jersey longshoreman struggles to stand up to his corrupt union bosses, including his older brother, as he starts to connect with the grieving sister of one of the syndicate's victims."
 genres:
   - Crime
   - Drama

@@ -7,7 +7,7 @@ year: "1998"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0120382/
 id: tt0120382
-plot: An insurance salesman begins to suspect that his whole life is actually some sort of reality TV show.
+plot: "An insurance salesman begins to suspect that his whole life is actually some sort of reality TV show."
 genres:
   - Comedy
   - Drama

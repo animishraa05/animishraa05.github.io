@@ -7,7 +7,7 @@ year: "1931"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0021749/
 id: tt0021749
-plot: With the aid of a wealthy erratic tippler, a dewy-eyed tramp who has fallen in love with a blind flower girl accumulates money to be able to help her medically.
+plot: "With the aid of a wealthy erratic tippler, a dewy-eyed tramp who has fallen in love with a blind flower girl accumulates money to be able to help her medically."
 genres:
   - Comedy
   - Drama

@@ -7,7 +7,7 @@ year: "2016–"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2788432/
 id: tt2788432
-plot: An anthology series centered around America's most notorious crimes and criminals. American Crime Story focuses on epic events in America's history.
+plot: "An anthology series centered around America's most notorious crimes and criminals. American Crime Story focuses on epic events in America's history."
 genres:
   - Biography
   - Crime

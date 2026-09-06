@@ -7,7 +7,7 @@ year: "2019"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt7366338/
 id: tt7366338
-plot: In April 1986, the city of Chernobyl in the Soviet Union suffers one of the worst nuclear disasters in the history of mankind. Consequently, many heroes put their lives on the line in the following days, weeks and months.
+plot: "In April 1986, the city of Chernobyl in the Soviet Union suffers one of the worst nuclear disasters in the history of mankind. Consequently, many heroes put their lives on the line in the following days, weeks and months."
 genres:
   - Drama
   - History

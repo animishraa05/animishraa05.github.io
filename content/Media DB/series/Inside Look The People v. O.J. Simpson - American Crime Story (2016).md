@@ -1,13 +1,13 @@
 ---
 type: series
 subType: ""
-title: Inside Look: The People v. O.J. Simpson - American Crime Story
-englishTitle: Inside Look: The People v. O.J. Simpson - American Crime Story
+title: "Inside Look: The People v. O.J. Simpson - American Crime Story"
+englishTitle: "Inside Look: The People v. O.J. Simpson - American Crime Story"
 year: "2016"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt6205862/
 id: tt6205862
-plot: Inside the series of the same name.
+plot: "Inside the series of the same name."
 genres:
   - Documentary
   - Short

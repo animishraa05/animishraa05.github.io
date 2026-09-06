@@ -7,7 +7,7 @@ year: "2002"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0264464/
 id: tt0264464
-plot: Barely 17 yet, Frank is a skilled forger who has passed as a doctor, lawyer and pilot. FBI agent Carl becomes obsessed with tracking down the con man, who only revels in the pursuit.
+plot: "Barely 17 yet, Frank is a skilled forger who has passed as a doctor, lawyer and pilot. FBI agent Carl becomes obsessed with tracking down the con man, who only revels in the pursuit."
 genres:
   - Biography
   - Crime

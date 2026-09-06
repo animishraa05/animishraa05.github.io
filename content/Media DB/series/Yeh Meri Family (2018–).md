@@ -7,7 +7,7 @@ year: "2018–"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt8595766/
 id: tt8595766
-plot: Through the lens of a 90s kid, we witness a family navigate through the ups and downs of life during this magical and nostalgic era.
+plot: "Through the lens of a 90s kid, we witness a family navigate through the ups and downs of life during this magical and nostalgic era."
 genres:
   - Comedy
   - Drama

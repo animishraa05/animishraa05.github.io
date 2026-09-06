@@ -7,7 +7,7 @@ year: "1968–2001"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0062588/
 id: tt0062588
-plot: Fred Rogers explores various topics for young viewers through presentations and music, both in his world and in the Neighborhood of Make-Believe.
+plot: "Fred Rogers explores various topics for young viewers through presentations and music, both in his world and in the Neighborhood of Make-Believe."
 genres:
   - Family
   - Fantasy

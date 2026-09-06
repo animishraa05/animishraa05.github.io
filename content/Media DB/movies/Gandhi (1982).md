@@ -7,7 +7,7 @@ year: "1982"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0083987/
 id: tt0083987
-plot: The life of the lawyer who became the famed leader of the Indian revolts against the British rule through his philosophy of nonviolent protest.
+plot: "The life of the lawyer who became the famed leader of the Indian revolts against the British rule through his philosophy of nonviolent protest."
 genres:
   - Biography
   - Drama

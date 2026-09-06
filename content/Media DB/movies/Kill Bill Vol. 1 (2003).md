@@ -1,13 +1,13 @@
 ---
 type: movie
 subType: ""
-title: Kill Bill: Vol. 1
-englishTitle: Kill Bill: Vol. 1
+title: "Kill Bill: Vol. 1"
+englishTitle: "Kill Bill: Vol. 1"
 year: "2003"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0266697/
 id: tt0266697
-plot: After waking from a four-year coma, a former assassin wreaks vengeance on the team of assassins who betrayed her.
+plot: "After waking from a four-year coma, a former assassin wreaks vengeance on the team of assassins who betrayed her."
 genres:
   - Action
   - Crime

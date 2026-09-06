@@ -7,7 +7,7 @@ year: "1999–2007"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0141842/
 id: tt0141842
-plot: New Jersey mob boss Tony Soprano deals with personal and professional issues in his home and business life that affect his mental state, leading him to seek professional psychiatric counseling.
+plot: "New Jersey mob boss Tony Soprano deals with personal and professional issues in his home and business life that affect his mental state, leading him to seek professional psychiatric counseling."
 genres:
   - Crime
   - Drama

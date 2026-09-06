@@ -7,7 +7,7 @@ year: "1993"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0107290/
 id: tt0107290
-plot: An industrialist invites some experts to visit his theme park of cloned dinosaurs. After a power failure, the creatures run loose, putting everyone's lives, including his grandchildren's, in danger.
+plot: "An industrialist invites some experts to visit his theme park of cloned dinosaurs. After a power failure, the creatures run loose, putting everyone's lives, including his grandchildren's, in danger."
 genres:
   - Action
   - Adventure

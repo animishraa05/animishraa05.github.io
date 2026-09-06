@@ -7,7 +7,7 @@ year: "1986"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0092005/
 id: tt0092005
-plot: A writer recounts a childhood journey with his friends to find the body of a missing boy.
+plot: "A writer recounts a childhood journey with his friends to find the body of a missing boy."
 genres:
   - Adventure
   - Comedy

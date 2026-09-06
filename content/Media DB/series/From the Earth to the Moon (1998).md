@@ -7,7 +7,7 @@ year: "1998"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0120570/
 id: tt0120570
-plot: Dramatized portrayal of the Apollo manned space program.
+plot: "Dramatized portrayal of the Apollo manned space program."
 genres:
   - Action
   - Drama

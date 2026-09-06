@@ -7,7 +7,7 @@ year: "1997–2002"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0129690/
 id: tt0129690
-plot: A failed television presenter, now presenting a programme on local desperately tries to revive his broadcasting career.
+plot: "A failed television presenter, now presenting a programme on local desperately tries to revive his broadcasting career."
 genres:
   - Comedy
 director:

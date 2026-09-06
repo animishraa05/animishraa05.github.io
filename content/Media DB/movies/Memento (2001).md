@@ -7,7 +7,7 @@ year: "2001"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0209144/
 id: tt0209144
-plot: A former insurance investigator who now suffers from anterograde amnesia uses notes and tattoos to hunt down his wife's murderer.
+plot: "A former insurance investigator who now suffers from anterograde amnesia uses notes and tattoos to hunt down his wife's murderer."
 genres:
   - Drama
   - Mystery

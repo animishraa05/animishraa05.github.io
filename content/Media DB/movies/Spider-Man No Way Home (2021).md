@@ -1,13 +1,13 @@
 ---
 type: movie
 subType: ""
-title: Spider-Man: No Way Home
-englishTitle: Spider-Man: No Way Home
+title: "Spider-Man: No Way Home"
+englishTitle: "Spider-Man: No Way Home"
 year: "2021"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt10872600/
 id: tt10872600
-plot: With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear.
+plot: "With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear."
 genres:
   - Action
   - Adventure

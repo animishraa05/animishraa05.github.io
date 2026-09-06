@@ -7,7 +7,7 @@ year: "2011–2012"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2092588/
 id: tt2092588
-plot: Focuses on life and the environment in both the Arctic and Antarctic.
+plot: "Focuses on life and the environment in both the Arctic and Antarctic."
 genres:
   - Documentary
 director:

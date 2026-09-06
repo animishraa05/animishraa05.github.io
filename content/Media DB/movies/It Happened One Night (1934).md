@@ -7,7 +7,7 @@ year: "1934"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0025316/
 id: tt0025316
-plot: A rogue reporter trailing a runaway heiress for a big story joins her on a bus heading from Florida to New York and they end up stuck with each other when the bus leaves them behind at one of the stops along the way.
+plot: "A rogue reporter trailing a runaway heiress for a big story joins her on a bus heading from Florida to New York and they end up stuck with each other when the bus leaves them behind at one of the stops along the way."
 genres:
   - Comedy
   - Romance

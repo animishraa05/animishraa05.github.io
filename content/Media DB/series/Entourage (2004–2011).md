@@ -7,7 +7,7 @@ year: "2004–2011"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0387199/
 id: tt0387199
-plot: Film star, Vince Chase, navigates the vapid terrain of Los Angeles with a close circle of friends and his trusty agent.
+plot: "Film star, Vince Chase, navigates the vapid terrain of Los Angeles with a close circle of friends and his trusty agent."
 genres:
   - Comedy
   - Drama

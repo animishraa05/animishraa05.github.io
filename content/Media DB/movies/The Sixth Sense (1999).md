@@ -7,7 +7,7 @@ year: "1999"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0167404/
 id: tt0167404
-plot: After being shot by a resentful former patient whom he failed to help, a Philadelphia child psychologist seeks redemption by treating a young boy with a disturbing secret.
+plot: "After being shot by a resentful former patient whom he failed to help, a Philadelphia child psychologist seeks redemption by treating a young boy with a disturbing secret."
 genres:
   - Drama
   - Mystery

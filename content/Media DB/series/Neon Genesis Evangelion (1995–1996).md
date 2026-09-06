@@ -7,7 +7,7 @@ year: "1995–1996"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0112159/
 id: tt0112159
-plot: In a post-cataclysmic future, reluctant teen Shinji Ikari is called by his estranged father to pilot an Evangelion for NERV, humanity's last defense against invading Angels threatening Tokyo-3.
+plot: "In a post-cataclysmic future, reluctant teen Shinji Ikari is called by his estranged father to pilot an Evangelion for NERV, humanity's last defense against invading Angels threatening Tokyo-3."
 genres:
   - Animation
   - Action

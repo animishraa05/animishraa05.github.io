@@ -7,7 +7,7 @@ year: "1959"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0053291/
 id: tt0053291
-plot: After two male musicians witness a mob hit, they flee the state in an all-female band disguised as women, but further complications set in.
+plot: "After two male musicians witness a mob hit, they flee the state in an all-female band disguised as women, but further complications set in."
 genres:
   - Comedy
   - Music

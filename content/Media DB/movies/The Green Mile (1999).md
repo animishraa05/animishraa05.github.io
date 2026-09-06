@@ -7,7 +7,7 @@ year: "1999"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0120689/
 id: tt0120689
-plot: A death row guard learns that a gentle giant in his charge possesses a mysterious gift.
+plot: "A death row guard learns that a gentle giant in his charge possesses a mysterious gift."
 genres:
   - Crime
   - Drama

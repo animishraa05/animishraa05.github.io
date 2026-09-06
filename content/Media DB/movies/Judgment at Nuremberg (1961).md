@@ -7,7 +7,7 @@ year: "1961"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0055031/
 id: tt0055031
-plot: Fictionalized depiction of the 1947 Judges' Trial, the third of 12 trials of Nazi war criminals conducted by the American occupying forces in Nuremberg, Germany, in which former judges of Nazi Germany were tried for their actions.
+plot: "Fictionalized depiction of the 1947 Judges' Trial, the third of 12 trials of Nazi war criminals conducted by the American occupying forces in Nuremberg, Germany, in which former judges of Nazi Germany were tried for their actions."
 genres:
   - Drama
   - History

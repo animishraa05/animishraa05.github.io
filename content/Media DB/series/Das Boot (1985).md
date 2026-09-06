@@ -7,7 +7,7 @@ year: "1985"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0081834/
 id: tt0081834
-plot: A World War II German U-Boat crew have a terrifying patrol mission in the early days of the war.
+plot: "A World War II German U-Boat crew have a terrifying patrol mission in the early days of the war."
 genres:
   - Drama
   - War

@@ -7,7 +7,7 @@ year: "1975–1979"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0072500/
 id: tt0072500
-plot: Hotel owner Basil Fawlty's incompetence, short fuse, and arrogance form a combination that ensures accidents and trouble are never far away.
+plot: "Hotel owner Basil Fawlty's incompetence, short fuse, and arrogance form a combination that ensures accidents and trouble are never far away."
 genres:
   - Comedy
 director:

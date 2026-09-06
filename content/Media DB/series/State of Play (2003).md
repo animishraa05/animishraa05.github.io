@@ -7,7 +7,7 @@ year: "2003"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0362192/
 id: tt0362192
-plot: Journalists uncover a government conspiracy when a young politician's assistant and mistress is killed.
+plot: "Journalists uncover a government conspiracy when a young politician's assistant and mistress is killed."
 genres:
   - Crime
   - Drama

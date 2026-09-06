@@ -7,7 +7,7 @@ year: "1969–1974"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0063929/
 id: tt0063929
-plot: The original surreal sketch comedy showcase for the Monty Python troupe.
+plot: "The original surreal sketch comedy showcase for the Monty Python troupe."
 genres:
   - Comedy
 director:

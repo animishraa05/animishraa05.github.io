@@ -7,7 +7,7 @@ year: "2022"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt6710474/
 id: tt6710474
-plot: A middle-aged Chinese immigrant is swept up into an insane adventure in which she alone can save existence by exploring other universes and connecting with the lives she could have led.
+plot: "A middle-aged Chinese immigrant is swept up into an insane adventure in which she alone can save existence by exploring other universes and connecting with the lives she could have led."
 genres:
   - Action
   - Adventure

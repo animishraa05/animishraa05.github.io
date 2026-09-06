@@ -7,7 +7,7 @@ year: "1925"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0015864/
 id: tt0015864
-plot: A prospector goes to the Klondike during the 1890s gold rush in hopes of making his fortune, and is smitten with a girl he sees in a dance hall.
+plot: "A prospector goes to the Klondike during the 1890s gold rush in hopes of making his fortune, and is smitten with a girl he sees in a dance hall."
 genres:
   - Adventure
   - Comedy

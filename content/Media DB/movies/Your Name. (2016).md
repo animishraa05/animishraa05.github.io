@@ -7,7 +7,7 @@ year: "2016"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt5311514/
 id: tt5311514
-plot: Two teenagers share a profound, magical connection upon discovering they are swapping bodies. Things manage to become even more complicated when the boy and girl decide to meet in person.
+plot: "Two teenagers share a profound, magical connection upon discovering they are swapping bodies. Things manage to become even more complicated when the boy and girl decide to meet in person."
 genres:
   - Animation
   - Drama

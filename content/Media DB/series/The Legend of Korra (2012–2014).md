@@ -7,7 +7,7 @@ year: "2012–2014"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1695360/
 id: tt1695360
-plot: Avatar Korra fights to keep Republic City safe from the evil forces of both the physical and spiritual worlds.
+plot: "Avatar Korra fights to keep Republic City safe from the evil forces of both the physical and spiritual worlds."
 genres:
   - Animation
   - Action

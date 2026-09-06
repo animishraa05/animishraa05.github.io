@@ -7,7 +7,7 @@ year: "2011–2015"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1910272/
 id: tt1910272
-plot: After discovering time travel, a university student and his colleagues must use their knowledge of it to stop an evil organization and their diabolical plans.
+plot: "After discovering time travel, a university student and his colleagues must use their knowledge of it to stop an evil organization and their diabolical plans."
 genres:
   - Animation
   - Comedy

@@ -7,7 +7,7 @@ year: "1984–1985"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0086661/
 id: tt0086661
-plot: Sherlock Holmes and Dr Watson solve the mysteries of copper beeches, a Greek interpreter, the Norwood builder, a resident patient, the red-headed league, and one final problem.
+plot: "Sherlock Holmes and Dr Watson solve the mysteries of copper beeches, a Greek interpreter, the Norwood builder, a resident patient, the red-headed league, and one final problem."
 genres:
   - Crime
   - Drama

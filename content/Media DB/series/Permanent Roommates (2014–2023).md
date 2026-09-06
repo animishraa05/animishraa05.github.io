@@ -7,7 +7,7 @@ year: "2014–2023"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt4156586/
 id: tt4156586
-plot: A couple, who were in a long distance relationship for 3 years, face the prospect of getting married.
+plot: "A couple, who were in a long distance relationship for 3 years, face the prospect of getting married."
 genres:
   - Comedy
   - Romance

@@ -7,7 +7,7 @@ year: "1989"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0096548/
 id: tt0096548
-plot: Stuck in the middle of World War I, Captain Edmund Blackadder does his best to escape the banality of the war.
+plot: "Stuck in the middle of World War I, Captain Edmund Blackadder does his best to escape the banality of the war."
 genres:
   - Comedy
   - War

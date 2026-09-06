@@ -7,7 +7,7 @@ year: "2014–2024"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2674806/
 id: tt2674806
-plot: Genre-mixing anthology series, inviting viewers into some very different and enigmatic No. 9s.
+plot: "Genre-mixing anthology series, inviting viewers into some very different and enigmatic No. 9s."
 genres:
   - Comedy
   - Crime

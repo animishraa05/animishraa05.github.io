@@ -7,7 +7,7 @@ year: "2010"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1375666/
 id: tt1375666
-plot: A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO, but his tragic past may doom the project and his team to disaster.
+plot: "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO, but his tragic past may doom the project and his team to disaster."
 genres:
   - Action
   - Adventure

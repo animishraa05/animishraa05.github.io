@@ -7,7 +7,7 @@ year: "1987"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0093058/
 id: tt0093058
-plot: A pragmatic U.S. Marine observes the dehumanizing effects the Vietnam War has on his fellow recruits from their brutal boot camp training to the bloody street fighting in Hue.
+plot: "A pragmatic U.S. Marine observes the dehumanizing effects the Vietnam War has on his fellow recruits from their brutal boot camp training to the bloody street fighting in Hue."
 genres:
   - Drama
   - War

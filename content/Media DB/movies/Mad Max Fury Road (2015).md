@@ -1,13 +1,13 @@
 ---
 type: movie
 subType: ""
-title: Mad Max: Fury Road
-englishTitle: Mad Max: Fury Road
+title: "Mad Max: Fury Road"
+englishTitle: "Mad Max: Fury Road"
 year: "2015"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1392190/
 id: tt1392190
-plot: In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search for her homeland with the aid of a group of female prisoners, a psychotic worshipper and a drifter named Max.
+plot: "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search for her homeland with the aid of a group of female prisoners, a psychotic worshipper and a drifter named Max."
 genres:
   - Action
   - Adventure

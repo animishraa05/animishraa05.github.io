@@ -7,7 +7,7 @@ year: "2015–2022"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt4742876/
 id: tt4742876
-plot: A story of trials and tribulations of four young entrepreneurs who quit their day jobs in order to pursue their start up venture.
+plot: "A story of trials and tribulations of four young entrepreneurs who quit their day jobs in order to pursue their start up venture."
 genres:
   - Comedy
   - Drama

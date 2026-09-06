@@ -1,13 +1,13 @@
 ---
 type: movie
 subType: ""
-title: Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb
-englishTitle: Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb
+title: "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb"
+englishTitle: "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb"
 year: "1964"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0057012/
 id: tt0057012
-plot: A mentally unstable American general orders a hydrogen bomb attack on the Soviet Union, triggering a path to global nuclear holocaust that a war room full of politicians and generals frantically tries to stop.
+plot: "A mentally unstable American general orders a hydrogen bomb attack on the Soviet Union, triggering a path to global nuclear holocaust that a war room full of politicians and generals frantically tries to stop."
 genres:
   - Comedy
   - War

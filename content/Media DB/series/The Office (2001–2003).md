@@ -7,7 +7,7 @@ year: "2001–2003"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0290978/
 id: tt0290978
-plot: The story of an office that faces closure when the company decides to downsize its branches. A documentary film crew follow staff and the manager David Brent as they continue their daily lives.
+plot: "The story of an office that faces closure when the company decides to downsize its branches. A documentary film crew follow staff and the manager David Brent as they continue their daily lives."
 genres:
   - Comedy
   - Drama

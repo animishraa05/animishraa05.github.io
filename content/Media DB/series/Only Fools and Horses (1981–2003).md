@@ -7,7 +7,7 @@ year: "1981–2003"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0081912/
 id: tt0081912
-plot: Comedy that follows two brothers from London's rough Peckham estate as they wheel and deal through a number of dodgy deals and search for the big score that'll make them millionaires.
+plot: "Comedy that follows two brothers from London's rough Peckham estate as they wheel and deal through a number of dodgy deals and search for the big score that'll make them millionaires."
 genres:
   - Comedy
 director:

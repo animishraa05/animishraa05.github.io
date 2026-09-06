@@ -7,7 +7,7 @@ year: "2015–2018"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt5189670/
 id: tt5189670
-plot: Filmed over a 10-year period, Steven Avery, a DNA exoneree who, while in the midst of exposing corruption in local law enforcement, finds himself the prime suspect in a grisly new crime.
+plot: "Filmed over a 10-year period, Steven Avery, a DNA exoneree who, while in the midst of exposing corruption in local law enforcement, finds himself the prime suspect in a grisly new crime."
 genres:
   - Documentary
   - Crime

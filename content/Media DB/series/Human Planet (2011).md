@@ -7,7 +7,7 @@ year: "2011"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1806234/
 id: tt1806234
-plot: A cinematic experience bringing you the most amazing human stories in the world. Humans and wildlife surviving in the most extreme environments on Earth
+plot: "A cinematic experience bringing you the most amazing human stories in the world. Humans and wildlife surviving in the most extreme environments on Earth"
 genres:
   - Documentary
 director:

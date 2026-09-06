@@ -7,7 +7,7 @@ year: "2009"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1187043/
 id: tt1187043
-plot: Two friends are searching for their long lost companion. They revisit their college days and recall the memories of their friend who inspired them to think differently, even as the rest of the world called them "idiots".
+plot: "Two friends are searching for their long lost companion. They revisit their college days and recall the memories of their friend who inspired them to think differently, even as the rest of the world called them \"idiots\"."
 genres:
   - Comedy
   - Drama

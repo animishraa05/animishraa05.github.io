@@ -7,7 +7,7 @@ year: "1999"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0137523/
 id: tt0137523
-plot: An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.
+plot: "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more."
 genres:
   - Crime
   - Drama

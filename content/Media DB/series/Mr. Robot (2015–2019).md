@@ -7,7 +7,7 @@ year: "2015–2019"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt4158110/
 id: tt4158110
-plot: Elliot, a brilliant but unstable cyber-security engineer and vigilante hacker, becomes a key figure in a complex game of global chaos when he and his shadowy allies try to take down the corrupt corporation his company is paid to p...
+plot: "Elliot, a brilliant but unstable cyber-security engineer and vigilante hacker, becomes a key figure in a complex game of global chaos when he and his shadowy allies try to take down the corrupt corporation his company is paid to p..."
 genres:
   - Crime
   - Drama

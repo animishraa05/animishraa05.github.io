@@ -7,7 +7,7 @@ year: "1985"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0088763/
 id: tt0088763
-plot: Marty McFly, a 17-year-old high school student, is accidentally sent 30 years into the past in a time-traveling DeLorean invented by his close friend, the maverick scientist Doc Brown.
+plot: "Marty McFly, a 17-year-old high school student, is accidentally sent 30 years into the past in a time-traveling DeLorean invented by his close friend, the maverick scientist Doc Brown."
 genres:
   - Adventure
   - Comedy

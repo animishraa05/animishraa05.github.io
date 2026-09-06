@@ -7,7 +7,7 @@ year: "2016"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt5491994/
 id: tt5491994
-plot: David Attenborough returns with a new wildlife documentary that shows life in a variety of habitats.
+plot: "David Attenborough returns with a new wildlife documentary that shows life in a variety of habitats."
 genres:
   - Documentary
 director:

@@ -7,7 +7,7 @@ year: "2006–2013"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0487831/
 id: tt0487831
-plot: The comedic misadventures of Roy, Moss and their grifting supervisor Jen, a rag-tag team of IT support workers at a large corporation headed by a hotheaded yuppie.
+plot: "The comedic misadventures of Roy, Moss and their grifting supervisor Jen, a rag-tag team of IT support workers at a large corporation headed by a hotheaded yuppie."
 genres:
   - Comedy
 director:

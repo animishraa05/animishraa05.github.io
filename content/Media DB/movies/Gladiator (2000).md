@@ -7,7 +7,7 @@ year: "2000"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0172495/
 id: tt0172495
-plot: A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.
+plot: "A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery."
 genres:
   - Action
   - Adventure

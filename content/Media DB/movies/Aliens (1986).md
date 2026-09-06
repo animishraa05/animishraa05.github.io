@@ -7,7 +7,7 @@ year: "1986"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0090605/
 id: tt0090605
-plot: Decades after surviving the Nostromo incident, Ellen Ripley is sent out to re-establish contact with a terraforming colony but finds herself battling the Alien Queen and her offspring.
+plot: "Decades after surviving the Nostromo incident, Ellen Ripley is sent out to re-establish contact with a terraforming colony but finds herself battling the Alien Queen and her offspring."
 genres:
   - Action
   - Adventure

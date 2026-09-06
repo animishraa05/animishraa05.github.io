@@ -7,7 +7,7 @@ year: "2004–2005"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0423731/
 id: tt0423731
-plot: Fuu, a waitress who works in a teahouse, rescues two master swordsmen, Mugen and Jin, from their execution to help her find the "samurai who smells of sunflowers."
+plot: "Fuu, a waitress who works in a teahouse, rescues two master swordsmen, Mugen and Jin, from their execution to help her find the \"samurai who smells of sunflowers.\""
 genres:
   - Animation
   - Action

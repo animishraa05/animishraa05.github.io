@@ -7,7 +7,7 @@ year: "2003"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0364569/
 id: tt0364569
-plot: After being kidnapped and imprisoned for fifteen years, Oh Dae-Su is released, only to find that he must track down his captor in five days.
+plot: "After being kidnapped and imprisoned for fifteen years, Oh Dae-Su is released, only to find that he must track down his captor in five days."
 genres:
   - Action
   - Drama

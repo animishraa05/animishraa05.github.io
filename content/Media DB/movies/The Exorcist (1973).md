@@ -7,7 +7,7 @@ year: "1973"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0070047/
 id: tt0070047
-plot: When a mysterious entity possesses a young girl, her mother seeks the help of two Catholic priests to save her life.
+plot: "When a mysterious entity possesses a young girl, her mother seeks the help of two Catholic priests to save her life."
 genres:
   - Horror
 director:

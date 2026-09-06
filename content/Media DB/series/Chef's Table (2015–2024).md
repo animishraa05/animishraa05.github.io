@@ -7,7 +7,7 @@ year: "2015–2024"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt4295140/
 id: tt4295140
-plot: Chef's Table goes inside the lives and kitchens of six of the world's most renowned international chefs. Each episode focuses on a single chef and their unique look at their lives, talents and passion from their piece of culinary ...
+plot: "Chef's Table goes inside the lives and kitchens of six of the world's most renowned international chefs. Each episode focuses on a single chef and their unique look at their lives, talents and passion from their piece of culinary ..."
 genres:
   - Documentary
   - Biography

@@ -7,7 +7,7 @@ year: "2014–"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2356777/
 id: tt2356777
-plot: Anthology series in which police investigations unearth the personal and professional secrets of those involved, both within and outside the law.
+plot: "Anthology series in which police investigations unearth the personal and professional secrets of those involved, both within and outside the law."
 genres:
   - Crime
   - Drama

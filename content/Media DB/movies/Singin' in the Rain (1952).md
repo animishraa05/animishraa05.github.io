@@ -7,7 +7,7 @@ year: "1952"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0045152/
 id: tt0045152
-plot: A silent film star falls for a chorus girl just as he and his delusionally jealous screen partner are trying to make the difficult transition to talking pictures in 1920s Hollywood.
+plot: "A silent film star falls for a chorus girl just as he and his delusionally jealous screen partner are trying to make the difficult transition to talking pictures in 1920s Hollywood."
 genres:
   - Comedy
   - Musical

@@ -7,7 +7,7 @@ year: "2012–2016"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1865718/
 id: tt1865718
-plot: Twin siblings Dipper and Mabel Pines spend the summer at their great-uncle's tourist trap in the enigmatic Gravity Falls, Oregon.
+plot: "Twin siblings Dipper and Mabel Pines spend the summer at their great-uncle's tourist trap in the enigmatic Gravity Falls, Oregon."
 genres:
   - Animation
   - Adventure

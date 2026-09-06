@@ -7,7 +7,7 @@ year: "2004"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0317248/
 id: tt0317248
-plot: In the slums of Rio, two kids' paths diverge as one struggles to become a photographer and the other a kingpin.
+plot: "In the slums of Rio, two kids' paths diverge as one struggles to become a photographer and the other a kingpin."
 genres:
   - Crime
   - Drama

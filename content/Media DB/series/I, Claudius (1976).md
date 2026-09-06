@@ -7,7 +7,7 @@ year: "1976"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0074006/
 id: tt0074006
-plot: The personal and governmental affairs of the Julio-Claudian dynasty at the beginning of the Roman Empire, as recalled by one of its rulers.
+plot: "The personal and governmental affairs of the Julio-Claudian dynasty at the beginning of the Roman Empire, as recalled by one of its rulers."
 genres:
   - Biography
   - Drama

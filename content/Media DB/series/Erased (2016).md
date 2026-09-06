@@ -7,7 +7,7 @@ year: "2016"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt5249462/
 id: tt5249462
-plot: 29-year-old Satoru Fujinuma is sent back in time 18 years to prevent the events leading to his mother's death, which began with a series of kidnappings while he was in 5th grade.
+plot: "29-year-old Satoru Fujinuma is sent back in time 18 years to prevent the events leading to his mother's death, which began with a series of kidnappings while he was in 5th grade."
 genres:
   - Animation
   - Crime

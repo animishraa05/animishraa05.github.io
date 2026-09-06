@@ -7,7 +7,7 @@ year: "1993–2018"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0106179/
 id: tt0106179
-plot: FBI Special Agents Fox Mulder and Dana Scully investigate unsolved unexplained cases known as X-Files.
+plot: "FBI Special Agents Fox Mulder and Dana Scully investigate unsolved unexplained cases known as X-Files."
 genres:
   - Adventure
   - Crime

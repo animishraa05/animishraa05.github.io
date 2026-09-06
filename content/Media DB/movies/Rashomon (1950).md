@@ -7,7 +7,7 @@ year: "1950"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0042876/
 id: tt0042876
-plot: Three parties and a witness have four versions of a rape/murder in ninth-century Japan.
+plot: "Three parties and a witness have four versions of a rape/murder in ninth-century Japan."
 genres:
   - Crime
   - Drama

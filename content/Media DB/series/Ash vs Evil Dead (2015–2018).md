@@ -7,7 +7,7 @@ year: "2015–2018"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt4189022/
 id: tt4189022
-plot: Ash has spent the last thirty years avoiding responsibility, maturity, and the terrors of the Evil Dead until a Deadite plague threatens to destroy all of mankind and Ash becomes mankind's only hope.
+plot: "Ash has spent the last thirty years avoiding responsibility, maturity, and the terrors of the Evil Dead until a Deadite plague threatens to destroy all of mankind and Ash becomes mankind's only hope."
 genres:
   - Action
   - Comedy

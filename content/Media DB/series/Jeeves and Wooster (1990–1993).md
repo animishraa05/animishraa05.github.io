@@ -7,7 +7,7 @@ year: "1990–1993"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0098833/
 id: tt0098833
-plot: Bertram Wooster, a well-intentioned, wealthy layabout, has a habit of getting himself into trouble and it's up to his brilliant valet, Jeeves, to get him out.
+plot: "Bertram Wooster, a well-intentioned, wealthy layabout, has a habit of getting himself into trouble and it's up to his brilliant valet, Jeeves, to get him out."
 genres:
   - Comedy
 director:

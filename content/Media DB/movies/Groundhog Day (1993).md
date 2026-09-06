@@ -7,7 +7,7 @@ year: "1993"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0107048/
 id: tt0107048
-plot: A narcissistic, self-centered weatherman finds himself in a time loop on Groundhog Day.
+plot: "A narcissistic, self-centered weatherman finds himself in a time loop on Groundhog Day."
 genres:
   - Comedy
   - Drama

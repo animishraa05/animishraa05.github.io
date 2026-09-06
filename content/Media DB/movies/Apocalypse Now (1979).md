@@ -7,7 +7,7 @@ year: "1979"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0078788/
 id: tt0078788
-plot: A U.S. Army officer serving in Vietnam is tasked with assassinating a renegade Special Forces Colonel who sees himself as a god.
+plot: "A U.S. Army officer serving in Vietnam is tasked with assassinating a renegade Special Forces Colonel who sees himself as a god."
 genres:
   - Drama
   - Mystery

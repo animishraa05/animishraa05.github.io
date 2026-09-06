@@ -7,7 +7,7 @@ year: "2016"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2401256/
 id: tt2401256
-plot: After a night of partying with a woman he picked up, a man wakes up to find her stabbed to death and is charged with her murder.
+plot: "After a night of partying with a woman he picked up, a man wakes up to find her stabbed to death and is charged with her murder."
 genres:
   - Crime
   - Drama

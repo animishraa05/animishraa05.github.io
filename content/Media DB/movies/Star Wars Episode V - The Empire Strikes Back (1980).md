@@ -1,13 +1,13 @@
 ---
 type: movie
 subType: ""
-title: Star Wars: Episode V - The Empire Strikes Back
-englishTitle: Star Wars: Episode V - The Empire Strikes Back
+title: "Star Wars: Episode V - The Empire Strikes Back"
+englishTitle: "Star Wars: Episode V - The Empire Strikes Back"
 year: "1980"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0080684/
 id: tt0080684
-plot: After the Empire overpowers the Rebel Alliance, Luke Skywalker begins training with Jedi Master Yoda, while Darth Vader and bounty hunter Boba Fett pursue his friends across the galaxy.
+plot: "After the Empire overpowers the Rebel Alliance, Luke Skywalker begins training with Jedi Master Yoda, while Darth Vader and bounty hunter Boba Fett pursue his friends across the galaxy."
 genres:
   - Action
   - Adventure

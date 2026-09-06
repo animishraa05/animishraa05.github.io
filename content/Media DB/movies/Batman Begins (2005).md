@@ -7,7 +7,7 @@ year: "2005"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0372784/
 id: tt0372784
-plot: After witnessing his parents' death, billionaire Bruce Wayne learns the art of fighting to confront injustice. When he returns to Gotham as Batman, he must stop a secret society that intends to destroy the city.
+plot: "After witnessing his parents' death, billionaire Bruce Wayne learns the art of fighting to confront injustice. When he returns to Gotham as Batman, he must stop a secret society that intends to destroy the city."
 genres:
   - Action
   - Crime

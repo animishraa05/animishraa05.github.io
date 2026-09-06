@@ -7,7 +7,7 @@ year: "2005–2014"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0458254/
 id: tt0458254
-plot: Satirical newscaster Stephen Colbert provides humorous commentary on the big issues going on in the United States and the rest of the world, with his larger-than-life ego and overly-patriotic spirit along with him every step of th...
+plot: "Satirical newscaster Stephen Colbert provides humorous commentary on the big issues going on in the United States and the rest of the world, with his larger-than-life ego and overly-patriotic spirit along with him every step of th..."
 genres:
   - Comedy
   - News

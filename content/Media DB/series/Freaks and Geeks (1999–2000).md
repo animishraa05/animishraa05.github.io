@@ -7,7 +7,7 @@ year: "1999–2000"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0193676/
 id: tt0193676
-plot: A high school mathlete starts hanging out with a group of burnouts while her younger brother navigates his freshman year.
+plot: "A high school mathlete starts hanging out with a group of burnouts while her younger brother navigates his freshman year."
 genres:
   - Comedy
   - Drama

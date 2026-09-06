@@ -7,7 +7,7 @@ year: "2001–2017"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0278238/
 id: tt0278238
-plot: A samurai, sent through time, fights to return home and save the world.
+plot: "A samurai, sent through time, fights to return home and save the world."
 genres:
   - Animation
   - Action

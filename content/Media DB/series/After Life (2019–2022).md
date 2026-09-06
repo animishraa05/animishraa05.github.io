@@ -7,7 +7,7 @@ year: "2019–2022"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt8398600/
 id: tt8398600
-plot: After Tony's wife dies, his nice-guy persona is altered into an impulsive, devil-may-care attitude that takes his old world by storm.
+plot: "After Tony's wife dies, his nice-guy persona is altered into an impulsive, devil-may-care attitude that takes his old world by storm."
 genres:
   - Comedy
   - Drama

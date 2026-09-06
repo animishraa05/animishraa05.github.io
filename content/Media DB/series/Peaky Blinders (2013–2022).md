@@ -7,7 +7,7 @@ year: "2013–2022"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2442560/
 id: tt2442560
-plot: A gangster family epic set in 1919 Birmingham, England; centered on a gang who sew razor blades in the peaks of their caps, and their fierce boss Tommy Shelby.
+plot: "A gangster family epic set in 1919 Birmingham, England; centered on a gang who sew razor blades in the peaks of their caps, and their fierce boss Tommy Shelby."
 genres:
   - Crime
   - Drama

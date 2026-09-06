@@ -7,7 +7,7 @@ year: "2013–2023"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2560140/
 id: tt2560140
-plot: In a world where humanity shelters behind towering walls from man-eating Titans, a determined teen joins the elite Survey Corps to fight the giants and uncover the secrets of their origin.
+plot: "In a world where humanity shelters behind towering walls from man-eating Titans, a determined teen joins the elite Survey Corps to fight the giants and uncover the secrets of their origin."
 genres:
   - Animation
   - Action

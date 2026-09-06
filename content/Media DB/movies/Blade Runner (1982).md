@@ -7,7 +7,7 @@ year: "1982"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0083658/
 id: tt0083658
-plot: A blade runner must pursue and terminate four replicants who stole a ship in space and have returned to Earth to find their creator.
+plot: "A blade runner must pursue and terminate four replicants who stole a ship in space and have returned to Earth to find their creator."
 genres:
   - Action
   - Drama

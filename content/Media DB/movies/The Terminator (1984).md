@@ -7,7 +7,7 @@ year: "1984"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0088247/
 id: tt0088247
-plot: A cyborg assassin from the future attempts to find and kill a young woman who is destined to give birth to a warrior that will lead a resistance to save humankind from extinction.
+plot: "A cyborg assassin from the future attempts to find and kill a young woman who is destined to give birth to a warrior that will lead a resistance to save humankind from extinction."
 genres:
   - Action
   - Adventure

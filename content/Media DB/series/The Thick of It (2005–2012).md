@@ -7,7 +7,7 @@ year: "2005–2012"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0459159/
 id: tt0459159
-plot: The Minister for Social Affairs is continually harassed by Number 10's policy enforcer and dependent on his not-so-reliable team of civil servants.
+plot: "The Minister for Social Affairs is continually harassed by Number 10's policy enforcer and dependent on his not-so-reliable team of civil servants."
 genres:
   - Comedy
 director:

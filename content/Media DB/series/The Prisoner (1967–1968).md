@@ -7,7 +7,7 @@ year: "1967–1968"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0061287/
 id: tt0061287
-plot: A former secret agent is abducted and taken to what looks like an idyllic village, but is actually a bizarre prison. He refuses to give his warders information while attempting to escape.
+plot: "A former secret agent is abducted and taken to what looks like an idyllic village, but is actually a bizarre prison. He refuses to give his warders information while attempting to escape."
 genres:
   - Drama
   - Mystery

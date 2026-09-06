@@ -7,7 +7,7 @@ year: "2000"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0245712/
 id: tt0245712
-plot: An amateur dog fighter, a supermodel, and a derelict assassin, all separately struggling to find love, find their lives transformed by a devastating car wreck in Mexico City.
+plot: "An amateur dog fighter, a supermodel, and a derelict assassin, all separately struggling to find love, find their lives transformed by a devastating car wreck in Mexico City."
 genres:
   - Drama
   - Thriller

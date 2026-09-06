@@ -7,7 +7,7 @@ year: "2007"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0477348/
 id: tt0477348
-plot: Violence and mayhem ensue after a hunter stumbles upon the aftermath of a drug deal gone wrong and over two million dollars in cash near the Rio Grande.
+plot: "Violence and mayhem ensue after a hunter stumbles upon the aftermath of a drug deal gone wrong and over two million dollars in cash near the Rio Grande."
 genres:
   - Crime
   - Drama

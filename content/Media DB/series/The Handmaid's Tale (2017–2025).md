@@ -7,7 +7,7 @@ year: "2017–2025"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt5834204/
 id: tt5834204
-plot: Set in a dystopian future, a woman is forced to live as a concubine under a fundamentalist theocratic dictatorship.
+plot: "Set in a dystopian future, a woman is forced to live as a concubine under a fundamentalist theocratic dictatorship."
 genres:
   - Drama
   - Sci-Fi

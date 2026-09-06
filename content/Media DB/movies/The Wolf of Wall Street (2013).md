@@ -7,7 +7,7 @@ year: "2013"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0993846/
 id: tt0993846
-plot: Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.
+plot: "Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government."
 genres:
   - Biography
   - Comedy

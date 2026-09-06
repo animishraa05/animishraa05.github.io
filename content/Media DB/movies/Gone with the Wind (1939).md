@@ -7,7 +7,7 @@ year: "1939"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0031381/
 id: tt0031381
-plot: A sheltered and manipulative Southern belle and a roguish profiteer face off in a turbulent romance as the society around them crumbles with the end of slavery and is rebuilt during the Civil War and Reconstruction periods.
+plot: "A sheltered and manipulative Southern belle and a roguish profiteer face off in a turbulent romance as the society around them crumbles with the end of slavery and is rebuilt during the Civil War and Reconstruction periods."
 genres:
   - Drama
   - Romance

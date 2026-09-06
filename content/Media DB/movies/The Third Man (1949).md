@@ -7,7 +7,7 @@ year: "1949"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0041959/
 id: tt0041959
-plot: Pulp novelist Holly Martins travels to shadowy, postwar Vienna, only to find himself investigating the mysterious death of an old friend, Harry Lime.
+plot: "Pulp novelist Holly Martins travels to shadowy, postwar Vienna, only to find himself investigating the mysterious death of an old friend, Harry Lime."
 genres:
   - Drama
   - Film-Noir

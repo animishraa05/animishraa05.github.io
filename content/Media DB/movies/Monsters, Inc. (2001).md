@@ -7,7 +7,7 @@ year: "2001"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0198781/
 id: tt0198781
-plot: In order to power the city, monsters have to scare children so that they scream. However, the children are toxic to the monsters, and after a child gets through, two monsters realize things may not be what they think.
+plot: "In order to power the city, monsters have to scare children so that they scream. However, the children are toxic to the monsters, and after a child gets through, two monsters realize things may not be what they think."
 genres:
   - Animation
   - Adventure

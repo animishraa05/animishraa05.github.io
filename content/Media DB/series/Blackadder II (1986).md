@@ -7,7 +7,7 @@ year: "1986"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0088484/
 id: tt0088484
-plot: In the Tudor court of Elizabeth I, Lord Edmund Blackadder strives to win Her Majesty's favour while attempting to avoid a grisly fate should he offend her.
+plot: "In the Tudor court of Elizabeth I, Lord Edmund Blackadder strives to win Her Majesty's favour while attempting to avoid a grisly fate should he offend her."
 genres:
   - Comedy
 director:

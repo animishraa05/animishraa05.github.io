@@ -7,7 +7,7 @@ year: "1959"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0053198/
 id: tt0053198
-plot: A young boy, left without attention, delves into a life of petty crime.
+plot: "A young boy, left without attention, delves into a life of petty crime."
 genres:
   - Crime
   - Drama

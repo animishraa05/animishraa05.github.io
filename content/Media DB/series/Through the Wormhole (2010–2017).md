@@ -7,7 +7,7 @@ year: "2010–2017"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1513168/
 id: tt1513168
-plot: Hosted by Morgan Freeman, Through the Wormhole will explore the deepest mysteries of existence - the questions that have puzzled mankind for eternity. What are we made of? What was there before the beginning? Are we really alone? ...
+plot: "Hosted by Morgan Freeman, Through the Wormhole will explore the deepest mysteries of existence - the questions that have puzzled mankind for eternity. What are we made of? What was there before the beginning? Are we really alone? ..."
 genres:
   - Documentary
 director:

@@ -7,7 +7,7 @@ year: "2008–2014"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1124373/
 id: tt1124373
-plot: A biker struggles to balance being a father and being involved in an outlaw motorcycle club.
+plot: "A biker struggles to balance being a father and being involved in an outlaw motorcycle club."
 genres:
   - Crime
   - Drama

@@ -7,7 +7,7 @@ year: "1985"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0091251/
 id: tt0091251
-plot: After finding an old rifle, a young boy joins the Soviet resistance movement against ruthless German forces and experiences the horrors of World War II.
+plot: "After finding an old rifle, a young boy joins the Soviet resistance movement against ruthless German forces and experiences the horrors of World War II."
 genres:
   - Drama
   - Thriller

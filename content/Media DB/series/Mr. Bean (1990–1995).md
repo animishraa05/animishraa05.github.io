@@ -7,7 +7,7 @@ year: "1990–1995"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0096657/
 id: tt0096657
-plot: Bumbling, childlike Mr. Bean has trouble completing the simplest of day-to-day tasks, but his perseverance and resourcefulness frequently allow him to find ingenious ways around problems.
+plot: "Bumbling, childlike Mr. Bean has trouble completing the simplest of day-to-day tasks, but his perseverance and resourcefulness frequently allow him to find ingenious ways around problems."
 genres:
   - Comedy
   - Family

@@ -7,7 +7,7 @@ year: "1958"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0052357/
 id: tt0052357
-plot: A former San Francisco police detective juggles wrestling with his personal demons and becoming obsessed with the hauntingly beautiful woman he has been hired to trail, who may be deeply disturbed.
+plot: "A former San Francisco police detective juggles wrestling with his personal demons and becoming obsessed with the hauntingly beautiful woman he has been hired to trail, who may be deeply disturbed."
 genres:
   - Mystery
   - Romance

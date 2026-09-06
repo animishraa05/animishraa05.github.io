@@ -7,7 +7,7 @@ year: "1948"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0040522/
 id: tt0040522
-plot: In post-war Italy, a working-class man's bicycle is stolen, endangering his efforts to find work. He and his son set out to find it.
+plot: "In post-war Italy, a working-class man's bicycle is stolen, endangering his efforts to find work. He and his son set out to find it."
 genres:
   - Drama
 director:

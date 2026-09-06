@@ -7,7 +7,7 @@ year: "2004"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0417349/
 id: tt0417349
-plot: North and South is a four-part adaptation of Elizabeth Gaskell's love story of Margaret Hale, a middle-class southerner who is forced to move to the northern town of Milton.
+plot: "North and South is a four-part adaptation of Elizabeth Gaskell's love story of Margaret Hale, a middle-class southerner who is forced to move to the northern town of Milton."
 genres:
   - Drama
   - Romance

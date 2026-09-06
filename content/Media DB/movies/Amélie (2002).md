@@ -7,7 +7,7 @@ year: "2002"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0211915/
 id: tt0211915
-plot: Despite being caught in her imaginative world, young waitress Amelie decides to help people find happiness. Her quest to spread joy leads her on a journey during which she finds true love.
+plot: "Despite being caught in her imaginative world, young waitress Amelie decides to help people find happiness. Her quest to spread joy leads her on a journey during which she finds true love."
 genres:
   - Comedy
   - Romance

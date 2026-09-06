@@ -7,7 +7,7 @@ year: "2020"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt8503618/
 id: tt8503618
-plot: The real life of one of America's foremost founding fathers and first Secretary of the Treasury, Alexander Hamilton. Captured live on Broadway from the Richard Rodgers Theater with the original Broadway cast.
+plot: "The real life of one of America's foremost founding fathers and first Secretary of the Treasury, Alexander Hamilton. Captured live on Broadway from the Richard Rodgers Theater with the original Broadway cast."
 genres:
   - Biography
   - Drama

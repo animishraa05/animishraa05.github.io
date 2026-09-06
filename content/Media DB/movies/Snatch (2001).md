@@ -7,7 +7,7 @@ year: "2001"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0208092/
 id: tt0208092
-plot: Unscrupulous boxing promoters, violent bookmakers, a Russian gangster, incompetent amateur robbers and supposedly Jewish jewelers fight to track down a priceless stolen diamond.
+plot: "Unscrupulous boxing promoters, violent bookmakers, a Russian gangster, incompetent amateur robbers and supposedly Jewish jewelers fight to track down a priceless stolen diamond."
 genres:
   - Comedy
   - Crime

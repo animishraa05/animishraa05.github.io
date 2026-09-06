@@ -7,7 +7,7 @@ year: "2013–2021"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2433738/
 id: tt2433738
-plot: The confronting look into the lives of the inmates and prison staff of Wentworth Correctional Centre as they navigate the ups and downs of their lives in the prison system.
+plot: "The confronting look into the lives of the inmates and prison staff of Wentworth Correctional Centre as they navigate the ups and downs of their lives in the prison system."
 genres:
   - Crime
   - Drama

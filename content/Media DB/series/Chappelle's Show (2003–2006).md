@@ -7,7 +7,7 @@ year: "2003–2006"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0353049/
 id: tt0353049
-plot: Comedian Dave Chappelle hosts this sketch-comedy show that parodies many of the nuances of race and culture.
+plot: "Comedian Dave Chappelle hosts this sketch-comedy show that parodies many of the nuances of race and culture."
 genres:
   - Comedy
   - Music

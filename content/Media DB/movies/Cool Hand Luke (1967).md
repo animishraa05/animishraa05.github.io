@@ -7,7 +7,7 @@ year: "1967"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0061512/
 id: tt0061512
-plot: A laid-back Southern man is sentenced to two years in a rural prison, but refuses to conform.
+plot: "A laid-back Southern man is sentenced to two years in a rural prison, but refuses to conform."
 genres:
   - Crime
   - Drama

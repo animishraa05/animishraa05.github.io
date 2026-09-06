@@ -7,7 +7,7 @@ year: 2005–2017
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0455275/
 id: tt0455275
-plot: A structural engineer installs himself in a prison his company helped design, to save his falsely accused brother from a death sentence by breaking both of them out from the inside.
+plot: "A structural engineer installs himself in a prison his company helped design, to save his falsely accused brother from a death sentence by breaking both of them out from the inside."
 genres:
   - Action
   - Crime

@@ -1,13 +1,13 @@
 ---
 type: series
 subType: ""
-title: Cosmos: A Spacetime Odyssey
-englishTitle: Cosmos: A Spacetime Odyssey
+title: "Cosmos: A Spacetime Odyssey"
+englishTitle: "Cosmos: A Spacetime Odyssey"
 year: "2014"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2395695/
 id: tt2395695
-plot: An exploration of our discovery of the laws of nature and coordinates in space and time.
+plot: "An exploration of our discovery of the laws of nature and coordinates in space and time."
 genres:
   - Documentary
 director:

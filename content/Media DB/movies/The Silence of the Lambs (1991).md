@@ -7,7 +7,7 @@ year: "1991"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0102926/
 id: tt0102926
-plot: A young F.B.I. cadet must receive the help of an incarcerated and manipulative cannibal killer to help catch another serial killer, a madman who skins his victims.
+plot: "A young F.B.I. cadet must receive the help of an incarcerated and manipulative cannibal killer to help catch another serial killer, a madman who skins his victims."
 genres:
   - Crime
   - Drama

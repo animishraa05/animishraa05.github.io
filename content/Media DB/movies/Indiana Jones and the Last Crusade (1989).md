@@ -7,7 +7,7 @@ year: "1989"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0097576/
 id: tt0097576
-plot: In 1938, after his father goes missing while pursuing the Holy Grail, Indiana Jones finds himself up against the Nazis again to stop them from obtaining its powers.
+plot: "In 1938, after his father goes missing while pursuing the Holy Grail, Indiana Jones finds himself up against the Nazis again to stop them from obtaining its powers."
 genres:
   - Action
   - Adventure

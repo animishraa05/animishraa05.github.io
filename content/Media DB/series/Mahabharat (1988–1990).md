@@ -7,7 +7,7 @@ year: "1988–1990"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0158417/
 id: tt0158417
-plot: When a dynastic struggle between the collateral branches of the Kuru clan, the Kauravas and Pandavas lead them to the threshold of war, Lord Krishna decides to step in and take control of the situation.
+plot: "When a dynastic struggle between the collateral branches of the Kuru clan, the Kauravas and Pandavas lead them to the threshold of war, Lord Krishna decides to step in and take control of the situation."
 genres:
   - Action
   - Adventure

@@ -7,7 +7,7 @@ year: "1954"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0046912/
 id: tt0046912
-plot: A London playboy plots the perfect murder of his rich, unfaithful wife.
+plot: "A London playboy plots the perfect murder of his rich, unfaithful wife."
 genres:
   - Crime
   - Drama

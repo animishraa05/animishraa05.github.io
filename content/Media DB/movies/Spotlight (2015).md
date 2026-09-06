@@ -7,7 +7,7 @@ year: "2015"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1895587/
 id: tt1895587
-plot: The true story of how the Boston Globe uncovered the massive scandal of child molestation and cover-up within the local Catholic Archdiocese, shaking the entire Catholic Church to its core.
+plot: "The true story of how the Boston Globe uncovered the massive scandal of child molestation and cover-up within the local Catholic Archdiocese, shaking the entire Catholic Church to its core."
 genres:
   - Biography
   - Crime

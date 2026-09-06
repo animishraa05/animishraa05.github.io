@@ -7,7 +7,7 @@ year: "1992"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0105695/
 id: tt0105695
-plot: Retired Old West gunslinger Will Munny reluctantly takes on one last job to avenge an injustice with the help of his old partner and a young would-be gunman calling himself "The Schofield Kid".
+plot: "Retired Old West gunslinger Will Munny reluctantly takes on one last job to avenge an injustice with the help of his old partner and a young would-be gunman calling himself \"The Schofield Kid\"."
 genres:
   - Drama
   - Western

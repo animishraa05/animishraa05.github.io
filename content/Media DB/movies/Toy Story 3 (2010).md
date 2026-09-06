@@ -7,7 +7,7 @@ year: "2010"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0435761/
 id: tt0435761
-plot: The toys are mistakenly delivered to a day-care center instead of the attic right before Andy leaves for college, and it's up to Woody to convince the other toys that they weren't abandoned and to return home.
+plot: "The toys are mistakenly delivered to a day-care center instead of the attic right before Andy leaves for college, and it's up to Woody to convince the other toys that they weren't abandoned and to return home."
 genres:
   - Animation
   - Adventure

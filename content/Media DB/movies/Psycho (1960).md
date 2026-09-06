@@ -7,7 +7,7 @@ year: "1960"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0054215/
 id: tt0054215
-plot: A secretary on the run for embezzlement takes refuge at a secluded California motel owned by a repressed man and his overbearing mother.
+plot: "A secretary on the run for embezzlement takes refuge at a secluded California motel owned by a repressed man and his overbearing mother."
 genres:
   - Drama
   - Horror

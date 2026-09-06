@@ -1,13 +1,13 @@
 ---
 type: movie
 subType: ""
-title: Léon: The Professional
-englishTitle: Léon: The Professional
+title: "Léon: The Professional"
+englishTitle: "Léon: The Professional"
 year: "1994"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0110413/
 id: tt0110413
-plot: When her family is murdered by a group of corrupt officers led by the tyrannical Norman Stansfield, a young 12-year-old girl enlists the help of an Italian-American hitman to seek revenge.
+plot: "When her family is murdered by a group of corrupt officers led by the tyrannical Norman Stansfield, a young 12-year-old girl enlists the help of an Italian-American hitman to seek revenge."
 genres:
   - Action
   - Crime

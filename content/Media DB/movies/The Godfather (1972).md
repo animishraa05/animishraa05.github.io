@@ -7,7 +7,7 @@ year: "1972"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0068646/
 id: tt0068646
-plot: The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.
+plot: "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son."
 genres:
   - Crime
   - Drama

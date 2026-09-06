@@ -7,7 +7,7 @@ year: "1974"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0071315/
 id: tt0071315
-plot: A private detective hired to expose an adulterer in 1930s Los Angeles finds himself caught up in a web of deceit, corruption, and murder.
+plot: "A private detective hired to expose an adulterer in 1930s Los Angeles finds himself caught up in a web of deceit, corruption, and murder."
 genres:
   - Drama
   - Mystery

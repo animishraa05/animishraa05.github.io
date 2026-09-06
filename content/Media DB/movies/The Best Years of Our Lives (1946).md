@@ -7,7 +7,7 @@ year: "1946"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0036868/
 id: tt0036868
-plot: Three traumatized or physically disabled World War II veterans return home to the American Midwest to discover that they and their families have been irreparably changed making readjustment difficult.
+plot: "Three traumatized or physically disabled World War II veterans return home to the American Midwest to discover that they and their families have been irreparably changed making readjustment difficult."
 genres:
   - Drama
   - Romance

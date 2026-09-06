@@ -7,7 +7,7 @@ year: "1980"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0081505/
 id: tt0081505
-plot: A family heads to an isolated hotel for the winter, where a sinister presence influences the father into violence. At the same time, his psychic son sees horrifying forebodings from both the past and the future.
+plot: "A family heads to an isolated hotel for the winter, where a sinister presence influences the father into violence. At the same time, his psychic son sees horrifying forebodings from both the past and the future."
 genres:
   - Drama
   - Horror

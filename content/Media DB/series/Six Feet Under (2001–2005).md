@@ -7,7 +7,7 @@ year: "2001–2005"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0248654/
 id: tt0248654
-plot: When death is your business, what is your life? Laced with irony and dark situational humor, the show approaches the subject of death through the eyes of the Fisher family, who owns and operates a funeral home in Los Angeles.
+plot: "When death is your business, what is your life? Laced with irony and dark situational humor, the show approaches the subject of death through the eyes of the Fisher family, who owns and operates a funeral home in Los Angeles."
 genres:
   - Comedy
   - Drama

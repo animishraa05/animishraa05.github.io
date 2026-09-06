@@ -7,7 +7,7 @@ year: "1954"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0047396/
 id: tt0047396
-plot: A bored photographer recovering from a broken leg passes the time by watching his neighbors and begins to suspect one of them of murder.
+plot: "A bored photographer recovering from a broken leg passes the time by watching his neighbors and begins to suspect one of them of murder."
 genres:
   - Drama
   - Mystery

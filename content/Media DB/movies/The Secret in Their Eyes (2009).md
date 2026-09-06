@@ -7,7 +7,7 @@ year: "2009"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1305806/
 id: tt1305806
-plot: A retired legal counselor writes a novel hoping to find closure for one of his past unresolved homicide cases and for his unreciprocated love with his superior--both of which still haunt him decades later.
+plot: "A retired legal counselor writes a novel hoping to find closure for one of his past unresolved homicide cases and for his unreciprocated love with his superior--both of which still haunt him decades later."
 genres:
   - Drama
   - Mystery

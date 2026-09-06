@@ -7,7 +7,7 @@ year: "1997–"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0121955/
 id: tt0121955
-plot: The misadventures of four foul-mouthed, dirty-minded, irreverent grade-schoolers who live in the quiet, dysfunctional mountain town of South Park, Colorado.
+plot: "The misadventures of four foul-mouthed, dirty-minded, irreverent grade-schoolers who live in the quiet, dysfunctional mountain town of South Park, Colorado."
 genres:
   - Animation
   - Comedy

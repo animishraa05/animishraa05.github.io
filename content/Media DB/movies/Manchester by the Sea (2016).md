@@ -7,7 +7,7 @@ year: "2016"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt4034228/
 id: tt4034228
-plot: A depressed uncle is asked to take care of his teenage nephew after the boy's father dies.
+plot: "A depressed uncle is asked to take care of his teenage nephew after the boy's father dies."
 genres:
   - Drama
 director:

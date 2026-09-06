@@ -7,7 +7,7 @@ year: "1977"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0075520/
 id: tt0075520
-plot: Beginning before the Nativity and extending through the Crucifixion and Resurrection, this mini-series brings to life all of the sweeping drama in the life of Jesus, as told by the Gospels.
+plot: "Beginning before the Nativity and extending through the Crucifixion and Resurrection, this mini-series brings to life all of the sweeping drama in the life of Jesus, as told by the Gospels."
 genres:
   - Biography
   - Drama

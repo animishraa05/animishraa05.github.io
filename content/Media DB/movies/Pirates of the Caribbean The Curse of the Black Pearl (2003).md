@@ -1,13 +1,13 @@
 ---
 type: movie
 subType: ""
-title: Pirates of the Caribbean: The Curse of the Black Pearl
-englishTitle: Pirates of the Caribbean: The Curse of the Black Pearl
+title: "Pirates of the Caribbean: The Curse of the Black Pearl"
+englishTitle: "Pirates of the Caribbean: The Curse of the Black Pearl"
 year: "2003"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0325980/
 id: tt0325980
-plot: An intrepid blacksmith teams up with an eccentric pirate captain to save his love from an undead pirate crew.
+plot: "An intrepid blacksmith teams up with an eccentric pirate captain to save his love from an undead pirate crew."
 genres:
   - Action
   - Adventure

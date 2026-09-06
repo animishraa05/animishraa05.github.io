@@ -7,7 +7,7 @@ year: "1960–1975"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0053488/
 id: tt0053488
-plot: TV series featuring the classic Looney Tunes animated shorts.
+plot: "TV series featuring the classic Looney Tunes animated shorts."
 genres:
   - Animation
   - Comedy

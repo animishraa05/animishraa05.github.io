@@ -1,13 +1,13 @@
 ---
 type: movie
 subType: ""
-title: Avengers: Endgame
-englishTitle: Avengers: Endgame
+title: "Avengers: Endgame"
+englishTitle: "Avengers: Endgame"
 year: "2019"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt4154796/
 id: tt4154796
-plot: After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.
+plot: "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe."
 genres:
   - Action
   - Adventure

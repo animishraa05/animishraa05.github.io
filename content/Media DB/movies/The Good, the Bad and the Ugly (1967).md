@@ -7,7 +7,7 @@ year: "1967"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0060196/
 id: tt0060196
-plot: A bounty-hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.
+plot: "A bounty-hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery."
 genres:
   - Adventure
   - Drama

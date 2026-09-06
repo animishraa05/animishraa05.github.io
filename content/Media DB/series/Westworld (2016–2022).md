@@ -7,7 +7,7 @@ year: "2016–2022"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0475784/
 id: tt0475784
-plot: At the intersection of the near future and the reimagined past, waits a world in which every human appetite can be indulged without consequence.
+plot: "At the intersection of the near future and the reimagined past, waits a world in which every human appetite can be indulged without consequence."
 genres:
   - Drama
   - Mystery

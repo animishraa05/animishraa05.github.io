@@ -7,7 +7,7 @@ year: "2017"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt6478318/
 id: tt6478318
-plot: Cevdet and his wife retire on their pensions to live in peace on a rural farm, but their lives are destroyed when their son suddenly arrives with terrible news.
+plot: "Cevdet and his wife retire on their pensions to live in peace on a rural farm, but their lives are destroyed when their son suddenly arrives with terrible news."
 genres:
   - Crime
   - Drama

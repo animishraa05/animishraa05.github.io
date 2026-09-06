@@ -7,7 +7,7 @@ year: "1976–1981"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0074028/
 id: tt0074028
-plot: Kermit the Frog and his fellow Muppets put on a vaudeville show at their theatre, bringing in a famous celebrity to help out for each episode.
+plot: "Kermit the Frog and his fellow Muppets put on a vaudeville show at their theatre, bringing in a famous celebrity to help out for each episode."
 genres:
   - Comedy
   - Family

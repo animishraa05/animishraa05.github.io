@@ -7,7 +7,7 @@ year: "2000–2004"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0262150/
 id: tt0262150
-plot: Bernard Black runs a book shop, though his customer service skills leave something to be desired. He hires Manny as an employee. Fran runs the shop next door. Between the three of them many adventures ensue.
+plot: "Bernard Black runs a book shop, though his customer service skills leave something to be desired. He hires Manny as an employee. Fran runs the shop next door. Between the three of them many adventures ensue."
 genres:
   - Comedy
 director:

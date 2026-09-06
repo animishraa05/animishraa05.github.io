@@ -7,7 +7,7 @@ year: "1989"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0095327/
 id: tt0095327
-plot: A young boy and his little sister struggle to survive in Japan during World War II.
+plot: "A young boy and his little sister struggle to survive in Japan during World War II."
 genres:
   - Animation
   - Drama

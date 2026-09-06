@@ -7,7 +7,7 @@ year: "1921"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0012349/
 id: tt0012349
-plot: The Tramp cares for an abandoned child, but events put their relationship in jeopardy.
+plot: "The Tramp cares for an abandoned child, but events put their relationship in jeopardy."
 genres:
   - Comedy
   - Drama

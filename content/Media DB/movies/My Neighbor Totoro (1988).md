@@ -7,7 +7,7 @@ year: "1988"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0096283/
 id: tt0096283
-plot: When two girls move to the country to be near their ailing mother, they have adventures with the wondrous forest spirits who live nearby.
+plot: "When two girls move to the country to be near their ailing mother, they have adventures with the wondrous forest spirits who live nearby."
 genres:
   - Animation
   - Adventure

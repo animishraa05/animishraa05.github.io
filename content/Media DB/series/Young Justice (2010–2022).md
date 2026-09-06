@@ -7,7 +7,7 @@ year: "2010–2022"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1641384/
 id: tt1641384
-plot: Teenage superheroes strive to prove themselves as members of the Justice League.
+plot: "Teenage superheroes strive to prove themselves as members of the Justice League."
 genres:
   - Animation
   - Action

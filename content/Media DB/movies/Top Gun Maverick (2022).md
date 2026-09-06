@@ -1,13 +1,13 @@
 ---
 type: movie
 subType: ""
-title: Top Gun: Maverick
-englishTitle: Top Gun: Maverick
+title: "Top Gun: Maverick"
+englishTitle: "Top Gun: Maverick"
 year: "2022"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt1745960/
 id: tt1745960
-plot: The story involves Maverick confronting his past while training a group of younger Top Gun graduates, including the son of his deceased best friend, for a dangerous mission.
+plot: "The story involves Maverick confronting his past while training a group of younger Top Gun graduates, including the son of his deceased best friend, for a dangerous mission."
 genres:
   - Action
   - Drama

@@ -7,7 +7,7 @@ year: "1990–1991"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0098936/
 id: tt0098936
-plot: An idiosyncratic FBI agent investigates the murder of a young woman in the even more idiosyncratic town of Twin Peaks.
+plot: "An idiosyncratic FBI agent investigates the murder of a young woman in the even more idiosyncratic town of Twin Peaks."
 genres:
   - Crime
   - Drama

@@ -7,7 +7,7 @@ year: "1986–1989"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0088509/
 id: tt0088509
-plot: A young martial artist named Goku teams up with inventor Bulma and other quirky allies on a globe-trotting quest to find the seven Dragon Balls, mystical orbs that can summon a wish-granting dragon.
+plot: "A young martial artist named Goku teams up with inventor Bulma and other quirky allies on a globe-trotting quest to find the seven Dragon Balls, mystical orbs that can summon a wish-granting dragon."
 genres:
   - Animation
   - Action
