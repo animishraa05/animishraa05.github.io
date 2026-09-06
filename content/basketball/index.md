@@ -8,5 +8,5 @@ basketball — the game I keep coming back to.
 
 ## sections
 
-[watching](basketball/watching/)
-[playing](basketball/playing/)
+- [watching](basketball/watching.md)
+- [playing](basketball/playing.md)

@@ -8,6 +8,6 @@ notes on machine learning — things I am learning, building, or reading about.
 
 ## sections
 
-[concepts](ml/concepts/)
-[papers](ml/papers/)
-[projects](ml/projects/)
+- [concepts](ml/concepts.md)
+- [papers](ml/papers.md)
+- [projects](ml/projects.md)

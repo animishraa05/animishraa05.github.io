@@ -39,7 +39,6 @@ const configuration: GlobalConfiguration = {
     'wiki/log.md',
     'wiki/open-questions.md',
     'wiki/.wiki-meta.json',
-    'wiki/**/index.md',
     '**/*-summary.md',
     'sources/**',
   ],

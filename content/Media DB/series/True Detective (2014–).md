@@ -3,7 +3,7 @@ type: series
 subType: ""
 title: True Detective
 englishTitle: True Detective
-year: 2014–
+year: "2014–"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt2356777/
 id: tt2356777
@@ -12,11 +12,12 @@ genres:
   - Crime
   - Drama
   - Mystery
+director:
 writer:
   - Nic Pizzolatto
   - Issa López
-studio: []
-episodes: 0
+studio:
+  - N/A
 duration: 55 min
 onlineRating: 8.8
 actors:
@@ -26,9 +27,7 @@ actors:
 image: https://m.media-amazon.com/images/M/MV5BYjgwYzA1NWMtNDYyZi00ZGQyLWI5NTktMDYwZjE2OTIwZWEwXkEyXkFqcGc@._V1_SX300.jpg
 released: true
 streamingServices: []
-airing: false
-airedFrom: 01/12/2014
-airedTo: unknown
+premiere: 01/12/2014
 watched: false
 lastWatched: ""
 personalRating: 0

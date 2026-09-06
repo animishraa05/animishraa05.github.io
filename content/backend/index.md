@@ -11,6 +11,6 @@ this is more about things I encounter and build in practice.
 
 ## sections
 
-[systems](backend/systems/)
-[databases](backend/databases/)
-[projects](backend/projects/)
+- [systems](backend/systems.md)
+- [databases](backend/databases.md)
+- [projects](backend/projects.md)

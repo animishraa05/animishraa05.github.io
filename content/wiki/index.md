@@ -30,7 +30,7 @@ tags: [meta, index]
 | [[learn-vim-progressively/learn-vim-progressively-moc\|learn-vim-progressively]] | Map of Content for **Learn Vim Progressively** — 11 concepts. Start here to navigate learn-vim-progressively. (11 pages) |
 | [[lsp/lsp-moc\|lsp]] | Map of Content for **Lsp** — 7 concepts. Start here to navigate lsp. (7 pages) |
 | [[networking/networking-moc\|networking]] | Map of Content for **Networking** — 3 concepts. Start here to navigate networking. (3 pages) |
-| [[os/os-moc\|os]] | Operating System — ChatGPT Conversation (25 pages) |
+| [[os/os-moc\|os]] | Operating System (25 pages) |
 | [[strings/strings-moc\|strings]] | Strings — character hashing and frequency patterns (23 pages) |
 | [[system-design/system-design-moc\|system-design]] | Map of Content for **System Design** — 40 concepts. Start here to navigate system-design. (40 pages) |
 | [[theory-of-computation/theory-of-computation-moc\|theory-of-computation]] | Map of Content for **Theory Of Computation** — 19 concepts. Start here to navigate theory-of-computation. (20 pages) |

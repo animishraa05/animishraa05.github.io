@@ -3,7 +3,7 @@ type: series
 subType: ""
 title: Breaking Bad
 englishTitle: Breaking Bad
-year: 2008–2013
+year: "2008–2013"
 dataSource: OMDbAPI
 url: https://www.imdb.com/title/tt0903747/
 id: tt0903747
@@ -12,10 +12,11 @@ genres:
   - Crime
   - Drama
   - Thriller
+director:
 writer:
   - Vince Gilligan
-studio: []
-episodes: 0
+studio:
+  - N/A
 duration: 49 min
 onlineRating: 9.5
 actors:
@@ -25,9 +26,7 @@ actors:
 image: https://m.media-amazon.com/images/M/MV5BMzU5ZGYzNmQtMTdhYy00OGRiLTg0NmQtYjVjNzliZTg1ZGE4XkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg
 released: true
 streamingServices: []
-airing: false
-airedFrom: 01/20/2008
-airedTo: unknown
+premiere: 01/20/2008
 watched: false
 lastWatched: ""
 personalRating: 0
