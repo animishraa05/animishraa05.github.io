@@ -49,12 +49,27 @@ digraph G {
 - **InitialContext**: The entry point for JNDI operations
 - **Serializable**: Contexts can be bound into other contexts
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_JNDI_Context {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Jndi Context" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[jndi-binding|JNDI Binding]] — contexts contain bindings
-- Built from: [[jndi-naming-concepts|JNDI Naming Concepts]] — contexts are central to JNDI
-- Builds into: [[subcontext|Subcontext]] — a context within a context
-- Related: [[jndi|JNDI]] — JNDI provides the Context API
-- Related: [[atomic-name|Atomic Name]] — bindings in a context have atomic names
+- Built from: [[jndi-binding|JNDI Binding]] -- contexts contain bindings
+- Built from: [[jndi-naming-concepts|JNDI Naming Concepts]] -- contexts are central to JNDI
+- Builds into: [[subcontext|Subcontext]] -- a context within a context
+- Related: [[jndi|JNDI]] -- JNDI provides the Context API
+- Related: [[atomic-name|Atomic Name]] -- bindings in a context have atomic names
 
 ## Edge Cases & Gotchas
 - **Closing contexts**: Always close contexts to free resources

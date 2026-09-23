@@ -44,6 +44,21 @@ digraph chaining {
 - Each chain should be short (ideally O(1) length)
 - Deletion is straightforward (just remove from linked list)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Separate_Chaining {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Separate Chaining" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[hashing|Hashing]], [[collision-resolution|Collision Resolution]]

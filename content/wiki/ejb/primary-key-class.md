@@ -16,7 +16,7 @@ A Primary Key Class is a custom Java class that wraps one or more primary key fi
 1. **Option 1 (Direct Field):** Use a simple type like `String` or `int` as the primary key, declared in `ejb-jar.xml` via `<primkey-field>productID</primkey-field>`
 2. **Option 2 (Wrapper Class):** Create a class like `ProductPK.java` that holds the key fields as instance variables
 3. The wrapper class must implement `Serializable` and override `equals()` and `hashCode()` (so the container can compare keys)
-4. If the database schema changes to a composite key, you just add fields to the wrapper class — bean code doesn't break
+4. If the database schema changes to a composite key, you just add fields to the wrapper class -- bean code doesn't break
 5. The container uses the primary key to identify entity bean instances in the pool
 
 ## Visual Explanation
@@ -51,12 +51,27 @@ digraph G {
 - Used by `ejbCreate()`, `ejbPostCreate()`, and all finder methods
 - Can be shared across beans that have the same key structure
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Primary_Key_Class {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Primary Key Class" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[entity-bean|Entity Bean]] — Primary key classes are used exclusively with entity beans
-- Builds into: [[ejbcreate|ejbCreate()]] — create method returns the primary key type
-- Builds into: [[finder-methods|Finder Methods]] — findByPrimaryKey uses the PK class
-- Related: [[getprimarykey|getPrimaryKey()]] — runtime method to retrieve the current bean's primary key
-- Contrasts with: [[direct-field-pk|Direct Field Primary Key]] — simpler but less flexible approach
+- Built from: [[entity-bean|Entity Bean]] -- Primary key classes are used exclusively with entity beans
+- Builds into: [[ejbcreate|ejbCreate()]] -- create method returns the primary key type
+- Builds into: [[finder-methods|Finder Methods]] -- findByPrimaryKey uses the PK class
+- Related: [[getprimarykey|getPrimaryKey()]] -- runtime method to retrieve the current bean's primary key
+- Contrasts with: [[direct-field-pk|Direct Field Primary Key]] -- simpler but less flexible approach
 
 ## Edge Cases & Gotchas
 - Forgetting to override `equals()` and `hashCode()` causes container to fail at finding beans by primary key

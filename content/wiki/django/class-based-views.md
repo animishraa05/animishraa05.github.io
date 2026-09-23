@@ -16,12 +16,12 @@ CBVs solve the problem of repetitive boilerplate in common view patterns (list, 
 
 ## How It Works
 
-1. **URL maps to `as_view()`** — `path('post/<int:pk>/', PostDetailView.as_view(), name='detail')`
-2. **`as_view()` returns callable** — Factory function that instantiates view class per request
-3. **`dispatch()` routes by method** — Calls `get()`, `post()`, `put()`, `delete()`, etc.
-4. **Generic views provide defaults** — `ListView` paginates `get_queryset()`; `CreateView` handles form GET/POST
-5. **Method overrides customize** — `get_queryset()`, `get_context_data()`, `form_valid()`, `get_success_url()`
-6. **Mixins inject behavior** — `LoginRequiredMixin` adds `dispatch` check; `SuccessMessageMixin` adds messages
+1. **URL maps to `as_view()`** -- `path('post/<int:pk>/', PostDetailView.as_view(), name='detail')`
+2. **`as_view()` returns callable** -- Factory function that instantiates view class per request
+3. **`dispatch()` routes by method** -- Calls `get()`, `post()`, `put()`, `delete()`, etc.
+4. **Generic views provide defaults** -- `ListView` paginates `get_queryset()`; `CreateView` handles form GET/POST
+5. **Method overrides customize** -- `get_queryset()`, `get_context_data()`, `form_valid()`, `get_success_url()`
+6. **Mixins inject behavior** -- `LoginRequiredMixin` adds `dispatch` check; `SuccessMessageMixin` adds messages
 
 ## Visual Explanation
 
@@ -94,21 +94,21 @@ graph semantic_class_based_views {
 
 ## Connections
 
-- Built from: [[url-dispatcher|URL Dispatcher]] — Targets `as_view()` callable
-- Built from: [[view-base-class|View Base Class]] — `django.views.View` foundation
-- Built from: [[mixin-classes|Mixin Classes]] — Composable behavior units
-- Builds into: [[generic-display-views|Generic Display Views]] — `ListView`, `DetailView`, `TemplateView`
-- Builds into: [[generic-editing-views|Generic Editing Views]] — `CreateView`, `UpdateView`, `DeleteView`
-- Builds into: [[method-overrides|Method Overrides]] — `get_queryset`, `get_context_data`, `form_valid`
-- Builds into: [[mixin-composition|Mixin Composition]] — Stacking `LoginRequiredMixin`, etc.
-- Contrasts with: [[function-based-views|Function-Based Views]] — Explicit vs implicit, granular vs convention
-- Related: [[template-engine|Template Rendering]] — `template_name`, `get_template_names()`
-- Related: [[forms-modelforms|Form Handling]] — `form_class`, `get_form()`, `form_valid()`
+- Built from: [[url-dispatcher|URL Dispatcher]] -- Targets `as_view()` callable
+- Built from: [[view-base-class|View Base Class]] -- `django.views.View` foundation
+- Built from: [[mixin-classes|Mixin Classes]] -- Composable behavior units
+- Builds into: [[generic-display-views|Generic Display Views]] -- `ListView`, `DetailView`, `TemplateView`
+- Builds into: [[generic-editing-views|Generic Editing Views]] -- `CreateView`, `UpdateView`, `DeleteView`
+- Builds into: [[method-overrides|Method Overrides]] -- `get_queryset`, `get_context_data`, `form_valid`
+- Builds into: [[mixin-composition|Mixin Composition]] -- Stacking `LoginRequiredMixin`, etc.
+- Contrasts with: [[function-based-views|Function-Based Views]] -- Explicit vs implicit, granular vs convention
+- Related: [[template-engine|Template Rendering]] -- `template_name`, `get_template_names()`
+- Related: [[forms-modelforms|Form Handling]] -- `form_class`, `get_form()`, `form_valid()`
 
 ## Edge Cases & Gotchas
 
 - **`get_object()` 404**: `DetailView` calls `get_object()` which raises 404; override for custom lookup
 - **`success_url` vs `get_success_url()`**: Static string vs dynamic (e.g., `reverse_lazy` or object method)
-- **MRO conflicts**: Multiple mixins overriding same method — order in class declaration matters
+- **MRO conflicts**: Multiple mixins overriding same method -- order in class declaration matters
 - **`context_object_name`**: `ListView` uses `object_list`; `DetailView` uses `object`; customize for clarity
 - **Form kwargs**: `CreateView`/`UpdateView` pass `instance` to form; `get_form_kwargs()` for extra data

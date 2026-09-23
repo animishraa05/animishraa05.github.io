@@ -12,13 +12,13 @@ How do you model business processes and workflow logic in a server-side Java app
 
 ## Core Idea
 
-A session bean is a server-side component that represents work being performed for client code. It implements business logic, rules, algorithms, and workflow. Session beans are business process objects—not persistent data objects.
+A session bean is a server-side component that represents work being performed for client code. It implements business logic, rules, algorithms, and workflow. Session beans are business process objects--not persistent data objects.
 
 ## How It Works
 
 - Client code accesses session beans through the EJB container
 - The container intercepts all calls, providing middleware services (security, transactions, concurrency)
-- Session beans are non-persistent—they exist only in memory during a client session
+- Session beans are non-persistent--they exist only in memory during a client session
 - When the client disconnects, the session bean can be destroyed
 - Session beans do not survive server or machine crashes
 
@@ -30,6 +30,35 @@ A session bean is a server-side component that represents work being performed f
 - Can perform database operations but are not themselves persistent
 - Two subtypes: stateful and stateless
 
+
+
+## Visual Explanation
+
+```dot
+digraph Session_Bean {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Session Bean\nInput"]
+  B [label="Session Bean\nCore Mechanism"]
+  C [label="Session Bean\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Session_Bean {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Session Bean" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[ejb-container|EJB Container]], [[session-bean-lifetime|Session Bean Lifetime]], [[session-bean-subtypes|Session Bean Subtypes]]
@@ -41,4 +70,4 @@ A session bean is a server-side component that represents work being performed f
 
 - Session beans cannot survive application server crashes
 - If client times out, container may destroy the session bean
-- Do not rely on ejbRemove() for critical cleanup—it may never be called if container crashes
+- Do not rely on ejbRemove() for critical cleanup--it may never be called if container crashes

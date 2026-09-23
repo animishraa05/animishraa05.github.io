@@ -43,6 +43,21 @@ digraph linear_probe {
 - Probe sequence is: h(k), h(k)+1, h(k)+2, ...
 - Deletion tricky: need tombstone markers
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Linear_Probing {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Linear Probing" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[hashing|Hashing]], [[collision-resolution|Collision Resolution]]

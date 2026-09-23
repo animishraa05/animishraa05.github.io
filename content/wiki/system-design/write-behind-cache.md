@@ -52,12 +52,27 @@ digraph WriteBehind {
 - Ideal for write-heavy workloads that can tolerate temporary inconsistency
 - Can batch and coalesce writes for better DB efficiency
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Write_Behind_Cache {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Write Behind Cache" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- Contrasts with: [[cache-aside|Cache-Aside]] — app initiates vs cache initiates DB write
-- Contrasts with: [[write-through-cache|Write-Through Cache]] — async vs sync DB write
-- Related: [[message-queues|Message Queues]] — similar async processing and buffering pattern
-- Related: [[eventual-consistency|Eventual Consistency]] — write-behind creates a window of temporary inconsistency
+- Contrasts with: [[cache-aside|Cache-Aside]] -- app initiates vs cache initiates DB write
+- Contrasts with: [[write-through-cache|Write-Through Cache]] -- async vs sync DB write
+- Related: [[message-queues|Message Queues]] -- similar async processing and buffering pattern
+- Related: [[eventual-consistency|Eventual Consistency]] -- write-behind creates a window of temporary inconsistency
 
 ## Edge Cases & Gotchas
 

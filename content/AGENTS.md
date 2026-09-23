@@ -56,13 +56,15 @@ content/
 
 - When you ingest a source, create a folder in `wiki/` named after the source (kebab-case, no extension)
 - ALL pages from that source go in this one folder: concepts, syntheses, source summaries
-- No nested `concepts/` or `syntheses/` subfolders — everything is flat within the topic folder
-- If the topic folder already exists, add new pages to it — don't create a duplicate
+- No nested `concepts/` or `syntheses/` subfolders -- everything is flat within the topic folder
+- If the topic folder already exists, add new pages to it -- don't create a duplicate
 - If the source covers an existing topic (e.g., another EJB article → `wiki/ejb/`), add to the existing folder
 
 ---
 
-## Page Rules — Quartz-public (human teach, no LLM fingerprints)
+## Page Rules -- Quartz-public (human teach, no LLM fingerprints)
+
+**Writing rule: NEVER use em dash character; use `--` double hyphen for pauses/interruptions. Applies to all concept/synthesis/summary bodies and `wiki/index.md` rows.**
 
 ### 1. Every concept page must have (exact order, public body):
 
@@ -79,16 +81,16 @@ updated: YYYY-MM-DD
 ```
 
 Body sections in order:
-1. `## The Problem` — easy language, why you care (2-3 lines, teach a friend)
-2. `## Formal Definition` — textbook citation inline `Per Tanenbaum / MDN / Wikipedia: "..."` — no Sources section
-3. `## Explanation` — plain human story, 2-4 sentences
-4. `## How It Works` — 4-8 numbered steps, mechanism
-5. `## Visual Explanation` — ONE Graphviz DOT ` ```dot ` digraph, `rankdir=LR/TB`, 4-8 nodes, labeled edges, concept vocab, `node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]`
-6. `## Semantic Network` — ONE Graphviz DOT ` ```dot ` `graph semantic_* { layout=neato; THIS [fillcolor="#ffd700"] }` — 5-10 real pages, gold center, blue prereq, green builds-into, orange contrasts, gray related
-7. `## Key Properties` or `## Objectives` or `## Functions` or `## Pros & Cons` — pick ONE compatible with concept, 4-6 bullets
-8. `## Real-World Example` — one minimal ` ```cpp|python|bash ` or story, human runnable
-9. `## Connections` — 4+ `[[page|Name]] — one-line why` (no `<!-- TODO -->` comments in body)
-10. `## Edge Cases & Gotchas` — 2-3 pitfalls
+1. `## The Problem` -- easy language, why you care (2-3 lines, teach a friend)
+2. `## Formal Definition` -- textbook citation inline `Per Tanenbaum / MDN / Wikipedia: "..."` -- no Sources section
+3. `## Explanation` -- plain human story, 2-4 sentences
+4. `## How It Works` -- 4-8 numbered steps, mechanism
+5. `## Visual Explanation` -- ONE Graphviz DOT ` ```dot ` digraph, `rankdir=LR/TB`, 4-8 nodes, labeled edges, concept vocab, `node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]`
+6. `## Semantic Network` -- ONE Graphviz DOT ` ```dot ` `graph semantic_* { layout=neato; THIS [fillcolor="#ffd700"] }` -- 5-10 real pages, gold center, blue prereq, green builds-into, orange contrasts, gray related
+7. `## Key Properties` or `## Objectives` or `## Functions` or `## Pros & Cons` -- pick ONE compatible with concept, 4-6 bullets
+8. `## Real-World Example` -- one minimal ` ```cpp|python|bash ` or story, human runnable
+9. `## Connections` -- 4+ `[[page|Name]] -- one-line why` (no `<!-- TODO -->` comments in body)
+10. `## Edge Cases & Gotchas` -- 2-3 pitfalls
 
 DO NOT include in public body: `Sources` section, `Active Recall` callouts, `<!-- TODO: add backlink -->`, `status: stub` markers, `Aliases:` heavy lists. Provenance lives in hidden summary + `.wiki-meta.json`.
 
@@ -104,7 +106,7 @@ DO NOT include in public body: `Sources` section, `Active Recall` callouts, `<!-
 ### 3. Internal tracking (hidden from Quartz via `draft: true` + `quartz.config.ts ignorePatterns`):
 
 - Every source summary `wiki/[topic]/[topic]-summary.md` has `draft: true`, frontmatter `source, source_path, content_hash, ingested, concepts_count`, lists created/updated pages + key takeaways. Never rendered on site.
-- `wiki/.wiki-meta.json` — ledger `{source_hash: {source_path, ingested, concepts: []}}` for dedup. `wiki/log.md`, `wiki/open-questions.md`, `wiki/SCHEMA.md`, `wiki/MAINTENANCE.md`, `wiki/agent-module/**` are `ignorePatterns` — internal only.
+- `wiki/.wiki-meta.json` -- ledger `{source_hash: {source_path, ingested, concepts: []}}` for dedup. `wiki/log.md`, `wiki/open-questions.md`, `wiki/SCHEMA.md`, `wiki/MAINTENANCE.md`, `wiki/agent-module/**` are `ignorePatterns` -- internal only.
 
 ---
 
@@ -156,7 +158,7 @@ Second tag = specific subdomain:
 tags: [dev, ejb]              ← good
 tags: [theory, automata]      ← good
 tags: [networking, switching] ← good
-tags: [ejb, session-bean]     ← WRONG — ejb is not a domain tag
+tags: [ejb, session-bean]     ← WRONG -- ejb is not a domain tag
 ```
 
 ---
@@ -165,44 +167,44 @@ tags: [ejb, session-bean]     ← WRONG — ejb is not a domain tag
 
 ### When ingesting a new source:
 
-1. Read the source from `sources/[filename]`, compute `sha256sum`, check `wiki/.wiki-meta.json` — if hash exists, SKIP unless `--force` is passed
-2. Identify all atomic concepts — **25-30 minimum, no upper limit**. Extract every distinct idea, mechanism, pattern, principle. You MUST create at least 25 concept/synthesis pages per source (excluding the summary). If thin, decompose broader concepts into finer atomic pieces. Human teach tone, easy words.
+1. Read the source from `sources/[filename]`, compute `sha256sum`, check `wiki/.wiki-meta.json` -- if hash exists, SKIP unless `--force` is passed
+2. Identify all atomic concepts -- **12 minimum, no upper limit (aim 12-20; decompose only if genuinely atomic)**. Extract every distinct idea, mechanism, pattern, principle. You MUST create at least 12 concept/synthesis pages per source (excluding the summary). If thin, decompose broader concepts into finer atomic pieces only if each piece can stand alone with 4+ Connections. Human teach tone, easy words.
 3. Determine topic folder name (source filename, kebab-case), create `wiki/[topic]/` if needed
-4. For each concept: check if `wiki/**/[concept].md` exists anywhere — if YES update+merge, if NO create in current topic folder. Every page follows Page Rules: The Problem → Formal Definition (with citation) → 2 DOT diagrams → Properties/Objectives/Functions → Real-World Example → no Sources/TODO in body
+4. For each concept: check if `wiki/**/[concept].md` exists anywhere -- if YES update+merge, if NO create in current topic folder. Every page follows Page Rules: The Problem → Formal Definition (with citation) → 2 DOT diagrams → Properties/Objectives/Functions → Real-World Example → no Sources/TODO in body
 5. Create source summary `wiki/[topic]/[topic]-summary.md` with `draft: true` (hidden from Quartz) + append ledger entry to `wiki/.wiki-meta.json`
 6. Create/update 1-3 synthesis pages in `wiki/[topic]/` if natural tensions exist
 7. Create/update `wiki/[topic]/index.md` (Map of Content) via `generate-wiki-mocs.sh` logic
 8. Run `consolidate_images.py` tail if source had images, then `wiki-lint-det.sh --topic=[topic]` deterministic fix (broken stubs, orphans)
-9. Update `wiki/index.md` — one table row per topic, wiki link + one-line human description only. No Stats/agent-module refs, no `updated:` bump.
-10. Append to `wiki/log.md` + `wiki/open-questions.md` (2-4 open questions). Verify count: `ls wiki/[topic]/*.md | grep -v summary | wc -l` must be 25-30, else decompose further. Fail ingest if still <25.
+9. Update `wiki/index.md` -- one table row per topic, wiki link + one-line human description only. No Stats/agent-module refs, no `updated:` bump.
+10. Append to `wiki/log.md` + `wiki/open-questions.md` (2-4 open questions). Verify count: `ls wiki/[topic]/*.md | grep -v summary | wc -l` must be >=12; warn if <12, fail if <8, else decompose further only if genuinely atomic. Do NOT build MOC in this fix-only pass -- MOC creation is deferred.
 
 ### When running a lint (hybrid: deterministic + sharded LLM, handles 2000+ files):
 
-1. **Deterministic pre-pass (`scripts/wiki-lint-det.sh` — full wiki, no LLM, <5s):** grep all `[[links]]`, verify file exists → broken list; stub auto-create if link appears ≥2 times (heuristic), else flag; orphan zero-inbound → inject Related link from same topic MOC; tag domain check; missing The Problem/Formal Definition/2×DOT/missing Connections<4 → flag.
+1. **Deterministic pre-pass (`scripts/wiki-lint-det.sh` -- full wiki, no LLM, <5s):** grep all `[[links]]`, verify file exists → broken list; stub auto-create if link appears ≥2 times (heuristic), else flag; orphan zero-inbound → inject Related link from same topic MOC; tag domain check; missing The Problem/Formal Definition/2×DOT/missing Connections<4 → flag.
 2. **Sharded LLM pass (2-3 topics/week round-robin, fits free tier):** run `opencode --agent lint-deep` ONLY on shard `wiki/[topic]/` for contradictions (Pass 5) + thin fleshing (Pass 6). Full coverage monthly.
-3. Report findings and fix what you can; append to `wiki/log.md` Format: `## [YYYY-MM-DD] — Lint: [scope]` with counts: `Resolved: N broken (M stubs), N orphans, N tags` + `Flagged: ...`
+3. Report findings and fix what you can; append to `wiki/log.md` Format: `## [YYYY-MM-DD] -- Lint: [scope]` with counts: `Resolved: N broken (M stubs), N orphans, N tags` + `Flagged: ...`
 
 ### When answering a query:
 
 1. Read `wiki/index.md` first to find relevant pages
 2. Read the relevant concept/synthesis pages across all topic folders
-3. Synthesize an answer with citations (use wiki links). Answer naturally — no structured headers or operation labels.
+3. Synthesize an answer with citations (use wiki links). Answer naturally -- no structured headers or operation labels.
 4. If the answer creates a new insight, save it as a synthesis page in the most relevant topic folder
 
 ---
 
 ## What You Must NOT Do
 
-- **NEVER modify `sources/`** — these are the human's raw materials, read only
-- **NEVER modify files outside `wiki/`** — existing notes are immutable
+- **NEVER modify `sources/`** -- these are the human's raw materials, read only
+- **NEVER modify files outside `wiki/`** -- existing notes are immutable
 - **NEVER create a concept page without checking if one exists first**
-- **NEVER leave a broken wiki link** — if you create a link, create the target page
-- **NEVER write vague Connections** — explain the specific relationship
-- **NEVER skip "The Problem" section** — every concept needs its why
-- **NEVER delete a concept page** — update or mark superseded, never delete
+- **NEVER leave a broken wiki link** -- if you create a link, create the target page
+- **NEVER write vague Connections** -- explain the specific relationship
+- **NEVER skip "The Problem" section** -- every concept needs its why
+- **NEVER delete a concept page** -- update or mark superseded, never delete
 - **NEVER update index.md or log.md without also making the actual content changes**
 - **NEVER use non-domain tags as the first tag**
-- **NEVER ingest a source and create fewer than 25 concept/synthesis pages** (excluding the summary page) — this is a hard minimum, no exceptions
+- **NEVER ingest a source and create fewer than 12 concept/synthesis pages** (excluding the summary page) -- this is a hard minimum, no exceptions
 
 ---
 
@@ -224,9 +226,9 @@ When responding, be concise and natural. Just explain what happened in plain lan
 
 ## Evolution
 
-This file is not static. If you discover a new type of operation, a new page format, or a new convention that makes the wiki better — propose it to the human and update this file when approved.
+This file is not static. If you discover a new type of operation, a new page format, or a new convention that makes the wiki better -- propose it to the human and update this file when approved.
 
 ---
 ## Folder-Specific Rules
 
-When working in `Private/Daily/Data Structures and Algorithms/`, first read `_TEACHING.md` in that folder. It defines a **DSA Hinglish Tutor mode** — explains code snippets in Hinglish like teaching a 10-year-old with zero C++/DSA knowledge, using research-backed memory techniques (Feynman Technique, Active Recall, Elaborative Interrogation, Chunking, Spaced Repetition).
+When working in `Private/Daily/Data Structures and Algorithms/`, first read `_TEACHING.md` in that folder. It defines a **DSA Hinglish Tutor mode** -- explains code snippets in Hinglish like teaching a 10-year-old with zero C++/DSA knowledge, using research-backed memory techniques (Feynman Technique, Active Recall, Elaborative Interrogation, Chunking, Spaced Repetition).

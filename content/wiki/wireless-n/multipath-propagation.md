@@ -16,24 +16,53 @@ Multipath propagation is the phenomenon where a transmitted radio signal arrives
 1. The transmitter sends a single signal pulse
 2. The signal takes multiple paths: direct line-of-sight, reflection off buildings, diffraction over obstacles, scattering from rough surfaces
 3. Each path has a different physical length, causing different travel times
-4. The receiver captures all copies simultaneously — they add up (superpose)
-5. If path delays are significant relative to the bit period, adjacent bits overlap — this is ISI
+4. The receiver captures all copies simultaneously -- they add up (superpose)
+5. If path delays are significant relative to the bit period, adjacent bits overlap -- this is ISI
 6. The composite signal can be stronger (constructive) or weaker (destructive) depending on phase alignment
 
 The delay spread (difference between earliest and latest arriving paths) determines the severity of ISI.
 
 ## Key Properties
 - Causes Inter-Symbol Interference (ISI) when delay spread exceeds bit duration
-- Results in frequency-selective fading — some frequencies are boosted, others are attenuated
+- Results in frequency-selective fading -- some frequencies are boosted, others are attenuated
 - More severe in urban environments with many reflecting surfaces
 - Can be exploited using diversity techniques (multiple receive antennas)
 - Doppler spread from motion causes time-varying multipath effects
 
+
+
+## Visual Explanation
+
+```dot
+digraph Multipath_Propagation {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Multipath Propagatio\nInput"]
+  B [label="Multipath Propagatio\nCore Mechanism"]
+  C [label="Multipath Propagatio\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Multipath_Propagation {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Multipath Propagatio" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[channel-fading|Channel Fading]] — the constructive/destructive combination of multipath signals causes fading
-- Related: [[modulation|Modulation]] — modulation scheme choice affects how vulnerable the signal is to multipath-induced ISI
-- Related: [[diversity-antenna|Diversity Antenna]] — using multiple antennas reduces multipath problems
-- Related: [[direct-sequence-spread-spectrum|DSSS]] — spreading code helps filter out multipath noise
+- Built from: [[channel-fading|Channel Fading]] -- the constructive/destructive combination of multipath signals causes fading
+- Related: [[modulation|Modulation]] -- modulation scheme choice affects how vulnerable the signal is to multipath-induced ISI
+- Related: [[diversity-antenna|Diversity Antenna]] -- using multiple antennas reduces multipath problems
+- Related: [[direct-sequence-spread-spectrum|DSSS]] -- spreading code helps filter out multipath noise
 
 ## Edge Cases & Gotchas
 - In dense urban areas, multipath can create 10+ distinct signal paths

@@ -13,7 +13,7 @@ CLIP's semantic encoding can't distinguish between "Lakme" and "LAKME" or track 
 
 ## Core Idea
 
-T5 (Text-to-Text Transfer Transformer) is a pure language model trained on massive text corpora — books, websites, code. Unlike CLIP which learned from image-text pairs, T5 learned from raw text and therefore maintains character-level information. "Lakme" and "LAKME" are different sequences that T5 encodes differently.
+T5 (Text-to-Text Transfer Transformer) is a pure language model trained on massive text corpora -- books, websites, code. Unlike CLIP which learned from image-text pairs, T5 learned from raw text and therefore maintains character-level information. "Lakme" and "LAKME" are different sequences that T5 encodes differently.
 
 ## How It Works
 
@@ -23,7 +23,7 @@ T5 tokenizes text at a sub-word level. "Made by Lakme" becomes a sequence of tok
 
 ### Context Length
 
-T5-XXL supports 4096 tokens — far more than CLIP's 77. This enables handling long, complex marketing briefs with many details.
+T5-XXL supports 4096 tokens -- far more than CLIP's 77. This enables handling long, complex marketing briefs with many details.
 
 ### Dual Encoding in Flux
 
@@ -40,6 +40,35 @@ Flux uses BOTH CLIP and T5 simultaneously:
 - Larger model (T5-XXL ~4B params) = slower than CLIP
 - Used in Flux for text encoding
 
+
+
+## Visual Explanation
+
+```dot
+digraph t5_encoder {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="T5 Encoder\nInput"]
+  B [label="T5 Encoder\nCore Mechanism"]
+  C [label="T5 Encoder\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_t5_encoder {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="T5 Encoder" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[transformers]]
@@ -50,5 +79,5 @@ Flux uses BOTH CLIP and T5 simultaneously:
 ## Edge Cases & Gotchas
 
 - Slower than CLIP encoding
-- Doesn't "understand" images — only text
+- Doesn't "understand" images -- only text
 - Need to pair with CLIP for best results

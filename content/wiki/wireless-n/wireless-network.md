@@ -23,21 +23,50 @@ A wireless network is a communication network where devices exchange data using 
 Wireless networks operate in regulated frequency bands (e.g., 800 MHz–900 MHz for GSM, 2.4 GHz for Wi-Fi/Bluetooth).
 
 ## Key Properties
-- Shared medium: Anyone within range can potentially receive the signal — security is a concern
+- Shared medium: Anyone within range can potentially receive the signal -- security is a concern
 - Broadcast nature: A single transmission can reach multiple receivers
 - No dedicated path: Devices compete for the same radio spectrum
 - Mobility support: Users can move between cells while maintaining connectivity
 - Signal degradation: Strength drops with distance (inverse square law) and is affected by obstacles
 - Limited bandwidth: Spectrum is regulated and shared among many users and services
 
+
+
+## Visual Explanation
+
+```dot
+digraph Wireless_Network {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Wireless Network\nInput"]
+  B [label="Wireless Network\nCore Mechanism"]
+  C [label="Wireless Network\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Wireless_Network {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Wireless Network" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[modulation|Modulation]] — without modulating data onto a carrier, wireless transmission is impossible
-- Built from: [[multiplexing|Multiplexing]] — without multiplexing, multiple users cannot share the spectrum
-- Built from: [[multipath-propagation|Multipath Propagation]] — signals rarely travel in a straight line through the air
-- Related: [[cellular-mobile-system|Cellular Mobile System]] — the architecture that makes wide-area wireless possible
+- Built from: [[modulation|Modulation]] -- without modulating data onto a carrier, wireless transmission is impossible
+- Built from: [[multiplexing|Multiplexing]] -- without multiplexing, multiple users cannot share the spectrum
+- Built from: [[multipath-propagation|Multipath Propagation]] -- signals rarely travel in a straight line through the air
+- Related: [[cellular-mobile-system|Cellular Mobile System]] -- the architecture that makes wide-area wireless possible
 
 ## Edge Cases & Gotchas
 - Signal can be blocked by buildings, walls, and even people (shadowing)
 - Rain and atmospheric conditions can absorb radio waves (especially at higher frequencies)
 - The same frequency cannot be reused in adjacent cells without causing co-channel interference
-- Mobile devices have limited battery power — transmission must be energy-efficient
+- Mobile devices have limited battery power -- transmission must be energy-efficient

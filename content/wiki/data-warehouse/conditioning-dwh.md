@@ -99,11 +99,11 @@ graph semantic_conditioning {
 
 ## Connections
 
-- **Built from:** [[etl-pipeline-dwh|ETL Pipeline (DWH)]] — conditioning is part of the Transform phase
-- **Built from:** [[integrated-dwh|Integrated DWH]] — type consistency is required for integration
-- **Related:** [[data-scrubbing|Data Scrubbing]] — conditioning complements scrubbing (types vs. values)
-- **Builds into:** [[loading-dwh|Loading (DWH)]] — conditioned data is ready for loading
-- **Related:** [[metadata-in-dwh|Metadata in DWH]] — warehouse schema (target types) is defined in metadata
+- **Built from:** [[etl-pipeline-dwh|ETL Pipeline (DWH)]] -- conditioning is part of the Transform phase
+- **Built from:** [[integrated-dwh|Integrated DWH]] -- type consistency is required for integration
+- **Related:** [[data-scrubbing|Data Scrubbing]] -- conditioning complements scrubbing (types vs. values)
+- **Builds into:** [[loading-dwh|Loading (DWH)]] -- conditioned data is ready for loading
+- **Related:** [[metadata-in-dwh|Metadata in DWH]] -- warehouse schema (target types) is defined in metadata
 
 ## Edge Cases & Gotchas
 

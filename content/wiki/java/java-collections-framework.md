@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Every application manages groups of objects — storing them, searching through them, sorting them, iterating over them. Without a standardized collection framework, every developer would reinvent data structures, leading to incompatible APIs, inconsistent behavior, and wasted effort.
+Every application manages groups of objects -- storing them, searching through them, sorting them, iterating over them. Without a standardized collection framework, every developer would reinvent data structures, leading to incompatible APIs, inconsistent behavior, and wasted effort.
 
 ## Core Idea
 
@@ -89,14 +89,14 @@ graph semantic_collections {
 
 ## Connections
 
-- **Built from:** [[java-wrapper-classes|Java Wrapper Classes]] — collections store objects, wrappers bridge primitives
-- **Built from:** [[java-interfaces|Java Interfaces]] — the framework is interface-driven
-- **Builds into:** [[java-lambda-and-streams|Streams & Lambdas]] — streams operate on collections
-- **Builds into:** [[java-iterator|Iterator]] — iterator is the fundamental traversal mechanism
+- **Built from:** [[java-wrapper-classes|Java Wrapper Classes]] -- collections store objects, wrappers bridge primitives
+- **Built from:** [[java-interfaces|Java Interfaces]] -- the framework is interface-driven
+- **Builds into:** [[java-lambda-and-streams|Streams & Lambdas]] -- streams operate on collections
+- **Builds into:** [[java-iterator|Iterator]] -- iterator is the fundamental traversal mechanism
 
 ## Edge Cases & Gotchas
 
 - **ConcurrentModificationException**: Modifying a collection while iterating (except via iterator.remove())
-- **No primitive collections**: Each element requires a wrapper object — memory overhead
+- **No primitive collections**: Each element requires a wrapper object -- memory overhead
 - **Hash collision performance**: HashMap degrades to O(n) with bad hash codes or hash collisions
 - **Null handling**: Some implementations (TreeSet, TreeMap) do not allow null elements

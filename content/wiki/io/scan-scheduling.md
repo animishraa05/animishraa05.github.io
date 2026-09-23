@@ -44,6 +44,21 @@ digraph scan {
 - Can waste time going to disk end (even if no requests there)
 - Like an elevator serving floors
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_SCAN_Scheduling {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Scan Scheduling" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[disk-scheduling|Disk Scheduling]], [[sstf|SSTF]]

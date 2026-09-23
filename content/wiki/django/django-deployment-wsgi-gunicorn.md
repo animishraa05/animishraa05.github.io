@@ -52,11 +52,40 @@ gunicorn myproject.wsgi:application --bind 0.0.0.0:8000 --workers 3
 - Separation of concerns: Nginx handles network security/assets, Gunicorn handles process management, Django handles business logic.
 - Horizontally scalable: Gunicorn can spin up multiple worker processes to handle concurrent requests.
 
+
+
+## Visual Explanation
+
+```dot
+digraph Django_Deployment_with_WSGI {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Django Deployment Wi\nInput"]
+  B [label="Django Deployment Wi\nCore Mechanism"]
+  C [label="Django Deployment Wi\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Django_Deployment_with_WSGI {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Django Deployment Wi" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[django-web-framework|Django Web Framework]] — production architectural pattern.
-- **Related:** [[django-project|Django Project]] — contains the `wsgi.py` file.
-- **Related:** [[django-static-files|Django Static Files]] — Nginx takes over static file serving.
+- **Built from:** [[django-web-framework|Django Web Framework]] -- production architectural pattern.
+- **Related:** [[django-project|Django Project]] -- contains the `wsgi.py` file.
+- **Related:** [[django-static-files|Django Static Files]] -- Nginx takes over static file serving.
 
 ## Edge Cases & Gotchas
 

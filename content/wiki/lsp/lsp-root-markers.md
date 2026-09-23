@@ -8,7 +8,7 @@ updated: 2026-04-12
 
 ## The Problem
 
-LSP servers need to know the project root to provide accurate analysis—finding dependencies, resolving imports, understanding project structure. Without knowing the root, the server might behave incorrectly or provide incomplete results.
+LSP servers need to know the project root to provide accurate analysis--finding dependencies, resolving imports, understanding project structure. Without knowing the root, the server might behave incorrectly or provide incomplete results.
 
 ## Core Idea
 
@@ -30,11 +30,40 @@ Root Markers are files or directories (like `.git`, `package.json`, `pyproject.t
 - Can be overridden by explicit `root_dir` function
 - Used by `vim.lsp.enable()` for auto-activation decisions
 
+
+
+## Visual Explanation
+
+```dot
+digraph true {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="True\nInput"]
+  B [label="True\nCore Mechanism"]
+  C [label="True\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_true {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="True" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[lsp-configuration|LSP Configuration]] — part of config
-- **Builds into:** [[lsp-client|LSP Client]] — root_dir becomes client property
-- **Related:** [[vim-lsp|vim.lsp]] — used by enable() for workspace detection
+- **Built from:** [[lsp-configuration|LSP Configuration]] -- part of config
+- **Builds into:** [[lsp-client|LSP Client]] -- root_dir becomes client property
+- **Related:** [[vim-lsp|vim.lsp]] -- used by enable() for workspace detection
 
 ## Edge Cases & Gotchas
 

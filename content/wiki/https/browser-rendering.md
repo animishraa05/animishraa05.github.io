@@ -54,15 +54,30 @@ digraph G {
 - Render-blocking: CSS blocks rendering (no paint without styles)
 - JavaScript can block HTML parsing (unless `async`/`defer`)
 - Layers enable GPU-accelerated compositing
-- Reflow (layout recalculation) is expensive—avoid in loops
+- Reflow (layout recalculation) is expensive--avoid in loops
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Browser_Rendering {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Browser Rendering" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[http-response|HTTP Response]] — HTML response triggers rendering
-- **Builds into:** [[dom-tree|DOM Tree]] — first step of rendering
-- **Related:** [[css-parsing|CSS Parsing]] — builds CSSOM
-- **Related:** [[gpu-rendering|GPU Rendering]] — accelerates painting/compositing
-- **Related:** [[layout|Layout]] — calculates element positions
+- **Built from:** [[http-response|HTTP Response]] -- HTML response triggers rendering
+- **Builds into:** [[dom-tree|DOM Tree]] -- first step of rendering
+- **Related:** [[css-parsing|CSS Parsing]] -- builds CSSOM
+- **Related:** [[gpu-rendering|GPU Rendering]] -- accelerates painting/compositing
+- **Related:** [[layout|Layout]] -- calculates element positions
 
 ## Edge Cases & Gotchas
 

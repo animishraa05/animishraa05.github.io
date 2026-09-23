@@ -16,7 +16,7 @@ Test-Driven Development (TDD) is a software development practice where tests are
 
 ## How It Works
 
-1. **Red**: Write a test for the NEXT piece of functionality. Run it — it should fail (red) because the code doesn't exist yet
+1. **Red**: Write a test for the NEXT piece of functionality. Run it -- it should fail (red) because the code doesn't exist yet
 2. **Green**: Write the SIMPLEST possible implementation code to make the test pass. Don't optimize, don't over-engineer
 3. **Refactor**: With tests passing (green), improve the code: remove duplication, extract methods, rename variables. Tests ensure refactoring doesn't break anything
 4. **Repeat**: Add the next test, see it fail, implement, refactor. Each cycle is 30-60 seconds
@@ -46,23 +46,38 @@ digraph tdd_cycle {
 
 - **Test-first**: Tests are written before implementation, not after
 - **Small cycles**: Red-Green-Refactor in 30-60 second iterations
-- **Minimal implementation**: Write just enough code to pass the test — no more
+- **Minimal implementation**: Write just enough code to pass the test -- no more
 - **Continuous refactoring**: Improve code quality with the safety net of passing tests
 - **Design driver**: TDD naturally drives decoupled, testable designs (dependency injection, interfaces)
 - **Mockito integration**: `@Mock` for dependencies, `@InjectMocks` for the system under test
 - **Test coverage**: Every line of production code exists because a test required it
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Test_Driven_Development {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Test Driven Developm" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[junit-testing|JUnit Testing]] — JUnit is the testing framework used in TDD
-- **Built from:** [[junit-annotations-lifecycle|JUnit Annotations and Lifecycle]] — Lifecycle hooks structure TDD test fixtures
-- **Related:** [[junit-parameterized-tests|JUnit Parameterized Tests]] — Parameterized tests express TDD edge case coverage
-- **Related:** [[java-methods|Java Methods]] — TDD drives clean method design with single responsibilities
+- **Built from:** [[junit-testing|JUnit Testing]] -- JUnit is the testing framework used in TDD
+- **Built from:** [[junit-annotations-lifecycle|JUnit Annotations and Lifecycle]] -- Lifecycle hooks structure TDD test fixtures
+- **Related:** [[junit-parameterized-tests|JUnit Parameterized Tests]] -- Parameterized tests express TDD edge case coverage
+- **Related:** [[java-methods|Java Methods]] -- TDD drives clean method design with single responsibilities
 
 ## Edge Cases & Gotchas
 
-- **TDD is a discipline, not a tool**: It takes practice to write tests first consistently — especially when under pressure
+- **TDD is a discipline, not a tool**: It takes practice to write tests first consistently -- especially when under pressure
 - **Mocking everything**: Over-mocking leads to brittle tests that break when implementation details change
-- **Testing private methods**: Don't test private methods directly — test the public API that uses them
+- **Testing private methods**: Don't test private methods directly -- test the public API that uses them
 - **Integration vs unit**: TDD works best at the unit level; integration tests follow different patterns
 - **Red phase must fail**: If the test passes before implementation, it tests the wrong thing or duplicates an existing test

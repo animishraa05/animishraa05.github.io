@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Database access is expensive — each query requires network round trips, SQL parsing, and disk I/O. Applications often read the same data multiple times within a short period. Without caching, every read hits the database, wasting resources and increasing latency.
+Database access is expensive -- each query requires network round trips, SQL parsing, and disk I/O. Applications often read the same data multiple times within a short period. Without caching, every read hits the database, wasting resources and increasing latency.
 
 ## Core Idea
 
@@ -54,17 +54,32 @@ digraph hibernate_cache {
 - **Cache regions**: Named regions allow fine-grained TTL and eviction policies per entity or query
 - **Concurrency**: Four strategies (READ_ONLY, READ_WRITE, NONSTRICT_READ_WRITE, TRANSACTIONAL) matching data mutation patterns
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Hibernate_Caching {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Hibernate Caching" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[hibernate-orm-framework|Hibernate ORM Framework]] — Caching is a built-in Hibernate feature
-- **Related:** [[spring-orm|Spring ORM]] — Spring manages Hibernate sessions and transaction boundaries around caching
-- **Contrasts with:** [[instance-pooling|Instance Pooling]] — Pooling caches bean instances; Hibernate caching caches database data
-- **Related:** [[passivation|Passivation]] — Both are memory management strategies (passivation serializes, caching keeps in memory)
-- **Builds into:** [[spring-data-jpa|Spring Data JPA]] — Spring Data JPA inherits Hibernate's caching when using Hibernate as JPA provider
+- **Built from:** [[hibernate-orm-framework|Hibernate ORM Framework]] -- Caching is a built-in Hibernate feature
+- **Related:** [[spring-orm|Spring ORM]] -- Spring manages Hibernate sessions and transaction boundaries around caching
+- **Contrasts with:** [[instance-pooling|Instance Pooling]] -- Pooling caches bean instances; Hibernate caching caches database data
+- **Related:** [[passivation|Passivation]] -- Both are memory management strategies (passivation serializes, caching keeps in memory)
+- **Builds into:** [[spring-data-jpa|Spring Data JPA]] -- Spring Data JPA inherits Hibernate's caching when using Hibernate as JPA provider
 
 ## Edge Cases & Gotchas
 
-- **L1 cache scope**: L1 cache only lives as long as the Session — in a stateless (stateless session) scenario, there is no L1 cache benefit
+- **L1 cache scope**: L1 cache only lives as long as the Session -- in a stateless (stateless session) scenario, there is no L1 cache benefit
 - **L2 cache invalidation**: Stale data occurs if another process modifies the database directly; use cache region timeouts
 - **Query cache invalidation**: Any insert/update/delete on a cached query's table invalidates the entire query cache region
 - **Cluster consistency**: Distributed L2 caches (Redis) need careful serialization and invalidation strategies

@@ -60,15 +60,30 @@ digraph dns_resolution {
 - Supports weighted routing, latency-based routing, and geo-routing via managed DNS providers
 - Managed DNS services: Route53, CloudFlare DNS, Google Cloud DNS
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_DNS_in_System_Design {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Dns In System Design" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Related:** [[cdn-push|Push CDN]] — DNS routes users to the nearest CDN edge server
-- **Related:** [[cdn-pull|Pull CDN]] — DNS resolution directs users to the appropriate CDN endpoint
-- **Related:** [[layer4-load-balancing|Layer 4 Load Balancing]] — DNS can distribute traffic across multiple server IPs
-- **Related:** [[active-active-failover|Active-Active Failover]] — DNS must be configured with all active server IPs
+- **Related:** [[cdn-push|Push CDN]] -- DNS routes users to the nearest CDN edge server
+- **Related:** [[cdn-pull|Pull CDN]] -- DNS resolution directs users to the appropriate CDN endpoint
+- **Related:** [[layer4-load-balancing|Layer 4 Load Balancing]] -- DNS can distribute traffic across multiple server IPs
+- **Related:** [[active-active-failover|Active-Active Failover]] -- DNS must be configured with all active server IPs
 
 ## Edge Cases & Gotchas
 
 - DNS propagation delays mean changes to records take time (up to 48 hours for TTL expiration everywhere)
 - DNS is vulnerable to cache poisoning attacks if DNSSEC is not implemented
-- CNAME records cannot coexist with other record types at the same DNS node — use ALIAS or ANAME records instead
+- CNAME records cannot coexist with other record types at the same DNS node -- use ALIAS or ANAME records instead

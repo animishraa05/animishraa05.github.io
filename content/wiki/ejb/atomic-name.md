@@ -10,7 +10,7 @@ updated: 2026-04-29
 In a hierarchical naming system like JNDI, we need a way to refer to individual name components. How do we represent the smallest, indivisible unit of a name that cannot be further subdivided?
 
 ## Core Idea
-An atomic name is a simple, basic, indivisible name in JNDI. Examples include `etc`, `fstab`, `usr`, `bin` — each is a single component that cannot be split further. They are the building blocks of compound names.
+An atomic name is a simple, basic, indivisible name in JNDI. Examples include `etc`, `fstab`, `usr`, `bin` -- each is a single component that cannot be split further. They are the building blocks of compound names.
 
 ## How It Works
 1. Atomic names are the leaf components in a compound name
@@ -42,11 +42,26 @@ digraph G {
 - **Case-sensitive**: Typically, atomic names are case-sensitive
 - **Building block**: Combined to form compound names
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Atomic_Name {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Atomic Name" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[jndi-naming-concepts|JNDI Naming Concepts]] — atomic names are part of JNDI naming
-- Builds into: [[compound-name|Compound Name]] — atomic names combine to form compound names
-- Related: [[jndi-context|JNDI Context]] — contexts contain bindings with atomic names
-- Related: [[jndi-binding|JNDI Binding]] — each binding has an atomic name as its key
+- Built from: [[jndi-naming-concepts|JNDI Naming Concepts]] -- atomic names are part of JNDI naming
+- Builds into: [[compound-name|Compound Name]] -- atomic names combine to form compound names
+- Related: [[jndi-context|JNDI Context]] -- contexts contain bindings with atomic names
+- Related: [[jndi-binding|JNDI Binding]] -- each binding has an atomic name as its key
 
 ## Edge Cases & Gotchas
 - **Special characters**: Some characters may have special meaning in compound name syntax

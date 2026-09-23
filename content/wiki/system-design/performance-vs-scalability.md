@@ -18,7 +18,7 @@ Performance measures how fast a system handles a single unit of work (response t
 
 1. **Measure baseline**: Determine response time for a single request under minimal load (performance baseline).
 2. **Increase load**: Gradually ramp up concurrent requests while monitoring response time.
-3. **Identify knee point**: Observe where response time degrades significantly — the system is no longer scaling.
+3. **Identify knee point**: Observe where response time degrades significantly -- the system is no longer scaling.
 4. **Add resources**: Increase nodes, memory, or connections. If response time returns to baseline, the system scales horizontally.
 5. **Re-evaluate**: Continue adding load until the next knee point. Diminishing returns indicate scaling limits.
 
@@ -63,12 +63,27 @@ digraph G {
 - **Linear scalability** means doubling resources doubles capacity with no performance loss
 - **Not interchangeable**: a Ferrari is performant (fast for one), a bus fleet is scalable (many passengers), a bus is neither
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Performance_vs_Scalability {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Performance Vs Scala" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Related:** [[latency-vs-throughput|Latency vs Throughput]] — both are dimensions of performance
-- **Builds into:** [[horizontal-scaling|Horizontal Scaling]] — adding resources to improve scalability
-- **Related:** [[cap-theorem|CAP Theorem]] — system design trade-offs affect both performance and scalability
-- **Related:** [[back-of-envelope-estimates|Back-of-Envelope Estimates]] — quantifying performance expectations
+- **Related:** [[latency-vs-throughput|Latency vs Throughput]] -- both are dimensions of performance
+- **Builds into:** [[horizontal-scaling|Horizontal Scaling]] -- adding resources to improve scalability
+- **Related:** [[cap-theorem|CAP Theorem]] -- system design trade-offs affect both performance and scalability
+- **Related:** [[back-of-envelope-estimates|Back-of-Envelope Estimates]] -- quantifying performance expectations
 
 ## Edge Cases & Gotchas
 

@@ -1,5 +1,5 @@
 ---
-title: SQL vs NoSQL — Database Paradigm Comparison
+title: SQL vs NoSQL -- Database Paradigm Comparison
 type: synthesis
 tags: [systems, database]
 created: 2026-05-15
@@ -8,7 +8,7 @@ updated: 2026-05-15
 
 ## What's Being Compared
 
-SQL (relational) and NoSQL (non-relational) databases represent fundamentally different approaches to data storage. SQL databases enforce rigid schemas and support ACID transactions; NoSQL databases offer flexible schemas and horizontal scalability at the cost of consistency guarantees. The choice is not about which is better — it's about which fits the data and access patterns.
+SQL (relational) and NoSQL (non-relational) databases represent fundamentally different approaches to data storage. SQL databases enforce rigid schemas and support ACID transactions; NoSQL databases offer flexible schemas and horizontal scalability at the cost of consistency guarantees. The choice is not about which is better -- it's about which fits the data and access patterns.
 
 ## The Core Tension
 
@@ -47,10 +47,39 @@ SQL optimizes for **data integrity and complex relationships** through normaliza
 
 Many production systems use **both** (polyglot persistence). The relational database holds core business entities with transactional integrity, while NoSQL stores handle high-volume, flexible data like clickstream logs, session data, and user feeds. The question isn't which one, but which one for which part of the system.
 
+
+
+## Visual Explanation
+
+```dot
+digraph sql_vs_nosql {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Sql Vs Nosql\nInput"]
+  B [label="Sql Vs Nosql\nCore Mechanism"]
+  C [label="Sql Vs Nosql\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_sql_vs_nosql {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Sql Vs Nosql" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- [[nosql-database-types|NoSQL Database Types]] — the four categories of NoSQL databases
-- [[cap-theorem|CAP Theorem]] — explains the consistency trade-offs in NoSQL
-- [[sharding|Sharding]] — horizontal scaling technique used by NoSQL
-- [[denormalization|Denormalization]] — SQL technique that mirrors NoSQL's approach
-- [[master-slave-replication|Master-Slave Replication]] — SQL scaling technique
+- [[nosql-database-types|NoSQL Database Types]] -- the four categories of NoSQL databases
+- [[cap-theorem|CAP Theorem]] -- explains the consistency trade-offs in NoSQL
+- [[sharding|Sharding]] -- horizontal scaling technique used by NoSQL
+- [[denormalization|Denormalization]] -- SQL technique that mirrors NoSQL's approach
+- [[master-slave-replication|Master-Slave Replication]] -- SQL scaling technique

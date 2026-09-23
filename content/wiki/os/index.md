@@ -1,5 +1,5 @@
 ---
-title: Operating Systems — Map of Content
+title: Operating Systems -- Map of Content
 tags: [systems, os]
 created: 2026-06-11
 updated: 2026-06-11
@@ -9,13 +9,13 @@ updated: 2026-06-11
 
 ## Foundation Concepts
 
-- [[operating-system|Operating System]] — definition, functions, and role
-- [[kernel|Kernel]] — the core component
-- [[system-calls|System Calls]] — interface to the kernel
-- [[user-mode|User Mode]] — restricted execution mode
-- [[kernel-mode|Kernel Mode]] — privileged execution mode
-- [[mode-switching|Mode Switching]] — transitioning between modes
-- [[cpu-privilege-rings|CPU Privilege Rings]] — hardware protection levels
+- [[operating-system|Operating System]] -- definition, functions, and role
+- [[kernel|Kernel]] -- the core component
+- [[system-calls|System Calls]] -- interface to the kernel
+- [[user-mode|User Mode]] -- restricted execution mode
+- [[kernel-mode|Kernel Mode]] -- privileged execution mode
+- [[mode-switching|Mode Switching]] -- transitioning between modes
+- [[cpu-privilege-rings|CPU Privilege Rings]] -- hardware protection levels
 
 ## OS Functions
 

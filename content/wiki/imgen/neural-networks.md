@@ -14,9 +14,9 @@ Neural networks are computing systems inspired by biological neurons. They learn
 
 ## How It Works
 A neural network consists of:
-1. **Input layer** — receives raw data (pixels, words, features)
-2. **Hidden layers** — transform data through weighted connections and activation functions
-3. **Output layer** — produces predictions or generated content
+1. **Input layer** -- receives raw data (pixels, words, features)
+2. **Hidden layers** -- transform data through weighted connections and activation functions
+3. **Output layer** -- produces predictions or generated content
 
 Training uses **backpropagation**: forward pass computes output, loss function measures error, backward pass adjusts weights via gradient descent.
 
@@ -49,21 +49,36 @@ digraph G {
 ```
 
 ## Key Properties
-- **Universal approximation** — can approximate any continuous function given enough neurons
-- **Learning from examples** — no need for hand-coded rules
-- **Parallel processing** — many computations happen simultaneously
-- **Generalization** — can make predictions on unseen data
+- **Universal approximation** -- can approximate any continuous function given enough neurons
+- **Learning from examples** -- no need for hand-coded rules
+- **Parallel processing** -- many computations happen simultaneously
+- **Generalization** -- can make predictions on unseen data
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Neural_Networks {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Neural Networks" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[transformers|Transformers]] — specific neural network architecture for sequence modeling
-- Built from: [[diffusion-models|Diffusion Models]] — neural networks trained to reverse noise processes
-- Contrasts with: [[symbolic-ai|Symbolic AI]] — rule-based vs learning-based approaches
-- Related: [[clip|CLIP Encoder]] — neural network for text-image alignment
-- Related: [[t5-encoder|T5 Encoder]] — transformer-based neural network for text encoding
-- Related: [[lora-finetuning|LoRA Fine-tuning]] — efficient neural network adaptation technique
+- Built from: [[transformers|Transformers]] -- specific neural network architecture for sequence modeling
+- Built from: [[diffusion-models|Diffusion Models]] -- neural networks trained to reverse noise processes
+- Contrasts with: [[symbolic-ai|Symbolic AI]] -- rule-based vs learning-based approaches
+- Related: [[clip|CLIP Encoder]] -- neural network for text-image alignment
+- Related: [[t5-encoder|T5 Encoder]] -- transformer-based neural network for text encoding
+- Related: [[lora-finetuning|LoRA Fine-tuning]] -- efficient neural network adaptation technique
 
 ## Edge Cases & Gotchas
-- **Overfitting** — memorizing training data instead of learning general patterns
-- **Black box** — hard to interpret why a neural network makes a specific decision
-- **Data hungry** — need large datasets and significant compute to train effectively
-- **Adversarial examples** — small perturbations can fool networks into wrong predictions
+- **Overfitting** -- memorizing training data instead of learning general patterns
+- **Black box** -- hard to interpret why a neural network makes a specific decision
+- **Data hungry** -- need large datasets and significant compute to train effectively
+- **Adversarial examples** -- small perturbations can fool networks into wrong predictions

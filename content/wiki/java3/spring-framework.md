@@ -20,7 +20,7 @@ Spring is a lightweight, modular Java application framework centered on Inversio
 2. **Configuration metadata**: Beans are defined via XML, annotations, or Java config (`@Configuration`)
 3. **Dependency Injection**: The container injects dependencies into beans at construction time, eliminating `new` calls
 4. **Aspect-Oriented Programming**: Spring AOP weaves cross-cutting concerns (transactions, security) into beans without modifying business code
-5. **Modular architecture**: Spring is organized into modules: Core, MVC, Data, Security, Cloud, Boot — use what you need
+5. **Modular architecture**: Spring is organized into modules: Core, MVC, Data, Security, Cloud, Boot -- use what you need
 
 ## Visual Explanation
 
@@ -60,17 +60,32 @@ digraph spring_framework {
 - **POJO-based**: Business objects are plain Java objects with no Spring coupling (except annotations)
 - **Non-invasive**: Application code doesn't extend Spring classes or implement Spring interfaces
 - **Modular**: Choose only the modules your application needs
-- **Testable**: DI makes unit testing trivial — mock dependencies can be injected in tests
+- **Testable**: DI makes unit testing trivial -- mock dependencies can be injected in tests
 - **Integration**: First-class support for Hibernate, JPA, JDBC, JMS, JTA, JNDI
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Spring_Framework {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Spring Framework" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[spring-ioc-container|Spring IoC Container]] — Core of Spring, manages beans and DI
-- **Builds into:** [[spring-mvc|Spring MVC]] — Web framework built on Spring Core
-- **Builds into:** [[spring-boot|Spring Boot]] — Auto-configuration on top of Spring Framework
-- **Builds into:** [[spring-security|Spring Security]] — Security built on Spring AOP and DI
-- **Related:** [[component-architecture-soa|Component Architecture & SOA]] — Both Spring and EJB address component-based enterprise development
-- **Contrasts with:** [[session-bean|EJB Session Bean]] — Spring beans are lighter, no EJB container needed
+- **Built from:** [[spring-ioc-container|Spring IoC Container]] -- Core of Spring, manages beans and DI
+- **Builds into:** [[spring-mvc|Spring MVC]] -- Web framework built on Spring Core
+- **Builds into:** [[spring-boot|Spring Boot]] -- Auto-configuration on top of Spring Framework
+- **Builds into:** [[spring-security|Spring Security]] -- Security built on Spring AOP and DI
+- **Related:** [[component-architecture-soa|Component Architecture & SOA]] -- Both Spring and EJB address component-based enterprise development
+- **Contrasts with:** [[session-bean|EJB Session Bean]] -- Spring beans are lighter, no EJB container needed
 
 ## Edge Cases & Gotchas
 

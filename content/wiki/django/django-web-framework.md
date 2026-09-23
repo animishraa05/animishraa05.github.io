@@ -56,12 +56,41 @@ django-admin startproject myproject
 - High-level: Abstracts away low-level network and database protocols.
 - Python-based: Leverages the Python ecosystem.
 
+
+
+## Visual Explanation
+
+```dot
+digraph Django_Web_Framework {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Django Web Framework\nInput"]
+  B [label="Django Web Framework\nCore Mechanism"]
+  C [label="Django Web Framework\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Django_Web_Framework {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Django Web Framework" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[python-programming-language|Python]] — Django is built entirely in Python.
-- **Builds into:** [[django-project|Django Project]] — the framework is used to instantiate projects.
-- **Related:** [[django-request-response-lifecycle|Django Request-Response Lifecycle]] — the core execution flow of Django.
-- **Related:** [[django-rest-framework|Django REST Framework]] — an extension of Django for APIs.
+- **Built from:** [[python-programming-language|Python]] -- Django is built entirely in Python.
+- **Builds into:** [[django-project|Django Project]] -- the framework is used to instantiate projects.
+- **Related:** [[django-request-response-lifecycle|Django Request-Response Lifecycle]] -- the core execution flow of Django.
+- **Related:** [[django-rest-framework|Django REST Framework]] -- an extension of Django for APIs.
 
 ## Edge Cases & Gotchas
 

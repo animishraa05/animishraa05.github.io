@@ -9,7 +9,7 @@ updated: 2026-04-12
 
 ## The Problem
 
-Browsers enforce the Same-Origin Policy by default—scripts on domain A cannot access resources on domain B. This protects users from malicious cross-site requests, but blocks legitimate API calls between domains.
+Browsers enforce the Same-Origin Policy by default--scripts on domain A cannot access resources on domain B. This protects users from malicious cross-site requests, but blocks legitimate API calls between domains.
 
 ## Core Idea
 
@@ -60,10 +60,39 @@ public class CorsConfig implements WebMvcConfigurer {
 
 ## Key Properties
 
-- Server controls access—not the client
+- Server controls access--not the client
 - Pre-flight caching reduces overhead
 - Credentials require specific origin (not '\*')
 
+
+
+## Visual Explanation
+
+```dot
+digraph true {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="True\nInput"]
+  B [label="True\nCore Mechanism"]
+  C [label="True\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_true {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="True" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Related to:** [[http-headers|HTTP Headers]] (uses headers for negotiation: Access-Control-Allow-Origin)

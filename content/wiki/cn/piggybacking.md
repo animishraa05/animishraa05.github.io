@@ -17,7 +17,7 @@ A technique where acknowledgments are attached to outgoing data packets instead 
 2. Instead of sending a separate ACK immediately, it waits briefly
 3. If the host has its own data to send, it includes the ACK in the outgoing data packet's header
 4. If no data is ready before a timer expires, a separate ACK is sent
-5. TCP uses piggybacking extensively — the ACK field is always present in TCP headers
+5. TCP uses piggybacking extensively -- the ACK field is always present in TCP headers
 
 ## Visual Explanation
 ```dot
@@ -43,11 +43,26 @@ digraph G {
 - Requires full-duplex communication
 - More complex implementation than separate ACKs
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Piggybacking {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Piggybacking" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[acknowledgment|Acknowledgment]] — what gets piggybacked
-- Built from: [[sliding-window-protocol|Sliding Window Protocol]] — works with windowed protocols
-- Related: [[tcp|TCP]] — uses piggybacking in every segment
-- Related: [[full-duplex|Full-Duplex Communication]] — prerequisite for piggybacking
+- Built from: [[acknowledgment|Acknowledgment]] -- what gets piggybacked
+- Built from: [[sliding-window-protocol|Sliding Window Protocol]] -- works with windowed protocols
+- Related: [[tcp|TCP]] -- uses piggybacking in every segment
+- Related: [[full-duplex|Full-Duplex Communication]] -- prerequisite for piggybacking
 
 ## Edge Cases & Gotchas
 - Piggyback timer too long can cause unnecessary retransmissions (sender times out)

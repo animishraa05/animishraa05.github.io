@@ -16,7 +16,7 @@ Indirect Addressing specifies a register (or memory location) that holds the add
 1. Instruction specifies a register (e.g., BX) that contains the address
 2. CPU reads the register to get the memory address
 3. CPU performs memory access using that address
-4. Example: `MOV AX, [BX]` — BX holds address, CPU reads memory at (BX) and loads into AX
+4. Example: `MOV AX, [BX]` -- BX holds address, CPU reads memory at (BX) and loads into AX
 5. Requires two memory accesses: one for instruction, one for operand
 
 ```dot
@@ -41,9 +41,24 @@ digraph indirect_addr {
 - Slower than direct addressing (extra register read, still needs memory access)
 - Foundation for more complex addressing modes (indexed, displacement)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Indirect_Addressing {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Indirect Addressing" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[addressing-mode|Addressing Mode]], [[cpu-register|CPU Register]]
-- **Contrasts with:** [[direct-addressing|Direct Addressing]] — fixed address in instruction
+- **Contrasts with:** [[direct-addressing|Direct Addressing]] -- fixed address in instruction
 - **Builds into:** [[indexed-addressing|Indexed Addressing]], [[register-indirect-with-displacement|Register Indirect with Displacement]]
 - **Related:** [[pointer|Pointer]], [[memory-address|Memory Address]]
 

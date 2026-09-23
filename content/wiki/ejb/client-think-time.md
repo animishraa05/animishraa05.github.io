@@ -7,7 +7,7 @@ updated: 2026-04-29
 ---
 
 ## The Problem
-When analyzing server capacity, we might assume each client needs a dedicated bean instance. But users don't click buttons continuously—they read pages, think, and then act. How can we leverage this idle time to serve more clients with fewer resources?
+When analyzing server capacity, we might assume each client needs a dedicated bean instance. But users don't click buttons continuously--they read pages, think, and then act. How can we leverage this idle time to serve more clients with fewer resources?
 
 ## Core Idea
 Client think time is the period when a user is viewing a page or thinking between actions. During this time, the server-side bean instance can be reassigned to serve other clients, dramatically improving resource utilization.
@@ -51,11 +51,26 @@ digraph G {
 - **Not applicable**: Automated clients (APIs) may not have think time
 - **Exam keyword**: Mention in instance pooling answers
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Client_Think_Time {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Client Think Time" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[instance-pooling|Instance Pooling]] — think time enables pooling efficiency
-- Related: [[stateless-session-bean|Stateless Session Bean]] — primary beneficiary
-- Related: [[session-bean-lifetime|Session Bean Lifetime]] — beans returned to pool during think time
-- Builds into: [[scalability|Scalability]] — think time improves scalability
+- Built from: [[instance-pooling|Instance Pooling]] -- think time enables pooling efficiency
+- Related: [[stateless-session-bean|Stateless Session Bean]] -- primary beneficiary
+- Related: [[session-bean-lifetime|Session Bean Lifetime]] -- beans returned to pool during think time
+- Builds into: [[scalability|Scalability]] -- think time improves scalability
 
 ## Edge Cases & Gotchas
 - **API clients**: May not have think time (continuous requests)

@@ -32,6 +32,35 @@ The term comes from Greek "αυτόματα" meaning "something that does things
 - Used as theoretical models for computing machines
 - Used for proofs about computability
 
+
+
+## Visual Explanation
+
+```dot
+digraph Automata_Theory {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Automata Theory\nInput"]
+  B [label="Automata Theory\nCore Mechanism"]
+  C [label="Automata Theory\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Automata_Theory {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Automata Theory" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[formal-language|Formal Language]], [[finite-automaton|Finite Automaton]], [[pushdown-automaton|Pushdown Automaton]]

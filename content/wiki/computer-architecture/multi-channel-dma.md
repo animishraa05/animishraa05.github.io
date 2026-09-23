@@ -38,16 +38,31 @@ digraph multi_channel {
 ```
 
 ## Key Properties
-- Multiple concurrent DMA transfers — better system throughput
-- More complex hardware — multiple register sets, arbitration logic
+- Multiple concurrent DMA transfers -- better system throughput
+- More complex hardware -- multiple register sets, arbitration logic
 - Standard in modern systems (e.g., PC DMA controllers have 4-8 channels)
 - Channels can have different priorities
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Multi_Channel_DMA {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Multi Channel Dma" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[dma|DMA]], [[dma-controller|DMA Controller]]
-- **Contrasts with:** [[single-channel-dma|Single-Channel DMA]] — only one device can use DMA at a time
+- **Contrasts with:** [[single-channel-dma|Single-Channel DMA]] -- only one device can use DMA at a time
 - **Related:** [[io-devices|I/O Devices]], [[device-controller|Device Controller]]
-- **Builds into:** [[buffering|Buffering]] — works alongside multi-channel DMA
+- **Builds into:** [[buffering|Buffering]] -- works alongside multi-channel DMA
 
 ## Edge Cases & Gotchas
 - Bus contention: multiple channels transferring simultaneously can saturate memory bus

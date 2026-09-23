@@ -13,37 +13,37 @@ This source is a comprehensive learning roadmap and curriculum designed by ChatG
 
 **Created:**
 
-- [[django-web-framework|Django Web Framework]] — High-level overview and definition.
-- [[django-url-dispatcher|Django URL Dispatcher]] — Routing mechanism.
-- [[django-view|Django View]] — Business logic and request handling.
-- [[django-model|Django Model]] — Database abstraction and ORM tables.
-- [[django-request-response-lifecycle|Django Request-Response Lifecycle]] — Flow of execution.
-- [[django-project|Django Project]] — Global application container.
-- [[django-app|Django App]] — Modular feature component.
-- [[django-template-engine|Django Template Engine]] — HTML rendering system.
-- [[django-orm|Django ORM]] — Database querying abstraction.
-- [[django-migration|Django Migration]] — Database schema version control.
-- [[django-admin-panel|Django Admin Panel]] — Auto-generated management UI.
-- [[django-form|Django Form]] — Input validation and rendering.
-- [[django-authentication-system|Django Authentication System]] — Users, sessions, and security.
-- [[django-class-based-view|Django Class Based View]] — OOP approach to views.
-- [[django-rest-framework|Django REST Framework]] — API toolkit.
-- [[django-middleware|Django Middleware]] — Hooks into request/response processing.
-- [[django-signals|Django Signals]] — Decoupled event dispatcher.
-- [[django-query-optimization|Django Query Optimization]] — Resolving N+1 problems.
-- [[django-caching|Django Caching]] — Storing expensive operations in memory.
-- [[django-static-files|Django Static Files]] — Managing CSS/JS assets.
-- [[django-custom-user-model|Django Custom User Model]] — Overriding the default authentication user.
-- [[django-celery-integration|Django Celery Integration]] — Asynchronous background tasks.
-- [[django-channels|Django Channels]] — WebSockets and ASGI support.
-- [[django-testing-framework|Django Testing Framework]] — Unit testing and isolation.
-- [[django-deployment-wsgi-gunicorn|Django Deployment with WSGI]] — Production architecture.
-- [[django-model-manager|Django Model Manager]] — Table-level ORM querying abstraction.
-- [[django-context-processor|Django Context Processor]] — Global template variables.
+- [[django-web-framework|Django Web Framework]] -- High-level overview and definition.
+- [[django-url-dispatcher|Django URL Dispatcher]] -- Routing mechanism.
+- [[django-view|Django View]] -- Business logic and request handling.
+- [[django-model|Django Model]] -- Database abstraction and ORM tables.
+- [[django-request-response-lifecycle|Django Request-Response Lifecycle]] -- Flow of execution.
+- [[django-project|Django Project]] -- Global application container.
+- [[django-app|Django App]] -- Modular feature component.
+- [[django-template-engine|Django Template Engine]] -- HTML rendering system.
+- [[django-orm|Django ORM]] -- Database querying abstraction.
+- [[django-migration|Django Migration]] -- Database schema version control.
+- [[django-admin-panel|Django Admin Panel]] -- Auto-generated management UI.
+- [[django-form|Django Form]] -- Input validation and rendering.
+- [[django-authentication-system|Django Authentication System]] -- Users, sessions, and security.
+- [[django-class-based-view|Django Class Based View]] -- OOP approach to views.
+- [[django-rest-framework|Django REST Framework]] -- API toolkit.
+- [[django-middleware|Django Middleware]] -- Hooks into request/response processing.
+- [[django-signals|Django Signals]] -- Decoupled event dispatcher.
+- [[django-query-optimization|Django Query Optimization]] -- Resolving N+1 problems.
+- [[django-caching|Django Caching]] -- Storing expensive operations in memory.
+- [[django-static-files|Django Static Files]] -- Managing CSS/JS assets.
+- [[django-custom-user-model|Django Custom User Model]] -- Overriding the default authentication user.
+- [[django-celery-integration|Django Celery Integration]] -- Asynchronous background tasks.
+- [[django-channels|Django Channels]] -- WebSockets and ASGI support.
+- [[django-testing-framework|Django Testing Framework]] -- Unit testing and isolation.
+- [[django-deployment-wsgi-gunicorn|Django Deployment with WSGI]] -- Production architecture.
+- [[django-model-manager|Django Model Manager]] -- Table-level ORM querying abstraction.
+- [[django-context-processor|Django Context Processor]] -- Global template variables.
 
 ## Syntheses Created
 
-- [[django-project-vs-app|Django Project vs App]] — Clarifies the architectural distinction.
+- [[django-project-vs-app|Django Project vs App]] -- Clarifies the architectural distinction.
 
 ## Key Takeaways
 

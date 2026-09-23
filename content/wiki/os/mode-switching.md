@@ -12,7 +12,7 @@ updated: 2026-06-11
 
 ## Explanation
 
-Mode switching is the mechanism by which the CPU changes its privilege level between user mode (restricted) and kernel mode (full access). This is not the same as a process context switch (switching between processes) — it is a change in the CPU's privilege level within the same process. Every system call, hardware interrupt, or CPU exception triggers a mode switch. Because mode switches involve saving and restoring CPU registers, flushing the TLB on some architectures, and privilege validation, they are significantly more expensive than regular function calls. Experienced OS engineers and systems programmers minimize mode switches for performance-critical code.
+Mode switching is the mechanism by which the CPU changes its privilege level between user mode (restricted) and kernel mode (full access). This is not the same as a process context switch (switching between processes) -- it is a change in the CPU's privilege level within the same process. Every system call, hardware interrupt, or CPU exception triggers a mode switch. Because mode switches involve saving and restoring CPU registers, flushing the TLB on some architectures, and privilege validation, they are significantly more expensive than regular function calls. Experienced OS engineers and systems programmers minimize mode switches for performance-critical code.
 
 ## How It Works
 
@@ -71,7 +71,7 @@ graph semantic_mode_switching {
 
 ## Key Properties
 
-- Different from a process context switch — mode switch changes privilege level within the same process
+- Different from a process context switch -- mode switch changes privilege level within the same process
 - Triggered by system calls, hardware interrupts, and CPU exceptions
 - Involves saving/restoring CPU registers and switching stacks
 - More expensive (~50-200 CPU cycles) than a regular function call (~5-10 cycles)
@@ -79,16 +79,16 @@ graph semantic_mode_switching {
 
 ## Connections
 
-- Built from: [[user-mode|User Mode]] — mode switching starts in user mode before transitioning to kernel mode
-- Built from: [[kernel-mode|Kernel Mode]] — mode switching transitions into kernel mode for privileged work
-- Built from: [[cpu-privilege-rings|CPU Privilege Rings]] — the hardware privilege ring mechanism enables mode switching
-- Builds into: [[system-calls|System Calls]] — every system call requires a mode switch
-- Related: [[kernel|Kernel]] — the kernel orchestrates mode switches through its handler routines
-- Related: [[monolithic-kernel|Monolithic Kernel]] — fewer mode switches needed when kernel services are in-kernel vs user-space
+- Built from: [[user-mode|User Mode]] -- mode switching starts in user mode before transitioning to kernel mode
+- Built from: [[kernel-mode|Kernel Mode]] -- mode switching transitions into kernel mode for privileged work
+- Built from: [[cpu-privilege-rings|CPU Privilege Rings]] -- the hardware privilege ring mechanism enables mode switching
+- Builds into: [[system-calls|System Calls]] -- every system call requires a mode switch
+- Related: [[kernel|Kernel]] -- the kernel orchestrates mode switches through its handler routines
+- Related: [[monolithic-kernel|Monolithic Kernel]] -- fewer mode switches needed when kernel services are in-kernel vs user-space
 
 ## Edge Cases & Gotchas
 
-- Mode switch is NOT the same as context switch — a context switch changes which process runs; a mode switch changes privilege level within the same process
-- Too many mode switches degrade performance — this is why `read(fd, buf, 4096)` is better than 4096 calls to `read(fd, byte, 1)`
+- Mode switch is NOT the same as context switch -- a context switch changes which process runs; a mode switch changes privilege level within the same process
+- Too many mode switches degrade performance -- this is why `read(fd, buf, 4096)` is better than 4096 calls to `read(fd, byte, 1)`
 - Some kernel bypass techniques (DPDK, io_uring) reduce mode switches by allowing user-space to directly interact with hardware in controlled ways
 - Virtual machines add another layer: VM exits cause a switch from guest kernel mode to host hypervisor mode

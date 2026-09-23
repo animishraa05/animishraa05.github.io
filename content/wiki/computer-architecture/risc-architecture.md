@@ -16,7 +16,7 @@ RISC (Reduced Instruction Set Computer) uses a small, simple set of instructions
 1. CPU has a small set of simple instructions (load, store, add, branch, etc.)
 2. Each instruction is fixed-length, making decoding simple and fast
 3. Complex operations are broken into multiple simple instructions by the compiler
-4. Simple hardware enables pipelining — multiple instructions overlap in execution
+4. Simple hardware enables pipelining -- multiple instructions overlap in execution
 5. CPU can run at higher clock speeds due to simpler logic
 
 ```dot
@@ -42,14 +42,29 @@ digraph risc {
 - High clock speeds possible due to simple hardware
 - More instructions per program (compiler generates more instructions)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_RISC_Architecture {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Risc Architecture" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- **Contrasts with:** [[cisc-architecture|CISC Architecture]] — complex instructions, hardware does more work
+- **Contrasts with:** [[cisc-architecture|CISC Architecture]] -- complex instructions, hardware does more work
 - **Built from:** [[cpu|CPU]], [[instruction-set|Instruction Set]], [[clock-cycle|Clock Cycle]]
-- **Builds into:** [[pipelining|Pipelining]] — simple instructions enable easy pipelining
+- **Builds into:** [[pipelining|Pipelining]] -- simple instructions enable easy pipelining
 - **Related:** [[arm-architecture|ARM Architecture]], [[mips-architecture|MIPS Architecture]]
 
 ## Edge Cases & Gotchas
 - Programs are larger (more instructions) than CISC equivalents
 - More instructions means more memory bandwidth needed
-- Not always faster — depends on compiler quality and workload
+- Not always faster -- depends on compiler quality and workload
 - Modern x86 CPUs translate CISC instructions to RISC-like micro-ops internally

@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Every collection needs a way to traverse its elements, but different data structures store elements differently — arrays store contiguously, linked lists store with pointers, trees store with child references. A uniform traversal interface is needed that works regardless of internal structure.
+Every collection needs a way to traverse its elements, but different data structures store elements differently -- arrays store contiguously, linked lists store with pointers, trees store with child references. A uniform traversal interface is needed that works regardless of internal structure.
 
 ## Core Idea
 
@@ -71,14 +71,14 @@ graph semantic_iterator {
 
 ## Connections
 
-- **Built from:** [[java-collections-framework|Java Collections Framework]] — every Collection provides an iterator()
-- **Builds into:** [[java-lambda-and-streams|Streams & Lambdas]] — streams provide an alternative functional iteration model
-- **Related:** [[java-loops|Java Loops]] — for-each loop uses iterator behind the scenes
-- **Related:** [[java-comparable-and-comparator|Comparable and Comparator]] — used with iterators for sorted traversal
+- **Built from:** [[java-collections-framework|Java Collections Framework]] -- every Collection provides an iterator()
+- **Builds into:** [[java-lambda-and-streams|Streams & Lambdas]] -- streams provide an alternative functional iteration model
+- **Related:** [[java-loops|Java Loops]] -- for-each loop uses iterator behind the scenes
+- **Related:** [[java-comparable-and-comparator|Comparable and Comparator]] -- used with iterators for sorted traversal
 
 ## Edge Cases & Gotchas
 
-- **No reset**: An iterator is single-use — create a new one to traverse again
+- **No reset**: An iterator is single-use -- create a new one to traverse again
 - **remove() before next()**: IllegalStateException if next() hasn't been called
 - **Fail-fast is not guaranteed**: It's a best-effort detection mechanism, not a guarantee
 - **LegacyEnumeration**: Older collections (Vector, Hashtable) use Enumeration, not Iterator

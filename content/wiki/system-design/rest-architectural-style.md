@@ -12,7 +12,7 @@ Tight coupling between client and server (as in RPC) makes API evolution difficu
 
 ## Core Idea
 
-REST is an architectural style that enforces a client/server model where clients interact with resources through a uniform interface — URIs identify resources, HTTP verbs define actions, status codes communicate results, and HATEOAS links enable navigation. Each request is stateless and self-contained.
+REST is an architectural style that enforces a client/server model where clients interact with resources through a uniform interface -- URIs identify resources, HTTP verbs define actions, status codes communicate results, and HATEOAS links enable navigation. Each request is stateless and self-contained.
 
 ## How It Works
 
@@ -20,7 +20,7 @@ REST is an architectural style that enforces a client/server model where clients
 2. Clients manipulate resources using standard HTTP verbs: GET (read), POST (create), PUT (replace), PATCH (partial update), DELETE (remove).
 3. Errors are self-descriptive via HTTP status codes (200 OK, 201 Created, 400 Bad Request, 404 Not Found, 500 Internal Server Error).
 4. HATEOAS (Hypermedia As The Engine Of Application State): responses include links to navigate related resources.
-5. Each request is stateless — the server does not store client session context between requests.
+5. Each request is stateless -- the server does not store client session context between requests.
 6. Responses are cacheable via HTTP cache headers (Cache-Control, ETag).
 
 ## Visual Explanation
@@ -46,18 +46,33 @@ digraph REST {
 
 ## Key Properties
 
-- URI-based resource identification — everything is a resource (noun)
+- URI-based resource identification -- everything is a resource (noun)
 - HTTP verb-based actions define the uniform interface
-- Stateless — each request contains all context needed to process it
+- Stateless -- each request contains all context needed to process it
 - Cacheable responses reduce server load and improve latency
 - Uniform interface minimizes client-server coupling
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_REST__Architectural_Style_ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Rest (Architectural " fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- Contrasts with: [[rpc-remote-procedure-call|RPC]] — REST exposes data/resources (nouns); RPC exposes behaviors (verbs)
-- Related: [[microservices-architecture|Microservices Architecture]] — REST APIs are a primary communication mechanism between services
-- Related: [[cache-aside|Cache-Aside]] — REST supports caching via HTTP cache headers (Cache-Control, ETag)
-- Related: [[layer7-load-balancing|Layer 7 Load Balancing]] — L7 load balancers can inspect and route RESTful requests based on URI paths and HTTP methods
+- Contrasts with: [[rpc-remote-procedure-call|RPC]] -- REST exposes data/resources (nouns); RPC exposes behaviors (verbs)
+- Related: [[microservices-architecture|Microservices Architecture]] -- REST APIs are a primary communication mechanism between services
+- Related: [[cache-aside|Cache-Aside]] -- REST supports caching via HTTP cache headers (Cache-Control, ETag)
+- Related: [[layer7-load-balancing|Layer 7 Load Balancing]] -- L7 load balancers can inspect and route RESTful requests based on URI paths and HTTP methods
 
 ## Edge Cases & Gotchas
 

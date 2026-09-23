@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Enterprise applications need fine-grained control over object lifecycle — when objects are created, how they're initialized, what happens after all dependencies are set, and how they're cleaned up. Different use cases require different sharing strategies (singleton for stateless services, prototype for stateful objects).
+Enterprise applications need fine-grained control over object lifecycle -- when objects are created, how they're initialized, what happens after all dependencies are set, and how they're cleaned up. Different use cases require different sharing strategies (singleton for stateless services, prototype for stateful objects).
 
 ## Core Idea
 
@@ -19,9 +19,9 @@ The Spring Bean Lifecycle defines the birth-to-death phases every managed bean g
 1. **Instantiation**: Container creates the bean instance via constructor
 2. **Dependency injection**: Container injects dependencies (via constructor, setter, or field)
 3. **Awareness callbacks**: If bean implements `BeanNameAware`, `BeanFactoryAware`, `ApplicationContextAware`, container calls them
-4. **Pre-initialization**: `BeanPostProcessor.postProcessBeforeInitialization()` — container-wide hooks
+4. **Pre-initialization**: `BeanPostProcessor.postProcessBeforeInitialization()` -- container-wide hooks
 5. **Initialization**: `@PostConstruct` method → `InitializingBean.afterPropertiesSet()` → custom `init-method`
-6. **Post-initialization**: `BeanPostProcessor.postProcessAfterInitialization()` — proxy creation happens here (AOP)
+6. **Post-initialization**: `BeanPostProcessor.postProcessAfterInitialization()` -- proxy creation happens here (AOP)
 7. **Ready**: Bean is fully initialized and available for use
 8. **Destruction**: `@PreDestroy` method → `DisposableBean.destroy()` → custom `destroy-method`
 9. **Scopes**: singleton (one per container), prototype (new per request), request/ session/application (web contexts), custom
@@ -55,20 +55,35 @@ digraph bean_lifecycle {
 - **Prototype scope**: New instance every time the bean is requested; use for stateful objects
 - **Web scopes**: request (one per HTTP request), session (one per HTTP session), application (one per ServletContext)
 - **Custom scopes**: Define custom scope logic (e.g., thread-scoped, tenant-scoped) via `Scope` interface
-- **BeanPostProcessor**: Container-wide hooks that run for every bean — critical for AOP proxy creation
+- **BeanPostProcessor**: Container-wide hooks that run for every bean -- critical for AOP proxy creation
 - **Lifecycle callbacks**: Three ways per phase: annotations (@PostConstruct/@PreDestroy), interfaces, custom init/destroy method
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Spring_Bean_Lifecycle {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Spring Bean Lifecycl" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[spring-ioc-container|Spring IoC Container]] — The container manages the entire bean lifecycle
-- **Built from:** [[spring-framework|Spring Framework]] — Lifecycle management is a core Spring feature
-- **Related:** [[spring-autowiring|Spring Autowiring]] — Dependency injection occurs during the lifecycle's second phase
-- **Related:** [[ejb-lifecycle-stateless|Stateless Bean Lifecycle]] — EJB containers also manage bean lifecycles, but with different phases
-- **Contrasts with:** [[ejb-lifecycle-stateful|Stateful Bean Lifecycle]] — EJB stateful beans have passivation/activation; Spring beans don't
+- **Built from:** [[spring-ioc-container|Spring IoC Container]] -- The container manages the entire bean lifecycle
+- **Built from:** [[spring-framework|Spring Framework]] -- Lifecycle management is a core Spring feature
+- **Related:** [[spring-autowiring|Spring Autowiring]] -- Dependency injection occurs during the lifecycle's second phase
+- **Related:** [[ejb-lifecycle-stateless|Stateless Bean Lifecycle]] -- EJB containers also manage bean lifecycles, but with different phases
+- **Contrasts with:** [[ejb-lifecycle-stateful|Stateful Bean Lifecycle]] -- EJB stateful beans have passivation/activation; Spring beans don't
 
 ## Edge Cases & Gotchas
 
-- **Prototype destruction**: Container does NOT call destroy() on prototype beans — you must clean them up manually
+- **Prototype destruction**: Container does NOT call destroy() on prototype beans -- you must clean them up manually
 - **Circular dependency**: Constructor injection + circular dependency causes BeanCurrentlyInCreationException; use setter injection or @Lazy
 - **PostConstruct in proxy**: `@PostConstruct` in a proxy-wrapped bean runs on the target, not the proxy
 - **Scope mismatch**: Injecting a shorter-lived bean (request) into a longer-lived bean (singleton) requires scoped proxy (`@Scope(proxyMode=ScopedProxyMode.TARGET_CLASS)`)

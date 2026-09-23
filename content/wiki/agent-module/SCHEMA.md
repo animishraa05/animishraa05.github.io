@@ -1,4 +1,4 @@
-# SCHEMA — Wiki Conventions
+# SCHEMA -- Wiki Conventions
 
 > This file defines page formats, naming rules, and linking conventions. Read this before creating any wiki page.
 
@@ -8,7 +8,7 @@
 
 ```
 content/
-├── sources/                     ← RAW SOURCES (drop anything here — articles, transcripts, papers)
+├── sources/                     ← RAW SOURCES (drop anything here -- articles, transcripts, papers)
 │                                ← Human owns this. LLM reads only, NEVER writes.
 │
 ├── Private/                      ← PERSONAL NOTES (study notes, daily journals, etc.)
@@ -38,11 +38,11 @@ content/
         └── ...
 ```
 
-**Raw Sources** = `sources/` (anything you drop: articles, transcripts, papers, notes) + existing topic folders in `Private/` (`Private/computer-networks/`, etc.). These are **immutable** — the LLM **reads from them but never modifies them**. They are the source of truth.
+**Raw Sources** = `sources/` (anything you drop: articles, transcripts, papers, notes) + existing topic folders in `Private/` (`Private/computer-networks/`, etc.). These are **immutable** -- the LLM **reads from them but never modifies them**. They are the source of truth.
 
 **The Wiki** = `wiki/` directory. The LLM **owns this entirely**. It creates pages, updates them, maintains cross-references, and keeps everything consistent. The human reads it; the LLM writes it.
 
-**Topic Folders** = Inside `wiki/`, each ingested source gets its own folder named after the source (human-readable, kebab-case). ALL pages from that source — concepts, syntheses, source summaries — live inside this single folder.
+**Topic Folders** = Inside `wiki/`, each ingested source gets its own folder named after the source (human-readable, kebab-case). ALL pages from that source -- concepts, syntheses, source summaries -- live inside this single folder.
 
 ---
 
@@ -60,8 +60,8 @@ When ingesting a source, create a topic folder named after the source:
 Rules:
 - Use the source filename without extension, converted to kebab-case
 - If multiple sources cover the same topic, add them to the SAME folder
-- If the folder already exists, add new pages to it — don't create a duplicate folder
-- Keep it short but descriptive — `ejb` not `ejb-source-from-my-2025-semester-notes`
+- If the folder already exists, add new pages to it -- don't create a duplicate folder
+- Keep it short but descriptive -- `ejb` not `ejb-source-from-my-2025-semester-notes`
 
 ---
 
@@ -84,10 +84,10 @@ updated: YYYY-MM-DD
 ```
 
 **Maturity tracking:**
-- `sources_count` — how many distinct sources have contributed to this concept (starts at 1)
-- `last_source` — which source last updated this concept (for tracking provenance)
+- `sources_count` -- how many distinct sources have contributed to this concept (starts at 1)
+- `last_source` -- which source last updated this concept (for tracking provenance)
 - A concept with `sources_count >= 3` is considered **well-established**
-- A concept with `sources_count == 1` is **fragile** — needs more sources to confirm it
+- A concept with `sources_count == 1` is **fragile** -- needs more sources to confirm it
 
 ### 2. Synthesis Pages
 - **Location:** `wiki/[topic-folder]/[comparison-name].md`
@@ -117,7 +117,7 @@ concepts_count: N
 ---
 ```
 
-**Dedup:** `content_hash` is the SHA-256 of the source file. If a new source has the same hash as an existing one, skip it — it's the same content under a different name.
+**Dedup:** `content_hash` is the SHA-256 of the source file. If a new source has the same hash as an existing one, skip it -- it's the same content under a different name.
 
 ---
 
@@ -142,7 +142,7 @@ Second tag = specific subdomain:
 ```yaml
 tags: [dev, ejb]              ← good
 tags: [dev, ejb, persistence]  ← also fine, 3 tags max
-tags: [ejb, session-bean]     ← WRONG — "ejb" is not a domain
+tags: [ejb, session-bean]     ← WRONG -- "ejb" is not a domain
 tags: [dev]                    ← acceptable but prefer 2 tags
 tags: [theory, automata]       ← good
 tags: [networking, switching]  ← good
@@ -165,7 +165,7 @@ updated: YYYY-MM-DD
 
 ## Formal Definition
 
-_A precise, textbook-style definition. Formal and rigorous — as it would appear in a reference textbook. State any standard mathematical or technical definition here._
+_A precise, textbook-style definition. Formal and rigorous -- as it would appear in a reference textbook. State any standard mathematical or technical definition here._
 
 > Example: "TCP is a connection-oriented transport protocol that provides reliable, ordered, and error-checked delivery of a byte stream between applications running on hosts communicating over an IP network."
 
@@ -175,7 +175,7 @@ _Plain language intuition. What does this concept mean in simpler terms? Why doe
 
 ## How It Works
 
-_Mechanism step by step. Not just what it does — how it accomplishes it. 4–8 bullet points or numbered steps._
+_Mechanism step by step. Not just what it does -- how it accomplishes it. 4–8 bullet points or numbered steps._
 
 ## Mathematical Formulation
 
@@ -230,10 +230,10 @@ Every node must link to a real wiki page or planned stub. 5–10 surrounding nod
 
 ## Connections
 
-- Built from: [[concept-filename|Display Name]] — how this concept depends on it
-- Builds into: [[concept-filename|Display Name]] — what uses this concept
-- Contrasts with: [[concept-filename|Display Name]] — how they differ
-- Related: [[concept-filename|Display Name]] — adjacent idea
+- Built from: [[concept-filename|Display Name]] -- how this concept depends on it
+- Builds into: [[concept-filename|Display Name]] -- what uses this concept
+- Contrasts with: [[concept-filename|Display Name]] -- how they differ
+- Related: [[concept-filename|Display Name]] -- adjacent idea
 
 Minimum 4 connections. Each must have a brief explanation of the relationship.
 
@@ -260,7 +260,7 @@ Every concept page must have sections in this exact order:
 2. Formal Definition
 3. Explanation
 4. How It Works
-5. Mathematical Formulation _(optional — delete if no math)_
+5. Mathematical Formulation _(optional -- delete if no math)_
 6. Visual Explanation
 7. Semantic Network
 8. Key Properties
@@ -274,10 +274,10 @@ Do not reorder. Do not rename. Do not skip required sections.
 ## Cross-Reference Strategy
 
 Every concept should link to:
-1. **Prerequisites** — concepts it builds upon (Built from)
-2. **Applications** — concepts that use it (Builds into)
-3. **Contrasts** — similar but different concepts (Contrasts with)
-4. **Relations** — adjacent or related concepts (Related)
+1. **Prerequisites** -- concepts it builds upon (Built from)
+2. **Applications** -- concepts that use it (Builds into)
+3. **Contrasts** -- similar but different concepts (Contrasts with)
+4. **Relations** -- adjacent or related concepts (Related)
 
 The goal is a **dense graph**, not a tree. Concepts should have 4+ connections minimum.
 
@@ -297,12 +297,12 @@ If page A links to page B, page B must mention page A in its Connections section
 - Do NOT modify files outside `wiki/` (existing study notes are immutable)
 - Do NOT create concept pages without checking if one already exists
 - Do NOT leave broken wiki links
-- Do NOT write vague Connections sections — be specific about the relationship
-- Do NOT create catch-all pages — split concepts into atomic pages
-- Do NOT skip the "Formal Definition" section — every concept needs its precise definition first
+- Do NOT write vague Connections sections -- be specific about the relationship
+- Do NOT create catch-all pages -- split concepts into atomic pages
+- Do NOT skip the "Formal Definition" section -- every concept needs its precise definition first
 - Do NOT use non-domain tags as the first tag (e.g., `[ejb, session-bean]` is wrong)
-- Do NOT use images for mathematical expressions — use LaTeX
-- Do NOT use Mermaid or ASCII art for diagrams — use Graphviz
+- Do NOT use images for mathematical expressions -- use LaTeX
+- Do NOT use Mermaid or ASCII art for diagrams -- use Graphviz
 
 ---
 

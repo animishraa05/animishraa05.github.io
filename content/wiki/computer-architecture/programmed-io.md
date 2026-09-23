@@ -17,7 +17,7 @@ Programmed I/O is a method where the CPU actively participates in every byte/wor
 2. CPU polls the device status register to check if ready
 3. For each byte/word: CPU reads from device → writes to memory (or vice versa)
 4. CPU repeats step 3 for the entire data block
-5. CPU is fully occupied during the entire transfer — no other work can be done
+5. CPU is fully occupied during the entire transfer -- no other work can be done
 
 ```dot
 digraph programmed_io {
@@ -37,16 +37,31 @@ digraph programmed_io {
 ```
 
 ## Key Properties
-- CPU is blocked during entire transfer — cannot do other work
-- Simple to implement — no special hardware needed beyond basic I/O interface
-- Slow for large transfers — each byte requires CPU intervention
+- CPU is blocked during entire transfer -- cannot do other work
+- Simple to implement -- no special hardware needed beyond basic I/O interface
+- Slow for large transfers -- each byte requires CPU intervention
 - CPU overhead is proportional to data size
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Programmed_I_O {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Programmed I/O" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- **Contrasts with:** [[dma|DMA]] — DMA frees CPU during transfer, Programmed I/O keeps CPU busy
+- **Contrasts with:** [[dma|DMA]] -- DMA frees CPU during transfer, Programmed I/O keeps CPU busy
 - **Built from:** [[io-system|I/O System]], [[device-controller|Device Controller]]
 - **Builds into:** [[io-request-to-hardware|I/O Request to Hardware Operation]] (when DMA not available)
-- **Related:** [[polling|Polling]] — CPU busy-waits for device ready
+- **Related:** [[polling|Polling]] -- CPU busy-waits for device ready
 
 ## Edge Cases & Gotchas
 - For very small data sizes, Programmed I/O can be faster than DMA setup overhead

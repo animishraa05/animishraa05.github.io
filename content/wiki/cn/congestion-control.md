@@ -46,12 +46,27 @@ digraph G {
 - Multiple algorithms: slow start, congestion avoidance, fast retransmit, fast recovery
 - Essential for internet stability
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Congestion_Control {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Congestion Control" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[sliding-window-protocol|Sliding Window Protocol]] — window-based mechanism
-- Built from: [[packet-loss|Packet Loss]] — primary congestion signal
-- Builds into: [[tcp|TCP]] — implements congestion control
-- Related: [[flow-control|Flow Control]] — receiver-based vs network-based
-- Contrasts with: [[flow-control|Flow Control]] — different control objective
+- Built from: [[sliding-window-protocol|Sliding Window Protocol]] -- window-based mechanism
+- Built from: [[packet-loss|Packet Loss]] -- primary congestion signal
+- Builds into: [[tcp|TCP]] -- implements congestion control
+- Related: [[flow-control|Flow Control]] -- receiver-based vs network-based
+- Contrasts with: [[flow-control|Flow Control]] -- different control objective
 
 ## Edge Cases & Gotchas
 - Bufferbloat: large router buffers hide congestion, causing high latency

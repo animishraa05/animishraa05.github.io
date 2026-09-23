@@ -10,11 +10,11 @@ tags: [dev, fundamentals]
 
 ## What Concepts Were Extracted
 
-1. **Front End** — The presentation layer users interact with directly; client-side technologies and UI
-2. **Back End** — Data management and processing layer; server-side logic, databases, APIs
-3. **Full Stack** — Both front end and back end together; entire application stack
-4. **Client-Server Model** — Architecture where client handles UI, server handles data/processing
-5. **API** — Interface for front end to communicate with back end, typically over HTTP
+1. **Front End** -- The presentation layer users interact with directly; client-side technologies and UI
+2. **Back End** -- Data management and processing layer; server-side logic, databases, APIs
+3. **Full Stack** -- Both front end and back end together; entire application stack
+4. **Client-Server Model** -- Architecture where client handles UI, server handles data/processing
+5. **API** -- Interface for front end to communicate with back end, typically over HTTP
 
 ## Which Wiki Pages Were Created
 
@@ -47,10 +47,10 @@ This establishes foundational vocabulary for software development concepts in th
 
 ## Connections
 
-- [[front-end|Front End]] — presentation layer
-- [[back-end|Back End]] — data management layer
-- [[full-stack|Full Stack]] — entire application stack
-- [[client-server-model|Client-Server Model]] — architecture pattern
-- [[api|API]] — communication bridge
-- [[client|Client]] — requesting party
-- [[server|Server]] — service provider
+- [[front-end|Front End]] -- presentation layer
+- [[back-end|Back End]] -- data management layer
+- [[full-stack|Full Stack]] -- entire application stack
+- [[client-server-model|Client-Server Model]] -- architecture pattern
+- [[api|API]] -- communication bridge
+- [[client|Client]] -- requesting party
+- [[server|Server]] -- service provider

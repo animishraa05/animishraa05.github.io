@@ -40,14 +40,29 @@ digraph G {
 - Multiprotocol: can carry IP, IPv6, IPX via different NCPs
 - Includes error detection (FCS) but not correction
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_PPP_Protocol {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Ppp Protocol" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[data-link-layer|Data Link Layer]] — operates at this layer
-- Built from: [[lcp|LCP]] — link control component
-- Built from: [[ncp|NCP]] — network control component
-- Related: [[pppoe|PPPoE]] — PPP over Ethernet
-- Related: [[authentication|Authentication]] — PAP and CHAP mechanisms
+- Built from: [[data-link-layer|Data Link Layer]] -- operates at this layer
+- Built from: [[lcp|LCP]] -- link control component
+- Built from: [[ncp|NCP]] -- network control component
+- Related: [[pppoe|PPPoE]] -- PPP over Ethernet
+- Related: [[authentication|Authentication]] -- PAP and CHAP mechanisms
 
 ## Edge Cases & Gotchas
 - Mostly replaced by PPPoE for modern broadband (DSL, fiber)
-- No error correction — only detection via FCS
+- No error correction -- only detection via FCS
 - MRU negotiation can fail if peers disagree on maximum size

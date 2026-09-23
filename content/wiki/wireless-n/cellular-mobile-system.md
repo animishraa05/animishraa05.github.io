@@ -30,17 +30,46 @@ Key concepts: **Frequency Reuse** (same frequencies in distant cells), **Cell Sp
 - Handoff (hard vs soft) maintains connectivity during mobility
 - Sectoring reduces co-channel interference per sector
 
+
+
+## Visual Explanation
+
+```dot
+digraph Cellular_Mobile_System {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Cellular Mobile Syst\nInput"]
+  B [label="Cellular Mobile Syst\nCore Mechanism"]
+  C [label="Cellular Mobile Syst\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Cellular_Mobile_System {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Cellular Mobile Syst" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[frequency-reuse|Frequency Reuse]] — the foundational principle of cellular architecture
-- Built from: [[handoff|Handoff]] — what allows continuous communication during mobility
-- Built into: [[gsm|GSM]] — the most widely deployed 2G cellular system
-- Related: [[cell-splitting|Cell Splitting]] — increasing capacity by shrinking cell size
-- Related: [[sectoring|Sectoring]] — directional antennas that improve cell efficiency
-- Related: [[co-channel-interference|Co-Channel Interference]] — the interference that constrains frequency reuse
-- Related: [[frequency-management|Frequency Management]] — managing channel assignments across the network
+- Built from: [[frequency-reuse|Frequency Reuse]] -- the foundational principle of cellular architecture
+- Built from: [[handoff|Handoff]] -- what allows continuous communication during mobility
+- Built into: [[gsm|GSM]] -- the most widely deployed 2G cellular system
+- Related: [[cell-splitting|Cell Splitting]] -- increasing capacity by shrinking cell size
+- Related: [[sectoring|Sectoring]] -- directional antennas that improve cell efficiency
+- Related: [[co-channel-interference|Co-Channel Interference]] -- the interference that constrains frequency reuse
+- Related: [[frequency-management|Frequency Management]] -- managing channel assignments across the network
 
 ## Edge Cases & Gotchas
 - Cell planning in urban areas is complex due to irregular terrain and building shadowing
-- Cell boundaries are not clean hexagons — they overlap and change with traffic and conditions
+- Cell boundaries are not clean hexagons -- they overlap and change with traffic and conditions
 - Very small cells (micro-cells) require more base stations, increasing infrastructure cost
 - Too many small cells cause excessive handoffs, degrading quality

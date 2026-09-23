@@ -10,13 +10,13 @@ updated: 2026-04-30
 Systems need to transfer data between multiple I/O devices and memory. A DMA controller that can only handle one device at a time creates a bottleneck when multiple devices need simultaneous transfers.
 
 ## Core Idea
-Single-Channel DMA is a DMA configuration where only one DMA channel (and thus one device) can be active at a time — the DMA controller has a single set of address, count, and control registers.
+Single-Channel DMA is a DMA configuration where only one DMA channel (and thus one device) can be active at a time -- the DMA controller has a single set of address, count, and control registers.
 
 ## How It Works
 1. CPU programs the single DMA channel with device, addresses, and count
 2. DMA controller performs the transfer for that one device
 3. When transfer completes, CPU can program the channel for a different device
-4. Only one device can use DMA at any given time — others must wait or use Programmed I/O
+4. Only one device can use DMA at any given time -- others must wait or use Programmed I/O
 
 ```dot
 digraph single_channel {
@@ -36,18 +36,33 @@ digraph single_channel {
 ```
 
 ## Key Properties
-- Simple hardware — only one set of DMA registers needed
+- Simple hardware -- only one set of DMA registers needed
 - Cheaper to implement than multi-channel DMA
 - Creates bottleneck when multiple devices need DMA simultaneously
 - Common in early or low-cost systems
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Single_Channel_DMA {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Single Channel Dma" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[dma|DMA]], [[dma-controller|DMA Controller]]
-- **Contrasts with:** [[multi-channel-dma|Multi-Channel DMA]] — multiple devices can use DMA concurrently
+- **Contrasts with:** [[multi-channel-dma|Multi-Channel DMA]] -- multiple devices can use DMA concurrently
 - **Related:** [[io-devices|I/O Devices]], [[device-controller|Device Controller]]
-- **Builds into:** [[buffering|Buffering]] — can help mitigate single-channel limitation
+- **Builds into:** [[buffering|Buffering]] -- can help mitigate single-channel limitation
 
 ## Edge Cases & Gotchas
 - Device starvation: high-priority device may wait long if low-priority device is using DMA
-- No concurrent DMA transfers — can't overlap disk read with network packet send
-- Some single-channel DMACs support "chaining" — auto-program next transfer after current one
+- No concurrent DMA transfers -- can't overlap disk read with network packet send
+- Some single-channel DMACs support "chaining" -- auto-program next transfer after current one

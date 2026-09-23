@@ -20,20 +20,49 @@ Break the data into small chunks called **packets**. Each packet carries the des
 5. Destination reassembles based on sequence numbers
 
 ## Key Properties
-- **Statistical multiplexing** — link capacity is shared dynamically, not pre-allocated
-- **No dedicated path** — packets from the same conversation compete with others for bandwidth
-- **Store-and-forward** — each router receives the full packet, checks it, then forwards
-- **Robust** — if one path fails, packets can reroute through other paths
+- **Statistical multiplexing** -- link capacity is shared dynamically, not pre-allocated
+- **No dedicated path** -- packets from the same conversation compete with others for bandwidth
+- **Store-and-forward** -- each router receives the full packet, checks it, then forwards
+- **Robust** -- if one path fails, packets can reroute through other paths
 
+
+
+## Visual Explanation
+
+```dot
+digraph Packet_Switching {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Packet Switching\nInput"]
+  B [label="Packet Switching\nCore Mechanism"]
+  C [label="Packet Switching\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Packet_Switching {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Packet Switching" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Contrasts with: [[circuit-switching|Circuit Switching]] — dedicated path vs shared, fixed bandwidth vs dynamic
-- Related: [[point-to-point-links|Point-to-Point Links]] — packets are the unit of communication on point-to-point networks
-- Related: [[osi-model-layers|OSI Model — Seven Layers]] — packets are Network Layer (L3) units
-- Built from: [[layered-architecture-networking|Layered Architecture in Networking]] — packets exist because of layering
-- Related: [[broadcast-links|Broadcast Links]] — in broadcast networks, all nodes receive every packet but only process addressed ones
+- Contrasts with: [[circuit-switching|Circuit Switching]] -- dedicated path vs shared, fixed bandwidth vs dynamic
+- Related: [[point-to-point-links|Point-to-Point Links]] -- packets are the unit of communication on point-to-point networks
+- Related: [[osi-model-layers|OSI Model -- Seven Layers]] -- packets are Network Layer (L3) units
+- Built from: [[layered-architecture-networking|Layered Architecture in Networking]] -- packets exist because of layering
+- Related: [[broadcast-links|Broadcast Links]] -- in broadcast networks, all nodes receive every packet but only process addressed ones
 
 ## Edge Cases & Gotchas
-- **Out-of-order delivery** — packets may arrive in different order than sent; reassembly must handle this
-- **Packet loss** — if a router's buffer is full, it drops packets; higher layers must detect and retransmit
-- **Head-of-line blocking** — a delayed packet at the front of a queue can block packets behind it
-- **Not the same as message switching** — message switching sends the entire message as one unit; packet switching breaks it into smaller pieces
+- **Out-of-order delivery** -- packets may arrive in different order than sent; reassembly must handle this
+- **Packet loss** -- if a router's buffer is full, it drops packets; higher layers must detect and retransmit
+- **Head-of-line blocking** -- a delayed packet at the front of a queue can block packets behind it
+- **Not the same as message switching** -- message switching sends the entire message as one unit; packet switching breaks it into smaller pieces

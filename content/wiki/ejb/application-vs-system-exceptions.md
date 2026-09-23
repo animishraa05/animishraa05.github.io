@@ -12,7 +12,7 @@ When something goes wrong in your EJB, how should the container handle it? Shoul
 ## Core Idea
 EJB defines two exception types with different handling strategies:
 
-- **Application Exceptions**: Routine business problems (bad input, insufficient funds). Always thrown back to the client—the client needs to know and handle these.
+- **Application Exceptions**: Routine business problems (bad input, insufficient funds). Always thrown back to the client--the client needs to know and handle these.
 - **System Exceptions**: Critical failures (database down, `NullPointerException`). Container intercepts these, may alert admin, and usually discards the bean (it's in an undefined state).
 
 ## How It Works
@@ -55,6 +55,21 @@ digraph ExceptionHandling {
   1. Application exceptions → always thrown to client
   2. System exceptions → container can do anything (alert, discard, throw)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic__Application_vs_System_Exceptions_ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label=""Application Vs Syst" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[ejb-object|EJB Object]] (intercepts exceptions)
 - **Builds into:** [[transactions|Transactions]] (exceptions affect transaction outcome)

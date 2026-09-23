@@ -101,16 +101,16 @@ graph semantic_server_models {
 
 ## Connections
 
-- **Built from:** [[three-tier-dwh-architecture|Three-Tier DWH Architecture]] — server models implement Tier 1
-- **Builds into:** [[data-mart-types|Data Mart Types]] — Tiered model uses dependent, independent, or hybrid data marts
-- **Built from:** [[etl-pipeline-dwh|ETL Pipeline (DWH)]] — Enterprise and Tiered models require ETL
-- **Builds into:** [[olap-servers|OLAP Servers]] — server models determine which OLAP implementation is used
-- **Builds into:** [[data-warehouse-definition|Data Warehouse Definition]] — server models are the physical implementation
-- **Contrasts with:** [[oltp-vs-olap|OLTP vs OLAP]] — server models are the OLAP-side architecture
+- **Built from:** [[three-tier-dwh-architecture|Three-Tier DWH Architecture]] -- server models implement Tier 1
+- **Builds into:** [[data-mart-types|Data Mart Types]] -- Tiered model uses dependent, independent, or hybrid data marts
+- **Built from:** [[etl-pipeline-dwh|ETL Pipeline (DWH)]] -- Enterprise and Tiered models require ETL
+- **Builds into:** [[olap-servers|OLAP Servers]] -- server models determine which OLAP implementation is used
+- **Builds into:** [[data-warehouse-definition|Data Warehouse Definition]] -- server models are the physical implementation
+- **Contrasts with:** [[oltp-vs-olap|OLTP vs OLAP]] -- server models are the OLAP-side architecture
 
 ## Edge Cases & Gotchas
 
 - **Virtual warehouse is not "real-time":** Even though it queries source systems directly, query translation and aggregation add latency.
-- **Hybrid approaches:** Many companies use a combination — Enterprise warehouse for corporate reporting, Data Marts for departmental analysis.
+- **Hybrid approaches:** Many companies use a combination -- Enterprise warehouse for corporate reporting, Data Marts for departmental analysis.
 - **Cost progression:** Virtual (cheapest) → Tiered (moderate) → Enterprise (most expensive to build, but cheapest per-query at scale).
-- **Network dependency:** Centralized warehouses are highly dependent on network connectivity — a network failure blocks all analysis.
+- **Network dependency:** Centralized warehouses are highly dependent on network connectivity -- a network failure blocks all analysis.

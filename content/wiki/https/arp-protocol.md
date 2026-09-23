@@ -48,17 +48,32 @@ digraph G {
 - Broadcast query, unicast response
 - Operates below IP layer (Layer 2)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_ARP_Protocol {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Arp Protocol" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[ip-address|IP Address]] — ARP translates IP to MAC
-- **Builds into:** [[socket|Socket]] — sockets use MAC for local delivery
-- **Related:** [[mac-address|MAC Address]] — what ARP resolves to
-- **Related:** [[ethernet|Ethernet]] — ARP is used on Ethernet networks
-- **Contrasts with:** [[dns-lookup|DNS Lookup]] — DNS is IP↔domain; ARP is MAC↔IP
+- **Built from:** [[ip-address|IP Address]] -- ARP translates IP to MAC
+- **Builds into:** [[socket|Socket]] -- sockets use MAC for local delivery
+- **Related:** [[mac-address|MAC Address]] -- what ARP resolves to
+- **Related:** [[ethernet|Ethernet]] -- ARP is used on Ethernet networks
+- **Contrasts with:** [[dns-lookup|DNS Lookup]] -- DNS is IP↔domain; ARP is MAC↔IP
 
 ## Edge Cases & Gotchas
 
 - ARP spoofing attacks can redirect traffic (man-in-the-middle)
 - ARP cache poisoning is a common attack vector
 - Large networks can have many ARP entries (router burden)
-- No authentication—anyone can reply to ARP queries
+- No authentication--anyone can reply to ARP queries

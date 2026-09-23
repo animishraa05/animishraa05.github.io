@@ -33,16 +33,45 @@ Clients can be web browsers, mobile apps, desktop applications, or any software 
 - Runs on user devices, often less powerful than servers
 - May cache data for offline or performance reasons
 
+
+
+## Visual Explanation
+
+```dot
+digraph client {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Client\nInput"]
+  B [label="Client\nCore Mechanism"]
+  C [label="Client\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_client {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Client" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 **Builds into:**
 
-- [[front-end|Front End]] — Client typically runs front end components
+- [[front-end|Front End]] -- Client typically runs front end components
 
 **Related:**
 
-- [[client-server-model|Client-Server Model]] — Client is one side of the model
-- [[back-end|Back End]] — Server counterpart to client
+- [[client-server-model|Client-Server Model]] -- Client is one side of the model
+- [[back-end|Back End]] -- Server counterpart to client
 
 ## Edge Cases & Gotchas
 

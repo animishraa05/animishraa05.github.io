@@ -9,11 +9,11 @@ updated: 2026-04-12
 
 ## The Problem
 
-How do you teach a neural network to generate entirely new images from scratch? Simple classification won't work — you need the model to learn the structure of images well enough to create novel ones.
+How do you teach a neural network to generate entirely new images from scratch? Simple classification won't work -- you need the model to learn the structure of images well enough to create novel ones.
 
 ## Core Idea
 
-Diffusion models work by learning to reverse a gradual noising process. Start with an image, add noise step by step until it's pure random noise, then train the model to reverse this — going from noise back to a clean image. Once trained, you start with pure noise and run the reverse process to generate new images.
+Diffusion models work by learning to reverse a gradual noising process. Start with an image, add noise step by step until it's pure random noise, then train the model to reverse this -- going from noise back to a clean image. Once trained, you start with pure noise and run the reverse process to generate new images.
 
 ## How It Works
 
@@ -23,7 +23,7 @@ Diffusion models work by learning to reverse a gradual noising process. Start wi
 Image → Add small noise → Add small noise → ... → Pure noise
 ```
 
-This is fixed — no model needed. At each step a small amount of Gaussian noise is added.
+This is fixed -- no model needed. At each step a small amount of Gaussian noise is added.
 
 ### Reverse Process (denoising)
 
@@ -49,6 +49,35 @@ In practice, you start with random noise and run 25-50 denoising steps. At each 
 - Latent diffusion (LDM) runs in compressed space for efficiency
 - Most open-source models (SDXL, Flux) use this approach
 
+
+
+## Visual Explanation
+
+```dot
+digraph diffusion_models {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Diffusion Models\nInput"]
+  B [label="Diffusion Models\nCore Mechanism"]
+  C [label="Diffusion Models\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_diffusion_models {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Diffusion Models" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[vae]], [[neural-networks]]

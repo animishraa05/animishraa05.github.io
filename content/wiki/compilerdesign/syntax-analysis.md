@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-A token stream is still flat and lacks structure. The compiler needs to verify whether the sequence of tokens forms a valid program according to the language's grammar — checking for missing semicolons, unbalanced parentheses, incorrect statement ordering, and structural violations.
+A token stream is still flat and lacks structure. The compiler needs to verify whether the sequence of tokens forms a valid program according to the language's grammar -- checking for missing semicolons, unbalanced parentheses, incorrect statement ordering, and structural violations.
 
 ## Core Idea
 
@@ -47,17 +47,32 @@ digraph syntax_analysis {
 - **Error recovery:** Can report errors and continue parsing to find more errors
 - **Two strategies:** Top-down (recursive descent, LL) vs bottom-up (LR, LALR)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Syntax_Analysis {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Syntax Analysis" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[lexical-analysis|Lexical Analysis]] — consumes the token stream produced by the lexer
-- **Built from:** [[context-free-grammar|Context-Free Grammar]] — the grammar is the specification the parser checks against
-- **Builds into:** [[semantic-analysis|Semantic Analysis]] — the parse tree is input for semantic checks
-- **Related:** [[top-down-parsing|Top-Down Parsing]] — builds parse tree from root to leaves
-- **Related:** [[bottom-up-parsing|Bottom-Up Parsing]] — builds parse tree from leaves to root
-- **Related:** [[wiki/compilerdesign/ambiguous-grammar|Ambiguous Grammar]] — a grammar that allows multiple parse trees for the same input
+- **Built from:** [[lexical-analysis|Lexical Analysis]] -- consumes the token stream produced by the lexer
+- **Built from:** [[context-free-grammar|Context-Free Grammar]] -- the grammar is the specification the parser checks against
+- **Builds into:** [[semantic-analysis|Semantic Analysis]] -- the parse tree is input for semantic checks
+- **Related:** [[top-down-parsing|Top-Down Parsing]] -- builds parse tree from root to leaves
+- **Related:** [[bottom-up-parsing|Bottom-Up Parsing]] -- builds parse tree from leaves to root
+- **Related:** [[wiki/compilerdesign/ambiguous-grammar|Ambiguous Grammar]] -- a grammar that allows multiple parse trees for the same input
 
 ## Edge Cases & Gotchas
 
-- **Left recursion:** Top-down parsers cannot handle left-recursive grammars — must be eliminated
+- **Left recursion:** Top-down parsers cannot handle left-recursive grammars -- must be eliminated
 - **Ambiguity:** An ambiguous grammar can produce two different parse trees for the same program
 - **Error recovery strategies:** Panic mode (skip tokens until sync token found), phrase-level recovery, error productions

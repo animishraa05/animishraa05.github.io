@@ -8,7 +8,7 @@ updated: 2026-04-12
 
 ## The Problem
 
-Plugins and users need to react to LSP lifecycle events—attach to buffers, respond to progress, handle document changes. Neovim needs a way to signal when these events occur so users can customize behavior.
+Plugins and users need to react to LSP lifecycle events--attach to buffers, respond to progress, handle document changes. Neovim needs a way to signal when these events occur so users can customize behavior.
 
 ## Core Idea
 
@@ -30,11 +30,40 @@ LSP Events are Neovim autocmd events triggered during LSP client lifecycle: LspA
 - LspProgress pattern can be filtered by work done kind (begin/report/end)
 - Dynamic registration may add capabilities after LspAttach
 
+
+
+## Visual Explanation
+
+```dot
+digraph true {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="True\nInput"]
+  B [label="True\nCore Mechanism"]
+  C [label="True\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_true {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="True" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[lsp-client|LSP Client]] — events relate to client lifecycle
-- **Builds into:** [[vim-lsp|vim.lsp]] — vim.lsp triggers these events
-- **Related:** [[lsp-semantic-tokens|Semantic Tokens]] — LspTokenUpdate for token changes
+- **Built from:** [[lsp-client|LSP Client]] -- events relate to client lifecycle
+- **Builds into:** [[vim-lsp|vim.lsp]] -- vim.lsp triggers these events
+- **Related:** [[lsp-semantic-tokens|Semantic Tokens]] -- LspTokenUpdate for token changes
 
 ## Edge Cases & Gotchas
 

@@ -68,15 +68,15 @@ graph semantic_sdt_apps {
 
   THIS -- PRE1 [label="built from" style=dashed]
   THIS -- PRE2 [label="built from" style=dashed]
-  THIS -- OUT1 [label="builds into — SDTs emit IR"]
-  THIS -- OUT2 [label="builds into — SDTs do type checking"]
-  THIS -- REL1 [label="related — TAC is common SDT output"]
+  THIS -- OUT1 [label="builds into -- SDTs emit IR"]
+  THIS -- OUT2 [label="builds into -- SDTs do type checking"]
+  THIS -- REL1 [label="related -- TAC is common SDT output"]
 }
 ```
 
 ## Key Properties
 
-- **Infix to postfix:** Actions print operators when their operands are fully parsed — most common educational example
+- **Infix to postfix:** Actions print operators when their operands are fully parsed -- most common educational example
 - **Type checking:** Actions verify type compatibility and propagate type information through the parse tree
 - **Code emission:** SDTs emit three-address code instructions as actions during parsing
 - **Symbol table:** Actions enter declarations and look up identifiers during parsing
@@ -84,15 +84,15 @@ graph semantic_sdt_apps {
 
 ## Connections
 
-- **Built from:** [[sdt-schemes|SDT Schemes]] — translation schemes define how actions are embedded
-- **Built from:** [[syntax-directed-translation|Syntax-Directed Translation]] — the theoretical foundation
-- **Builds into:** [[intermediate-code-generation|Intermediate Code Generation]] — SDTs are the mechanism for emitting IR
-- **Related:** [[three-address-code|Three-Address Code]] — common target of SDT-based code generation
-- **Related:** [[semantic-analysis|Semantic Analysis]] — type checking SDTs are part of semantic analysis
+- **Built from:** [[sdt-schemes|SDT Schemes]] -- translation schemes define how actions are embedded
+- **Built from:** [[syntax-directed-translation|Syntax-Directed Translation]] -- the theoretical foundation
+- **Builds into:** [[intermediate-code-generation|Intermediate Code Generation]] -- SDTs are the mechanism for emitting IR
+- **Related:** [[three-address-code|Three-Address Code]] -- common target of SDT-based code generation
+- **Related:** [[semantic-analysis|Semantic Analysis]] -- type checking SDTs are part of semantic analysis
 
 ## Edge Cases & Gotchas
 
-- **Order dependency:** Action order matters — printing an operator before its operands gives prefix instead of postfix
+- **Order dependency:** Action order matters -- printing an operator before its operands gives prefix instead of postfix
 - **Side effects:** Actions with side effects (like entering symbol table entries) must execute exactly once per construct
 - **Error recovery:** When the parser recovers from an error, previously executed actions may have created incomplete symbol table entries
 - **SDT vs separate pass:** The "action during parsing" model works for simple translation; complex optimizations need separate passes

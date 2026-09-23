@@ -8,7 +8,7 @@ updated: 2026-04-30
 
 ## The Problem
 
-Loading an entire process into RAM at startup is wasteful — many pages may never be used. We need a way to load pages only when they're actually needed.
+Loading an entire process into RAM at startup is wasteful -- many pages may never be used. We need a way to load pages only when they're actually needed.
 
 ## Core Idea
 
@@ -45,6 +45,21 @@ digraph demand {
 - First access is slow (disk read), subsequent fast
 - Basis for virtual memory systems
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Demand_Paging {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Demand Paging" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[wiki/io/paging|Paging]], [[page-fault|Page Fault]]

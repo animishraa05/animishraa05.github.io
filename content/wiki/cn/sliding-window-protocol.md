@@ -43,12 +43,27 @@ digraph G {
 - Enables reliable delivery with sequence numbers
 - Used by TCP and many data link protocols
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Sliding_Window_Protocol {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Sliding Window Proto" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[sequence-numbers|Sequence Numbers]] — identifies packets in window
-- Built from: [[acknowledgment|Acknowledgment]] — slides window forward
-- Builds into: [[tcp|TCP]] — uses sliding window for flow/congestion control
-- Related: [[flow-control|Flow Control]] — window size enforces flow control
-- Contrasts with: [[stop-and-wait|Stop-and-Wait]] — one packet vs multiple
+- Built from: [[sequence-numbers|Sequence Numbers]] -- identifies packets in window
+- Built from: [[acknowledgment|Acknowledgment]] -- slides window forward
+- Builds into: [[tcp|TCP]] -- uses sliding window for flow/congestion control
+- Related: [[flow-control|Flow Control]] -- window size enforces flow control
+- Contrasts with: [[stop-and-wait|Stop-and-Wait]] -- one packet vs multiple
 
 ## Edge Cases & Gotchas
 - Window size must be less than sequence number space to avoid ambiguity

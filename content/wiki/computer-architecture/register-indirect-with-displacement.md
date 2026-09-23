@@ -17,7 +17,7 @@ Register Indirect with Displacement computes the effective address by adding a r
 2. CPU reads the register to get base address
 3. Effective address = register value + displacement
 4. CPU accesses memory at computed address
-5. Example: `MOV AX, [BX + 4]` — accesses memory at (BX + 4)
+5. Example: `MOV AX, [BX + 4]` -- accesses memory at (BX + 4)
 
 ```dot
 digraph displacement {
@@ -43,11 +43,26 @@ digraph displacement {
 - Used for stack variables (SP/BP + offset), struct fields, array elements
 - More flexible than pure indirect or indexed addressing
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Register_Indirect_with_Displacement {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Register Indirect Wi" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[addressing-mode|Addressing Mode]], [[indirect-addressing|Indirect Addressing]]
 - **Related:** [[struct|Struct]], [[stack|Stack]], [[effective-address|Effective Address]]
-- **Contrasts with:** [[indexed-addressing|Indexed Addressing]] — uses register for index, not constant
-- **Builds into:** [[stack-frame|Stack Frame]] — accessing local variables
+- **Contrasts with:** [[indexed-addressing|Indexed Addressing]] -- uses register for index, not constant
+- **Builds into:** [[stack-frame|Stack Frame]] -- accessing local variables
 
 ## Edge Cases & Gotchas
 - Displacement is limited (typically 8 or 16 bits in instruction encoding)

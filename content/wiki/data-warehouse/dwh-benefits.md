@@ -28,9 +28,9 @@ The benefits manifest across seven dimensions:
 
 5. **Multi-source data management:** Efficient way to manage and report on data from a variety of sources that is non-uniform and scattered throughout a company.
 
-6. **Scalable user support:** Efficient way to manage demand for information from many users simultaneously — the warehouse is read-only and designed for concurrent access.
+6. **Scalable user support:** Efficient way to manage demand for information from many users simultaneously -- the warehouse is read-only and designed for concurrent access.
 
-7. **Historical analysis:** Provides the capability to analyze large amounts of historical data — trends, patterns, and changes over 5-10 year periods that are impossible in current-state OLTP systems.
+7. **Historical analysis:** Provides the capability to analyze large amounts of historical data -- trends, patterns, and changes over 5-10 year periods that are impossible in current-state OLTP systems.
 
 ## Visual Explanation
 
@@ -93,19 +93,19 @@ graph semantic_benefits {
 - **Seven benefits:** Performance, cross-segment analysis, simplicity, OLTP relief, multi-source, scalability, history
 - **User-facing:** Benefits directly impact end users' ability to analyze and decide
 - **Cost-justifying:** Benefits provide the ROI case for warehouse investment
-- **Measurable:** Query speed, user count, data volume — all benefits are quantifiable
+- **Measurable:** Query speed, user count, data volume -- all benefits are quantifiable
 - **Compound:** Benefits reinforce each other (e.g., reduced OLTP workload + fast queries = better decisions)
 
 ## Connections
 
-- **Built from:** [[data-warehouse-definition|Data Warehouse Definition]] — benefits result from the four characteristics
-- **Built from:** [[oltp-vs-olap|OLTP vs OLAP]] — benefits highlight why OLAP is needed alongside OLTP
-- **Related:** [[wiki/data-warehouse/star-schema|Star Schema]] — denormalized schema enables simplified queries
-- **Related:** [[dwh-application-areas|DWH Application Areas]] — applications realize the benefits
-- **Related:** [[nonvolatile-dwh|Nonvolatile DWH]] — nonvolatility enables historical analysis
+- **Built from:** [[data-warehouse-definition|Data Warehouse Definition]] -- benefits result from the four characteristics
+- **Built from:** [[oltp-vs-olap|OLTP vs OLAP]] -- benefits highlight why OLAP is needed alongside OLTP
+- **Related:** [[wiki/data-warehouse/star-schema|Star Schema]] -- denormalized schema enables simplified queries
+- **Related:** [[dwh-application-areas|DWH Application Areas]] -- applications realize the benefits
+- **Related:** [[nonvolatile-dwh|Nonvolatile DWH]] -- nonvolatility enables historical analysis
 
 ## Edge Cases & Gotchas
 
 - **Benefits require proper design:** A poorly designed warehouse (wrong schema, bad ETL) will not deliver these benefits.
-- **Time to value:** Benefits are not immediate — the warehouse must be populated with sufficient historical data before analysis becomes meaningful.
+- **Time to value:** Benefits are not immediate -- the warehouse must be populated with sufficient historical data before analysis becomes meaningful.
 - **User adoption:** Benefits are only realized if users actually use the warehouse. Training and tool accessibility are critical.

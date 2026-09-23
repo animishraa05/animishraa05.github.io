@@ -10,7 +10,7 @@ updated: 2026-04-29
 EJB component interfaces (Remote/Local) extend EJB-specific interfaces (`EJBObject`, `EJBLocalObject`) which have methods meant for clients, not beans. If beans don't implement the component interface (to avoid pollution), how do we get compile-time checking that the bean has all required business methods?
 
 ## Core Idea
-Define a "pure" business interface containing only your business method signatures—no EJB dependencies. Have both the Remote/Local interface AND the bean class implement this business interface. This gives compile-time checking without polluting the bean with EJB client methods.
+Define a "pure" business interface containing only your business method signatures--no EJB dependencies. Have both the Remote/Local interface AND the bean class implement this business interface. This gives compile-time checking without polluting the bean with EJB client methods.
 
 ## How It Works
 
@@ -58,6 +58,21 @@ digraph BusinessInterface {
 - **Shared contract**: Both bean and EJB object share the same business method signatures
 - **One downside**: Local interface inherits `RemoteException` from business interface (if business interface declares it)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic__Business_Interface_Pattern_ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label=""Business Interface " fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[why-bean-doesnt-implement-interface|Why Bean Doesn't Implement Component Interface]]
 - **Builds into:** [[remote-interface|Remote Interface]], [[local-home-interface|Local Home Interface]]
@@ -65,6 +80,6 @@ digraph BusinessInterface {
 - **Contrasts with:** Direct implementation (bean implements remote interface directly)
 
 ## Edge Cases & Gotchas
-- **`RemoteException` leakage**: Business interface meant for both remote and local still declares `RemoteException`—local clients don't need it
-- **EJB 3.x+ solves this**: Uses `@Local` and `@Remote` annotations—no need for this pattern
+- **`RemoteException` leakage**: Business interface meant for both remote and local still declares `RemoteException`--local clients don't need it
+- **EJB 3.x+ solves this**: Uses `@Local` and `@Remote` annotations--no need for this pattern
 - **Not mandatory**: Most developers just let the container verify at deployment time (not compile time)

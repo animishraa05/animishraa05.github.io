@@ -7,10 +7,10 @@ updated: 2026-04-29
 ---
 
 ## The Problem
-Clients need to find Home Objects to create beans. But hardcoding server addresses in client code creates tight coupling—if the server moves, all clients break. What's the solution?
+Clients need to find Home Objects to create beans. But hardcoding server addresses in client code creates tight coupling--if the server moves, all clients break. What's the solution?
 
 ## Core Idea
-EJB uses naming and directory services (via JNDI) to store and look up resources (Home Objects, environment properties, database drivers) by logical name (nickname), not physical address. Clients use `ctx.lookup("HelloHome")` to find Home Objects—the naming service resolves the actual location.
+EJB uses naming and directory services (via JNDI) to store and look up resources (Home Objects, environment properties, database drivers) by logical name (nickname), not physical address. Clients use `ctx.lookup("HelloHome")` to find Home Objects--the naming service resolves the actual location.
 
 ## How It Works
 1. **Deployer binds nickname**: Container registers Home Object with JNDI using a name (e.g., `"HelloHome"`)
@@ -48,6 +48,21 @@ digraph NamingService {
 - **JNDI properties**: `INITIAL_CONTEXT_FACTORY` (e.g., `com.sun.jndi.ldap.LdapCtxFactory`) + `PROVIDER_URL` (e.g., `ldap://louvre:389`)
 - **Beyond Home Objects**: Also stores environment properties, database resources, message queues
 
+
+
+## Semantic Network
+
+```dot
+graph semantic__EJB_Naming_Service_ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label=""Ejb Naming Service"" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[jndi|JNDI]], [[location-transparency|Location Transparency]]
 - **Builds into:** [[home-interface|Home Interface]] (what gets looked up)

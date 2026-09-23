@@ -10,10 +10,10 @@ updated: 2026-04-28
 When a remote client calls an enterprise bean that manages its own transactions, and the network/ server crashes before the result is returned, the client gets a `RemoteException` but doesn't know if the transaction succeeded or failed. The client needs to control the transaction to know the outcome.
 
 ## Core Idea
-In client-initiated transactions, the client code (servlet, JSP, other EJB, CORBA client) begins and ends the transaction — not the bean. The bean still uses programmatic or declarative transactions internally, but the outer transaction scope is controlled by the client.
+In client-initiated transactions, the client code (servlet, JSP, other EJB, CORBA client) begins and ends the transaction -- not the bean. The bean still uses programmatic or declarative transactions internally, but the outer transaction scope is controlled by the client.
 
 ## How It Works
-1. Client code looks up transaction service (via JTA — Java Transaction API)
+1. Client code looks up transaction service (via JTA -- Java Transaction API)
 2. Client calls `begin()` to start the transaction
 3. Client calls the enterprise bean's business method (bean runs within client's transaction)
 4. Bean uses either BMT or CMT internally (client's transaction propagates to bean)
@@ -38,17 +38,32 @@ digraph G {
 
 ## Key Properties
 - Client knows transaction outcome (unlike when bean manages its own tx)
-- Bean still needs BMT or CMT internally — client-initiated is the outer demarcation
+- Bean still needs BMT or CMT internally -- client-initiated is the outer demarcation
 - Higher rollback rates in distributed systems (network failures cause rollbacks)
 - Use sparingly, especially for remote clients over WAN
 - Client code can be: servlet, JSP, other EJB, CORBA client, application
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Client_Initiated_Transactions {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Client Initiated Tra" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[transaction-demarcation|Transaction Demarcation]] — the third demarcation style
-- Built from: [[transactions|Transactions]] — client controls transaction boundaries
-- Related: [[declarative-vs-programmatic-transactions|CMT vs BMT]] — bean still uses one of these internally
-- Contrasts with: [[message-driven-bean|MDB]] — MDB is asynchronous; client-initiated is synchronous
-- Related: [[entity-bean-transactions|Entity Bean Transactions]] — entity beans must use CMT even when client initiates tx
+- Built from: [[transaction-demarcation|Transaction Demarcation]] -- the third demarcation style
+- Built from: [[transactions|Transactions]] -- client controls transaction boundaries
+- Related: [[declarative-vs-programmatic-transactions|CMT vs BMT]] -- bean still uses one of these internally
+- Contrasts with: [[message-driven-bean|MDB]] -- MDB is asynchronous; client-initiated is synchronous
+- Related: [[entity-bean-transactions|Entity Bean Transactions]] -- entity beans must use CMT even when client initiates tx
 
 ## Edge Cases & Gotchas
 - Distributed applications have more rollbacks due to network failures

@@ -58,12 +58,41 @@ class ItemModelTest(TestCase):
 - Built-in `Client` can simulate authentication and session states.
 - Follows the standard Arrange-Act-Assert pattern.
 
+
+
+## Visual Explanation
+
+```dot
+digraph Django_Testing_Framework {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Django Testing Frame\nInput"]
+  B [label="Django Testing Frame\nCore Mechanism"]
+  C [label="Django Testing Frame\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Django_Testing_Framework {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Django Testing Frame" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[python-programming-language|Python]] — extends `unittest`.
-- **Related:** [[django-web-framework|Django Web Framework]] — deeply integrated test runner.
-- **Related:** [[django-model|Django Model]] — testing model logic.
-- **Related:** [[django-view|Django View]] — testing view responses.
+- **Built from:** [[python-programming-language|Python]] -- extends `unittest`.
+- **Related:** [[django-web-framework|Django Web Framework]] -- deeply integrated test runner.
+- **Related:** [[django-model|Django Model]] -- testing model logic.
+- **Related:** [[django-view|Django View]] -- testing view responses.
 
 ## Edge Cases & Gotchas
 

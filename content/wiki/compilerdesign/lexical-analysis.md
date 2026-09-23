@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Source code is a sequence of characters (letters, digits, symbols). Compiler phases need meaningful units (keywords, identifiers, operators, literals) — not raw characters. Processing character-by-character throughout compilation would be inefficient and would conflate low-level text processing with high-level grammar analysis.
+Source code is a sequence of characters (letters, digits, symbols). Compiler phases need meaningful units (keywords, identifiers, operators, literals) -- not raw characters. Processing character-by-character throughout compilation would be inefficient and would conflate low-level text processing with high-level grammar analysis.
 
 ## Core Idea
 
@@ -45,13 +45,28 @@ digraph lexical_analysis {
 - **Separates concerns:** Simplifies the parser by handling low-level character processing
 - **Whitespace/comments:** Stripped during lexical analysis (not passed to parser)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Lexical_Analysis {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Lexical Analysis" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[token|Token]] — the output unit of lexical analysis, a token is the atomic element
-- **Builds into:** [[syntax-analysis|Syntax Analysis]] — parser consumes the token stream from the lexer
-- **Related:** [[flex-lexical-analyzer-generator|Flex]] — tool that automates lexer generation from regular expression specifications
-- **Related:** [[phases-of-compiler|Phases of a Compiler]] — lexical analysis is the first phase
-- **Related:** [[error-handling-in-compiler|Error Handling in Compiler Design]] — lexer detects illegal character sequences
+- **Built from:** [[token|Token]] -- the output unit of lexical analysis, a token is the atomic element
+- **Builds into:** [[syntax-analysis|Syntax Analysis]] -- parser consumes the token stream from the lexer
+- **Related:** [[flex-lexical-analyzer-generator|Flex]] -- tool that automates lexer generation from regular expression specifications
+- **Related:** [[phases-of-compiler|Phases of a Compiler]] -- lexical analysis is the first phase
+- **Related:** [[error-handling-in-compiler|Error Handling in Compiler Design]] -- lexer detects illegal character sequences
 
 ## Edge Cases & Gotchas
 

@@ -8,11 +8,11 @@ updated: 2026-05-04
 
 ## The Problem
 
-Business analysis requires quantitative measurement — how many units were sold, how much revenue was generated, how many items were shipped. But these numbers have no meaning without context: when, what product, where, and through which channel. The raw numbers (facts) must be stored alongside the references that give them meaning.
+Business analysis requires quantitative measurement -- how many units were sold, how much revenue was generated, how many items were shipped. But these numbers have no meaning without context: when, what product, where, and through which channel. The raw numbers (facts) must be stored alongside the references that give them meaning.
 
 ## Core Idea
 
-A **fact table** is the central table in a star schema that contains measurable business events (numerical metrics/measurements) and foreign keys linking to surrounding dimension tables. It represents the "what happened" of the business — the quantitative events that analysis seeks to understand through the lens of dimensions.
+A **fact table** is the central table in a star schema that contains measurable business events (numerical metrics/measurements) and foreign keys linking to surrounding dimension tables. It represents the "what happened" of the business -- the quantitative events that analysis seeks to understand through the lens of dimensions.
 
 ## How It Works
 
@@ -95,12 +95,12 @@ graph semantic_fact_table {
 
 ## Connections
 
-- **Built from:** [[wiki/data-warehouse/star-schema|Star Schema]] — fact table is the central component
-- **Related:** [[wiki/data-warehouse/dimension-table|Dimension Table]] — fact table references dimension tables via foreign keys
-- **Built from:** [[multidimensional-data-model|Multidimensional Data Model]] — facts are the cell values in the cube
-- **Builds into:** [[olap-operations|OLAP Operations]] — operations aggregate and filter fact values
-- **Builds into:** [[fact-constellation-schema|Fact Constellation Schema]] — galaxy schema uses multiple fact tables
-- **Related:** [[snowflake-schema|Snowflake Schema]] — fact tables also exist in snowflake schemas
+- **Built from:** [[wiki/data-warehouse/star-schema|Star Schema]] -- fact table is the central component
+- **Related:** [[wiki/data-warehouse/dimension-table|Dimension Table]] -- fact table references dimension tables via foreign keys
+- **Built from:** [[multidimensional-data-model|Multidimensional Data Model]] -- facts are the cell values in the cube
+- **Builds into:** [[olap-operations|OLAP Operations]] -- operations aggregate and filter fact values
+- **Builds into:** [[fact-constellation-schema|Fact Constellation Schema]] -- galaxy schema uses multiple fact tables
+- **Related:** [[snowflake-schema|Snowflake Schema]] -- fact tables also exist in snowflake schemas
 
 ## Edge Cases & Gotchas
 

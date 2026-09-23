@@ -12,7 +12,7 @@ Databases are slow for frequently accessed data. Pre-loading all possible data i
 
 ## Core Idea
 
-Cache-aside (lazy loading) puts the application in charge of the cache — it loads data into cache on demand only when a cache miss occurs. The application checks the cache first, falls back to the database on a miss, and populates the cache for subsequent reads.
+Cache-aside (lazy loading) puts the application in charge of the cache -- it loads data into cache on demand only when a cache miss occurs. The application checks the cache first, falls back to the database on a miss, and populates the cache for subsequent reads.
 
 ## How It Works
 
@@ -39,7 +39,7 @@ digraph CacheAside {
     App -> Cache [label="1. Read(key)"];
     Cache -> App [label="2. Cache Hit: return data"];
 
-    App -> Cache [label="3. Read(key) — MISS"];
+    App -> Cache [label="3. Read(key) -- MISS"];
     Cache -> App [label="4. null"];
     App -> DB [label="5. SELECT ..."];
     DB -> App [label="6. Result Set"];
@@ -51,17 +51,32 @@ digraph CacheAside {
 ## Key Properties
 
 - Application manages cache lifecycle explicitly
-- Lazy loading — only requested data is cached (on-demand)
+- Lazy loading -- only requested data is cached (on-demand)
 - Cache does not interact with the database directly
 - Each cache miss costs 3 round trips (check cache, load DB, write cache)
 - Avoids filling cache with unused data, keeping memory efficient
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Cache_Aside {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Cache Aside" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- Contrasts with: [[write-through-cache|Write-Through Cache]] — lazy vs eager write
-- Contrasts with: [[write-behind-cache|Write-Behind Cache]] — synchronous vs async write
-- Related: [[cdn-pull|Pull CDN]] — similar on-demand pull pattern
-- Related: [[refresh-ahead-cache|Refresh-Ahead Cache]] — proactive vs reactive refresh
+- Contrasts with: [[write-through-cache|Write-Through Cache]] -- lazy vs eager write
+- Contrasts with: [[write-behind-cache|Write-Behind Cache]] -- synchronous vs async write
+- Related: [[cdn-pull|Pull CDN]] -- similar on-demand pull pattern
+- Related: [[refresh-ahead-cache|Refresh-Ahead Cache]] -- proactive vs reactive refresh
 
 ## Edge Cases & Gotchas
 

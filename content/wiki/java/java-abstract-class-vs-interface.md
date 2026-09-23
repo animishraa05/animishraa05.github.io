@@ -1,5 +1,5 @@
 ---
-title: Abstract Class vs Interface — Partial vs Full Abstraction
+title: Abstract Class vs Interface -- Partial vs Full Abstraction
 type: synthesis
 tags: [dev, java]
 created: 2026-05-13
@@ -49,9 +49,38 @@ The choice comes down to **state vs contract**: abstract classes can hold state 
 
 The line between abstract classes and interfaces has blurred significantly since Java 8 introduced default and static methods in interfaces. However, the fundamental distinction remains: **abstract classes carry state** (fields, constructors), making them about shared implementation within a hierarchy; **interfaces carry behavior contracts**, making them about shared capability across hierarchies. If you need shared state, use an abstract class. If you need shared capability, use an interface.
 
+
+
+## Visual Explanation
+
+```dot
+digraph java_abstract_class_vs_interface {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Java Abstract Class \nInput"]
+  B [label="Java Abstract Class \nCore Mechanism"]
+  C [label="Java Abstract Class \nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_java_abstract_class_vs_interface {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Java Abstract Class " fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- [[java-abstraction|Java Abstraction]] — the parent concept
-- [[java-interfaces|Java Interfaces]] — interface mechanism in detail
-- [[java-inheritance|Java Inheritance]] — both depend on inheritance for implementation
-- [[java-polymorphism|Java Polymorphism]] — both enable polymorphic behavior
+- [[java-abstraction|Java Abstraction]] -- the parent concept
+- [[java-interfaces|Java Interfaces]] -- interface mechanism in detail
+- [[java-inheritance|Java Inheritance]] -- both depend on inheritance for implementation
+- [[java-polymorphism|Java Polymorphism]] -- both enable polymorphic behavior

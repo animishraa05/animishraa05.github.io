@@ -43,12 +43,27 @@ digraph G {
 - **Parameter rules**: Only certain types can be passed (primitives, serializable, remote objects)
 - **CORBA compatible**: Enables cross-language calls
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_RMI_IIOP {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Rmi Iiop" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[rmi-remote-method-invocation|RMI]] — RMI-IIOP extends RMI
-- Builds into: [[ejb-object|EJB Object]] — EJB objects are RMI-IIOP objects
-- Related: [[java-idl|Java IDL]] — Java IDL also uses CORBA/IIOP
-- Related: [[distributed-objects|Distributed Objects]] — RMI-IIOP enables distributed Java objects
-- Contrasts with: [[rmi-registry|RMI Registry]] — RMI-IIOP uses IIOP, not JRMP
+- Built from: [[rmi-remote-method-invocation|RMI]] -- RMI-IIOP extends RMI
+- Builds into: [[ejb-object|EJB Object]] -- EJB objects are RMI-IIOP objects
+- Related: [[java-idl|Java IDL]] -- Java IDL also uses CORBA/IIOP
+- Related: [[distributed-objects|Distributed Objects]] -- RMI-IIOP enables distributed Java objects
+- Contrasts with: [[rmi-registry|RMI Registry]] -- RMI-IIOP uses IIOP, not JRMP
 
 ## Edge Cases & Gotchas
 - **Parameter restrictions**: Not all objects can be passed (must be serializable or remote)

@@ -64,12 +64,27 @@ digraph G {
 - Entity Beans MUST use CMT (BMT is illegal for entity beans)
 - Session Beans and MDBs can use BMT or CMT
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Transaction_Demarcation_in_EJB {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Transaction Demarcat" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[transactions|Transactions]] — demarcation defines transaction boundaries
-- Builds into: [[entity-bean-transactions|Entity Bean Transaction Rules]] — entity beans restricted to CMT
-- Related: [[declarative-vs-programmatic-transactions|Comparison]] — detailed comparison of BMT vs CMT
-- Related: [[poison-message|Poison Message]] — occurs with CMT in MDBs when rollback happens
-- Related: [[ejb-deployment-descriptor|EJB Deployment Descriptor]] — CMT configured in XML
+- Built from: [[transactions|Transactions]] -- demarcation defines transaction boundaries
+- Builds into: [[entity-bean-transactions|Entity Bean Transaction Rules]] -- entity beans restricted to CMT
+- Related: [[declarative-vs-programmatic-transactions|Comparison]] -- detailed comparison of BMT vs CMT
+- Related: [[poison-message|Poison Message]] -- occurs with CMT in MDBs when rollback happens
+- Related: [[ejb-deployment-descriptor|EJB Deployment Descriptor]] -- CMT configured in XML
 
 ## Edge Cases & Gotchas
 - BMT illegal for Entity Beans because container (not bean) calls ejbLoad/ejbStore

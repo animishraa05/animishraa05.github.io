@@ -12,7 +12,7 @@ Naively translated code contains redundant computations, dead code, and suboptim
 
 ## Core Idea
 
-Code optimization is the fifth phase of a compiler (and sometimes spans multiple passes). It transforms the intermediate representation into functionally equivalent but more efficient code — faster execution, smaller size, or lower power consumption — by applying algebraic, control-flow, and data-flow transformations.
+Code optimization is the fifth phase of a compiler (and sometimes spans multiple passes). It transforms the intermediate representation into functionally equivalent but more efficient code -- faster execution, smaller size, or lower power consumption -- by applying algebraic, control-flow, and data-flow transformations.
 
 ## How It Works
 
@@ -52,16 +52,31 @@ digraph optimization {
 - **Common techniques:** Constant folding, dead code elimination, CSE, loop optimizations, strength reduction
 - **Optimization levels:** Compilers offer multiple levels (O0, O1, O2, O3) trading compile time vs runtime performance
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Code_Optimization {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Code Optimization" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[intermediate-code-generation|Intermediate Code Generation]] — optimizes the IR
-- **Builds into:** [[code-generation|Code Generation]] — optimized IR is passed to the code generator
-- **Builds into:** [[three-address-code|Three-Address Code]] — optimizations are often expressed as TAC transformations
-- **Related:** [[data-flow-analysis|Data Flow Analysis]] — many optimizations require data-flow analysis to determine safety
-- **Related:** [[phases-of-compiler|Phases of a Compiler]] — code optimization is phase 5
+- **Built from:** [[intermediate-code-generation|Intermediate Code Generation]] -- optimizes the IR
+- **Builds into:** [[code-generation|Code Generation]] -- optimized IR is passed to the code generator
+- **Builds into:** [[three-address-code|Three-Address Code]] -- optimizations are often expressed as TAC transformations
+- **Related:** [[data-flow-analysis|Data Flow Analysis]] -- many optimizations require data-flow analysis to determine safety
+- **Related:** [[phases-of-compiler|Phases of a Compiler]] -- code optimization is phase 5
 
 ## Edge Cases & Gotchas
 
 - **Optimization can hide bugs:** Some optimizations exploit undefined behavior in languages like C, causing working debug builds to break in optimized builds
 - **Diminishing returns:** Higher optimization levels (O3 vs O2) often yield marginal gains with significantly longer compile times
-- **Code size vs speed:** Some optimizations (loop unrolling, function inlining) increase code size for speed — must be tuned per application
+- **Code size vs speed:** Some optimizations (loop unrolling, function inlining) increase code size for speed -- must be tuned per application

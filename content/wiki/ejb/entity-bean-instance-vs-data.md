@@ -7,7 +7,7 @@ updated: 2026-04-29
 ---
 
 ## The Problem
-The term "Entity Bean" is used loosely—sometimes it means the in-memory Java object, sometimes it means the database record. This confusion makes discussions about entity beans unclear. What's the difference?
+The term "Entity Bean" is used loosely--sometimes it means the in-memory Java object, sometimes it means the database record. This confusion makes discussions about entity beans unclear. What's the difference?
 
 ## Core Idea
 The EJB spec clarifies two distinct concepts:
@@ -54,6 +54,21 @@ digraph InstanceVsData {
 - **One-to-one mapping**: At any moment, one instance represents one data record
 - **Container manages sync**: `ejbLoad()` and `ejbStore()` keep instance and data in sync
 
+
+
+## Semantic Network
+
+```dot
+graph semantic__Entity_Bean_Instance_vs_Data_ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label=""Entity Bean Instanc" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[entity-bean|Entity Bean]], [[ejbload|ejbLoad()]], [[ejbstore|ejbStore()]]
 - **Builds into:** [[bean-managed-persistence|BMP]], [[container-managed-persistence|CMP]]
@@ -63,4 +78,4 @@ digraph InstanceVsData {
 ## Edge Cases & Gotchas
 - **Stale data**: If another client modifies the DB directly, in-memory instance has old data (until next `ejbLoad()`)
 - **Instance pooling**: The same Java instance might represent Ray's account now, Bob's account later (container reuses instances)
-- **Transparent to client**: Client doesn't know or care about instance vs data distinction—they just call methods
+- **Transparent to client**: Client doesn't know or care about instance vs data distinction--they just call methods

@@ -8,7 +8,7 @@ updated: 2026-05-06
 
 ## The Problem
 
-Without stopping conditions, a decision tree would keep splitting until every leaf contains exactly one training instance — creating a tree that perfectly memorizes the training data but fails completely on new data. The algorithm must know when to stop growing.
+Without stopping conditions, a decision tree would keep splitting until every leaf contains exactly one training instance -- creating a tree that perfectly memorizes the training data but fails completely on new data. The algorithm must know when to stop growing.
 
 ## Core Idea
 
@@ -22,7 +22,7 @@ Three stopping conditions are evaluated at each node during recursive tree build
 
 2. **No attributes remaining**: If all features have been used on the path from root to this node, no more splits are possible. Label the node with a majority vote of the training instances remaining at that node.
 
-3. **No instances**: If the node receives zero training instances (because no training example matched the path to this node), label the node with a majority vote of the parent node's training instances — using the parent's context as the best available prior.
+3. **No instances**: If the node receives zero training instances (because no training example matched the path to this node), label the node with a majority vote of the parent node's training instances -- using the parent's context as the best available prior.
 
 **Additional practical conditions (not in source but commonly used):**
 - **Maximum depth**: Stop when the tree reaches a pre-specified depth limit
@@ -65,14 +65,29 @@ digraph stopping_conditions {
 - **Hierarchical**: Conditions are checked in order; earlier conditions take precedence
 - **Fallback logic**: Each condition has a default labeling strategy (class, majority vote, parent's vote)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Decision_Tree_Stopping_Conditions {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Decision Tree Stoppi" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Builds into:** [[recursive-tree-building|Recursive Tree Building]] — stopping conditions terminate the recursion
-- **Builds into:** [[leaf-node|Leaf Node]] — stopping conditions create leaf nodes
-- **Built from:** [[node-purity|Node Purity]] — purity check is the first stopping condition
-- **Related:** [[overfitting|Overfitting]] — stopping conditions are the primary defense against overfitting
-- **Builds into:** [[decision-tree-structure|Decision Tree Structure]] — determines the final tree shape
-- **Related:** [[attribute-selection-measures|Attribute Selection Measures]] — attribute exhaustion is a stopping condition
+- **Builds into:** [[recursive-tree-building|Recursive Tree Building]] -- stopping conditions terminate the recursion
+- **Builds into:** [[leaf-node|Leaf Node]] -- stopping conditions create leaf nodes
+- **Built from:** [[node-purity|Node Purity]] -- purity check is the first stopping condition
+- **Related:** [[overfitting|Overfitting]] -- stopping conditions are the primary defense against overfitting
+- **Builds into:** [[decision-tree-structure|Decision Tree Structure]] -- determines the final tree shape
+- **Related:** [[attribute-selection-measures|Attribute Selection Measures]] -- attribute exhaustion is a stopping condition
 
 ## Edge Cases & Gotchas
 

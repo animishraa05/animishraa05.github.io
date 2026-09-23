@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Web application errors (404, 500, validation failures, data access errors) can occur in any controller method. Without centralized handling, every method needs try-catch blocks, error view selection, and status code mapping — leading to duplicated error-handling code and inconsistent error responses.
+Web application errors (404, 500, validation failures, data access errors) can occur in any controller method. Without centralized handling, every method needs try-catch blocks, error view selection, and status code mapping -- leading to duplicated error-handling code and inconsistent error responses.
 
 ## Core Idea
 
@@ -57,12 +57,27 @@ digraph exception_handling {
 - **Status codes**: `@ResponseStatus(HttpStatus.NOT_FOUND)` sets HTTP status on exceptions
 - **ErrorAttributes**: Spring Boot provides default error attributes (timestamp, status, error, message, path)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Spring_MVC_Exception_Handling {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Spring Mvc Exception" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[spring-mvc|Spring MVC]] — Exception handling is integral to Spring MVC's request processing
-- **Built from:** [[spring-controller|Spring Controller]] — @ExceptionHandler methods live in controllers or @ControllerAdvice
-- **Related:** [[spring-form-handling|Spring Form Handling]] — Validation errors (BindingResult) versus exception handling
-- **Contrasts with:** [[java-try-catch-finally|Try-Catch-Finally]] — Java try-catch is imperative; Spring MVC exception handling is declarative and cross-cutting
+- **Built from:** [[spring-mvc|Spring MVC]] -- Exception handling is integral to Spring MVC's request processing
+- **Built from:** [[spring-controller|Spring Controller]] -- @ExceptionHandler methods live in controllers or @ControllerAdvice
+- **Related:** [[spring-form-handling|Spring Form Handling]] -- Validation errors (BindingResult) versus exception handling
+- **Contrasts with:** [[java-try-catch-finally|Try-Catch-Finally]] -- Java try-catch is imperative; Spring MVC exception handling is declarative and cross-cutting
 
 ## Edge Cases & Gotchas
 

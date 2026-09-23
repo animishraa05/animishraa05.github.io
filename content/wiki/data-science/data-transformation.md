@@ -34,11 +34,26 @@ digraph G {
 - Reversible: many transforms can be undone (important for interpretability)
 - Standardization: consistent transforms across train and test sets
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Data_Transformation {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Data Transformation" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[data-cleaning|Data Cleaning]] — clean data is prerequisite
-- Builds into: [[feature-engineering|Feature Engineering]] — transformed features become inputs
-- Related: [[data-wrangling|Data Wrangling]] — transformation is a wrangling step
-- Related: [[exploratory-data-analysis|EDA]] — transforms often inspired by EDA findings
+- Built from: [[data-cleaning|Data Cleaning]] -- clean data is prerequisite
+- Builds into: [[feature-engineering|Feature Engineering]] -- transformed features become inputs
+- Related: [[data-wrangling|Data Wrangling]] -- transformation is a wrangling step
+- Related: [[exploratory-data-analysis|EDA]] -- transforms often inspired by EDA findings
 
 ## Edge Cases & Gotchas
 - Applying different transforms to train vs test sets causes data leakage

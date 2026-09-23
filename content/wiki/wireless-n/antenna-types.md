@@ -7,7 +7,7 @@ updated: 2026-04-21
 ---
 
 ## The Problem
-An antenna is the transducer that converts electrical current into radio waves (transmit) and radio waves back into electrical current (receive). The shape and design of the antenna determines the radiation pattern — how the signal is distributed in space. Different applications require different radiation patterns: some need uniform coverage in all directions, while others need focused beams in specific directions.
+An antenna is the transducer that converts electrical current into radio waves (transmit) and radio waves back into electrical current (receive). The shape and design of the antenna determines the radiation pattern -- how the signal is distributed in space. Different applications require different radiation patterns: some need uniform coverage in all directions, while others need focused beams in specific directions.
 
 ## Core Idea
 Antennas are classified by their radiation pattern: isotropic (theoretical perfect sphere, used as a reference), dipole (donut-shaped, 360° horizontal coverage), directional (focused narrow beam for long distance), sectorized (divided into sectors for cellular), and diversity (multiple antennas for signal quality improvement).
@@ -16,7 +16,7 @@ Antennas are classified by their radiation pattern: isotropic (theoretical perfe
 
 **Isotropic Antenna (Theoretical Reference):**
 - Purely theoretical antenna that radiates equally in all directions (perfect sphere)
-- Never exists in practice — used as the reference for measuring antenna gain (measured in dBi)
+- Never exists in practice -- used as the reference for measuring antenna gain (measured in dBi)
 - 0 dBi gain by definition
 
 **Dipole Antenna (Most Common Real-World):**
@@ -50,15 +50,44 @@ Antennas are classified by their radiation pattern: isotropic (theoretical perfe
 - Sectorized: divides one cell into 3 or 6 sectors, reducing interference per sector
 - Diversity: no gain increase but improves reliability in multipath environments
 
+
+
+## Visual Explanation
+
+```dot
+digraph Antenna_Types {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Antenna Types\nInput"]
+  B [label="Antenna Types\nCore Mechanism"]
+  C [label="Antenna Types\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Antenna_Types {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Antenna Types" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[cellular-mobile-system|Cellular Mobile System]] — sectorized antennas enable cellular coverage
-- Built from: [[channel-fading|Channel Fading]] — diversity antenna directly combats fading
-- Related: [[sectoring|Sectoring]] — the cellular design technique that uses sectorized antennas
-- Related: [[cell-splitting|Cell Splitting]] — another capacity enhancement technique
-- Related: [[frequency-reuse|Frequency Reuse]] — sectoring improves frequency reuse efficiency
+- Built from: [[cellular-mobile-system|Cellular Mobile System]] -- sectorized antennas enable cellular coverage
+- Built from: [[channel-fading|Channel Fading]] -- diversity antenna directly combats fading
+- Related: [[sectoring|Sectoring]] -- the cellular design technique that uses sectorized antennas
+- Related: [[cell-splitting|Cell Splitting]] -- another capacity enhancement technique
+- Related: [[frequency-reuse|Frequency Reuse]] -- sectoring improves frequency reuse efficiency
 
 ## Edge Cases & Gotchas
-- Diversity antenna requires careful separation — too close and signals are correlated; too far and patterns differ
+- Diversity antenna requires careful separation -- too close and signals are correlated; too far and patterns differ
 - MIMO (used in 4G/LTE and Wi-Fi) is a multi-antenna system that combines diversity with spatial multiplexing
 - Sectorized antennas require precise azimuth pointing (for 120° sectors, ±60° from center)
 - Diversity and MIMO are different: diversity improves reliability, MIMO improves throughput

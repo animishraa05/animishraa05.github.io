@@ -19,7 +19,7 @@ When you write `freq[3]`, the CPU computes `address_of_freq + 3 * sizeof(int)` a
 1. The array is allocated as a contiguous block of memory
 2. The compiler knows the base address and element size
 3. At runtime, `freq[i]` compiles to a single `MOV` instruction with scaled index addressing
-4. The memory access is predictable — adjacent elements are in adjacent memory locations (spatial locality)
+4. The memory access is predictable -- adjacent elements are in adjacent memory locations (spatial locality)
 5. No branching, no function calls, no hash computation
 
 ## Visual Explanation
@@ -67,24 +67,24 @@ graph semantic_direct_access {
 
 ## Key Properties
 
-- True hardware-level O(1) — single CPU instruction
+- True hardware-level O(1) -- single CPU instruction
 - No hashing, no collisions, no amortization, no worst-case degradation
-- Perfect spatial locality — sequential access is cache-friendly
-- Indices must be valid (0 to size-1) — no bounds checking by default in C++
+- Perfect spatial locality -- sequential access is cache-friendly
+- Indices must be valid (0 to size-1) -- no bounds checking by default in C++
 - Works only for contiguous, densely populated index ranges
 
 ## Connections
 
-- Built from: [[character-to-index-mapping|Character-to-Index Mapping]] — direct access requires valid indices via conversion
-- Builds into: [[frequency-array|Frequency Array]] — direct access is the fundamental advantage of arrays
-- Builds into: [[memory-efficiency-array|Memory Efficiency of Array]] — minimal overhead per slot enables cache efficiency
-- Contrasts with: [[hash-collision-overhead|Hash Collision Overhead]] — hash maps trade direct access for flexibility
-- Related: [[known-range-assumption|Known Range Assumption]] — direct access requires known, bounded ranges
+- Built from: [[character-to-index-mapping|Character-to-Index Mapping]] -- direct access requires valid indices via conversion
+- Builds into: [[frequency-array|Frequency Array]] -- direct access is the fundamental advantage of arrays
+- Builds into: [[memory-efficiency-array|Memory Efficiency of Array]] -- minimal overhead per slot enables cache efficiency
+- Contrasts with: [[hash-collision-overhead|Hash Collision Overhead]] -- hash maps trade direct access for flexibility
+- Related: [[known-range-assumption|Known Range Assumption]] -- direct access requires known, bounded ranges
 
 ## Edge Cases & Gotchas
 
 - Out-of-bounds access leads to undefined behavior (silent memory corruption)
-- C++ does not bounds-check array accesses — use `std::array` or `at()` for safety
+- C++ does not bounds-check array accesses -- use `std::array` or `at()` for safety
 - For negative indices (from incorrect `ch - 'a'` on uppercase), the behavior is undefined
 - Cache misses can still occur for very large arrays (but for freq[26], the entire array fits in a single cache line)
-- Direct access assumes contiguous allocation — vectors also provide this, but with heap allocation overhead
+- Direct access assumes contiguous allocation -- vectors also provide this, but with heap allocation overhead

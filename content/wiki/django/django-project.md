@@ -48,12 +48,41 @@ django-admin startproject config .
 - Contains `manage.py` for project-level commands.
 - Orchestrates multiple apps.
 
+
+
+## Visual Explanation
+
+```dot
+digraph Django_Project {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Django Project\nInput"]
+  B [label="Django Project\nCore Mechanism"]
+  C [label="Django Project\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Django_Project {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Django Project" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[django-web-framework|Django Web Framework]] — instantiated framework.
-- **Builds into:** [[django-app|Django App]] — projects contain apps.
-- **Contrasts with:** [[django-app|Django App]] — project is the container, app is the feature.
-- **Related:** [[django-project-vs-app|Django Project vs App]] — detailed synthesis.
+- **Built from:** [[django-web-framework|Django Web Framework]] -- instantiated framework.
+- **Builds into:** [[django-app|Django App]] -- projects contain apps.
+- **Contrasts with:** [[django-app|Django App]] -- project is the container, app is the feature.
+- **Related:** [[django-project-vs-app|Django Project vs App]] -- detailed synthesis.
 
 ## Edge Cases & Gotchas
 

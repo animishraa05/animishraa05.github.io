@@ -23,7 +23,7 @@ Instance pooling is an optimization where the EJB container maintains a pool of 
 5. If pool exhausted → container may create new bean or wait
 6. If too many idle beans → container destroys some to free memory
 
-**Client Think Time**: Humans take time between clicks (reading pages). During this time, the bean can serve other clients—huge memory savings.
+**Client Think Time**: Humans take time between clicks (reading pages). During this time, the bean can serve other clients--huge memory savings.
 
 ## Visual Explanation
 ```dot
@@ -63,18 +63,33 @@ digraph G {
 - **Client think time**: Humans read pages, freeing beans for others
 - **Applies to**: Stateless session beans, entity beans (not stateful)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Instance_Pooling {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Instance Pooling" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[stateless-session-bean|Stateless Session Bean]], [[ejb-container|EJB Container]]
-- Built from: [[resource-pooling|Resource Pooling]] — broader concept including DB connections
-- Builds into: [[entity-bean|Entity Bean]] — entity beans also pooled
+- Built from: [[resource-pooling|Resource Pooling]] -- broader concept including DB connections
+- Builds into: [[entity-bean|Entity Bean]] -- entity beans also pooled
 - Related: [[getprimarykey|getPrimaryKey()]], [[entity-context|Entity Context]]
-- Related: [[client-think-time|Client Think Time]] — key enabler of pooling efficiency
+- Related: [[client-think-time|Client Think Time]] -- key enabler of pooling efficiency
 
 ## Edge Cases & Gotchas
 
 - **Stateful session beans**: Cannot be pooled (each has dedicated client state)
 - **Pool size**: Container-specific configuration; too small = wait, too large = waste
 - **State clearing**: Container must strip client data before returning to pool
-- **Crash**: Server crashes bypass normal pool return—may lose state
+- **Crash**: Server crashes bypass normal pool return--may lose state
 - **Database connections**: Also pooled separately from bean instances

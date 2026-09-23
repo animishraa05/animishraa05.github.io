@@ -12,7 +12,7 @@ Loops are where programs spend most of their execution time. To optimize effecti
 
 ## Core Idea
 
-Loop detection in TAC identifies loop structures in the control-flow graph (CFG). A **loop** in the CFG is a set of nodes (basic blocks) where: every node can reach the loop header, and the header dominates all nodes in the loop. The key concept is **dominators** — node d dominates node n if every path from entry to n goes through d.
+Loop detection in TAC identifies loop structures in the control-flow graph (CFG). A **loop** in the CFG is a set of nodes (basic blocks) where: every node can reach the loop header, and the header dominates all nodes in the loop. The key concept is **dominators** -- node d dominates node n if every path from entry to n goes through d.
 
 ## How It Works
 
@@ -53,19 +53,34 @@ digraph loop_detection {
 - **Dominator:** h dominates n if all paths from entry to n include h
 - **Back edge:** Edge from n to h where h dominates n
 - **Natural loop:** Header h + all nodes that can reach a back edge without passing through h
-- **Nested loops:** A loop inside another — inner loop is optimized first
+- **Nested loops:** A loop inside another -- inner loop is optimized first
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Detection_of_a_Loop_in_Three_Address_Code {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Detection Of A Loop " fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[three-address-code|Three-Address Code]] — TAC provides the instruction sequence for CFG construction
-- **Builds into:** [[code-optimization|Code Optimization]] — loop detection enables loop optimizations
-- **Related:** [[data-flow-analysis|Data Flow Analysis]] — data-flow analysis often computes loop information
-- **Related:** [[intermediate-code-generation|Intermediate Code Generation]] — TAC enables loop detection at the IR level
-- **Related:** [[code-generator-design-issues|Issues in Code Generator Design]] — code generators must be aware of loop structure for register allocation
+- **Built from:** [[three-address-code|Three-Address Code]] -- TAC provides the instruction sequence for CFG construction
+- **Builds into:** [[code-optimization|Code Optimization]] -- loop detection enables loop optimizations
+- **Related:** [[data-flow-analysis|Data Flow Analysis]] -- data-flow analysis often computes loop information
+- **Related:** [[intermediate-code-generation|Intermediate Code Generation]] -- TAC enables loop detection at the IR level
+- **Related:** [[code-generator-design-issues|Issues in Code Generator Design]] -- code generators must be aware of loop structure for register allocation
 
 ## Edge Cases & Gotchas
 
-- **Irreducible loops:** Multiple entry points (from goto) — cannot be identified as natural loops, require special handling
+- **Irreducible loops:** Multiple entry points (from goto) -- cannot be identified as natural loops, require special handling
 - **Outer vs inner loops:** When loops are nested, the inner loop should be optimized first (maximizes benefit)
-- **Infinite loops:** A loop with no exit edge — the compiler must detect this to avoid infinite optimization
-- **Loop-invariant code:** Instructions inside the loop that produce the same value every iteration — should be moved to the pre-header
+- **Infinite loops:** A loop with no exit edge -- the compiler must detect this to avoid infinite optimization
+- **Loop-invariant code:** Instructions inside the loop that produce the same value every iteration -- should be moved to the pre-header

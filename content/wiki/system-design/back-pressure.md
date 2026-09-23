@@ -12,7 +12,7 @@ Unbounded queue growth under high load causes memory exhaustion, increased cache
 
 ## Core Idea
 
-Back pressure limits the size of a queue to maintain throughput and response times for already-accepted work. When the queue reaches its configured capacity, new requests are rejected — typically with HTTP 503 (Service Unavailable) — and clients retry with exponential backoff.
+Back pressure limits the size of a queue to maintain throughput and response times for already-accepted work. When the queue reaches its configured capacity, new requests are rejected -- typically with HTTP 503 (Service Unavailable) -- and clients retry with exponential backoff.
 
 ## How It Works
 
@@ -20,7 +20,7 @@ Back pressure limits the size of a queue to maintain throughput and response tim
 2. When the queue reaches this limit, reject new incoming requests.
 3. Return HTTP 503 Service Unavailable to the client.
 4. Client retries using exponential backoff (1s, 2s, 4s, 8s... with jitter).
-5. Throughput for already-queued jobs is preserved — the system degrades gracefully instead of collapsing.
+5. Throughput for already-queued jobs is preserved -- the system degrades gracefully instead of collapsing.
 
 ## Visual Explanation
 
@@ -53,12 +53,27 @@ digraph BackPressure {
 - Exponential backoff with jitter prevents thundering herd on retry
 - Preserves overall system stability by shedding load at the boundary
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Back_Pressure {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Back Pressure" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- Related: [[message-queues|Message Queues]] — back pressure protects message queues from overload
-- Related: [[task-queues|Task Queues]] — back pressure prevents task queues from growing unboundedly
-- Related: [[latency-vs-throughput|Latency vs Throughput]] — back pressure maintains stable throughput by rejecting excess load
-- Related: [[horizontal-scaling|Horizontal Scaling]] — sustained back pressure is a signal to scale out the worker pool
+- Related: [[message-queues|Message Queues]] -- back pressure protects message queues from overload
+- Related: [[task-queues|Task Queues]] -- back pressure prevents task queues from growing unboundedly
+- Related: [[latency-vs-throughput|Latency vs Throughput]] -- back pressure maintains stable throughput by rejecting excess load
+- Related: [[horizontal-scaling|Horizontal Scaling]] -- sustained back pressure is a signal to scale out the worker pool
 
 ## Edge Cases & Gotchas
 

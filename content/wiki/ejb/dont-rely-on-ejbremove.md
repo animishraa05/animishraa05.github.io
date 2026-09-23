@@ -7,7 +7,7 @@ updated: 2026-04-29
 ---
 
 ## The Problem
-Developers often put critical cleanup code in `ejbRemove()`—closing database connections, deleting temporary shopping cart data, etc. But what if `ejbRemove()` is never called?
+Developers often put critical cleanup code in `ejbRemove()`--closing database connections, deleting temporary shopping cart data, etc. But what if `ejbRemove()` is never called?
 
 ## Core Idea
 The EJB container MAY call `ejbRemove()` when it decides to destroy a bean instance. BUT it is NOT guaranteed. If the server crashes, or if a critical system exception occurs, the bean is destroyed without `ejbRemove()` being called. Never rely on `ejbRemove()` for critical cleanup.
@@ -46,6 +46,21 @@ digraph EjbRemove {
 - **Periodic cleanup needed**: For resources that MUST be cleaned (like temp DB records), use a scheduled job
 - **Session beans**: Stateless beans may be destroyed without `ejbRemove()` (pool management)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic__Don_t_Rely_on_ejbRemove___ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label=""Don'T Rely On Ejbre" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[session-bean|Session Bean]], [[entity-bean|Entity Bean]] (both have `ejbRemove()`)
 - **Builds into:** [[ejb-container|EJB Container]] (decides when to call it)
@@ -53,6 +68,6 @@ digraph EjbRemove {
 - **Contrasts with:** Java `finalize()` (also unreliable), C++ destructors (reliable)
 
 ## Edge Cases & Gotchas
-- **Shopping cart example**: If `ejbRemove()` isn't called, abandoned carts stay in DB forever—need a cleanup job
-- **Database connections**: Don't close them in `ejbRemove()`—use `ejbPassivate()` or let container manage pooling
-- **Exam trick question**: "Where should you put critical cleanup code?" → Answer: Nowhere in the bean—use external utilities
+- **Shopping cart example**: If `ejbRemove()` isn't called, abandoned carts stay in DB forever--need a cleanup job
+- **Database connections**: Don't close them in `ejbRemove()`--use `ejbPassivate()` or let container manage pooling
+- **Exam trick question**: "Where should you put critical cleanup code?" → Answer: Nowhere in the bean--use external utilities

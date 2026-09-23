@@ -48,11 +48,26 @@ digraph G {
 - **J2EE standard**: Part of J2EE platform
 - **Server-side use**: Commonly used in J2EE deployments
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_JavaMail {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Javamail" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[java-platforms|Java Platforms]] — JavaMail is part of J2EE
-- Related: [[ejb-container|EJB Container]] — EJB components can use JavaMail
-- Related: [[servlets|Servlets]] — servlets commonly send emails
-- Related: [[jsp|JSP]] — JSP pages can trigger email sending
+- Built from: [[java-platforms|Java Platforms]] -- JavaMail is part of J2EE
+- Related: [[ejb-container|EJB Container]] -- EJB components can use JavaMail
+- Related: [[servlets|Servlets]] -- servlets commonly send emails
+- Related: [[jsp|JSP]] -- JSP pages can trigger email sending
 
 ## Edge Cases & Gotchas
 - **JAF required**: Forgetting JAF causes ClassNotFound errors

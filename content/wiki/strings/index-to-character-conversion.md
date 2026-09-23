@@ -80,17 +80,17 @@ graph semantic_index_to_char {
 
 ## Key Properties
 
-- O(1) computation — simple integer addition
+- O(1) computation -- simple integer addition
 - Must match the base used in the forward mapping (`'a'` for `ch - 'a'`)
 - Produces only lowercase letters when used with 0–25 indices
-- No bounds checking — caller must ensure index is in valid range
+- No bounds checking -- caller must ensure index is in valid range
 
 ## Connections
 
-- Built from: [[character-to-index-mapping|Character-to-Index Mapping]] — index-to-character is the mathematical inverse of character-to-index
-- Builds into: [[most-frequent-character|Most Frequent Character]] — after finding the max index, convert back to character
-- Builds into: [[frequency-array|Frequency Array]] — used during the traversal phase to produce output
-- Contrasts with: [[map-traversal-method|Hash Map Traversal Method]] — maps store key-value pairs directly, no conversion needed
+- Built from: [[character-to-index-mapping|Character-to-Index Mapping]] -- index-to-character is the mathematical inverse of character-to-index
+- Builds into: [[most-frequent-character|Most Frequent Character]] -- after finding the max index, convert back to character
+- Builds into: [[frequency-array|Frequency Array]] -- used during the traversal phase to produce output
+- Contrasts with: [[map-traversal-method|Hash Map Traversal Method]] -- maps store key-value pairs directly, no conversion needed
 
 ## Edge Cases & Gotchas
 

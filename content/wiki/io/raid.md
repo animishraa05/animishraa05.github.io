@@ -8,7 +8,7 @@ updated: 2026-04-30
 
 ## The Problem
 
-Disks fail — and when they do, data is lost. Single disks also have performance limits. We need techniques to combine multiple disks for reliability and/or speed.
+Disks fail -- and when they do, data is lost. Single disks also have performance limits. We need techniques to combine multiple disks for reliability and/or speed.
 
 ## Core Idea
 
@@ -53,15 +53,30 @@ digraph raid {
 - RAID 6: More reliable than 5 (2 disk failures)
 - RAID 10: Best performance + reliability, but expensive
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_RAID {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Raid" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[disk-management|Disk Management]], [[disk-structure|Disk Structure]]
 - **Builds into:** [[disk-reliability|Disk Reliability]]
 - **Related:** [[parity|Parity]], [[striping|Striping]], [[mirroring|Mirroring]]
-- **Contrasts with:** [[swap-space|Swap Space]] (different purpose — performance vs capacity extension)
+- **Contrasts with:** [[swap-space|Swap Space]] (different purpose -- performance vs capacity extension)
 
 ## Edge Cases & Gotchas
 
-- RAID is not backup — accidental deletion still propagates
+- RAID is not backup -- accidental deletion still propagates
 - RAID rebuild after failure is I/O intensive (risky if another disk fails)
 - Software RAID vs Hardware RAID (hardware has battery-backed cache)

@@ -46,6 +46,21 @@ digraph dma {
 - Requires DMA controller hardware (additional cost)
 - Best for high-speed, large block transfers
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_DMA {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Dma" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[io-system|I/O System]], [[system-bus|System Bus]], [[device-controller|Device Controller]]
@@ -55,7 +70,7 @@ digraph dma {
 
 ## Edge Cases & Gotchas
 
-- DMA and CPU both need system bus — bus arbitration required
+- DMA and CPU both need system bus -- bus arbitration required
 - Wrong DMA setup (bad address/size) can corrupt memory
 - Some systems have limited DMA channels (resource contention)
-- Cache coherency issues — CPU cache may not see DMA-written data
+- Cache coherency issues -- CPU cache may not see DMA-written data

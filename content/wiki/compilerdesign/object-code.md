@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-A compiler produces code for a single source file, but real programs consist of many source files compiled separately. The raw machine code from a single compilation cannot execute on its own — it needs to be combined with other modules, have its addresses resolved, and be loaded into memory.
+A compiler produces code for a single source file, but real programs consist of many source files compiled separately. The raw machine code from a single compilation cannot execute on its own -- it needs to be combined with other modules, have its addresses resolved, and be loaded into memory.
 
 ## Core Idea
 
@@ -16,7 +16,7 @@ Object code is the output of the code generation phase before linking. It contai
 
 ## How It Works
 
-The compiler produces a relocatable object file (`.o` on Unix, `.obj` on Windows) for each source file. This file has sections for code (`.text`), initialized data (`.data`), uninitialized data (`.bss`), and symbol tables. Addresses in the code are relative or symbolic — the linker fills in actual addresses when it creates the executable.
+The compiler produces a relocatable object file (`.o` on Unix, `.obj` on Windows) for each source file. This file has sections for code (`.text`), initialized data (`.data`), uninitialized data (`.bss`), and symbol tables. Addresses in the code are relative or symbolic -- the linker fills in actual addresses when it creates the executable.
 
 ## Visual Explanation
 
@@ -52,15 +52,30 @@ digraph object_code {
 - **Section structure:** Code (.text), initialized data (.data), uninitialized data (.bss)
 - **Input to linker:** The linker combines multiple object files into an executable
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Object_Code {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Object Code" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[code-generation|Code Generation]] — the code generator produces object code
-- **Builds into:** [[linker-and-loader|Linker and Loader]] — the linker processes object code into executables
-- **Related:** [[phases-of-compiler|Phases of a Compiler]] — object code is the final output of compilation
-- **Related:** [[compiler-pass|Compiler Pass]] — object code output depends on whether the compiler uses single or multiple passes
+- **Built from:** [[code-generation|Code Generation]] -- the code generator produces object code
+- **Builds into:** [[linker-and-loader|Linker and Loader]] -- the linker processes object code into executables
+- **Related:** [[phases-of-compiler|Phases of a Compiler]] -- object code is the final output of compilation
+- **Related:** [[compiler-pass|Compiler Pass]] -- object code output depends on whether the compiler uses single or multiple passes
 
 ## Edge Cases & Gotchas
 
-- **Position-independent code (PIC):** Shared libraries use PIC where all addresses are relative to the program counter — requires different object code structure
+- **Position-independent code (PIC):** Shared libraries use PIC where all addresses are relative to the program counter -- requires different object code structure
 - **Link-time optimization (LTO):** Modern compilers can defer optimization to link time, keeping IR in object files
-- **Debug info formats:** DWARF (Unix) or CodeView (Windows) — these can significantly increase object file size
+- **Debug info formats:** DWARF (Unix) or CodeView (Windows) -- these can significantly increase object file size

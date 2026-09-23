@@ -8,7 +8,7 @@ updated: 2026-05-04
 
 ## The Problem
 
-Data warehousing did not emerge fully formed — it evolved over decades as a response to the growing need for better data analysis tools. Understanding this evolution reveals why modern warehouses have their current architecture and why certain design decisions (subject-oriented, nonvolatile, integrated) were made.
+Data warehousing did not emerge fully formed -- it evolved over decades as a response to the growing need for better data analysis tools. Understanding this evolution reveals why modern warehouses have their current architecture and why certain design decisions (subject-oriented, nonvolatile, integrated) were made.
 
 ## Core Idea
 
@@ -18,22 +18,22 @@ Data warehousing did not emerge fully formed — it evolved over decades as a re
 
 The evolution unfolded in four major phases:
 
-1. **1960s — Batch Reports:**
+1. **1960s -- Batch Reports:**
    - Data was processed in batch jobs, producing printed reports.
-   - **Problems:** Hard to find and analyze information; inflexible and expensive — every new request required reprogramming.
+   - **Problems:** Hard to find and analyze information; inflexible and expensive -- every new request required reprogramming.
    - **Limitation:** No interactive analysis possible.
 
-2. **1970s — Terminal-based DSS and EIS:**
+2. **1970s -- Terminal-based DSS and EIS:**
    - Decision Support Systems (DSS) and Executive Information Systems (EIS) provided interactive terminal access.
    - **Problems:** Still inflexible; not integrated with desktop tools (spreadsheets, word processors).
    - **Limitation:** Users were locked into specific terminal interfaces.
 
-3. **1980s — Desktop Data Access and Analysis Tools:**
+3. **1980s -- Desktop Data Access and Analysis Tools:**
    - Query tools, spreadsheets, and GUIs made analysis accessible on personal computers.
    - **Problems:** Easier to use, but could only access operational databases (not historical data).
    - **Limitation:** Analyzing production data degraded operational performance.
 
-4. **1990s — Data Warehousing with Integrated OLAP:**
+4. **1990s -- Data Warehousing with Integrated OLAP:**
    - The modern era: dedicated warehouses with integrated OLAP engines and tools.
    - **Solution:** Separate analytical database (nonvolatile, historical, subject-oriented) with multidimensional analysis capabilities.
    - **Breakthrough:** Combined historical data integration with desktop-friendly analytical tools.
@@ -89,14 +89,14 @@ graph semantic_evolution {
 
 ## Connections
 
-- **Builds into:** [[data-warehouse-definition|Data Warehouse Definition]] — evolution explains why the four characteristics exist
-- **Builds into:** [[oltp-vs-olap|OLTP vs OLAP]] — the 80s limitation (only operational data) motivated the OLAP/OLTP split
-- **Builds into:** [[three-tier-dwh-architecture|Three-Tier DWH Architecture]] — the architecture is the culmination of the evolution
-- **Builds into:** [[olap-servers|OLAP Servers]] — OLAP integration was the 90s breakthrough
-- **Related:** [[dwh-benefits|DWH Benefits]] — benefits represent the solution to all historical limitations
+- **Builds into:** [[data-warehouse-definition|Data Warehouse Definition]] -- evolution explains why the four characteristics exist
+- **Builds into:** [[oltp-vs-olap|OLTP vs OLAP]] -- the 80s limitation (only operational data) motivated the OLAP/OLTP split
+- **Builds into:** [[three-tier-dwh-architecture|Three-Tier DWH Architecture]] -- the architecture is the culmination of the evolution
+- **Builds into:** [[olap-servers|OLAP Servers]] -- OLAP integration was the 90s breakthrough
+- **Related:** [[dwh-benefits|DWH Benefits]] -- benefits represent the solution to all historical limitations
 
 ## Edge Cases & Gotchas
 
-- **Pre-history:** Before the 1960s, data analysis was entirely manual — paper records and human calculation.
+- **Pre-history:** Before the 1960s, data analysis was entirely manual -- paper records and human calculation.
 - **The term "data warehouse":** Coined by Bill Inmon in the early 1990s, formalizing concepts that had been evolving for decades.
 - **Parallel developments:** The evolution described is specific to business intelligence; scientific computing had its own parallel evolution.

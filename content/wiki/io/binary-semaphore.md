@@ -42,6 +42,21 @@ digraph binary_sem {
 - Initialized to 1 for mutex use
 - Can be used as a lock/mutex
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Binary_Semaphore {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Binary Semaphore" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[semaphore|Semaphore]], [[critical-section|Critical Section]]

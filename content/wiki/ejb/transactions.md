@@ -10,12 +10,12 @@ updated: 2026-04-28
 Enterprise beans perform mission-critical tasks that must be reliable and robust. Without transactions, partial failures (e.g., debiting one account but not crediting the other) lead to data inconsistency. EJB abstracts low-level transaction systems so developers focus on business logic.
 
 ## Core Idea
-Transactions in EJB provide ACID properties (Atomicity, Consistency, Isolation, Durability) for enterprise bean operations. The EJB container abstracts the underlying transaction system — beans only vote on commit/abort, never interact directly with transaction managers.
+Transactions in EJB provide ACID properties (Atomicity, Consistency, Isolation, Durability) for enterprise bean operations. The EJB container abstracts the underlying transaction system -- beans only vote on commit/abort, never interact directly with transaction managers.
 
 ## How It Works
 1. EJB uses **flat transactions** (all-or-nothing, no nested transactions in EJB spec)
 2. Transaction boundaries are demarcated via: Programmatic (BMT), Declarative (CMT), or Client-Initiated
-3. Container handles: begin, commit, rollback — bean signals success/failure
+3. Container handles: begin, commit, rollback -- bean signals success/failure
 4. Entity beans: `ejbLoad()` acquires locks → business methods run → `ejbStore()` writes and releases locks (all within one transaction)
 5. Transaction spans entire set of operations or per-method depending on demarcation style
 
@@ -43,13 +43,28 @@ digraph G {
 - Entity beans load/store per transaction, not per method call
 - Transaction attributes (in deployment descriptor) control when transactions start/end
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Transactions_in_EJB {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Transactions In Ejb" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[ejb-container|EJB Container]] — container manages transaction boundaries
-- Builds into: [[transaction-demarcation|Transaction Demarcation]] — 3 ways to control transactions
-- Builds into: [[entity-bean-transactions|Entity Bean Transaction Rules]] — entity beans must use CMT
-- Builds into: [[flat-vs-nested-transactions|Flat vs Nested Transactions]] — EJB uses flat only
-- Related: [[poison-message|Poison Message]] — MDB rollback in CMT causes poison messages
-- Related: [[declarative-vs-programmatic-transactions|CMT vs BMT]] — comparison of demarcation styles
+- Built from: [[ejb-container|EJB Container]] -- container manages transaction boundaries
+- Builds into: [[transaction-demarcation|Transaction Demarcation]] -- 3 ways to control transactions
+- Builds into: [[entity-bean-transactions|Entity Bean Transaction Rules]] -- entity beans must use CMT
+- Builds into: [[flat-vs-nested-transactions|Flat vs Nested Transactions]] -- EJB uses flat only
+- Related: [[poison-message|Poison Message]] -- MDB rollback in CMT causes poison messages
+- Related: [[declarative-vs-programmatic-transactions|CMT vs BMT]] -- comparison of demarcation styles
 
 ## Edge Cases & Gotchas
 - Nested transactions are NOT supported in EJB (despite being described in the book)

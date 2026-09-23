@@ -52,12 +52,41 @@ class ArticleListView(ListView):
 - Standardizes CRUD operations.
 - Can be harder to read initially due to hidden inherited logic.
 
+
+
+## Visual Explanation
+
+```dot
+digraph Django_Class_Based_View {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Django Class Based V\nInput"]
+  B [label="Django Class Based V\nCore Mechanism"]
+  C [label="Django Class Based V\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Django_Class_Based_View {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Django Class Based V" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[django-view|Django View]] — an evolution of the view concept.
-- **Related:** [[django-model|Django Model]] — Generic CBVs are heavily tied to models.
-- **Related:** [[django-url-dispatcher|Django URL Dispatcher]] — called using `.as_view()`.
-- **Related:** [[django-web-framework|Django Web Framework]] — OOP patterns.
+- **Built from:** [[django-view|Django View]] -- an evolution of the view concept.
+- **Related:** [[django-model|Django Model]] -- Generic CBVs are heavily tied to models.
+- **Related:** [[django-url-dispatcher|Django URL Dispatcher]] -- called using `.as_view()`.
+- **Related:** [[django-web-framework|Django Web Framework]] -- OOP patterns.
 
 ## Edge Cases & Gotchas
 

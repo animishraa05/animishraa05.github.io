@@ -47,15 +47,30 @@ digraph G {
 - Pre-chooses which machines get which messages (before they reach the queue)
 - Separates test and production traffic completely
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Queue_Partitioning_for_Business_Processing {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Queue Partitioning F" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[message-driven-bean|MDB]] — MDBs consume from specific queues
-- Built from: [[jms|JMS]] — uses JMS queues for message routing
-- Related: [[poison-message|Poison Message]] — poisoning one queue doesn't affect the other
-- Related: [[point-to-point-vs-pub-sub|PTP vs Pub/Sub]] — uses Point-to-Point (Queue) model
-- Related: [[stateless-session-bean|Stateless Session Bean]] — can be the front-end that routes messages
+- Built from: [[message-driven-bean|MDB]] -- MDBs consume from specific queues
+- Built from: [[jms|JMS]] -- uses JMS queues for message routing
+- Related: [[poison-message|Poison Message]] -- poisoning one queue doesn't affect the other
+- Related: [[point-to-point-vs-pub-sub|PTP vs Pub/Sub]] -- uses Point-to-Point (Queue) model
+- Related: [[stateless-session-bean|Stateless Session Bean]] -- can be the front-end that routes messages
 
 ## Edge Cases & Gotchas
 - Requires front-end logic to classify and route messages (additional complexity)
 - Queue names must be known at deployment time (configured in MDB deployment)
 - If one queue gets all the traffic, that cluster may be overwhelmed while other is idle
-- Not true dynamic load balancing — routing decision made before queue insertion
+- Not true dynamic load balancing -- routing decision made before queue insertion

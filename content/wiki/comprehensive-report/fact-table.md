@@ -32,21 +32,50 @@ ORDER BY revenue DESC
 ```
 
 ## Key Properties
-- **Grain**: The level of detail—one row per order, one row per line item
+- **Grain**: The level of detail--one row per order, one row per line item
 - **Additive measures**: Can be summed (revenue), non-additive (ratings must be averaged)
 - **Foreign key constraints**: Enforce referential integrity with dimensions
 - **Composite indexes**: On frequently filtered columns (date_id, customer_id, status)
 - **Denormalization**: customer_id and date_id included in fact_order_items to avoid JOINs
 
+
+
+## Visual Explanation
+
+```dot
+digraph Fact_Table {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Fact Table\nInput"]
+  B [label="Fact Table\nCore Mechanism"]
+  C [label="Fact Table\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Fact_Table {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Fact Table" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[wiki/comprehensive-report/star-schema|Star Schema]] — fact tables are the center
-- Builds into: [[data-warehouse|Data Warehouse]] — fact tables are core warehouse components
-- Related: [[wiki/comprehensive-report/dimension-table|Dimension Table]] — fact tables reference dimensions
-- Related: [[sql-database|SQL Database]] — fact tables are implemented in SQL
-- Related: [[etl-pipeline|ETL Pipeline]] — ETL populates fact tables
+- Built from: [[wiki/comprehensive-report/star-schema|Star Schema]] -- fact tables are the center
+- Builds into: [[data-warehouse|Data Warehouse]] -- fact tables are core warehouse components
+- Related: [[wiki/comprehensive-report/dimension-table|Dimension Table]] -- fact tables reference dimensions
+- Related: [[sql-database|SQL Database]] -- fact tables are implemented in SQL
+- Related: [[etl-pipeline|ETL Pipeline]] -- ETL populates fact tables
 
 ## Edge Cases & Gotchas
 - **Inconsistent grain**: Mixing row-per-order with row-per-line-item in same table causes double-counting
-- **NULL in measures**: Aggregations like SUM() ignore NULLs—use COALESCE or fill nulls with 0
+- **NULL in measures**: Aggregations like SUM() ignore NULLs--use COALESCE or fill nulls with 0
 - **Integer flags vs boolean**: Using SMALLINT (0/1) instead of BOOLEAN enables SUM(is_delivered) directly
 - **Degenerate dimension misuse**: Creating separate tables for 3-5 value attributes adds overhead with no benefit

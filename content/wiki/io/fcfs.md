@@ -40,6 +40,21 @@ digraph fcfs {
 - Can be very inefficient (long seek times)
 - Example: queue [100, 50, 150, 30] → services in that order
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_FCFS {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Fcfs" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[disk-scheduling|Disk Scheduling]], [[disk-structure|Disk Structure]]

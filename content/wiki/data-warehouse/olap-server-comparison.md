@@ -1,5 +1,5 @@
 ---
-title: ROLAP vs MOLAP vs HOLAP — OLAP Server Comparison
+title: ROLAP vs MOLAP vs HOLAP -- OLAP Server Comparison
 type: synthesis
 tags: [database, data-warehouse]
 created: 2026-05-04
@@ -8,11 +8,11 @@ updated: 2026-05-04
 
 ## What's Being Compared
 
-Three OLAP server architectures that implement the multidimensional data model differently — storing and processing data in relational tables (ROLAP), pre-computed multidimensional arrays (MOLAP), or a hybrid of both (HOLAP). The choice determines query speed, data volume capacity, storage cost, and vendor dependency.
+Three OLAP server architectures that implement the multidimensional data model differently -- storing and processing data in relational tables (ROLAP), pre-computed multidimensional arrays (MOLAP), or a hybrid of both (HOLAP). The choice determines query speed, data volume capacity, storage cost, and vendor dependency.
 
 ## The Core Tension
 
-The fundamental tradeoff is **computation timing** — when should aggregations be calculated? ROLAP computes at query time (slow but flexible), MOLAP computes at load time (fast but rigid), and HOLAP splits the difference (summary at load time, detail at query time).
+The fundamental tradeoff is **computation timing** -- when should aggregations be calculated? ROLAP computes at query time (slow but flexible), MOLAP computes at load time (fast but rigid), and HOLAP splits the difference (summary at load time, detail at query time).
 
 ## Comparison
 
@@ -49,13 +49,42 @@ The fundamental tradeoff is **computation timing** — when should aggregations 
 
 ## The Insight
 
-The ROLAP/MOLAP/HOLAP spectrum reveals that **there is no universal optimal OLAP architecture** — the right choice depends on the query pattern distribution. If 80% of queries are summaries and 20% need detail, HOLAP's split architecture is ideal. If 100% of queries are summaries on small data, MOLAP wins. If queries are unpredictable and data is massive, ROLAP is the only viable option. Modern cloud warehouses (BigQuery, Redshift, Snowflake) have essentially made ROLAP fast enough that MOLAP's speed advantage is less critical than it once was.
+The ROLAP/MOLAP/HOLAP spectrum reveals that **there is no universal optimal OLAP architecture** -- the right choice depends on the query pattern distribution. If 80% of queries are summaries and 20% need detail, HOLAP's split architecture is ideal. If 100% of queries are summaries on small data, MOLAP wins. If queries are unpredictable and data is massive, ROLAP is the only viable option. Modern cloud warehouses (BigQuery, Redshift, Snowflake) have essentially made ROLAP fast enough that MOLAP's speed advantage is less critical than it once was.
 
+
+
+## Visual Explanation
+
+```dot
+digraph olap_server_comparison {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Olap Server Comparis\nInput"]
+  B [label="Olap Server Comparis\nCore Mechanism"]
+  C [label="Olap Server Comparis\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_olap_server_comparison {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Olap Server Comparis" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- [[rolap-server|ROLAP Server]] — relational, dynamic, scalable
-- [[molap-server|MOLAP Server]] — pre-computed, fast, limited
-- [[holap-server|HOLAP Server]] — hybrid, best of both
-- [[olap-servers|OLAP Servers]] — the overarching category
-- [[multidimensional-data-model|Multidimensional Data Model]] — what all three implement
-- [[olap-operations|OLAP Operations]] — operations each server type executes
+- [[rolap-server|ROLAP Server]] -- relational, dynamic, scalable
+- [[molap-server|MOLAP Server]] -- pre-computed, fast, limited
+- [[holap-server|HOLAP Server]] -- hybrid, best of both
+- [[olap-servers|OLAP Servers]] -- the overarching category
+- [[multidimensional-data-model|Multidimensional Data Model]] -- what all three implement
+- [[olap-operations|OLAP Operations]] -- operations each server type executes

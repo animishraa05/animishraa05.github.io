@@ -24,7 +24,7 @@ The multidimensional data model defines how data should be organized conceptuall
 - **Weaknesses:** Slow response time (dynamic SQL generation and execution); scalability limitations for very complex queries.
 
 ### 2. MOLAP (Multidimensional OLAP)
-- **Storage:** Data is pre-calculated and stored in proprietary **MDDBs** (Multidimensional Databases) — large arrays of data cubes.
+- **Storage:** Data is pre-calculated and stored in proprietary **MDDBs** (Multidimensional Databases) -- large arrays of data cubes.
 - **Processing:** The MOLAP engine resides in the application layer and serves pre-computed cube data directly to users. No SQL generation needed.
 - **Sparse matrix technology:** Manages data sparsity (empty cells) efficiently.
 - **Strengths:** Lightning-fast response (data already calculated); simple interface for all user skill levels.
@@ -33,7 +33,7 @@ The multidimensional data model defines how data should be organized conceptuall
 ### 3. HOLAP (Hybrid OLAP)
 - **Storage:** Detailed data stored in ROLAP (relational tables); aggregations stored in MOLAP (pre-calculated cubes).
 - **Processing:** Queries for summaries hit the fast MOLAP store; queries for detail go to the ROLAP store.
-- **Strengths:** Best of both worlds — ROLAP scalability + MOLAP speed.
+- **Strengths:** Best of both worlds -- ROLAP scalability + MOLAP speed.
 
 ### 4. Specialized SQL Servers
 - **Purpose:** Provide advanced query language and processing support for SQL queries over star and snowflake schemas in read-only environments.
@@ -103,16 +103,16 @@ graph semantic_olap_servers {
 
 ## Connections
 
-- **Built from:** [[multidimensional-data-model|Multidimensional Data Model]] — servers implement the model
-- **Built from:** [[three-tier-dwh-architecture|Three-Tier DWH Architecture]] — OLAP servers are Tier 2
-- **Builds into:** [[olap-operations|OLAP Operations]] — servers execute these operations
-- **Builds into:** [[rolap-server|ROLAP Server]] — one of the four server types
-- **Builds into:** [[molap-server|MOLAP Server]] — one of the four server types
-- **Related:** [[metadata-in-dwh|Metadata in DWH]] — ROLAP uses metadata for dimension mapping
+- **Built from:** [[multidimensional-data-model|Multidimensional Data Model]] -- servers implement the model
+- **Built from:** [[three-tier-dwh-architecture|Three-Tier DWH Architecture]] -- OLAP servers are Tier 2
+- **Builds into:** [[olap-operations|OLAP Operations]] -- servers execute these operations
+- **Builds into:** [[rolap-server|ROLAP Server]] -- one of the four server types
+- **Builds into:** [[molap-server|MOLAP Server]] -- one of the four server types
+- **Related:** [[metadata-in-dwh|Metadata in DWH]] -- ROLAP uses metadata for dimension mapping
 
 ## Edge Cases & Gotchas
 
 - **HOLAP is not automatic:** Administrators must explicitly configure which aggregations go to MOLAP and which detail stays in ROLAP.
-- **MOLAP vendor lock-in:** MDDBs are proprietary — migrating from one MOLAP vendor to another requires rebuilding all cubes.
+- **MOLAP vendor lock-in:** MDDBs are proprietary -- migrating from one MOLAP vendor to another requires rebuilding all cubes.
 - **ROLAP SQL complexity:** For complex roll-ups across many dimensions, ROLAP generates extremely complex SQL that may not execute efficiently.
 - **Specialized SQL servers are niche:** Products like columnar databases (e.g., Redshift, BigQuery) are modern equivalents of specialized SQL servers.

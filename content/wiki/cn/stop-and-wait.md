@@ -39,16 +39,31 @@ digraph G {
 ## Key Properties
 - Simple to implement
 - Lowest possible efficiency on high-latency links
-- Wastes bandwidth — sender idle while waiting for ACK
+- Wastes bandwidth -- sender idle while waiting for ACK
 - Suitable for low-latency or low-throughput scenarios
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Stop_and_Wait_Protocol {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Stop And Wait Protoc" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Contrasts with: [[sliding-window-protocol|Sliding Window Protocol]] — one packet vs multiple
-- Built from: [[acknowledgment|Acknowledgment]] — core mechanism
-- Related: [[reliable-data-transfer|Reliable Data Transfer]] — simple form of reliable delivery
-- Related: [[transmission-error-detection|Transmission Error Detection]] — detects corrupted packets
+- Contrasts with: [[sliding-window-protocol|Sliding Window Protocol]] -- one packet vs multiple
+- Built from: [[acknowledgment|Acknowledgment]] -- core mechanism
+- Related: [[reliable-data-transfer|Reliable Data Transfer]] -- simple form of reliable delivery
+- Related: [[transmission-error-detection|Transmission Error Detection]] -- detects corrupted packets
 
 ## Edge Cases & Gotchas
 - Very inefficient on long-RTT links (satellite: RTT is seconds, sender idle most of time)
 - Duplicate packets possible if ACK is lost (handled by sequence numbers)
-- Utilization = (packet transmission time) / (RTT + transmission time) — very low for high RTT
+- Utilization = (packet transmission time) / (RTT + transmission time) -- very low for high RTT

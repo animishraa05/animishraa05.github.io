@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Monolithic applications grow too large to maintain — a single codebase with millions of lines, long build times, brittle deployments where one bug takes down the entire application. Scaling requires scaling the whole app, not just the bottleneck component. Teams can't work independently on different parts.
+Monolithic applications grow too large to maintain -- a single codebase with millions of lines, long build times, brittle deployments where one bug takes down the entire application. Scaling requires scaling the whole app, not just the bottleneck component. Teams can't work independently on different parts.
 
 ## Core Idea
 
@@ -21,7 +21,7 @@ Java Microservices is an architectural style where a Java application is structu
 3. **Inter-service communication**: Services communicate via REST APIs (synchronous) or message queues (asynchronous)
 4. **Service discovery**: Eureka registry enables services to find each other by logical name
 5. **API Gateway**: Single entry point routes requests to appropriate services
-6. **Database per service**: Each service owns its database — no shared database across services
+6. **Database per service**: Each service owns its database -- no shared database across services
 7. **Distributed tracing**: Sleuth + Zipkin trace requests across service boundaries for debugging
 
 ## Visual Explanation
@@ -61,26 +61,41 @@ digraph microservices {
 ## Key Properties
 
 - **Independent deployability**: Each service has its own build, test, deploy pipeline
-- **Decentralized data**: Each service owns its database — no shared schema, no cross-service transactions
+- **Decentralized data**: Each service owns its database -- no shared schema, no cross-service transactions
 - **Technology heterogeneity**: Each service can use different technology stacks (though in Java, all typically Spring Boot)
-- **Resilience**: Failure in one service doesn't cascade — circuit breakers, fallbacks, bulkheads
+- **Resilience**: Failure in one service doesn't cascade -- circuit breakers, fallbacks, bulkheads
 - **Scalability**: Scale only the services that need it (e.g., more Order Service instances during sales)
-- **Team autonomy**: Teams own their services end-to-end — development, testing, deployment, operations
+- **Team autonomy**: Teams own their services end-to-end -- development, testing, deployment, operations
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Java_Microservices {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Java Microservices" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[spring-boot|Spring Boot]] — Each microservice is a Spring Boot application
-- **Built from:** [[spring-cloud|Spring Cloud]] — Infrastructure (discovery, gateway, config, tracing) comes from Spring Cloud
-- **Built from:** [[spring-boot-rest-api|Spring Boot REST API]] — Services communicate via REST APIs
-- **Related:** [[api-gateway-pattern|API Gateway Pattern]] — Gateway is the entry point for all microservice requests
-- **Related:** [[service-discovery-registry|Service Discovery and Registry]] — Eureka enables service-to-service discovery
-- **Contrasts with:** [[backend-architecture|Backend Architecture]] — Monolithic vs microservices architecture tradeoffs
+- **Built from:** [[spring-boot|Spring Boot]] -- Each microservice is a Spring Boot application
+- **Built from:** [[spring-cloud|Spring Cloud]] -- Infrastructure (discovery, gateway, config, tracing) comes from Spring Cloud
+- **Built from:** [[spring-boot-rest-api|Spring Boot REST API]] -- Services communicate via REST APIs
+- **Related:** [[api-gateway-pattern|API Gateway Pattern]] -- Gateway is the entry point for all microservice requests
+- **Related:** [[service-discovery-registry|Service Discovery and Registry]] -- Eureka enables service-to-service discovery
+- **Contrasts with:** [[backend-architecture|Backend Architecture]] -- Monolithic vs microservices architecture tradeoffs
 
 ## Edge Cases & Gotchas
 
-- **Distributed transactions**: No ACID across services — use Saga pattern (choreography or orchestration)
-- **Network latency**: Inter-service calls add network overhead — use async messaging for non-critical paths
-- **Data consistency**: Eventual consistency across services — handle stale data gracefully
-- **Testing complexity**: End-to-end testing requires running all services — use contract testing (Pact)
+- **Distributed transactions**: No ACID across services -- use Saga pattern (choreography or orchestration)
+- **Network latency**: Inter-service calls add network overhead -- use async messaging for non-critical paths
+- **Data consistency**: Eventual consistency across services -- handle stale data gracefully
+- **Testing complexity**: End-to-end testing requires running all services -- use contract testing (Pact)
 - **Operational overhead**: Monitoring, logging, deploying many services requires mature DevOps practices
-- **Debugging**: A single user request spans multiple services — distributed tracing is essential
+- **Debugging**: A single user request spans multiple services -- distributed tracing is essential

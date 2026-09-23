@@ -66,23 +66,23 @@ graph semantic_collision_overhead {
 ## Key Properties
 
 - Average-case O(1) degrades to worst-case O(n) with poor hash distribution
-- Frequency arrays have zero collision overhead — index can only map to one location
+- Frequency arrays have zero collision overhead -- index can only map to one location
 - C++ `std::unordered_map` uses chaining, so collisions add pointer indirection
-- Rehashing (when load factor exceeds threshold) is O(n) — a costly amortized operation
+- Rehashing (when load factor exceeds threshold) is O(n) -- a costly amortized operation
 - For small character sets (26 letters), maps are overkill and collisions are wasted work
 
 ## Connections
 
-- Built from: [[direct-array-access|Direct Array Access]] — arrays bypass the collision problem entirely
-- Builds into: [[unordered-map-frequency|Unordered Map for Frequency]] — collision handling is part of the map's implementation cost
-- Builds into: [[hash-map-flexibility|Hash Map Flexibility]] — collision overhead is the cost of hash map flexibility
-- Contrasts with: [[memory-efficiency-array|Memory Efficiency of Array]] — arrays have predictable, linear memory with no overhead
-- Related: [[unordered-map-non-determinism|Unordered Map Non-Determinism]] — collision resolution affects iteration order
+- Built from: [[direct-array-access|Direct Array Access]] -- arrays bypass the collision problem entirely
+- Builds into: [[unordered-map-frequency|Unordered Map for Frequency]] -- collision handling is part of the map's implementation cost
+- Builds into: [[hash-map-flexibility|Hash Map Flexibility]] -- collision overhead is the cost of hash map flexibility
+- Contrasts with: [[memory-efficiency-array|Memory Efficiency of Array]] -- arrays have predictable, linear memory with no overhead
+- Related: [[unordered-map-non-determinism|Unordered Map Non-Determinism]] -- collision resolution affects iteration order
 
 ## Edge Cases & Gotchas
 
-- For character keys, C++'s default hash for `char` is usually good — collisions are rare but possible
+- For character keys, C++'s default hash for `char` is usually good -- collisions are rare but possible
 - String keys (for word frequency) have a higher collision probability than single chars
-- A maliciously crafted input can trigger many collisions, causing O(n²) behavior — hash DoS attack
-- The "average O(1)" claim assumes the hash function is well-distributed — never guaranteed for arbitrary keys
-- Rehashing invalidates all iterators — a subtle bug when interleaving Phase 1 traversal with Phase 2
+- A maliciously crafted input can trigger many collisions, causing O(n²) behavior -- hash DoS attack
+- The "average O(1)" claim assumes the hash function is well-distributed -- never guaranteed for arbitrary keys
+- Rehashing invalidates all iterators -- a subtle bug when interleaving Phase 1 traversal with Phase 2

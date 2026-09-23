@@ -32,6 +32,35 @@ Computation proceeds through **beta reduction** - replacing variables in the fun
 - Uses beta reduction as the computation step
 - Variables can be bound or free
 
+
+
+## Visual Explanation
+
+```dot
+digraph Lambda_Calculus {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Lambda Calculus\nInput"]
+  B [label="Lambda Calculus\nCore Mechanism"]
+  C [label="Lambda Calculus\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Lambda_Calculus {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Lambda Calculus" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[function-abstraction|Function Abstraction]], [[function-application|Function Application]]
@@ -40,7 +69,7 @@ Computation proceeds through **beta reduction** - replacing variables in the fun
 
 ## Edge Cases & Gotchas
 
-- Lambda calculus has no native numbers or data structures—they must be encoded
+- Lambda calculus has no native numbers or data structures--they must be encoded
 - Some terms have no normal form (don't reduce to a final value)
 ## Why This Matters
 

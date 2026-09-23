@@ -38,10 +38,25 @@ digraph page_table {
 ## Key Properties
 
 - One page table per process
-- Stored in RAM (not in CPU registers — too large)
+- Stored in RAM (not in CPU registers -- too large)
 - Accessed on every memory reference (needs caching → TLB)
 - Can be single-level, multi-level, or inverted
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Page_Table {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Page Table" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[wiki/io/paging|Paging]], [[virtual-memory|Virtual Memory]]

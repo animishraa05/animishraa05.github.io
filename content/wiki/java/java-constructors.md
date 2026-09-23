@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-When an object is created, its fields need to be initialized to a valid state. Without constructors, developers would need to manually call an initialization method after every `new` — an error-prone pattern that could be forgotten, leading to objects in invalid states.
+When an object is created, its fields need to be initialized to a valid state. Without constructors, developers would need to manually call an initialization method after every `new` -- an error-prone pattern that could be forgotten, leading to objects in invalid states.
 
 ## Core Idea
 
@@ -62,21 +62,21 @@ graph semantic_constructors {
 
 ## Key Properties
 
-- **No return type**: Not even `void` — constructors are not methods
+- **No return type**: Not even `void` -- constructors are not methods
 - **Default constructor**: Automatic only if no constructor is defined
 - **Chaining**: `this()` calls another constructor in the same class; `super()` calls the parent constructor
 - **Overloading**: Multiple constructors with different parameter lists
 
 ## Connections
 
-- **Built from:** [[java-inheritance|Java Inheritance]] — constructor chaining via super() enables parent initialization
-- **Built from:** [[java-object-class|Java Object Class]] — every constructor implicitly calls super()
-- **Builds into:** [[java-inheritance|Java Inheritance]] — constructor chaining with super() enables parent initialization
-- **Contrasts with:** [[java-methods|Java Methods]] — constructors have no return type and different invocation semantics
+- **Built from:** [[java-inheritance|Java Inheritance]] -- constructor chaining via super() enables parent initialization
+- **Built from:** [[java-object-class|Java Object Class]] -- every constructor implicitly calls super()
+- **Builds into:** [[java-inheritance|Java Inheritance]] -- constructor chaining with super() enables parent initialization
+- **Contrasts with:** [[java-methods|Java Methods]] -- constructors have no return type and different invocation semantics
 
 ## Edge Cases & Gotchas
 
 - **Private constructor**: Prevents instantiation (utility classes, singletons)
-- **Constructor in enum**: Always private — cannot create enum instances externally
+- **Constructor in enum**: Always private -- cannot create enum instances externally
 - **Default field values**: Instance fields initialize to defaults before constructor body runs
 - **final fields**: Must be assigned by the end of every constructor (or compile error)

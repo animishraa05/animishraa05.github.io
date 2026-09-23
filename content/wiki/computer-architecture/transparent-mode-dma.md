@@ -7,7 +7,7 @@ updated: 2026-04-30
 ---
 
 ## The Problem
-Even Cycle Stealing Mode can interrupt CPU work. For systems where CPU responsiveness is critical and DMA transfers are large, we need a mode where DMA is truly "transparent" to the CPU — no interference at all.
+Even Cycle Stealing Mode can interrupt CPU work. For systems where CPU responsiveness is critical and DMA transfers are large, we need a mode where DMA is truly "transparent" to the CPU -- no interference at all.
 
 ## Core Idea
 Transparent Mode DMA only transfers data when the CPU is not using the system bus, making the DMA operation completely invisible to the CPU with zero performance impact.
@@ -47,14 +47,29 @@ digraph transparent_dma {
 
 ## Key Properties
 - Slowest DMA mode (limited by CPU idle bus time)
-- Zero CPU overhead — completely transparent to CPU
+- Zero CPU overhead -- completely transparent to CPU
 - Most complex to implement (needs bus monitoring logic)
 - Best for background transfers where speed doesn't matter but CPU responsiveness does
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Transparent_Mode_DMA {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Transparent Mode Dma" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[dma|DMA]], [[dma-controller|DMA Controller]]
-- **Contrasts with:** [[burst-mode-dma|Burst Mode DMA]] — CPU fully blocked, fastest transfer
-- **Contrasts with:** [[cycle-stealing-mode-dma|Cycle Stealing Mode DMA]] — CPU can work between transfers, but still interrupted
+- **Contrasts with:** [[burst-mode-dma|Burst Mode DMA]] -- CPU fully blocked, fastest transfer
+- **Contrasts with:** [[cycle-stealing-mode-dma|Cycle Stealing Mode DMA]] -- CPU can work between transfers, but still interrupted
 - **Related:** [[cpu|CPU]], [[system-bus|System Bus]]
 
 ## Edge Cases & Gotchas

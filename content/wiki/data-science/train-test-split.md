@@ -7,7 +7,7 @@ updated: 2026-04-30
 ---
 
 ## The Problem
-Models can memorize training data and appear perfect, but fail on new data — we need a way to estimate real-world performance.
+Models can memorize training data and appear perfect, but fail on new data -- we need a way to estimate real-world performance.
 
 ## Core Idea
 Dividing a dataset into separate subsets for training (learning parameters) and testing (evaluating generalization) to detect overfitting.
@@ -38,11 +38,26 @@ digraph G {
 - Randomness: different splits give different performance estimates
 - Stratification: preserve class proportions in classification tasks
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Train_Test_Split {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Train Test Split" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[supervised-learning|Supervised Learning]] — split is fundamental to supervised training
-- Related: [[cross-validation|Cross-Validation]] — more robust alternative to single split
-- Related: [[overfitting|Overfitting]] — train-test split detects overfitting
-- Related: [[data-modeling|Data Modeling]] — splitting is a modeling prerequisite
+- Built from: [[supervised-learning|Supervised Learning]] -- split is fundamental to supervised training
+- Related: [[cross-validation|Cross-Validation]] -- more robust alternative to single split
+- Related: [[overfitting|Overfitting]] -- train-test split detects overfitting
+- Related: [[data-modeling|Data Modeling]] -- splitting is a modeling prerequisite
 
 ## Edge Cases & Gotchas
 - Data leakage: information from test set inadvertently used during training

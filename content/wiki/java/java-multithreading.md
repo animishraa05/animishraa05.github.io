@@ -70,15 +70,15 @@ graph semantic_multithreading {
 
 - **Thread creation**: Extend `Thread` (override run()) or implement `Runnable` (pass to Thread)
 - **Daemon threads**: Low-priority background threads that don't prevent JVM exit
-- **Thread priority**: 1 (MIN_PRIORITY) to 10 (MAX_PRIORITY) — hints to the scheduler
+- **Thread priority**: 1 (MIN_PRIORITY) to 10 (MAX_PRIORITY) -- hints to the scheduler
 - **Thread.sleep()**: Pauses the current thread without releasing locks
 
 ## Connections
 
-- **Built from:** [[java-synchronization|Java Synchronization]] — threads sharing data need coordination
-- **Builds into:** [[java-executor-framework|Java Executor Framework]] — thread pools manage thread lifecycle
-- **Builds into:** [[java-deadlock|Java Deadlock]] — incorrect synchronization can cause deadlock
-- **Related:** [[java-lambda-and-streams|Streams & Lambdas]] — parallelStream() uses the common ForkJoinPool
+- **Built from:** [[java-synchronization|Java Synchronization]] -- threads sharing data need coordination
+- **Builds into:** [[java-executor-framework|Java Executor Framework]] -- thread pools manage thread lifecycle
+- **Builds into:** [[java-deadlock|Java Deadlock]] -- incorrect synchronization can cause deadlock
+- **Related:** [[java-lambda-and-streams|Streams & Lambdas]] -- parallelStream() uses the common ForkJoinPool
 
 ## Edge Cases & Gotchas
 

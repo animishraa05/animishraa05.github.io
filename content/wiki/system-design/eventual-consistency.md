@@ -12,7 +12,7 @@ Strong consistency limits availability and throughput because it requires synchr
 
 ## Core Idea
 
-After a write, reads will eventually see it — typically within milliseconds — as data is replicated asynchronously across nodes. The system guarantees convergence: given enough time without new writes, all replicas will hold the same value. Between the write and convergence, reads may return stale data.
+After a write, reads will eventually see it -- typically within milliseconds -- as data is replicated asynchronously across nodes. The system guarantees convergence: given enough time without new writes, all replicas will hold the same value. Between the write and convergence, reads may return stale data.
 
 ## How It Works
 
@@ -56,13 +56,28 @@ digraph G {
 - **Temporary inconsistency window**: Brief period between write and full propagation where stale reads are possible
 - **Works in DNS (TTL propagation), email (SMTP delay), and many NoSQL databases (DynamoDB, Cassandra)**
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Eventual_Consistency {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Eventual Consistency" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Contrasts with:** [[strong-consistency|Strong Consistency]] — sync vs async replication, guarantees vs temporary inconsistency
-- **Contrasts with:** [[weak-consistency|Weak Consistency]] — eventual guarantees convergence, weak does not
-- **Related:** [[ap-availability-partition-tolerance|AP — Availability and Partition Tolerance]] — AP systems use eventual consistency as their consistency model
-- **Related:** [[master-slave-replication|Master-Slave Replication]] — slaves are eventually consistent with the master
-- **Related:** [[dns-system-design|DNS in System Design]] — DNS uses eventual consistency with TTL-based caching
+- **Contrasts with:** [[strong-consistency|Strong Consistency]] -- sync vs async replication, guarantees vs temporary inconsistency
+- **Contrasts with:** [[weak-consistency|Weak Consistency]] -- eventual guarantees convergence, weak does not
+- **Related:** [[ap-availability-partition-tolerance|AP -- Availability and Partition Tolerance]] -- AP systems use eventual consistency as their consistency model
+- **Related:** [[master-slave-replication|Master-Slave Replication]] -- slaves are eventually consistent with the master
+- **Related:** [[dns-system-design|DNS in System Design]] -- DNS uses eventual consistency with TTL-based caching
 
 ## Edge Cases & Gotchas
 

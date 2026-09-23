@@ -21,30 +21,59 @@ JWT (JSON Web Token) is a self-contained token that contains user information en
 3. **Token Sent**: Server returns JWT to client (in response body or Authorization header)
 4. **Subsequent Requests**: Client sends JWT in Authorization header: `Bearer <token>`
 5. **Verification**: Server verifies signature, extracts user info, processes request
-6. **No Server Storage**: Token contains all needed information—no lookup required
+6. **No Server Storage**: Token contains all needed information--no lookup required
 
 JWT has three parts: header (algorithm), payload (claims), signature (verification).
 
 ## Key Properties
 
-- Stateless—no server-side session storage needed
-- Self-contained—token holds user info and claims
-- Signed—server can verify authenticity without database lookup
-- Scalable—any server can verify token, no shared session store needed
+- Stateless--no server-side session storage needed
+- Self-contained--token holds user info and claims
+- Signed--server can verify authenticity without database lookup
+- Scalable--any server can verify token, no shared session store needed
 - Client stores token (localStorage or secure storage)
 - Popular for APIs, SPAs, mobile apps
 
+
+
+## Visual Explanation
+
+```dot
+digraph JWT_Authentication {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Jwt Authentication\nInput"]
+  B [label="Jwt Authentication\nCore Mechanism"]
+  C [label="Jwt Authentication\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_JWT_Authentication {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Jwt Authentication" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[tls-handshake|TLS Handshake]] — tokens should be sent over HTTPS
-- **Builds into:** [[api|API]] — JWT commonly secures REST APIs
-- **Contrasts with:** [[session-authentication|Session Authentication]] — different auth paradigm
-- **Related:** [[http|HTTP]] — JWT sent in Authorization header
+- **Built from:** [[tls-handshake|TLS Handshake]] -- tokens should be sent over HTTPS
+- **Builds into:** [[api|API]] -- JWT commonly secures REST APIs
+- **Contrasts with:** [[session-authentication|Session Authentication]] -- different auth paradigm
+- **Related:** [[http|HTTP]] -- JWT sent in Authorization header
 
 ## Edge Cases & Gotchas
 
-- Tokens are immutable—if you need to revoke, you need a blacklist (defeats statelessness)
+- Tokens are immutable--if you need to revoke, you need a blacklist (defeats statelessness)
 - Tokens in localStorage are vulnerable to XSS
 - Token size larger than session ID (more bandwidth)
-- No logout on server—you can only expire tokens on client
+- No logout on server--you can only expire tokens on client
 - Need to handle token refresh (short-lived access + long-lived refresh tokens)

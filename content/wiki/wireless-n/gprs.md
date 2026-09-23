@@ -7,7 +7,7 @@ updated: 2026-04-21
 ---
 
 ## The Problem
-GSM was designed primarily for voice (circuit-switched). Data was an afterthought, limited to 9.6 kbps. As the internet grew, there was massive demand for wireless packet data (email, web browsing, WAP). GPRS added packet-switched data service to GSM without replacing the voice infrastructure — "2.5G."
+GSM was designed primarily for voice (circuit-switched). Data was an afterthought, limited to 9.6 kbps. As the internet grew, there was massive demand for wireless packet data (email, web browsing, WAP). GPRS added packet-switched data service to GSM without replacing the voice infrastructure -- "2.5G."
 
 ## Core Idea
 GPRS (General Packet Radio Service) adds packet-switching capability to the existing GSM circuit-switched voice network. It creates a parallel packet network (using the same air interface and base stations) optimized for bursty data traffic instead of continuous voice.
@@ -19,13 +19,13 @@ GPRS (General Packet Radio Service) adds packet-switching capability to the exis
 2. **Channel Allocation:** Data uses physical channels differently than voice:
    - Up to 8 timeslots can be combined for a single user
    - Channels are dynamically allocated only when data traffic exists
-   - No dedicated circuit — shared, packet-based
+   - No dedicated circuit -- shared, packet-based
 3. **New Air Interface:**
    - Uses the same TDMA/FDMA frame structure but with new channel coding schemes (CS-1 to CS-4, up to 21.4 kbps per timeslot)
    - Theoretical maximum: 171.2 kbps (8 timeslots × 21.4 kbps)
    - Practical: 40–50 kbps typical, up to 115 kbps in best conditions
 4. **Data Packets:** All data is in IP packets, routed through the GPRS backbone
-5. **Always-On:** No dial-up — IP address is assigned and connection is always available
+5. **Always-On:** No dial-up -- IP address is assigned and connection is always available
 
 ## Key Properties
 - Packet-switched: bandwidth used only when transmitting data, not continuously
@@ -35,15 +35,44 @@ GPRS (General Packet Radio Service) adds packet-switching capability to the exis
 - Works simultaneously with voice (uses different channel set from voice)
 - First deployed in 2000; enabled first mobile internet era
 
+
+
+## Visual Explanation
+
+```dot
+digraph GPRS {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Gprs\nInput"]
+  B [label="Gprs\nCore Mechanism"]
+  C [label="Gprs\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_GPRS {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Gprs" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[gsm-architecture|GSM Architecture]] — GPRS builds on existing GSM infrastructure
-- Built into: [[gsm|GSM]] — GPRS is an integral part of GSM Phase 2+ specifications
-- Builds into: [[edge|EDGE]] — EDGE (3G) builds on GPRS infrastructure
-- Related: [[wcdma|WCDMA]] — the competing 3G technology
-- Related: [[short-message-service|SMS]] — SMS was separate from GPRS; both now use the GPRS backbone
+- Built from: [[gsm-architecture|GSM Architecture]] -- GPRS builds on existing GSM infrastructure
+- Built into: [[gsm|GSM]] -- GPRS is an integral part of GSM Phase 2+ specifications
+- Builds into: [[edge|EDGE]] -- EDGE (3G) builds on GPRS infrastructure
+- Related: [[wcdma|WCDMA]] -- the competing 3G technology
+- Related: [[short-message-service|SMS]] -- SMS was separate from GPRS; both now use the GPRS backbone
 
 ## Edge Cases & Gotchas
-- GPRS was never intended for streaming video or high-speed data — too slow
+- GPRS was never intended for streaming video or high-speed data -- too slow
 - First-gen GPRS was often sold as "wireless internet" with poor throughput
 - Billing: early GPRS was charged per packet (kilobyte), causing bill shocks
 - Handover between voice and data: GSM handles voice first; data gets preempted

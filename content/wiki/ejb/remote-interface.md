@@ -45,15 +45,30 @@ digraph G {
 - In EJB 3.x: Annotations replace many interface requirements
 - Method signatures only: No implementation logic here
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Remote_Interface {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Remote Interface" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[ejb-object|EJB Object]] — container implements Remote on behalf of bean
-- Builds into: [[session-bean|Session Bean]] — Remote interface defines session bean methods
-- Builds into: [[entity-bean|Entity Bean]] — Remote interface defines entity bean methods
-- Related: [[home-interface|Home Interface]] — Home creates, Remote executes
-- Related: [[local-interface|Local Interface]] — same JVM variant
+- Built from: [[ejb-object|EJB Object]] -- container implements Remote on behalf of bean
+- Builds into: [[session-bean|Session Bean]] -- Remote interface defines session bean methods
+- Builds into: [[entity-bean|Entity Bean]] -- Remote interface defines entity bean methods
+- Related: [[home-interface|Home Interface]] -- Home creates, Remote executes
+- Related: [[local-interface|Local Interface]] -- same JVM variant
 
 ## Edge Cases & Gotchas
 - All methods in Remote Interface must throw RemoteException (checked)
 - In local calls, Remote Interface overhead can be avoided by using Local Interface
-- EJB 3.x uses POJOs with annotations — explicit interfaces less required
+- EJB 3.x uses POJOs with annotations -- explicit interfaces less required
 - The interface should only declare business methods, not lifecycle methods

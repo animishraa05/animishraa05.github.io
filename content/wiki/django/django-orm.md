@@ -47,12 +47,41 @@ adult_students = Student.objects.filter(age__gt=20)
 - Database agnostic (switch DBs without changing query code).
 - Protects against SQL injection automatically.
 
+
+
+## Visual Explanation
+
+```dot
+digraph Django_ORM {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Django Orm\nInput"]
+  B [label="Django Orm\nCore Mechanism"]
+  C [label="Django Orm\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Django_ORM {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Django Orm" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[django-model|Django Model]] — models are the core of the ORM.
-- **Builds into:** [[django-migration|Django Migration]] — schemas are managed by the ORM state.
-- **Related:** [[django-view|Django View]] — views use the ORM to fetch data.
-- **Related:** [[python-programming-language|Python]] — leverages Python's OOP.
+- **Built from:** [[django-model|Django Model]] -- models are the core of the ORM.
+- **Builds into:** [[django-migration|Django Migration]] -- schemas are managed by the ORM state.
+- **Related:** [[django-view|Django View]] -- views use the ORM to fetch data.
+- **Related:** [[python-programming-language|Python]] -- leverages Python's OOP.
 
 ## Edge Cases & Gotchas
 

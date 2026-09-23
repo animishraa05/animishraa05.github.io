@@ -32,6 +32,35 @@ The Turing machine is preferred because it is simple to formulate, can be analyz
 - Different models have different capabilities but are often equivalent
 - Enables rigorous analysis without hardware dependencies
 
+
+
+## Visual Explanation
+
+```dot
+digraph Model_of_Computation {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Model Of Computation\nInput"]
+  B [label="Model Of Computation\nCore Mechanism"]
+  C [label="Model Of Computation\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Model_of_Computation {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Model Of Computation" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[turing-machine|Turing Machine]], [[lambda-calculus|Lambda Calculus]], [[register-machine|Register Machine]]
@@ -41,4 +70,4 @@ The Turing machine is preferred because it is simple to formulate, can be analyz
 ## Edge Cases & Gotchas
 
 - All reasonable models of computation are equivalent (Church-Turing thesis)
-- The infinite memory of Turing machines is idealized—any decidable problem needs only finite memory
+- The infinite memory of Turing machines is idealized--any decidable problem needs only finite memory

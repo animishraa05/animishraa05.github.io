@@ -8,7 +8,7 @@ updated: 2026-04-30
 
 ## The Problem
 
-Each hardware device has unique control mechanisms, register layouts, and command sets. The OS cannot contain code for every possible device — it would be enormous and impossible to maintain.
+Each hardware device has unique control mechanisms, register layouts, and command sets. The OS cannot contain code for every possible device -- it would be enormous and impossible to maintain.
 
 ## Core Idea
 
@@ -48,6 +48,21 @@ digraph device_driver {
 - Handles device initialization, error detection, and status reporting
 - Four main types: character, block, network, and virtual drivers
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Device_Driver {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Device Driver" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[io-system|I/O System]], [[device-controller|Device Controller]]

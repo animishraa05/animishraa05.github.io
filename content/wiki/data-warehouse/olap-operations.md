@@ -8,7 +8,7 @@ updated: 2026-05-04
 
 ## The Problem
 
-A 3D or 4D data cube contains millions of cells of multidimensional data. A manager does not want to see the entire cube — they want specific views: "Show me Q1 sales only" (filter), "Show me sales by country instead of city" (aggregate), "Show me monthly breakdown instead of quarterly" (detail), "Swap rows and columns to see patterns from a different angle" (rearrange). Without standardized operations, each of these would require custom SQL queries.
+A 3D or 4D data cube contains millions of cells of multidimensional data. A manager does not want to see the entire cube -- they want specific views: "Show me Q1 sales only" (filter), "Show me sales by country instead of city" (aggregate), "Show me monthly breakdown instead of quarterly" (detail), "Swap rows and columns to see patterns from a different angle" (rearrange). Without standardized operations, each of these would require custom SQL queries.
 
 ## Core Idea
 
@@ -30,7 +30,7 @@ A 3D or 4D data cube contains millions of cells of multidimensional data. A mana
 
 3. **Slice:**
    - **Mechanism:** Selects one particular dimension value, producing a 2D sub-cube from a 3D cube.
-   - **Example:** `Time = "Q1"` — extracts the Q1 slice from the full cube.
+   - **Example:** `Time = "Q1"` -- extracts the Q1 slice from the full cube.
    - **Result:** A 2D plane (single condition filter).
 
 4. **Dice:**
@@ -39,7 +39,7 @@ A 3D or 4D data cube contains millions of cells of multidimensional data. A mana
    - **Result:** A smaller 3D box (multi-condition filter).
 
 5. **Pivot (Rotate):**
-   - **Mechanism:** Rotates the data axes — rows become columns, columns become rows.
+   - **Mechanism:** Rotates the data axes -- rows become columns, columns become rows.
    - **Example:** Swap "Item" from rows to columns axis.
    - **Result:** Same data, different visual presentation. No data is summarized or filtered.
 
@@ -105,16 +105,16 @@ graph semantic_olap_ops {
 
 ## Connections
 
-- **Built from:** [[multidimensional-data-model|Multidimensional Data Model]] — operations manipulate the data cube
-- **Built from:** [[time-variant-dwh|Time-Variant DWH]] — time hierarchies enable roll-up and drill-down
-- **Builds into:** [[olap-servers|OLAP Servers]] — servers implement these operations
-- **Builds into:** [[rolap-server|ROLAP Server]] — ROLAP implements operations via SQL
-- **Builds into:** [[molap-server|MOLAP Server]] — MOLAP implements operations on pre-computed cubes
-- **Related:** [[wiki/data-warehouse/fact-table|Fact Table]] — facts are the values that operations aggregate and filter
+- **Built from:** [[multidimensional-data-model|Multidimensional Data Model]] -- operations manipulate the data cube
+- **Built from:** [[time-variant-dwh|Time-Variant DWH]] -- time hierarchies enable roll-up and drill-down
+- **Builds into:** [[olap-servers|OLAP Servers]] -- servers implement these operations
+- **Builds into:** [[rolap-server|ROLAP Server]] -- ROLAP implements operations via SQL
+- **Builds into:** [[molap-server|MOLAP Server]] -- MOLAP implements operations on pre-computed cubes
+- **Related:** [[wiki/data-warehouse/fact-table|Fact Table]] -- facts are the values that operations aggregate and filter
 
 ## Edge Cases & Gotchas
 
-- **Roll-up ≠ Sum:** Roll-up can use different aggregation functions — SUM, AVG, COUNT, MIN, MAX — depending on the measure type.
+- **Roll-up ≠ Sum:** Roll-up can use different aggregation functions -- SUM, AVG, COUNT, MIN, MAX -- depending on the measure type.
 - **Slice vs. Dice distinction:** Slice = one dimension, one condition (2D result). Dice = multiple dimensions, multiple conditions (3D sub-cube result).
 - **Pivot does not change data:** Pivoting only rearranges the visual presentation. The underlying data values are unchanged.
 - **Drill-down requires detail:** You can only drill down if the warehouse stores data at the lower granularity level.

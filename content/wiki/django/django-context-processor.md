@@ -63,10 +63,39 @@ TEMPLATES = [
 - Useful for navbars, footers, and global settings.
 - Can impact performance if it queries the database heavily on every page load.
 
+
+
+## Visual Explanation
+
+```dot
+digraph Django_Context_Processor {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Django Context Proce\nInput"]
+  B [label="Django Context Proce\nCore Mechanism"]
+  C [label="Django Context Proce\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Django_Context_Processor {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Django Context Proce" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[django-template-engine|Django Template Engine]] — ties into the rendering pipeline.
-- **Related:** [[django-view|Django View]] — augments the data provided by the view.
+- **Built from:** [[django-template-engine|Django Template Engine]] -- ties into the rendering pipeline.
+- **Related:** [[django-view|Django View]] -- augments the data provided by the view.
 
 ## Edge Cases & Gotchas
 

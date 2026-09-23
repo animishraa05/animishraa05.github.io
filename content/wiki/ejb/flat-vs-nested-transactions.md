@@ -10,7 +10,7 @@ updated: 2026-04-28
 In a flat transaction (all-or-nothing), if one sub-operation fails, the entire transaction rolls back. For example, booking a trip: if the flight from Paris to the next city is unavailable, the entire trip booking (including valid reservations) is lost. This is too rigid for complex, multi-step business processes.
 
 ## Core Idea
-A **flat transaction** is all-or-nothing — any failure rolls back the entire unit of work. A **nested transaction** has a root transaction with subtransactions; subtransactions can roll back independently without killing the parent transaction, allowing retry of just the failed part.
+A **flat transaction** is all-or-nothing -- any failure rolls back the entire unit of work. A **nested transaction** has a root transaction with subtransactions; subtransactions can roll back independently without killing the parent transaction, allowing retry of just the failed part.
 
 ## How It Works
 
@@ -27,7 +27,7 @@ A **flat transaction** is all-or-nothing — any failure rolls back the entire u
 ### Example: Trip Planning
 - Root: Book round-the-world trip
   - Sub: Book London→Paris balloon ride (succeeds)
-  - Sub: Book Paris→destination flight (fails — no flights)
+  - Sub: Book Paris→destination flight (fails -- no flights)
   - **Flat:** Entire trip rolled back (balloon ride lost)
   - **Nested:** Only flight subtransaction rolls back; balloon ride kept; try different flight
 
@@ -64,11 +64,26 @@ digraph G {
 - Other models exist (chained transactions, sagas) but EJB also doesn't support them
 - Nested transactions are a tree structure with root → subtransactions
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Flat_vs_Nested_Transactions {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Flat Vs Nested Trans" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[transactions|Transactions]] — flat/nested are transaction models
-- Related: [[declarative-vs-programmatic-transactions|Transaction Demarcation]] — EJB uses flat transactions with declarative demarcation
-- Contrasts with: [[entity-bean-transactions|Entity Bean Transactions]] — entity beans use flat declarative transactions only
-- Related: [[poison-message|Poison Message]] — rollback behavior in flat transactions causes poison messages in MDBs
+- Built from: [[transactions|Transactions]] -- flat/nested are transaction models
+- Related: [[declarative-vs-programmatic-transactions|Transaction Demarcation]] -- EJB uses flat transactions with declarative demarcation
+- Contrasts with: [[entity-bean-transactions|Entity Bean Transactions]] -- entity beans use flat declarative transactions only
+- Related: [[poison-message|Poison Message]] -- rollback behavior in flat transactions causes poison messages in MDBs
 
 ## Edge Cases & Gotchas
 - EJB does NOT support nested transactions despite the book describing them

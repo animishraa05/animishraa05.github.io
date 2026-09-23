@@ -15,7 +15,7 @@ A logical connection where packets follow the same path through the network usin
 ## How It Works
 1. Connection establishment sets up routing state at each intermediate switch/router
 2. All packets in the flow follow the same path using the virtual circuit identifier
-3. No need for full destination address in each packet — just the VC ID
+3. No need for full destination address in each packet -- just the VC ID
 4. Resources are allocated logically, not physically
 5. Connection teardown releases the VC state
 
@@ -44,11 +44,26 @@ digraph G {
 - VC identifiers are local to each link (swapped at each hop)
 - Contrasts with datagram: no per-packet routing vs per-packet routing
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Virtual_Circuit {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Virtual Circuit" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[connection-oriented-service|Connection-Oriented Service]] — uses virtual circuits
-- Built from: [[circuit-switching|Circuit Switching]] — inspiration for VC concept
-- Contrasts with: [[datagram|Datagram]] — independent per-packet routing
-- Related: [[three-way-handshake|Three-Way Handshake]] — establishes VC state
+- Built from: [[connection-oriented-service|Connection-Oriented Service]] -- uses virtual circuits
+- Built from: [[circuit-switching|Circuit Switching]] -- inspiration for VC concept
+- Contrasts with: [[datagram|Datagram]] -- independent per-packet routing
+- Related: [[three-way-handshake|Three-Way Handshake]] -- establishes VC state
 
 ## Edge Cases & Gotchas
 - VC state at routers means router failures break all active VCs

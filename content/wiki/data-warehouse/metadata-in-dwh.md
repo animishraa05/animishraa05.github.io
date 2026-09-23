@@ -12,7 +12,7 @@ A data warehouse contains petabytes of data from hundreds of sources. Without do
 
 ## Core Idea
 
-**Metadata** is "data about data" — the roadmap, directory, and documentation of the data warehouse. It defines all warehouse objects, tracks data lineage (history of migrations and transformations), records data currency (active, archived, or purged), and maps business terms to technical structures. Without metadata, a data warehouse is an unreadable mountain of bytes.
+**Metadata** is "data about data" -- the roadmap, directory, and documentation of the data warehouse. It defines all warehouse objects, tracks data lineage (history of migrations and transformations), records data currency (active, archived, or purged), and maps business terms to technical structures. Without metadata, a data warehouse is an unreadable mountain of bytes.
 
 ## How It Works
 
@@ -22,14 +22,14 @@ A data warehouse contains petabytes of data from hundreds of sources. Without do
    - Business terms and definitions (e.g., "Revenue = gross sales minus returns").
    - Data ownership information (who is responsible for each data domain).
    - Changing policies (how business definitions evolve over time).
-   - Non-technical — designed for business end-users.
+   - Non-technical -- designed for business end-users.
 
 2. **Technical Metadata:**
    - Database system names, table and column names and sizes.
    - Data types and allowed values.
    - Structural information: primary keys, foreign keys, indices.
    - Warehouse schema, views, dimensions, hierarchies, derived data definitions.
-   - Technical — designed for developers and DBAs.
+   - Technical -- designed for developers and DBAs.
 
 3. **Operational Metadata:**
    - **Data lineage:** History of migrated data and the sequence of transformations applied.
@@ -105,7 +105,7 @@ graph semantic_metadata {
 
 ## Key Properties
 
-- **Three categories:** Business, Technical, Operational — each serves different users
+- **Three categories:** Business, Technical, Operational -- each serves different users
 - **Roadmap function:** Acts as a directory helping users find and understand warehouse contents
 - **Transformation tracking:** Records every step data takes from source to warehouse
 - **Used everywhere:** Query tools, ETL, reporting, loading, and DSS all depend on metadata
@@ -113,16 +113,16 @@ graph semantic_metadata {
 
 ## Connections
 
-- **Built from:** [[three-tier-dwh-architecture|Three-Tier DWH Architecture]] — metadata is part of Tier 1
-- **Built from:** [[etl-pipeline-dwh|ETL Pipeline (DWH)]] — metadata tracks transformation rules
-- **Related:** [[integrated-dwh|Integrated DWH]] — integration rules are stored as metadata
-- **Builds into:** [[rolap-server|ROLAP Server]] — ROLAP depends on metadata for dimension mapping
-- **Builds into:** [[metadata-repository|Metadata Repository]] — the repository stores all metadata categories
-- **Builds into:** [[metadata-management-challenges|Metadata Management Challenges]] — challenges of managing metadata at scale
+- **Built from:** [[three-tier-dwh-architecture|Three-Tier DWH Architecture]] -- metadata is part of Tier 1
+- **Built from:** [[etl-pipeline-dwh|ETL Pipeline (DWH)]] -- metadata tracks transformation rules
+- **Related:** [[integrated-dwh|Integrated DWH]] -- integration rules are stored as metadata
+- **Builds into:** [[rolap-server|ROLAP Server]] -- ROLAP depends on metadata for dimension mapping
+- **Builds into:** [[metadata-repository|Metadata Repository]] -- the repository stores all metadata categories
+- **Builds into:** [[metadata-management-challenges|Metadata Management Challenges]] -- challenges of managing metadata at scale
 
 ## Edge Cases & Gotchas
 
-- **Scattered metadata:** In large organizations, metadata exists in spreadsheets, databases, applications, text files, and multimedia — consolidating it is a major challenge.
+- **Scattered metadata:** In large organizations, metadata exists in spreadsheets, databases, applications, text files, and multimedia -- consolidating it is a major challenge.
 - **No industry standards:** There are no widely accepted standards for metadata management, making vendor interoperability difficult.
 - **Metadata staleness:** If metadata is not updated when the warehouse changes, it becomes actively misleading.
 - **Business vs. Technical gap:** Business users need business metadata; developers need technical metadata. Bridging the gap requires deliberate effort.

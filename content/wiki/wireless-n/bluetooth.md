@@ -44,15 +44,44 @@ Bluetooth (IEEE 802.15.1) is a wireless personal area network (WPAN) standard fo
 - Coexists with Wi-Fi in 2.4 GHz band without interference due to FHSS
 - Range: ~10 m for standard, up to 200 m for extended range (Bluetooth 5.0+)
 
+
+
+## Visual Explanation
+
+```dot
+digraph Bluetooth {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Bluetooth\nInput"]
+  B [label="Bluetooth\nCore Mechanism"]
+  C [label="Bluetooth\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Bluetooth {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Bluetooth" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Related: [[ieee-802-11|IEEE 802.11]] — both operate in 2.4 GHz but coexist without interference
-- Related: [[ieee-802-15|IEEE 802.15]] — Bluetooth IS the 802.15.1 standard
-- Related: [[spread-spectrum|Spread Spectrum]] — Bluetooth uses FHSS spread spectrum
-- Related: [[wifi-zigbee-comparison|Wi-Fi vs Bluetooth vs ZigBee]] — comparison of short-range wireless standards
-- Related: [[frequency-hopping-spread-spectrum|FHSS]] — Bluetooth's specific spread spectrum technique
+- Related: [[ieee-802-11|IEEE 802.11]] -- both operate in 2.4 GHz but coexist without interference
+- Related: [[ieee-802-15|IEEE 802.15]] -- Bluetooth IS the 802.15.1 standard
+- Related: [[spread-spectrum|Spread Spectrum]] -- Bluetooth uses FHSS spread spectrum
+- Related: [[wifi-zigbee-comparison|Wi-Fi vs Bluetooth vs ZigBee]] -- comparison of short-range wireless standards
+- Related: [[frequency-hopping-spread-spectrum|FHSS]] -- Bluetooth's specific spread spectrum technique
 
 ## Edge Cases & Gotchas
-- The 2.4 GHz ISM band is shared by Wi-Fi, Bluetooth, microwave ovens, cordless phones, and ZigBee — interference is managed by FHSS
-- Range is limited (10 m) — not suitable for longer-range applications
+- The 2.4 GHz ISM band is shared by Wi-Fi, Bluetooth, microwave ovens, cordless phones, and ZigBee -- interference is managed by FHSS
+- Range is limited (10 m) -- not suitable for longer-range applications
 - Security was weak in early versions (Bluetooth 1.0); PIN-based pairing was vulnerable
 - BLE (Bluetooth Low Energy) is a different physical layer from classic Bluetooth

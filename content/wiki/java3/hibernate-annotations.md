@@ -57,22 +57,37 @@ digraph hibernate_annotations {
 ## Key Properties
 
 - **JPA-standard**: Annotations come from `javax.persistence.*` (or `jakarta.persistence.*`), not Hibernate-specific
-- **Zero XML**: Full mapping can be done with annotations alone — no .hbm.xml files needed
+- **Zero XML**: Full mapping can be done with annotations alone -- no .hbm.xml files needed
 - **Compile-time checked**: Wrong annotation usage is caught at compile time vs XML's runtime failures
 - **Default conventions**: Unspecified mappings default to sensible conventions (table = class name, column = field name)
 - **Hybrid possible**: Annotations can override or supplement XML configurations
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Hibernate_Annotations {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Hibernate Annotation" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[hibernate-orm-framework|Hibernate ORM Framework]] — Annotations are the modern way to configure Hibernate
-- **Built from:** [[object-relational-mapping|Object-Relational Mapping]] — Annotations map Java objects to relational tables
-- **Related:** [[hibernate-entity-mapping|Hibernate Entity Mapping]] — Relationship annotations (@OneToOne, @OneToMany, @ManyToMany)
-- **Contrasts with:** [[ejb-deployment-descriptor|EJB Deployment Descriptor]] — XML-based vs annotation-based configuration
-- **Builds into:** [[spring-data-jpa|Spring Data JPA]] — Spring Data JPA entities use the same JPA annotations
+- **Built from:** [[hibernate-orm-framework|Hibernate ORM Framework]] -- Annotations are the modern way to configure Hibernate
+- **Built from:** [[object-relational-mapping|Object-Relational Mapping]] -- Annotations map Java objects to relational tables
+- **Related:** [[hibernate-entity-mapping|Hibernate Entity Mapping]] -- Relationship annotations (@OneToOne, @OneToMany, @ManyToMany)
+- **Contrasts with:** [[ejb-deployment-descriptor|EJB Deployment Descriptor]] -- XML-based vs annotation-based configuration
+- **Builds into:** [[spring-data-jpa|Spring Data JPA]] -- Spring Data JPA entities use the same JPA annotations
 
 ## Edge Cases & Gotchas
 
-- **Field vs property access**: `@Id` placement determines access strategy — on field (FIELD access) or getter (PROPERTY access); mixing causes issues
+- **Field vs property access**: `@Id` placement determines access strategy -- on field (FIELD access) or getter (PROPERTY access); mixing causes issues
 - **Default column names**: Auto-generated column names follow naming strategy; explicit `@Column(name)` avoids surprises
 - **GenerationType.IDENTITY**: Disables batch inserts because the DB must generate the ID before Hibernate knows it
-- **@Enumerated(ORDINAL)**: Default is ORDINAL (numeric), which breaks if enum ordering changes — prefer STRING
+- **@Enumerated(ORDINAL)**: Default is ORDINAL (numeric), which breaks if enum ordering changes -- prefer STRING

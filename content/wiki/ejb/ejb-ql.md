@@ -48,12 +48,27 @@ digraph G {
 - Requires CDATA wrapping for comparison operators in XML
 - Container translates EJB-QL to vendor-specific SQL
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_EJB_Query_Language__EJB_QL_ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Ejb Query Language (" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[container-managed-persistence|CMP]] — EJB-QL is exclusive to CMP beans
-- Builds into: [[cmp-abstract-accessors|CMP Abstract Accessors]] — EJB-QL queries are used by finder methods defined via abstract accessors
-- Contrasts with: [[jdbc|JDBC/SQL]] — EJB-QL is object-based and in XML; SQL is table-based and in Java code (BMP)
-- Related: [[ejb-deployment-descriptor|EJB Deployment Descriptor]] — EJB-QL queries live inside the deployment descriptor
-- Related: [[cdata-hack|CDATA Hack]] — XML escaping needed for EJB-QL operators
+- Built from: [[container-managed-persistence|CMP]] -- EJB-QL is exclusive to CMP beans
+- Builds into: [[cmp-abstract-accessors|CMP Abstract Accessors]] -- EJB-QL queries are used by finder methods defined via abstract accessors
+- Contrasts with: [[jdbc|JDBC/SQL]] -- EJB-QL is object-based and in XML; SQL is table-based and in Java code (BMP)
+- Related: [[ejb-deployment-descriptor|EJB Deployment Descriptor]] -- EJB-QL queries live inside the deployment descriptor
+- Related: [[cdata-hack|CDATA Hack]] -- XML escaping needed for EJB-QL operators
 
 ## Edge Cases & Gotchas
 - Forgetting CDATA wrapping causes XML parsing errors on operators like `>`, `<`, `>=`

@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Many programming tasks require executing the same block of code repeatedly — processing each element of an array, reading lines from a file, or retrying an operation until it succeeds. Without loops, every repetition would require manual code duplication, leading to bloated, error-prone programs.
+Many programming tasks require executing the same block of code repeatedly -- processing each element of an array, reading lines from a file, or retrying an operation until it succeeds. Without loops, every repetition would require manual code duplication, leading to bloated, error-prone programs.
 
 ## Core Idea
 
@@ -63,17 +63,17 @@ graph semantic_loops {
 
 ## Key Properties
 
-- **For-each syntax**: `for (Type var : iterable)` — cleaner, no index variable
+- **For-each syntax**: `for (Type var : iterable)` -- cleaner, no index variable
 - **While**: Zero or more iterations (condition checked first)
 - **Do-while**: One or more iterations (condition checked after first run)
 - **Nested loops**: Loops inside loops for multi-dimensional traversal
 
 ## Connections
 
-- **Built from:** [[java-control-flow|Java Control Flow]] — loops use boolean conditions like if-statements
-- **Built from:** [[java-operators|Java Operators]] — relational and arithmetic operators control iteration
-- **Builds into:** [[java-arrays|Java Arrays]] — loops are the primary way to traverse arrays
-- **Builds into:** [[java-collections-framework|Java Collections Framework]] — iteration over collections
+- **Built from:** [[java-control-flow|Java Control Flow]] -- loops use boolean conditions like if-statements
+- **Built from:** [[java-operators|Java Operators]] -- relational and arithmetic operators control iteration
+- **Builds into:** [[java-arrays|Java Arrays]] -- loops are the primary way to traverse arrays
+- **Builds into:** [[java-collections-framework|Java Collections Framework]] -- iteration over collections
 
 ## Edge Cases & Gotchas
 

@@ -13,11 +13,11 @@ When a stateful session bean is idle (no client activity for a while), the conta
 `ejbPassivate()` is a callback method that the EJB container calls on a stateful session bean BEFORE it is passivated (serialized to storage). It allows the bean to release resources that cannot be serialized.
 
 ## How It Works
-1. **Container decides** — bean is idle, container chooses to passivate it
-2. **ejbPassivate() called** — BEFORE serialization, container calls this method
-3. **Bean releases resources** — close DB connections, JMS connections, etc.
-4. **Serialization** — container serializes bean to secondary storage
-5. **Memory freed** — bean instance returned to pool or garbage collected
+1. **Container decides** -- bean is idle, container chooses to passivate it
+2. **ejbPassivate() called** -- BEFORE serialization, container calls this method
+3. **Bean releases resources** -- close DB connections, JMS connections, etc.
+4. **Serialization** -- container serializes bean to secondary storage
+5. **Memory freed** -- bean instance returned to pool or garbage collected
 
 When the client needs the bean again, `ejbActivate()` will be called to restore resources.
 
@@ -36,19 +36,34 @@ digraph G {
 ```
 
 ## Key Properties
-- **Callback method** — container calls it, not the client
-- **Release non-serializable resources** — main purpose
-- **Stateful SB only** — stateless beans don't have passivation
-- **No parameters** — container doesn't pass any arguments
+- **Callback method** -- container calls it, not the client
+- **Release non-serializable resources** -- main purpose
+- **Stateful SB only** -- stateless beans don't have passivation
+- **No parameters** -- container doesn't pass any arguments
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_ejbPassivate__ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Ejbpassivate()" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[passivation|Passivation]] — ejbPassivate is part of this process
-- Contrasts with: [[ejbactivate|ejbActivate()]] — called after activation (reverse)
-- Related: [[stateful-session-bean|Stateful Session Bean]] — primary user of this callback
-- Related: [[activation|Activation]] — the overall lifecycle process
-- Related: [[instance-pooling|Instance Pooling]] — passivated beans free up pool slots
+- Built from: [[passivation|Passivation]] -- ejbPassivate is part of this process
+- Contrasts with: [[ejbactivate|ejbActivate()]] -- called after activation (reverse)
+- Related: [[stateful-session-bean|Stateful Session Bean]] -- primary user of this callback
+- Related: [[activation|Activation]] -- the overall lifecycle process
+- Related: [[instance-pooling|Instance Pooling]] -- passivated beans free up pool slots
 
 ## Edge Cases & Gotchas
 - Only for stateful session beans (NOT stateless, NOT entity beans)
-- Don't do business logic here — just cleanup
+- Don't do business logic here -- just cleanup
 - If this method throws an exception, passivation fails and bean stays in memory

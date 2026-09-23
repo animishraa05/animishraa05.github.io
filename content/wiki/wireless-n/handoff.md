@@ -14,7 +14,7 @@ Handoff is the process of transferring an active call from one base station to a
 
 ## How It Works
 
-**Hard Handoff (GSM — Break Before Make):**
+**Hard Handoff (GSM -- Break Before Make):**
 1. As the mobile moves, signal strength from the current BTS decreases
 2. BSC detects the need for handoff when signal falls below a threshold
 3. BSC commands the mobile to retune to a new frequency channel (new BTS)
@@ -22,12 +22,12 @@ Handoff is the process of transferring an active call from one base station to a
 5. A gap in transmission occurs; if timing is off, the call drops
 6. GSM uses hard handoff because FDMA/TDMA channels are dedicated and cannot be shared
 
-**Soft Handoff (CDMA — Make Before Break):**
+**Soft Handoff (CDMA -- Make Before Break):**
 1. Mobile maintains connection with both old and new base stations simultaneously
 2. Both links are active; the stronger signal is used for voice
 3. Once the new link is confirmed stable, the old link is dropped
 4. Seamless handover with no dropped calls
-5. CDMA uses soft handoff because all users share the same frequency — multiple links can coexist
+5. CDMA uses soft handoff because all users share the same frequency -- multiple links can coexist
 
 ## Key Properties
 - Hard Handoff (GSM): break-before-make; simple but risk of dropped calls
@@ -37,15 +37,44 @@ Handoff is the process of transferring an active call from one base station to a
 - Inter-BSC handoff: BSC coordinates with MSC (slower, more overhead)
 - Excessive handoffs (ping-pong effect) waste resources and degrade quality
 
+
+
+## Visual Explanation
+
+```dot
+digraph Handoff {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Handoff\nInput"]
+  B [label="Handoff\nCore Mechanism"]
+  C [label="Handoff\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Handoff {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Handoff" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[cellular-mobile-system|Cellular Mobile System]] — handoff is what makes mobility possible
-- Built from: [[gsm-architecture|GSM Architecture]] — BSC and MSC coordinate handoffs
-- Built into: [[gsm|GSM]] — GSM uses hard handoff because of FDMA/TDMA
-- Related: [[soft-handoff|Soft Handoff]] — CDMA's handoff technique
-- Related: [[dropped-call-rate|Dropped Call Rate]] — metric used to evaluate handoff performance
+- Built from: [[cellular-mobile-system|Cellular Mobile System]] -- handoff is what makes mobility possible
+- Built from: [[gsm-architecture|GSM Architecture]] -- BSC and MSC coordinate handoffs
+- Built into: [[gsm|GSM]] -- GSM uses hard handoff because of FDMA/TDMA
+- Related: [[soft-handoff|Soft Handoff]] -- CDMA's handoff technique
+- Related: [[dropped-call-rate|Dropped Call Rate]] -- metric used to evaluate handoff performance
 
 ## Edge Cases & Gotchas
 - Ping-pong handoff: rapid oscillation between two cells wastes resources
 - Handoff latency must be minimal to avoid perceptive gaps in voice
-- In CDMA, soft handoff creates a macro-diversity benefit — combining signals from multiple BTSs improves quality
+- In CDMA, soft handoff creates a macro-diversity benefit -- combining signals from multiple BTSs improves quality
 - Hard handoff in GSM was acceptable for 2G voice but problematic for 3G data

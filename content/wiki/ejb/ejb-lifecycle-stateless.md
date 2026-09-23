@@ -1,5 +1,5 @@
 ---
-concept: EJB Lifecycle — Stateless
+concept: EJB Lifecycle -- Stateless
 aliases: [Stateless Session Bean Lifecycle]
 tags: [dev, ejb, lifecycle]
 created: 2026-04-11
@@ -37,7 +37,7 @@ The stateless session bean lifecycle has three states: Does Not Exist, Method-Re
 
 - Container calls ejbRemove() when bean is destroyed
 - Bean returns to Does Not Exist state
-- ejbRemove() is a cleanup method—release resources
+- ejbRemove() is a cleanup method--release resources
 
 ## Key Properties
 
@@ -46,6 +46,35 @@ The stateless session bean lifecycle has three states: Does Not Exist, Method-Re
 - Container controls creation and destruction
 - ejbCreate() takes no parameters (no client-specific init data)
 
+
+
+## Visual Explanation
+
+```dot
+digraph EJB_Lifecycle____Stateless {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Ejb Lifecycle    Sta\nInput"]
+  B [label="Ejb Lifecycle    Sta\nCore Mechanism"]
+  C [label="Ejb Lifecycle    Sta\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_EJB_Lifecycle____Stateless {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Ejb Lifecycle    Sta" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[stateless-session-bean|Stateless Session Bean]]
@@ -53,5 +82,5 @@ The stateless session bean lifecycle has three states: Does Not Exist, Method-Re
 
 ## Edge Cases & Gotchas
 
-- Don't rely on ejbRemove()—it may never be called if container crashes
+- Don't rely on ejbRemove()--it may never be called if container crashes
 - Stateless beans can be pre-created at startup (not lazily created)

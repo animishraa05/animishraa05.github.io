@@ -8,7 +8,7 @@ updated: 2026-04-11
 
 ## Overview
 
-Session beans are business process objects in EJB. They come in two flavors—stateful and stateless—each designed for different types of conversations with clients.
+Session beans are business process objects in EJB. They come in two flavors--stateful and stateless--each designed for different types of conversations with clients.
 
 ## Comparison
 
@@ -38,8 +38,37 @@ Session beans are business process objects in EJB. They come in two flavors—st
 
 ## Key Insight
 
-The fundamental difference is whether the conversation spans one request or multiple requests. Stateless beans are like stateless HTTP—they don't remember previous interactions. Stateful beans maintain the conversation state, like a logged-in user's session.
+The fundamental difference is whether the conversation spans one request or multiple requests. Stateless beans are like stateless HTTP--they don't remember previous interactions. Stateful beans maintain the conversation state, like a logged-in user's session.
 
+
+
+## Visual Explanation
+
+```dot
+digraph stateful_vs_stateless_session_beans {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Stateful Vs Stateles\nInput"]
+  B [label="Stateful Vs Stateles\nCore Mechanism"]
+  C [label="Stateful Vs Stateles\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_stateful_vs_stateless_session_beans {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Stateful Vs Stateles" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - [[stateful-session-bean|Stateful Session Bean]]

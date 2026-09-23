@@ -44,15 +44,44 @@ ZigBee (IEEE 802.15.4) is an ultra-low-power wireless personal area network (WPA
 - Mesh networking: extended range through multi-hop routing
 - Standard: equipment from multiple vendors is interoperable
 
+
+
+## Visual Explanation
+
+```dot
+digraph ZigBee {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Zigbee\nInput"]
+  B [label="Zigbee\nCore Mechanism"]
+  C [label="Zigbee\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_ZigBee {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Zigbee" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Related: [[bluetooth|Bluetooth]] — another WPAN standard; higher rate but higher power
-- Related: [[bluetooth-low-energy|BLE]] — competing for the same IoT sensor market
-- Related: [[ieee-802-15|IEEE 802.15]] — ZigBee is a 802.15.4-based standard
-- Related: [[wifi-zigbee-comparison|Wi-Fi vs Bluetooth vs ZigBee]] — comparison of these short-range standards
-- Related: [[wireless-sensor-network|Wireless Sensor Network]] — ZigBee is commonly used in WSNs
+- Related: [[bluetooth|Bluetooth]] -- another WPAN standard; higher rate but higher power
+- Related: [[bluetooth-low-energy|BLE]] -- competing for the same IoT sensor market
+- Related: [[ieee-802-15|IEEE 802.15]] -- ZigBee is a 802.15.4-based standard
+- Related: [[wifi-zigbee-comparison|Wi-Fi vs Bluetooth vs ZigBee]] -- comparison of these short-range standards
+- Related: [[wireless-sensor-network|Wireless Sensor Network]] -- ZigBee is commonly used in WSNs
 
 ## Edge Cases & Gotchas
 - Data rate (250 kbps) is too low for audio, video, or large data transfers
 - Range is shorter than Wi-Fi or sub-GHz alternatives
 - Bluetooth Low Energy (BLE) is now a strong competitor in the IoT space
-- ZigBee and BLE are not interoperable — separate ecosystems
+- ZigBee and BLE are not interoperable -- separate ecosystems

@@ -20,8 +20,8 @@ JUnit 5 provides lifecycle annotations that define methods to run before/after a
 2. **@BeforeEach**: Runs before each `@Test` method. Used to set up test data, create fresh objects, reset state
 3. **@AfterEach**: Runs after each `@Test` method (even if the test fails). Used to clean up test data, close resources
 4. **@AfterAll**: Runs once after all tests. Must be static. Used to close global resources
-5. **@Tag**: Labels tests for filtering — `@Tag("slow")`, `@Tag("integration")`. Maven: `mvn test -Dgroups="fast"`
-6. **@DisplayName**: Human-readable test name in reports and IDE — `@DisplayName("should return user when valid ID")`
+5. **@Tag**: Labels tests for filtering -- `@Tag("slow")`, `@Tag("integration")`. Maven: `mvn test -Dgroups="fast"`
+6. **@DisplayName**: Human-readable test name in reports and IDE -- `@DisplayName("should return user when valid ID")`
 7. **@Disabled**: Temporarily skip a test (with reason) instead of commenting it out
 
 ## Visual Explanation
@@ -63,17 +63,32 @@ digraph lifecycle_order {
 - **@DisplayName**: Human-readable names visible in IDE and HTML reports
 - **@Disabled**: Skip test with a descriptive reason; better than commenting out
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_JUnit_Annotations_and_Lifecycle {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Junit Annotations An" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[junit-testing|JUnit Testing]] — Lifecycle annotations are a core part of JUnit 5
-- **Related:** [[junit-parameterized-tests|JUnit Parameterized Tests]] — Lifecycle hooks work with parameterized tests too
-- **Related:** [[java-try-catch-finally|Try-Catch-Finally]] — @AfterEach acts like a finally block for each test
-- **Related:** [[test-driven-development|Test-Driven Development]] — TDD relies on well-structured test fixtures
+- **Built from:** [[junit-testing|JUnit Testing]] -- Lifecycle annotations are a core part of JUnit 5
+- **Related:** [[junit-parameterized-tests|JUnit Parameterized Tests]] -- Lifecycle hooks work with parameterized tests too
+- **Related:** [[java-try-catch-finally|Try-Catch-Finally]] -- @AfterEach acts like a finally block for each test
+- **Related:** [[test-driven-development|Test-Driven Development]] -- TDD relies on well-structured test fixtures
 
 ## Edge Cases & Gotchas
 
 - **Static @BeforeAll**: Must be static in default PER_METHOD mode; in PER_CLASS mode, can be instance method
-- **@AfterEach runs always**: Even if the test throws an exception, @AfterEach runs (like finally) — but if @AfterEach throws, the test may be masked
+- **@AfterEach runs always**: Even if the test throws an exception, @AfterEach runs (like finally) -- but if @AfterEach throws, the test may be masked
 - **Tag inheritance**: Tags are inherited from parent classes and interfaces
-- **@Disabled vs @Ignore (JUnit 4)**: JUnit 5 uses @Disabled; JUnit 4 used @Ignore — don't confuse them
+- **@Disabled vs @Ignore (JUnit 4)**: JUnit 5 uses @Disabled; JUnit 4 used @Ignore -- don't confuse them
 - **Execution order**: Tests should not depend on order, but if needed, use @TestMethodOrder(MethodName/OrderAnnotation/Random)

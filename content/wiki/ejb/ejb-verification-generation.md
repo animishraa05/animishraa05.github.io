@@ -7,12 +7,12 @@ updated: 2026-04-29
 ---
 
 ## The Problem
-After deploying an EJB-JAR file, how does the container ensure your bean is valid? And who writes the EJB Object and Home Object code—you or the container?
+After deploying an EJB-JAR file, how does the container ensure your bean is valid? And who writes the EJB Object and Home Object code--you or the container?
 
 ## Core Idea
 When you deploy an EJB-JAR, the container performs two critical tasks:
 1. **Verification**: Checks that your bean class, interfaces, and deployment descriptor are valid (reports errors like "missing `ejbCreate()` method")
-2. **Generation**: Automatically creates the EJB Object and Home Object implementations (plus RMI-IIOP stubs/skeletons)—you only write the interfaces, the container writes the actual classes
+2. **Generation**: Automatically creates the EJB Object and Home Object implementations (plus RMI-IIOP stubs/skeletons)--you only write the interfaces, the container writes the actual classes
 
 ## How It Works
 
@@ -68,11 +68,26 @@ digraph VerificationGeneration {
 - **Vendor-specific generation**: Each container has its own tools (sometimes proprietary)
 - **Intelligent error reporting**: Commercial tools tell you exactly what's wrong
 
+
+
+## Semantic Network
+
+```dot
+graph semantic__EJB_Verification___Generation_ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label=""Ejb Verification & " fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[home-interface|Home Interface]], [[remote-interface|Remote Interface]], [[ejb-deployment-descriptor|Deployment Descriptor]]
 - **Builds into:** [[ejb-object|EJB Object]], [[home-interface|Home Object]] (generated)
 - **Related:** [[ejb-development-lifecycle|EJB Development Lifecycle]] (step 5: deploy triggers this)
-- **Contrasts with:** Regular Java (no verification, no generation—you write everything)
+- **Contrasts with:** Regular Java (no verification, no generation--you write everything)
 
 ## Edge Cases & Gotchas
 - **Generated classes are container-specific**: You can't take JBoss-generated stubs and use them on WebLogic

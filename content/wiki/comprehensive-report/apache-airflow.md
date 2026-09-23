@@ -7,10 +7,10 @@ updated: 2026-04-14
 ---
 
 ## The Problem
-A data pipeline isn't a one-time script—it's a recurring process that must run daily, handle errors gracefully, retry on failure, and notify stakeholders. Building this orchestration logic from scratch is complex and error-prone.
+A data pipeline isn't a one-time script--it's a recurring process that must run daily, handle errors gracefully, retry on failure, and notify stakeholders. Building this orchestration logic from scratch is complex and error-prone.
 
 ## Core Idea
-Apache Airflow is a workflow orchestration platform that defines pipelines as directed acyclic graphs (DAGs) of tasks. It handles scheduling, execution, retry logic, monitoring, and alerting—everything needed to run reliable data pipelines in production.
+Apache Airflow is a workflow orchestration platform that defines pipelines as directed acyclic graphs (DAGs) of tasks. It handles scheduling, execution, retry logic, monitoring, and alerting--everything needed to run reliable data pipelines in production.
 
 ## How It Works
 1. **DAG definition**: Python file defining tasks and their dependencies
@@ -25,7 +25,7 @@ Example DAG structure (FoodFlow daily ETL):
 data_quality_check → run_etl_pipeline → refresh_aggregates → ml_order_volume_forecast → notify_success
 ```
 
-Schedule: `30 21 * * *` = 21:30 UTC = 03:00 IST (next day)—lowest traffic period
+Schedule: `30 21 * * *` = 21:30 UTC = 03:00 IST (next day)--lowest traffic period
 
 ## Key Properties
 - **Python-defined DAGs**: Code-as-configuration, version-controlled
@@ -34,13 +34,42 @@ Schedule: `30 21 * * *` = 21:30 UTC = 03:00 IST (next day)—lowest traffic peri
 - **Catchup=False**: Don't backfill missed runs when DAG was paused
 - **Connection abstraction**: Database connections defined in Airflow UI, accessed by tasks
 
+
+
+## Visual Explanation
+
+```dot
+digraph Apache_Airflow {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Apache Airflow\nInput"]
+  B [label="Apache Airflow\nCore Mechanism"]
+  C [label="Apache Airflow\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Apache_Airflow {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Apache Airflow" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Builds into: [[etl-pipeline|ETL Pipeline]] — Airflow orchestrates ETL execution
-- Related: [[docker-compose|Docker Compose]] — Airflow runs in containerized environment
-- Related: [[data-warehouse|Data Warehouse]] — Airflow writes to warehouse
+- Builds into: [[etl-pipeline|ETL Pipeline]] -- Airflow orchestrates ETL execution
+- Related: [[docker-compose|Docker Compose]] -- Airflow runs in containerized environment
+- Related: [[data-warehouse|Data Warehouse]] -- Airflow writes to warehouse
 
 ## Edge Cases & Gotchas
 - **LocalExecutor limitation**: Single-threaded, not suitable for high parallelism
 - **Pip install on startup**: Adds 30-60 seconds to container startup time
 - **Metadata database**: Needs separate PostgreSQL for Airflow's own state
-- **No built-in data quality**: Just file existence checks—need Great Expectations for deep validation
+- **No built-in data quality**: Just file existence checks--need Great Expectations for deep validation

@@ -45,6 +45,21 @@ digraph doublehash {
 - More computation (two hash functions)
 - Step size must be non-zero and relatively prime to table size
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Double_Hashing {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Double Hashing" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[hashing|Hashing]], [[hash-function|Hash Function]]

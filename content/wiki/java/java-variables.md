@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Programs need to store, read, and modify data throughout their execution. Without a clear variable system, developers would have no consistent way to declare where data lives, how long it persists, or who can access it — leading to memory conflicts, scoping bugs, and unpredictable behavior.
+Programs need to store, read, and modify data throughout their execution. Without a clear variable system, developers would have no consistent way to declare where data lives, how long it persists, or who can access it -- leading to memory conflicts, scoping bugs, and unpredictable behavior.
 
 ## Core Idea
 
@@ -63,18 +63,18 @@ graph semantic_variables {
 - **Local variables**: Must be explicitly initialized before use (no defaults)
 - **Instance variables**: Default to 0/0.0/false/null for primitives and null for references
 - **Static variables**: Same defaults as instance, but shared across all instances
-- **Final variables**: `final` keyword makes a variable a constant — cannot be reassigned
+- **Final variables**: `final` keyword makes a variable a constant -- cannot be reassigned
 
 ## Connections
 
-- **Built from:** [[java-data-types|Java Data Types]] — every variable has a declared type
-- **Built from:** [[java-identifiers-and-keywords|Java Identifiers and Keywords]] — variable names follow identifier rules
-- **Builds into:** [[java-methods|Java Methods]] — methods use variables for parameters and local computation
-- **Contrasts with:** [[java-wrapper-classes|Java Wrapper Classes]] — variable types can be primitives or reference types
+- **Built from:** [[java-data-types|Java Data Types]] -- every variable has a declared type
+- **Built from:** [[java-identifiers-and-keywords|Java Identifiers and Keywords]] -- variable names follow identifier rules
+- **Builds into:** [[java-methods|Java Methods]] -- methods use variables for parameters and local computation
+- **Contrasts with:** [[java-wrapper-classes|Java Wrapper Classes]] -- variable types can be primitives or reference types
 
 ## Edge Cases & Gotchas
 
 - **Local variable hiding**: A local variable can "shadow" a field with the same name
-- **Default values are not zero for local variables** — the compiler rejects uninitialized locals
+- **Default values are not zero for local variables** -- the compiler rejects uninitialized locals
 - **Blank final variables**: `final` instance variables can be left uninitialized if assigned in every constructor
 - **Effectively final**: Variables that are not declared final but never reassigned are "effectively final" (used in lambdas)

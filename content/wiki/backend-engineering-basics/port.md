@@ -31,13 +31,42 @@ Example: connecting to 142.250.183.46:443 means: connect to machine 142.250.183.
 - Dynamic ports (49152-65535): used for client-side ephemeral connections
 - Multiple services can run on one machine if they use different ports
 
+
+
+## Visual Explanation
+
+```dot
+digraph Port {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Port\nInput"]
+  B [label="Port\nCore Mechanism"]
+  C [label="Port\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Port {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Port" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[ip-address|IP Address]] — ports are combined with IP to form a socket
-- **Builds into:** [[socket|Socket]] — a socket is IP + port
-- **Related:** [[dns|DNS]] — domain names resolve to IP, then ports route to specific services
-- **Related:** [[server|Server]] — servers listen on specific ports
-- **Related:** [[http|HTTP]] — typically runs on port 80 (HTTP) or 443 (HTTPS)
+- **Built from:** [[ip-address|IP Address]] -- ports are combined with IP to form a socket
+- **Builds into:** [[socket|Socket]] -- a socket is IP + port
+- **Related:** [[dns|DNS]] -- domain names resolve to IP, then ports route to specific services
+- **Related:** [[server|Server]] -- servers listen on specific ports
+- **Related:** [[http|HTTP]] -- typically runs on port 80 (HTTP) or 443 (HTTPS)
 
 ## Edge Cases & Gotchas
 

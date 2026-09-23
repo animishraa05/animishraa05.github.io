@@ -13,13 +13,13 @@ When users prompt a diffusion model to render specific text like "Made by Lakme"
 
 ## Core Idea
 
-The text rendering problem isn't one issue — it's three separate problems occurring at three different layers of the generation pipeline. Each layer needs its own solution.
+The text rendering problem isn't one issue -- it's three separate problems occurring at three different layers of the generation pipeline. Each layer needs its own solution.
 
 ## How It Works
 
 ### Problem 1: Character-Blind Text Encoder (CLIP)
 
-When you write "Made by Lakme", the text encoder converts it to a vector. CLIP was trained on image-text pairs to understand **semantic meaning** — "Lakme" means a cosmetics brand concept. CLIP has no concept of the specific letters L-a-k-m-e.
+When you write "Made by Lakme", the text encoder converts it to a vector. CLIP was trained on image-text pairs to understand **semantic meaning** -- "Lakme" means a cosmetics brand concept. CLIP has no concept of the specific letters L-a-k-m-e.
 
 ```
 "made by lakme" → [concept: luxury brand, cosmetics, ...]
@@ -41,6 +41,35 @@ Diffusion models work in a compressed "latent space" created by a VAE (Variation
 - **Industry-wide**: All major models (SDXL, Midjourney, DALL-E) struggle with this
 - **Solution requires multiple fixes**: No single approach solves all three layers
 
+
+
+## Visual Explanation
+
+```dot
+digraph text_rendering_problem {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Text Rendering Probl\nInput"]
+  B [label="Text Rendering Probl\nCore Mechanism"]
+  C [label="Text Rendering Probl\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_text_rendering_problem {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Text Rendering Probl" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Related to: [[semantic-drift]], [[vae]], [[clip]], [[t5-encoder]]

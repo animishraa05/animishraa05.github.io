@@ -12,7 +12,7 @@ The DOM tree has all HTML elements, but not all are visible (e.g., `<head>`, `di
 
 ## Core Idea
 
-The render tree combines the DOM tree and CSSOM, keeping only visible elements and attaching their computed styles. This is the tree used for layout and painting—invisible elements are excluded.
+The render tree combines the DOM tree and CSSOM, keeping only visible elements and attaching their computed styles. This is the tree used for layout and painting--invisible elements are excluded.
 
 ## How It Works
 
@@ -51,13 +51,28 @@ digraph G {
 - Render tree nodes are called "render objects" or "frames"
 - Changes to DOM or CSS can trigger render tree reconstruction
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Render_Tree {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Render Tree" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[dom-tree|DOM Tree]] — provides the structure
-- **Built from:** [[cssom|CSSOM]] — provides the styles
-- **Builds into:** [[layout|Layout]] — render tree is input to layout
-- **Related:** [[browser-rendering|Browser Rendering]] — render tree is step 3
-- **Contrasts with:** [[dom-tree|DOM Tree]] — DOM has everything; render tree has only visible
+- **Built from:** [[dom-tree|DOM Tree]] -- provides the structure
+- **Built from:** [[cssom|CSSOM]] -- provides the styles
+- **Builds into:** [[layout|Layout]] -- render tree is input to layout
+- **Related:** [[browser-rendering|Browser Rendering]] -- render tree is step 3
+- **Contrasts with:** [[dom-tree|DOM Tree]] -- DOM has everything; render tree has only visible
 
 ## Edge Cases & Gotchas
 

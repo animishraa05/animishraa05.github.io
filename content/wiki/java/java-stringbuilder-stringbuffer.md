@@ -62,17 +62,17 @@ graph semantic_mutable_strings {
 
 ## Key Properties
 
-- **StringBuffer**: Thread-safe (all public methods are `synchronized`) — use in shared contexts
-- **StringBuilder**: Not thread-safe — use in single-threaded contexts (faster)
+- **StringBuffer**: Thread-safe (all public methods are `synchronized`) -- use in shared contexts
+- **StringBuilder**: Not thread-safe -- use in single-threaded contexts (faster)
 - **Capacity management**: Default initial capacity is 16; grows by `(oldCapacity * 2) + 2`
 - **append() chaining**: Both return `this`, enabling `sb.append("a").append("b")` chaining
 
 ## Connections
 
-- **Built from:** [[java-strings|Java Strings]] — both produce immutable Strings via toString()
-- **Builds into:** [[java-lambda-and-streams|Streams & Lambdas]] — streams often need StringBuilder for efficient collection
-- **Contrasts with:** [[java-strings|Java Strings]] — mutable vs immutable; use cases differ
-- **Related:** [[java-synchronization|Java Synchronization]] — StringBuffer's synchronized methods guarantee thread safety
+- **Built from:** [[java-strings|Java Strings]] -- both produce immutable Strings via toString()
+- **Builds into:** [[java-lambda-and-streams|Streams & Lambdas]] -- streams often need StringBuilder for efficient collection
+- **Contrasts with:** [[java-strings|Java Strings]] -- mutable vs immutable; use cases differ
+- **Related:** [[java-synchronization|Java Synchronization]] -- StringBuffer's synchronized methods guarantee thread safety
 
 ## Edge Cases & Gotchas
 

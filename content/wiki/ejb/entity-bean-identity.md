@@ -7,10 +7,10 @@ updated: 2026-04-29
 ---
 
 ## The Problem
-Session beans are all equivalent (especially stateless)—there's no way to distinguish one from another. But entity beans represent specific data records (like a specific bank account). How do you identify which entity bean instance represents which record?
+Session beans are all equivalent (especially stateless)--there's no way to distinguish one from another. But entity beans represent specific data records (like a specific bank account). How do you identify which entity bean instance represents which record?
 
 ## Core Idea
-Entity beans have an **identity**—a primary key that uniquely distinguishes each instance. This allows:
+Entity beans have an **identity**--a primary key that uniquely distinguishes each instance. This allows:
 - Comparing two entity beans ("Are they the same account?")
 - Clients referring to specific entities by their primary key
 - Sharing entities across multiple clients (unlike session beans which are client-dedicated)
@@ -50,13 +50,28 @@ digraph Identity {
 - **Not just for databases**: Identity concept applies even if using object databases
 - **`getPrimaryKey()` in BMP**: Bean uses PK to know which record to load/store in `ejbLoad()`/`ejbStore()`
 
+
+
+## Semantic Network
+
+```dot
+graph semantic__Entity_Bean_Identity_ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label=""Entity Bean Identit" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[entity-bean|Entity Bean]], [[primary-key-class|Primary Key Class]]
 - **Builds into:** [[finder-methods|Finder Methods]] (locate entities by identity)
 - **Related:** [[ejbcreate|ejbCreate()]], [[ejbload|ejbLoad()]], [[ejbstore|ejbStore()]]
-- **Contrasts with:** [[session-bean|Session Bean]] (no identity—anonymous workers)
+- **Contrasts with:** [[session-bean|Session Bean]] (no identity--anonymous workers)
 
 ## Edge Cases & Gotchas
-- **Composite primary keys**: Sometimes PK has multiple fields—need a custom `PK` class
+- **Composite primary keys**: Sometimes PK has multiple fields--need a custom `PK` class
 - **Identity crisis in pool**: Pooled entity beans can represent different records at different times (container swaps the data)
 - **`getPrimaryKey()` not for clients**: It's for BMP beans to know which record to access

@@ -8,7 +8,7 @@ updated: 2026-05-15
 
 ## The Problem
 
-Many applications — banking, inventory management, distributed locking — cannot tolerate reading stale data. A user who transfers money should see the updated balance on refresh.
+Many applications -- banking, inventory management, distributed locking -- cannot tolerate reading stale data. A user who transfers money should see the updated balance on refresh.
 
 ## Core Idea
 
@@ -54,20 +54,35 @@ digraph G {
 
 ## Key Properties
 
-- **All reads see the latest write** — behaves like a single-node system
-- **Synchronous replication** — writes are committed to a quorum before acknowledgment
+- **All reads see the latest write** -- behaves like a single-node system
+- **Synchronous replication** -- writes are committed to a quorum before acknowledgment
 - **Higher latency** than weak or eventual consistency (waiting for slowest quorum member)
 - **Used in RDBMS (primary reads), ZooKeeper (atomic broadcast), and file systems (NFS, GFS metadata)**
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Strong_Consistency {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Strong Consistency" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Contrasts with:** [[eventual-consistency|Eventual Consistency]] — sync vs async replication, immediate guarantees vs eventual convergence
-- **Contrasts with:** [[weak-consistency|Weak Consistency]] — deterministic guarantees vs no guarantees at all
-- **Related:** [[cp-consistency-partition-tolerance|CP — Consistency and Partition Tolerance]] — CP systems guarantee strong consistency during normal operation
-- **Related:** [[master-slave-replication|Master-Slave Replication]] — reading from the master provides strong consistency; slaves may lag
+- **Contrasts with:** [[eventual-consistency|Eventual Consistency]] -- sync vs async replication, immediate guarantees vs eventual convergence
+- **Contrasts with:** [[weak-consistency|Weak Consistency]] -- deterministic guarantees vs no guarantees at all
+- **Related:** [[cp-consistency-partition-tolerance|CP -- Consistency and Partition Tolerance]] -- CP systems guarantee strong consistency during normal operation
+- **Related:** [[master-slave-replication|Master-Slave Replication]] -- reading from the master provides strong consistency; slaves may lag
 
 ## Edge Cases & Gotchas
 
 - **Performance cliff under contention**: Strong consistency requires global ordering of writes. Under high contention, this serialization becomes a bottleneck and throughput collapses.
 - **Not truly linearizable in practice**: Many systems advertise strong consistency but use clock-based ordering, which can fail under clock skew. True linearizability (e.g., Spanner's TrueTime) is rare and expensive.
-- **Multi-region cost**: Synchronous replication across geographic regions is extremely slow (speed of light latency). Global strong consistency is impractical for most systems — multi-master or eventual consistency is preferred.
+- **Multi-region cost**: Synchronous replication across geographic regions is extremely slow (speed of light latency). Global strong consistency is impractical for most systems -- multi-master or eventual consistency is preferred.

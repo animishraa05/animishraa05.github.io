@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-In traditional Java applications, each object creates its own dependencies using `new` — tightly coupling classes to their collaborators. This coupling makes it hard to swap implementations, test in isolation, or change application behavior without editing source code.
+In traditional Java applications, each object creates its own dependencies using `new` -- tightly coupling classes to their collaborators. This coupling makes it hard to swap implementations, test in isolation, or change application behavior without editing source code.
 
 ## Core Idea
 
@@ -52,17 +52,32 @@ digraph ioc_container {
 - **Bean scopes**: singleton (default), prototype, request, session, application, websocket
 - **Lifecycle callbacks**: `@PostConstruct`, `@PreDestroy`, `InitializingBean`, `DisposableBean`
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Spring_IoC_Container {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Spring Ioc Container" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[spring-framework|Spring Framework]] — IoC container is the core of Spring
-- **Builds into:** [[spring-bean-lifecycle|Spring Bean Lifecycle]] — The container manages every phase of a bean's lifecycle
-- **Builds into:** [[spring-autowiring|Spring Autowiring]] — Autowiring is the DI resolution mechanism within the container
-- **Related:** [[ejb-context|EJB Context]] — Both provide access to container services
-- **Contrasts with:** [[home-interface|EJB Home Interface]] — EJB uses JNDI lookups; Spring uses DI
+- **Built from:** [[spring-framework|Spring Framework]] -- IoC container is the core of Spring
+- **Builds into:** [[spring-bean-lifecycle|Spring Bean Lifecycle]] -- The container manages every phase of a bean's lifecycle
+- **Builds into:** [[spring-autowiring|Spring Autowiring]] -- Autowiring is the DI resolution mechanism within the container
+- **Related:** [[ejb-context|EJB Context]] -- Both provide access to container services
+- **Contrasts with:** [[home-interface|EJB Home Interface]] -- EJB uses JNDI lookups; Spring uses DI
 
 ## Edge Cases & Gotchas
 
-- **Startup cost**: ApplicationContext initialization scans classpath, creates all singletons — can be slow with many beans
+- **Startup cost**: ApplicationContext initialization scans classpath, creates all singletons -- can be slow with many beans
 - **Memory**: Eager initialization means all singleton beans stay in memory even if unused in the current request
 - **BeanFactory vs ApplicationContext**: Never use raw BeanFactory in modern Spring unless memory is constrained; ApplicationContext is always preferred
-- **Configuration precedence**: Java config > annotations > XML — mixing them requires understanding the override order
+- **Configuration precedence**: Java config > annotations > XML -- mixing them requires understanding the override order

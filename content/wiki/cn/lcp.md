@@ -41,13 +41,28 @@ digraph G {
 - Provides echo mechanism for link testing
 - Handles authentication phase
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_LCP {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Lcp" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[ppp-protocol|PPP Protocol]] — LCP is a component of PPP
-- Related: [[ncp|NCP]] — follows LCP for network-layer configuration
-- Related: [[authentication|Authentication]] — PAP and CHAP integrated
-- Related: [[mru|MRU]] — Maximum Receive Unit negotiated by LCP
+- Built from: [[ppp-protocol|PPP Protocol]] -- LCP is a component of PPP
+- Related: [[ncp|NCP]] -- follows LCP for network-layer configuration
+- Related: [[authentication|Authentication]] -- PAP and CHAP integrated
+- Related: [[mru|MRU]] -- Maximum Receive Unit negotiated by LCP
 
 ## Edge Cases & Gotchas
 - Negotiation failure: if peers can't agree on parameters, link isn't established
 - Authentication failure terminates the connection
-- LCP is layered on top of the bare serial link (no framing — PPP provides framing)
+- LCP is layered on top of the bare serial link (no framing -- PPP provides framing)

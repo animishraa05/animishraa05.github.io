@@ -12,12 +12,12 @@ Two-phase hashing is the conceptual separation of hash-based problem solving int
 
 ## Explanation
 
-Beginners often stop after building the frequency structure, unsure what to do next. The key insight is that building the hash is only half the work — the real problem-solving happens in Phase 2, where you traverse or query the structure differently depending on the question. Different problems (most frequent, first non-repeating, anagram detection) all share Phase 1 but diverge in Phase 2.
+Beginners often stop after building the frequency structure, unsure what to do next. The key insight is that building the hash is only half the work -- the real problem-solving happens in Phase 2, where you traverse or query the structure differently depending on the question. Different problems (most frequent, first non-repeating, anagram detection) all share Phase 1 but diverge in Phase 2.
 
 ## How It Works
 
 1. **Phase 1 (Store):** Choose a structure (array or hash map), iterate the input, populate frequencies
-2. **Phase 2 (Use):** Query the structure — this could mean finding the max, re-traversing the input for order, or comparing two frequency maps
+2. **Phase 2 (Use):** Query the structure -- this could mean finding the max, re-traversing the input for order, or comparing two frequency maps
 3. The distinction is mental but powerful: it separates mechanical work from analytical work
 
 ## Mathematical Formulation
@@ -85,23 +85,23 @@ graph semantic_two_phase_hashing {
 ## Key Properties
 
 - Universal pattern across all hash-based string problems
-- Phase 1 is nearly identical across problems — only the structure type varies
-- Phase 2 varies significantly — this is where problem-specific logic lives
+- Phase 1 is nearly identical across problems -- only the structure type varies
+- Phase 2 varies significantly -- this is where problem-specific logic lives
 - Understanding this separation is the threshold between beginner and intermediate problem-solving
 - Enables modular thinking: change Phase 2 without modifying Phase 1
 
 ## Connections
 
-- Built from: [[hashing-store-phase|Hashing Store Phase]] — Phase 1 is the foundation
-- Built from: [[hashing-retrieval-phase|Hashing Retrieval Phase]] — Phase 2 is the query layer
-- Builds into: [[most-frequent-character|Most Frequent Character]] — uses Phase 1 + Phase 2 (traverse struct for max)
-- Builds into: [[first-non-repeating-character|First Non-Repeating Character]] — uses Phase 1 + Phase 2 (re-traverse string)
-- Builds into: [[anagram-detection-via-hashing|Anagram Detection]] — uses Phase 1 for two strings + Phase 2 (compare)
-- Related: [[character-hashing-use-cases|Character Hashing Use Cases]] — catalog of problems following this pattern
+- Built from: [[hashing-store-phase|Hashing Store Phase]] -- Phase 1 is the foundation
+- Built from: [[hashing-retrieval-phase|Hashing Retrieval Phase]] -- Phase 2 is the query layer
+- Builds into: [[most-frequent-character|Most Frequent Character]] -- uses Phase 1 + Phase 2 (traverse struct for max)
+- Builds into: [[first-non-repeating-character|First Non-Repeating Character]] -- uses Phase 1 + Phase 2 (re-traverse string)
+- Builds into: [[anagram-detection-via-hashing|Anagram Detection]] -- uses Phase 1 for two strings + Phase 2 (compare)
+- Related: [[character-hashing-use-cases|Character Hashing Use Cases]] -- catalog of problems following this pattern
 
 ## Edge Cases & Gotchas
 
-- Some problems can be solved in one pass (Phase 1 and 2 interleaved) — the two-phase model is conceptual, not always sequential
-- For first non-repeating character, Phase 2 re-traverses the original string, not the hash structure — a common confusion point
-- For anagram detection, Phase 1 runs twice (once per string), then Phase 2 compares — the phases apply per-string
+- Some problems can be solved in one pass (Phase 1 and 2 interleaved) -- the two-phase model is conceptual, not always sequential
+- For first non-repeating character, Phase 2 re-traverses the original string, not the hash structure -- a common confusion point
+- For anagram detection, Phase 1 runs twice (once per string), then Phase 2 compares -- the phases apply per-string
 - Overlapping Phase 1 and 2 can be more efficient but harder to reason about

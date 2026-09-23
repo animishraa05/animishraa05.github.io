@@ -10,7 +10,7 @@ updated: 2026-04-21
 In a cellular system, the same frequencies are reused in geographically separated cells. However, radio signals propagate beyond cell boundaries. When two cells using the same frequency (co-channel cells) transmit simultaneously, their signals interfere with each other. This co-channel interference degrades call quality and must be managed through adequate geographical separation.
 
 ## Core Idea
-Co-channel interference is the interference between signals from co-channel cells — cells that use the same frequency set. The key metric is the Carrier-to-Interference ratio (C/I): the ratio of desired signal power to interference power. A high C/I means a clear call; a low C/I means a noisy, unusable call.
+Co-channel interference is the interference between signals from co-channel cells -- cells that use the same frequency set. The key metric is the Carrier-to-Interference ratio (C/I): the ratio of desired signal power to interference power. A high C/I means a clear call; a low C/I means a noisy, unusable call.
 
 ## How It Works
 1. Two geographically separated cells use the same frequency (co-channel cells)
@@ -23,18 +23,47 @@ Co-channel interference is the interference between signals from co-channel cell
 
 ## Key Properties
 - C/I ratio: primary quality metric; must exceed minimum threshold
-- Directly constrains frequency reuse — determines minimum co-channel reuse distance D
+- Directly constrains frequency reuse -- determines minimum co-channel reuse distance D
 - Q = √(3N) where N is the cluster size; N=7 gives Q=4.58
 - Non-co-channel (adjacent channel) interference: reduced by guard bands between adjacent frequencies
 - Sectoring reduces interference by focusing antenna energy away from co-channel cells
 - Co-channel interference is a fundamental limit on cellular capacity
 
+
+
+## Visual Explanation
+
+```dot
+digraph Co_Channel_Interference {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Co Channel Interfere\nInput"]
+  B [label="Co Channel Interfere\nCore Mechanism"]
+  C [label="Co Channel Interfere\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Co_Channel_Interference {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Co Channel Interfere" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Related: [[frequency-reuse|Frequency Reuse]] — co-channel interference is what constrains frequency reuse planning
-- Related: [[cellular-mobile-system|Cellular Mobile System]] — interference management is fundamental to cellular design
-- Related: [[sectoring|Sectoring]] — sectored antennas reduce co-channel interference
-- Related: [[cell-splitting|Cell Splitting]] — splitting cells can increase interference if not planned carefully
-- Contrasts with: [[adjacent-channel-interference|Adjacent Channel Interference]] — interference from nearby frequencies, reduced by guard bands
+- Related: [[frequency-reuse|Frequency Reuse]] -- co-channel interference is what constrains frequency reuse planning
+- Related: [[cellular-mobile-system|Cellular Mobile System]] -- interference management is fundamental to cellular design
+- Related: [[sectoring|Sectoring]] -- sectored antennas reduce co-channel interference
+- Related: [[cell-splitting|Cell Splitting]] -- splitting cells can increase interference if not planned carefully
+- Contrasts with: [[adjacent-channel-interference|Adjacent Channel Interference]] -- interference from nearby frequencies, reduced by guard bands
 
 ## Edge Cases & Gotchas
 - In urban areas, building reflections can create unexpected interference paths

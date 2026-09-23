@@ -8,7 +8,7 @@ updated: 2026-07-05
 
 ## Formal Definition
 
-Hash map flexibility refers to the ability of `std::unordered_map` (and similar hash-based associative containers) to accept any hashable type as a key — including `char`, `int`, `string`, `long long`, and custom types with a user-provided hash function. This contrasts with frequency arrays, which are limited to integer-indexable domains.
+Hash map flexibility refers to the ability of `std::unordered_map` (and similar hash-based associative containers) to accept any hashable type as a key -- including `char`, `int`, `string`, `long long`, and custom types with a user-provided hash function. This contrasts with frequency arrays, which are limited to integer-indexable domains.
 
 ## Explanation
 
@@ -72,23 +72,23 @@ graph semantic_hash_map_flexibility {
 ## Key Properties
 
 - Works with any hashable type: `char`, `int`, `string`, `long long`, pointers, custom structs
-- No compile-time domain constraint — the key type is a template parameter, not a fixed size
+- No compile-time domain constraint -- the key type is a template parameter, not a fixed size
 - Same code pattern (`freq[key]++`) regardless of key type
 - Custom types require a custom hash function and `operator==`
 - The flexibility comes at a cost: hash computation, dynamic memory allocation, pointer indirection
 
 ## Connections
 
-- Built from: [[hash-collision-overhead|Hash Collision Overhead]] — flexibility requires hash functions, which can collide
-- Builds into: [[unordered-map-frequency|Unordered Map for Frequency Counting]] — maps are the concrete implementation
-- Builds into: [[ascii-math-elimination|ASCII Math Elimination]] — flexibility enables direct key usage
-- Contrasts with: [[known-range-assumption|Known Range Assumption]] — arrays sacrifice flexibility for the assumption
-- Contrasts with: [[memory-efficiency-array|Memory Efficiency of Array]] — flexibility costs memory
+- Built from: [[hash-collision-overhead|Hash Collision Overhead]] -- flexibility requires hash functions, which can collide
+- Builds into: [[unordered-map-frequency|Unordered Map for Frequency Counting]] -- maps are the concrete implementation
+- Builds into: [[ascii-math-elimination|ASCII Math Elimination]] -- flexibility enables direct key usage
+- Contrasts with: [[known-range-assumption|Known Range Assumption]] -- arrays sacrifice flexibility for the assumption
+- Contrasts with: [[memory-efficiency-array|Memory Efficiency of Array]] -- flexibility costs memory
 
 ## Edge Cases & Gotchas
 
-- `std::unordered_map` has no default hash for custom types — the compiler error is cryptic ("cannot convert from T to size_t")
-- For string keys, the hash function iterates the entire string — O(len(key)) per hash, not just O(1)
+- `std::unordered_map` has no default hash for custom types -- the compiler error is cryptic ("cannot convert from T to size_t")
+- For string keys, the hash function iterates the entire string -- O(len(key)) per hash, not just O(1)
 - Floating-point keys are problematic: NaN != NaN per IEEE 754, so lookup fails
-- Pointer keys hash by address, not by value — two different pointers with the same value are different keys
+- Pointer keys hash by address, not by value -- two different pointers with the same value are different keys
 - The flexibility argument cuts both ways: too flexible means type errors surface at runtime or as linker errors

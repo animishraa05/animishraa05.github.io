@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Validating and extracting data from strings is a ubiquitous programming task — checking email format, extracting phone numbers, parsing log files, replacing patterns in text. Doing this with manual character-by-character parsing is tedious, error-prone, and produces brittle code.
+Validating and extracting data from strings is a ubiquitous programming task -- checking email format, extracting phone numbers, parsing log files, replacing patterns in text. Doing this with manual character-by-character parsing is tedious, error-prone, and produces brittle code.
 
 ## Core Idea
 
@@ -69,10 +69,10 @@ graph semantic_regex {
 
 ## Connections
 
-- **Built from:** [[java-strings|Java Strings]] — regex works on String input and produces String results
-- **Builds into:** [[java-strings|Java Strings]] — String.split(), replaceAll(), matches() use regex internally
-- **Related:** [[java-file-handling|Java File Handling]] — regex is used for parsing log files and text processing
-- **Related:** [[java-collections-framework|Java Collections Framework]] — pattern matching on collection elements
+- **Built from:** [[java-strings|Java Strings]] -- regex works on String input and produces String results
+- **Builds into:** [[java-strings|Java Strings]] -- String.split(), replaceAll(), matches() use regex internally
+- **Related:** [[java-file-handling|Java File Handling]] -- regex is used for parsing log files and text processing
+- **Related:** [[java-collections-framework|Java Collections Framework]] -- pattern matching on collection elements
 
 ## Edge Cases & Gotchas
 

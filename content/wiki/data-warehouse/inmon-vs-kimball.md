@@ -1,5 +1,5 @@
 ---
-title: Inmon vs Kimball — Top-Down vs Bottom-Up Data Warehouse Architecture
+title: Inmon vs Kimball -- Top-Down vs Bottom-Up Data Warehouse Architecture
 type: synthesis
 tags: [database, data-warehouse]
 created: 2026-05-04
@@ -48,13 +48,42 @@ The fundamental disagreement is **where to start**: build the complete enterpris
 
 ## The Insight
 
-The Inmon vs. Kimball debate is often framed as a binary choice, but in practice, **most successful warehouses evolve from Kimball to Inmon**. Organizations start with independent data marts (quick wins), then gradually build a central warehouse as inconsistencies become painful. The hybrid model is the most realistic path for growing companies — it acknowledges that architectural purity must be balanced against business urgency.
+The Inmon vs. Kimball debate is often framed as a binary choice, but in practice, **most successful warehouses evolve from Kimball to Inmon**. Organizations start with independent data marts (quick wins), then gradually build a central warehouse as inconsistencies become painful. The hybrid model is the most realistic path for growing companies -- it acknowledges that architectural purity must be balanced against business urgency.
 
+
+
+## Visual Explanation
+
+```dot
+digraph inmon_vs_kimball {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Inmon Vs Kimball\nInput"]
+  B [label="Inmon Vs Kimball\nCore Mechanism"]
+  C [label="Inmon Vs Kimball\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_inmon_vs_kimball {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Inmon Vs Kimball" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- [[data-mart-types|Data Mart Types]] — the three types embody these approaches
-- [[dwh-server-models|DWH Server Models]] — server architecture follows the chosen approach
-- [[integrated-dwh|Integrated DWH]] — Inmon's approach maximizes integration
-- [[dwh-evolution|DWH Evolution]] — both approaches emerged in the 1990s OLAP era
-- [[three-tier-dwh-architecture|Three-Tier DWH Architecture]] — both approaches implement the three tiers differently
-- [[oltp-vs-olap|OLTP vs OLAP]] — both approaches serve the OLAP side of the split
+- [[data-mart-types|Data Mart Types]] -- the three types embody these approaches
+- [[dwh-server-models|DWH Server Models]] -- server architecture follows the chosen approach
+- [[integrated-dwh|Integrated DWH]] -- Inmon's approach maximizes integration
+- [[dwh-evolution|DWH Evolution]] -- both approaches emerged in the 1990s OLAP era
+- [[three-tier-dwh-architecture|Three-Tier DWH Architecture]] -- both approaches implement the three tiers differently
+- [[oltp-vs-olap|OLTP vs OLAP]] -- both approaches serve the OLAP side of the split

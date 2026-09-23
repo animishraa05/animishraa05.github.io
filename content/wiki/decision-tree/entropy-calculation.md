@@ -63,18 +63,33 @@ digraph entropy_calculation {
 - **Base-2 standard**: Log base 2 gives entropy in bits; natural log gives nats; base 10 gives hartleys
 - **Zero handling**: When pᵢ = 0, the term pᵢ × log(pᵢ) is defined as 0
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Entropy_Calculation {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Entropy Calculation" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Builds into:** [[entropy|Entropy]] — this is the computational method behind the concept
-- **Builds into:** [[information-gain|Information Gain]] — entropy values are needed to compute IG
-- **Built from:** [[node-purity|Node Purity]] — calculation quantifies the purity concept
-- **Contrasts with:** [[gini-index|Gini Index]] — different computational approach to measuring impurity
-- **Related:** [[decision-tree-splitting|Decision Tree Splitting]] — entropy values determine split quality
-- **Related:** [[attribute-selection-measures|Attribute Selection Measures]] — entropy is used in Information Gain
+- **Builds into:** [[entropy|Entropy]] -- this is the computational method behind the concept
+- **Builds into:** [[information-gain|Information Gain]] -- entropy values are needed to compute IG
+- **Built from:** [[node-purity|Node Purity]] -- calculation quantifies the purity concept
+- **Contrasts with:** [[gini-index|Gini Index]] -- different computational approach to measuring impurity
+- **Related:** [[decision-tree-splitting|Decision Tree Splitting]] -- entropy values determine split quality
+- **Related:** [[attribute-selection-measures|Attribute Selection Measures]] -- entropy is used in Information Gain
 
 ## Edge Cases & Gotchas
 
 - **Floating point precision**: Very small probabilities can cause numerical issues with log
-- **Single-class shortcut**: If only one class exists, skip computation — entropy is 0
+- **Single-class shortcut**: If only one class exists, skip computation -- entropy is 0
 - **Large datasets**: Counting can overflow with huge datasets; use incremental or streaming approaches
 - **Negative zero**: Some implementations may produce -0.0; normalize to 0.0 for consistency

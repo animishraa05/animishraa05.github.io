@@ -7,7 +7,7 @@ updated: 2026-04-30
 ---
 
 ## The Problem
-A single train-test split gives a noisy estimate of model performance — different splits give different results, especially on small datasets.
+A single train-test split gives a noisy estimate of model performance -- different splits give different results, especially on small datasets.
 
 ## Core Idea
 A resampling technique that repeatedly splits data into train and validation sets to get a more robust estimate of model performance.
@@ -38,11 +38,26 @@ digraph G {
 - Data-efficient: uses all data for both training and validation (just not simultaneously)
 - Standard: the gold standard for model evaluation in ML research
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Cross_Validation {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Cross Validation" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[train-test-split|Train-Test Split]] — cross-validation is a multi-split extension
-- Related: [[overfitting|Overfitting]] — CV helps detect overfitting more reliably
-- Related: [[supervised-learning|Supervised Learning]] — CV is used to evaluate supervised models
-- Related: [[data-modeling|Data Modeling]] — model selection uses CV to compare algorithms
+- Built from: [[train-test-split|Train-Test Split]] -- cross-validation is a multi-split extension
+- Related: [[overfitting|Overfitting]] -- CV helps detect overfitting more reliably
+- Related: [[supervised-learning|Supervised Learning]] -- CV is used to evaluate supervised models
+- Related: [[data-modeling|Data Modeling]] -- model selection uses CV to compare algorithms
 
 ## Edge Cases & Gotchas
 - Time series data: standard k-fold breaks temporal ordering (use time-series CV)

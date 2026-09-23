@@ -7,7 +7,7 @@ updated: 2026-04-30
 ---
 
 ## The Problem
-Raw data rarely comes in a format that machine learning algorithms can use effectively — models are only as good as their inputs.
+Raw data rarely comes in a format that machine learning algorithms can use effectively -- models are only as good as their inputs.
 
 ## Core Idea
 Creating new input variables (features) from raw data that make machine learning algorithms work better.
@@ -35,11 +35,26 @@ digraph G {
 - Creative: no fixed recipe, requires experimentation and intuition
 - Computationally-expensive: complex features can slow training significantly
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Feature_Engineering {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Feature Engineering" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[exploratory-data-analysis|EDA]] — EDA reveals what features to create
-- Builds into: [[data-modeling|Data Modeling]] — engineered features are model inputs
-- Related: [[data-transformation|Data Transformation]] — transformation is a type of feature engineering
-- Related: [[data-science|Data Science]] — feature engineering bridges data and models
+- Built from: [[exploratory-data-analysis|EDA]] -- EDA reveals what features to create
+- Builds into: [[data-modeling|Data Modeling]] -- engineered features are model inputs
+- Related: [[data-transformation|Data Transformation]] -- transformation is a type of feature engineering
+- Related: [[data-science|Data Science]] -- feature engineering bridges data and models
 
 ## Edge Cases & Gotchas
 - Data leakage: creating features from test set information during training

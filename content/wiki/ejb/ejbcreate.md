@@ -31,6 +31,35 @@ How does an entity bean create a new entity in the database when a client calls 
 - Container triggers after bean is associated with EJB Object
 - Parameters vary based on what data the entity needs
 
+
+
+## Visual Explanation
+
+```dot
+digraph ejbCreate__ {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Ejbcreate()\nInput"]
+  B [label="Ejbcreate()\nCore Mechanism"]
+  C [label="Ejbcreate()\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_ejbCreate__ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Ejbcreate()" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[entity-bean|Entity Bean]], [[home-interface|Home Interface]]
@@ -41,4 +70,4 @@ How does an entity bean create a new entity in the database when a client calls 
 
 - Must return a primary key, not the bean itself
 - Only called when creating NEW database records (not for existing)
-- After `ejbCreate()` returns, the bean is no longer in pool—it has specific data
+- After `ejbCreate()` returns, the bean is no longer in pool--it has specific data

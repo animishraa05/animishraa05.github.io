@@ -16,7 +16,7 @@ The **linker** combines multiple object files into a single executable by resolv
 
 ## How It Works
 
-The linker takes object files and libraries as input. It performs **symbol resolution** — matching each symbol reference to its definition across all input files. It then performs **relocation** — assigning final memory addresses and modifying code/data to use these addresses. The output is an executable file. The loader reads this file, allocates memory, sets up the runtime environment, and jumps to the entry point.
+The linker takes object files and libraries as input. It performs **symbol resolution** -- matching each symbol reference to its definition across all input files. It then performs **relocation** -- assigning final memory addresses and modifying code/data to use these addresses. The output is an executable file. The loader reads this file, allocates memory, sets up the runtime environment, and jumps to the entry point.
 
 ## Visual Explanation
 
@@ -51,16 +51,31 @@ digraph linker_loader {
 - **Relocation:** Adjusting addresses to match final memory layout
 - **Loader function:** Read executable, allocate memory, resolve dynamic links, start execution
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Linker_and_Loader {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Linker And Loader" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[object-code|Object Code]] — linkers consume object code produced by compilers
-- **Builds into:** [[runtime-environment|Runtime Environment]] — the loader sets up the initial runtime environment
-- **Related:** [[code-generation|Code Generation]] — the code generator produces object files for the linker
-- **Related:** [[storage-allocation-strategies|Storage Allocation Strategies]] — the loader allocates memory for static data
+- **Built from:** [[object-code|Object Code]] -- linkers consume object code produced by compilers
+- **Builds into:** [[runtime-environment|Runtime Environment]] -- the loader sets up the initial runtime environment
+- **Related:** [[code-generation|Code Generation]] -- the code generator produces object files for the linker
+- **Related:** [[storage-allocation-strategies|Storage Allocation Strategies]] -- the loader allocates memory for static data
 
 ## Edge Cases & Gotchas
 
-- **Dynamic linking:** Shared libraries (.so, .dll) are linked at load time or runtime, not at compile time — saves memory but adds complexity
-- **Link order matters:** Some linkers resolve symbols left-to-right — wrong order causes "undefined reference" errors
-- **Circular dependencies:** Libraries that depend on each other can cause linking failures — requires careful library organization
+- **Dynamic linking:** Shared libraries (.so, .dll) are linked at load time or runtime, not at compile time -- saves memory but adds complexity
+- **Link order matters:** Some linkers resolve symbols left-to-right -- wrong order causes "undefined reference" errors
+- **Circular dependencies:** Libraries that depend on each other can cause linking failures -- requires careful library organization
 - **Loading time:** Dynamic linking adds startup overhead; static linking creates larger executables but faster startup

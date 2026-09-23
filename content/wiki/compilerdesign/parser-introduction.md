@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-The token stream from lexical analysis is flat — it has no structure information. The compiler needs to reconstruct the hierarchical structure of the program (which statements are inside which blocks, how expressions are grouped) to enable semantic analysis and code generation.
+The token stream from lexical analysis is flat -- it has no structure information. The compiler needs to reconstruct the hierarchical structure of the program (which statements are inside which blocks, how expressions are grouped) to enable semantic analysis and code generation.
 
 ## Core Idea
 
@@ -45,19 +45,34 @@ digraph parser_intro {
 - **Output:** Parse tree (or error)
 - **Two main types:** Top-down (LL) and bottom-up (LR)
 - **Grammar-driven:** The parser follows the productions of a CFG
-- **Error handling:** Parser errors are syntax errors — the first and most common type programmers encounter
+- **Error handling:** Parser errors are syntax errors -- the first and most common type programmers encounter
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Parser_Introduction {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Parser Introduction" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[lexical-analysis|Lexical Analysis]] — consumes the token stream
-- **Built from:** [[context-free-grammar|Context-Free Grammar]] — uses the CFG for structural decisions
-- **Builds into:** [[top-down-parsing|Top-Down Parsing]] — subclass of parsing starting from the start symbol
-- **Builds into:** [[bottom-up-parsing|Bottom-Up Parsing]] — subclass of parsing starting from the input
-- **Builds into:** [[semantic-analysis|Semantic Analysis]] — passes the parse tree for semantic checks
-- **Related:** [[shift-reduce-parser|Shift Reduce Parser]] — the most common bottom-up parsing technique
+- **Built from:** [[lexical-analysis|Lexical Analysis]] -- consumes the token stream
+- **Built from:** [[context-free-grammar|Context-Free Grammar]] -- uses the CFG for structural decisions
+- **Builds into:** [[top-down-parsing|Top-Down Parsing]] -- subclass of parsing starting from the start symbol
+- **Builds into:** [[bottom-up-parsing|Bottom-Up Parsing]] -- subclass of parsing starting from the input
+- **Builds into:** [[semantic-analysis|Semantic Analysis]] -- passes the parse tree for semantic checks
+- **Related:** [[shift-reduce-parser|Shift Reduce Parser]] -- the most common bottom-up parsing technique
 
 ## Edge Cases & Gotchas
 
 - **Lookahead:** More lookahead gives more power (LL(1) vs LL(k)) but increases table size
-- **Grammar class determines parser:** LR grammars are more powerful than LL grammars — LR parsers can handle more language constructs
+- **Grammar class determines parser:** LR grammars are more powerful than LL grammars -- LR parsers can handle more language constructs
 - **Left recursion:** Top-down parsers cannot handle left recursion without entering infinite loops

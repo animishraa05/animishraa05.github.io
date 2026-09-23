@@ -8,7 +8,7 @@ updated: 2026-05-06
 
 ## The Problem
 
-A decision tree needs to divide its dataset into progressively cleaner groups. The question of *how* to split — which attribute to use, at what threshold, and into how many groups — determines whether the tree will learn meaningful patterns or noise.
+A decision tree needs to divide its dataset into progressively cleaner groups. The question of *how* to split -- which attribute to use, at what threshold, and into how many groups -- determines whether the tree will learn meaningful patterns or noise.
 
 ## Core Idea
 
@@ -24,7 +24,7 @@ The splitting process follows these steps:
 4. **Data distribution**: Assign each training instance to the child node corresponding to its attribute value
 5. **Recursive continuation**: Repeat the process for each child node that is not yet pure
 
-For continuous attributes (like income or age), the algorithm finds an optimal threshold (e.g., "Income > $50,000?") by testing candidate thresholds and selecting the one that maximizes impurity reduction. The source example splits first on Income, then on Age, then on Previous Purchases — each split refining the prediction further.
+For continuous attributes (like income or age), the algorithm finds an optimal threshold (e.g., "Income > $50,000?") by testing candidate thresholds and selecting the one that maximizes impurity reduction. The source example splits first on Income, then on Age, then on Previous Purchases -- each split refining the prediction further.
 
 ## Visual Explanation
 
@@ -54,15 +54,30 @@ digraph decision_tree_splitting {
 - **Purity-driven**: The goal is always to create purer child nodes than the parent
 - **Irreversible**: Once data is split, it cannot be reassigned to a different branch
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Decision_Tree_Splitting {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Decision Tree Splitt" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[information-gain|Information Gain]] — primary metric for choosing splits
-- **Built from:** [[gini-index|Gini Index]] — alternative metric for choosing splits
-- **Builds into:** [[internal-node|Internal Node]] — each split creates internal nodes
-- **Builds into:** [[node-purity|Node Purity]] — splitting aims to increase purity
-- **Builds into:** [[recursive-tree-building|Recursive Tree Building]] — splitting is the recursive step
-- **Related:** [[decision-tree-structure|Decision Tree Structure]] — splits define the tree's branches
-- **Related:** [[attribute-selection-measures|Attribute Selection Measures]] — the framework for evaluating splits
+- **Built from:** [[information-gain|Information Gain]] -- primary metric for choosing splits
+- **Built from:** [[gini-index|Gini Index]] -- alternative metric for choosing splits
+- **Builds into:** [[internal-node|Internal Node]] -- each split creates internal nodes
+- **Builds into:** [[node-purity|Node Purity]] -- splitting aims to increase purity
+- **Builds into:** [[recursive-tree-building|Recursive Tree Building]] -- splitting is the recursive step
+- **Related:** [[decision-tree-structure|Decision Tree Structure]] -- splits define the tree's branches
+- **Related:** [[attribute-selection-measures|Attribute Selection Measures]] -- the framework for evaluating splits
 
 ## Edge Cases & Gotchas
 

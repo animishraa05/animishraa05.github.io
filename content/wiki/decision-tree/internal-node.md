@@ -8,7 +8,7 @@ updated: 2026-05-06
 
 ## The Problem
 
-After the initial root split, the data in each child branch is still not pure — multiple classes or values coexist. The tree needs a mechanism to keep asking questions and refining its predictions without prematurely stopping or over-splitting.
+After the initial root split, the data in each child branch is still not pure -- multiple classes or values coexist. The tree needs a mechanism to keep asking questions and refining its predictions without prematurely stopping or over-splitting.
 
 ## Core Idea
 
@@ -58,14 +58,29 @@ digraph internal_node {
 - **Subset-specific**: Operates only on the data subset that reached this node, not the full dataset
 - **Recursive role**: Internal nodes can have internal nodes as children, creating nested decision paths
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Internal_Node {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Internal Node" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[decision-tree-splitting|Decision Tree Splitting]] — internal nodes are created by splitting
-- **Builds into:** [[decision-tree-structure|Decision Tree Structure]] — internal nodes form the tree's intermediate layers
-- **Builds into:** [[leaf-node|Leaf Node]] — internal nodes eventually terminate at leaves
-- **Built from:** [[attribute-selection-measures|Attribute Selection Measures]] — chooses which attribute to test
-- **Related:** [[root-node|Root Node]] — root is a special case of an internal node (the first one)
-- **Builds into:** [[decision-tree-prediction|Decision Tree Prediction]] — internal nodes guide the prediction path
+- **Built from:** [[decision-tree-splitting|Decision Tree Splitting]] -- internal nodes are created by splitting
+- **Builds into:** [[decision-tree-structure|Decision Tree Structure]] -- internal nodes form the tree's intermediate layers
+- **Builds into:** [[leaf-node|Leaf Node]] -- internal nodes eventually terminate at leaves
+- **Built from:** [[attribute-selection-measures|Attribute Selection Measures]] -- chooses which attribute to test
+- **Related:** [[root-node|Root Node]] -- root is a special case of an internal node (the first one)
+- **Builds into:** [[decision-tree-prediction|Decision Tree Prediction]] -- internal nodes guide the prediction path
 
 ## Edge Cases & Gotchas
 

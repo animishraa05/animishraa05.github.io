@@ -33,6 +33,35 @@ Each type is a proper subset of the previous type, creating nested inclusions.
 - Proposed by Noam Chomsky in 1956
 - Used to understand language complexity and computational power
 
+
+
+## Visual Explanation
+
+```dot
+digraph Chomsky_Hierarchy {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Chomsky Hierarchy\nInput"]
+  B [label="Chomsky Hierarchy\nCore Mechanism"]
+  C [label="Chomsky Hierarchy\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Chomsky_Hierarchy {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Chomsky Hierarchy" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[formal-language-theory|Formal Language Theory]], [[grammar|Grammar]]

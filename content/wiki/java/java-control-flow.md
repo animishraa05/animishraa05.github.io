@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Programs rarely execute in a straight line from start to finish. They need to make decisions based on conditions — handle different inputs, validate states, choose between algorithms. Without control flow constructs, every program would be a single fixed sequence of operations.
+Programs rarely execute in a straight line from start to finish. They need to make decisions based on conditions -- handle different inputs, validate states, choose between algorithms. Without control flow constructs, every program would be a single fixed sequence of operations.
 
 ## Core Idea
 
@@ -68,14 +68,14 @@ graph semantic_control_flow {
 
 ## Connections
 
-- **Built from:** [[java-operators|Java Operators]] — relational and logical operators produce the boolean conditions
-- **Builds into:** [[java-loops|Java Loops]] — loops also use boolean conditions for termination
-- **Contrasts with:** [[java-loops|Java Loops]] — branching (if-else) vs repetition (loops) are complementary control structures
-- **Related:** [[java-methods|Java Methods]] — methods encapsulate control flow into reusable units
+- **Built from:** [[java-operators|Java Operators]] -- relational and logical operators produce the boolean conditions
+- **Builds into:** [[java-loops|Java Loops]] -- loops also use boolean conditions for termination
+- **Contrasts with:** [[java-loops|Java Loops]] -- branching (if-else) vs repetition (loops) are complementary control structures
+- **Related:** [[java-methods|Java Methods]] -- methods encapsulate control flow into reusable units
 
 ## Edge Cases & Gotchas
 
 - **Dangling else**: `else` binds to the nearest unmatched `if`
 - **Switch fall-through**: Missing `break` causes execution to continue into the next case
 - **String switch compiles differently**: JVM uses hashCode + equals under the hood
-- **Ternary nesting**: Nested ternaries reduce readability — prefer if-else for complex conditions
+- **Ternary nesting**: Nested ternaries reduce readability -- prefer if-else for complex conditions

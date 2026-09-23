@@ -1,5 +1,5 @@
 ---
-title: URL to Rendering — Full Flow Analysis
+title: URL to Rendering -- Full Flow Analysis
 type: deep-dive
 tags: [networking, browser]
 created: 2026-04-30
@@ -48,7 +48,7 @@ Browser Rendering:
 
 ### Layer 2: Browser (URL Processing)
 - **[[url-parsing|URL Parsing]]**: Break into protocol, domain, path
-- **[[hsts|HSTS]]**: Security check—force HTTPS if required
+- **[[hsts|HSTS]]**: Security check--force HTTPS if required
 
 ### Layer 3: Network (DNS + Connection)
 - **[[dns-lookup|DNS Lookup]]**: Domain → IP resolution
@@ -89,6 +89,35 @@ Browser Rendering:
 | Security | Vulnerable to MITM | Protects against eavesdropping |
 | Performance | Faster (no handshake) | Slower (TLS handshake overhead) |
 
+
+
+## Visual Explanation
+
+```dot
+digraph url_to_rendering_flow {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Url To Rendering Flo\nInput"]
+  B [label="Url To Rendering Flo\nCore Mechanism"]
+  C [label="Url To Rendering Flo\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_url_to_rendering_flow {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Url To Rendering Flo" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 This synthesis connects to ALL 29 concept pages in this ingestion, plus existing pages:

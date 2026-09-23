@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Building a compiler from scratch requires implementing scanners, parsers, code generators, and optimizers — each involving complex algorithms (finite automata, LR parsing, graph coloring). Writing these manually for every new compiler is repetitive, error-prone, and time-consuming.
+Building a compiler from scratch requires implementing scanners, parsers, code generators, and optimizers -- each involving complex algorithms (finite automata, LR parsing, graph coloring). Writing these manually for every new compiler is repetitive, error-prone, and time-consuming.
 
 ## Core Idea
 
@@ -43,22 +43,37 @@ digraph compiler_tools {
 
 ## Key Properties
 
-- **Lexer generators:** Flex, Lex — input: regex patterns → output: DFA-based lexer in C
-- **Parser generators:** Yacc, Bison — input: CFG grammar → output: LALR(1) parser in C
+- **Lexer generators:** Flex, Lex -- input: regex patterns → output: DFA-based lexer in C
+- **Parser generators:** Yacc, Bison -- input: CFG grammar → output: LALR(1) parser in C
 - **Reduces manual work:** Automatically generates complex automata algorithms
 - **Separation of concerns:** Developer focuses on language specification, not implementation
-- **Integrated tools:** Lex and Yacc are designed to work together — tokens defined in Lex are used in Yacc
+- **Integrated tools:** Lex and Yacc are designed to work together -- tokens defined in Lex are used in Yacc
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Compiler_Construction_Tools {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Compiler Constructio" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[lexical-analysis|Lexical Analysis]] — Flex generates lexers that perform lexical analysis
-- **Built from:** [[syntax-analysis|Syntax Analysis]] — Yacc generates parsers for syntax analysis
-- **Related:** [[flex-lexical-analyzer-generator|Flex]] — Fast Lexical Analyzer Generator, the modern version of Lex
-- **Related:** [[lr-parsers|LALR Parser]] — Yacc generates LALR(1) parsers
-- **Related:** [[compiler|Compiler]] — these tools are used to build compilers
+- **Built from:** [[lexical-analysis|Lexical Analysis]] -- Flex generates lexers that perform lexical analysis
+- **Built from:** [[syntax-analysis|Syntax Analysis]] -- Yacc generates parsers for syntax analysis
+- **Related:** [[flex-lexical-analyzer-generator|Flex]] -- Fast Lexical Analyzer Generator, the modern version of Lex
+- **Related:** [[lr-parsers|LALR Parser]] -- Yacc generates LALR(1) parsers
+- **Related:** [[compiler|Compiler]] -- these tools are used to build compilers
 
 ## Edge Cases & Gotchas
 
 - **Tool dependencies:** Generated code often requires libraries from the tool (e.g., yacc's yyparse needs yylex from lex)
-- **LALR limitations:** Yacc uses LALR(1) which cannot handle all grammars — ambiguous or LR(1)-only grammars need workarounds
+- **LALR limitations:** Yacc uses LALR(1) which cannot handle all grammars -- ambiguous or LR(1)-only grammars need workarounds
 - **Modern alternatives:** ANTLR generates LL(*) parsers for multiple languages; LLVM provides code generation IR tools

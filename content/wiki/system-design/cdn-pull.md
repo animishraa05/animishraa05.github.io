@@ -47,21 +47,36 @@ digraph pull_cdn {
 
 ## Key Properties
 
-- First-request-triggered caching — content is pulled on demand
+- First-request-triggered caching -- content is pulled on demand
 - TTL-based expiration controls how long content stays cached
-- Minimizes CDN storage costs — only accessed content is stored
+- Minimizes CDN storage costs -- only accessed content is stored
 - Slower first request (cache miss penalty) vs fast subsequent requests
 - Best suited for high-traffic sites with diverse content
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Pull_CDN {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Pull Cdn" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Contrasts with:** [[cdn-push|Push CDN]] — lazy-pull vs proactive-push content delivery
-- **Related:** [[dns-system-design|DNS in System Design]] — DNS routing directs users to the CDN edge
-- **Related:** [[cache-aside|Cache-Aside]] — pull CDN follows the same lazy-loading pattern as cache-aside
-- **Related:** [[reverse-proxy-pattern|Reverse Proxy]] — pull CDN is a geographically distributed reverse proxy
+- **Contrasts with:** [[cdn-push|Push CDN]] -- lazy-pull vs proactive-push content delivery
+- **Related:** [[dns-system-design|DNS in System Design]] -- DNS routing directs users to the CDN edge
+- **Related:** [[cache-aside|Cache-Aside]] -- pull CDN follows the same lazy-loading pattern as cache-aside
+- **Related:** [[reverse-proxy-pattern|Reverse Proxy]] -- pull CDN is a geographically distributed reverse proxy
 
 ## Edge Cases & Gotchas
 
 - Thundering herd problem: if popular content expires simultaneously, a flood of origin requests hits the server
-- Pull CDNs contribute to origin traffic on first access — large content (videos) causes significant origin load on first requests
-- TTL tuning is critical — too short defeats caching, too long serves stale content
+- Pull CDNs contribute to origin traffic on first access -- large content (videos) causes significant origin load on first requests
+- TTL tuning is critical -- too short defeats caching, too long serves stale content

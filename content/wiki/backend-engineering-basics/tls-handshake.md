@@ -8,7 +8,7 @@ updated: 2026-04-30
 
 ## The Problem
 
-Without encryption, anyone between client and server can read or modify data (passwords, credit cards, messages). Without authentication, you can't verify you're talking to the real server. TLS solves both problems—but how do two machines agree on encryption without an attacker eavesdropping?
+Without encryption, anyone between client and server can read or modify data (passwords, credit cards, messages). Without authentication, you can't verify you're talking to the real server. TLS solves both problems--but how do two machines agree on encryption without an attacker eavesdropping?
 
 ## Core Idea
 
@@ -32,14 +32,43 @@ After handshake, all data is encrypted using the agreed-upon cipher (e.g., AES-2
 - Uses asymmetric encryption for key exchange, symmetric for data encryption (efficient)
 - Runs on top of TCP, before HTTP begins
 
+
+
+## Visual Explanation
+
+```dot
+digraph TLS_Handshake {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Tls Handshake\nInput"]
+  B [label="Tls Handshake\nCore Mechanism"]
+  C [label="Tls Handshake\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_TLS_Handshake {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Tls Handshake" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- **Built from:** [[socket|Socket]] — TLS runs over TCP sockets
-- **Built from:** [[tcp-handshake|TCP Handshake]] — TCP must be established first
-- **Builds into:** [[https|HTTPS]] — HTTPS is HTTP over TLS
-- **Builds into:** [[hsts|HSTS]] — HSTS enforces HTTPS/TLS usage
-- **Related:** [[http|HTTP]] — TLS encrypts HTTP communication
-- **Contrasts with:** [[http|HTTP]] — plain HTTP has no encryption or authentication
-- **Related:** [[certificate-authority|Certificate Authority]] — CAs sign certificates for server verification
+- **Built from:** [[socket|Socket]] -- TLS runs over TCP sockets
+- **Built from:** [[tcp-handshake|TCP Handshake]] -- TCP must be established first
+- **Builds into:** [[https|HTTPS]] -- HTTPS is HTTP over TLS
+- **Builds into:** [[hsts|HSTS]] -- HSTS enforces HTTPS/TLS usage
+- **Related:** [[http|HTTP]] -- TLS encrypts HTTP communication
+- **Contrasts with:** [[http|HTTP]] -- plain HTTP has no encryption or authentication
+- **Related:** [[certificate-authority|Certificate Authority]] -- CAs sign certificates for server verification
 
 ## Edge Cases & Gotchas
 

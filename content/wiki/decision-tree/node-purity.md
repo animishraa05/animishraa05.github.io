@@ -22,12 +22,12 @@ Purity is quantified by impurity measures:
 - **Gini Index**: 0 = pure, 0.5 = maximum impurity (binary classification)
 
 **The purity progression during tree building:**
-1. Root node starts with the full dataset — typically impure (mixed classes)
+1. Root node starts with the full dataset -- typically impure (mixed classes)
 2. A split is chosen that maximally increases purity in the child nodes
 3. Each child node is evaluated: if pure enough, it becomes a leaf; if not, it splits again
 4. This continues until all leaf nodes are pure (or stopping conditions prevent further splitting)
 
-The source states: "A decision tree splits the dataset based on feature values to create pure subsets — ideally all items in a group belong to the same class." In the worked example, splitting on attribute Y produced children where one contained only class I and the other only class II — both perfectly pure.
+The source states: "A decision tree splits the dataset based on feature values to create pure subsets -- ideally all items in a group belong to the same class." In the worked example, splitting on attribute Y produced children where one contained only class I and the other only class II -- both perfectly pure.
 
 ## Visual Explanation
 
@@ -55,15 +55,30 @@ digraph node_purity {
 - **Progressive**: Purity increases (impurity decreases) with each effective split
 - **Local**: Purity is evaluated per-node, not globally across the tree
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Node_Purity {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Node Purity" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[entropy|Entropy]] — entropy is one measure of (im)purity
-- **Built from:** [[gini-index|Gini Index]] — Gini is another measure of (im)purity
-- **Builds into:** [[decision-tree-splitting|Decision Tree Splitting]] — splitting aims to increase purity
-- **Builds into:** [[leaf-node|Leaf Node]] — pure nodes become leaves
-- **Related:** [[node-purity|Node Purity]] — the concept itself
-- **Related:** [[information-gain|Information Gain]] — IG measures the purity increase from a split
-- **Builds into:** [[recursive-tree-building|Recursive Tree Building]] — purity determines when to stop recursing
+- **Built from:** [[entropy|Entropy]] -- entropy is one measure of (im)purity
+- **Built from:** [[gini-index|Gini Index]] -- Gini is another measure of (im)purity
+- **Builds into:** [[decision-tree-splitting|Decision Tree Splitting]] -- splitting aims to increase purity
+- **Builds into:** [[leaf-node|Leaf Node]] -- pure nodes become leaves
+- **Related:** [[node-purity|Node Purity]] -- the concept itself
+- **Related:** [[information-gain|Information Gain]] -- IG measures the purity increase from a split
+- **Builds into:** [[recursive-tree-building|Recursive Tree Building]] -- purity determines when to stop recursing
 
 ## Edge Cases & Gotchas
 

@@ -68,13 +68,28 @@ digraph G {
 - Recursive resolvers do the work so clients don't need to query multiple servers
 - UDP port 53 is used for standard queries (TCP for large responses)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_DNS_Lookup {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Dns Lookup" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[dns-cache|DNS Cache]] — caching is core to DNS lookup efficiency
-- **Builds into:** [[tcp-handshake|TCP Handshake]] — IP from DNS used to establish TCP connection
-- **Related:** [[dns-hierarchy|DNS Hierarchy]] — the chain of servers queried
-- **Related:** [[arp-protocol|ARP Protocol]] — after DNS gives IP, ARP finds MAC address
-- **Contrasts with:** [[recursive-dns|Recursive DNS]] — DNS lookup includes caching, recursive is the fallback mechanism
+- **Built from:** [[dns-cache|DNS Cache]] -- caching is core to DNS lookup efficiency
+- **Builds into:** [[tcp-handshake|TCP Handshake]] -- IP from DNS used to establish TCP connection
+- **Related:** [[dns-hierarchy|DNS Hierarchy]] -- the chain of servers queried
+- **Related:** [[arp-protocol|ARP Protocol]] -- after DNS gives IP, ARP finds MAC address
+- **Contrasts with:** [[recursive-dns|Recursive DNS]] -- DNS lookup includes caching, recursive is the fallback mechanism
 
 ## Edge Cases & Gotchas
 

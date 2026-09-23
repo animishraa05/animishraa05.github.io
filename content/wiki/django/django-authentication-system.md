@@ -53,12 +53,41 @@ def secret_page(request):
 - Secure: Handles session hijacking prevention, password hashing, and CSRF protection.
 - Includes Groups and Permissions for granular access control.
 
+
+
+## Visual Explanation
+
+```dot
+digraph Django_Authentication_System {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Django Authenticatio\nInput"]
+  B [label="Django Authenticatio\nCore Mechanism"]
+  C [label="Django Authenticatio\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Django_Authentication_System {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Django Authenticatio" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[django-web-framework|Django Web Framework]] — built-in security layer.
-- **Related:** [[django-admin-panel|Django Admin Panel]] — relies heavily on the auth system.
-- **Related:** [[django-model|Django Model]] — User is a model.
-- **Related:** [[django-request-response-lifecycle|Django Request-Response Lifecycle]] — sessions are handled in middleware.
+- **Built from:** [[django-web-framework|Django Web Framework]] -- built-in security layer.
+- **Related:** [[django-admin-panel|Django Admin Panel]] -- relies heavily on the auth system.
+- **Related:** [[django-model|Django Model]] -- User is a model.
+- **Related:** [[django-request-response-lifecycle|Django Request-Response Lifecycle]] -- sessions are handled in middleware.
 
 ## Edge Cases & Gotchas
 

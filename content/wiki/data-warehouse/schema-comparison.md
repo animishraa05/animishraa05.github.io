@@ -1,5 +1,5 @@
 ---
-title: Star vs Snowflake vs Galaxy — DWH Schema Comparison
+title: Star vs Snowflake vs Galaxy -- DWH Schema Comparison
 type: synthesis
 tags: [database, data-warehouse]
 created: 2026-05-04
@@ -8,7 +8,7 @@ updated: 2026-05-04
 
 ## What's Being Compared
 
-The three schema architectures for data warehouses — Star, Snowflake, and Fact Constellation (Galaxy) — represent a progression from simple to complex dimensional modeling. Understanding their tradeoffs is essential for choosing the right schema for a given warehouse's scale, query patterns, and organizational complexity.
+The three schema architectures for data warehouses -- Star, Snowflake, and Fact Constellation (Galaxy) -- represent a progression from simple to complex dimensional modeling. Understanding their tradeoffs is essential for choosing the right schema for a given warehouse's scale, query patterns, and organizational complexity.
 
 ## The Core Tension
 
@@ -50,13 +50,42 @@ The fundamental tradeoff is **query simplicity vs. storage efficiency vs. modeli
 
 ## The Insight
 
-The three schemas are not mutually exclusive — they form a **design spectrum**. A single warehouse can use star schema for some subject areas, snowflake for others, and galaxy for the enterprise view. The choice is not "which schema" but "which schema for which subject area." The progression from star → snowflake → galaxy mirrors the organization's growth from department-level analysis to enterprise-wide intelligence.
+The three schemas are not mutually exclusive -- they form a **design spectrum**. A single warehouse can use star schema for some subject areas, snowflake for others, and galaxy for the enterprise view. The choice is not "which schema" but "which schema for which subject area." The progression from star → snowflake → galaxy mirrors the organization's growth from department-level analysis to enterprise-wide intelligence.
 
+
+
+## Visual Explanation
+
+```dot
+digraph schema_comparison {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Schema Comparison\nInput"]
+  B [label="Schema Comparison\nCore Mechanism"]
+  C [label="Schema Comparison\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_schema_comparison {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Schema Comparison" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- [[wiki/data-warehouse/star-schema|Star Schema]] — simplest schema, foundation for both others
-- [[snowflake-schema|Snowflake Schema]] — normalized variant of star
-- [[fact-constellation-schema|Fact Constellation Schema]] — multi-fact extension
-- [[multidimensional-data-model|Multidimensional Data Model]] — all three implement this model
-- [[wiki/data-warehouse/dimension-table|Dimension Table]] — normalization decisions affect dimension design
-- [[data-mart-types|Data Mart Types]] — schema choice interacts with data mart architecture
+- [[wiki/data-warehouse/star-schema|Star Schema]] -- simplest schema, foundation for both others
+- [[snowflake-schema|Snowflake Schema]] -- normalized variant of star
+- [[fact-constellation-schema|Fact Constellation Schema]] -- multi-fact extension
+- [[multidimensional-data-model|Multidimensional Data Model]] -- all three implement this model
+- [[wiki/data-warehouse/dimension-table|Dimension Table]] -- normalization decisions affect dimension design
+- [[data-mart-types|Data Mart Types]] -- schema choice interacts with data mart architecture

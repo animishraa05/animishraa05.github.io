@@ -10,7 +10,7 @@ updated: 2026-04-30
 CPU instructions need to know where to find their operands (the data they operate on). Operands could be in registers, memory, or embedded in the instruction itself. How does the CPU know which one?
 
 ## Core Idea
-Addressing Mode defines how a CPU instruction specifies the location of its operands — whether in registers, memory, or as immediate values embedded in the instruction.
+Addressing Mode defines how a CPU instruction specifies the location of its operands -- whether in registers, memory, or as immediate values embedded in the instruction.
 
 ## How It Works
 1. Instruction encoding includes opcode (what to do) and addressing mode specifier (where data is)
@@ -39,6 +39,21 @@ digraph addressing_mode {
 - More addressing modes = more complex instruction decoding
 - Choice of addressing mode affects instruction length and execution speed
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Addressing_Mode {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Addressing Mode" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[instruction-set|Instruction Set]], [[cpu|CPU]], [[operand|Operand]]
 - **Builds into:** [[immediate-addressing|Immediate Addressing]], [[register-addressing|Register Addressing]], [[direct-addressing|Direct Addressing]]

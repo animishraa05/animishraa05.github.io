@@ -12,7 +12,7 @@ How do you model persistent business data in EJB so that it survives beyond clie
 
 ## Core Idea
 
-An entity bean is a persistent object that represents business data stored in permanent storage (typically a relational database). Entity beans are the "nouns" of EJB—representing things like bank accounts, customers, and products.
+An entity bean is a persistent object that represents business data stored in permanent storage (typically a relational database). Entity beans are the "nouns" of EJB--representing things like bank accounts, customers, and products.
 
 ## How It Works
 
@@ -32,6 +32,35 @@ An entity bean is a persistent object that represents business data stored in pe
 - Models data, not process or workflow
 - Can be accessed and modified by session beans
 
+
+
+## Visual Explanation
+
+```dot
+digraph Entity_Bean {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Entity Bean\nInput"]
+  B [label="Entity Bean\nCore Mechanism"]
+  C [label="Entity Bean\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Entity_Bean {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Entity Bean" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[ejb-container|EJB Container]], [[primary-key|Primary Key]], [[entity-bean-identity|Entity Bean Identity]], [[entity-bean-instance-vs-data|Entity Bean Instance vs Data]], [[persistence-concepts|Persistence Concepts]]

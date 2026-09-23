@@ -59,11 +59,40 @@ def register_user(request):
 - Tasks run in isolated processes, separate from the WSGI server.
 - Prevents HTTP timeouts for long-running operations.
 
+
+
+## Visual Explanation
+
+```dot
+digraph Django_Celery_Integration {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Django Celery Integr\nInput"]
+  B [label="Django Celery Integr\nCore Mechanism"]
+  C [label="Django Celery Integr\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Django_Celery_Integration {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Django Celery Integr" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[python-programming-language|Python]] — Celery is a Python task queue.
-- **Related:** [[django-view|Django View]] — views trigger celery tasks.
-- **Contrasts with:** [[django-signals|Django Signals]] — signals are synchronous, Celery is asynchronous.
+- **Built from:** [[python-programming-language|Python]] -- Celery is a Python task queue.
+- **Related:** [[django-view|Django View]] -- views trigger celery tasks.
+- **Contrasts with:** [[django-signals|Django Signals]] -- signals are synchronous, Celery is asynchronous.
 
 ## Edge Cases & Gotchas
 

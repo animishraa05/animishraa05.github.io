@@ -48,16 +48,31 @@ digraph G {
 - Used for: transforms, opacity, scrolling, video
 - Layers must be uploaded to GPU memory (costly first time)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_GPU_Rendering {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Gpu Rendering" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[compositing|Compositing]] — GPU does the compositing
-- **Related:** [[painting|Painting]] — CPU may do initial paint
-- **Related:** [[browser-rendering|Browser Rendering]] — GPU rendering is step 6
-- **Contrasts with:** [[cpu-rendering|CPU Rendering]] — GPU is faster for graphics
+- **Built from:** [[compositing|Compositing]] -- GPU does the compositing
+- **Related:** [[painting|Painting]] -- CPU may do initial paint
+- **Related:** [[browser-rendering|Browser Rendering]] -- GPU rendering is step 6
+- **Contrasts with:** [[cpu-rendering|CPU Rendering]] -- GPU is faster for graphics
 
 ## Edge Cases & Gotchas
 
 - Uploading layers to GPU has initial cost
-- GPU memory is limited—too many layers cause issues
+- GPU memory is limited--too many layers cause issues
 - Not all CSS properties are GPU-accelerated
 - `transform` and `opacity` are the best for animations

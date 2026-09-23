@@ -73,12 +73,27 @@ digraph G {
 - Same JMS code structure, different interface types for each domain
 - EJB MDBs can listen to either Queues or Topics
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Point_to_Point_vs_Publish_Subscribe_Messaging {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Point To Point Vs Pu" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[jms|JMS]] — these are the two JMS messaging domains
-- Built from: [[jms-programming-model|JMS Programming Model]] — the model applies to both PTP and Pub/Sub
-- Builds into: [[message-driven-bean|MDB]] — MDBs consume from either Queues or Topics
-- Related: [[queue-partitioning|Queue Partitioning]] — using multiple queues for traffic separation
-- Contrasts with: [[rmi-remote-method-invocation|RMI-IIOP]] — RMI is always 1:1, messaging offers both 1:1 and 1:N
+- Built from: [[jms|JMS]] -- these are the two JMS messaging domains
+- Built from: [[jms-programming-model|JMS Programming Model]] -- the model applies to both PTP and Pub/Sub
+- Builds into: [[message-driven-bean|MDB]] -- MDBs consume from either Queues or Topics
+- Related: [[queue-partitioning|Queue Partitioning]] -- using multiple queues for traffic separation
+- Contrasts with: [[rmi-remote-method-invocation|RMI-IIOP]] -- RMI is always 1:1, messaging offers both 1:1 and 1:N
 
 ## Edge Cases & Gotchas
 - Pub/Sub with no active subscribers means messages are lost (unless durable subscriptions)

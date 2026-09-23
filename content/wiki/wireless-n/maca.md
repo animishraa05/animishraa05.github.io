@@ -29,16 +29,45 @@ MACA is a MAC protocol that solves the hidden terminal problem through a four-wa
 - Used as the basis for IEEE 802.11's CSMA/CA protocol
 - RTS/CTS exchange adds overhead but significantly improves performance in high-contention scenarios
 
+
+
+## Visual Explanation
+
+```dot
+digraph MACA_Protocol {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Maca Protocol\nInput"]
+  B [label="Maca Protocol\nCore Mechanism"]
+  C [label="Maca Protocol\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_MACA_Protocol {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Maca Protocol" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[hidden-terminal-problem|Hidden Terminal Problem]] — MACA directly solves this
-- Built from: [[exposed-terminal-problem|Exposed Terminal Problem]] — MACA's RTS/CTS also mitigates this
-- Related: [[near-far-terminal|Near/Far Terminal Effect]] — a different MAC problem solved by power control, not MACA
-- Related: [[csma-cd|CSMA/CD]] — the Ethernet protocol that fails without these mechanisms
-- Related: [[ieee-802-11|IEEE 802.11]] — 802.11's CSMA/CA is based on MACA's RTS/CTS mechanism
-- Related: [[reservation-aloha|Reservation Aloha]] — another reservation-based MAC protocol
+- Built from: [[hidden-terminal-problem|Hidden Terminal Problem]] -- MACA directly solves this
+- Built from: [[exposed-terminal-problem|Exposed Terminal Problem]] -- MACA's RTS/CTS also mitigates this
+- Related: [[near-far-terminal|Near/Far Terminal Effect]] -- a different MAC problem solved by power control, not MACA
+- Related: [[csma-cd|CSMA/CD]] -- the Ethernet protocol that fails without these mechanisms
+- Related: [[ieee-802-11|IEEE 802.11]] -- 802.11's CSMA/CA is based on MACA's RTS/CTS mechanism
+- Related: [[reservation-aloha|Reservation Aloha]] -- another reservation-based MAC protocol
 
 ## Edge Cases & Gotchas
 - RTS/CTS overhead reduces efficiency in low-traffic scenarios
-- Not all hidden node scenarios are solved — nodes that cannot hear RTS or CTS (third-order hidden nodes) remain problematic
+- Not all hidden node scenarios are solved -- nodes that cannot hear RTS or CTS (third-order hidden nodes) remain problematic
 - Control packet collisions still occur with pure Aloha within RTS/CTS exchange
 - In practice, RTS/CTS is only enabled for data frames exceeding a certain length threshold

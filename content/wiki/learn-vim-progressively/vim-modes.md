@@ -13,7 +13,7 @@ Standard text editors map most keystrokes directly to characters on screen. Vim 
 
 ## Core Idea
 
-Vim uses modal editing — different keystrokes do different things depending on the current mode. The main modes are Normal (for commands), Insert (for typing), and Visual (for selection).
+Vim uses modal editing -- different keystrokes do different things depending on the current mode. The main modes are Normal (for commands), Insert (for typing), and Visual (for selection).
 
 ## How It Works
 
@@ -31,19 +31,48 @@ Key mappings:
 ## Key Properties
 
 - Vim starts in Normal mode by default
-- Mode switching is explicit — no hold-to-edit like Ctrl in conventional editors
+- Mode switching is explicit -- no hold-to-edit like Ctrl in conventional editors
 - Visual mode has three variants: character, line, and block
 - `:` 进入 Ex 命令行 mode (also considered a mode)
 
 ## Edge Cases & Gotchas
 
-- Accidental key presses in Normal mode can cause unintended edits (e.g., `i` in the middle of a word inserts before it, not split it — use `s` or `a` instead)
+- Accidental key presses in Normal mode can cause unintended edits (e.g., `i` in the middle of a word inserts before it, not split it -- use `s` or `a` instead)
 - Caps Lock matters: `i` is insert, `I` is different command
 - `:help mode` shows current mode help
 
+
+
+## Visual Explanation
+
+```dot
+digraph aliases___mode__normal_mode__insert_mode__visual_mode__command_mode_ {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Aliases: [Mode, Norm\nInput"]
+  B [label="Aliases: [Mode, Norm\nCore Mechanism"]
+  C [label="Aliases: [Mode, Norm\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_aliases___mode__normal_mode__insert_mode__visual_mode__command_mode_ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Aliases: [Mode, Norm" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- [[vim-basic-commands|Survival Commands]] — Five commands that work in Normal mode
-- [[vim-text-objects|Text Objects]] — Selection commands that require Visual mode
-- [[vim-visual-selection|Visual Selection]] — Modes for selecting text blocks
-- [[vim-macros|Macros]] — Recording in Normal mode
+- [[vim-basic-commands|Survival Commands]] -- Five commands that work in Normal mode
+- [[vim-text-objects|Text Objects]] -- Selection commands that require Visual mode
+- [[vim-visual-selection|Visual Selection]] -- Modes for selecting text blocks
+- [[vim-macros|Macros]] -- Recording in Normal mode

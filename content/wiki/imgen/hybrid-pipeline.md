@@ -48,6 +48,35 @@ User Brief (natural language)
 - **Modular components**: Each stage is swappable (LLM, diffusion model, control mechanisms)
 - **Production-ready**: Supports async job queues, per-client LoRA hot-swapping, quality gates
 
+
+
+## Visual Explanation
+
+```dot
+digraph hybrid_pipeline {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Hybrid Pipeline\nInput"]
+  B [label="Hybrid Pipeline\nCore Mechanism"]
+  C [label="Hybrid Pipeline\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_hybrid_pipeline {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Hybrid Pipeline" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[diffusion-models]], [[transformers]], [[clip]], [[t5-encoder]]

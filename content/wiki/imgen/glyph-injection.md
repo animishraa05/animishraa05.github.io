@@ -13,7 +13,7 @@ Even with T5 encoding and 16-channel VAE, pure diffusion models still struggle w
 
 ## Core Idea
 
-Don't ask the model to generate letters — give it the exact letter shapes as a spatial constraint. Render the text as a clean image using standard font libraries, then use ControlNet to force the diffusion model to follow those exact strokes.
+Don't ask the model to generate letters -- give it the exact letter shapes as a spatial constraint. Render the text as a clean image using standard font libraries, then use ControlNet to force the diffusion model to follow those exact strokes.
 
 ## How It Works
 
@@ -27,7 +27,7 @@ Don't ask the model to generate letters — give it the exact letter shapes as a
 
 ### Why This Works
 
-ControlNet operates at the pixel/spatial level — it doesn't "understand" letters, it just sees dark pixels and enforces dark pixels at the same locations. The model isn't generating "M", it's being told "there must be dark strokes at these specific coordinates."
+ControlNet operates at the pixel/spatial level -- it doesn't "understand" letters, it just sees dark pixels and enforces dark pixels at the same locations. The model isn't generating "M", it's being told "there must be dark strokes at these specific coordinates."
 
 ### ControlNet Scale
 
@@ -39,11 +39,40 @@ The `controlnet_scale` parameter (0.0-1.0) controls how strongly ControlNet over
 
 ## Key Properties
 
-- Zero training required — uses pre-trained ControlNet weights
+- Zero training required -- uses pre-trained ControlNet weights
 - Works with any font (select based on brand guidelines)
 - Multi-line text supported in single glyph image
 - Font weight affects reliability (bold = more reliable)
 
+
+
+## Visual Explanation
+
+```dot
+digraph glyph_injection {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Glyph Injection\nInput"]
+  B [label="Glyph Injection\nCore Mechanism"]
+  C [label="Glyph Injection\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_glyph_injection {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Glyph Injection" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Solves: [[text-rendering-problem]]

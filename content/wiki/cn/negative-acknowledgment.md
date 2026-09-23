@@ -40,13 +40,28 @@ digraph G {
 - Used with Selective Repeat (not Go-Back-N which uses cumulative ACK)
 - Can be combined with ACKs
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Negative_Acknowledgment {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Negative Acknowledgm" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Contrasts with: [[acknowledgment|Acknowledgment]] — positive vs negative feedback
-- Built from: [[selective-repeat|Selective Repeat ARQ]] — uses NAKs
-- Related: [[retransmission|Retransmission]] — NAK triggers this
-- Related: [[timeout|Timeout]] — NAK avoids needing timeout for loss detection
+- Contrasts with: [[acknowledgment|Acknowledgment]] -- positive vs negative feedback
+- Built from: [[selective-repeat|Selective Repeat ARQ]] -- uses NAKs
+- Related: [[retransmission|Retransmission]] -- NAK triggers this
+- Related: [[timeout|Timeout]] -- NAK avoids needing timeout for loss detection
 
 ## Edge Cases & Gotchas
 - NAK loss can still require timeout-based recovery as backup
-- Some protocols (TCP) don't use explicit NAKs — use duplicate ACKs instead to signal loss
+- Some protocols (TCP) don't use explicit NAKs -- use duplicate ACKs instead to signal loss
 - NAK storms: if many packets lost, many NAKs can add to congestion

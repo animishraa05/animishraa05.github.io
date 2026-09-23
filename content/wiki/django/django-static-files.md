@@ -50,11 +50,40 @@ Static files are like the paint and furniture of a house. `collectstatic` is lik
 - `STATIC_ROOT`: The absolute filesystem path where `collectstatic` dumps files.
 - `STATICFILES_DIRS`: Additional directories Django should check for static files.
 
+
+
+## Visual Explanation
+
+```dot
+digraph Django_Static_Files {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Django Static Files\nInput"]
+  B [label="Django Static Files\nCore Mechanism"]
+  C [label="Django Static Files\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Django_Static_Files {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Django Static Files" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[django-web-framework|Django Web Framework]] — asset pipeline.
-- **Related:** [[django-template-engine|Django Template Engine]] — templates reference static files.
-- **Related:** [[django-deployment-wsgi-gunicorn|Django Deployment]] — crucial step for going to production.
+- **Built from:** [[django-web-framework|Django Web Framework]] -- asset pipeline.
+- **Related:** [[django-template-engine|Django Template Engine]] -- templates reference static files.
+- **Related:** [[django-deployment-wsgi-gunicorn|Django Deployment]] -- crucial step for going to production.
 
 ## Edge Cases & Gotchas
 

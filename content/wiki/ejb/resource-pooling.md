@@ -55,11 +55,26 @@ digraph G {
 - **Shared by beans**: Entity beans, session beans share DB connection pool
 - **Configurable**: Pool min/max size set in container config
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Resource_Pooling {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Resource Pooling" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[instance-pooling|Instance Pooling]] — bean pooling is one type of resource pooling
-- Builds into: [[jdbc|JDBC]] — JDBC connections are pooled
-- Related: [[jms|JMS]] — JMS connections also pooled
-- Related: [[ejb-container|EJB Container]] — container manages resource pools
+- Built from: [[instance-pooling|Instance Pooling]] -- bean pooling is one type of resource pooling
+- Builds into: [[jdbc|JDBC]] -- JDBC connections are pooled
+- Related: [[jms|JMS]] -- JMS connections also pooled
+- Related: [[ejb-container|EJB Container]] -- container manages resource pools
 
 ## Edge Cases & Gotchas
 - **Leaked connections**: Forgetting to close() returns connection to pool

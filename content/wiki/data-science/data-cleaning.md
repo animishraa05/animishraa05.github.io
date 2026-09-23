@@ -34,11 +34,26 @@ digraph G {
 - Documentation-critical: every cleaning decision must be recorded
 - Statistical: often requires understanding distributions to identify issues
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Data_Cleaning {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Data Cleaning" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[data-wrangling|Data Wrangling]] — cleaning is a phase within wrangling
-- Builds into: [[data-transformation|Data Transformation]] — clean data is ready for reshaping
-- Related: [[exploratory-data-analysis|EDA]] — profiling reveals what needs cleaning
-- Related: [[feature-engineering|Feature Engineering]] — clean features enable better models
+- Built from: [[data-wrangling|Data Wrangling]] -- cleaning is a phase within wrangling
+- Builds into: [[data-transformation|Data Transformation]] -- clean data is ready for reshaping
+- Related: [[exploratory-data-analysis|EDA]] -- profiling reveals what needs cleaning
+- Related: [[feature-engineering|Feature Engineering]] -- clean features enable better models
 
 ## Edge Cases & Gotchas
 - Blindly dropping all missing values can bias results

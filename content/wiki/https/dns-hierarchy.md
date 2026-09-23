@@ -56,13 +56,28 @@ digraph G {
 - Authoritative servers are authoritative for specific domains
 - Distributed design prevents single point of failure
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_DNS_Hierarchy {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Dns Hierarchy" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[recursive-dns|Recursive DNS]] — recursive resolvers navigate the hierarchy
-- **Related:** [[dns-root-server|DNS Root Server]] — the top level of the hierarchy
-- **Related:** [[dns-tld-server|DNS TLD Server]] — intermediate level for each TLD
-- **Related:** [[dns-authoritative-server|DNS Authoritative Server]] — bottom level with actual records
-- **Builds into:** [[dns-lookup|DNS Lookup]] — hierarchy is queried during DNS resolution
+- **Built from:** [[recursive-dns|Recursive DNS]] -- recursive resolvers navigate the hierarchy
+- **Related:** [[dns-root-server|DNS Root Server]] -- the top level of the hierarchy
+- **Related:** [[dns-tld-server|DNS TLD Server]] -- intermediate level for each TLD
+- **Related:** [[dns-authoritative-server|DNS Authoritative Server]] -- bottom level with actual records
+- **Builds into:** [[dns-lookup|DNS Lookup]] -- hierarchy is queried during DNS resolution
 
 ## Edge Cases & Gotchas
 

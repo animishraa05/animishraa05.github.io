@@ -46,12 +46,27 @@ digraph G {
 - **Can span contexts**: May traverse multiple subcontexts
 - **JNDI examples**: `java:comp/env/ejb/MyBean`, `jdbc/myDataSource`
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Compound_Name {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Compound Name" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[atomic-name|Atomic Name]] — compound names are made of atomic names
-- Builds into: [[jndi-binding|JNDI Binding]] — bindings use compound names for lookup
-- Related: [[jndi-naming-concepts|JNDI Naming Concepts]] — compound names are a core concept
-- Related: [[jndi-context|JNDI Context]] — contexts resolve compound names
-- Related: [[subcontext|Subcontext]] — compound names traverse subcontexts
+- Built from: [[atomic-name|Atomic Name]] -- compound names are made of atomic names
+- Builds into: [[jndi-binding|JNDI Binding]] -- bindings use compound names for lookup
+- Related: [[jndi-naming-concepts|JNDI Naming Concepts]] -- compound names are a core concept
+- Related: [[jndi-context|JNDI Context]] -- contexts resolve compound names
+- Related: [[subcontext|Subcontext]] -- compound names traverse subcontexts
 
 ## Edge Cases & Gotchas
 - **Syntax differences**: LDAP uses commas (`,`), file system uses slashes (`/`)

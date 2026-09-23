@@ -8,7 +8,7 @@ updated: 2026-05-06
 
 ## The Problem
 
-A decision tree cannot be built in a single pass — it needs to grow incrementally, making decisions at each node based on the data that reaches it, and stopping at the right time to avoid overfitting.
+A decision tree cannot be built in a single pass -- it needs to grow incrementally, making decisions at each node based on the data that reaches it, and stopping at the right time to avoid overfitting.
 
 ## Core Idea
 
@@ -59,15 +59,30 @@ digraph recursive_tree_building {
 - **Divide and conquer**: Each recursive call handles a smaller, simpler subset
 - **Deterministic**: Given the same data and measure, always produces the same tree
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Recursive_Tree_Building {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Recursive Tree Build" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[decision-tree-splitting|Decision Tree Splitting]] — splitting is the recursive step
-- **Built from:** [[attribute-selection-measures|Attribute Selection Measures]] — determines the best attribute at each step
-- **Built from:** [[decision-tree-stopping-conditions|Decision Tree Stopping Conditions]] — determines when recursion terminates
-- **Builds into:** [[decision-tree-structure|Decision Tree Structure]] — the result of recursive building
-- **Related:** [[root-node|Root Node]] — the base case of the recursion
-- **Related:** [[leaf-node|Leaf Node]] — the termination case of the recursion
-- **Built from:** [[information-gain|Information Gain]] — common criterion for attribute selection
+- **Built from:** [[decision-tree-splitting|Decision Tree Splitting]] -- splitting is the recursive step
+- **Built from:** [[attribute-selection-measures|Attribute Selection Measures]] -- determines the best attribute at each step
+- **Built from:** [[decision-tree-stopping-conditions|Decision Tree Stopping Conditions]] -- determines when recursion terminates
+- **Builds into:** [[decision-tree-structure|Decision Tree Structure]] -- the result of recursive building
+- **Related:** [[root-node|Root Node]] -- the base case of the recursion
+- **Related:** [[leaf-node|Leaf Node]] -- the termination case of the recursion
+- **Built from:** [[information-gain|Information Gain]] -- common criterion for attribute selection
 
 ## Edge Cases & Gotchas
 

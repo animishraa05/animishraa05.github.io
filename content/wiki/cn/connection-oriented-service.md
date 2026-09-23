@@ -51,13 +51,28 @@ digraph G {
 - Higher overhead due to setup, maintenance, and reliability mechanisms
 - Uses a logical path (virtual circuit) for the connection duration
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Connection_Oriented_Service {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Connection Oriented " fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[three-way-handshake|Three-Way Handshake]] — connection establishment mechanism
-- Built from: [[reliable-data-transfer|Reliable Data Transfer]] — core guarantee provided
-- Builds into: [[tcp|TCP]] — primary protocol implementing this service
-- Contrasts with: [[connectionless-service|Connectionless Service]] — no setup or reliability guarantees
-- Related: [[flow-control|Flow Control]] — prevents receiver overload
-- Related: [[congestion-control|Congestion Control]] — manages network bottlenecks
+- Built from: [[three-way-handshake|Three-Way Handshake]] -- connection establishment mechanism
+- Built from: [[reliable-data-transfer|Reliable Data Transfer]] -- core guarantee provided
+- Builds into: [[tcp|TCP]] -- primary protocol implementing this service
+- Contrasts with: [[connectionless-service|Connectionless Service]] -- no setup or reliability guarantees
+- Related: [[flow-control|Flow Control]] -- prevents receiver overload
+- Related: [[congestion-control|Congestion Control]] -- manages network bottlenecks
 
 ## Edge Cases & Gotchas
 - Higher latency due to connection setup overhead

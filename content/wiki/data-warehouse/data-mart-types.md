@@ -106,16 +106,16 @@ graph semantic_data_mart {
 
 ## Connections
 
-- **Built from:** [[dwh-server-models|DWH Server Models]] — data marts are part of the Tiered model
-- **Built from:** [[etl-pipeline-dwh|ETL Pipeline (DWH)]] — data marts are populated by ETL
-- **Builds into:** [[wiki/data-warehouse/star-schema|Star Schema]] — data marts typically use star schema design
-- **Related:** [[integrated-dwh|Integrated DWH]] — dependent marts inherit integration from central warehouse
-- **Builds into:** [[three-tier-dwh-architecture|Three-Tier DWH Architecture]] — data marts are a Tier 1 variant
-- **Contrasts with:** [[oltp-vs-olap|OLTP vs OLAP]] — data marts are OLAP constructs
+- **Built from:** [[dwh-server-models|DWH Server Models]] -- data marts are part of the Tiered model
+- **Built from:** [[etl-pipeline-dwh|ETL Pipeline (DWH)]] -- data marts are populated by ETL
+- **Builds into:** [[wiki/data-warehouse/star-schema|Star Schema]] -- data marts typically use star schema design
+- **Related:** [[integrated-dwh|Integrated DWH]] -- dependent marts inherit integration from central warehouse
+- **Builds into:** [[three-tier-dwh-architecture|Three-Tier DWH Architecture]] -- data marts are a Tier 1 variant
+- **Contrasts with:** [[oltp-vs-olap|OLTP vs OLAP]] -- data marts are OLAP constructs
 
 ## Edge Cases & Gotchas
 
 - **Data silo risk:** Independent data marts can develop inconsistent definitions (e.g., different "revenue" calculations in Finance vs. Sales marts).
 - **Integration cost:** Integrating independent data marts into a central warehouse later is complex and expensive.
-- **Too many marts:** Creating too many data marts becomes a maintenance nightmare — each needs its own ETL pipeline.
+- **Too many marts:** Creating too many data marts becomes a maintenance nightmare -- each needs its own ETL pipeline.
 - **Dependent mart latency:** Dependent marts are one ETL cycle behind the central warehouse, adding latency.

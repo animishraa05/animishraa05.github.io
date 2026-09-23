@@ -28,7 +28,7 @@ A one-to-many relationship means one entity instance relates to multiple instanc
 ### BMP Implementation
 - On "One" side: `private Vector enrollments;` + JNDI lookup of EnrollmentHome + `findByStudent(studentPK)` in `ejbLoad()`
 - On "Many" side: `private Student studentStub;` + JNDI lookup + `findByPrimaryKey(studentFK)` in `ejbLoad()`
-- More code than CMP — manual collection management
+- More code than CMP -- manual collection management
 
 ## Visual Explanation
 ```dot
@@ -54,16 +54,31 @@ digraph G {
 - BMP requires manual JNDI lookups and collection population in `ejbLoad()`
 - Can be bidirectional (both sides know each other) or unidirectional
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_One_to_Many_Relationship_in_EJB {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="One To Many Relation" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[entity-bean|Entity Bean]] — relationships between entity beans
-- Built from: [[container-managed-persistence|CMP]] — uses CMR fields
-- Related: [[many-to-many-relationship|Many-to-Many Relationship]] — two 1:N make an M:N
-- Related: [[one-to-one-relationship|One-to-One Relationship]] — simpler cardinality
-- Related: [[bidirectional-vs-unidirectional|Bidirectional vs Unidirectional]] — directionality applies to 1:N
-- Contrasts with: [[session-bean-relationships|Session Bean Relationships]] — session beans can do relationships but with manual JDBC code
+- Built from: [[entity-bean|Entity Bean]] -- relationships between entity beans
+- Built from: [[container-managed-persistence|CMP]] -- uses CMR fields
+- Related: [[many-to-many-relationship|Many-to-Many Relationship]] -- two 1:N make an M:N
+- Related: [[one-to-one-relationship|One-to-One Relationship]] -- simpler cardinality
+- Related: [[bidirectional-vs-unidirectional|Bidirectional vs Unidirectional]] -- directionality applies to 1:N
+- Contrasts with: [[session-bean-relationships|Session Bean Relationships]] -- session beans can do relationships but with manual JDBC code
 
 ## Edge Cases & Gotchas
 - Forgetting to initialize the Collection in BMP ejbLoad() causes NullPointerException
-- CMP Collection is managed by container — don't try to instantiate it yourself
+- CMP Collection is managed by container -- don't try to instantiate it yourself
 - Lazy loading: container may not populate Collection until you access it (performance implication)
 - Removing from Collection in CMP: must also handle the database foreign key update

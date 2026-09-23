@@ -12,7 +12,7 @@ SCAN goes all the way to the disk end even if there are no requests there, wasti
 
 ## Core Idea
 
-LOOK is a variant of SCAN that only goes as far as the last request in each direction, then reverses — doesn't go to disk end unnecessarily.
+LOOK is a variant of SCAN that only goes as far as the last request in each direction, then reverses -- doesn't go to disk end unnecessarily.
 
 ## How It Works
 
@@ -42,6 +42,21 @@ digraph look {
 - Only goes as far as the furthest request
 - C-LOOK is the C-SCAN version of LOOK
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_LOOK_Scheduling {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Look Scheduling" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[disk-scheduling|Disk Scheduling]], [[scan-scheduling|SCAN]]

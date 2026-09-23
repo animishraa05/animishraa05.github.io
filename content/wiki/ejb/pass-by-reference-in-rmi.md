@@ -43,10 +43,25 @@ digraph G {
 - Identity preserved: Original object is shared, not copied
 - Bidirectional: Communication can happen both ways
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Pass_by_Reference_in_RMI {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Pass By Reference In" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[rmi-remote-method-invocation|RMI Remote Method Invocation]] — mechanism for remote calls
-- Built from: [[ejb-object|EJB Object]] — is essentially a pass-by-reference stub
-- Contrasts with: [[pass-by-value-in-rmi|Pass-by-Value in RMI]] — normal objects are copied
+- Built from: [[rmi-remote-method-invocation|RMI Remote Method Invocation]] -- mechanism for remote calls
+- Built from: [[ejb-object|EJB Object]] -- is essentially a pass-by-reference stub
+- Contrasts with: [[pass-by-value-in-rmi|Pass-by-Value in RMI]] -- normal objects are copied
 
 ## Edge Cases & Gotchas
 - Performance overhead: Every call on stub is a network call

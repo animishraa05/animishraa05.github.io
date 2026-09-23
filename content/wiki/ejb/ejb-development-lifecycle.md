@@ -7,7 +7,7 @@ updated: 2026-04-29
 ---
 
 ## The Problem
-Building an EJB component involves more than just writing Java code. You need to compile, package, configure, and deploy—missing any step results in a non-functional component. What's the correct order?
+Building an EJB component involves more than just writing Java code. You need to compile, package, configure, and deploy--missing any step results in a non-functional component. What's the correct order?
 
 ## Core Idea
 The EJB development lifecycle is an 8-step process from raw Java files to a running, tested component in the container. Each step has a specific purpose and must be done in order.
@@ -51,11 +51,26 @@ digraph EJBLifecycle {
 - **Step 6 is vendor-specific**: Configuration differs (Web console vs config files)
 - **Deployment descriptor is key**: Tells container how to manage the bean
 
+
+
+## Semantic Network
+
+```dot
+graph semantic__EJB_Development_Lifecycle_ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label=""Ejb Development Lif" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[ejb-deployment-descriptor|Deployment Descriptor]], [[home-interface|Home Interface]], [[remote-interface|Remote Interface]]
 - **Builds into:** [[ejb-object|EJB Object]] (generated in step 5), [[ejb-container|EJB Container]]
 - **Related:** [[ejb-jar-file|EJB-JAR File]] (output of step 4)
-- **Contrasts with:** Simple Java app (just compile and run—no deployment descriptor needed)
+- **Contrasts with:** Simple Java app (just compile and run--no deployment descriptor needed)
 
 ## Edge Cases & Gotchas
 - **Forgetting step 2**: Without `ejb-jar.xml`, container doesn't know about your beans

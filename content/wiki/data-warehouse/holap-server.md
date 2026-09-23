@@ -20,7 +20,7 @@ HOLAP divides data storage and processing based on usage patterns:
 
 1. **Detailed data → ROLAP storage:**
    - The full granular data (individual transactions, daily records) is stored in relational tables.
-   - This provides unlimited scalability — the ROLAP layer can handle terabytes of detailed data.
+   - This provides unlimited scalability -- the ROLAP layer can handle terabytes of detailed data.
    - Queries requiring row-level detail are directed to this layer.
 
 2. **Aggregations → MOLAP storage:**
@@ -96,15 +96,15 @@ graph semantic_holap {
 
 ## Connections
 
-- **Built from:** [[olap-servers|OLAP Servers]] — HOLAP is one of four server types
-- **Built from:** [[rolap-server|ROLAP Server]] — HOLAP incorporates ROLAP for detailed data
-- **Built from:** [[molap-server|MOLAP Server]] — HOLAP incorporates MOLAP for aggregations
-- **Builds into:** [[multidimensional-data-model|Multidimensional Data Model]] — HOLAP implements the model hybridly
-- **Builds into:** [[olap-operations|OLAP Operations]] — HOLAP serves operations from both storage layers
-- **Contrasts with:** [[rolap-server|ROLAP Server]] — HOLAP adds pre-computation; ROLAP does not
+- **Built from:** [[olap-servers|OLAP Servers]] -- HOLAP is one of four server types
+- **Built from:** [[rolap-server|ROLAP Server]] -- HOLAP incorporates ROLAP for detailed data
+- **Built from:** [[molap-server|MOLAP Server]] -- HOLAP incorporates MOLAP for aggregations
+- **Builds into:** [[multidimensional-data-model|Multidimensional Data Model]] -- HOLAP implements the model hybridly
+- **Builds into:** [[olap-operations|OLAP Operations]] -- HOLAP serves operations from both storage layers
+- **Contrasts with:** [[rolap-server|ROLAP Server]] -- HOLAP adds pre-computation; ROLAP does not
 
 ## Edge Cases & Gotchas
 
-- **Configuration complexity:** Administrators must carefully choose which aggregations to pre-compute — wrong choices waste storage or provide no performance benefit.
+- **Configuration complexity:** Administrators must carefully choose which aggregations to pre-compute -- wrong choices waste storage or provide no performance benefit.
 - **Stale aggregations:** When detailed data is refreshed, MOLAP aggregations must be re-computed, adding refresh latency.
 - **Not a panacea:** HOLAP inherits weaknesses from both ROLAP (slow detail queries) and MOLAP (storage overhead for aggregations).

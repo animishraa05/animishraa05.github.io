@@ -12,7 +12,7 @@ Serving all content from a single origin server creates latency for distant user
 
 ## Core Idea
 
-Push CDNs receive new content whenever changes occur on the server — the server proactively uploads content to the CDN edge nodes.
+Push CDNs receive new content whenever changes occur on the server -- the server proactively uploads content to the CDN edge nodes.
 
 ## How It Works
 
@@ -46,20 +46,35 @@ digraph push_cdn {
 
 ## Key Properties
 
-- Server-initiated content push — origin decides what to upload
+- Server-initiated content push -- origin decides what to upload
 - Full responsibility for content distribution lies with the origin server
 - Content is uploaded only when it changes (not on every request)
 - Minimizes origin traffic but may waste CDN storage for rarely accessed content
 - Best suited for low-traffic sites or content with predictable access patterns
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Push_CDN {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Push Cdn" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Contrasts with:** [[cdn-pull|Pull CDN]] — server-push vs lazy-pull content delivery strategies
-- **Related:** [[dns-system-design|DNS in System Design]] — DNS directs clients to the nearest CDN edge
-- **Related:** [[reverse-proxy-pattern|Reverse Proxy]] — both serve cached content closer to users
+- **Contrasts with:** [[cdn-pull|Pull CDN]] -- server-push vs lazy-pull content delivery strategies
+- **Related:** [[dns-system-design|DNS in System Design]] -- DNS directs clients to the nearest CDN edge
+- **Related:** [[reverse-proxy-pattern|Reverse Proxy]] -- both serve cached content closer to users
 
 ## Edge Cases & Gotchas
 
-- Cache invalidation is difficult — if content needs to be removed, you must explicitly purge it from all CDN edges
+- Cache invalidation is difficult -- if content needs to be removed, you must explicitly purge it from all CDN edges
 - Pushing content that nobody ever requests wastes CDN storage
 - If the push mechanism fails, stale content remains served until manually invalidated

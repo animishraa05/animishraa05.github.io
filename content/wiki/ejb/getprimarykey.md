@@ -28,6 +28,35 @@ When an entity bean instance is pooled and reused to represent different databas
 - Called right after activation and before passivation
 - Bean instance may switch data instances multiple times during lifecycle
 
+
+
+## Visual Explanation
+
+```dot
+digraph getPrimaryKey__ {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Getprimarykey()\nInput"]
+  B [label="Getprimarykey()\nCore Mechanism"]
+  C [label="Getprimarykey()\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_getPrimaryKey__ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Getprimarykey()" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[entity-context|Entity Context]], [[entity-bean|Entity Bean]]
@@ -36,7 +65,7 @@ When an entity bean instance is pooled and reused to represent different databas
 
 ## Edge Cases & Gotchas
 
-- Do NOT call in `ejbStore()`—data is already in memory
+- Do NOT call in `ejbStore()`--data is already in memory
 - Must be called on the EntityContext, not on `this`
 - Pooled beans don't have an identity until activated
 - If called when context is null, throws IllegalStateException

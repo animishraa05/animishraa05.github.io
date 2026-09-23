@@ -16,8 +16,8 @@ Immediate Addressing embeds the operand value directly inside the instruction it
 1. Instruction format: `OPCODE + CONSTANT_VALUE`
 2. CPU fetches instruction from memory
 3. Constant value is part of the instruction (in the operand field)
-4. CPU uses the constant directly — no additional memory fetch
-5. Example: `MOV AX, 5` — moves the constant 5 into register AX
+4. CPU uses the constant directly -- no additional memory fetch
+5. Example: `MOV AX, 5` -- moves the constant 5 into register AX
 
 ```dot
 digraph immediate {
@@ -37,11 +37,26 @@ digraph immediate {
 - Constant is fixed at compile time (can't change at runtime)
 - Used for initializing registers, constants, small values
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Immediate_Addressing {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Immediate Addressing" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[addressing-mode|Addressing Mode]], [[operand|Operand]]
-- **Contrasts with:** [[direct-addressing|Direct Addressing]] — address in instruction, not value
+- **Contrasts with:** [[direct-addressing|Direct Addressing]] -- address in instruction, not value
 - **Related:** [[register-addressing|Register Addressing]], [[instruction-set|Instruction Set]]
-- **Builds into:** [[program-counter|Program Counter]] — instruction fetch includes immediate data
+- **Builds into:** [[program-counter|Program Counter]] -- instruction fetch includes immediate data
 
 ## Edge Cases & Gotchas
 - Large constants make instructions longer (affects code size)

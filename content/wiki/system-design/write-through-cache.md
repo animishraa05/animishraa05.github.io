@@ -12,7 +12,7 @@ Cache-aside can return stale data when the database is updated directly, bypassi
 
 ## Core Idea
 
-Write-through cache treats the cache as the authoritative data store for writes — every write goes to the cache first, then the cache synchronously writes to the database. This ensures the cache always has the latest data at the cost of slower write operations.
+Write-through cache treats the cache as the authoritative data store for writes -- every write goes to the cache first, then the cache synchronously writes to the database. This ensures the cache always has the latest data at the cost of slower write operations.
 
 ## How It Works
 
@@ -20,7 +20,7 @@ Write-through cache treats the cache as the authoritative data store for writes 
 2. The cache synchronously writes the data to the database.
 3. Only after both writes complete does the cache return success.
 4. Reads of recently written data are fast (served from cache).
-5. Cache always has the latest data — no staleness window.
+5. Cache always has the latest data -- no staleness window.
 
 This pattern is often combined with cache-aside for reads on new cache nodes that haven't been populated yet.
 
@@ -47,18 +47,33 @@ digraph WriteThrough {
 
 ## Key Properties
 
-- Cache writes are synchronous — the database write completes before returning
+- Cache writes are synchronous -- the database write completes before returning
 - Data in the cache is never stale (for entries updated through the cache)
 - Write operations are slower than cache-aside (two sequential writes)
 - Reads of recently written data are fast (always a cache hit)
 - Often combined with cache-aside for populating new cache nodes
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Write_Through_Cache {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Write Through Cache" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- Contrasts with: [[cache-aside|Cache-Aside]] — app manages cache vs cache manages DB writes
-- Contrasts with: [[write-behind-cache|Write-Behind Cache]] — sync vs async DB write
-- Related: [[refresh-ahead-cache|Refresh-Ahead Cache]] — both keep cache fresh but with different triggers
-- Related: [[strong-consistency|Strong Consistency]] — write-through ensures cache is consistent with the database
+- Contrasts with: [[cache-aside|Cache-Aside]] -- app manages cache vs cache manages DB writes
+- Contrasts with: [[write-behind-cache|Write-Behind Cache]] -- sync vs async DB write
+- Related: [[refresh-ahead-cache|Refresh-Ahead Cache]] -- both keep cache fresh but with different triggers
+- Related: [[strong-consistency|Strong Consistency]] -- write-through ensures cache is consistent with the database
 
 ## Edge Cases & Gotchas
 

@@ -8,7 +8,7 @@ updated: 2026-05-04
 
 ## The Problem
 
-Every operational system in a company stores data differently. One database uses "MM/DD/YYYY" for dates, another uses "DD-Mon-YY." Gender might be stored as "M/F" in one system, "1/0" in another, and "Male/Female" in a third. Customer names have different spellings across systems. Without integration, analysts cannot reliably combine data from different sources — they get conflicting results depending on which system they query.
+Every operational system in a company stores data differently. One database uses "MM/DD/YYYY" for dates, another uses "DD-Mon-YY." Gender might be stored as "M/F" in one system, "1/0" in another, and "Male/Female" in a third. Customer names have different spellings across systems. Without integration, analysts cannot reliably combine data from different sources -- they get conflicting results depending on which system they query.
 
 ## Core Idea
 
@@ -90,12 +90,12 @@ graph semantic_integrated_dwh {
 
 ## Connections
 
-- **Built from:** [[data-warehouse-definition|Data Warehouse Definition]] — second of Inmon's four characteristics
-- **Built from:** [[subject-oriented-dwh|Subject-Oriented]] — subject consolidation requires integration
-- **Builds into:** [[etl-pipeline-dwh|ETL Pipeline (DWH)]] — integration happens in the ETL transform phase
-- **Builds into:** [[data-scrubbing|Data Scrubbing]] — the specific mechanism for resolving format conflicts
-- **Related:** [[metadata-in-dwh|Metadata in DWH]] — integration rules and mappings stored as metadata
-- **Related:** [[dwh-refresh|DWH Refresh]] — integration must be reapplied during each refresh cycle
+- **Built from:** [[data-warehouse-definition|Data Warehouse Definition]] -- second of Inmon's four characteristics
+- **Built from:** [[subject-oriented-dwh|Subject-Oriented]] -- subject consolidation requires integration
+- **Builds into:** [[etl-pipeline-dwh|ETL Pipeline (DWH)]] -- integration happens in the ETL transform phase
+- **Builds into:** [[data-scrubbing|Data Scrubbing]] -- the specific mechanism for resolving format conflicts
+- **Related:** [[metadata-in-dwh|Metadata in DWH]] -- integration rules and mappings stored as metadata
+- **Related:** [[dwh-refresh|DWH Refresh]] -- integration must be reapplied during each refresh cycle
 
 ## Edge Cases & Gotchas
 

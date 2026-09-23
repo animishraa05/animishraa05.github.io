@@ -8,7 +8,7 @@ updated: 2026-04-30
 
 ## The Problem
 
-Some resources have multiple identical instances (e.g., 3 printers, 5 buffer slots). Binary semaphore can't handle this — we need to track how many instances are available.
+Some resources have multiple identical instances (e.g., 3 printers, 5 buffer slots). Binary semaphore can't handle this -- we need to track how many instances are available.
 
 ## Core Idea
 
@@ -46,6 +46,21 @@ digraph counting_sem {
 - Negative value = number of blocked processes
 - Classic use: producer-consumer bounded buffer
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Counting_Semaphore {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Counting Semaphore" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[semaphore|Semaphore]], [[producer-consumer|Producer-Consumer Problem]]

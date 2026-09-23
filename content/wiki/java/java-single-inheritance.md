@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-A class often needs to extend the functionality of another class without modifying the original. The simplest form of reuse is one class inheriting from exactly one parent — a direct "is-a" relationship.
+A class often needs to extend the functionality of another class without modifying the original. The simplest form of reuse is one class inheriting from exactly one parent -- a direct "is-a" relationship.
 
 ## Core Idea
 
@@ -16,7 +16,7 @@ A class often needs to extend the functionality of another class without modifyi
 
 ## How It Works
 
-The subclass uses `extends ParentClass`. All non-private fields and methods are inherited. The subclass can override methods, add new fields, and access parent members via `super`. Constructor chaining ensures parent construction happens first. The JVM's method dispatch walks up the single inheritance chain, making method resolution straightforward — at most one parent to check.
+The subclass uses `extends ParentClass`. All non-private fields and methods are inherited. The subclass can override methods, add new fields, and access parent members via `super`. Constructor chaining ensures parent construction happens first. The JVM's method dispatch walks up the single inheritance chain, making method resolution straightforward -- at most one parent to check.
 
 ## Visual Explanation
 
@@ -65,11 +65,11 @@ graph semantic_single_inheritance {
 
 - **No cyclic inheritance**: A class cannot extend itself, directly or indirectly
 - **final classes**: A final class cannot be subclassed at all
-- **Single chain guarantee**: You always know where a method comes from — only one parent to check, unlike multiple inheritance
+- **Single chain guarantee**: You always know where a method comes from -- only one parent to check, unlike multiple inheritance
 
 ## Connections
 
-- **Built from:** [[java-inheritance|Java Inheritance]] — the basic inheritance mechanism
-- **Builds into:** [[java-multilevel-inheritance|Multilevel Inheritance]] — single steps can be chained
-- **Contrasts with:** [[java-hierarchical-inheritance|Hierarchical Inheritance]] — single vs multiple children from one parent
-- **Related:** [[java-inheritance-types|Inheritance Types]] — the broader classification of which single is a part
+- **Built from:** [[java-inheritance|Java Inheritance]] -- the basic inheritance mechanism
+- **Builds into:** [[java-multilevel-inheritance|Multilevel Inheritance]] -- single steps can be chained
+- **Contrasts with:** [[java-hierarchical-inheritance|Hierarchical Inheritance]] -- single vs multiple children from one parent
+- **Related:** [[java-inheritance-types|Inheritance Types]] -- the broader classification of which single is a part

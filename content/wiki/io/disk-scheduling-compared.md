@@ -1,5 +1,5 @@
 ---
-title: "Disk Scheduling Algorithms — Performance and Trade-offs"
+title: "Disk Scheduling Algorithms -- Performance and Trade-offs"
 type: synthesis
 tags: [systems, storage]
 created: 2026-04-30
@@ -8,7 +8,7 @@ updated: 2026-04-30
 
 ## Framing
 
-Compare disk scheduling algorithms — **FCFS**, **SSTF**, **SCAN**, **C-SCAN**, **LOOK**, and **C-LOOK** — analyzing seek time reduction, fairness, and practical performance.
+Compare disk scheduling algorithms -- **FCFS**, **SSTF**, **SCAN**, **C-SCAN**, **LOOK**, and **C-LOOK** -- analyzing seek time reduction, fairness, and practical performance.
 
 ## Comparison
 
@@ -23,24 +23,53 @@ Compare disk scheduling algorithms — **FCFS**, **SSTF**, **SCAN**, **C-SCAN**,
 
 ## Key Insights
 
-1. **FCFS is fair but slow** — no optimization, serves as baseline
+1. **FCFS is fair but slow** -- no optimization, serves as baseline
 2. **SSTF minimizes seek** but can starve requests at disk edges (greedy = not globally optimal)
 3. **SCAN (elevator) eliminates starvation** by sweeping back and forth, like an elevator serving floors
-4. **C-SCAN improves uniformity** — always goes in one direction, jumps back (no service on return)
-5. **LOOK is practical SCAN** — doesn't go to physical disk end if no requests there
-6. **C-LOOK is best practical** — combines C-SCAN uniformity with LOOK efficiency
+4. **C-SCAN improves uniformity** -- always goes in one direction, jumps back (no service on return)
+5. **LOOK is practical SCAN** -- doesn't go to physical disk end if no requests there
+6. **C-LOOK is best practical** -- combines C-SCAN uniformity with LOOK efficiency
 
 ## Synthesis
 
 Modern systems typically use **LOOK or C-LOOK** (often called "deadline" or "noop" schedulers). The SCAN family beats FCFS and SSTF by eliminating starvation while maintaining good performance. Modern disks also do internal scheduling (NCQ) that may override OS scheduling.
 
+
+
+## Visual Explanation
+
+```dot
+digraph disk_scheduling_compared {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Disk Scheduling Comp\nInput"]
+  B [label="Disk Scheduling Comp\nCore Mechanism"]
+  C [label="Disk Scheduling Comp\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_disk_scheduling_compared {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Disk Scheduling Comp" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- [[disk-scheduling|Disk Scheduling]] — overview of all algorithms
-- [[fcfs|FCFS]] — first come first serve
-- [[sstf|SSTF]] — shortest seek time first
-- [[scan-scheduling|SCAN]] — elevator algorithm
-- [[c-scan|C-SCAN]] — circular SCAN
-- [[look-scheduling|LOOK]] — SCAN variant
-- [[c-look|C-LOOK]] — C-SCAN variant
-- [[disk-structure|Disk Structure]] — why seek time matters
+- [[disk-scheduling|Disk Scheduling]] -- overview of all algorithms
+- [[fcfs|FCFS]] -- first come first serve
+- [[sstf|SSTF]] -- shortest seek time first
+- [[scan-scheduling|SCAN]] -- elevator algorithm
+- [[c-scan|C-SCAN]] -- circular SCAN
+- [[look-scheduling|LOOK]] -- SCAN variant
+- [[c-look|C-LOOK]] -- C-SCAN variant
+- [[disk-structure|Disk Structure]] -- why seek time matters

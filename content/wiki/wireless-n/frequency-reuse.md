@@ -30,15 +30,44 @@ Capacity is directly proportional to the number of times the cluster pattern is 
 - Cell splitting (reducing cell radius) increases capacity without new spectrum
 - Sectoring (dividing each cell into 3 or 6 sectors) further reduces interference
 
+
+
+## Visual Explanation
+
+```dot
+digraph Frequency_Reuse {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Frequency Reuse\nInput"]
+  B [label="Frequency Reuse\nCore Mechanism"]
+  C [label="Frequency Reuse\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Frequency_Reuse {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Frequency Reuse" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[cellular-mobile-system|Cellular Mobile System]] — frequency reuse is the foundational concept that enables cellular architecture
-- Built from: [[co-channel-interference|Co-Channel Interference]] — the reason for the reuse distance constraint
-- Related: [[cell-splitting|Cell Splitting]] — technique to increase capacity by shrinking cells
-- Related: [[sectoring|Sectoring]] — directional antennas that improve reuse efficiency
-- Related: [[multiplexing|Multiplexing]] — SDMA is the spatial division principle behind frequency reuse
+- Built from: [[cellular-mobile-system|Cellular Mobile System]] -- frequency reuse is the foundational concept that enables cellular architecture
+- Built from: [[co-channel-interference|Co-Channel Interference]] -- the reason for the reuse distance constraint
+- Related: [[cell-splitting|Cell Splitting]] -- technique to increase capacity by shrinking cells
+- Related: [[sectoring|Sectoring]] -- directional antennas that improve reuse efficiency
+- Related: [[multiplexing|Multiplexing]] -- SDMA is the spatial division principle behind frequency reuse
 
 ## Edge Cases & Gotchas
-- Reuse distance must be maintained — cells using the same frequency too close will have severe co-channel interference
+- Reuse distance must be maintained -- cells using the same frequency too close will have severe co-channel interference
 - N must be chosen to balance interference vs. capacity; N=7 is a conservative but common choice
 - In practice, frequency reuse planning is complex due to irregular terrain and building shadowing
 - Handoff zones at cell boundaries must be carefully designed to avoid dropped calls

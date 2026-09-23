@@ -1,5 +1,5 @@
 ---
-title: J2EE Technology Stack — Platform Components Compared
+title: J2EE Technology Stack -- Platform Components Compared
 type: comparison
 tags: [dev, ejb, j2ee]
 created: 2026-04-29
@@ -114,8 +114,23 @@ digraph G {
 2. **EJB is central**: Most technologies either support EJBs or are used by them
 3. **Two communication paradigms**: Synchronous (RMI-IIOP) vs Asynchronous (JMS)
 4. **Modern equivalent**: Spring Boot simplifies this by embedding many of these (Spring Data = JDBC, Spring Security = JAAS, etc.)
-5. **Exam strategy**: Group by layer, not alphabetically—shows understanding of architecture
+5. **Exam strategy**: Group by layer, not alphabetically--shows understanding of architecture
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_j2ee_tech_stack_compared {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="J2Ee Tech Stack Comp" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - All technology pages listed above:
   - [[servlets|Servlets]], [[jsp|JSP]]
@@ -123,8 +138,8 @@ digraph G {
   - [[rmi-iiop|RMI-IIOP]], [[jms|JMS]], [[jca|JCA]], [[jax-rpc|JAX-RPC]], [[java-idl|Java IDL]]
   - [[jdbc|JDBC]], [[jaxp|JAXP]]
   - [[jndi|JNDI]], [[jta-jts|JTA/JTS]], [[jaas|JAAS]], [[javamail|JavaMail]]
-- Related: [[java-platforms|Java Platforms]] — all are part of J2EE
-- Related: [[middleware|Middleware]] — foundation services are middleware
+- Related: [[java-platforms|Java Platforms]] -- all are part of J2EE
+- Related: [[middleware|Middleware]] -- foundation services are middleware
 
 ## Edge Cases & Gotchas
 - **Overlap**: Some technologies span layers (JNDI is used in web tier too)

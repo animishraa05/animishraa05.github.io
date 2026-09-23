@@ -8,11 +8,11 @@ updated: 2026-05-13
 
 ## The Problem
 
-Complex class hierarchies often need to combine multiple inheritance patterns — both hierarchical and multiple inheritance simultaneously. A class might extend a parent class while implementing multiple interfaces, creating a hybrid structure. Without a safe way to do this, complex type hierarchies would be impossible.
+Complex class hierarchies often need to combine multiple inheritance patterns -- both hierarchical and multiple inheritance simultaneously. A class might extend a parent class while implementing multiple interfaces, creating a hybrid structure. Without a safe way to do this, complex type hierarchies would be impossible.
 
 ## Core Idea
 
-**Hybrid Inheritance** is a combination of two or more types of inheritance. In Java, this is achievable only through interfaces. For example, a class may implement two interfaces that themselves extend a base interface, while the class also extends a parent class. The diamond problem is avoided because interfaces provide no conflicting state resolution — the class always wins over interface defaults.
+**Hybrid Inheritance** is a combination of two or more types of inheritance. In Java, this is achievable only through interfaces. For example, a class may implement two interfaces that themselves extend a base interface, while the class also extends a parent class. The diamond problem is avoided because interfaces provide no conflicting state resolution -- the class always wins over interface defaults.
 
 ## How It Works
 
@@ -69,12 +69,12 @@ graph semantic_hybrid_inheritance {
 
 ## Connections
 
-- **Built from:** [[java-multiple-inheritance|Multiple Inheritance]] — hybrid combines multiple with other types
-- **Built from:** [[java-interfaces|Java Interfaces]] — the interface mechanism enables hybrid structures
-- **Related:** [[java-inheritance-types|Inheritance Types]] — hybrid is the most complex inheritance type
-- **Related:** [[java-inheritance|Java Inheritance]] — every hybrid structure starts with extends
+- **Built from:** [[java-multiple-inheritance|Multiple Inheritance]] -- hybrid combines multiple with other types
+- **Built from:** [[java-interfaces|Java Interfaces]] -- the interface mechanism enables hybrid structures
+- **Related:** [[java-inheritance-types|Inheritance Types]] -- hybrid is the most complex inheritance type
+- **Related:** [[java-inheritance|Java Inheritance]] -- every hybrid structure starts with extends
 
 ## Edge Cases & Gotchas
 
-- **Complexity**: Hybrid inheritance is the most complex form — overuse leads to unmaintainable hierarchies
+- **Complexity**: Hybrid inheritance is the most complex form -- overuse leads to unmaintainable hierarchies
 - **Method resolution order**: Java uses class-before-interface rule: the concrete class's implementation beats any default method

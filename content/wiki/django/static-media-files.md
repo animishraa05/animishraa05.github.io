@@ -16,13 +16,13 @@ Static and media files solve different problems: static files are developer-prov
 
 ## How It Works
 
-1. **Static files declared** — `STATIC_URL = '/static/'`, `STATIC_ROOT = BASE_DIR / 'staticfiles'`
-2. **App static dirs** — Each app's `static/app_name/` auto-discovered by `AppDirectoriesFinder`
-3. **Project static dirs** — `STATICFILES_DIRS` for project-wide assets
-4. **Template tag** — `{% load static %}` → `{% static 'css/style.css' %}` → `/static/css/style.css`
-5. **Collectstatic** — `python manage.py collectstatic` copies all found files to `STATIC_ROOT`
-6. **Manifest storage** — `ManifestStaticFilesStorage` renames files with content hash (`style.abc123.css`)
-7. **Media files** — `MEDIA_URL = '/media/'`, `MEDIA_ROOT = BASE_DIR / 'media'`; uploads saved to `MEDIA_ROOT`
+1. **Static files declared** -- `STATIC_URL = '/static/'`, `STATIC_ROOT = BASE_DIR / 'staticfiles'`
+2. **App static dirs** -- Each app's `static/app_name/` auto-discovered by `AppDirectoriesFinder`
+3. **Project static dirs** -- `STATICFILES_DIRS` for project-wide assets
+4. **Template tag** -- `{% load static %}` → `{% static 'css/style.css' %}` → `/static/css/style.css`
+5. **Collectstatic** -- `python manage.py collectstatic` copies all found files to `STATIC_ROOT`
+6. **Manifest storage** -- `ManifestStaticFilesStorage` renames files with content hash (`style.abc123.css`)
+7. **Media files** -- `MEDIA_URL = '/media/'`, `MEDIA_ROOT = BASE_DIR / 'media'`; uploads saved to `MEDIA_ROOT`
 
 ## Visual Explanation
 
@@ -98,22 +98,22 @@ graph semantic_static_media_files {
 
 ## Connections
 
-- Built from: [[template-engine|Template Engine]] — `{% static %}` tag resolves paths
-- Built from: [[file-storage-api|File Storage API]] — Abstract storage backends
-- Built from: [[settings-configuration|Settings Configuration]] — STATIC/MEDIA settings
-- Builds into: [[collectstatic-command|collectstatic Command]] — Deployment step
-- Builds into: [[manifest-storage|Manifest Storage]] — Cache-busting via content hash
-- Builds into: [[filefield-imagefield|FileField/ImageField]] — Model fields for uploads
-- Builds into: [[whitenoise|WhiteNoise]] — WSGI middleware for static serving
-- Contrasts with: [[flask-static|Flask Static]] — Single `static/` folder, no collectstatic
-- Contrasts with: [[fastapi-static|FastAPI StaticFiles]] — Mount directories, no hashing built-in
-- Related: [[template-static-tag|Template {% static %} Tag]] — Generates versioned URLs
-- Related: [[form-file-upload|Form File Upload]] — `request.FILES` → `FileField.save()`
+- Built from: [[template-engine|Template Engine]] -- `{% static %}` tag resolves paths
+- Built from: [[file-storage-api|File Storage API]] -- Abstract storage backends
+- Built from: [[settings-configuration|Settings Configuration]] -- STATIC/MEDIA settings
+- Builds into: [[collectstatic-command|collectstatic Command]] -- Deployment step
+- Builds into: [[manifest-storage|Manifest Storage]] -- Cache-busting via content hash
+- Builds into: [[filefield-imagefield|FileField/ImageField]] -- Model fields for uploads
+- Builds into: [[whitenoise|WhiteNoise]] -- WSGI middleware for static serving
+- Contrasts with: [[flask-static|Flask Static]] -- Single `static/` folder, no collectstatic
+- Contrasts with: [[fastapi-static|FastAPI StaticFiles]] -- Mount directories, no hashing built-in
+- Related: [[template-static-tag|Template {% static %} Tag]] -- Generates versioned URLs
+- Related: [[form-file-upload|Form File Upload]] -- `request.FILES` → `FileField.save()`
 
 ## Edge Cases & Gotchas
 
 - **`STATICFILES_DIRS` vs app static**: Project-level vs app-level; namespacing with `app_name/` prevents collisions
-- **Manifest storage in dev**: Don't use `ManifestStaticFilesStorage` in DEBUG — hashes change on every save
+- **Manifest storage in dev**: Don't use `ManifestStaticFilesStorage` in DEBUG -- hashes change on every save
 - **Media URL collision**: `MEDIA_URL` must not overlap `STATIC_URL`; use distinct prefixes
 - **User upload validation**: `FileField` doesn't validate content type by default; add `FileExtensionValidator`, magic bytes check
 - **WhiteNoise + manifest**: WhiteNoise works with manifest storage but needs `WHITENOISE_MANIFEST_STRICT = False` for missing files

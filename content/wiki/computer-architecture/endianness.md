@@ -7,7 +7,7 @@ updated: 2026-04-30
 ---
 
 ## The Problem
-Multi-byte data (16-bit, 32-bit, 64-bit numbers) must be stored in memory as individual bytes. But which byte goes at the lowest memory address — the most significant or least significant byte?
+Multi-byte data (16-bit, 32-bit, 64-bit numbers) must be stored in memory as individual bytes. But which byte goes at the lowest memory address -- the most significant or least significant byte?
 
 ## Core Idea
 Endianness defines the byte order used to store multi-byte data in memory: Big Endian puts the Most Significant Byte first; Little Endian puts the Least Significant Byte first.
@@ -40,14 +40,29 @@ digraph endianness {
 - Network protocols use Big Endian (called "network byte order")
 - Intel x86/AMD use Little Endian; some RISC chips use Big Endian
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Endianness {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Endianness" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[memory|Memory]], [[multi-byte-data|Multi-Byte Data]]
-- **Contrasts with:** [[big-endian|Big Endian]] vs [[little-endian|Little Endian]] — different byte orders
+- **Contrasts with:** [[big-endian|Big Endian]] vs [[little-endian|Little Endian]] -- different byte orders
 - **Related:** [[network-byte-order|Network Byte Order]], [[memory-address|Memory Address]]
-- **Builds into:** [[data-serialization|Data Serialization]] — must handle endianness when transferring data
+- **Builds into:** [[data-serialization|Data Serialization]] -- must handle endianness when transferring data
 
 ## Edge Cases & Gotchas
 - Endianness only matters for multi-byte data (byte-order sensitive)
 - Single bytes are not affected by endianness
 - Mixing systems with different endianness causes data corruption
-- Some CPUs are bi-endian (can switch mode) — software must track current mode
+- Some CPUs are bi-endian (can switch mode) -- software must track current mode

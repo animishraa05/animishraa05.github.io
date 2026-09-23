@@ -10,7 +10,7 @@ updated: 2026-04-28
 Developers need to control transaction boundaries (when they start and end), but writing transaction code in business logic is tedious and error-prone. There are two approaches: let the container handle it (declarative) or write it manually (programmatic).
 
 ## Core Idea
-**Declarative (CMT):** Container automatically starts/commits transactions based on XML configuration — no transaction code in bean. **Programmatic (BMT):** Bean explicitly calls `begin()` and `commit()`/`abort()` in Java code. Session beans and MDBs can use either; entity beans MUST use CMT.
+**Declarative (CMT):** Container automatically starts/commits transactions based on XML configuration -- no transaction code in bean. **Programmatic (BMT):** Bean explicitly calls `begin()` and `commit()`/`abort()` in Java code. Session beans and MDBs can use either; entity beans MUST use CMT.
 
 ## How It Works
 
@@ -27,7 +27,7 @@ Developers need to control transaction boundaries (when they start and end), but
 2. Bean manually calls `begin()` at start of transaction
 3. Bean performs business operations
 4. Bean calls `commit()` or `abort()` at end
-5. Full control over transaction boundaries — can have mini-transactions within a method
+5. Full control over transaction boundaries -- can have mini-transactions within a method
 
 ## Visual Explanation
 ```dot
@@ -59,16 +59,31 @@ digraph G {
 | Bean types allowed | All (entity MUST use this) | Session + MDB only |
 | Tuning | Via XML (no source access) | Via code changes |
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Declarative_vs_Programmatic_Transactions {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Declarative Vs Progr" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[transactions|Transactions]] — CMT and BMT are demarcation styles
-- Built from: [[transaction-demarcation|Transaction Demarcation]] — the 3 ways to demarcate
-- Builds into: [[entity-bean-transactions|Entity Bean Transaction Rules]] — entity beans MUST use CMT
-- Related: [[message-driven-bean|MDB]] — MDBs can use BMT or CMT
-- Related: [[session-bean|Session Bean]] — session beans can use BMT or CMT
-- Contrasts with: [[client-initiated-transactions|Client-Initiated]] — third demarcation style
+- Built from: [[transactions|Transactions]] -- CMT and BMT are demarcation styles
+- Built from: [[transaction-demarcation|Transaction Demarcation]] -- the 3 ways to demarcate
+- Builds into: [[entity-bean-transactions|Entity Bean Transaction Rules]] -- entity beans MUST use CMT
+- Related: [[message-driven-bean|MDB]] -- MDBs can use BMT or CMT
+- Related: [[session-bean|Session Bean]] -- session beans can use BMT or CMT
+- Contrasts with: [[client-initiated-transactions|Client-Initiated]] -- third demarcation style
 
 ## Edge Cases & Gotchas
-- Entity beans (BMP/CMP) CANNOT use BMT — it's illegal (container calls ejbLoad/ejbStore, not bean)
+- Entity beans (BMP/CMP) CANNOT use BMT -- it's illegal (container calls ejbLoad/ejbStore, not bean)
 - BMT requires careful handling: forgetting commit() leaves transaction open
 - CMT transactions apply to entire method (can't have mini-transactions)
 - Client-initiated transactions are separate from BMT/CMT (client controls, bean still uses BMT/CMT internally)

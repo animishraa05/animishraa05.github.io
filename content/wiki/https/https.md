@@ -8,7 +8,7 @@ updated: 2026-04-30
 
 ## The Problem
 
-HTTP sends data in plain text—anyone between client and server can read passwords, cookies, and private data. Without encryption, the web would be unsafe for banking, shopping, or any private communication.
+HTTP sends data in plain text--anyone between client and server can read passwords, cookies, and private data. Without encryption, the web would be unsafe for banking, shopping, or any private communication.
 
 ## Core Idea
 
@@ -46,13 +46,28 @@ digraph G {
 - Requires SSL/TLS certificate from trusted CA
 - Slower than HTTP (TLS handshake overhead)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_HTTPS {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Https" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[http|HTTP]] — HTTPS is HTTP over TLS
-- **Built from:** [[tls-handshake|TLS Handshake]] — HTTPS requires TLS
-- **Built from:** [[tcp-handshake|TCP Handshake]] — TCP comes first
-- **Related:** [[hsts|HSTS]] — enforces HTTPS usage
-- **Contrasts with:** [[http|HTTP]] — HTTP is plain text, HTTPS is encrypted
+- **Built from:** [[http|HTTP]] -- HTTPS is HTTP over TLS
+- **Built from:** [[tls-handshake|TLS Handshake]] -- HTTPS requires TLS
+- **Built from:** [[tcp-handshake|TCP Handshake]] -- TCP comes first
+- **Related:** [[hsts|HSTS]] -- enforces HTTPS usage
+- **Contrasts with:** [[http|HTTP]] -- HTTP is plain text, HTTPS is encrypted
 
 ## Edge Cases & Gotchas
 

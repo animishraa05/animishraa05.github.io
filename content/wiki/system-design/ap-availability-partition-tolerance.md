@@ -1,5 +1,5 @@
 ---
-concept: AP — Availability and Partition Tolerance
+concept: AP -- Availability and Partition Tolerance
 aliases: [AP system, AP database, availability preferred]
 tags: [systems, distributed-systems]
 created: 2026-05-15
@@ -12,7 +12,7 @@ Some systems must remain operational during network partitions, even if the data
 
 ## Core Idea
 
-AP systems choose availability over consistency during network partitions. Every request receives a response using the most readily available version of the data. Writes are accepted and propagated asynchronously — when the partition resolves, nodes reconcile any conflicts. The system is always responsive but may serve stale or divergent data temporarily.
+AP systems choose availability over consistency during network partitions. Every request receives a response using the most readily available version of the data. Writes are accepted and propagated asynchronously -- when the partition resolves, nodes reconcile any conflicts. The system is always responsive but may serve stale or divergent data temporarily.
 
 ## How It Works
 
@@ -67,12 +67,27 @@ digraph G {
 - **Writes eventually propagate**: Asynchronous replication means write conflicts are resolved post-facto
 - **Common in social media, CDNs, DNS**: Applications where availability matters more than absolute consistency
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_AP____Availability_and_Partition_Tolerance {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Ap    Availability A" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[cap-theorem|CAP Theorem]]
-- **Contrasts with:** [[cp-consistency-partition-tolerance|CP — Consistency and Partition Tolerance]]
-- **Related:** [[eventual-consistency|Eventual Consistency]] — AP systems implement eventual consistency
-- **Related:** [[cdn-push|Push CDN]] — an AP system that serves content despite partitions
+- **Contrasts with:** [[cp-consistency-partition-tolerance|CP -- Consistency and Partition Tolerance]]
+- **Related:** [[eventual-consistency|Eventual Consistency]] -- AP systems implement eventual consistency
+- **Related:** [[cdn-push|Push CDN]] -- an AP system that serves content despite partitions
 
 ## Edge Cases & Gotchas
 

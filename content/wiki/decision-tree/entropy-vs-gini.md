@@ -1,5 +1,5 @@
 ---
-title: Entropy vs Gini — Impurity Measures Compared
+title: Entropy vs Gini -- Impurity Measures Compared
 type: synthesis
 tags: [ml, decision-trees]
 created: 2026-05-06
@@ -8,7 +8,7 @@ updated: 2026-05-06
 
 ## What's Being Compared
 
-Both Entropy (used in Information Gain) and Gini Index are impurity measures used to decide which attribute to split on at each node of a decision tree. They share the same goal — find the split that creates the purest child nodes — but achieve it through different mathematical formulations. Understanding the difference helps practitioners choose the right criterion for their specific problem and computational constraints.
+Both Entropy (used in Information Gain) and Gini Index are impurity measures used to decide which attribute to split on at each node of a decision tree. They share the same goal -- find the split that creates the purest child nodes -- but achieve it through different mathematical formulations. Understanding the difference helps practitioners choose the right criterion for their specific problem and computational constraints.
 
 ## The Core Tension
 
@@ -43,14 +43,43 @@ Both Entropy (used in Information Gain) and Gini Index are impurity measures use
 
 ## The Insight
 
-The choice between entropy and Gini is rarely consequential — both measures are **monotonically correlated**, meaning they generally agree on which splits are good and which are bad. The real-world accuracy difference is typically less than 1%. The practical decision comes down to: (1) computational budget for training, and (2) whether you need the information-theoretic interpretability. This is why sklearn defaults to Gini — it's the "good enough and faster" option — but supports entropy for users who need it.
+The choice between entropy and Gini is rarely consequential -- both measures are **monotonically correlated**, meaning they generally agree on which splits are good and which are bad. The real-world accuracy difference is typically less than 1%. The practical decision comes down to: (1) computational budget for training, and (2) whether you need the information-theoretic interpretability. This is why sklearn defaults to Gini -- it's the "good enough and faster" option -- but supports entropy for users who need it.
 
+
+
+## Visual Explanation
+
+```dot
+digraph entropy_vs_gini {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Entropy Vs Gini\nInput"]
+  B [label="Entropy Vs Gini\nCore Mechanism"]
+  C [label="Entropy Vs Gini\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_entropy_vs_gini {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Entropy Vs Gini" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- [[entropy|Entropy]] — left side of this comparison
-- [[gini-index|Gini Index]] — right side of this comparison
-- [[information-gain|Information Gain]] — entropy's application in decision trees
-- [[attribute-selection-measures|Attribute Selection Measures]] — both are selection measures
-- [[decision-tree-splitting|Decision Tree Splitting]] — both drive split decisions
-- [[entropy-calculation|Entropy Calculation]] — detailed entropy computation
-- [[gini-index-properties|Gini Index Properties]] — detailed Gini characteristics
+- [[entropy|Entropy]] -- left side of this comparison
+- [[gini-index|Gini Index]] -- right side of this comparison
+- [[information-gain|Information Gain]] -- entropy's application in decision trees
+- [[attribute-selection-measures|Attribute Selection Measures]] -- both are selection measures
+- [[decision-tree-splitting|Decision Tree Splitting]] -- both drive split decisions
+- [[entropy-calculation|Entropy Calculation]] -- detailed entropy computation
+- [[gini-index-properties|Gini Index Properties]] -- detailed Gini characteristics

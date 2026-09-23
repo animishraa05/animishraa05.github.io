@@ -8,7 +8,7 @@ updated: 2026-05-04
 
 ## The Problem
 
-Transactional databases (**OLTP**) are optimized for fast row-level operations — inserts, updates, deletes — on current data. When management needs to analyze 5-10 years of historical data across multiple departments, running complex aggregation queries directly on production databases degrades performance and competes with live customer traffic.
+Transactional databases (**OLTP**) are optimized for fast row-level operations -- inserts, updates, deletes -- on current data. When management needs to analyze 5-10 years of historical data across multiple departments, running complex aggregation queries directly on production databases degrades performance and competes with live customer traffic.
 
 ## Core Idea
 
@@ -81,17 +81,17 @@ graph semantic_data_warehouse_definition {
 
 ## Connections
 
-- **Built from:** [[subject-oriented-dwh|Subject-Oriented]] — first pillar of Inmon's definition
-- **Built from:** [[integrated-dwh|Integrated]] — second pillar of Inmon's definition
-- **Built from:** [[time-variant-dwh|Time-Variant]] — third pillar of Inmon's definition
-- **Built from:** [[nonvolatile-dwh|Nonvolatile]] — fourth pillar of Inmon's definition
-- **Contrasts with:** [[oltp-vs-olap|OLTP vs OLAP]] — warehouse is OLAP, not OLTP
-- **Builds into:** [[three-tier-dwh-architecture|Three-Tier DWH Architecture]] — physical implementation of the definition
-- **Related:** [[dwh-scale|Data Warehouse Scale]] — the massive size ranges warehouses operate at
+- **Built from:** [[subject-oriented-dwh|Subject-Oriented]] -- first pillar of Inmon's definition
+- **Built from:** [[integrated-dwh|Integrated]] -- second pillar of Inmon's definition
+- **Built from:** [[time-variant-dwh|Time-Variant]] -- third pillar of Inmon's definition
+- **Built from:** [[nonvolatile-dwh|Nonvolatile]] -- fourth pillar of Inmon's definition
+- **Contrasts with:** [[oltp-vs-olap|OLTP vs OLAP]] -- warehouse is OLAP, not OLTP
+- **Builds into:** [[three-tier-dwh-architecture|Three-Tier DWH Architecture]] -- physical implementation of the definition
+- **Related:** [[dwh-scale|Data Warehouse Scale]] -- the massive size ranges warehouses operate at
 
 ## Edge Cases & Gotchas
 
 - **Inmon vs. Kimball:** Inmon advocates top-down (enterprise warehouse first, then data marts); Kimball advocates bottom-up (data marts first, then conformed dimensions). Both definitions are valid but lead to different architectures.
-- **"Nonvolatile" is not "immutable":** Data is refreshed periodically — new data is appended, not old data modified.
+- **"Nonvolatile" is not "immutable":** Data is refreshed periodically -- new data is appended, not old data modified.
 - **Data warehouse is not a data lake:** Warehouses require structured, cleaned data; lakes accept raw, unstructured data.
 - **Misconception:** A warehouse is not just "a big database." The four characteristics (subject-oriented, integrated, time-variant, nonvolatile) are what make it a warehouse.

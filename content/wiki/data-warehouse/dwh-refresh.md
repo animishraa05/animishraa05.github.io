@@ -8,18 +8,18 @@ updated: 2026-05-04
 
 ## The Problem
 
-Source systems are continuously updated — new sales recorded, customer addresses changed, inventory levels adjusted. The warehouse, being nonvolatile, does not receive these updates in real-time. Without a systematic refresh mechanism, the warehouse data becomes increasingly stale, and analytical decisions are based on outdated information.
+Source systems are continuously updated -- new sales recorded, customer addresses changed, inventory levels adjusted. The warehouse, being nonvolatile, does not receive these updates in real-time. Without a systematic refresh mechanism, the warehouse data becomes increasingly stale, and analytical decisions are based on outdated information.
 
 ## Core Idea
 
-**DWH Refresh** is the process of propagating source data updates to the warehouse on a scheduled basis. Administrators set refresh policies based on user needs and system traffic — typically periodic (nightly, weekly) rather than real-time, because real-time refresh is prohibitively expensive. Incremental techniques are used to propagate only the changes, not the entire dataset.
+**DWH Refresh** is the process of propagating source data updates to the warehouse on a scheduled basis. Administrators set refresh policies based on user needs and system traffic -- typically periodic (nightly, weekly) rather than real-time, because real-time refresh is prohibitively expensive. Incremental techniques are used to propagate only the changes, not the entire dataset.
 
 ## How It Works
 
 ### When to Refresh
 
-1. **Periodic refresh:** Most common approach. Refresh on a schedule — every night, every week, or after significant business events (end of month, end of quarter).
-2. **Event-driven refresh:** Trigger refresh after significant events — a major system migration, a data quality incident.
+1. **Periodic refresh:** Most common approach. Refresh on a schedule -- every night, every week, or after significant business events (end of month, end of quarter).
+2. **Event-driven refresh:** Trigger refresh after significant events -- a major system migration, a data quality incident.
 3. **Real-time refresh:** Possible but very expensive. Used only when the warehouse requires up-to-the-minute data (e.g., stock quotation dashboards). Rarely implemented in practice.
 
 ### How to Refresh (Incremental Techniques)
@@ -104,11 +104,11 @@ graph semantic_refresh {
 
 ## Connections
 
-- **Built from:** [[etl-pipeline-dwh|ETL Pipeline (DWH)]] — refresh is the fourth phase
-- **Built from:** [[nonvolatile-dwh|Nonvolatile DWH]] — refresh is the only way to update nonvolatile data
-- **Built from:** [[loading-dwh|Loading (DWH)]] — refresh uses similar batch loading mechanisms
-- **Related:** [[time-variant-dwh|Time-Variant DWH]] — refresh adds new time slices to the historical record
-- **Related:** [[metadata-in-dwh|Metadata in DWH]] — refresh rules and schedules stored in metadata
+- **Built from:** [[etl-pipeline-dwh|ETL Pipeline (DWH)]] -- refresh is the fourth phase
+- **Built from:** [[nonvolatile-dwh|Nonvolatile DWH]] -- refresh is the only way to update nonvolatile data
+- **Built from:** [[loading-dwh|Loading (DWH)]] -- refresh uses similar batch loading mechanisms
+- **Related:** [[time-variant-dwh|Time-Variant DWH]] -- refresh adds new time slices to the historical record
+- **Related:** [[metadata-in-dwh|Metadata in DWH]] -- refresh rules and schedules stored in metadata
 
 ## Edge Cases & Gotchas
 

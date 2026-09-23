@@ -7,10 +7,10 @@ updated: 2026-04-30
 ---
 
 ## The Problem
-A CPU instruction takes multiple steps (fetch, decode, execute, memory, writeback). If we wait for one instruction to finish before starting the next, the CPU is mostly idle — each stage is only used 1/5 of the time.
+A CPU instruction takes multiple steps (fetch, decode, execute, memory, writeback). If we wait for one instruction to finish before starting the next, the CPU is mostly idle -- each stage is only used 1/5 of the time.
 
 ## Core Idea
-Pipelining overlaps multiple instructions in execution — while one instruction is executing, the next is being decoded, and the one after is being fetched, like an assembly line.
+Pipelining overlaps multiple instructions in execution -- while one instruction is executing, the next is being decoded, and the one after is being fetched, like an assembly line.
 
 ## How It Works
 1. Divide instruction execution into stages: IF (fetch) → ID (decode) → EX (execute) → MEM (memory) → WB (writeback)
@@ -43,11 +43,26 @@ digraph pipeline {
 - Pipeline depth: more stages = finer granularity but more overhead
 - Hazards can stall pipeline: data hazards, control hazards, structural hazards
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Pipelining {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Pipelining" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[risc-architecture|RISC Architecture]], [[clock-cycle|Clock Cycle]]
-- **Contrasts with:** [[cisc-architecture|CISC Architecture]] — harder to pipeline due to complex instructions
+- **Contrasts with:** [[cisc-architecture|CISC Architecture]] -- harder to pipeline due to complex instructions
 - **Related:** [[instruction-set|Instruction Set]], [[cpu|CPU]]
-- **Builds into:** [[superscalar|Superscalar]] — multiple pipelines in parallel
+- **Builds into:** [[superscalar|Superscalar]] -- multiple pipelines in parallel
 
 ## Edge Cases & Gotchas
 - Pipeline stalls: when next instruction can't proceed (dependencies, branches)

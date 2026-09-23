@@ -7,10 +7,10 @@ updated: 2026-04-29
 ---
 	
 ## The Problem
-The regular Home Interface uses RMI-IIOP for network communication—even when the client and bean are in the same JVM. This adds unnecessary overhead (serialization, network stack) for local calls.
+The regular Home Interface uses RMI-IIOP for network communication--even when the client and bean are in the same JVM. This adds unnecessary overhead (serialization, network stack) for local calls.
 
 ## Core Idea
-The Local Home Interface (`javax.ejb.EJBLocalHome`) is the high-performance version of the Home Interface. It's used when the client and bean are in the same JVM—no network calls, no `RemoteException`, direct memory access.
+The Local Home Interface (`javax.ejb.EJBLocalHome`) is the high-performance version of the Home Interface. It's used when the client and bean are in the same JVM--no network calls, no `RemoteException`, direct memory access.
 
 ## How It Works
 1. **Extends `EJBLocalHome`**: Unlike regular Home which extends `EJBHome` (which extends `java.rmi.Remote`)
@@ -45,6 +45,21 @@ digraph LocalHome {
 - **Faster**: No RMI-IIOP overhead
 - **Same JVM requirement**: Cannot be used for remote clients
 
+
+
+## Semantic Network
+
+```dot
+graph semantic__Local_Home_Interface_ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label=""Local Home Interfac" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[home-interface|Home Interface]] (remote version)
 - **Builds into:** [[remote-interface|Remote Interface]] (contrast: remote has network overhead)

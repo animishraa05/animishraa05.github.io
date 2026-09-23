@@ -52,6 +52,21 @@ digraph ClientJAR {
 - **Smaller footprint**: Useful for applets or disk-constrained environments
 - **Declared in deployment descriptor**: Container tells deployer which JAR to create
 
+
+
+## Semantic Network
+
+```dot
+graph semantic__EJB_Client_JAR_ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label=""Ejb Client Jar"" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[home-interface|Home Interface]], [[remote-interface|Remote Interface]] (included in client JAR)
 - **Builds into:** [[jndi|JNDI]] (client uses JAR to lookup beans)
@@ -59,6 +74,6 @@ digraph ClientJAR {
 - **Contrasts with:** Full EJB-JAR (includes secret bean implementation)
 
 ## Edge Cases & Gotchas
-- **Mostly obsolete**: Modern deployments use Web Services or REST—not EJB direct clients
+- **Mostly obsolete**: Modern deployments use Web Services or REST--not EJB direct clients
 - **Laziness prevails**: Most deployers just give clients the full EJB-JAR (easier)
-- **Applet environment**: Only critical use case—applets have very limited disk space
+- **Applet environment**: Only critical use case--applets have very limited disk space

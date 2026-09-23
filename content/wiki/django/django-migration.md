@@ -51,12 +51,41 @@ python manage.py migrate
 - Can be applied forward or rolled backward.
 - Tracked in a special database table to prevent applying the same migration twice.
 
+
+
+## Visual Explanation
+
+```dot
+digraph Django_Migration {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Django Migration\nInput"]
+  B [label="Django Migration\nCore Mechanism"]
+  C [label="Django Migration\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Django_Migration {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Django Migration" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[django-model|Django Model]] — migrations reflect model changes.
-- **Related:** [[django-orm|Django ORM]] — works closely with the ORM.
-- **Related:** [[django-project|Django Project]] — managed via manage.py.
-- **Related:** [[python-programming-language|Python]] — migrations are just Python files.
+- **Built from:** [[django-model|Django Model]] -- migrations reflect model changes.
+- **Related:** [[django-orm|Django ORM]] -- works closely with the ORM.
+- **Related:** [[django-project|Django Project]] -- managed via manage.py.
+- **Related:** [[python-programming-language|Python]] -- migrations are just Python files.
 
 ## Edge Cases & Gotchas
 

@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Web application logic needs to respond to specific URL patterns, extract parameters from requests, and return data or views to the client. Without a structured approach, each page would manually parse URLs, manage HTTP methods, and construct responses — duplicating effort across handlers.
+Web application logic needs to respond to specific URL patterns, extract parameters from requests, and return data or views to the client. Without a structured approach, each page would manually parse URLs, manage HTTP methods, and construct responses -- duplicating effort across handlers.
 
 ## Core Idea
 
@@ -16,10 +16,10 @@ Spring Controllers are `@Controller`-annotated classes whose methods handle spec
 
 ## How It Works
 
-1. **@RequestMapping**: Maps HTTP method + URL path to a controller method — e.g., `@GetMapping("/users/{id}")`
+1. **@RequestMapping**: Maps HTTP method + URL path to a controller method -- e.g., `@GetMapping("/users/{id}")`
 2. **Method parameters**: Automatically bound from request: `@RequestParam` (query params), `@PathVariable` (URL segments), `@RequestBody` (JSON body), `@ModelAttribute` (form data)
 3. **Return types**: String (view name), ModelAndView, `@ResponseBody` (JSON/XML), ResponseEntity (full control)
-4. **@RestController**: All methods default to `@ResponseBody`; no view resolution — returns data directly
+4. **@RestController**: All methods default to `@ResponseBody`; no view resolution -- returns data directly
 5. **@Controller vs @RestController**: @Controller returns view names; @RestController returns data (JSON/XML)
 
 ## Visual Explanation
@@ -54,23 +54,38 @@ digraph spring_controller {
 ## Key Properties
 
 - **@RequestMapping shortcuts**: `@GetMapping`, `@PostMapping`, `@PutMapping`, `@DeleteMapping`, `@PatchMapping`
-- **@PathVariable**: Binds URL template variables — `@GetMapping("/users/{id}")` + `(@PathVariable Long id)`
+- **@PathVariable**: Binds URL template variables -- `@GetMapping("/users/{id}")` + `(@PathVariable Long id)`
 - **@RequestParam**: Binds query parameters with optional default values and required flag
 - **@RequestBody**: Deserializes request body (JSON/XML) to Java object using HttpMessageConverter
 - **@ResponseBody**: Serializes return value directly to HTTP response body
 - **@ResponseStatus**: Sets HTTP status code on successful method execution
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Spring_Controller {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Spring Controller" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[spring-mvc|Spring MVC]] — Controllers are the handler components in Spring MVC
-- **Built from:** [[dispatcher-servlet|DispatcherServlet]] — DispatcherServlet invokes controller methods
-- **Related:** [[spring-form-handling|Spring Form Handling]] — @ModelAttribute binds form data to model objects
-- **Related:** [[spring-mvc-exception-handling|Spring MVC Exception Handling]] — @ExceptionHandler in controllers
-- **Contrasts with:** [[servlets|Servlets]] — Servlets extend HttpServlet; Spring Controllers are POJOs with annotations
+- **Built from:** [[spring-mvc|Spring MVC]] -- Controllers are the handler components in Spring MVC
+- **Built from:** [[dispatcher-servlet|DispatcherServlet]] -- DispatcherServlet invokes controller methods
+- **Related:** [[spring-form-handling|Spring Form Handling]] -- @ModelAttribute binds form data to model objects
+- **Related:** [[spring-mvc-exception-handling|Spring MVC Exception Handling]] -- @ExceptionHandler in controllers
+- **Contrasts with:** [[servlets|Servlets]] -- Servlets extend HttpServlet; Spring Controllers are POJOs with annotations
 
 ## Edge Cases & Gotchas
 
-- **@RequestParam required=true by default**: Missing required param returns 400 — use `required=false` or `defaultValue`
+- **@RequestParam required=true by default**: Missing required param returns 400 -- use `required=false` or `defaultValue`
 - **@PathVariable vs @RequestParam**: Path variables identify resources; request params filter/ paginate
-- **@ResponseBody + String**: Returns the string itself, not a view name — common confusion with @Controller
+- **@ResponseBody + String**: Returns the string itself, not a view name -- common confusion with @Controller
 - **Method-level vs class-level @RequestMapping**: Class-level is the prefix; method-level defines the specific endpoint

@@ -27,7 +27,7 @@ A one-to-one relationship means each entity instance is related to at most one i
 ### CMP Implementation
 - Define abstract getter/setter: `public abstract Shipment getShipment();`
 - Container manages relationship via `<cmr-field>` in `ejb-jar.xml`
-- `ejbLoad()` and `ejbStore()` are empty — container handles everything
+- `ejbLoad()` and `ejbStore()` are empty -- container handles everything
 
 ## Visual Explanation
 ```dot
@@ -52,13 +52,28 @@ digraph G {
 - Database schema can have FK in either direction (Order→Shipment or Shipment→Order)
 - `getPrimaryKey()` is critical in BMP to convert stub back to FK for SQL
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_One_to_One_Relationship_in_EJB {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="One To One Relations" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[entity-bean|Entity Bean]] — relationships exist between entity beans
-- Built from: [[container-managed-persistence|CMP]] — uses CMR fields for relationships
-- Built from: [[bean-managed-persistence|BMP]] — manual JNDI lookup for relationships
-- Related: [[one-to-many-relationship|One-to-Many Relationship]] — next cardinality level
-- Related: [[bidirectional-vs-unidirectional|Bidirectional vs Unidirectional]] — directionality applies to 1:1
-- Related: [[getprimarykey|getPrimaryKey()]] — used in BMP to get FK from stub
+- Built from: [[entity-bean|Entity Bean]] -- relationships exist between entity beans
+- Built from: [[container-managed-persistence|CMP]] -- uses CMR fields for relationships
+- Built from: [[bean-managed-persistence|BMP]] -- manual JNDI lookup for relationships
+- Related: [[one-to-many-relationship|One-to-Many Relationship]] -- next cardinality level
+- Related: [[bidirectional-vs-unidirectional|Bidirectional vs Unidirectional]] -- directionality applies to 1:1
+- Related: [[getprimarykey|getPrimaryKey()]] -- used in BMP to get FK from stub
 
 ## Edge Cases & Gotchas
 - Persisting a stub directly would create a bit-blob in the FK column (BMP)

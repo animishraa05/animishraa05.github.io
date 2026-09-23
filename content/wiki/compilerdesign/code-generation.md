@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-After analysis and optimization, the compiler holds an optimized intermediate representation. This IR must be translated into actual machine instructions (or assembly) that the target processor can execute — including instruction selection, register allocation, and addressing mode decisions.
+After analysis and optimization, the compiler holds an optimized intermediate representation. This IR must be translated into actual machine instructions (or assembly) that the target processor can execute -- including instruction selection, register allocation, and addressing mode decisions.
 
 ## Core Idea
 
@@ -54,16 +54,31 @@ digraph code_generation {
 - **Target-dependent:** The code generator is specific to the target architecture
 - **Produces:** Object code that the linker/loader handles next
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Code_Generation {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Code Generation" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[code-optimization|Code Optimization]] — consumes optimized IR
-- **Built from:** [[code-generator-design-issues|Issues in Code Generator Design]] — design considerations for building a code generator
-- **Builds into:** [[object-code|Object Code]] — produces the object code output
-- **Related:** [[phases-of-compiler|Phases of a Compiler]] — code generation is phase 6, the final phase
-- **Related:** [[linker-and-loader|Linker and Loader]] — the code generator produces object files that the linker resolves
+- **Built from:** [[code-optimization|Code Optimization]] -- consumes optimized IR
+- **Built from:** [[code-generator-design-issues|Issues in Code Generator Design]] -- design considerations for building a code generator
+- **Builds into:** [[object-code|Object Code]] -- produces the object code output
+- **Related:** [[phases-of-compiler|Phases of a Compiler]] -- code generation is phase 6, the final phase
+- **Related:** [[linker-and-loader|Linker and Loader]] -- the code generator produces object files that the linker resolves
 
 ## Edge Cases & Gotchas
 
-- **Register spilling:** When there are more live variables than registers, some must be spilled to memory — frequent spilling destroys performance
+- **Register spilling:** When there are more live variables than registers, some must be spilled to memory -- frequent spilling destroys performance
 - **Strange instructions:** Some architectures have complex instructions (VLIW, SIMD) that require careful pattern matching during instruction selection
 - **PIC vs absolute code:** Position-independent code requires different addressing strategies than absolute code

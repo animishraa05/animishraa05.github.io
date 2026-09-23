@@ -8,7 +8,7 @@ updated: 2026-04-12
 
 ## The Problem
 
-Once an LSP server is started, the editor needs to manage its state—track attached buffers, send requests, handle responses, and monitor capabilities. This requires an abstraction representing the active LSP connection.
+Once an LSP server is started, the editor needs to manage its state--track attached buffers, send requests, handle responses, and monitor capabilities. This requires an abstraction representing the active LSP connection.
 
 ## Core Idea
 
@@ -31,11 +31,40 @@ An LSP Client is a Neovim object representing an active connection to a language
 - `root_dir` derived from config or root_markers
 - Can attach to multiple buffers simultaneously
 
+
+
+## Visual Explanation
+
+```dot
+digraph true {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="True\nInput"]
+  B [label="True\nCore Mechanism"]
+  C [label="True\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_true {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="True" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[lsp-configuration|LSP Configuration]] — config creates client
-- **Builds into:** [[vim-lsp|vim.lsp]] — clients are managed by vim.lsp
-- **Related:** [[lsp-events|LSP Events]] — events fired based on client activity
+- **Built from:** [[lsp-configuration|LSP Configuration]] -- config creates client
+- **Builds into:** [[vim-lsp|vim.lsp]] -- clients are managed by vim.lsp
+- **Related:** [[lsp-events|LSP Events]] -- events fired based on client activity
 
 ## Edge Cases & Gotchas
 

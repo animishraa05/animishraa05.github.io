@@ -38,14 +38,29 @@ digraph G {
 - Bias-variance tradeoff: simpler models have high bias, complex models have high variance
 - Inductive: learns specific-to-general mapping from examples
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Supervised_Learning {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Supervised Learning" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[data-modeling|Data Modeling]] — supervised learning is a modeling approach
-- Builds into: [[regression|Regression]] — supervised task for continuous outputs
-- Builds into: [[classification|Classification]] — supervised task for categorical outputs
-- Builds into: [[decision-tree-structure|Decision Tree Structure]] — trees are a supervised algorithm
-- Builds into: [[id3-algorithm|ID3 Algorithm]] — foundational decision tree construction method
-- Related: [[train-test-split|Train-Test Split]] — supervised learning requires careful data splitting
-- Related: [[decision-tree-interpretability|Decision Tree Interpretability]] — trees offer inherent explainability
+- Built from: [[data-modeling|Data Modeling]] -- supervised learning is a modeling approach
+- Builds into: [[regression|Regression]] -- supervised task for continuous outputs
+- Builds into: [[classification|Classification]] -- supervised task for categorical outputs
+- Builds into: [[decision-tree-structure|Decision Tree Structure]] -- trees are a supervised algorithm
+- Builds into: [[id3-algorithm|ID3 Algorithm]] -- foundational decision tree construction method
+- Related: [[train-test-split|Train-Test Split]] -- supervised learning requires careful data splitting
+- Related: [[decision-tree-interpretability|Decision Tree Interpretability]] -- trees offer inherent explainability
 
 ## Edge Cases & Gotchas
 - Label noise: incorrect labels mislead the model

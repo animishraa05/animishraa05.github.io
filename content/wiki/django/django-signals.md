@@ -54,11 +54,40 @@ def create_user_profile(sender, instance, created, **kwargs):
 - Decoupled: Senders and receivers don't need to know about each other.
 - Built-in signals: `pre_save`, `post_save`, `pre_delete`, `post_delete`.
 
+
+
+## Visual Explanation
+
+```dot
+digraph Django_Signals {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Django Signals\nInput"]
+  B [label="Django Signals\nCore Mechanism"]
+  C [label="Django Signals\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Django_Signals {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Django Signals" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[django-web-framework|Django Web Framework]] — decoupled event system.
-- **Related:** [[django-model|Django Model]] — mostly used to listen to model lifecycle events.
-- **Contrasts with:** [[django-celery-integration|Django Celery Integration]] — celery is async, signals are sync.
+- **Built from:** [[django-web-framework|Django Web Framework]] -- decoupled event system.
+- **Related:** [[django-model|Django Model]] -- mostly used to listen to model lifecycle events.
+- **Contrasts with:** [[django-celery-integration|Django Celery Integration]] -- celery is async, signals are sync.
 
 ## Edge Cases & Gotchas
 

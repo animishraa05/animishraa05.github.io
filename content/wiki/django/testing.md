@@ -16,13 +16,13 @@ Testing solves the problem of verifying application behavior automatically and p
 
 ## How It Works
 
-1. **TestCase subclass** — `class MyTest(TestCase):` — each test method runs in atomic transaction
-2. **setUpTestData** — Class method runs once per class; creates objects in DB before all tests
-3. **setUp** — Instance method runs before each test; for per-test state
-4. **Client requests** — `self.client.get('/url/')`, `self.client.post('/url/', data, format='json')`
-5. **Authentication** — `self.client.force_login(user)` or `self.client.credentials(HTTP_AUTHORIZATION=...)`
-6. **Assertions** — `assertEqual`, `assertContains`, `assertRedirects`, `assertTemplateUsed`, `assertNumQueries`
-7. **Fixtures** — `fixtures = ['initial_data.json']` loads JSON/XML/YAML before tests
+1. **TestCase subclass** -- `class MyTest(TestCase):` -- each test method runs in atomic transaction
+2. **setUpTestData** -- Class method runs once per class; creates objects in DB before all tests
+3. **setUp** -- Instance method runs before each test; for per-test state
+4. **Client requests** -- `self.client.get('/url/')`, `self.client.post('/url/', data, format='json')`
+5. **Authentication** -- `self.client.force_login(user)` or `self.client.credentials(HTTP_AUTHORIZATION=...)`
+6. **Assertions** -- `assertEqual`, `assertContains`, `assertRedirects`, `assertTemplateUsed`, `assertNumQueries`
+7. **Fixtures** -- `fixtures = ['initial_data.json']` loads JSON/XML/YAML before tests
 
 ## Visual Explanation
 
@@ -100,19 +100,19 @@ graph semantic_testing {
 
 ## Connections
 
-- Built from: [[models-orm|Models/ORM]] — Test data creation and assertions
-- Built from: [[function-based-views|Function-Based Views]] — Test view behavior
-- Built from: [[class-based-views|Class-Based Views]] — Test CBV methods
-- Built from: [[authentication-system|Authentication System]] — Test auth flows
-- Built from: [[database-transactions|Database Transactions]] — TestCase isolation mechanism
-- Builds into: [[test-client|Test Client]] — Request simulation API
-- Builds into: [[fixtures-factory-boy|Fixtures/Factory Boy]] — Test data generation
-- Builds into: [[pytest-django|pytest-django]] — Modern test runner with fixtures
-- Builds into: [[coverage-reporting|Coverage Reporting]] — Code coverage metrics
-- Builds into: [[mocking|Mocking]] — Isolate units from dependencies
-- Contrasts with: [[pytest-standalone|pytest Standalone]] — Django-specific extensions vs pure pytest
-- Related: [[ci-cd-integration|CI/CD Integration]] — Automated test runs on push
-- Related: [[test-database-config|Test Database Config]] — `DATABASES['TEST']` settings
+- Built from: [[models-orm|Models/ORM]] -- Test data creation and assertions
+- Built from: [[function-based-views|Function-Based Views]] -- Test view behavior
+- Built from: [[class-based-views|Class-Based Views]] -- Test CBV methods
+- Built from: [[authentication-system|Authentication System]] -- Test auth flows
+- Built from: [[database-transactions|Database Transactions]] -- TestCase isolation mechanism
+- Builds into: [[test-client|Test Client]] -- Request simulation API
+- Builds into: [[fixtures-factory-boy|Fixtures/Factory Boy]] -- Test data generation
+- Builds into: [[pytest-django|pytest-django]] -- Modern test runner with fixtures
+- Builds into: [[coverage-reporting|Coverage Reporting]] -- Code coverage metrics
+- Builds into: [[mocking|Mocking]] -- Isolate units from dependencies
+- Contrasts with: [[pytest-standalone|pytest Standalone]] -- Django-specific extensions vs pure pytest
+- Related: [[ci-cd-integration|CI/CD Integration]] -- Automated test runs on push
+- Related: [[test-database-config|Test Database Config]] -- `DATABASES['TEST']` settings
 
 ## Edge Cases & Gotchas
 

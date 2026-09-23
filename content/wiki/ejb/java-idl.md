@@ -48,11 +48,26 @@ digraph G {
 - **J2EE integration**: Part of J2EE platform
 - **Full CORBA services**: Leverages complete CORBA service set
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Java_IDL {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Java Idl" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[rmi-remote-method-invocation|RMI]] — similar concept, Java-only vs cross-language
-- Related: [[rmi-iiop|RMI-IIOP]] — RMI over IIOP protocol (used in J2EE)
-- Builds into: [[distributed-objects|Distributed Objects]] — Java IDL enables cross-language distributed objects
-- Related: [[java-platforms|Java Platforms]] — Java IDL is part of J2EE
+- Built from: [[rmi-remote-method-invocation|RMI]] -- similar concept, Java-only vs cross-language
+- Related: [[rmi-iiop|RMI-IIOP]] -- RMI over IIOP protocol (used in J2EE)
+- Builds into: [[distributed-objects|Distributed Objects]] -- Java IDL enables cross-language distributed objects
+- Related: [[java-platforms|Java Platforms]] -- Java IDL is part of J2EE
 
 ## Edge Cases & Gotchas
 - **Legacy technology**: CORBA/IDL largely replaced by REST/JSON

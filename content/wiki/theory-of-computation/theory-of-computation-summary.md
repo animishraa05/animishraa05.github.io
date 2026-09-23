@@ -11,21 +11,21 @@ Wikipedia article on Theory of Computation, covering the branch of theoretical c
 
 ## Concepts Extracted (13 total)
 
-1. **Theory of Computation** — The overarching field studying algorithmic solvability and efficiency
-2. **Model of Computation** — Mathematical abstractions of computers for formal analysis
-3. **Turing Machine** — The most powerful reasonable model of computation
-4. **Automata Theory** — Study of abstract machines and what problems they can solve
-5. **Computability Theory** — Determines which problems are solvable at all
-6. **Halting Problem** — The undecidable problem of whether a program halts
-7. **Rice's Theorem** — All non-trivial properties of programs are undecidable
-8. **Computational Complexity Theory** — Studies how efficiently problems can be solved
-9. **Formal Language Theory** — Mathematical description and classification of languages
-10. **Chomsky Hierarchy** — Classification of formal languages by computational power
-11. **Lambda Calculus** — Function-based model of computation
-12. **Church-Turing Thesis** — Thesis that Turing machines capture all computable functions
-13. **Big O Notation** — Asymptotic notation for comparing algorithm efficiency
-14. **P vs NP Problem** — Open question about verification vs solution efficiency
-15. **Alan Turing** — Pioneer who founded computability theory
+1. **Theory of Computation** -- The overarching field studying algorithmic solvability and efficiency
+2. **Model of Computation** -- Mathematical abstractions of computers for formal analysis
+3. **Turing Machine** -- The most powerful reasonable model of computation
+4. **Automata Theory** -- Study of abstract machines and what problems they can solve
+5. **Computability Theory** -- Determines which problems are solvable at all
+6. **Halting Problem** -- The undecidable problem of whether a program halts
+7. **Rice's Theorem** -- All non-trivial properties of programs are undecidable
+8. **Computational Complexity Theory** -- Studies how efficiently problems can be solved
+9. **Formal Language Theory** -- Mathematical description and classification of languages
+10. **Chomsky Hierarchy** -- Classification of formal languages by computational power
+11. **Lambda Calculus** -- Function-based model of computation
+12. **Church-Turing Thesis** -- Thesis that Turing machines capture all computable functions
+13. **Big O Notation** -- Asymptotic notation for comparing algorithm efficiency
+14. **P vs NP Problem** -- Open question about verification vs solution efficiency
+15. **Alan Turing** -- Pioneer who founded computability theory
 
 ## Key Takeaways
 

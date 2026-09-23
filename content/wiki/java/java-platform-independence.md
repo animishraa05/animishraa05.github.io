@@ -8,11 +8,11 @@ updated: 2026-05-13
 
 ## The Problem
 
-Traditional compiled languages like C and C++ produce machine code specific to a particular CPU architecture and operating system. Developers had to recompile and redistribute their software for every target platform — Windows, Linux, macOS, each with different binaries. This created distribution nightmares, increased maintenance costs, and made cross-platform deployment error-prone.
+Traditional compiled languages like C and C++ produce machine code specific to a particular CPU architecture and operating system. Developers had to recompile and redistribute their software for every target platform -- Windows, Linux, macOS, each with different binaries. This created distribution nightmares, increased maintenance costs, and made cross-platform deployment error-prone.
 
 ## Core Idea
 
-Java achieves platform independence by compiling source code into an intermediate representation called **bytecode**, which runs on the **Java Virtual Machine (JVM)** — a software-based execution environment that abstracts away the underlying hardware and OS. Any device with a JVM implementation can run the same Java bytecode without recompilation.
+Java achieves platform independence by compiling source code into an intermediate representation called **bytecode**, which runs on the **Java Virtual Machine (JVM)** -- a software-based execution environment that abstracts away the underlying hardware and OS. Any device with a JVM implementation can run the same Java bytecode without recompilation.
 
 ## How It Works
 
@@ -81,10 +81,10 @@ graph semantic_java_platform {
 
 ## Connections
 
-- **Built from:** [[java-memory-management|Java Memory Management]] — the JVM manages stack, heap, and method area memory
-- **Built from:** [[java-garbage-collection|Java Garbage Collection]] — JVM automates memory reclamation as part of its runtime services
-- **Builds into:** [[java-program-structure|Java Program Structure]] — every Java program compiles to platform-independent bytecode before running
-- **Related:** [[java-program-structure|Java Program Structure]] — the compile-and-run workflow depends on platform-independent bytecode
+- **Built from:** [[java-memory-management|Java Memory Management]] -- the JVM manages stack, heap, and method area memory
+- **Built from:** [[java-garbage-collection|Java Garbage Collection]] -- JVM automates memory reclamation as part of its runtime services
+- **Builds into:** [[java-program-structure|Java Program Structure]] -- every Java program compiles to platform-independent bytecode before running
+- **Related:** [[java-program-structure|Java Program Structure]] -- the compile-and-run workflow depends on platform-independent bytecode
 
 ## Edge Cases & Gotchas
 

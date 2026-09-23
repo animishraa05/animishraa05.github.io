@@ -9,7 +9,7 @@ updated: 2026-04-12
 
 ## The Problem
 
-Standard diffusion models (SDXL, Stable Diffusion) have architecture limitations that make text rendering and long-prompt handling difficult. SDXL uses a UNet-based architecture with CLIP-only encoding and 4-channel VAE — all contributing to the text rendering problem.
+Standard diffusion models (SDXL, Stable Diffusion) have architecture limitations that make text rendering and long-prompt handling difficult. SDXL uses a UNet-based architecture with CLIP-only encoding and 4-channel VAE -- all contributing to the text rendering problem.
 
 ## Core Idea
 
@@ -19,14 +19,14 @@ Flux.1-dev is a modern diffusion model using DiT (Diffusion Transformer) archite
 
 ### DiT Architecture (vs UNet)
 
-Traditional UNet models process image and text information separately, with cross-attention only at specific layers. DiT processes both in a unified attention mechanism — text tokens and image tokens interact at every single layer throughout generation.
+Traditional UNet models process image and text information separately, with cross-attention only at specific layers. DiT processes both in a unified attention mechanism -- text tokens and image tokens interact at every single layer throughout generation.
 
 ### Dual Text Encoders
 
 Flux uses BOTH CLIP-L and T5-XXL:
 
-- **CLIP-L**: Semantic understanding — "Lakme = luxury cosmetics brand"
-- **T5-XXL**: Character-level encoding — "L-a-k-m-e = exact character sequence"
+- **CLIP-L**: Semantic understanding -- "Lakme = luxury cosmetics brand"
+- **T5-XXL**: Character-level encoding -- "L-a-k-m-e = exact character sequence"
 
 Both are projected into a joint 3072-dimensional space, giving the model both conceptual and character-level information.
 
@@ -46,6 +46,35 @@ Flux uses flow matching training instead of traditional DDPM. This produces shar
 - Native 1024x1024 output
 - ~24GB VRAM for full quality inference
 
+
+
+## Visual Explanation
+
+```dot
+digraph flux_architecture {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Flux Architecture\nInput"]
+  B [label="Flux Architecture\nCore Mechanism"]
+  C [label="Flux Architecture\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_flux_architecture {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Flux Architecture" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[diffusion-models]], [[transformers]], [[t5-encoder]], [[clip]], [[vae]]
@@ -54,6 +83,6 @@ Flux uses flow matching training instead of traditional DDPM. This produces shar
 
 ## Edge Cases & Gotchas
 
-- VRAM intensive — needs A100 or equivalent for comfortable inference
+- VRAM intensive -- needs A100 or equivalent for comfortable inference
 - T5-XXL loading adds latency (~3 seconds)
 - Quality degrades significantly below 16GB VRAM without optimization

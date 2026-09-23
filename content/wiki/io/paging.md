@@ -59,6 +59,21 @@ digraph paging {
 - Page table overhead per process
 - Internal fragmentation within pages (last page may not be full)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Paging {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Paging" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[virtual-memory|Virtual Memory]], [[page-table|Page Table]]

@@ -38,10 +38,25 @@ digraph big_endian {
 - Used by: Motorola 68k, SPARC (sometimes), PowerPC (can be bi-endian)
 - Easier to interpret hex dumps visually
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Big_Endian {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Big Endian" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- **Contrasts with:** [[little-endian|Little Endian]] — stores LSB first
+- **Contrasts with:** [[little-endian|Little Endian]] -- stores LSB first
 - **Built from:** [[endianness|Endianness]], [[memory|Memory]]
-- **Builds into:** [[network-byte-order|Network Byte Order]] — TCP/IP mandates Big Endian
+- **Builds into:** [[network-byte-order|Network Byte Order]] -- TCP/IP mandates Big Endian
 - **Related:** [[motorola-68k|Motorola 68k]], [[sparc|Sparc]]
 
 ## Edge Cases & Gotchas

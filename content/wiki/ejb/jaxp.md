@@ -49,11 +49,26 @@ digraph G {
 - **J2EE standard**: Part of J2EE platform
 - **Widely used**: SOAP, B2B, XML persistence all use JAXP
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_JAXP {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Jaxp" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[java-platforms|Java Platforms]] — JAXP is part of J2EE
-- Related: [[jax-rpc|JAX-RPC]] — JAX-RPC uses XML/SOAP (parsed by JAXP)
-- Builds into: [[web-services|Web Services]] — XML parsing is core to web services
-- Related: [[ejb-container|EJB Container]] — EJB components can use JAXP
+- Built from: [[java-platforms|Java Platforms]] -- JAXP is part of J2EE
+- Related: [[jax-rpc|JAX-RPC]] -- JAX-RPC uses XML/SOAP (parsed by JAXP)
+- Builds into: [[web-services|Web Services]] -- XML parsing is core to web services
+- Related: [[ejb-container|EJB Container]] -- EJB components can use JAXP
 
 ## Edge Cases & Gotchas
 - **DOM memory**: Large XML docs can cause OutOfMemoryError with DOM

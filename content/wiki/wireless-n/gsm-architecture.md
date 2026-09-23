@@ -7,10 +7,10 @@ updated: 2026-04-21
 ---
 
 ## The Problem
-A cellular mobile network requires coordinated management of radio resources, call routing, subscriber databases, and mobility across many cells and thousands of users. Simply connecting base stations to the public switched telephone network (PSTN) is insufficient — the network needs specialized subsystems to handle radio access, switching, authentication, and network operations.
+A cellular mobile network requires coordinated management of radio resources, call routing, subscriber databases, and mobility across many cells and thousands of users. Simply connecting base stations to the public switched telephone network (PSTN) is insufficient -- the network needs specialized subsystems to handle radio access, switching, authentication, and network operations.
 
 ## Core Idea
-GSM architecture is organized into three hierarchical subsystems: RSS (Radio Subsystem — handles the air interface), NSS (Network and Switching Subsystem — handles call routing and databases), and OSS (Operation Subsystem — handles network management and security). Users only see Mobile Stations (MS) and BTS antenna masts, but the entire infrastructure is coordinated.
+GSM architecture is organized into three hierarchical subsystems: RSS (Radio Subsystem -- handles the air interface), NSS (Network and Switching Subsystem -- handles call routing and databases), and OSS (Operation Subsystem -- handles network management and security). Users only see Mobile Stations (MS) and BTS antenna masts, but the entire infrastructure is coordinated.
 
 ## How It Works
 
@@ -36,13 +36,42 @@ GSM architecture is organized into three hierarchical subsystems: RSS (Radio Sub
 - **A interface:** BSC ↔ MSC (2 Mbps PCM)
 - **O interface:** BSC/MSC ↔ OMC (SS7 signaling)
 
+
+
+## Visual Explanation
+
+```dot
+digraph GSM_Architecture {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Gsm Architecture\nInput"]
+  B [label="Gsm Architecture\nCore Mechanism"]
+  C [label="Gsm Architecture\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_GSM_Architecture {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Gsm Architecture" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[cellular-mobile-system|Cellular Mobile System]] — GSM is the most widely deployed 2G cellular system
-- Built into: [[gsm-services|GSM Services]] — bearer, tele, and supplementary services
-- Built into: [[gsm-air-interface|GSM Air Interface]] — Um interface protocols
-- Related: [[handoff|Handoff]] — inter-BSC/inter-MSC handovers are MSC functions
-- Related: [[gsm-location-updates|Location Updates]] — HLR/VLR update mechanism for mobility
-- Related: [[authentication-center|AUC]] — security subsystem for SIM verification
+- Built from: [[cellular-mobile-system|Cellular Mobile System]] -- GSM is the most widely deployed 2G cellular system
+- Built into: [[gsm-services|GSM Services]] -- bearer, tele, and supplementary services
+- Built into: [[gsm-air-interface|GSM Air Interface]] -- Um interface protocols
+- Related: [[handoff|Handoff]] -- inter-BSC/inter-MSC handovers are MSC functions
+- Related: [[gsm-location-updates|Location Updates]] -- HLR/VLR update mechanism for mobility
+- Related: [[authentication-center|AUC]] -- security subsystem for SIM verification
 
 ## Edge Cases & Gotchas
 - N=7 cluster is standard; smaller clusters (N=4) increase capacity but reduce C/I ratio

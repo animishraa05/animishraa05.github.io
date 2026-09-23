@@ -12,7 +12,7 @@ Semantic actions in syntax-directed translations need to pass information around
 
 ## Core Idea
 
-**S-attributed SDTs** use only **synthesized attributes** — values computed from children and passed upward to the parent. **L-attributed SDTs** allow both **synthesized** and **inherited attributes**, where inherited attributes flow from left-to-right and top-to-bottom. S-attributed SDTs can be evaluated bottom-up; L-attributed SDTs require top-down or left-to-right evaluation.
+**S-attributed SDTs** use only **synthesized attributes** -- values computed from children and passed upward to the parent. **L-attributed SDTs** allow both **synthesized** and **inherited attributes**, where inherited attributes flow from left-to-right and top-to-bottom. S-attributed SDTs can be evaluated bottom-up; L-attributed SDTs require top-down or left-to-right evaluation.
 
 ## How It Works
 
@@ -57,17 +57,32 @@ digraph attributed_sdt {
 - **Inherited attributes:** Flow downward and left-to-right (parent → child, sibling → sibling)
 - **Evaluation compatibility:** S-attributed SDTs pair with LR parsing; L-attributed SDTs pair with LL parsing
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_S_Attributed_and_L_Attributed_SDTs {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="S Attributed And L A" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[syntax-directed-translation|Syntax-Directed Translation]] — SDT classification by attribute type
-- **Related:** [[top-down-parsing|Top-Down Parsing]] — L-attributed SDTs are naturally evaluated during top-down parsing
-- **Related:** [[bottom-up-parsing|Bottom-Up Parsing]] — S-attributed SDTs are naturally evaluated during bottom-up parsing
-- **Related:** [[syntax-analysis|Syntax Analysis]] — how attribute evaluation integrates with parsing strategies
-- **Related:** [[semantic-analysis|Semantic Analysis]] — attributes carry type information needed for semantic checking
+- **Built from:** [[syntax-directed-translation|Syntax-Directed Translation]] -- SDT classification by attribute type
+- **Related:** [[top-down-parsing|Top-Down Parsing]] -- L-attributed SDTs are naturally evaluated during top-down parsing
+- **Related:** [[bottom-up-parsing|Bottom-Up Parsing]] -- S-attributed SDTs are naturally evaluated during bottom-up parsing
+- **Related:** [[syntax-analysis|Syntax Analysis]] -- how attribute evaluation integrates with parsing strategies
+- **Related:** [[semantic-analysis|Semantic Analysis]] -- attributes carry type information needed for semantic checking
 
 ## Edge Cases & Gotchas
 
-- **Circular dependencies:** Attribute dependency graphs must be acyclic — circular definitions are invalid
-- **L-attributed ≠ all inherited:** Not all grammars with inherited attributes are L-attributed — the restriction on attribute dependencies is strict
+- **Circular dependencies:** Attribute dependency graphs must be acyclic -- circular definitions are invalid
+- **L-attributed ≠ all inherited:** Not all grammars with inherited attributes are L-attributed -- the restriction on attribute dependencies is strict
 - **Bottom-up evaluation of L-attributed:** Possible with explicit action placement in the grammar (annotation markers), but requires grammar transformation
-- **Real compiler usage:** Most real compilers use a mix — type information from SDTs combined with separate semantic analysis passes
+- **Real compiler usage:** Most real compilers use a mix -- type information from SDTs combined with separate semantic analysis passes

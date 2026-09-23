@@ -8,7 +8,7 @@ updated: 2026-04-30
 
 ## The Problem
 
-A raw disk is just a collection of sectors — the OS needs to organize it into usable storage: divide it into partitions, create file systems, and handle errors.
+A raw disk is just a collection of sectors -- the OS needs to organize it into usable storage: divide it into partitions, create file systems, and handle errors.
 
 ## Core Idea
 
@@ -42,6 +42,21 @@ digraph disk_mgmt {
 - Bad blocks detected at format time or during runtime
 - File system choice affects performance and features
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Disk_Management {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Disk Management" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[disk-structure|Disk Structure]], [[disk-scheduling|Disk Scheduling]]
@@ -51,6 +66,6 @@ digraph disk_mgmt {
 
 ## Edge Cases & Gotchas
 
-- Formatting erases all data — always backup first
+- Formatting erases all data -- always backup first
 - Some file systems (ZFS) do their own bad block management
 - Partition alignment matters for SSD performance (4K alignment)

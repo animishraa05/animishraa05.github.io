@@ -60,6 +60,21 @@ digraph controller {
 - Can operate asynchronously from CPU (using DMA)
 - Sits on the system bus, addressed like memory (memory-mapped I/O)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Device_Controller {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Device Controller" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[system-bus|System Bus]], [[io-system|I/O System]]
@@ -69,7 +84,7 @@ digraph controller {
 
 ## Edge Cases & Gotchas
 
-- Register addresses vary by device — driver must know the correct addresses
+- Register addresses vary by device -- driver must know the correct addresses
 - Local buffer size limits transfer size per operation
 - Status register must be read before another command is issued
 - Some controllers have buggy implementations causing race conditions

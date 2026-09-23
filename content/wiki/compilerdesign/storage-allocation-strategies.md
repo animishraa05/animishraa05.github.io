@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-A compiled program needs memory to store variables, data structures, and intermediate values. Different kinds of data have different lifetimes — global variables live for the entire program, local variables live only during a function call, and dynamically allocated data can outlive the creating function.
+A compiled program needs memory to store variables, data structures, and intermediate values. Different kinds of data have different lifetimes -- global variables live for the entire program, local variables live only during a function call, and dynamically allocated data can outlive the creating function.
 
 ## Core Idea
 
@@ -16,7 +16,7 @@ Three storage allocation strategies match data lifetimes: **static allocation** 
 
 ## How It Works
 
-**Static allocation:** Globals and static variables get fixed addresses determined at compile time, stored in the data segment. **Stack allocation:** Local variables and parameters are allocated on the call stack within activation records — they are automatically deallocated when the function returns. **Heap allocation:** Memory is explicitly allocated (malloc/new) and freed (free/delete) by the program, managed by the runtime's memory allocator.
+**Static allocation:** Globals and static variables get fixed addresses determined at compile time, stored in the data segment. **Stack allocation:** Local variables and parameters are allocated on the call stack within activation records -- they are automatically deallocated when the function returns. **Heap allocation:** Memory is explicitly allocated (malloc/new) and freed (free/delete) by the program, managed by the runtime's memory allocator.
 
 ## Visual Explanation
 
@@ -51,19 +51,34 @@ digraph storage_allocation {
 - **Stack:** LIFO, automatic allocation/deallocation, function-scoped
 - **Heap:** Flexible, dynamic sizes, explicit management, risk of leaks/fragmentation
 - **Compiler must decide:** For each variable, the compiler selects the appropriate strategy
-- **Recursive functions:** Require stack allocation (or heap) — static allocation cannot support recursion
+- **Recursive functions:** Require stack allocation (or heap) -- static allocation cannot support recursion
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Storage_Allocation_Strategies {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Storage Allocation S" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[runtime-environment|Runtime Environment]] — storage allocation is a key function of the runtime
-- **Built from:** [[static-and-dynamic-scoping|Static and Dynamic Scoping]] — scoping determines variable lifetimes, which guides allocation strategy
-- **Related:** [[code-generation|Code Generation]] — the code generator emits instructions for each allocation type
-- **Related:** [[wiki/compilerdesign/symbol-table-in-compiler|Symbol Table]] — the symbol table stores the storage class and allocation information
-- **Related:** [[linker-and-loader|Linker and Loader]] — loader sets up static data and stack pointer
+- **Built from:** [[runtime-environment|Runtime Environment]] -- storage allocation is a key function of the runtime
+- **Built from:** [[static-and-dynamic-scoping|Static and Dynamic Scoping]] -- scoping determines variable lifetimes, which guides allocation strategy
+- **Related:** [[code-generation|Code Generation]] -- the code generator emits instructions for each allocation type
+- **Related:** [[wiki/compilerdesign/symbol-table-in-compiler|Symbol Table]] -- the symbol table stores the storage class and allocation information
+- **Related:** [[linker-and-loader|Linker and Loader]] -- loader sets up static data and stack pointer
 
 ## Edge Cases & Gotchas
 
-- **Dangling pointers:** Heap-allocated memory freed while still referenced — the compiler can't always detect this
-- **Memory leaks:** Heap memory not freed — managed languages use GC to prevent this
+- **Dangling pointers:** Heap-allocated memory freed while still referenced -- the compiler can't always detect this
+- **Memory leaks:** Heap memory not freed -- managed languages use GC to prevent this
 - **Recursion requires stack:** Without dynamic allocation (stack or heap), recursive functions cannot work because each call needs separate local variables
 - **Fragmentation:** Heap allocation can fragment memory, causing allocation failures even when enough total free memory exists

@@ -7,7 +7,7 @@ updated: 2026-04-29
 ---
 
 ## The Problem
-Students need a concrete BMP (Bean-Managed Persistence) example that shows all pieces: remote interface, home interface, primary key class, bean class with JDBC code, deployment descriptor, and client code—without the fluff.
+Students need a concrete BMP (Bean-Managed Persistence) example that shows all pieces: remote interface, home interface, primary key class, bean class with JDBC code, deployment descriptor, and client code--without the fluff.
 
 ## Core Idea
 The Account Bean is a BMP entity bean representing a bank account. It demonstrates: `Account` remote interface, `AccountHome` home interface with finder methods, `AccountPK` primary key class, `AccountBean` with JDBC code for CRUD, `ejb-jar.xml` with `<persistence-type>Bean</persistence-type>`, and client code using JNDI lookups.
@@ -83,19 +83,34 @@ digraph G {
 - **Resource reference**: `<resource-ref>` configures JDBC DataSource in JNDI
 - **CMT**: Deployment descriptor sets `<transaction-type>Container</transaction-type>`
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Account_Bean_BMP_Example {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Account Bean Bmp Exa" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[bean-managed-persistence|Bean-Managed Persistence]] — this is a BMP example
-- Built from: [[primary-key-class|Primary Key Class]] — AccountPK is the PK class
-- Built from: [[home-interface|Home Interface]] — AccountHome with finder methods
-- Built from: [[remote-interface|Remote Interface]] — Account interface
-- Built from: [[jdbc|JDBC]] — BMP uses JDBC for all DB operations
-- Builds into: [[ejb-deployment-descriptor|EJB Deployment Descriptor]] — XML config shown
-- Related: [[finder-methods|Finder Methods]] — `findByPrimaryKey()` is a finder
-- Related: [[account-exception|AccountException]] — custom application exception
+- Built from: [[bean-managed-persistence|Bean-Managed Persistence]] -- this is a BMP example
+- Built from: [[primary-key-class|Primary Key Class]] -- AccountPK is the PK class
+- Built from: [[home-interface|Home Interface]] -- AccountHome with finder methods
+- Built from: [[remote-interface|Remote Interface]] -- Account interface
+- Built from: [[jdbc|JDBC]] -- BMP uses JDBC for all DB operations
+- Builds into: [[ejb-deployment-descriptor|EJB Deployment Descriptor]] -- XML config shown
+- Related: [[finder-methods|Finder Methods]] -- `findByPrimaryKey()` is a finder
+- Related: [[account-exception|AccountException]] -- custom application exception
 
 ## Edge Cases & Gotchas
 - **SQL exceptions**: Must handle `SQLException` in BMP JDBC code
 - **Withdraw validation**: Check balance before withdrawing (throw `AccountException`)
 - **Home methods**: Run on pooled bean, not associated with specific EJB object
 - **Resource reference**: Must configure `jdbc/bmp-account` in container-specific descriptor
-- **12-mark question**: Focus on interfaces, PK class, XML—not full JDBC code
+- **12-mark question**: Focus on interfaces, PK class, XML--not full JDBC code

@@ -7,7 +7,7 @@ updated: 2026-05-04
 ---
 
 ## The Problem
-Raw source data (CSV files, JSON APIs, transactional databases) arrives in various formats with quality issues—duplicates, inconsistent casing, missing values. Business analysts need clean, structured data in a warehouse schema to run analytical queries.
+Raw source data (CSV files, JSON APIs, transactional databases) arrives in various formats with quality issues--duplicates, inconsistent casing, missing values. Business analysts need clean, structured data in a warehouse schema to run analytical queries.
 
 ## Core Idea
 ETL (Extract, Transform, Load) is a three-phase data pipeline that reads raw data, applies transformations (cleaning, deduplication, feature engineering), and loads it into a data warehouse. It bridges the gap between source systems and analytical consumption.
@@ -32,20 +32,49 @@ ETL (Extract, Transform, Load) is a three-phase data pipeline that reads raw dat
 - **Post-load indexing**: Create performance indexes after data is loaded
 
 ## Key Properties
-- ** idempotent**: Same input produces same output—run repeatedly without side effects
+- ** idempotent**: Same input produces same output--run repeatedly without side effects
 - **Full REPLACE strategy**: DROP and recreate tables on each run (simple, suitable for small datasets)
 - **Logging**: `_log_quality()` function logs nulls and duplicates without blocking
 - **Reference date**: Fixed reference date (2024-12-31) for computing tenure/experience days
 
+
+
+## Visual Explanation
+
+```dot
+digraph ETL_Pipeline {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Etl Pipeline\nInput"]
+  B [label="Etl Pipeline\nCore Mechanism"]
+  C [label="Etl Pipeline\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_ETL_Pipeline {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Etl Pipeline" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Builds into: [[data-warehouse|Data Warehouse]] — ETL populates the warehouse
-- Builds into: [[wiki/comprehensive-report/dimension-table|Dimension Table]] — ETL creates dimension tables
-- Builds into: [[wiki/comprehensive-report/fact-table|Fact Table]] — ETL creates fact tables
-- Related: [[apache-airflow|Apache Airflow]] — orchestration runs ETL on schedule
-- Related: [[wiki/comprehensive-report/star-schema|Star Schema]] — ETL transforms data into star schema format
+- Builds into: [[data-warehouse|Data Warehouse]] -- ETL populates the warehouse
+- Builds into: [[wiki/comprehensive-report/dimension-table|Dimension Table]] -- ETL creates dimension tables
+- Builds into: [[wiki/comprehensive-report/fact-table|Fact Table]] -- ETL creates fact tables
+- Related: [[apache-airflow|Apache Airflow]] -- orchestration runs ETL on schedule
+- Related: [[wiki/comprehensive-report/star-schema|Star Schema]] -- ETL transforms data into star schema format
 
 ## Edge Cases & Gotchas
-- **Partial failure**: If load fails midway, inconsistent data remains—use transactions
+- **Partial failure**: If load fails midway, inconsistent data remains--use transactions
 - **Reference date staleness**: Hardcoded 2024-12-31 makes tenure values incorrect over time
-- **Full refresh limitation**: Doesn't scale to millions of rows—in production use incremental UPSERT
+- **Full refresh limitation**: Doesn't scale to millions of rows--in production use incremental UPSERT
 - **No watermark tracking**: Simple REPLACE loses ability to process only new records

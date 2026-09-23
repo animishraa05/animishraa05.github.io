@@ -12,7 +12,7 @@ Shift-reduce parsing needs a systematic way to decide when to shift and when to 
 
 ## Core Idea
 
-An LR(0) parser is the simplest LR parser variant. It uses **LR(0) items** — grammar productions with a dot marking the current position — to build a finite automaton. The parser uses the automaton's states and a parsing table derived from them to make shift/reduce decisions. It requires **zero lookahead** tokens for reduce decisions, making it the least powerful but conceptually simplest LR parser.
+An LR(0) parser is the simplest LR parser variant. It uses **LR(0) items** -- grammar productions with a dot marking the current position -- to build a finite automaton. The parser uses the automaton's states and a parsing table derived from them to make shift/reduce decisions. It requires **zero lookahead** tokens for reduce decisions, making it the least powerful but conceptually simplest LR parser.
 
 ## How It Works
 
@@ -52,9 +52,9 @@ graph semantic_lr0 {
 
   THIS -- PRE1 [label="built from" style=dashed]
   THIS -- PRE2 [label="built from" style=dashed]
-  THIS -- OUT1 [label="builds into — SLR adds FOLLOW"]
-  THIS -- CON1 [label="contrasts with — bottom-up vs top-down"]
-  THIS -- REL1 [label="related — progenitor of LR family"]
+  THIS -- OUT1 [label="builds into -- SLR adds FOLLOW"]
+  THIS -- CON1 [label="contrasts with -- bottom-up vs top-down"]
+  THIS -- REL1 [label="related -- progenitor of LR family"]
 }
 ```
 
@@ -63,20 +63,20 @@ graph semantic_lr0 {
 - **LR(0) items:** Productions with a dot position marking parsing progress
 - **Zero lookahead:** Reduce decisions are made without any lookahead information
 - **LR(0) automaton:** States are sets of LR(0) items; transitions on grammar symbols
-- **Least powerful LR:** Most grammars are not LR(0) — shift/reduce conflicts are common
+- **Least powerful LR:** Most grammars are not LR(0) -- shift/reduce conflicts are common
 - **Foundation:** All LR variants (SLR, LALR, CLR) build on the LR(0) item concept
 
 ## Connections
 
-- **Built from:** [[shift-reduce-parser|Shift Reduce Parser]] — LR(0) uses shift/reduce operations with formal state tracking
-- **Built from:** [[bottom-up-parsing|Bottom-Up Parsing]] — LR(0) is a bottom-up parsing method
-- **Builds into:** [[lr-parsers|LR Parsers]] — SLR, LALR, and CLR extend LR(0) with lookahead
-- **Contrasts with:** [[predictive-parser|Predictive Parser]] — LR(0) is bottom-up; predictive is top-down
-- **Related:** [[lr-parsers|SLR Parser]] — SLR adds FOLLOW-based lookahead to LR(0) for conflict resolution
+- **Built from:** [[shift-reduce-parser|Shift Reduce Parser]] -- LR(0) uses shift/reduce operations with formal state tracking
+- **Built from:** [[bottom-up-parsing|Bottom-Up Parsing]] -- LR(0) is a bottom-up parsing method
+- **Builds into:** [[lr-parsers|LR Parsers]] -- SLR, LALR, and CLR extend LR(0) with lookahead
+- **Contrasts with:** [[predictive-parser|Predictive Parser]] -- LR(0) is bottom-up; predictive is top-down
+- **Related:** [[lr-parsers|SLR Parser]] -- SLR adds FOLLOW-based lookahead to LR(0) for conflict resolution
 
 ## Edge Cases & Gotchas
 
-- **Shift/reduce conflicts:** Very common in LR(0) — most real grammars need at least SLR
-- **Reduce/reduce conflicts:** Two different productions can be reduced in the same state — ambiguous grammar or design issue
+- **Shift/reduce conflicts:** Very common in LR(0) -- most real grammars need at least SLR
+- **Reduce/reduce conflicts:** Two different productions can be reduced in the same state -- ambiguous grammar or design issue
 - **LR(0) ⊂ SLR ⊂ LALR ⊂ CLR:** Every LR(0) grammar is SLR, but most practical grammars need LALR or CLR
-- **State explosion:** Even LR(0) can produce many states for real grammars — though far fewer than CLR(1)
+- **State explosion:** Even LR(0) can produce many states for real grammars -- though far fewer than CLR(1)

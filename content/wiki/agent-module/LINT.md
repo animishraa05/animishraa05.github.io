@@ -23,7 +23,7 @@ Run lint after every 2–3 ingest sessions, or when the wiki feels inconsistent.
 
 Work in this order. Each pass builds on the previous one.
 
-### Pass 1 — Resolve Deferred Backlinks
+### Pass 1 -- Resolve Deferred Backlinks
 
 Search all pages for `` comments.
 
@@ -37,7 +37,7 @@ For each one:
 
 Log count: "Resolved N deferred backlinks"
 
-### Pass 2 — Broken Link Scan
+### Pass 2 -- Broken Link Scan
 
 Scan all `[[wikilinks]]` across all pages in `wiki/`.
 
@@ -73,7 +73,7 @@ _To be written._
 _To be written._
 ```
 
-### Pass 3 — Orphan Detection
+### Pass 3 -- Orphan Detection
 
 An orphan is a page with zero inbound links from other wiki pages.
 
@@ -81,9 +81,9 @@ For each orphan:
 
 - Check if it should link to something in the index
 - If it's a legitimate concept, add it to at least one related page's Connections section
-- If it appears to be a duplicate, note it in `log.md` for human review — do not delete
+- If it appears to be a duplicate, note it in `log.md` for human review -- do not delete
 
-### Pass 4 — Quality Checks
+### Pass 4 -- Quality Checks
 
 Scan every concept page for:
 
@@ -101,7 +101,7 @@ Scan every concept page for:
 
 Report findings grouped by type. Fix what you can automatically; flag the rest.
 
-### Pass 5 — Contradiction Detection
+### Pass 5 -- Contradiction Detection
 
 Compare pages that reference the same mechanism or make factual claims.
 
@@ -119,7 +119,7 @@ When a contradiction is found:
 
 Do NOT silently resolve contradictions by picking one version. Surface them.
 
-### Pass 6 — Thin Pages
+### Pass 6 -- Thin Pages
 
 A page is thin if any of the following apply:
 
@@ -139,7 +139,7 @@ For thin pages:
 Write a brief summary of what was fixed.
 
 ```markdown
-## [YYYY-MM-DD] — Lint: [scope]
+## [YYYY-MM-DD] -- Lint: [scope]
 
 Fixed broken links, updated connections, resolved issues. Details: [brief summary]
 ```
@@ -148,7 +148,7 @@ Fixed broken links, updated connections, resolved issues. Details: [brief summar
 
 ## What Lint Must NOT Do
 
-- Do not delete any page, even obvious duplicates — flag for human review
-- Do not resolve contradictions by choosing a version — mark `confidence: contested`
+- Do not delete any page, even obvious duplicates -- flag for human review
+- Do not resolve contradictions by choosing a version -- mark `confidence: contested`
 - Do not rewrite completed pages just to change style
 - Do not change the meaning of a page when fixing a link

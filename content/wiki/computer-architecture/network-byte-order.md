@@ -10,7 +10,7 @@ updated: 2026-04-30
 Different computer architectures use different byte orders (endianness). When two systems with different endianness communicate over a network, multi-byte values get corrupted unless there's a standard byte order.
 
 ## Core Idea
-Network Byte Order is Big Endian — the standard byte order mandated by TCP/IP protocols for all data transmitted over the network, ensuring interoperability between different architectures.
+Network Byte Order is Big Endian -- the standard byte order mandated by TCP/IP protocols for all data transmitted over the network, ensuring interoperability between different architectures.
 
 ## How It Works
 1. TCP/IP protocols (IP, TCP, UDP, etc.) define all multi-byte fields in Big Endian
@@ -40,14 +40,29 @@ digraph network_byte_order {
 - Requires conversion on Little Endian systems (Intel x86/AMD)
 - Part of socket API (Berkeley sockets standard)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Network_Byte_Order {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Network Byte Order" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[big-endian|Big Endian]], [[endianness|Endianness]]
-- **Contrasts with:** [[little-endian|Little Endian]] — x86 uses LE, network uses BE
+- **Contrasts with:** [[little-endian|Little Endian]] -- x86 uses LE, network uses BE
 - **Related:** [[tcp-ip-model|Tcp Ip Model]], [[socket|Socket]]
-- **Builds into:** [[data-serialization|Data Serialization]] — must handle network byte order
+- **Builds into:** [[data-serialization|Data Serialization]] -- must handle network byte order
 
 ## Edge Cases & Gotchas
 - Forgetting to convert causes silent data corruption (no error, wrong values)
 - Only matters for multi-byte data (don't convert single bytes!)
-- Some protocols (like HTTP) use text, not binary — no endianness issue
+- Some protocols (like HTTP) use text, not binary -- no endianness issue
 - Modern systems: always use `htons()`/`htonl()` even if same endianness (portable code)

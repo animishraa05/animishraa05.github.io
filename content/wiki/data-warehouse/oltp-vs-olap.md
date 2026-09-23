@@ -8,7 +8,7 @@ updated: 2026-05-04
 
 ## The Problem
 
-A single database cannot efficiently serve both transaction processing (fast, short, concurrent writes) and analytical processing (long, complex, aggregating reads). Running a 10-year revenue trend analysis on the same database that handles ATM transactions will either hang the analysis or slow down the ATM. The requirements are fundamentally opposite — one optimizes for throughput, the other for query depth.
+A single database cannot efficiently serve both transaction processing (fast, short, concurrent writes) and analytical processing (long, complex, aggregating reads). Running a 10-year revenue trend analysis on the same database that handles ATM transactions will either hang the analysis or slow down the ATM. The requirements are fundamentally opposite -- one optimizes for throughput, the other for query depth.
 
 ## Core Idea
 
@@ -109,16 +109,16 @@ graph semantic_oltp_vs_olap {
 
 ## Connections
 
-- **Built from:** [[data-warehouse-definition|Data Warehouse Definition]] — the fundamental reason warehouses exist is the OLTP/OLAP split
-- **Built from:** [[nonvolatile-dwh|Nonvolatile]] — OLAP's read-only nature stems from nonvolatility
-- **Builds into:** [[wiki/data-warehouse/star-schema|Star Schema]] — OLAP uses star/snowflake schemas
-- **Builds into:** [[three-tier-dwh-architecture|Three-Tier DWH Architecture]] — the architecture separates OLTP sources from OLAP processing
-- **Builds into:** [[olap-servers|OLAP Servers]] — OLAP servers implement the analytical processing paradigm
-- **Contrasts with:** [[subject-oriented-dwh|Subject-Oriented DWH]] — OLTP is application-oriented, OLAP is subject-oriented
+- **Built from:** [[data-warehouse-definition|Data Warehouse Definition]] -- the fundamental reason warehouses exist is the OLTP/OLAP split
+- **Built from:** [[nonvolatile-dwh|Nonvolatile]] -- OLAP's read-only nature stems from nonvolatility
+- **Builds into:** [[wiki/data-warehouse/star-schema|Star Schema]] -- OLAP uses star/snowflake schemas
+- **Builds into:** [[three-tier-dwh-architecture|Three-Tier DWH Architecture]] -- the architecture separates OLTP sources from OLAP processing
+- **Builds into:** [[olap-servers|OLAP Servers]] -- OLAP servers implement the analytical processing paradigm
+- **Contrasts with:** [[subject-oriented-dwh|Subject-Oriented DWH]] -- OLTP is application-oriented, OLAP is subject-oriented
 
 ## Edge Cases & Gotchas
 
 - **HTAP (Hybrid Transaction/Analytical Processing):** Newer systems like SAP HANA claim to handle both OLTP and OLAP in one database. These are exceptions that require specialized in-memory architectures.
-- **Don't run OLAP queries on OLTP:** This is the most common mistake — a single complex analytical query can lock tables and bring down a production system.
+- **Don't run OLAP queries on OLTP:** This is the most common mistake -- a single complex analytical query can lock tables and bring down a production system.
 - **Data staleness is expected:** OLAP data is never real-time; it reflects the last ETL cycle. This is by design, not a bug.
-- **The same data, different structure:** OLAP data originates from OLTP — it's the same underlying business data, just restructured for analysis.
+- **The same data, different structure:** OLAP data originates from OLTP -- it's the same underlying business data, just restructured for analysis.

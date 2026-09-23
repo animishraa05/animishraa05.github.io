@@ -12,7 +12,7 @@ Every programming language needs a well-defined entry point where execution begi
 
 ## Core Idea
 
-A Java program is organized around classes. The entry point is a special `main` method with a specific signature — `public static void main(String[] args)` — that the JVM calls to start execution. Every executable Java program must have exactly one such method.
+A Java program is organized around classes. The entry point is a special `main` method with a specific signature -- `public static void main(String[] args)` -- that the JVM calls to start execution. Every executable Java program must have exactly one such method.
 
 ## How It Works
 
@@ -69,14 +69,14 @@ graph semantic_java_structure {
 
 ## Connections
 
-- **Built from:** [[java-methods|Java Methods]] — the main method follows the same declaration rules
-- **Built from:** [[java-access-modifiers|Access Modifiers]] — main must be public for the JVM to access it
-- **Builds into:** [[java-methods|Java Methods]] — the main() method follows standard method declaration rules
-- **Related:** [[java-platform-independence|Java Platform Independence]] — the compile-once-run-anywhere model that this structure enables
+- **Built from:** [[java-methods|Java Methods]] -- the main method follows the same declaration rules
+- **Built from:** [[java-access-modifiers|Access Modifiers]] -- main must be public for the JVM to access it
+- **Builds into:** [[java-methods|Java Methods]] -- the main() method follows standard method declaration rules
+- **Related:** [[java-platform-independence|Java Platform Independence]] -- the compile-once-run-anywhere model that this structure enables
 
 ## Edge Cases & Gotchas
 
 - **Missing main()**: `java` command throws `NoClassDefFoundError: no main method`
 - **Wrong signature**: Changing any modifier breaks JVM lookup
 - **Args can be null in some environments**, though normally an empty array
-- **Static context**: main is static — no access to instance fields without creating objects
+- **Static context**: main is static -- no access to instance fields without creating objects

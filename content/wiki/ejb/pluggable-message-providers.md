@@ -45,19 +45,34 @@ digraph G {
 ## Key Properties
 - EJB 2.0: MDB only supported JMS messages
 - EJB 2.1+: Any message type via JCA resource adapters
-- Resource adapters are standard J2EE components — pluggable into any compliant server
+- Resource adapters are standard J2EE components -- pluggable into any compliant server
 - MDB uses different listener interfaces for different message types
 - Decouples MDB from specific messaging protocols
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Pluggable_Message_Providers {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Pluggable Message Pr" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[message-driven-bean|MDB]] — pluggable providers extend what MDB can consume
-- Built from: [[message-oriented-middleware|MOM]] — JCA can integrate non-JMS MOM systems
-- Related: [[jms|JMS]] — JMS is one (default) type of message provider for MDBs
-- Related: [[ejb-container|EJB Container]] — container manages MDB and resource adapter interaction
-- Contrasts with: [[session-bean|Session Bean]] — session beans don't use message listeners
+- Built from: [[message-driven-bean|MDB]] -- pluggable providers extend what MDB can consume
+- Built from: [[message-oriented-middleware|MOM]] -- JCA can integrate non-JMS MOM systems
+- Related: [[jms|JMS]] -- JMS is one (default) type of message provider for MDBs
+- Related: [[ejb-container|EJB Container]] -- container manages MDB and resource adapter interaction
+- Contrasts with: [[session-bean|Session Bean]] -- session beans don't use message listeners
 
 ## Edge Cases & Gotchas
 - EJB 2.0 MDBs cannot consume non-JMS messages (must upgrade to 2.1+)
 - Writing custom resource adapters requires deep knowledge of JCA 1.5 specification
-- JAX-RPC only supports SOAP 1.1 and is not asynchronous — JCA is the solution for async non-SOAP
+- JAX-RPC only supports SOAP 1.1 and is not asynchronous -- JCA is the solution for async non-SOAP
 - Each message type needs its own listener interface implemented by the MDB

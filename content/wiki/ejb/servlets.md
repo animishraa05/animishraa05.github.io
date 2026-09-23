@@ -52,15 +52,30 @@ digraph G {
 - **Compiled to**: JSP scripts compile into servlets
 - **J2EE standard**: Part of J2EE platform
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Servlets {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Servlets" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[java-platforms|Java Platforms]] — Servlets are part of J2EE
-- Related: [[jsp|JSP]] — JSP compiles to servlets
-- Builds into: [[ejb-container|EJB Container]] — servlets can call EJBs
-- Related: [[jsp|JSP]] — JSP is alternative presentation technology
-- Contrasts with: [[session-bean|Session Bean]] — servlets handle web, EJBs handle business logic
+- Built from: [[java-platforms|Java Platforms]] -- Servlets are part of J2EE
+- Related: [[jsp|JSP]] -- JSP compiles to servlets
+- Builds into: [[ejb-container|EJB Container]] -- servlets can call EJBs
+- Related: [[jsp|JSP]] -- JSP is alternative presentation technology
+- Contrasts with: [[session-bean|Session Bean]] -- servlets handle web, EJBs handle business logic
 
 ## Edge Cases & Gotchas
-- **Thread safety**: Servlets are shared across requests, must be thread-safe — avoid instance variables
+- **Thread safety**: Servlets are shared across requests, must be thread-safe -- avoid instance variables
 - **No transactions**: Use EJB if you need declarative transactions
 - **Session management**: Servlets can use HTTP sessions but EJBs shouldn't
 - **Filter ordering**: Filter execution order follows web.xml declaration order

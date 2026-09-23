@@ -17,11 +17,11 @@ Spring Security Authentication verifies user identity via configurable `Authenti
 ## How It Works
 
 1. **Authentication request**: User submits credentials (username/password, token, certificate)
-2. **AuthenticationProvider chain**: Each provider checks if it can handle the authentication type — first match wins
+2. **AuthenticationProvider chain**: Each provider checks if it can handle the authentication type -- first match wins
 3. **UserDetailsService**: Loads user from database: `loadUserByUsername(String username) → UserDetails`
-4. **Password verification**: `PasswordEncoder.matches(rawPassword, encodedPassword)` — should be BCrypt, not plain text
+4. **Password verification**: `PasswordEncoder.matches(rawPassword, encodedPassword)` -- should be BCrypt, not plain text
 5. **GrantedAuthority**: User roles returned as `GrantedAuthority` objects (prefix `ROLE_` for role-checking)
-6. **SecurityContextHolder**: `SecurityContextHolder.getContext().setAuthentication(auth)` — stored in ThreadLocal
+6. **SecurityContextHolder**: `SecurityContextHolder.getContext().setAuthentication(auth)` -- stored in ThreadLocal
 7. **Role-based access**: `@PreAuthorize("hasRole('ADMIN')")` or `hasAuthority('WRITE_PRIVILEGE')`
 
 ## Visual Explanation
@@ -54,25 +54,40 @@ digraph auth_flow {
 
 ## Key Properties
 
-- **Multiple providers**: DAO, LDAP, OAuth2, remember-me, JWT — configured as a provider chain
+- **Multiple providers**: DAO, LDAP, OAuth2, remember-me, JWT -- configured as a provider chain
 - **UserDetailsService**: Core interface for loading users from any data source (JDBC, JPA, Mongo)
 - **PasswordEncoder**: Never store plain-text passwords; BCrypt, SCrypt, Argon2 recommended
-- **Role hierarchy**: `ROLE_ADMIN > ROLE_USER` — admin inherits user permissions
+- **Role hierarchy**: `ROLE_ADMIN > ROLE_USER` -- admin inherits user permissions
 - **Remember-me**: Persistent token-based authentication across browser sessions
 - **Pre-authentication**: For environments where authentication happens upstream (e.g., SSO, X.509 certs)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Spring_Security_Authentication {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Spring Security Auth" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[spring-security|Spring Security]] — Authentication is a core component of Spring Security
-- **Related:** [[spring-security-csrf-jwt|Spring Security CSRF and JWT]] — JWT is an alternative authentication mechanism
-- **Related:** [[jaas|JAAS]] — JAAS is Java's standard auth; Spring Security abstracts and improves it
-- **Contrasts with:** [[session-authentication|Session Authentication]] — Session auth stores state on server; JWT is self-contained
-- **Builds into:** [[jwt-authentication|JWT Authentication]] — JWT can be used as a Spring Security authentication provider
+- **Built from:** [[spring-security|Spring Security]] -- Authentication is a core component of Spring Security
+- **Related:** [[spring-security-csrf-jwt|Spring Security CSRF and JWT]] -- JWT is an alternative authentication mechanism
+- **Related:** [[jaas|JAAS]] -- JAAS is Java's standard auth; Spring Security abstracts and improves it
+- **Contrasts with:** [[session-authentication|Session Authentication]] -- Session auth stores state on server; JWT is self-contained
+- **Builds into:** [[jwt-authentication|JWT Authentication]] -- JWT can be used as a Spring Security authentication provider
 
 ## Edge Cases & Gotchas
 
 - **PasswordEncoder upgrade**: Migrating from MD5/SHA to BCrypt requires supporting both encoders simultaneously during transition
 - **UserDetailsService caching**: Without caching, every request to check auth triggers a database load; use caching layer
 - **ROLE_ prefix**: `hasRole('ADMIN')` automatically checks for `ROLE_ADMIN`; `hasAuthority('ADMIN')` checks for exact string
-- **ThreadLocal cleanup**: SecurityContextHolder is ThreadLocal — in async processing, the context doesn't propagate automatically
+- **ThreadLocal cleanup**: SecurityContextHolder is ThreadLocal -- in async processing, the context doesn't propagate automatically
 - **Blank passwords**: `PasswordEncoder` should throw exception for blank/null passwords, not silently accept

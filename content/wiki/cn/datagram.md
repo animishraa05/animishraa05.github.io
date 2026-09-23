@@ -43,13 +43,28 @@ digraph G {
 - Can arrive out of order or not at all
 - Used by UDP and IP (connectionless protocols)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Datagram {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Datagram" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[connectionless-service|Connectionless Service]] — datagrams are the unit of transfer
-- Built from: [[udp|UDP]] — uses datagrams
-- Built from: [[ip-protocol|IP Protocol]] — IP packets are datagrams
-- Contrasts with: [[virtual-circuit|Virtual Circuit]] — independent vs stateful path
+- Built from: [[connectionless-service|Connectionless Service]] -- datagrams are the unit of transfer
+- Built from: [[udp|UDP]] -- uses datagrams
+- Built from: [[ip-protocol|IP Protocol]] -- IP packets are datagrams
+- Contrasts with: [[virtual-circuit|Virtual Circuit]] -- independent vs stateful path
 
 ## Edge Cases & Gotchas
-- No delivery guarantees — applications must handle loss
+- No delivery guarantees -- applications must handle loss
 - Datagram size limits (UDP: 65,507 bytes minus IP header; practical limit often 1,500 bytes due to MTU)
 - Fragmentation at IP layer if datagram exceeds MTU

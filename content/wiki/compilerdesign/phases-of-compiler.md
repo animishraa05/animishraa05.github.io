@@ -49,18 +49,33 @@ digraph compiler_phases {
 - **Symbol table:** All phases interact with a shared symbol table
 - **Error handling:** Each phase can detect and report errors
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Phases_of_a_Compiler {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Phases Of A Compiler" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[lexical-analysis|Lexical Analysis]] — phase 1, scans source code into tokens
-- **Built from:** [[syntax-analysis|Syntax Analysis]] — phase 2, builds parse tree from tokens
-- **Built from:** [[semantic-analysis|Semantic Analysis]] — phase 3, enforces type rules and scoping
-- **Builds into:** [[compiler-pass|Compiler Pass]] — phases can be grouped into passes (single or multi-pass)
-- **Related:** [[intermediate-code-generation|Intermediate Code Generation]] — phase 4, generates machine-independent IR
-- **Related:** [[code-optimization|Code Optimization]] — phase 5, improves IR quality
-- **Related:** [[code-generation|Code Generation]] — phase 6, produces target code
+- **Built from:** [[lexical-analysis|Lexical Analysis]] -- phase 1, scans source code into tokens
+- **Built from:** [[syntax-analysis|Syntax Analysis]] -- phase 2, builds parse tree from tokens
+- **Built from:** [[semantic-analysis|Semantic Analysis]] -- phase 3, enforces type rules and scoping
+- **Builds into:** [[compiler-pass|Compiler Pass]] -- phases can be grouped into passes (single or multi-pass)
+- **Related:** [[intermediate-code-generation|Intermediate Code Generation]] -- phase 4, generates machine-independent IR
+- **Related:** [[code-optimization|Code Optimization]] -- phase 5, improves IR quality
+- **Related:** [[code-generation|Code Generation]] -- phase 6, produces target code
 
 ## Edge Cases & Gotchas
 
 - **Phases vs Passes:** A single pass can combine multiple phases (e.g., lexical and syntax analysis often interleave)
 - **Phase ordering:** Code optimization can span multiple passes or even be optional for simple compilers
-- **Symbol table access:** All phases read/write the symbol table — it is not a phase but a supporting data structure used throughout
+- **Symbol table access:** All phases read/write the symbol table -- it is not a phase but a supporting data structure used throughout

@@ -43,12 +43,27 @@ digraph G {
 - Uses binary exponential backoff to reduce retry collisions
 - Standard for traditional wired Ethernet (10/100 Mbps)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_CSMA_CD {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Csma/Cd" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[csma|CSMA]] — adds collision detection to basic CSMA
-- Built from: [[jam-signal|Jam Signal]] — notifies others of collision
-- Built from: [[binary-exponential-backoff|Binary Exponential Backoff]] — retry algorithm
-- Related: [[collision-detection|Collision Detection]] — the key addition over CSMA
-- Contrasts with: [[csma-ca|CSMA/CA]] — detection vs avoidance
+- Built from: [[csma|CSMA]] -- adds collision detection to basic CSMA
+- Built from: [[jam-signal|Jam Signal]] -- notifies others of collision
+- Built from: [[binary-exponential-backoff|Binary Exponential Backoff]] -- retry algorithm
+- Related: [[collision-detection|Collision Detection]] -- the key addition over CSMA
+- Contrasts with: [[csma-ca|CSMA/CA]] -- detection vs avoidance
 
 ## Edge Cases & Gotchas
 - Only works on wired networks (can't detect collision in wireless due to hidden terminal)

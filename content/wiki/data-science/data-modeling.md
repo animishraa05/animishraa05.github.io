@@ -7,7 +7,7 @@ updated: 2026-04-30
 ---
 
 ## The Problem
-Organizations need to make predictions, classify objects, or discover patterns — tasks that require mathematical models trained on data.
+Organizations need to make predictions, classify objects, or discover patterns -- tasks that require mathematical models trained on data.
 
 ## Core Idea
 The process of selecting, training, and evaluating machine learning algorithms to make predictions or discover patterns in data.
@@ -34,11 +34,26 @@ digraph G {
 - Non-convex: many models have multiple local optima during training
 - Stochastic: same model with different random seeds can produce different results
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Data_Modeling {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Data Modeling" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[feature-engineering|Feature Engineering]] — models need engineered features
-- Builds into: [[supervised-learning|Supervised Learning]] — modeling approach for labeled data
-- Builds into: [[unsupervised-learning|Unsupervised Learning]] — modeling approach for unlabeled data
-- Related: [[data-science|Data Science]] — modeling is the core of data science
+- Built from: [[feature-engineering|Feature Engineering]] -- models need engineered features
+- Builds into: [[supervised-learning|Supervised Learning]] -- modeling approach for labeled data
+- Builds into: [[unsupervised-learning|Unsupervised Learning]] -- modeling approach for unlabeled data
+- Related: [[data-science|Data Science]] -- modeling is the core of data science
 
 ## Edge Cases & Gotchas
 - Overfitting: model memorizes training data, fails on new data

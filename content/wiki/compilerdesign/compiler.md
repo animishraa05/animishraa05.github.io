@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-High-level programming languages (C, C++, Java, Python) are human-readable but machines only understand binary machine code. Without a compiler, every program would need to be written in assembly or machine code — a tedious, error-prone, and non-portable process.
+High-level programming languages (C, C++, Java, Python) are human-readable but machines only understand binary machine code. Without a compiler, every program would need to be written in assembly or machine code -- a tedious, error-prone, and non-portable process.
 
 ## Core Idea
 
@@ -74,15 +74,15 @@ graph semantic_compiler {
 
 ## Connections
 
-- **Built from:** [[phases-of-compiler|Phases of a Compiler]] — the compiler's internal pipeline is organized into distinct phases
-- **Built from:** [[lexical-analysis|Lexical Analysis]] — first phase that breaks source into tokens
-- **Built from:** [[syntax-analysis|Syntax Analysis]] — verifies grammatical structure during compilation
-- **Contrasts with:** [[compiler-vs-interpreter|Compiler vs Interpreter]] — compiler translates then stops; interpreter executes as it translates
-- **Related:** [[wiki/compilerdesign/compiler-construction-tools|Compiler Construction Tools]] — tools like Lex and Yacc automate parts of compiler creation
-- **Related:** [[programming-language-generations|Programming Language Generations]] — compilers are essential for higher-generation languages
+- **Built from:** [[phases-of-compiler|Phases of a Compiler]] -- the compiler's internal pipeline is organized into distinct phases
+- **Built from:** [[lexical-analysis|Lexical Analysis]] -- first phase that breaks source into tokens
+- **Built from:** [[syntax-analysis|Syntax Analysis]] -- verifies grammatical structure during compilation
+- **Contrasts with:** [[compiler-vs-interpreter|Compiler vs Interpreter]] -- compiler translates then stops; interpreter executes as it translates
+- **Related:** [[wiki/compilerdesign/compiler-construction-tools|Compiler Construction Tools]] -- tools like Lex and Yacc automate parts of compiler creation
+- **Related:** [[programming-language-generations|Programming Language Generations]] -- compilers are essential for higher-generation languages
 
 ## Edge Cases & Gotchas
 
 - **Compiler vs Cross-Compiler:** A compiler that runs on one platform but generates code for a different platform is a cross-compiler
-- **Just-In-Time Compilation:** Modern JVMs use JIT compilation — bytecode is compiled to native code at runtime, blurring the line between compiler and interpreter
-- **Incremental Compilation:** Not all compilers recompile everything — many (like javac) support incremental compilation for faster development cycles
+- **Just-In-Time Compilation:** Modern JVMs use JIT compilation -- bytecode is compiled to native code at runtime, blurring the line between compiler and interpreter
+- **Incremental Compilation:** Not all compilers recompile everything -- many (like javac) support incremental compilation for faster development cycles

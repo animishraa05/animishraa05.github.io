@@ -8,11 +8,11 @@ updated: 2026-05-04
 
 ## The Problem
 
-Numerical measures in a fact table (e.g., "$5,000 sold") are meaningless without context — $5,000 of what, when, where, and to whom? Without descriptive attributes that provide this context, analytical queries cannot filter, group, or label results in ways that business users understand.
+Numerical measures in a fact table (e.g., "$5,000 sold") are meaningless without context -- $5,000 of what, when, where, and to whom? Without descriptive attributes that provide this context, analytical queries cannot filter, group, or label results in ways that business users understand.
 
 ## Core Idea
 
-A **dimension table** contains descriptive attributes about a business entity that provide context for the numerical measures in the fact table. Each dimension represents an axis of analysis — Time (when), Item (what), Location (where), Customer (who). In a star schema, dimension tables are denormalized (all attributes in one table); in a snowflake schema, they may be normalized across multiple tables.
+A **dimension table** contains descriptive attributes about a business entity that provide context for the numerical measures in the fact table. Each dimension represents an axis of analysis -- Time (when), Item (what), Location (where), Customer (who). In a star schema, dimension tables are denormalized (all attributes in one table); in a snowflake schema, they may be normalized across multiple tables.
 
 ## How It Works
 
@@ -96,12 +96,12 @@ graph semantic_dimension_table {
 
 ## Connections
 
-- **Built from:** [[star-schema|Star Schema]] — dimension tables surround the fact table
-- **Related:** [[fact-table|Fact Table]] — dimension tables provide context for facts
-- **Builds into:** [[snowflake-schema|Snowflake Schema]] — dimensions may be normalized
-- **Built from:** [[multidimensional-data-model|Multidimensional Data Model]] — dimensions are the axes of the cube
-- **Builds into:** [[olap-operations|OLAP Operations]] — dimensions are the basis for roll-up, drill-down, slice, and dice
-- **Related:** [[data-mart-types|Data Mart Types]] — data marts contain their own dimension tables
+- **Built from:** [[star-schema|Star Schema]] -- dimension tables surround the fact table
+- **Related:** [[fact-table|Fact Table]] -- dimension tables provide context for facts
+- **Builds into:** [[snowflake-schema|Snowflake Schema]] -- dimensions may be normalized
+- **Built from:** [[multidimensional-data-model|Multidimensional Data Model]] -- dimensions are the axes of the cube
+- **Builds into:** [[olap-operations|OLAP Operations]] -- dimensions are the basis for roll-up, drill-down, slice, and dice
+- **Related:** [[data-mart-types|Data Mart Types]] -- data marts contain their own dimension tables
 
 ## Edge Cases & Gotchas
 

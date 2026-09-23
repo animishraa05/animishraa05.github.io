@@ -17,11 +17,11 @@ Spring Data JPA provides `Pageable` (pagination parameters) and `Sort` (ordering
 ## How It Works
 
 1. **Pageable**: Interface with `pageNumber` (0-indexed), `pageSize`, and optional `Sort`
-2. **PageRequest**: Concrete implementation: `PageRequest.of(0, 20, Sort.by("lastName"))` — page 1, 20 items, sorted by lastName
-3. **Repository acceptance**: `Page<User> findAll(Pageable pageable)` — Spring Data adds LIMIT, OFFSET, and COUNT query
+2. **PageRequest**: Concrete implementation: `PageRequest.of(0, 20, Sort.by("lastName"))` -- page 1, 20 items, sorted by lastName
+3. **Repository acceptance**: `Page<User> findAll(Pageable pageable)` -- Spring Data adds LIMIT, OFFSET, and COUNT query
 4. **Page<T> response**: `getContent()` (list of entities), `getTotalElements()`, `getTotalPages()`, `getNumber()`, `hasNext()`
-5. **Sort**: `Sort.by("lastName").descending().and(Sort.by("firstName"))` — sort by multiple properties
-6. **Slice<T>**: Like Page but without total count — more efficient for infinite scroll (no COUNT query)
+5. **Sort**: `Sort.by("lastName").descending().and(Sort.by("firstName"))` -- sort by multiple properties
+6. **Slice<T>**: Like Page but without total count -- more efficient for infinite scroll (no COUNT query)
 
 ## Visual Explanation
 
@@ -51,24 +51,39 @@ digraph pagination {
 
 ## Key Properties
 
-- **Pageable**: Standard parameter for pagination — page number, page size, sort
+- **Pageable**: Standard parameter for pagination -- page number, page size, sort
 - **Page<T>**: Full result with content + metadata (total elements, total pages, etc.)
 - **Slice<T>**: Lightweight result with just content + navigation info (hasNext, hasPrevious)
 - **Sort**: Multi-property sorting with direction (ASC/DESC) and null handling
 - **Default values**: `@PageableDefault(size=20, sort="id", direction=ASC)` for controller parameters
-- **Unpaged**: `Pageable.unpaged()` — return all results without pagination
+- **Unpaged**: `Pageable.unpaged()` -- return all results without pagination
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_JPA_Pagination_and_Sorting {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Jpa Pagination And S" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[spring-data-jpa|Spring Data JPA]] — Pagination and sorting are built into Spring Data's repository abstraction
-- **Built from:** [[jpa-repository|JpaRepository]] — PagingAndSortingRepository provides the findAll(Pageable) method
-- **Related:** [[jpa-query-methods|JPA Query Methods]] — Derived query methods can accept Pageable: `findByLastName(String, Pageable)`
-- **Related:** [[java-arraylist|Java ArrayList]] — Page's getContent() returns a List, typically backed by ArrayList
+- **Built from:** [[spring-data-jpa|Spring Data JPA]] -- Pagination and sorting are built into Spring Data's repository abstraction
+- **Built from:** [[jpa-repository|JpaRepository]] -- PagingAndSortingRepository provides the findAll(Pageable) method
+- **Related:** [[jpa-query-methods|JPA Query Methods]] -- Derived query methods can accept Pageable: `findByLastName(String, Pageable)`
+- **Related:** [[java-arraylist|Java ArrayList]] -- Page's getContent() returns a List, typically backed by ArrayList
 
 ## Edge Cases & Gotchas
 
-- **OFFSET performance**: Large offsets (`page=100`, `size=20` → OFFSET 2000) are slow — use keyset pagination for deep pages
-- **COUNT query cost**: COUNT(*) on large tables can be expensive — consider Slice (no COUNT) for infinite scroll
-- **Sort injection**: `Sort.by("lastName")` — property names are validated, not directly interpolated; but still validate user input for sort fields
+- **OFFSET performance**: Large offsets (`page=100`, `size=20` → OFFSET 2000) are slow -- use keyset pagination for deep pages
+- **COUNT query cost**: COUNT(*) on large tables can be expensive -- consider Slice (no COUNT) for infinite scroll
+- **Sort injection**: `Sort.by("lastName")` -- property names are validated, not directly interpolated; but still validate user input for sort fields
 - **Sort direction**: Default is ASC; specify `.descending()` for descending
-- **0-indexed pages**: `page=0` is the first page — this often confuses frontend developers who expect 1-indexed pages
+- **0-indexed pages**: `page=0` is the first page -- this often confuses frontend developers who expect 1-indexed pages

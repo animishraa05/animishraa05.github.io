@@ -17,7 +17,7 @@ Spring ORM provides a consistent integration layer between Spring and ORM framew
 ## How It Works
 
 1. **LocalSessionFactoryBean**: Spring creates a Hibernate SessionFactory as a Spring bean, configuring it via Spring's property management
-2. **HibernateTransactionManager**: Connects Hibernate's transaction API to Spring's platform transaction management — enables `@Transactional` on Hibernate operations
+2. **HibernateTransactionManager**: Connects Hibernate's transaction API to Spring's platform transaction management -- enables `@Transactional` on Hibernate operations
 3. **Session management**: Spring opens and closes Hibernate Sessions automatically per operation (OpenSessionInView pattern)
 4. **Exception translation**: `@Repository` + `PersistenceExceptionTranslationPostProcessor` translates Hibernate exceptions to Spring's `DataAccessException`
 5. **Automatic table creation**: Hibernate's `hibernate.hbm2ddl.auto` property (create, update, validate) automatically generates DDL from entity mappings
@@ -52,23 +52,38 @@ digraph spring_orm {
 ## Key Properties
 
 - **Centralized config**: Hibernate properties (dialect, DDL auto, connection pool) configured in Spring, not hibernate.cfg.xml
-- **Automatic session**: No session.open()/close() needed — Spring manages the lifecycle
+- **Automatic session**: No session.open()/close() needed -- Spring manages the lifecycle
 - **Transaction integration**: Standard `@Transactional` works with Hibernate operations
 - **Exception translation**: Vendor-specific exceptions → Spring's unified DataAccessException hierarchy
 - **Automatic DDL**: `hibernate.hbm2ddl.auto` generates database tables from entity classes
 - **Lazy loading support**: OpenSessionInViewFilter keeps session open during view rendering (controversial)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Spring_ORM {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Spring Orm" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[spring-framework|Spring Framework]] — Spring ORM is a Spring module for ORM integration
-- **Built from:** [[hibernate-orm-framework|Hibernate ORM Framework]] — Spring ORM integrates Hibernate as the ORM provider
-- **Builds into:** [[spring-data-jpa|Spring Data JPA]] — Spring Data JPA uses Spring ORM under the hood for Hibernate integration
-- **Related:** [[spring-jdbc-template|Spring JDBC Template]] — Both Spring ORM and JDBC Template are data access approaches in Spring
-- **Contrasts with:** [[container-managed-persistence|Container-Managed Persistence]] — CMP is EJB's ORM; Spring ORM is more flexible and standalone
+- **Built from:** [[spring-framework|Spring Framework]] -- Spring ORM is a Spring module for ORM integration
+- **Built from:** [[hibernate-orm-framework|Hibernate ORM Framework]] -- Spring ORM integrates Hibernate as the ORM provider
+- **Builds into:** [[spring-data-jpa|Spring Data JPA]] -- Spring Data JPA uses Spring ORM under the hood for Hibernate integration
+- **Related:** [[spring-jdbc-template|Spring JDBC Template]] -- Both Spring ORM and JDBC Template are data access approaches in Spring
+- **Contrasts with:** [[container-managed-persistence|Container-Managed Persistence]] -- CMP is EJB's ORM; Spring ORM is more flexible and standalone
 
 ## Edge Cases & Gotchas
 
 - **OpenSessionInView anti-pattern**: Keeping the session open during view rendering encourages lazy loading outside transactional boundaries, leading to N+1 queries hidden in views
 - **SessionFactory per data source**: Multiple databases require separate SessionFactory beans
 - **Hibernate version conflicts**: Spring Boot manages Hibernate version; manual dependency management can cause incompatibilities
-- **DDL auto in production**: Never use `hibernate.hbm2ddl.auto=create` or `update` in production — use `validate` or Flyway/Liquibase
+- **DDL auto in production**: Never use `hibernate.hbm2ddl.auto=create` or `update` in production -- use `validate` or Flyway/Liquibase

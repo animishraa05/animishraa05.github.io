@@ -35,28 +35,57 @@ In web development, front end includes HTML, CSS, JavaScript, frameworks (React,
 - Requires understanding of UI/UX design principles
 - Must handle multiple devices and screen sizes
 
+
+
+## Visual Explanation
+
+```dot
+digraph front_end {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Front End\nInput"]
+  B [label="Front End\nCore Mechanism"]
+  C [label="Front End\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_front_end {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Front End" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 **Built from:**
 
-- [[client|Client]] — The front end typically runs on the client in client-server model
-- [[server|Server]] — Front end typically connects to servers for back end services
-- [[presentation-layer|Presentation Layer]] — Front end implements the presentation layer concept
-- [[user-interface|User Interface]] — Front end implements UI components
+- [[client|Client]] -- The front end typically runs on the client in client-server model
+- [[server|Server]] -- Front end typically connects to servers for back end services
+- [[presentation-layer|Presentation Layer]] -- Front end implements the presentation layer concept
+- [[user-interface|User Interface]] -- Front end implements UI components
 
 **Builds into:**
 
-- [[full-stack|Full Stack]] — Front end combined with back end forms full stack
-- [[api|API]] — Front end consumes APIs to communicate with back end
+- [[full-stack|Full Stack]] -- Front end combined with back end forms full stack
+- [[api|API]] -- Front end consumes APIs to communicate with back end
 
 **Related:**
 
-- [[back-end|Back End]] — Complements front end as the server-side counterpart
-- [[single-page-application|Single-Page Application]] — Modern front end architecture pattern
+- [[back-end|Back End]] -- Complements front end as the server-side counterpart
+- [[single-page-application|Single-Page Application]] -- Modern front end architecture pattern
 
 ## Edge Cases & Gotchas
 
 - Front end cannot securely store secrets; sensitive operations must go to back end
-- Client-side validation can be bypassed—always validate on back end
+- Client-side validation can be bypassed--always validate on back end
 - Browser differences require cross-browser testing and workarounds
 - Performance optimization critical ( Largest Contentful Paint, Time to Interactive )

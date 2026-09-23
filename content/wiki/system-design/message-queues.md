@@ -12,7 +12,7 @@ Synchronous execution of expensive operations blocks the user and degrades respo
 
 ## Core Idea
 
-Message queues receive, hold, and deliver messages asynchronously — a publisher sends a job, a worker picks it up later, and the user is not blocked. This decouples producers from consumers and provides a buffer during traffic spikes.
+Message queues receive, hold, and deliver messages asynchronously -- a publisher sends a job, a worker picks it up later, and the user is not blocked. This decouples producers from consumers and provides a buffer during traffic spikes.
 
 ## How It Works
 
@@ -46,18 +46,33 @@ digraph MessageQueues {
 
 ## Key Properties
 
-- Asynchronous processing — producers never wait for consumers
+- Asynchronous processing -- producers never wait for consumers
 - Decouples producers and consumers (they don't need to know about each other)
 - Buffers messages during traffic spikes, preventing producer overload
 - Worker-based processing enables horizontal scaling of consumers
 - Different reliability guarantees (at-most-once, at-least-once, exactly-once)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Message_Queues {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Message Queues" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- Related: [[task-queues|Task Queues]] — message queues focus on message delivery; task queues focus on scheduling and executing compute work
-- Related: [[back-pressure|Back Pressure]] — queue growth beyond capacity triggers back pressure mechanisms
-- Related: [[microservices-architecture|Microservices Architecture]] — queues enable loose coupling between services
-- Related: [[write-behind-cache|Write-Behind Cache]] — both use async processing patterns to decouple operations
+- Related: [[task-queues|Task Queues]] -- message queues focus on message delivery; task queues focus on scheduling and executing compute work
+- Related: [[back-pressure|Back Pressure]] -- queue growth beyond capacity triggers back pressure mechanisms
+- Related: [[microservices-architecture|Microservices Architecture]] -- queues enable loose coupling between services
+- Related: [[write-behind-cache|Write-Behind Cache]] -- both use async processing patterns to decouple operations
 
 ## Edge Cases & Gotchas
 

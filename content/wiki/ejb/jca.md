@@ -51,11 +51,26 @@ digraph G {
 - **Standard contracts**: Connection, transaction, security contracts defined by JCA spec
 - **Legacy integration**: Bridges modern J2EE with legacy systems
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_J2EE_Connector_Architecture {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="J2Ee Connector Archi" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[ejb-container|EJB Container]] — container manages JCA adapters
-- Related: [[java-platforms|Java Platforms]] — JCA is part of J2EE
-- Builds into: [[message-driven-bean|Message-Driven Bean]] — JCA 1.5+ supports MDB for non-JMS messages
-- Related: [[middleware|Middleware]] — JCA is middleware for legacy integration
+- Built from: [[ejb-container|EJB Container]] -- container manages JCA adapters
+- Related: [[java-platforms|Java Platforms]] -- JCA is part of J2EE
+- Builds into: [[message-driven-bean|Message-Driven Bean]] -- JCA 1.5+ supports MDB for non-JMS messages
+- Related: [[middleware|Middleware]] -- JCA is middleware for legacy integration
 
 ## Edge Cases & Gotchas
 - **Adapter quality**: Poorly written adapters can cause issues

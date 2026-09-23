@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Creating a new thread for every task is expensive and unscalable — thread creation has overhead, too many threads cause contention and memory pressure, and managing thread lifecycles manually is error-prone. A better abstraction is needed for task execution.
+Creating a new thread for every task is expensive and unscalable -- thread creation has overhead, too many threads cause contention and memory pressure, and managing thread lifecycles manually is error-prone. A better abstraction is needed for task execution.
 
 ## Core Idea
 
@@ -75,14 +75,14 @@ graph semantic_executor {
 
 ## Connections
 
-- **Built from:** [[java-multithreading|Java Multithreading]] — the framework manages threads internally
-- **Built from:** [[java-synchronization|Java Synchronization]] — internal task queues are synchronized
-- **Builds into:** [[java-lambda-and-streams|Streams & Lambdas]] — parallelStream() uses the common ForkJoinPool
-- **Related:** [[java-deadlock|Java Deadlock]] — thread pools can deadlock if tasks depend on each other
+- **Built from:** [[java-multithreading|Java Multithreading]] -- the framework manages threads internally
+- **Built from:** [[java-synchronization|Java Synchronization]] -- internal task queues are synchronized
+- **Builds into:** [[java-lambda-and-streams|Streams & Lambdas]] -- parallelStream() uses the common ForkJoinPool
+- **Related:** [[java-deadlock|Java Deadlock]] -- thread pools can deadlock if tasks depend on each other
 
 ## Edge Cases & Gotchas
 
 - **Hidden thread leak**: Not shutting down an executor prevents JVM exit
 - **Task submission inside tasks**: Tasks submitted from within running tasks can cause thread pool deadlock
 - **CachedThreadPool unbounded**: `newCachedThreadPool()` creates threads without bound under load
-- **ForkJoinPool work stealing**: Each worker has its own deque — steals from others when idle
+- **ForkJoinPool work stealing**: Each worker has its own deque -- steals from others when idle

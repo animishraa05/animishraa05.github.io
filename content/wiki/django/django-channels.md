@@ -56,11 +56,40 @@ class ChatConsumer(WebsocketConsumer):
 - Uses Consumers instead of Views.
 - Requires a backing store like Redis for cross-process communication (Channel Layers).
 
+
+
+## Visual Explanation
+
+```dot
+digraph Django_Channels {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Django Channels\nInput"]
+  B [label="Django Channels\nCore Mechanism"]
+  C [label="Django Channels\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Django_Channels {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Django Channels" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[django-web-framework|Django Web Framework]] — an official extension.
-- **Contrasts with:** [[django-request-response-lifecycle|Django Request-Response Lifecycle]] — breaks the synchronous cycle in favor of persistent connections.
-- **Related:** [[django-view|Django View]] — Consumers are the async, WebSocket equivalent of Views.
+- **Built from:** [[django-web-framework|Django Web Framework]] -- an official extension.
+- **Contrasts with:** [[django-request-response-lifecycle|Django Request-Response Lifecycle]] -- breaks the synchronous cycle in favor of persistent connections.
+- **Related:** [[django-view|Django View]] -- Consumers are the async, WebSocket equivalent of Views.
 
 ## Edge Cases & Gotchas
 

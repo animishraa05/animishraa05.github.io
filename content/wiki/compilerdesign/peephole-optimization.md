@@ -53,9 +53,9 @@ graph semantic_peephole {
   REL1 [label="Code Generator\nDesign Issues" fillcolor="#f0f0f0"]
 
   THIS -- PRE1 [label="built from" style=dashed]
-  THIS -- PRE2 [label="applied after — in code generation"]
-  THIS -- CON1 [label="contrasts with — local vs global"]
-  THIS -- CON2 [label="contrasts with — post-generation vs IR-level"]
+  THIS -- PRE2 [label="applied after -- in code generation"]
+  THIS -- CON1 [label="contrasts with -- local vs global"]
+  THIS -- CON2 [label="contrasts with -- post-generation vs IR-level"]
   THIS -- REL1 [label="related"]
 }
 ```
@@ -70,15 +70,15 @@ graph semantic_peephole {
 
 ## Connections
 
-- **Built from:** [[code-optimization|Code Optimization]] — peephole is a type of machine-dependent optimization
-- **Built from:** [[code-generation|Code Generation]] — peephole optimizes the generated target code
-- **Contrasts with:** [[common-subexpression-elimination|Common Subexpression Elimination]] — CSE is global/IR-level; peephole is local/target-level
-- **Contrasts with:** [[constant-propagation|Constant Propagation]] — CP works on IR; peephole works on target instructions
-- **Related:** [[code-generator-design-issues|Issues in Code Generator Design]] — instruction selection affects peephole opportunities
+- **Built from:** [[code-optimization|Code Optimization]] -- peephole is a type of machine-dependent optimization
+- **Built from:** [[code-generation|Code Generation]] -- peephole optimizes the generated target code
+- **Contrasts with:** [[common-subexpression-elimination|Common Subexpression Elimination]] -- CSE is global/IR-level; peephole is local/target-level
+- **Contrasts with:** [[constant-propagation|Constant Propagation]] -- CP works on IR; peephole works on target instructions
+- **Related:** [[code-generator-design-issues|Issues in Code Generator Design]] -- instruction selection affects peephole opportunities
 
 ## Edge Cases & Gotchas
 
-- **Cascading effect:** One peephole optimization can create an opportunity for another — the optimizer must iterate until no more patterns match
-- **Oversized window:** A larger window catches more patterns but costs more to match — most implementations keep it small
-- **Architecture-specific:** A peephole optimization on x86 may not apply to ARM — patterns must be defined per target
-- **Safety:** Must preserve program semantics — pattern matching must be conservative about flags and condition codes
+- **Cascading effect:** One peephole optimization can create an opportunity for another -- the optimizer must iterate until no more patterns match
+- **Oversized window:** A larger window catches more patterns but costs more to match -- most implementations keep it small
+- **Architecture-specific:** A peephole optimization on x86 may not apply to ARM -- patterns must be defined per target
+- **Safety:** Must preserve program semantics -- pattern matching must be conservative about flags and condition codes

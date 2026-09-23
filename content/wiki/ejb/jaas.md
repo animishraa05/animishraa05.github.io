@@ -50,11 +50,26 @@ digraph G {
 - **Callback-based**: Flexible authentication dialog
 - **Policy-based**: Authorization via security policies
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_JAAS {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Jaas" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[ejb-container|EJB Container]] — container uses JAAS for EJB security
-- Related: [[java-platforms|Java Platforms]] — JAAS is part of J2EE
-- Builds into: [[application-vs-system-exceptions|Application vs System Exceptions]] — security exceptions
-- Related: [[middleware|Middleware]] — security is a middleware service
+- Built from: [[ejb-container|EJB Container]] -- container uses JAAS for EJB security
+- Related: [[java-platforms|Java Platforms]] -- JAAS is part of J2EE
+- Builds into: [[application-vs-system-exceptions|Application vs System Exceptions]] -- security exceptions
+- Related: [[middleware|Middleware]] -- security is a middleware service
 
 ## Edge Cases & Gotchas
 - **Configuration complexity**: JAAS config files can be tricky

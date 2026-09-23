@@ -7,7 +7,7 @@ updated: 2026-04-30
 ---
 
 ## The Problem
-We have data but no labels — we need to discover hidden structure, groups, or patterns without guidance on what to look for.
+We have data but no labels -- we need to discover hidden structure, groups, or patterns without guidance on what to look for.
 
 ## Core Idea
 Machine learning paradigm where models find patterns, structure, or reduced representations in unlabeled data.
@@ -37,11 +37,26 @@ digraph G {
 - Exploratory: reveals what might be interesting, not what is definitively true
 - Preprocessing: often used as a step before supervised learning
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Unsupervised_Learning {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Unsupervised Learnin" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[data-modeling|Data Modeling]] — unsupervised learning is a modeling approach
-- Related: [[supervised-learning|Supervised Learning]] — contrast in label requirements
-- Related: [[exploratory-data-analysis|EDA]] — both are exploratory, discovery-oriented
-- Related: [[feature-engineering|Feature Engineering]] — dimensionality reduction creates new features
+- Built from: [[data-modeling|Data Modeling]] -- unsupervised learning is a modeling approach
+- Related: [[supervised-learning|Supervised Learning]] -- contrast in label requirements
+- Related: [[exploratory-data-analysis|EDA]] -- both are exploratory, discovery-oriented
+- Related: [[feature-engineering|Feature Engineering]] -- dimensionality reduction creates new features
 
 ## Edge Cases & Gotchas
 - No ground truth: cannot compute accuracy or error rate on unseen data

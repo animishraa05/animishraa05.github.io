@@ -36,13 +36,28 @@ digraph G {
 - Interpretable: linear regression coefficients show feature importance directly
 - Metric-dependent: MSE penalizes large errors more than MAE
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Regression {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Regression" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[supervised-learning|Supervised Learning]] — regression is a supervised task
-- Contrasts with: [[classification|Classification]] — predicts categories instead of numbers
-- Built from: [[decision-tree-structure|Decision Tree Structure]] — trees solve regression via leaf mean values
-- Related: [[decision-tree-flexibility|Decision Tree Flexibility]] — trees handle both classification and regression
-- Related: [[train-test-split|Train-Test Split]] — regression models need held-out evaluation
-- Related: [[overfitting|Overfitting]] — regression models can overfit with too many features
+- Built from: [[supervised-learning|Supervised Learning]] -- regression is a supervised task
+- Contrasts with: [[classification|Classification]] -- predicts categories instead of numbers
+- Built from: [[decision-tree-structure|Decision Tree Structure]] -- trees solve regression via leaf mean values
+- Related: [[decision-tree-flexibility|Decision Tree Flexibility]] -- trees handle both classification and regression
+- Related: [[train-test-split|Train-Test Split]] -- regression models need held-out evaluation
+- Related: [[overfitting|Overfitting]] -- regression models can overfit with too many features
 
 ## Edge Cases & Gotchas
 - Heteroscedasticity: error variance changes with input values (violates OLS assumptions)

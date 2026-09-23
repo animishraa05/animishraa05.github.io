@@ -41,11 +41,26 @@ digraph G {
 - Capped at maximum backoff (e.g., 1024 slots in Ethernet)
 - Used in CSMA/CD and some wireless protocols
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Binary_Exponential_Backoff {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Binary Exponential B" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[csma-cd|CSMA/CD]] — uses this backoff algorithm
-- Related: [[collision|Collision]] — triggers backoff
-- Related: [[jam-signal|Jam Signal]] — sent before backoff
-- Related: [[random-access|Random Access]] — broader category of protocols using backoff
+- Built from: [[csma-cd|CSMA/CD]] -- uses this backoff algorithm
+- Related: [[collision|Collision]] -- triggers backoff
+- Related: [[jam-signal|Jam Signal]] -- sent before backoff
+- Related: [[random-access|Random Access]] -- broader category of protocols using backoff
 
 ## Edge Cases & Gotchas
 - Maximum backoff limit prevents excessive wait times

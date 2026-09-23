@@ -10,17 +10,17 @@ tags: [dev, vim]
 
 ## Concepts Extracted
 
-- **vim-modes** — Modal editing: Normal, Insert, Visual (character/line/block)
-- **vim-basic-commands** — Five survival commands: i, x, :wq, dd, p
-- **vim-text-objects** — Zone selection with i/a prefixes (words, sentences, quotes, brackets)
-- **vim-visual-selection** — v, V, <C-v> for character/line/block selection
-- **vim-search-navigation** — Movement: 0, ^, $, g\_, f/F/t/T, gg/G/N G, /pattern, \*, %, word/line/file moves
-- **vim-rectangular-blocks** — <C-v> block selection for columns, commenting multiple lines
-- **vim-repetition** — . (dot) for last change, N prefix for counts
-- **vim-macros** — qa...q recording, @a, @@ replay
-- **vim-splits** — :split/:vsplit, <C-w> navigation
-- **vim-buffers** — :e/:w/:q/:bn/:bp for file and buffer management
-- **vim-completion** — <C-n>/<C-p> in Insert mode
+- **vim-modes** -- Modal editing: Normal, Insert, Visual (character/line/block)
+- **vim-basic-commands** -- Five survival commands: i, x, :wq, dd, p
+- **vim-text-objects** -- Zone selection with i/a prefixes (words, sentences, quotes, brackets)
+- **vim-visual-selection** -- v, V, <C-v> for character/line/block selection
+- **vim-search-navigation** -- Movement: 0, ^, $, g\_, f/F/t/T, gg/G/N G, /pattern, \*, %, word/line/file moves
+- **vim-rectangular-blocks** -- <C-v> block selection for columns, commenting multiple lines
+- **vim-repetition** -- . (dot) for last change, N prefix for counts
+- **vim-macros** -- qa...q recording, @a, @@ replay
+- **vim-splits** -- :split/:vsplit, <C-w> navigation
+- **vim-buffers** -- :e/:w/:q/:bn/:bp for file and buffer management
+- **vim-completion** -- <C-n>/<C-p> in Insert mode
 
 ## Wiki Pages Created/Updated
 
@@ -44,7 +44,7 @@ tags: [dev, vim]
 
 ## Key Takeaways
 
-1. **Progressive learning**: Four levels — Survive → Comfortable → Better/Stronger/Faster → Superpowers
+1. **Progressive learning**: Four levels -- Survive → Comfortable → Better/Stronger/Faster → Superpowers
 2. **Modal editing** is the fundamental differentiator from conventional editors
 3. **Operators + Motions** compose: d$, yG, c w (change word)
 4. **Counts and repetition** multiply, not add: 3. = 9, not 6
@@ -62,14 +62,14 @@ Extracted 11 atomic Vim concept pages with practical commands. Complements exist
 
 ## Connections
 
-- [[vim-modes|Vim Modes]] — modal editing fundamentals
-- [[vim-basic-commands|Vim Basic Commands]] — survival commands
-- [[vim-text-objects|Vim Text Objects]] — zone selection
-- [[vim-visual-selection|Vim Visual Selection]] — text region selection
-- [[vim-search-navigation|Vim Search & Navigation]] — movement patterns
-- [[vim-macros|Vim Macros]] — command recording/replay
-- [[vim-repetition|Vim Repetition]] — dot command and counts
-- [[vim-splits|Vim Splits]] — window management
-- [[vim-buffers|Vim Buffers]] — file management
-- [[language-server-protocol|Language Server Protocol]] — complements LSP wiki
-- [[vim-lsp|vim.lsp]] — related Neovim LSP integration
+- [[vim-modes|Vim Modes]] -- modal editing fundamentals
+- [[vim-basic-commands|Vim Basic Commands]] -- survival commands
+- [[vim-text-objects|Vim Text Objects]] -- zone selection
+- [[vim-visual-selection|Vim Visual Selection]] -- text region selection
+- [[vim-search-navigation|Vim Search & Navigation]] -- movement patterns
+- [[vim-macros|Vim Macros]] -- command recording/replay
+- [[vim-repetition|Vim Repetition]] -- dot command and counts
+- [[vim-splits|Vim Splits]] -- window management
+- [[vim-buffers|Vim Buffers]] -- file management
+- [[language-server-protocol|Language Server Protocol]] -- complements LSP wiki
+- [[vim-lsp|vim.lsp]] -- related Neovim LSP integration

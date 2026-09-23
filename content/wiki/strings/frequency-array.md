@@ -85,25 +85,25 @@ graph semantic_frequency_array {
 
 ## Key Properties
 
-- O(1) time for both insertion and lookup — true constant time, no amortization
+- O(1) time for both insertion and lookup -- true constant time, no amortization
 - Memory proportional to domain size ($O(|\Sigma|)$), not input size ($O(n)$)
-- Zero hashing overhead — no hash function computation, no collision resolution
+- Zero hashing overhead -- no hash function computation, no collision resolution
 - Only works when the domain is known, finite, and contiguous (or near-contiguous)
-- Access pattern is predictable — sequential memory access when iterating
+- Access pattern is predictable -- sequential memory access when iterating
 
 ## Connections
 
-- Built from: [[character-to-index-mapping|Character-to-Index Mapping]] — the `ch - 'a'` conversion is required to map characters to array indices
-- Builds into: [[two-phase-hashing|Two-Phase Hashing]] — frequency arrays are the storage mechanism in Phase 1
-- Builds into: [[most-frequent-character|Most Frequent Character]] — traversing the array finds the max frequency
-- Builds into: [[anagram-detection-via-hashing|Anagram Detection]] — comparing two frequency arrays checks anagrams
-- Contrasts with: [[unordered-map-frequency|Unordered Map for Frequency]] — maps offer flexibility but with hashing overhead
-- Related: [[direct-array-access|Direct Array Access]] — no hashing means truly direct memory access
+- Built from: [[character-to-index-mapping|Character-to-Index Mapping]] -- the `ch - 'a'` conversion is required to map characters to array indices
+- Builds into: [[two-phase-hashing|Two-Phase Hashing]] -- frequency arrays are the storage mechanism in Phase 1
+- Builds into: [[most-frequent-character|Most Frequent Character]] -- traversing the array finds the max frequency
+- Builds into: [[anagram-detection-via-hashing|Anagram Detection]] -- comparing two frequency arrays checks anagrams
+- Contrasts with: [[unordered-map-frequency|Unordered Map for Frequency]] -- maps offer flexibility but with hashing overhead
+- Related: [[direct-array-access|Direct Array Access]] -- no hashing means truly direct memory access
 
 ## Edge Cases & Gotchas
 
 - Forgetting to zero-initialize the array (`int freq[26] = {0}`) leads to garbage values
 - Using `ch - 'a'` on uppercase letters or non-alphabetic characters produces negative indices or out-of-bounds access
-- Array size must match the domain — `freq[26]` fails for extended ASCII or Unicode
+- Array size must match the domain -- `freq[26]` fails for extended ASCII or Unicode
 - Iterating all 26 slots when only 3 characters appeared wastes time (minor but relevant for sparse data)
-- The array stores frequencies, not positions — cannot directly answer "where does character X first appear?"
+- The array stores frequencies, not positions -- cannot directly answer "where does character X first appear?"

@@ -41,6 +41,21 @@ digraph load_factor {
 - α > 0.7: collisions increase sharply
 - α = 1.0: table full, must resize
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Load_Factor {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Load Factor" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[hashing|Hashing]], [[hash-function|Hash Function]]

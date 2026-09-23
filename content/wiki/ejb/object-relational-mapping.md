@@ -31,6 +31,35 @@ Object-Relational Mapping (O/R mapping) is the technology of converting in-memor
 - EJB uses this for entity beans (CMP)
 - Hibernate extends ORM with caching (1st/2nd level), HQL (object-oriented queries), and inheritance mapping strategies
 
+
+
+## Visual Explanation
+
+```dot
+digraph Object_Relational_Mapping {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Object Relational Ma\nInput"]
+  B [label="Object Relational Ma\nCore Mechanism"]
+  C [label="Object Relational Ma\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Object_Relational_Mapping {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Object Relational Ma" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[entity-bean|Entity Bean]]

@@ -10,7 +10,7 @@ updated: 2026-04-29
 You've written your bean class, interfaces, and deployment descriptor. How do you package them for deployment to any EJB container? You need a standard format that bundles everything together.
 
 ## Core Idea
-The EJB-JAR file is a standard Java archive (`.jar`) containing all the classes (bean class, home/remote/local interfaces, helpers) plus the `ejb-jar.xml` deployment descriptor. This single file is what you deploy to the container—it's vendor-neutral and portable.
+The EJB-JAR file is a standard Java archive (`.jar`) containing all the classes (bean class, home/remote/local interfaces, helpers) plus the `ejb-jar.xml` deployment descriptor. This single file is what you deploy to the container--it's vendor-neutral and portable.
 
 ## How It Works
 1. **Compile**: `javac` converts `.java` → `.class` for all your files
@@ -55,6 +55,21 @@ digraph EJbJar {
 - **Optional**: May include `META-INF/webservices.xml` or vendor-specific files
 - **Vendor-neutral**: Write once, deploy on any EJB container
 
+
+
+## Semantic Network
+
+```dot
+graph semantic__EJB_JAR_File_ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label=""Ejb Jar File"" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[home-interface|Home Interface]], [[remote-interface|Remote Interface]], [[ejb-deployment-descriptor|Deployment Descriptor]]
 - **Builds into:** [[ejb-verification-generation|EJB Verification & Generation]] (container processes the JAR)
@@ -62,6 +77,6 @@ digraph EJbJar {
 - **Contrasts with:** Regular JAR (no `ejb-jar.xml`, not deployable to EJB container)
 
 ## Edge Cases & Gotchas
-- **Missing `ejb-jar.xml`**: Container rejects the JAR—deployment fails
+- **Missing `ejb-jar.xml`**: Container rejects the JAR--deployment fails
 - **Classpath issues**: All dependencies must be in the JAR or server classpath
 - **Vendor-specific files**: Some containers need extra files in `META-INF/` (e.g., `weblogic-ejb-jar.xml`)

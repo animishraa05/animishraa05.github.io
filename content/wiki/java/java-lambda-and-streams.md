@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Traditional iteration with loops is imperative and verbose — you tell the computer *how* to iterate (index variables, loop conditions) rather than *what* to compute. This leads to boilerplate code and makes parallel processing difficult. Collections needed a declarative, functional approach.
+Traditional iteration with loops is imperative and verbose -- you tell the computer *how* to iterate (index variables, loop conditions) rather than *what* to compute. This leads to boilerplate code and makes parallel processing difficult. Collections needed a declarative, functional approach.
 
 ## Core Idea
 
@@ -16,7 +16,7 @@ Traditional iteration with loops is imperative and verbose — you tell the comp
 
 ## How It Works
 
-A stream represents a sequence of elements supporting sequential and parallel aggregate operations. Streams are lazy — intermediate operations are not executed until a terminal operation is invoked. The pipeline can be parallelized by calling `.parallelStream()` instead of `.stream()`.
+A stream represents a sequence of elements supporting sequential and parallel aggregate operations. Streams are lazy -- intermediate operations are not executed until a terminal operation is invoked. The pipeline can be parallelized by calling `.parallelStream()` instead of `.stream()`.
 
 ## Visual Explanation
 
@@ -62,21 +62,21 @@ graph semantic_lambdas {
 
 ## Key Properties
 
-- **Declarative**: Focus on *what*, not *how* — express intent directly
+- **Declarative**: Focus on *what*, not *how* -- express intent directly
 - **Lazy evaluation**: Intermediate operations execute only when a terminal operation is invoked
 - **Parallelism**: `parallelStream()` splits work across multiple threads automatically
 - **Immutability**: Streams do not modify the source collection
 
 ## Connections
 
-- **Built from:** [[java-interfaces|Java Interfaces]] — lambdas target functional interfaces (Runnable, Comparator, custom)
-- **Built from:** [[java-collections-framework|Java Collections Framework]] — streams originate from collections
-- **Builds into:** [[java-multithreading|Java Multithreading]] — parallelStream() enables easy parallel processing
-- **Contrasts with:** [[java-loops|Java Loops]] — declarative vs imperative iteration
+- **Built from:** [[java-interfaces|Java Interfaces]] -- lambdas target functional interfaces (Runnable, Comparator, custom)
+- **Built from:** [[java-collections-framework|Java Collections Framework]] -- streams originate from collections
+- **Builds into:** [[java-multithreading|Java Multithreading]] -- parallelStream() enables easy parallel processing
+- **Contrasts with:** [[java-loops|Java Loops]] -- declarative vs imperative iteration
 
 ## Edge Cases & Gotchas
 
-- **Stream reuse**: A stream cannot be reused after a terminal operation — create a new one
+- **Stream reuse**: A stream cannot be reused after a terminal operation -- create a new one
 - **Stateful lambdas**: Avoid mutable state in lambda bodies (not thread-safe)
-- **Performance**: Streams have overhead vs loops for simple operations — use for complex pipelines
+- **Performance**: Streams have overhead vs loops for simple operations -- use for complex pipelines
 - **parallelStream() pitfalls**: Shared mutable state in parallel streams causes data races

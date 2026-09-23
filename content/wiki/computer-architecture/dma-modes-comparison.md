@@ -1,5 +1,5 @@
 ---
-title: DMA Modes Comparison — Burst vs Cycle Stealing vs Transparent
+title: DMA Modes Comparison -- Burst vs Cycle Stealing vs Transparent
 type: comparison
 tags: [systems, io]
 created: 2026-04-30
@@ -31,16 +31,45 @@ DMA can operate in three different modes, each balancing transfer speed, CPU res
 
 1. **Burst Mode**: Best for real-time systems where transfer speed matters more than CPU responsiveness. CPU is fully blocked.
 
-2. **Cycle Stealing**: The most common mode — balances transfer speed with CPU responsiveness. CPU can handle interrupts between DMA transfers.
+2. **Cycle Stealing**: The most common mode -- balances transfer speed with CPU responsiveness. CPU can handle interrupts between DMA transfers.
 
 3. **Transparent Mode**: Zero CPU overhead, but slowest. Good for background tasks where completion time doesn't matter.
 
 4. **Trade-off**: Faster transfer = more CPU blocking. The system's requirements determine which mode to use.
 
+
+
+## Visual Explanation
+
+```dot
+digraph dma_modes_comparison {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Dma Modes Comparison\nInput"]
+  B [label="Dma Modes Comparison\nCore Mechanism"]
+  C [label="Dma Modes Comparison\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_dma_modes_comparison {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Dma Modes Comparison" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- [[burst-mode-dma|Burst Mode DMA]] — entire block, CPU blocked
-- [[cycle-stealing-mode-dma|Cycle Stealing Mode DMA]] — one at a time, CPU works between
-- [[transparent-mode-dma|Transparent Mode DMA]] — only when CPU idle
-- [[dma|DMA]] — the underlying mechanism
-- [[dma-controller|DMA Controller]] — hardware that implements these modes
-- [[cpu|CPU]] — affected differently by each mode
+- [[burst-mode-dma|Burst Mode DMA]] -- entire block, CPU blocked
+- [[cycle-stealing-mode-dma|Cycle Stealing Mode DMA]] -- one at a time, CPU works between
+- [[transparent-mode-dma|Transparent Mode DMA]] -- only when CPU idle
+- [[dma|DMA]] -- the underlying mechanism
+- [[dma-controller|DMA Controller]] -- hardware that implements these modes
+- [[cpu|CPU]] -- affected differently by each mode

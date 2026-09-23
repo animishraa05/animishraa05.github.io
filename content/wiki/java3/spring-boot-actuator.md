@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Production applications need runtime visibility: Are they healthy? How much memory are they using? What's the request rate? Are there active database connections? Without built-in monitoring, developers resort to SSH access, custom scripts, or third-party agents — which are inconsistent and fragile.
+Production applications need runtime visibility: Are they healthy? How much memory are they using? What's the request rate? Are there active database connections? Without built-in monitoring, developers resort to SSH access, custom scripts, or third-party agents -- which are inconsistent and fragile.
 
 ## Core Idea
 
@@ -17,7 +17,7 @@ Spring Boot Actuator provides production-ready HTTP endpoints for monitoring and
 ## How It Works
 
 1. **Actuator endpoints**: `/actuator/health` (app health), `/actuator/metrics` (JVM and app metrics), `/actuator/info` (custom app info), `/actuator/env` (environment properties), `/actuator/loggers` (log level management)
-2. **Health indicators**: Built-in indicators check database connectivity, disk space, Redis, Elasticsearch, etc. — all aggregated into the `/health` response
+2. **Health indicators**: Built-in indicators check database connectivity, disk space, Redis, Elasticsearch, etc. -- all aggregated into the `/health` response
 3. **Micrometer**: Actuator's metrics facade sends metrics to various monitoring systems (Prometheus, Graphite, InfluxDB)
 4. **Security**: Actuator endpoints are secured by default (Spring Security integration); sensitive endpoints restricted to authenticated users
 5. **Custom endpoints**: `@Endpoint` annotation to create custom actuator endpoints with `@ReadOperation`, `@WriteOperation`, `@DeleteOperation`
@@ -59,19 +59,34 @@ digraph actuator {
 - **Micrometer integration**: Vendor-neutral metrics facade; binders for JVM, CPU, file descriptors, logback, HikariCP
 - **Audit events**: `AuditEventRepository` captures authentication and other security events
 - **Custom info**: `/info` endpoint exposes any properties under `info.*` in application.properties
-- **Log level management**: Change log levels at runtime via POST to `/actuator/loggers/{name}` — no restart needed
+- **Log level management**: Change log levels at runtime via POST to `/actuator/loggers/{name}` -- no restart needed
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Spring_Boot_Actuator {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Spring Boot Actuator" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[spring-boot|Spring Boot]] — Actuator is a Spring Boot module for production monitoring
-- **Related:** [[spring-boot-auto-configuration|Spring Boot Auto-Configuration]] — Actuator auto-configures endpoints based on available dependencies
-- **Related:** [[spring-boot-rest-api|Spring Boot REST API]] — Actuator endpoints are themselves REST APIs
-- **Contrasts with:** [[ejb-context|EJB Context]] — EJB provides programmatic context; Boot Actuator provides HTTP-accessible monitoring
+- **Built from:** [[spring-boot|Spring Boot]] -- Actuator is a Spring Boot module for production monitoring
+- **Related:** [[spring-boot-auto-configuration|Spring Boot Auto-Configuration]] -- Actuator auto-configures endpoints based on available dependencies
+- **Related:** [[spring-boot-rest-api|Spring Boot REST API]] -- Actuator endpoints are themselves REST APIs
+- **Contrasts with:** [[ejb-context|EJB Context]] -- EJB provides programmatic context; Boot Actuator provides HTTP-accessible monitoring
 
 ## Edge Cases & Gotchas
 
 - **Sensitive info in /env**: Environment values containing passwords/keys are sanitized by default; configure additional sanitization keys
-- **Endpoint exposure**: By default, only `/health` and `/info` are exposed via HTTP — use `management.endpoints.web.exposure.include=*` to expose all
+- **Endpoint exposure**: By default, only `/health` and `/info` are exposed via HTTP -- use `management.endpoints.web.exposure.include=*` to expose all
 - **Security**: Exposing `/actuator/shutdown` without authentication allows anyone to stop the application
 - **Performance impact**: High-frequency metrics collection (every 1ms) can impact performance; use appropriate export intervals
-- **Health cascading**: If a downstream service is DOWN, the application reports DOWN — configure health indicator thresholds
+- **Health cascading**: If a downstream service is DOWN, the application reports DOWN -- configure health indicator thresholds

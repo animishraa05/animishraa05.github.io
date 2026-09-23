@@ -16,7 +16,7 @@ Intermediate code generation is the fourth phase of a compiler. It transforms th
 
 ## How It Works
 
-The intermediate code generator walks the annotated syntax tree and emits IR instructions. Common IR forms include **three-address code (TAC)** — each instruction has at most three operands — and **static single assignment (SSA)** form. The IR is designed to be high-level enough for optimization but low-level enough for code generation.
+The intermediate code generator walks the annotated syntax tree and emits IR instructions. Common IR forms include **three-address code (TAC)** -- each instruction has at most three operands -- and **static single assignment (SSA)** form. The IR is designed to be high-level enough for optimization but low-level enough for code generation.
 
 ## Visual Explanation
 
@@ -45,16 +45,31 @@ digraph icg {
 - **Enables optimization:** IR is easier to analyze and transform than source or machine code
 - **Decouples front-end from back-end:** Front-end produces IR; back-end consumes IR
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Intermediate_Code_Generation {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Intermediate Code Ge" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[semantic-analysis|Semantic Analysis]] — consumes the annotated syntax tree
-- **Builds into:** [[code-optimization|Code Optimization]] — the IR is the input to optimization
-- **Related:** [[three-address-code|Three-Address Code]] — a common IR form where each instruction has ≤ 3 operands
-- **Related:** [[phases-of-compiler|Phases of a Compiler]] — intermediate code generation is phase 4
-- **Related:** [[code-generation|Code Generation]] — the back-end takes optimized IR and produces target code
+- **Built from:** [[semantic-analysis|Semantic Analysis]] -- consumes the annotated syntax tree
+- **Builds into:** [[code-optimization|Code Optimization]] -- the IR is the input to optimization
+- **Related:** [[three-address-code|Three-Address Code]] -- a common IR form where each instruction has ≤ 3 operands
+- **Related:** [[phases-of-compiler|Phases of a Compiler]] -- intermediate code generation is phase 4
+- **Related:** [[code-generation|Code Generation]] -- the back-end takes optimized IR and produces target code
 
 ## Edge Cases & Gotchas
 
 - **IR forms vary:** Some compilers use multiple IR forms at different levels of abstraction
-- **Addressing modes:** Machine-independent IR may not capture all target-specific addressing modes — the code generator handles this mapping
+- **Addressing modes:** Machine-independent IR may not capture all target-specific addressing modes -- the code generator handles this mapping
 - **SSA vs TAC:** SSA form simplifies optimization but requires phi-nodes; TAC is simpler but requires extra data-flow analysis for optimizations

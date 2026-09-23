@@ -35,3 +35,31 @@ You create an App every time you introduce a distinct domain of logic to your sy
 ## The Insight
 
 Django Apps are designed to be plug-and-play. Theoretically, a well-written Django App (like a blogging app) could be taken from your current Django Project and dropped into a completely different Django Project, and it would work with minimal configuration. The Project's job is simply to wire these independent apps together.
+
+## Visual Explanation
+
+```dot
+digraph django_project_vs_app {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Django Project Vs Ap\nInput"]
+  B [label="Django Project Vs Ap\nCore Mechanism"]
+  C [label="Django Project Vs Ap\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_django_project_vs_app {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Django Project Vs Ap" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```

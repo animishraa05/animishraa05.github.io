@@ -54,17 +54,32 @@ digraph RefreshAhead {
 - Requires accurate prediction heuristics to avoid wasted refreshes
 - Can hurt performance if predictions are wrong (wasted I/O, cache churn)
 - Works well with predictable, recurring access patterns
-- Transparent to the application — no code changes needed on the read path
+- Transparent to the application -- no code changes needed on the read path
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Refresh_Ahead_Cache {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Refresh Ahead Cache" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- Contrasts with: [[cache-aside|Cache-Aside]] — proactive vs reactive caching
-- Related: [[write-through-cache|Write-Through Cache]] — both proactively keep cache fresh
-- Related: [[cdn-pull|Pull CDN]] — CDN pull is reactive; refresh-ahead is proactive
-- Related: [[eventual-consistency|Eventual Consistency]] — refresh-ahead minimizes the window of inconsistency by keeping hot entries fresh
+- Contrasts with: [[cache-aside|Cache-Aside]] -- proactive vs reactive caching
+- Related: [[write-through-cache|Write-Through Cache]] -- both proactively keep cache fresh
+- Related: [[cdn-pull|Pull CDN]] -- CDN pull is reactive; refresh-ahead is proactive
+- Related: [[eventual-consistency|Eventual Consistency]] -- refresh-ahead minimizes the window of inconsistency by keeping hot entries fresh
 
 ## Edge Cases & Gotchas
 
 - **Wasted refreshes**: Predictions for entries that are never accessed again waste CPU and database I/O. This can degrade overall system throughput if prediction accuracy is low.
-- **Cold start**: Refresh-ahead has no access history for new entries, so it cannot predict them — they will still experience a cold miss on first access.
+- **Cold start**: Refresh-ahead has no access history for new entries, so it cannot predict them -- they will still experience a cold miss on first access.
 - **Oscillation risk**: If prediction logic is too aggressive, the cache may constantly refresh entries, reducing effective TTL and increasing database load without benefit.

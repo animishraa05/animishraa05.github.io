@@ -12,7 +12,7 @@ Code written against a general type (e.g., `Animal`) should work correctly when 
 
 ## Core Idea
 
-**Runtime Polymorphism** (also called **Method Overriding**) occurs when a subclass provides a specific implementation of a method already defined in its superclass. The method call is resolved at runtime based on the actual object type, not the reference type. This enables a single method call to produce different behaviors depending on the object — `Animal a = new Dog(); a.speak()` calls `Dog.speak()`, not `Animal.speak()`.
+**Runtime Polymorphism** (also called **Method Overriding**) occurs when a subclass provides a specific implementation of a method already defined in its superclass. The method call is resolved at runtime based on the actual object type, not the reference type. This enables a single method call to produce different behaviors depending on the object -- `Animal a = new Dog(); a.speak()` calls `Dog.speak()`, not `Animal.speak()`.
 
 ## How It Works
 
@@ -70,14 +70,14 @@ graph semantic_runtime_poly {
 
 ## Connections
 
-- **Built from:** [[java-inheritance|Java Inheritance]] — overriding requires an inheritance relationship
-- **Built from:** [[java-polymorphism|Java Polymorphism]] — runtime polymorphism is one of two polymorphism types
-- **Contrasts with:** [[java-compile-time-polymorphism|Compile-Time Polymorphism]] — runtime vs compile-time resolution
-- **Related:** [[java-overloading-vs-overriding|Overloading vs Overriding]] — synthesis comparing the two
+- **Built from:** [[java-inheritance|Java Inheritance]] -- overriding requires an inheritance relationship
+- **Built from:** [[java-polymorphism|Java Polymorphism]] -- runtime polymorphism is one of two polymorphism types
+- **Contrasts with:** [[java-compile-time-polymorphism|Compile-Time Polymorphism]] -- runtime vs compile-time resolution
+- **Related:** [[java-overloading-vs-overriding|Overloading vs Overriding]] -- synthesis comparing the two
 
 ## Edge Cases & Gotchas
 
-- **Static methods are not polymorphic**: They are hidden, not overridden — call resolves based on reference type
+- **Static methods are not polymorphic**: They are hidden, not overridden -- call resolves based on reference type
 - **Private methods are not polymorphic**: They are not inherited, so they cannot be overridden
 - **Constructors cannot be overridden**: Each class has its own constructors; superclass constructors are called via super()
 - **Bridge methods**: When covariance interacts with generics, the compiler generates bridge methods to maintain polymorphism

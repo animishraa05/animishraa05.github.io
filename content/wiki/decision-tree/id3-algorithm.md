@@ -8,7 +8,7 @@ updated: 2026-05-06
 
 ## The Problem
 
-To build a decision tree systematically, we need a concrete algorithm that specifies exactly how to choose attributes, how to split data, when to stop, and how to handle edge cases — not just the intuition but the precise step-by-step procedure.
+To build a decision tree systematically, we need a concrete algorithm that specifies exactly how to choose attributes, how to split data, when to stop, and how to handle edge cases -- not just the intuition but the precise step-by-step procedure.
 
 ## Core Idea
 
@@ -63,15 +63,30 @@ digraph id3_algorithm {
 - **Top-down**: Builds from root to leaves in a single pass
 - **Discrete attributes**: Original ID3 handles only categorical attributes (C4.5 extension handles continuous)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_ID3_Algorithm {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Id3 Algorithm" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[information-gain|Information Gain]] — ID3 uses IG as its selection measure
-- **Built from:** [[recursive-tree-building|Recursive Tree Building]] — ID3 is a specific recursive algorithm
-- **Built from:** [[decision-tree-stopping-conditions|Decision Tree Stopping Conditions]] — ID3 uses the three standard stopping conditions
-- **Builds into:** [[decision-tree-structure|Decision Tree Structure]] — ID3 produces the tree structure
-- **Related:** [[entropy|Entropy]] — IG in ID3 is based on entropy
-- **Contrasts with:** [[gini-index|Gini Index]] — CART algorithm uses Gini instead of IG
-- **Related:** [[attribute-selection-measures|Attribute Selection Measures]] — ID3 pioneered the use of IG
+- **Built from:** [[information-gain|Information Gain]] -- ID3 uses IG as its selection measure
+- **Built from:** [[recursive-tree-building|Recursive Tree Building]] -- ID3 is a specific recursive algorithm
+- **Built from:** [[decision-tree-stopping-conditions|Decision Tree Stopping Conditions]] -- ID3 uses the three standard stopping conditions
+- **Builds into:** [[decision-tree-structure|Decision Tree Structure]] -- ID3 produces the tree structure
+- **Related:** [[entropy|Entropy]] -- IG in ID3 is based on entropy
+- **Contrasts with:** [[gini-index|Gini Index]] -- CART algorithm uses Gini instead of IG
+- **Related:** [[attribute-selection-measures|Attribute Selection Measures]] -- ID3 pioneered the use of IG
 
 ## Edge Cases & Gotchas
 

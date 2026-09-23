@@ -47,21 +47,36 @@ digraph active_active_failover {
 
 ## Key Properties
 
-- No idle resources — both servers handle traffic
+- No idle resources -- both servers handle traffic
 - Load is spread between both servers, improving throughput
 - DNS or application must be aware of both server IPs
 - Capacity is degraded (not lost) on single-server failure
 - Also called master-master failover
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Active_Active_Failover {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Active Active Failov" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Contrasts with:** [[active-passive-failover|Active-Passive Failover]] — both active vs one standby
-- **Related:** [[availability-nines|Availability Nines]] — active-active improves overall availability
-- **Related:** [[layer4-load-balancing|Layer 4 Load Balancing]] — load balancers distribute traffic in active-active
-- **Related:** [[horizontal-scaling|Horizontal Scaling]] — active-active is a form of horizontal scaling
+- **Contrasts with:** [[active-passive-failover|Active-Passive Failover]] -- both active vs one standby
+- **Related:** [[availability-nines|Availability Nines]] -- active-active improves overall availability
+- **Related:** [[layer4-load-balancing|Layer 4 Load Balancing]] -- load balancers distribute traffic in active-active
+- **Related:** [[horizontal-scaling|Horizontal Scaling]] -- active-active is a form of horizontal scaling
 
 ## Edge Cases & Gotchas
 
-- Session affinity (sticky sessions) becomes harder — requests from one user may hit different servers
+- Session affinity (sticky sessions) becomes harder -- requests from one user may hit different servers
 - Both servers must have consistent state or share storage to avoid data divergence
-- Failover capacity is only 50% — if one server dies, the remaining server must handle full load
+- Failover capacity is only 50% -- if one server dies, the remaining server must handle full load

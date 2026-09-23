@@ -12,7 +12,7 @@ Expression parsing is the most common parsing task, yet full LR parsing is overk
 
 ## Core Idea
 
-An operator precedence parser is a bottom-up parser designed for **operator grammars** (grammars with no production right-hand side having two adjacent non-terminals). It uses precedence relations (⋖, =, ⋗) between operators to determine handle boundaries — without needing a full LR parsing table. It is simple, fast, and ideal for expressions.
+An operator precedence parser is a bottom-up parser designed for **operator grammars** (grammars with no production right-hand side having two adjacent non-terminals). It uses precedence relations (⋖, =, ⋗) between operators to determine handle boundaries -- without needing a full LR parsing table. It is simple, fast, and ideal for expressions.
 
 ## How It Works
 
@@ -42,23 +42,38 @@ digraph op_precedence {
 
 ## Key Properties
 
-- **Operator grammar:** No adjacent non-terminals in RHS — the key restriction
-- **Precedence relations:** Three relations — ⋖ (less), = (equal), ⋗ (greater)
+- **Operator grammar:** No adjacent non-terminals in RHS -- the key restriction
+- **Precedence relations:** Three relations -- ⋖ (less), = (equal), ⋗ (greater)
 - **Handle identification:** Handles are bounded by ⋖ on the left and ⋗ on the right
 - **No parsing table:** Uses a small precedence matrix instead of an LR table
 - **Limitation:** Cannot handle unary operators well (require separate treatment)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Operator_Precedence_Parser {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Operator Precedence " fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[bottom-up-parsing|Bottom-Up Parsing]] — operator precedence is a bottom-up technique
-- **Built from:** [[context-free-grammar|Context-Free Grammar]] — requires an operator grammar (no adjacent non-terminals)
-- **Contrasts with:** [[lr-parsers|LR Parsers]] — simpler than LR but less powerful
-- **Related:** [[shift-reduce-parser|Shift Reduce Parser]] — uses shift/reduce operations but with precedence-based decisions
-- **Related:** [[wiki/compilerdesign/ambiguous-grammar|Ambiguous Grammar]] — works well with operator grammars that are ambiguous, using precedence to disambiguate
+- **Built from:** [[bottom-up-parsing|Bottom-Up Parsing]] -- operator precedence is a bottom-up technique
+- **Built from:** [[context-free-grammar|Context-Free Grammar]] -- requires an operator grammar (no adjacent non-terminals)
+- **Contrasts with:** [[lr-parsers|LR Parsers]] -- simpler than LR but less powerful
+- **Related:** [[shift-reduce-parser|Shift Reduce Parser]] -- uses shift/reduce operations but with precedence-based decisions
+- **Related:** [[wiki/compilerdesign/ambiguous-grammar|Ambiguous Grammar]] -- works well with operator grammars that are ambiguous, using precedence to disambiguate
 
 ## Edge Cases & Gotchas
 
 - **Unary operators:** require special handling since they break the binary operator table model
 - **Non-operator grammars:** If the grammar has adjacent non-terminals, operator precedence parsing cannot handle it
 - **Limited scope:** Best for expressions, not suitable for full programming language syntax
-- **Precedence table size:** Grows with the number of operators — for large languages, the table becomes unwieldy
+- **Precedence table size:** Grows with the number of operators -- for large languages, the table becomes unwieldy

@@ -7,7 +7,7 @@ updated: 2026-04-21
 ---
 
 ## The Problem
-Digital data (bits: 0s and 1s) cannot be directly transmitted over radio waves in the air. To transmit data wirelessly, the digital information must be converted into an analog waveform that can propagate through the radio channel. Additionally, low-frequency data would require impractically large antennas — modulation allows data to ride on high-frequency carriers that work with small, practical antennas.
+Digital data (bits: 0s and 1s) cannot be directly transmitted over radio waves in the air. To transmit data wirelessly, the digital information must be converted into an analog waveform that can propagate through the radio channel. Additionally, low-frequency data would require impractically large antennas -- modulation allows data to ride on high-frequency carriers that work with small, practical antennas.
 
 ## Core Idea
 Modulation is the process of encoding digital information onto a high-frequency carrier wave by varying one or more of its properties: amplitude, frequency, or phase. The receiver then demodulates to recover the original data.
@@ -29,15 +29,44 @@ Modulation is the process of encoding digital information onto a high-frequency 
 - Different modulation schemes have different bandwidth efficiencies and noise tolerances
 - Trade-off: Higher-order modulation (more bits per symbol) gives higher data rates but is more vulnerable to noise
 
+
+
+## Visual Explanation
+
+```dot
+digraph Modulation {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Modulation\nInput"]
+  B [label="Modulation\nCore Mechanism"]
+  C [label="Modulation\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Modulation {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Modulation" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[wireless-network|Wireless Network]] — modulation is essential for wireless transmission
-- Built from: [[multiplexing|Multiplexing]] — different users use different carrier frequencies
-- Related: [[frequency-shift-keying|FSK]] — specific digital modulation technique using frequency
-- Related: [[minimum-shift-keying|MSK]] — continuous-phase variant of FSK used in GSM
-- Related: [[spread-spectrum|Spread Spectrum]] — modulation technique that spreads signal across wide bandwidth
+- Built from: [[wireless-network|Wireless Network]] -- modulation is essential for wireless transmission
+- Built from: [[multiplexing|Multiplexing]] -- different users use different carrier frequencies
+- Related: [[frequency-shift-keying|FSK]] -- specific digital modulation technique using frequency
+- Related: [[minimum-shift-keying|MSK]] -- continuous-phase variant of FSK used in GSM
+- Related: [[spread-spectrum|Spread Spectrum]] -- modulation technique that spreads signal across wide bandwidth
 
 ## Edge Cases & Gotchas
-- Noisy channels degrade modulation — error correction coding is needed to recover data
+- Noisy channels degrade modulation -- error correction coding is needed to recover data
 - High-order modulation (e.g., 256-QAM) requires very clean signal conditions
 - Phase modulation (PSK) is more robust to amplitude noise than ASK
 - MSK and GMSK are used in cellular systems because of their spectral efficiency and constant envelope (power efficiency)

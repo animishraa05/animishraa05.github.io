@@ -8,7 +8,7 @@ updated: 2026-05-04
 
 ## The Problem
 
-Operational data lives in diverse database systems — Oracle, SQL Server, MySQL, flat files, legacy mainframe databases — each with its own protocol, query language, and API. The data warehouse needs to extract data from all these sources, but writing custom extraction code for each system is impractical and unmaintainable.
+Operational data lives in diverse database systems -- Oracle, SQL Server, MySQL, flat files, legacy mainframe databases -- each with its own protocol, query language, and API. The data warehouse needs to extract data from all these sources, but writing custom extraction code for each system is impractical and unmaintainable.
 
 ## Core Idea
 
@@ -99,15 +99,15 @@ graph semantic_gateway {
 
 ## Connections
 
-- **Built from:** [[three-tier-dwh-architecture|Three-Tier DWH Architecture]] — gateways connect Tier 1 to external sources
-- **Built from:** [[integrated-dwh|Integrated DWH]] — gateways enable integration of heterogeneous sources
-- **Builds into:** [[etl-pipeline-dwh|ETL Pipeline (DWH)]] — ETL uses gateways to extract data
-- **Builds into:** [[data-extraction|Data Extraction]] — gateways are the technical mechanism for extraction
-- **Related:** [[oltp-vs-olap|OLTP vs OLAP]] — gateways bridge OLTP sources to the OLAP warehouse
+- **Built from:** [[three-tier-dwh-architecture|Three-Tier DWH Architecture]] -- gateways connect Tier 1 to external sources
+- **Built from:** [[integrated-dwh|Integrated DWH]] -- gateways enable integration of heterogeneous sources
+- **Builds into:** [[etl-pipeline-dwh|ETL Pipeline (DWH)]] -- ETL uses gateways to extract data
+- **Builds into:** [[data-extraction|Data Extraction]] -- gateways are the technical mechanism for extraction
+- **Related:** [[oltp-vs-olap|OLTP vs OLAP]] -- gateways bridge OLTP sources to the OLAP warehouse
 
 ## Edge Cases & Gotchas
 
 - **Driver compatibility:** Not all database features are supported through every gateway driver. Native queries may be needed for advanced operations.
 - **Performance overhead:** Gateway translation adds a layer of abstraction that can slow down bulk extraction. Native bulk-copy tools may be faster for large volumes.
-- **Security concerns:** Gateway connections require credentials for each source system — credential management becomes a security challenge.
+- **Security concerns:** Gateway connections require credentials for each source system -- credential management becomes a security challenge.
 - **OLE-DB is deprecated:** Microsoft has deprecated OLE-DB in favor of newer APIs, but it remains in legacy systems.

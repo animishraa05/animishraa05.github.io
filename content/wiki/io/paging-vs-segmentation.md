@@ -1,5 +1,5 @@
 ---
-title: "Paging vs Segmentation — Memory Management Compared"
+title: "Paging vs Segmentation -- Memory Management Compared"
 type: synthesis
 tags: [systems, memory]
 created: 2026-04-30
@@ -27,19 +27,48 @@ Compare two memory management schemes: **paging** (fixed-size chunks) vs **segme
 1. **Paging eliminates external fragmentation** but wastes space inside pages (internal fragmentation)
 2. **Segmentation matches program structure** (code, data, stack are natural segments) but causes external fragmentation
 3. **Paging is transparent** to the programmer; segmentation is visible (segment registers)
-4. **Modern OSs combine both**: outer segmentation (for protection) with inner paging (for no external fragmentation) — this is called **paged segmentation**
+4. **Modern OSs combine both**: outer segmentation (for protection) with inner paging (for no external fragmentation) -- this is called **paged segmentation**
 5. **x86 architecture** uses paged segmentation: segment selector → linear address → page table → physical
 
 ## Synthesis
 
-No single scheme wins — paging solves fragmentation but loses program semantics; segmentation preserves semantics but fragments memory. The best systems (like modern x86) use **both**: segmentation for protection and logical structure, paging for efficient physical memory use.
+No single scheme wins -- paging solves fragmentation but loses program semantics; segmentation preserves semantics but fragments memory. The best systems (like modern x86) use **both**: segmentation for protection and logical structure, paging for efficient physical memory use.
 
+
+
+## Visual Explanation
+
+```dot
+digraph paging_vs_segmentation {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Paging Vs Segmentati\nInput"]
+  B [label="Paging Vs Segmentati\nCore Mechanism"]
+  C [label="Paging Vs Segmentati\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_paging_vs_segmentation {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Paging Vs Segmentati" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- [[wiki/io/paging|Paging]] — fixed-size memory management
-- [[segmentation|Segmentation]] — variable-size logical units
-- [[page-table|Page Table]] — used in paging
-- [[segment-table|Segment Table]] — used in segmentation
-- [[virtual-memory|Virtual Memory]] — both enable virtual memory
-- [[internal-fragmentation|Internal Fragmentation]] — paging's weakness
-- [[external-fragmentation|External Fragmentation]] — segmentation's weakness
+- [[wiki/io/paging|Paging]] -- fixed-size memory management
+- [[segmentation|Segmentation]] -- variable-size logical units
+- [[page-table|Page Table]] -- used in paging
+- [[segment-table|Segment Table]] -- used in segmentation
+- [[virtual-memory|Virtual Memory]] -- both enable virtual memory
+- [[internal-fragmentation|Internal Fragmentation]] -- paging's weakness
+- [[external-fragmentation|External Fragmentation]] -- segmentation's weakness

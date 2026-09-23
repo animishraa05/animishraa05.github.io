@@ -58,12 +58,27 @@ digraph G {
 - **Versioned**: Each J2EE version bundles specific API versions
 - **Community-driven**: Created by JCP with industry experts
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_J2EE_Specification {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="J2Ee Specification" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[component-architecture-soa|Component Architecture & SOA]] — J2EE implements component architecture
-- Builds into: [[ejb-container|EJB Container]] — EJB is part of J2EE
-- Related: [[j2ee-compliance|J2EE Compliance]] — how vendors prove they implement the spec
-- Related: [[java-platforms|Java Platforms]] — J2EE is one of three Java platforms
-- Contrasts with: [[proprietary-system|Proprietary System]] — J2EE is open standard
+- Built from: [[component-architecture-soa|Component Architecture & SOA]] -- J2EE implements component architecture
+- Builds into: [[ejb-container|EJB Container]] -- EJB is part of J2EE
+- Related: [[j2ee-compliance|J2EE Compliance]] -- how vendors prove they implement the spec
+- Related: [[java-platforms|Java Platforms]] -- J2EE is one of three Java platforms
+- Contrasts with: [[proprietary-system|Proprietary System]] -- J2EE is open standard
 
 ## Edge Cases & Gotchas
 - **Ambiguities**: Specifications may have ambiguous points leading to vendor differences

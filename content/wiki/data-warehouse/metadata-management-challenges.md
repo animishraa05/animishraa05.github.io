@@ -30,9 +30,9 @@ The challenges manifest in four key areas:
    - Converting metadata from diverse formats to a unified structure is non-trivial.
 
 3. **No Industry-Wide Standards:**
-   - Data management solution vendors have narrow focus areas — each defines metadata differently.
+   - Data management solution vendors have narrow focus areas -- each defines metadata differently.
    - No universally accepted metadata interchange format or protocol.
-   - Tool interoperability is limited — metadata from one tool often cannot be imported into another.
+   - Tool interoperability is limited -- metadata from one tool often cannot be imported into another.
 
 4. **No Easy Methods of Passing Metadata:**
    - Transferring metadata between systems (e.g., from ETL tool to reporting tool) requires custom integration.
@@ -107,11 +107,11 @@ graph semantic_metadata_challenges {
 
 ## Connections
 
-- **Built from:** [[metadata-in-dwh|Metadata in DWH]] — challenges arise from metadata's importance
-- **Built from:** [[metadata-repository|Metadata Repository]] — the repository must address these challenges
-- **Related:** [[etl-pipeline-dwh|ETL Pipeline (DWH)]] — ETL depends on accurate metadata
-- **Related:** [[integrated-dwh|Integrated DWH]] — integration requires consistent metadata across sources
-- **Related:** [[data-warehouse-definition|Data Warehouse Definition]] — the warehouse's value depends on metadata quality
+- **Built from:** [[metadata-in-dwh|Metadata in DWH]] -- challenges arise from metadata's importance
+- **Built from:** [[metadata-repository|Metadata Repository]] -- the repository must address these challenges
+- **Related:** [[etl-pipeline-dwh|ETL Pipeline (DWH)]] -- ETL depends on accurate metadata
+- **Related:** [[integrated-dwh|Integrated DWH]] -- integration requires consistent metadata across sources
+- **Related:** [[data-warehouse-definition|Data Warehouse Definition]] -- the warehouse's value depends on metadata quality
 
 ## Edge Cases & Gotchas
 

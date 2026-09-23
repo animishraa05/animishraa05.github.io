@@ -8,7 +8,7 @@ updated: 2026-04-30
 
 ## The Problem
 
-Before sending any application data, how do two machines ensure they can actually communicate? Networks are unreliable—packets get lost, duplicated, reordered. Without establishing a reliable connection first, data transfer would be chaos.
+Before sending any application data, how do two machines ensure they can actually communicate? Networks are unreliable--packets get lost, duplicated, reordered. Without establishing a reliable connection first, data transfer would be chaos.
 
 ## Core Idea
 
@@ -19,7 +19,7 @@ TCP uses a three-way handshake to establish a reliable connection: Client sends 
 1. **SYN**: Client sends SYN (synchronize) with a random sequence number
 2. **SYN-ACK**: Server acknowledges with SYN-ACK (its own sequence number + acknowledges client's)
 3. **ACK**: Client confirms with ACK, completing the handshake
-4. **Established**: Connection is now open—both sides can send data
+4. **Established**: Connection is now open--both sides can send data
 
 This happens before TLS handshake (for HTTPS) and before any HTTP request. It's the foundation of reliable communication.
 
@@ -30,19 +30,48 @@ This happens before TLS handshake (for HTTPS) and before any HTTP request. It's 
 - Before this: no guarantee packets will reach
 - After this: TCP guarantees delivery, ordering, no duplication
 - Takes 1 RTT (round-trip time) to complete
-- Part of TCP, not HTTP—HTTP runs on top of TCP
+- Part of TCP, not HTTP--HTTP runs on top of TCP
 
+
+
+## Visual Explanation
+
+```dot
+digraph TCP_Handshake {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Tcp Handshake\nInput"]
+  B [label="Tcp Handshake\nCore Mechanism"]
+  C [label="Tcp Handshake\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_TCP_Handshake {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Tcp Handshake" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- **Built from:** [[socket|Socket]] — TCP handshake creates socket connections
-- **Built from:** [[arp-protocol|ARP Protocol]] — IP to MAC resolution before TCP
-- **Builds into:** [[tls-handshake|TLS Handshake]] — TLS runs after TCP is established
-- **Builds into:** [[http-protocol|HTTP Protocol]] — HTTP runs over TCP connections
-- **Builds into:** [[tcp-packet-drop|TCP Packet Drop]] — TCP handles lost packets
-- **Related:** [[ip-address|IP Address]] — TCP routes packets to IP addresses
+- **Built from:** [[socket|Socket]] -- TCP handshake creates socket connections
+- **Built from:** [[arp-protocol|ARP Protocol]] -- IP to MAC resolution before TCP
+- **Builds into:** [[tls-handshake|TLS Handshake]] -- TLS runs after TCP is established
+- **Builds into:** [[http-protocol|HTTP Protocol]] -- HTTP runs over TCP connections
+- **Builds into:** [[tcp-packet-drop|TCP Packet Drop]] -- TCP handles lost packets
+- **Related:** [[ip-address|IP Address]] -- TCP routes packets to IP addresses
 
 ## Edge Cases & Gotchas
 
-- Handshake adds latency—connection reuse (keep-alive) avoids repeated handshakes
+- Handshake adds latency--connection reuse (keep-alive) avoids repeated handshakes
 - SYN flood attacks exploit the half-open state
 - TLS 1.3 reduces handshake to 1 round trip (1-RTT) vs 2 in TLS 1.2
-- UDP doesn't have handshake—it's unreliable but faster
+- UDP doesn't have handshake--it's unreliable but faster

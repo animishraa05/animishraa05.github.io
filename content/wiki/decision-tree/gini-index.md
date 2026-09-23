@@ -33,7 +33,7 @@ Where $p_i$ is the probability of class $i$ in the dataset.
 2. Compute the weighted Gini of the child nodes
 3. Choose the split with the lowest weighted Gini Index
 
-The Gini Index is the default criterion in scikit-learn's DecisionTreeClassifier. It is faster to compute than entropy (no logarithms needed — just squaring and summing probabilities) and is more sensitive to changes in class probabilities near the extremes.
+The Gini Index is the default criterion in scikit-learn's DecisionTreeClassifier. It is faster to compute than entropy (no logarithms needed -- just squaring and summing probabilities) and is more sensitive to changes in class probabilities near the extremes.
 
 ## Visual Explanation
 
@@ -56,19 +56,34 @@ digraph gini_index {
 ## Key Properties
 
 - **Range [0, 0.5]**: For binary classification, Gini ranges from 0 (pure) to 0.5 (max impurity)
-- **Faster than entropy**: No logarithm computation — only multiplication and addition
+- **Faster than entropy**: No logarithm computation -- only multiplication and addition
 - **Sensitive to changes**: More responsive to shifts in class probabilities near the extremes
 - **Default in sklearn**: The most commonly used impurity measure in practice
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Gini_Index {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Gini Index" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Contrasts with:** [[entropy|Entropy]] — Gini uses squared probabilities; entropy uses logarithms
-- **Builds into:** [[decision-tree-splitting|Decision Tree Splitting]] — Gini determines the best split
-- **Built from:** [[node-purity|Node Purity]] — Gini quantifies the purity concept
-- **Builds into:** [[attribute-selection-measures|Attribute Selection Measures]] — Gini is a selection criterion
-- **Related:** [[information-gain|Information Gain]] — both serve the same purpose with different formulas
-- **Builds into:** [[gini-index-properties|Gini Index Properties]] — detailed characteristics and trade-offs
-- **Related:** [[entropy-vs-gini|Entropy vs Gini Compared]] — synthesis comparing both measures
+- **Contrasts with:** [[entropy|Entropy]] -- Gini uses squared probabilities; entropy uses logarithms
+- **Builds into:** [[decision-tree-splitting|Decision Tree Splitting]] -- Gini determines the best split
+- **Built from:** [[node-purity|Node Purity]] -- Gini quantifies the purity concept
+- **Builds into:** [[attribute-selection-measures|Attribute Selection Measures]] -- Gini is a selection criterion
+- **Related:** [[information-gain|Information Gain]] -- both serve the same purpose with different formulas
+- **Builds into:** [[gini-index-properties|Gini Index Properties]] -- detailed characteristics and trade-offs
+- **Related:** [[entropy-vs-gini|Entropy vs Gini Compared]] -- synthesis comparing both measures
 
 ## Edge Cases & Gotchas
 

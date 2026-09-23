@@ -1,5 +1,5 @@
 ---
-concept: Flex — Fast Lexical Analyzer Generator
+concept: Flex -- Fast Lexical Analyzer Generator
 aliases: [flex, fast lexical analyzer, lex replacement]
 tags: [dev, compiler-design]
 created: 2026-05-13
@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Writing a lexical analyzer manually requires implementing a deterministic finite automaton (DFA) from regular expressions — handling character transitions, accepting states, maximal munch, and error handling. This is tedious, error-prone, and must be redone for each language.
+Writing a lexical analyzer manually requires implementing a deterministic finite automaton (DFA) from regular expressions -- handling character transitions, accepting states, maximal munch, and error handling. This is tedious, error-prone, and must be redone for each language.
 
 ## Core Idea
 
@@ -42,14 +42,29 @@ digraph flex_flow {
 - **Output:** C source file implementing a DFA-based lexer
 - **Maximal munch:** Automatically matches the longest possible token
 - **Pattern language:** Regular expressions with extensions (character classes, quantifiers)
-- **Integration:** Designed to work with Yacc/Bison — tokens defined in Flex are used by the parser
+- **Integration:** Designed to work with Yacc/Bison -- tokens defined in Flex are used by the parser
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Flex____Fast_Lexical_Analyzer_Generator {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Flex    Fast Lexical" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[lexical-analysis|Lexical Analysis]] — automates lexer generation from regex specifications
-- **Builds into:** [[wiki/compilerdesign/compiler-construction-tools|Compiler Construction Tools]] — Flex is one of the standard compiler tools
-- **Related:** [[token|Token]] — generated lexer produces token streams
-- **Related:** [[syntax-analysis|Syntax Analysis]] — Flex tokens feed into Yacc/Bison parsers
+- **Built from:** [[lexical-analysis|Lexical Analysis]] -- automates lexer generation from regex specifications
+- **Builds into:** [[wiki/compilerdesign/compiler-construction-tools|Compiler Construction Tools]] -- Flex is one of the standard compiler tools
+- **Related:** [[token|Token]] -- generated lexer produces token streams
+- **Related:** [[syntax-analysis|Syntax Analysis]] -- Flex tokens feed into Yacc/Bison parsers
 
 ## Edge Cases & Gotchas
 

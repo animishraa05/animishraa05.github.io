@@ -44,12 +44,27 @@ digraph G {
 - Does not eliminate collisions completely
 - Used in wireless and wired shared media
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_CSMA {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Csma" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[carrier-sense|Carrier Sense]] — the listening mechanism
-- Builds into: [[csma-cd|CSMA/CD]] — adds collision detection
-- Contrasts with: [[csma-ca|CSMA/CA]] — collision avoidance vs detection
-- Related: [[multiple-access|Multiple Access]] — broader category of protocols
-- Related: [[collision|Collision]] — what CSMA tries to avoid
+- Built from: [[carrier-sense|Carrier Sense]] -- the listening mechanism
+- Builds into: [[csma-cd|CSMA/CD]] -- adds collision detection
+- Contrasts with: [[csma-ca|CSMA/CA]] -- collision avoidance vs detection
+- Related: [[multiple-access|Multiple Access]] -- broader category of protocols
+- Related: [[collision|Collision]] -- what CSMA tries to avoid
 
 ## Edge Cases & Gotchas
 - Propagation delay causes collisions: device may sense idle while a transmission is in progress but hasn't arrived yet

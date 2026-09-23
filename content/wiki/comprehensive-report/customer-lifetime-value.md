@@ -7,7 +7,7 @@ updated: 2026-04-14
 ---
 
 ## The Problem
-Not all customers are equal—a customer who spent ₹50,000 over 2 years is more valuable than one who spent ₹500. Marketing needs to identify high-value customers for retention efforts, but raw revenue totals don't tell the whole story.
+Not all customers are equal--a customer who spent ₹50,000 over 2 years is more valuable than one who spent ₹500. Marketing needs to identify high-value customers for retention efforts, but raw revenue totals don't tell the whole story.
 
 ## Core Idea
 Customer Lifetime Value (CLV) is the total revenue expected from a customer over their entire relationship with the company. It combines order frequency, average order value, and tenure to create a single metric that enables customer segmentation, retention targeting, and acquisition budget allocation.
@@ -43,12 +43,41 @@ GROUP BY c.customer_id, c.full_name, c.city
 - **Actionable tiers**: Champions, Loyal, At-Risk, Dormant map to specific marketing actions
 - **Combined with tenure**: Premium + tenure_days creates customer_segment for richer analysis
 
+
+
+## Visual Explanation
+
+```dot
+digraph Customer_Lifetime_Value {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Customer Lifetime Va\nInput"]
+  B [label="Customer Lifetime Va\nCore Mechanism"]
+  C [label="Customer Lifetime Va\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Customer_Lifetime_Value {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Customer Lifetime Va" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Related: [[rfm-segmentation|RFM Segmentation]] — CLV monetary dimension is related to RFM
-- Related: [[wiki/comprehensive-report/dimension-table|Dimension Table]] — customer data stored in dim_customer
-- Related: [[wiki/comprehensive-report/fact-table|Fact Table]] — order data in fact_orders used for CLV calculation
+- Related: [[rfm-segmentation|RFM Segmentation]] -- CLV monetary dimension is related to RFM
+- Related: [[wiki/comprehensive-report/dimension-table|Dimension Table]] -- customer data stored in dim_customer
+- Related: [[wiki/comprehensive-report/fact-table|Fact Table]] -- order data in fact_orders used for CLV calculation
 
 ## Edge Cases & Gotchas
-- **Zero orders**: LEFT JOIN includes customers who registered but never ordered—they have CLV = 0
+- **Zero orders**: LEFT JOIN includes customers who registered but never ordered--they have CLV = 0
 - **Cancelled orders**: Filter by `status = 'Delivered'` to exclude cancelled/refunded orders
-- **Static calculation**: CLV updates only when ETL runs—not real-time
+- **Static calculation**: CLV updates only when ETL runs--not real-time

@@ -8,11 +8,11 @@ updated: 2026-04-30
 
 ## The Problem
 
-After navigating root and TLD servers, you still don't have the IP address. Someone needs to hold the actual DNS records (A, AAAA, CNAME, etc.) for each domain—that's the authoritative server.
+After navigating root and TLD servers, you still don't have the IP address. Someone needs to hold the actual DNS records (A, AAAA, CNAME, etc.) for each domain--that's the authoritative server.
 
 ## Core Idea
 
-The authoritative server is the final authority for a domain—it holds the actual DNS records (A, AAAA, MX, etc.) and returns the real IP address. This is the server operated by the domain owner or their DNS provider.
+The authoritative server is the final authority for a domain--it holds the actual DNS records (A, AAAA, MX, etc.) and returns the real IP address. This is the server operated by the domain owner or their DNS provider.
 
 ## How It Works
 
@@ -46,15 +46,30 @@ digraph G {
 
 - Holds actual DNS records (A, AAAA, CNAME, MX, TXT, etc.)
 - Domain owners configure records via their DNS provider
-- Responds authoritatively—no further lookup needed
+- Responds authoritatively--no further lookup needed
 - Can be primary (master) or secondary (slave) for redundancy
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_DNS_Authoritative_Server {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Dns Authoritative Se" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[dns-tld-server|DNS TLD Server]] — TLD points to authoritative server
-- **Builds into:** [[dns-lookup|DNS Lookup]] — authoritative gives the final answer
-- **Related:** [[dns-records|DNS Records]] — authoritative servers store these
-- **Related:** [[dns-zone|DNS Zone]] — the configuration file holding records
+- **Built from:** [[dns-tld-server|DNS TLD Server]] -- TLD points to authoritative server
+- **Builds into:** [[dns-lookup|DNS Lookup]] -- authoritative gives the final answer
+- **Related:** [[dns-records|DNS Records]] -- authoritative servers store these
+- **Related:** [[dns-zone|DNS Zone]] -- the configuration file holding records
 
 ## Edge Cases & Gotchas
 

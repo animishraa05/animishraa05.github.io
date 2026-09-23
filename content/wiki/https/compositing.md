@@ -54,12 +54,27 @@ digraph G {
 - Order matters: z-index, stacking context
 - Enables smooth scrolling/animations without repainting
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Compositing {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Compositing" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[painting|Painting]] — painted layers are composited
-- **Builds into:** [[gpu-rendering|GPU Rendering]] — compositing uses GPU
-- **Related:** [[browser-rendering|Browser Rendering]] — compositing is step 7
-- **Related:** [[css-layers|CSS Layers]] — promote elements to layers
+- **Built from:** [[painting|Painting]] -- painted layers are composited
+- **Builds into:** [[gpu-rendering|GPU Rendering]] -- compositing uses GPU
+- **Related:** [[browser-rendering|Browser Rendering]] -- compositing is step 7
+- **Related:** [[css-layers|CSS Layers]] -- promote elements to layers
 
 ## Edge Cases & Gotchas
 

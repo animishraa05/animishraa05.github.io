@@ -14,7 +14,7 @@ updated: 2026-06-11
 
 ## Explanation
 
-System calls are the only legal way for user-space programs to get privileged work done. When a Python script calls `open("file.txt")`, that innocent-looking line triggers a chain: the standard library invokes a system call, the CPU switches from user mode to kernel mode, and the kernel performs the actual file read. System calls exist because applications cannot be trusted with direct hardware access — a malicious or buggy program could corrupt memory, steal data, or crash the system. The syscall interface enforces a controlled gateway: the kernel validates every request before executing it.
+System calls are the only legal way for user-space programs to get privileged work done. When a Python script calls `open("file.txt")`, that innocent-looking line triggers a chain: the standard library invokes a system call, the CPU switches from user mode to kernel mode, and the kernel performs the actual file read. System calls exist because applications cannot be trusted with direct hardware access -- a malicious or buggy program could corrupt memory, steal data, or crash the system. The syscall interface enforces a controlled gateway: the kernel validates every request before executing it.
 
 ## How It Works
 
@@ -83,16 +83,16 @@ graph semantic_system_calls {
 
 ## Connections
 
-- Built from: [[kernel|Kernel]] — the kernel implements and handles system calls
-- Built from: [[user-mode|User Mode]] — programs must exit user mode via syscalls to perform privileged work
-- Built from: [[kernel-mode|Kernel Mode]] — the syscall handler executes in kernel mode
-- Builds into: [[mode-switching|Mode Switching]] — each system call causes a user-to-kernel mode switch
-- Contrasts with: function calls — function calls stay in user mode and have no hardware access; system calls switch to kernel mode
-- Related: [[inter-process-communication|Inter-Process Communication]] — IPC often relies on communication-related system calls
+- Built from: [[kernel|Kernel]] -- the kernel implements and handles system calls
+- Built from: [[user-mode|User Mode]] -- programs must exit user mode via syscalls to perform privileged work
+- Built from: [[kernel-mode|Kernel Mode]] -- the syscall handler executes in kernel mode
+- Builds into: [[mode-switching|Mode Switching]] -- each system call causes a user-to-kernel mode switch
+- Contrasts with: function calls -- function calls stay in user mode and have no hardware access; system calls switch to kernel mode
+- Related: [[inter-process-communication|Inter-Process Communication]] -- IPC often relies on communication-related system calls
 
 ## Edge Cases & Gotchas
 
-- System calls are NOT the same as library functions — `printf()` is a library function that internally calls `write()` syscall
+- System calls are NOT the same as library functions -- `printf()` is a library function that internally calls `write()` syscall
 - Too many small system calls kills performance: reading a file one byte at a time causes a syscall per byte, while buffered reading uses one syscall per buffer
-- Some system calls block (e.g., `read` from a socket with no data) — the process is suspended until data arrives
-- Students often confuse function call (user mode only) with system call (requires kernel mode switch) — the key distinction is privilege escalation
+- Some system calls block (e.g., `read` from a socket with no data) -- the process is suspended until data arrives
+- Students often confuse function call (user mode only) with system call (requires kernel mode switch) -- the key distinction is privilege escalation

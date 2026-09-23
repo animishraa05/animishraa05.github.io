@@ -10,13 +10,13 @@ updated: 2026-05-04
 Relational databases are optimized for transactional operations (INSERT, UPDATE, DELETE), not analytical queries that aggregate millions of rows. A normalized transactional schema requires multiple JOINs to answer business questions, which becomes slow and complex at scale.
 
 ## Core Idea
-Star schema is a denormalized data modeling approach where a central fact table (containing measurable business events) is surrounded by dimension tables (containing descriptive attributes). This design minimizes JOINs for analytical queries—a query typically joins only the fact table with one or more dimension tables.
+Star schema is a denormalized data modeling approach where a central fact table (containing measurable business events) is surrounded by dimension tables (containing descriptive attributes). This design minimizes JOINs for analytical queries--a query typically joins only the fact table with one or more dimension tables.
 
 ## How It Works
 1. **Fact tables** sit at the center, containing quantitative metrics (orders, revenue, quantities) and foreign keys to dimensions
 2. **Dimension tables** surround the facts, containing descriptive attributes (customer names, restaurant cuisines, dates)
 3. Each dimension has a primary key (surrogate key) that joins to the fact table
-4. Dimensions are denormalized—all related attributes live in a single table rather than being split across normalized tables
+4. Dimensions are denormalized--all related attributes live in a single table rather than being split across normalized tables
 
 For example, a food delivery schema might have:
 - `fact_orders`: 80,000 rows with order_id, customer_id, restaurant_id, agent_id, date_id, net_total
@@ -35,20 +35,49 @@ GROUP BY r.city
 ```
 
 ## Key Properties
-- **Denormalized dimensions**: All attributes in one table—no need to JOIN dimension tables together
+- **Denormalized dimensions**: All attributes in one table--no need to JOIN dimension tables together
 - **Surrogate keys**: Integer-based keys (like date_id = YYYYMMDD) for faster range scans than DATE comparisons
 - **Degenerate dimensions**: Low-cardinality attributes (status, platform, payment method) kept in fact table rather than separate dimensions
 - **Foreign key constraints**: Enforce referential integrity between fact and dimension tables
 - **Composite primary keys**: Aggregate tables use composite keys (year, month, city, cuisine_type) for uniqueness
 
+
+
+## Visual Explanation
+
+```dot
+digraph Star_Schema {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Star Schema\nInput"]
+  B [label="Star Schema\nCore Mechanism"]
+  C [label="Star Schema\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Star_Schema {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Star Schema" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[sql-database|SQL Database]] — star schema is implemented on top of relational databases
-- Builds into: [[data-warehouse|Data Warehouse]] — star schema is the standard schema design for OLAP warehouses
-- Builds into: [[wiki/comprehensive-report/dimension-table|Dimension Table]] — dimension tables are a core component of star schema
-- Builds into: [[wiki/comprehensive-report/fact-table|Fact Table]] — fact tables are the center of star schema
-- Related: [[etl-pipeline|ETL Pipeline]] — ETL populates star schema tables from source data
+- Built from: [[sql-database|SQL Database]] -- star schema is implemented on top of relational databases
+- Builds into: [[data-warehouse|Data Warehouse]] -- star schema is the standard schema design for OLAP warehouses
+- Builds into: [[wiki/comprehensive-report/dimension-table|Dimension Table]] -- dimension tables are a core component of star schema
+- Builds into: [[wiki/comprehensive-report/fact-table|Fact Table]] -- fact tables are the center of star schema
+- Related: [[etl-pipeline|ETL Pipeline]] -- ETL populates star schema tables from source data
 
 ## Edge Cases & Gotchas
-- **SCD Type 1 only**: Overwrites on change—historical orders show new city if customer moves
+- **SCD Type 1 only**: Overwrites on change--historical orders show new city if customer moves
 - **Full refresh**: For small datasets, full REPLACE (DROP + INSERT) is simpler than incremental loads
 - **Integer vs DATE**: Using INTEGER date_id (YYYYMMDD) performs faster than DATE type for range scans in PostgreSQL

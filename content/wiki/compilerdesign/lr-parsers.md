@@ -48,23 +48,38 @@ digraph lr_family {
 
 ## Key Properties
 
-- **SLR:** Simplest, smallest tables, least powerful — uses FOLLOW sets for reduce decisions
-- **CLR (LR(1)):** Most powerful, largest tables (potentially thousands of states) — uses full lookahead sets
-- **LALR:** Merges CLR states with same core — table size comparable to SLR, power nearly that of CLR
-- **Yacc/Bison:** Generate LALR(1) parsers — the practical sweet spot
-- **LR(0):** No lookahead, least powerful — not practical for real languages
+- **SLR:** Simplest, smallest tables, least powerful -- uses FOLLOW sets for reduce decisions
+- **CLR (LR(1)):** Most powerful, largest tables (potentially thousands of states) -- uses full lookahead sets
+- **LALR:** Merges CLR states with same core -- table size comparable to SLR, power nearly that of CLR
+- **Yacc/Bison:** Generate LALR(1) parsers -- the practical sweet spot
+- **LR(0):** No lookahead, least powerful -- not practical for real languages
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_LR_Parsers {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Lr Parsers" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[shift-reduce-parser|Shift Reduce Parser]] — LR parsers are shift-reduce parsers with state-based decision tables
-- **Built from:** [[bottom-up-parsing|Bottom-Up Parsing]] — all LR parsers are bottom-up
-- **Related:** [[first-and-follow-sets|FIRST and FOLLOW Sets]] — SLR uses FOLLOW sets for conflict resolution
-- **Related:** [[wiki/compilerdesign/compiler-construction-tools|Compiler Construction Tools]] — Yacc/Bison generate LALR parsers
-- **Related:** [[syntax-analysis|Syntax Analysis]] — LR parsing is the most widely used syntax analysis method
+- **Built from:** [[shift-reduce-parser|Shift Reduce Parser]] -- LR parsers are shift-reduce parsers with state-based decision tables
+- **Built from:** [[bottom-up-parsing|Bottom-Up Parsing]] -- all LR parsers are bottom-up
+- **Related:** [[first-and-follow-sets|FIRST and FOLLOW Sets]] -- SLR uses FOLLOW sets for conflict resolution
+- **Related:** [[wiki/compilerdesign/compiler-construction-tools|Compiler Construction Tools]] -- Yacc/Bison generate LALR parsers
+- **Related:** [[syntax-analysis|Syntax Analysis]] -- LR parsing is the most widely used syntax analysis method
 
 ## Edge Cases & Gotchas
 
-- **State explosion:** CLR(1) can have thousands of states for real languages — LALR was invented to solve this
-- **LALR reduce/reduce conflicts:** Merging states can introduce reduce/reduce conflicts that didn't exist in CLR — rare but possible
+- **State explosion:** CLR(1) can have thousands of states for real languages -- LALR was invented to solve this
+- **LALR reduce/reduce conflicts:** Merging states can introduce reduce/reduce conflicts that didn't exist in CLR -- rare but possible
 - **Grammar class hierarchy:** Every SLR grammar is LALR, every LALR grammar is LR(1), but not vice versa
-- **Yacc uses LALR:** Most parser generators use LALR(1) — it handles nearly all programming language constructs
+- **Yacc uses LALR:** Most parser generators use LALR(1) -- it handles nearly all programming language constructs

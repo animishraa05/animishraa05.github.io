@@ -16,13 +16,13 @@ The Models/ORM layer solves the impedance mismatch between Python objects and re
 
 ## How It Works
 
-1. **Model defined** — Python class with field instances as class attributes
-2. **Migration created** — `makemigrations` inspects model changes, generates schema operations
-3. **Migration applied** — `migrate` executes SQL (CREATE TABLE, ALTER TABLE) on database
-3. **Query issued** — `Model.objects.filter(...)` returns lazy `QuerySet`
-4. **SQL generated** — QuerySet compiles to SELECT with JOINs for relationships
-5. **Results hydrated** — Rows converted to model instances (or dicts via `.values()`)
-6. **Instance saved** — `instance.save()` generates INSERT or UPDATE
+1. **Model defined** -- Python class with field instances as class attributes
+2. **Migration created** -- `makemigrations` inspects model changes, generates schema operations
+3. **Migration applied** -- `migrate` executes SQL (CREATE TABLE, ALTER TABLE) on database
+3. **Query issued** -- `Model.objects.filter(...)` returns lazy `QuerySet`
+4. **SQL generated** -- QuerySet compiles to SELECT with JOINs for relationships
+5. **Results hydrated** -- Rows converted to model instances (or dicts via `.values()`)
+6. **Instance saved** -- `instance.save()` generates INSERT or UPDATE
 
 ## Visual Explanation
 
@@ -100,18 +100,18 @@ graph semantic_models_orm {
 
 ## Connections
 
-- Built from: [[database-migrations|Database Migrations]] — Schema sync mechanism
-- Built from: [[model-fields|Model Fields]] — Field type definitions
-- Built from: [[relationship-fields|Relationship Fields]] — FK, M2M, O2O
-- Builds into: [[orm-querysets|QuerySet API]] — Filter, annotate, aggregate
-- Builds into: [[model-managers|Model Managers]] — Custom query entry points
-- Builds into: [[admin-panel|Admin Panel]] — Auto-registers models
-- Builds into: [[forms-modelforms|ModelForms]] — Form generation from model
-- Builds into: [[django-rest-framework-serializers|DRF Serializers]] — `ModelSerializer`
-- Contrasts with: [[sqlalchemy|SQLAlchemy]] — Data Mapper pattern, explicit session, more flexible
-- Contrasts with: [[raw-sql|Raw SQL]] — Full control, no abstraction overhead
-- Related: [[transactions|Database Transactions]] — `atomic()` blocks
-- Related: [[model-signals|Model Signals]] — `pre_save`, `post_delete`, `m2m_changed`
+- Built from: [[database-migrations|Database Migrations]] -- Schema sync mechanism
+- Built from: [[model-fields|Model Fields]] -- Field type definitions
+- Built from: [[relationship-fields|Relationship Fields]] -- FK, M2M, O2O
+- Builds into: [[orm-querysets|QuerySet API]] -- Filter, annotate, aggregate
+- Builds into: [[model-managers|Model Managers]] -- Custom query entry points
+- Builds into: [[admin-panel|Admin Panel]] -- Auto-registers models
+- Builds into: [[forms-modelforms|ModelForms]] -- Form generation from model
+- Builds into: [[django-rest-framework-serializers|DRF Serializers]] -- `ModelSerializer`
+- Contrasts with: [[sqlalchemy|SQLAlchemy]] -- Data Mapper pattern, explicit session, more flexible
+- Contrasts with: [[raw-sql|Raw SQL]] -- Full control, no abstraction overhead
+- Related: [[transactions|Database Transactions]] -- `atomic()` blocks
+- Related: [[model-signals|Model Signals]] -- `pre_save`, `post_delete`, `m2m_changed`
 
 ## Edge Cases & Gotchas
 

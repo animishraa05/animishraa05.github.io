@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Applications often need to communicate over a network — web browsers talking to servers, chat apps exchanging messages, databases sending query results. Without a standard networking API, every application would need to implement its own network protocol handling at the OS level.
+Applications often need to communicate over a network -- web browsers talking to servers, chat apps exchanging messages, databases sending query results. Without a standard networking API, every application would need to implement its own network protocol handling at the OS level.
 
 ## Core Idea
 
@@ -71,14 +71,14 @@ graph semantic_sockets {
 
 ## Connections
 
-- **Built from:** [[java-file-handling|Java File Handling]] — socket I/O uses the same InputStream/OutputStream patterns
-- **Built from:** [[java-multithreading|Java Multithreading]] — servers typically handle each client in a separate thread
-- **Builds into:** [[java-jdbc|Java JDBC]] — JDBC uses sockets under the hood for database communication
-- **Related:** [[java-try-catch-finally|Try-Catch-Finally]] — sockets must be closed cleanly, often in finally blocks
+- **Built from:** [[java-file-handling|Java File Handling]] -- socket I/O uses the same InputStream/OutputStream patterns
+- **Built from:** [[java-multithreading|Java Multithreading]] -- servers typically handle each client in a separate thread
+- **Builds into:** [[java-jdbc|Java JDBC]] -- JDBC uses sockets under the hood for database communication
+- **Related:** [[java-try-catch-finally|Try-Catch-Finally]] -- sockets must be closed cleanly, often in finally blocks
 
 ## Edge Cases & Gotchas
 
 - **Socket timeout**: `setSoTimeout()` prevents threads from blocking indefinitely
 - **Half-close**: `shutdownOutput()` allows reading after writing is done
-- **Thread per connection**: Doesn't scale to thousands of connections — use NIO selectors instead
+- **Thread per connection**: Doesn't scale to thousands of connections -- use NIO selectors instead
 - **Firewall/NAT**: Socket connections may fail due to firewalls blocking ports

@@ -17,7 +17,7 @@ A sliding window protocol where the sender retransmits ALL unacknowledged packet
 2. Receiver only accepts in-order packets, discarding out-of-order packets
 3. Receiver sends ACK for the last in-order packet received (cumulative ACK)
 4. If sender doesn't receive ACK for a packet before timeout, it retransmits that packet and ALL subsequent packets
-5. Simple for receiver but can be wasteful — retransmitting packets that arrived correctly
+5. Simple for receiver but can be wasteful -- retransmitting packets that arrived correctly
 
 ## Visual Explanation
 ```dot
@@ -43,11 +43,26 @@ digraph G {
 - Potentially wasteful: retransmits packets that arrived correctly
 - Window size typically limited to 2^n - 1 (n = sequence number bits)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Go_Back_N_ARQ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Go Back N Arq" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[sliding-window-protocol|Sliding Window Protocol]] — based on sliding window
-- Contrasts with: [[selective-repeat|Selective Repeat]] — retransmit all vs only lost
-- Related: [[cumulative-acknowledgment|Cumulative Acknowledgment]] — ACK mechanism used
-- Related: [[automatic-repeat-request|Automatic Repeat Request]] — ARQ family of protocols
+- Built from: [[sliding-window-protocol|Sliding Window Protocol]] -- based on sliding window
+- Contrasts with: [[selective-repeat|Selective Repeat]] -- retransmit all vs only lost
+- Related: [[cumulative-acknowledgment|Cumulative Acknowledgment]] -- ACK mechanism used
+- Related: [[automatic-repeat-request|Automatic Repeat Request]] -- ARQ family of protocols
 
 ## Edge Cases & Gotchas
 - High packet loss causes many unnecessary retransmissions

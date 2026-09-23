@@ -10,7 +10,7 @@ updated: 2026-04-30
 Network layers want to forward packets as fast as possible without the overhead of guaranteeing delivery. Some services (like IP) prioritize speed and simplicity over reliability.
 
 ## Core Idea
-A delivery model where the network makes its "best effort" to deliver packets but provides no guarantees — packets can be lost, duplicated, or arrive out of order.
+A delivery model where the network makes its "best effort" to deliver packets but provides no guarantees -- packets can be lost, duplicated, or arrive out of order.
 
 ## How It Works
 1. Network layer receives packet from transport layer
@@ -40,15 +40,30 @@ digraph G {
 - No delivery guarantees
 - No order guarantees
 - No error recovery (just detection via checksums)
-- Minimal overhead — fast and simple
+- Minimal overhead -- fast and simple
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Best_Effort_Delivery {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Best Effort Delivery" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[ip-protocol|IP Protocol]] — uses best-effort delivery
-- Built from: [[connectionless-service|Connectionless Service]] — inherently best-effort
-- Contrasts with: [[reliable-data-transfer|Reliable Data Transfer]] — guarantees vs no guarantees
-- Related: [[udp|UDP]] — transport layer best-effort protocol
+- Built from: [[ip-protocol|IP Protocol]] -- uses best-effort delivery
+- Built from: [[connectionless-service|Connectionless Service]] -- inherently best-effort
+- Contrasts with: [[reliable-data-transfer|Reliable Data Transfer]] -- guarantees vs no guarantees
+- Related: [[udp|UDP]] -- transport layer best-effort protocol
 
 ## Edge Cases & Gotchas
 - Higher layers must implement reliability if needed (TCP does this on top of IP)
 - Packet loss is expected and must be handled by applications or transport layer
-- "Best effort" doesn't mean "no effort" — routers still try their best to forward
+- "Best effort" doesn't mean "no effort" -- routers still try their best to forward

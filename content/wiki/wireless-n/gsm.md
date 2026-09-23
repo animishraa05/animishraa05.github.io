@@ -14,10 +14,10 @@ GSM is the 2G digital cellular standard that introduced digital encryption, inte
 
 ## How It Works
 GSM operates in the 900 MHz and 1800 MHz bands (different regions vary). The system uses:
-1. **TDMA/FDMA hybrid** — time division and frequency division multiplexing
-2. **GMSK modulation** — Gaussian Minimum Shift Keying for spectrally efficient transmission
+1. **TDMA/FDMA hybrid** -- time division and frequency division multiplexing
+2. **GMSK modulation** -- Gaussian Minimum Shift Keying for spectrally efficient transmission
 3. **Three subsystems**: RSS (radio), NSS (network switching), OSS (operations)
-4. **SIM cards** — removable subscriber identity module for portability
+4. **SIM cards** -- removable subscriber identity module for portability
 
 Key processes: location updates, handoff, authentication, and encryption all managed by the NSS.
 
@@ -51,15 +51,30 @@ digraph G {
 - GPRS (2.5G) adds packet-switched data on top of GSM's circuit-switched foundation
 - Uses FDD (Frequency Division Duplex) for uplink/downlink separation
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_GSM__Global_System_for_Mobile_Communications_ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Gsm (Global System F" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[wireless-network|Wireless Network]] — GSM operates over wireless radio
-- Built from: [[frequency-shift-keying|Frequency Shift Keying]] — GSM uses GMSK (Gaussian MSK)
-- Builds into: [[gsm-architecture|GSM Architecture]] — detailed subsystem breakdown
-- Builds into: [[gsm-services|GSM Services]] — telephony, data, supplementary services
-- Contrasts with: [[code-division-multiple-access|CDMA]] — GSM uses TDMA, CDMA uses spread spectrum
-- Related: [[gprs|GPRS]] — packet-switched extension to GSM (2.5G)
+- Built from: [[wireless-network|Wireless Network]] -- GSM operates over wireless radio
+- Built from: [[frequency-shift-keying|Frequency Shift Keying]] -- GSM uses GMSK (Gaussian MSK)
+- Builds into: [[gsm-architecture|GSM Architecture]] -- detailed subsystem breakdown
+- Builds into: [[gsm-services|GSM Services]] -- telephony, data, supplementary services
+- Contrasts with: [[code-division-multiple-access|CDMA]] -- GSM uses TDMA, CDMA uses spread spectrum
+- Related: [[gprs|GPRS]] -- packet-switched extension to GSM (2.5G)
 
 ## Edge Cases & Gotchas
-- A5/1 encryption was broken — modern attacks can decrypt GSM traffic in real-time
-- GSM operates in multiple frequency bands globally (850/900/1800/1900 MHz) — devices must support regional bands
-- Circuit-switched nature makes GSM inefficient for data — GPRS/EDGE added later
+- A5/1 encryption was broken -- modern attacks can decrypt GSM traffic in real-time
+- GSM operates in multiple frequency bands globally (850/900/1800/1900 MHz) -- devices must support regional bands
+- Circuit-switched nature makes GSM inefficient for data -- GPRS/EDGE added later

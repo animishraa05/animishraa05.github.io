@@ -8,7 +8,7 @@ updated: 2026-05-06
 
 ## The Problem
 
-Machine learning workflows often require different models for different tasks — one algorithm for classification, another for regression, different handling for different data types. Maintaining expertise in multiple algorithms is costly, and switching between them adds complexity to the pipeline.
+Machine learning workflows often require different models for different tasks -- one algorithm for classification, another for regression, different handling for different data types. Maintaining expertise in multiple algorithms is costly, and switching between them adds complexity to the pipeline.
 
 ## Core Idea
 
@@ -33,7 +33,7 @@ The flexibility manifests in three dimensions:
    - **Medical diagnosis**: Symptoms, test results → disease classification
    - **Business rules**: Revenue, region, segment → strategy recommendation
 
-The source cites "flexibility" as one of the three main reasons decision trees are "widely used" — alongside interpretability and low preprocessing needs.
+The source cites "flexibility" as one of the three main reasons decision trees are "widely used" -- alongside interpretability and low preprocessing needs.
 
 ## Visual Explanation
 
@@ -61,14 +61,29 @@ digraph decision_tree_flexibility {
 - **Feature-agnostic**: Works with any combination of numerical and categorical features
 - **Domain-independent**: Applicable to any problem where decisions can be expressed as rules
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Decision_Tree_Flexibility {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Decision Tree Flexib" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[classification|Classification]] — trees solve classification tasks
-- **Built from:** [[regression|Regression]] — trees solve regression tasks
-- **Built from:** [[decision-tree-preprocessing|Decision Tree Preprocessing]] — low preprocessing contributes to flexibility
-- **Related:** [[supervised-learning|Supervised Learning]] — flexibility makes trees broadly applicable in supervised learning
-- **Related:** [[decision-tree-interpretability|Decision Tree Interpretability]] — both are practical advantages
-- **Related:** [[decision-tree-structure|Decision Tree Structure]] — the same structure supports both tasks
+- **Built from:** [[classification|Classification]] -- trees solve classification tasks
+- **Built from:** [[regression|Regression]] -- trees solve regression tasks
+- **Built from:** [[decision-tree-preprocessing|Decision Tree Preprocessing]] -- low preprocessing contributes to flexibility
+- **Related:** [[supervised-learning|Supervised Learning]] -- flexibility makes trees broadly applicable in supervised learning
+- **Related:** [[decision-tree-interpretability|Decision Tree Interpretability]] -- both are practical advantages
+- **Related:** [[decision-tree-structure|Decision Tree Structure]] -- the same structure supports both tasks
 
 ## Edge Cases & Gotchas
 

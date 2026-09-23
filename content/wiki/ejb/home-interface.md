@@ -43,15 +43,30 @@ digraph G {
 - Container-implemented: Developer defines interface, container provides implementation
 - In EJB 3.x: Largely replaced by annotations like @Stateless, @Stateful
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Home_Interface {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Home Interface" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Builds into: [[ejb-object|EJB Object]] — Home creates instances wrapped by EJB Object
-- Builds into: [[entity-bean|Entity Bean]] — Home finds entity beans by primary key
-- Built from: [[ejb-container|EJB Container]] — container implements Home, [[ejb-development-lifecycle|EJB Development Lifecycle]] — Home defined in step 1
-- Related: [[finder-methods|Finder Methods]] — specific to entity beans, [[local-home-interface|Local Home Interface]] — high-performance same-JVM version
-- Contrasts with: [[remote-interface|Remote Interface]] — Remote defines business methods, Home defines creation/factory methods, [[why-bean-doesnt-implement-interface|Why Bean Doesn't Implement Component Interface]]
+- Builds into: [[ejb-object|EJB Object]] -- Home creates instances wrapped by EJB Object
+- Builds into: [[entity-bean|Entity Bean]] -- Home finds entity beans by primary key
+- Built from: [[ejb-container|EJB Container]] -- container implements Home, [[ejb-development-lifecycle|EJB Development Lifecycle]] -- Home defined in step 1
+- Related: [[finder-methods|Finder Methods]] -- specific to entity beans, [[local-home-interface|Local Home Interface]] -- high-performance same-JVM version
+- Contrasts with: [[remote-interface|Remote Interface]] -- Remote defines business methods, Home defines creation/factory methods, [[why-bean-doesnt-implement-interface|Why Bean Doesn't Implement Component Interface]]
 
 ## Edge Cases & Gotchas
-- In EJB 3.x, Home Interface is simplified — annotations replace most of it
+- In EJB 3.x, Home Interface is simplified -- annotations replace most of it
 - For stateless beans, create() typically returns same pooled instance
 - For entity beans, finder methods return bean references identified by primary key
-- Home is NOT the bean itself — it's just the factory
+- Home is NOT the bean itself -- it's just the factory

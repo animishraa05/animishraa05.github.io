@@ -16,8 +16,8 @@ Components in sequence multiply their availability together (making total availa
 
 ## How It Works
 
-1. **Sequence formula:** `Avail(Total) = Avail(A) × Avail(B)`. Two 99.9% components in series yield 99.8% — worse than either alone.
-2. **Parallel formula:** `Avail(Total) = 1 - (1 - Avail(A)) × (1 - Avail(B))`. Two 99.9% components in parallel yield 99.9999% — better than either alone.
+1. **Sequence formula:** `Avail(Total) = Avail(A) × Avail(B)`. Two 99.9% components in series yield 99.8% -- worse than either alone.
+2. **Parallel formula:** `Avail(Total) = 1 - (1 - Avail(A)) × (1 - Avail(B))`. Two 99.9% components in parallel yield 99.9999% -- better than either alone.
 3. Parallel systems only fail if both (or all) redundant components fail simultaneously.
 
 ## Visual Explanation
@@ -55,19 +55,34 @@ digraph availability_parallel_sequence {
 
 ## Key Properties
 
-- Sequential components multiply availability — total is always _worse_ than the worst component
-- Parallel components multiply unavailability — total is always _better_ than the best component
+- Sequential components multiply availability -- total is always _worse_ than the worst component
+- Parallel components multiply unavailability -- total is always _better_ than the best component
 - Fundamental principle underlying all reliability engineering and redundancy design
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Availability_in_Parallel_vs_Sequence {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Availability In Para" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Builds into:** [[availability-nines|Availability Nines]] — the formula behind nines calculations
-- **Related:** [[active-passive-failover|Active-Passive Failover]] — parallel arrangement of servers for failover
-- **Related:** [[active-active-failover|Active-Active Failover]] — parallel arrangement for load sharing and redundancy
-- **Related:** [[horizontal-scaling|Horizontal Scaling]] — adding parallel nodes improves overall system availability
+- **Builds into:** [[availability-nines|Availability Nines]] -- the formula behind nines calculations
+- **Related:** [[active-passive-failover|Active-Passive Failover]] -- parallel arrangement of servers for failover
+- **Related:** [[active-active-failover|Active-Active Failover]] -- parallel arrangement for load sharing and redundancy
+- **Related:** [[horizontal-scaling|Horizontal Scaling]] -- adding parallel nodes improves overall system availability
 
 ## Edge Cases & Gotchas
 
-- Components are rarely perfectly independent — shared power supplies, network links, or data centers create common-mode failures that violate the parallel model
+- Components are rarely perfectly independent -- shared power supplies, network links, or data centers create common-mode failures that violate the parallel model
 - The parallel formula assumes instant failover, but real failover has non-zero downtime that reduces effective availability
-- Very long dependency chains (many sequential components) degrade availability drastically — a system with ten 99.9% components in series is only 99.0% available
+- Very long dependency chains (many sequential components) degrade availability drastically -- a system with ten 99.9% components in series is only 99.0% available

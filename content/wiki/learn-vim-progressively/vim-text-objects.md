@@ -46,13 +46,42 @@ Common objects:
 
 ## Edge Cases & Gotchas
 
-- Visual mode doesn't need an action — just `vi"` works
-- Nested quotes: counts work (`ci""` — inner pair in `"foo"bar"`)
-- Objects are motion-compatible — `y` works same as `d` (yanks)
+- Visual mode doesn't need an action -- just `vi"` works
+- Nested quotes: counts work (`ci""` -- inner pair in `"foo"bar"`)
+- Objects are motion-compatible -- `y` works same as `d` (yanks)
 
+
+
+## Visual Explanation
+
+```dot
+digraph aliases___text_objects__textobjects__zone_selection__ci___ca___etc_ {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Aliases: [Text Objec\nInput"]
+  B [label="Aliases: [Text Objec\nCore Mechanism"]
+  C [label="Aliases: [Text Objec\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_aliases___text_objects__textobjects__zone_selection__ci___ca___etc_ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Aliases: [Text Objec" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- [[vim-modes|Vim Modes]] — Requires Visual or Normal mode
-- [[vim-basic-commands|Survival Commands]] — Use operators like `d`, `y`
-- [[vim-visual-selection|Visual Selection]] — Text objects extend selection
-- [[vim-repetition|Repetition]] — Can repeat text object operations
+- [[vim-modes|Vim Modes]] -- Requires Visual or Normal mode
+- [[vim-basic-commands|Survival Commands]] -- Use operators like `d`, `y`
+- [[vim-visual-selection|Visual Selection]] -- Text objects extend selection
+- [[vim-repetition|Repetition]] -- Can repeat text object operations

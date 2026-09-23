@@ -47,9 +47,24 @@ digraph io_flow {
 
 - Each step adds appropriate abstraction or translation
 - DMA can bypass CPU involvement in data transfer (steps 5-6)
-- The process is asynchronous — application may block until interrupt arrives
+- The process is asynchronous -- application may block until interrupt arrives
 - File system layer maps logical file operations to physical disk blocks
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_I_O_Request_to_Hardware_Operation {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="I/O Request To Hardw" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[io-system|I/O System]], [[device-driver|Device Driver]], [[device-controller|Device Controller]]

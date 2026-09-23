@@ -1,5 +1,5 @@
 ---
-title: Overloading vs Overriding — Compile-Time vs Runtime Polymorphism
+title: Overloading vs Overriding -- Compile-Time vs Runtime Polymorphism
 type: synthesis
 tags: [dev, java]
 created: 2026-05-13
@@ -38,17 +38,46 @@ The distinction is **when** the method call is resolved: overloading at compile 
 
 ## When to Choose Overriding
 
-- You need polymorphic behavior — code written against a base type should work with any subtype
+- You need polymorphic behavior -- code written against a base type should work with any subtype
 - Different subclasses need different implementations of the same contract
 - You're designing an interface or abstract class that subclasses will implement
 
 ## The Insight
 
-Overloading and overriding serve completely different purposes despite both involving "same method name." Overloading is about **API convenience** — giving the developer a clean API that works with multiple input types. Overriding is about **behavioral substitution** — enabling the Liskov Substitution Principle where subtypes can replace their parent types. The only thing they share is the method name reuse, and they can coexist: a method can be both overloaded (in its class) and overridden (by subclasses).
+Overloading and overriding serve completely different purposes despite both involving "same method name." Overloading is about **API convenience** -- giving the developer a clean API that works with multiple input types. Overriding is about **behavioral substitution** -- enabling the Liskov Substitution Principle where subtypes can replace their parent types. The only thing they share is the method name reuse, and they can coexist: a method can be both overloaded (in its class) and overridden (by subclasses).
 
+
+
+## Visual Explanation
+
+```dot
+digraph java_overloading_vs_overriding {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Java Overloading Vs \nInput"]
+  B [label="Java Overloading Vs \nCore Mechanism"]
+  C [label="Java Overloading Vs \nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_java_overloading_vs_overriding {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Java Overloading Vs " fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- [[java-compile-time-polymorphism|Compile-Time Polymorphism]] — overloading mechanism
-- [[java-runtime-polymorphism|Runtime Polymorphism]] — overriding mechanism
-- [[java-polymorphism|Java Polymorphism]] — the parent concept of both
-- [[java-methods|Java Methods]] — the method declaration is the common foundation
+- [[java-compile-time-polymorphism|Compile-Time Polymorphism]] -- overloading mechanism
+- [[java-runtime-polymorphism|Runtime Polymorphism]] -- overriding mechanism
+- [[java-polymorphism|Java Polymorphism]] -- the parent concept of both
+- [[java-methods|Java Methods]] -- the method declaration is the common foundation

@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Some methods need to accept a variable number of arguments — for example, `String.format()`, `printf()`, or a sum function that should work with any number of inputs. Previous solutions (overloading for each arity, or passing arrays) are either verbose or force the caller to manually construct an array.
+Some methods need to accept a variable number of arguments -- for example, `String.format()`, `printf()`, or a sum function that should work with any number of inputs. Previous solutions (overloading for each arity, or passing arrays) are either verbose or force the caller to manually construct an array.
 
 ## Core Idea
 
@@ -16,7 +16,7 @@ Some methods need to accept a variable number of arguments — for example, `Str
 
 ## How It Works
 
-When a varargs method is called, the compiler packages the variable arguments into an array of the specified type. Inside the method, the parameter is treated as an array — you can iterate over it, access elements by index, check its length, or pass it to other methods that accept arrays.
+When a varargs method is called, the compiler packages the variable arguments into an array of the specified type. Inside the method, the parameter is treated as an array -- you can iterate over it, access elements by index, check its length, or pass it to other methods that accept arrays.
 
 ## Visual Explanation
 
@@ -69,14 +69,14 @@ graph semantic_varargs {
 
 ## Connections
 
-- **Built from:** [[java-methods|Java Methods]] — varargs is a special kind of method parameter
-- **Built from:** [[java-arrays|Java Arrays]] — varargs is syntactic sugar for array passing
-- **Contrasts with:** [[java-methods|Java Methods]] — varargs avoids needing multiple overloads for different arities
-- **Related:** [[java-program-structure|Java Program Structure]] — the `main` method's `String[] args` is conceptually similar
+- **Built from:** [[java-methods|Java Methods]] -- varargs is a special kind of method parameter
+- **Built from:** [[java-arrays|Java Arrays]] -- varargs is syntactic sugar for array passing
+- **Contrasts with:** [[java-methods|Java Methods]] -- varargs avoids needing multiple overloads for different arities
+- **Related:** [[java-program-structure|Java Program Structure]] -- the `main` method's `String[] args` is conceptually similar
 
 ## Edge Cases & Gotchas
 
-- **Ambiguous calls**: `method(null)` with varargs is ambiguous — could be null array or null first element
+- **Ambiguous calls**: `method(null)` with varargs is ambiguous -- could be null array or null first element
 - **Generic varargs**: `@SafeVarargs` annotation suppresses heap pollution warnings
-- **Performance**: Each call creates a new array — avoid in hot loops
+- **Performance**: Each call creates a new array -- avoid in hot loops
 - **Overriding**: Overriding a varargs method with a non-varargs method (or vice versa) is a compile error

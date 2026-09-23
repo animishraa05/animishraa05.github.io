@@ -29,12 +29,41 @@ Activation is the process where the container deserializes a previously passivat
 - Restores conversational state from storage
 - Opposite of passivation
 
+
+
+## Visual Explanation
+
+```dot
+digraph Activation {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Activation\nInput"]
+  B [label="Activation\nCore Mechanism"]
+  C [label="Activation\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Activation {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Activation" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- Built from: [[passivation|Passivation]] — activation is the reverse of passivation
-- Builds into: [[stateful-session-bean|Stateful Session Bean]] — stateful beans go through this cycle during their lifecycle
-- Related: [[ejb-container|EJB Container]] — the container performs activation
-- Related: [[instance-pooling|Instance Pooling]] — container manages activated beans in pools
+- Built from: [[passivation|Passivation]] -- activation is the reverse of passivation
+- Builds into: [[stateful-session-bean|Stateful Session Bean]] -- stateful beans go through this cycle during their lifecycle
+- Related: [[ejb-container|EJB Container]] -- the container performs activation
+- Related: [[instance-pooling|Instance Pooling]] -- container manages activated beans in pools
 
 ## Edge Cases & Gotchas
 

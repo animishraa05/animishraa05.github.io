@@ -18,7 +18,7 @@ There are two primary techniques:
 **DSSS (Direct Sequence Spread Spectrum):**
 1. The original data bits are combined (XOR) with a high-rate pseudo-random chipping sequence (e.g., 11 chips per bit)
 2. The resulting wideband signal is modulated onto a carrier and transmitted
-3. The receiver uses the same chipping sequence to despread — narrowband noise is suppressed, desired signal is recovered
+3. The receiver uses the same chipping sequence to despread -- narrowband noise is suppressed, desired signal is recovered
 4. Used in Wi-Fi (802.11b) and GPS
 
 **FHSS (Frequency Hopping Spread Spectrum):**
@@ -34,15 +34,44 @@ There are two primary techniques:
 - CDMA capability: Multiple users share the same band with different codes (DSSS) or hopping patterns (FHSS)
 - FHSS is cheaper and simpler; DSSS is more spectrally efficient
 
+
+
+## Visual Explanation
+
+```dot
+digraph Spread_Spectrum {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Spread Spectrum\nInput"]
+  B [label="Spread Spectrum\nCore Mechanism"]
+  C [label="Spread Spectrum\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Spread_Spectrum {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Spread Spectrum" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[modulation|Modulation]] — spread spectrum is a specific modulation technique
-- Built from: [[multipath-propagation|Multipath Propagation]] — DSSS spreading codes help filter out multipath interference
-- Related: [[frequency-hopping-spread-spectrum|FHSS]] — Bluetooth's spread spectrum technique
-- Related: [[direct-sequence-spread-spectrum|DSSS]] — Wi-Fi's spread spectrum technique
-- Related: [[code-division-multiple-access|CDMA]] — uses spread spectrum codes for multiple access
+- Built from: [[modulation|Modulation]] -- spread spectrum is a specific modulation technique
+- Built from: [[multipath-propagation|Multipath Propagation]] -- DSSS spreading codes help filter out multipath interference
+- Related: [[frequency-hopping-spread-spectrum|FHSS]] -- Bluetooth's spread spectrum technique
+- Related: [[direct-sequence-spread-spectrum|DSSS]] -- Wi-Fi's spread spectrum technique
+- Related: [[code-division-multiple-access|CDMA]] -- uses spread spectrum codes for multiple access
 
 ## Edge Cases & Gotchas
-- DSSS requires precise code synchronization — timing errors corrupt the despreading process
+- DSSS requires precise code synchronization -- timing errors corrupt the despreading process
 - FHSS hop sequences must be synchronized between transmitter and receiver; losing sync loses communication
 - FHSS devices must hop fast enough to avoid being jammed on any single frequency
 - DSSS spreading codes must have good autocorrelation properties to minimize ISI

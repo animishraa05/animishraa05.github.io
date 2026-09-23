@@ -48,6 +48,21 @@ digraph interrupt {
 - Can't block or sleep (would hang the system)
 - Shares data with the interrupted process via kernel structures
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Interrupt_Handler {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Interrupt Handler" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[io-software-structure|I/O Software Structure]], [[device-controller|Device Controller]]

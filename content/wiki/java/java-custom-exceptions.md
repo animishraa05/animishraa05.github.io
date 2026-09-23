@@ -12,11 +12,11 @@ Built-in exception types (IOException, NullPointerException) cover system-level 
 
 ## Core Idea
 
-**Custom exceptions** are user-defined classes that extend `Exception` (for checked) or `RuntimeException` (for unchecked). They carry domain-specific information — error codes, field names, additional context — enabling precise error handling and meaningful error messages.
+**Custom exceptions** are user-defined classes that extend `Exception` (for checked) or `RuntimeException` (for unchecked). They carry domain-specific information -- error codes, field names, additional context -- enabling precise error handling and meaningful error messages.
 
 ## How It Works
 
-A custom exception class extends `Exception` or `RuntimeException`, provides constructors, and optionally adds custom fields and methods. When thrown, it behaves like any other exception — it can be caught by type, propagated via `throws`, and chained to other exceptions.
+A custom exception class extends `Exception` or `RuntimeException`, provides constructors, and optionally adds custom fields and methods. When thrown, it behaves like any other exception -- it can be caught by type, propagated via `throws`, and chained to other exceptions.
 
 ## Visual Explanation
 
@@ -63,14 +63,14 @@ graph semantic_custom_exceptions {
 - **Checked vs unchecked choice**: Extend `Exception` for recoverable business errors; `RuntimeException` for programming mistakes
 - **Constructors**: Typically provide no-arg, message, cause, and all-combined constructors
 - **Custom fields**: Add domain data (error codes, entity IDs) for richer handling
-- **Serializable**: Exception implements Serializable — custom fields should be serializable too
+- **Serializable**: Exception implements Serializable -- custom fields should be serializable too
 
 ## Connections
 
-- **Built from:** [[java-exception-hierarchy|Java Exception Hierarchy]] — custom exceptions extend Exception or RuntimeException
-- **Built from:** [[java-throw-throws|Throw and Throws]] — custom exceptions are thrown with `throw`
-- **Builds into:** [[java-jdbc|Java JDBC]] — database layers define SQLException subtypes or wrap them in custom exceptions
-- **Related:** [[java-try-catch-finally|Try-Catch-Finally]] — custom exceptions are caught like any other
+- **Built from:** [[java-exception-hierarchy|Java Exception Hierarchy]] -- custom exceptions extend Exception or RuntimeException
+- **Built from:** [[java-throw-throws|Throw and Throws]] -- custom exceptions are thrown with `throw`
+- **Builds into:** [[java-jdbc|Java JDBC]] -- database layers define SQLException subtypes or wrap them in custom exceptions
+- **Related:** [[java-try-catch-finally|Try-Catch-Finally]] -- custom exceptions are caught like any other
 
 ## Edge Cases & Gotchas
 

@@ -66,19 +66,19 @@ graph semantic_memory {
 
 - **Heap shared**: All threads share the same heap; objects are visible across threads
 - **Stack is thread-private**: Each thread has its own stack, isolated from others
-- **Automatic management**: The JVM handles allocation and garbage collection — no manual free()
+- **Automatic management**: The JVM handles allocation and garbage collection -- no manual free()
 - **Configurable sizes**: Heap and stack sizes are set via JVM flags (-Xmx, -Xms, -Xss)
 
 ## Connections
 
-- **Built from:** [[java-platform-independence|Java Platform Independence]] — the JVM's memory model is part of its portable runtime
-- **Builds into:** [[java-garbage-collection|Java Garbage Collection]] — GC reclaims heap memory automatically
-- **Builds into:** [[java-multithreading|Java Multithreading]] — each thread has its own stack, but shared heap requires synchronization
-- **Related:** [[java-wrapper-classes|Java Wrapper Classes]] — wrappers live on the heap; primitives can live on stack
+- **Built from:** [[java-platform-independence|Java Platform Independence]] -- the JVM's memory model is part of its portable runtime
+- **Builds into:** [[java-garbage-collection|Java Garbage Collection]] -- GC reclaims heap memory automatically
+- **Builds into:** [[java-multithreading|Java Multithreading]] -- each thread has its own stack, but shared heap requires synchronization
+- **Related:** [[java-wrapper-classes|Java Wrapper Classes]] -- wrappers live on the heap; primitives can live on stack
 
 ## Edge Cases & Gotchas
 
 - **StackOverflowError**: Infinite recursion or deep call chains exhaust the stack
 - **OutOfMemoryError**: Heap is full and GC cannot reclaim enough space
-- **Metaspace** (Java 8+): Replaces PermGen — grows dynamically by default, but can still exhaust native memory
-- **Memory leak**: Objects held by unintended references prevent GC — common with collections, listeners, caches
+- **Metaspace** (Java 8+): Replaces PermGen -- grows dynamically by default, but can still exhaust native memory
+- **Memory leak**: Objects held by unintended references prevent GC -- common with collections, listeners, caches

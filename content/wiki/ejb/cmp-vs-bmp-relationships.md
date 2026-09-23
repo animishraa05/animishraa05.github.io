@@ -19,9 +19,9 @@ This synthesis compares how BMP (Bean-Managed Persistence) and CMP (Container-Ma
 | **1:N Relationship** | `Vector` + JNDI lookup of other bean's Home in `ejbLoad()` | `Collection` CMR field + `<multiplicity>Many</multiplicity>` |
 | **M:N Relationship** | Two 1:N relationships via junction table; manual JDBC | Two `Collection` CMR fields, both with `<multiplicity>Many</multiplicity>` |
 | **Directionality** | Code both get/set methods (bidirectional) or omit one side (unidirectional) | Add/remove `<cmr-field>` entries in deployment descriptor |
-| **ejbLoad/ejbStore** | Contains JNDI lookups, SQL, FK↔stub conversion | Empty — container handles everything |
+| **ejbLoad/ejbStore** | Contains JNDI lookups, SQL, FK↔stub conversion | Empty -- container handles everything |
 | **Deployment Descriptor** | Standard EJB declaration | Additional `<relationships>` section with `<ejb-relation>` entries |
-| **Code Complexity** | High — lots of boilerplate | Low — just abstract methods + XML |
+| **Code Complexity** | High -- lots of boilerplate | Low -- just abstract methods + XML |
 
 ## Cardinality Handling
 
@@ -48,16 +48,45 @@ This synthesis compares how BMP (Bean-Managed Persistence) and CMP (Container-Ma
 
 1. **CMP reduces code dramatically:** What takes 50+ lines of JNDI/SQL in BMP takes 2-3 lines of abstract methods + a few XML tags in CMP.
 2. **BMP gives control:** You can optimize SQL, add custom logic in relationship loading. CMP delegates everything to container.
-3. **CMP requires deployment descriptor expertise:** Relationships are defined in XML, not Java code — harder to debug.
+3. **CMP requires deployment descriptor expertise:** Relationships are defined in XML, not Java code -- harder to debug.
 4. **FK↔stub conversion is the core BMP pain:** Every `ejbLoad`/`ejbStore` must convert between database foreign keys and EJB object stubs.
 5. **Directionality is independent of cardinality:** Both 1:1, 1:N, and M:N can be bidirectional or unidirectional in either BMP or CMP.
 
+
+
+## Visual Explanation
+
+```dot
+digraph cmp_vs_bmp_relationships {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Cmp Vs Bmp Relations\nInput"]
+  B [label="Cmp Vs Bmp Relations\nCore Mechanism"]
+  C [label="Cmp Vs Bmp Relations\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_cmp_vs_bmp_relationships {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Cmp Vs Bmp Relations" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- [[bean-managed-persistence|BMP]] — manual relationship implementation
-- [[container-managed-persistence|CMP]] — automatic relationship management via CMR
-- [[one-to-one-relationship|One-to-One Relationship]] — 1:1 cardinality
-- [[one-to-many-relationship|One-to-Many Relationship]] — 1:N cardinality
-- [[many-to-many-relationship|Many-to-Many Relationship]] — M:N cardinality
-- [[bidirectional-vs-unidirectional|Bidirectional vs Unidirectional]] — directionality concept
-- [[cmp-abstract-accessors|CMP Abstract Accessors]] — CMP's method declarations
-- [[ejb-ql|EJB-QL]] — CMP uses EJB-QL for relationship queries
+- [[bean-managed-persistence|BMP]] -- manual relationship implementation
+- [[container-managed-persistence|CMP]] -- automatic relationship management via CMR
+- [[one-to-one-relationship|One-to-One Relationship]] -- 1:1 cardinality
+- [[one-to-many-relationship|One-to-Many Relationship]] -- 1:N cardinality
+- [[many-to-many-relationship|Many-to-Many Relationship]] -- M:N cardinality
+- [[bidirectional-vs-unidirectional|Bidirectional vs Unidirectional]] -- directionality concept
+- [[cmp-abstract-accessors|CMP Abstract Accessors]] -- CMP's method declarations
+- [[ejb-ql|EJB-QL]] -- CMP uses EJB-QL for relationship queries

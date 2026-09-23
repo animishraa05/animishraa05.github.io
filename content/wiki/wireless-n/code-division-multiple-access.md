@@ -18,7 +18,7 @@ CDMA (Code Division Multiple Access) is a spread-spectrum digital cellular techn
 3. **All Users Share:** All voice and data transmissions use the same 1.25 MHz bandwidth
 4. **At the Receiver:** The despreading correlator correlates the received signal with the intended user's code
 5. **Processing Gain:** The ratio of spread bandwidth to information bandwidth; provides processing gain (interference rejection)
-6. **Power Control:** Essential — strong users drown out weak users; base station commands all mobiles to equalize received power
+6. **Power Control:** Essential -- strong users drown out weak users; base station commands all mobiles to equalize received power
 7. **Soft Handoff:** Mobile connects to multiple base stations during handoff; both signals are combined
 
 ## Key Properties
@@ -29,16 +29,45 @@ CDMA (Code Division Multiple Access) is a spread-spectrum digital cellular techn
 - Processing gain: spreading provides resistance to narrowband interference
 - Voice activity detection: slots are freed during silence, increasing capacity
 
+
+
+## Visual Explanation
+
+```dot
+digraph CDMA {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Cdma\nInput"]
+  B [label="Cdma\nCore Mechanism"]
+  C [label="Cdma\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_CDMA {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Cdma" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[spread-spectrum|Spread Spectrum]] — CDMA is the fundamental spread spectrum technique
-- Built from: [[near-far-terminal|Near/Far Terminal Effect]] — the problem that defines CDMA power control requirements
-- Built from: [[power-control|Power Control]] — the critical requirement for CDMA
-- Related: [[soft-handoff|Soft Handoff]] — CDMA's handoff mechanism provides macro-diversity
-- Related: [[wcdma|WCDMA]] — the UMTS 3G version of CDMA
-- Related: [[is-95|IS-95]] — the first CDMA cellular standard (2G)
+- Built from: [[spread-spectrum|Spread Spectrum]] -- CDMA is the fundamental spread spectrum technique
+- Built from: [[near-far-terminal|Near/Far Terminal Effect]] -- the problem that defines CDMA power control requirements
+- Built from: [[power-control|Power Control]] -- the critical requirement for CDMA
+- Related: [[soft-handoff|Soft Handoff]] -- CDMA's handoff mechanism provides macro-diversity
+- Related: [[wcdma|WCDMA]] -- the UMTS 3G version of CDMA
+- Related: [[is-95|IS-95]] -- the first CDMA cellular standard (2G)
 
 ## Edge Cases & Gotchas
-- CDMA capacity is not fixed — more users = more interference = degraded quality for all
+- CDMA capacity is not fixed -- more users = more interference = degraded quality for all
 - Without power control, the near/far effect limits capacity to a handful of users
 - First CDMA networks (IS-95) had capacity close to GSM; 3G CDMA (WCDMA) significantly improved
 - Processing gain (Spreading factor) decreases as data rates increase

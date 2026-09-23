@@ -30,10 +30,10 @@ Two repetition mechanisms: the dot command (`.`) repeats the last change; numeri
 
 - Precedes any command with a count
 - Examples:
-  - `2dd` — delete 2 lines
-  - `3p` — paste 3 times
-  - `5 dw` — delete 5 words
-  - `10j` — move down 10 lines
+  - `2dd` -- delete 2 lines
+  - `3p` -- paste 3 times
+  - `5 dw` -- delete 5 words
+  - `10j` -- move down 10 lines
 
 ## Key Properties
 
@@ -48,9 +48,38 @@ Two repetition mechanisms: the dot command (`.`) repeats the last change; numeri
 - `.` after `.` compounds: `2.` = 6 total
 - Search/replace needs `:s///&` or `&` to repeat
 
+
+
+## Visual Explanation
+
+```dot
+digraph aliases___dot_command__repetition__counts__N_command__ {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Aliases: [Dot Comman\nInput"]
+  B [label="Aliases: [Dot Comman\nCore Mechanism"]
+  C [label="Aliases: [Dot Comman\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_aliases___dot_command__repetition__counts__N_command__ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Aliases: [Dot Comman" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- [[vim-basic-commands|Survival Commands]] — `dd` and `p` are repeatable
-- [[vim-modes|Vim Modes]] — Repetition works in Normal mode
-- [[vim-search-navigation|Navigation]] — `N` prefix repeats search
-- [[vim-macros|Macros]] — More complex repetition with recording
+- [[vim-basic-commands|Survival Commands]] -- `dd` and `p` are repeatable
+- [[vim-modes|Vim Modes]] -- Repetition works in Normal mode
+- [[vim-search-navigation|Navigation]] -- `N` prefix repeats search
+- [[vim-macros|Macros]] -- More complex repetition with recording

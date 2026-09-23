@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Programs need to perform operations on data — arithmetic calculations, comparisons, logical decisions, and value assignments. Without a well-defined operator system, every operation would require verbose method calls, making code harder to read, write, and maintain.
+Programs need to perform operations on data -- arithmetic calculations, comparisons, logical decisions, and value assignments. Without a well-defined operator system, every operation would require verbose method calls, making code harder to read, write, and maintain.
 
 ## Core Idea
 
@@ -16,7 +16,7 @@ Java provides a rich set of **operators** that perform specific operations on on
 
 ## How It Works
 
-The compiler parses expressions according to operator precedence and associativity rules. Operators are syntactic sugar — the compiler translates `a + b` into the appropriate bytecode instructions (like `iadd` for int addition). Short-circuit operators (`&&`, `||`) evaluate the right operand only when needed.
+The compiler parses expressions according to operator precedence and associativity rules. Operators are syntactic sugar -- the compiler translates `a + b` into the appropriate bytecode instructions (like `iadd` for int addition). Short-circuit operators (`&&`, `||`) evaluate the right operand only when needed.
 
 ## Visual Explanation
 
@@ -75,10 +75,10 @@ graph semantic_operators {
 
 ## Connections
 
-- **Built from:** [[java-data-types|Java Data Types]] — operators behave differently on different types
-- **Builds into:** [[java-control-flow|Java Control Flow]] — relational and logical operators drive conditionals
-- **Builds into:** [[java-loops|Java Loops]] — comparison operators control loop termination
-- **Related:** [[java-variables|Java Variables]] — assignment operators modify variable values
+- **Built from:** [[java-data-types|Java Data Types]] -- operators behave differently on different types
+- **Builds into:** [[java-control-flow|Java Control Flow]] -- relational and logical operators drive conditionals
+- **Builds into:** [[java-loops|Java Loops]] -- comparison operators control loop termination
+- **Related:** [[java-variables|Java Variables]] -- assignment operators modify variable values
 
 ## Edge Cases & Gotchas
 

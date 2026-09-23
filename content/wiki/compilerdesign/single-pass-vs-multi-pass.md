@@ -43,12 +43,41 @@ Single-pass compilers must generate code on the fly, which means they cannot per
 
 ## The Insight
 
-The single-pass vs multi-pass distinction is not binary — modern compilers like LLVM use a multi-pass architecture but keep all IR in memory rather than writing intermediate files, getting the best of both worlds: fast inter-pass communication and powerful optimization.
+The single-pass vs multi-pass distinction is not binary -- modern compilers like LLVM use a multi-pass architecture but keep all IR in memory rather than writing intermediate files, getting the best of both worlds: fast inter-pass communication and powerful optimization.
 
+
+
+## Visual Explanation
+
+```dot
+digraph single_pass_vs_multi_pass {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Single Pass Vs Multi\nInput"]
+  B [label="Single Pass Vs Multi\nCore Mechanism"]
+  C [label="Single Pass Vs Multi\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_single_pass_vs_multi_pass {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Single Pass Vs Multi" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- [[compiler-pass|Compiler Pass]] — the core concept being compared
-- [[phases-of-compiler|Phases of a Compiler]] — how phases are grouped into passes
-- [[code-optimization|Code Optimization]] — multi-pass enables sophisticated optimization
-- [[compiler|Compiler]] — the overall compiler architecture
-- [[object-code|Object Code]] — how passes affect final code quality
+- [[compiler-pass|Compiler Pass]] -- the core concept being compared
+- [[phases-of-compiler|Phases of a Compiler]] -- how phases are grouped into passes
+- [[code-optimization|Code Optimization]] -- multi-pass enables sophisticated optimization
+- [[compiler|Compiler]] -- the overall compiler architecture
+- [[object-code|Object Code]] -- how passes affect final code quality

@@ -29,6 +29,35 @@ Entity Context is an interface that provides the entity bean instance with acces
 - Provides `getPrimaryKey()` to identify which data instance the bean represents
 - Bean instance is pooled and may represent different data at different times
 
+
+
+## Visual Explanation
+
+```dot
+digraph Entity_Context {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Entity Context\nInput"]
+  B [label="Entity Context\nCore Mechanism"]
+  C [label="Entity Context\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Entity_Context {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Entity Context" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[entity-bean|Entity Bean]], [[ejb-container|EJB Container]]

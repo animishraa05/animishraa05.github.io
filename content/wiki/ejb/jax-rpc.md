@@ -50,11 +50,26 @@ digraph G {
 - **WSDL integration**: Works with WSDL service descriptions
 - **Runtime requirements**: Specifies how containers must support web services
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_JAX_RPC {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Jax Rpc" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[ejb-container|EJB Container]] — EJB endpoint model uses container services
-- Related: [[java-platforms|Java Platforms]] — JAX-RPC is part of J2EE
-- Builds into: [[web-services|Web Services]] — JAX-RPC enables web service development
-- Contrasts with: [[rest|REST]] — JAX-RPC is SOAP/XML, REST is simpler HTTP
+- Built from: [[ejb-container|EJB Container]] -- EJB endpoint model uses container services
+- Related: [[java-platforms|Java Platforms]] -- JAX-RPC is part of J2EE
+- Builds into: [[web-services|Web Services]] -- JAX-RPC enables web service development
+- Contrasts with: [[rest|REST]] -- JAX-RPC is SOAP/XML, REST is simpler HTTP
 
 ## Edge Cases & Gotchas
 - **Deprecated**: JAX-RPC replaced by JAX-WS in modern Java EE

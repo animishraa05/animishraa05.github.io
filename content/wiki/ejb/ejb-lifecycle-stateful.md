@@ -1,5 +1,5 @@
 ---
-concept: EJB Lifecycle — Stateful
+concept: EJB Lifecycle -- Stateful
 aliases: [Stateful Session Bean Lifecycle]
 tags: [dev, ejb, lifecycle]
 created: 2026-04-11
@@ -57,6 +57,35 @@ The stateful session bean lifecycle has four states: Does Not Exist, Ready, Pass
 - No instance pooling (dedicated to one client)
 - ejbCreate() can accept client-specific parameters
 
+
+
+## Visual Explanation
+
+```dot
+digraph EJB_Lifecycle____Stateful {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Ejb Lifecycle    Sta\nInput"]
+  B [label="Ejb Lifecycle    Sta\nCore Mechanism"]
+  C [label="Ejb Lifecycle    Sta\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_EJB_Lifecycle____Stateful {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Ejb Lifecycle    Sta" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[stateful-session-bean|Stateful Session Bean]]

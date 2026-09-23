@@ -63,13 +63,28 @@ digraph G {
 - **Portable**: Code works across different JNDI implementations
 - **J2EE integration**: Used for EJB lookups, DataSource lookups, JMS connection factories
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_JNDI_Architecture {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Jndi Architecture" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[jndi|JNDI]] — JNDI is the naming service this architecture implements
-- Builds into: [[ejb-naming-service|EJB Naming Service]] — EJB uses JNDI for bean lookups
-- Contrasts with: [[rmi-remote-method-invocation|RMI]] — RMI Registry is narrower, JNDI is broader
-- Related: [[jdbc|JDBC]] — similar API/driver architecture pattern
-- Builds into: [[location-transparency|Location Transparency]] — JNDI enables location-independent lookups
-- Related: [[ejb-container|EJB Container]] — containers provide JNDI implementations
+- Built from: [[jndi|JNDI]] -- JNDI is the naming service this architecture implements
+- Builds into: [[ejb-naming-service|EJB Naming Service]] -- EJB uses JNDI for bean lookups
+- Contrasts with: [[rmi-remote-method-invocation|RMI]] -- RMI Registry is narrower, JNDI is broader
+- Related: [[jdbc|JDBC]] -- similar API/driver architecture pattern
+- Builds into: [[location-transparency|Location Transparency]] -- JNDI enables location-independent lookups
+- Related: [[ejb-container|EJB Container]] -- containers provide JNDI implementations
 
 ## Edge Cases & Gotchas
 - **Provider not found**: If the service provider class isn't on classpath, lookups fail

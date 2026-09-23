@@ -12,7 +12,7 @@ A program can be syntactically correct but semantically meaningless or unsafe. F
 
 ## Core Idea
 
-Semantic analysis is the third phase of a compiler. It checks the source program for semantic consistency — type compatibility, variable declaration before use, function call argument matching, and scope rules. It augments the syntax tree with type information and performs type checking.
+Semantic analysis is the third phase of a compiler. It checks the source program for semantic consistency -- type compatibility, variable declaration before use, function call argument matching, and scope rules. It augments the syntax tree with type information and performs type checking.
 
 ## How It Works
 
@@ -46,16 +46,31 @@ digraph semantic_analysis {
 - **Scope resolution:** Maps identifier usages to their declarations
 - **L-value/R-value checking:** Ensures the left side of assignment is an l-value
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Semantic_Analysis {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Semantic Analysis" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[syntax-analysis|Syntax Analysis]] — consumes the parse tree
-- **Built from:** [[wiki/compilerdesign/symbol-table-in-compiler|Symbol Table]] — uses symbol table for identifier resolution and type info
-- **Builds into:** [[intermediate-code-generation|Intermediate Code Generation]] — the annotated tree feeds IR generation
-- **Related:** [[static-and-dynamic-scoping|Static and Dynamic Scoping]] — scoping rules are enforced during semantic analysis
-- **Related:** [[phases-of-compiler|Phases of a Compiler]] — semantic analysis is phase 3
+- **Built from:** [[syntax-analysis|Syntax Analysis]] -- consumes the parse tree
+- **Built from:** [[wiki/compilerdesign/symbol-table-in-compiler|Symbol Table]] -- uses symbol table for identifier resolution and type info
+- **Builds into:** [[intermediate-code-generation|Intermediate Code Generation]] -- the annotated tree feeds IR generation
+- **Related:** [[static-and-dynamic-scoping|Static and Dynamic Scoping]] -- scoping rules are enforced during semantic analysis
+- **Related:** [[phases-of-compiler|Phases of a Compiler]] -- semantic analysis is phase 3
 
 ## Edge Cases & Gotchas
 
-- **Type coercion:** Languages like C automatically convert int to float — the analyzer must insert implicit type conversion nodes
-- **Duck typing:** Dynamically typed languages defer type checking to runtime — semantic analysis in their compilers is lighter
+- **Type coercion:** Languages like C automatically convert int to float -- the analyzer must insert implicit type conversion nodes
+- **Duck typing:** Dynamically typed languages defer type checking to runtime -- semantic analysis in their compilers is lighter
 - **Function overloading:** The semantic analyzer must resolve which overloaded function is being called based on argument types

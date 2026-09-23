@@ -44,12 +44,27 @@ digraph G {
 - **Created via API**: `Context.createSubcontext(name)`
 - **Resolved through path**: Accessed via compound names
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Subcontext {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Subcontext" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[jndi-context|JNDI Context]] — a subcontext is a type of context
-- Built from: [[jndi-naming-concepts|JNDI Naming Concepts]] — subcontexts are a core concept
-- Related: [[compound-name|Compound Name]] — compound names traverse subcontexts
-- Related: [[jndi-binding|JNDI Binding]] — subcontexts contain bindings
-- Builds into: [[jndi|JNDI]] — JNDI provides subcontext operations
+- Built from: [[jndi-context|JNDI Context]] -- a subcontext is a type of context
+- Built from: [[jndi-naming-concepts|JNDI Naming Concepts]] -- subcontexts are a core concept
+- Related: [[compound-name|Compound Name]] -- compound names traverse subcontexts
+- Related: [[jndi-binding|JNDI Binding]] -- subcontexts contain bindings
+- Builds into: [[jndi|JNDI]] -- JNDI provides subcontext operations
 
 ## Edge Cases & Gotchas
 - **Destroying subcontexts**: May fail if subcontext is not empty

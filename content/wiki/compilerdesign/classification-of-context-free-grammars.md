@@ -70,23 +70,23 @@ graph semantic_cfg_class {
 
 ## Key Properties
 
-- **Ambiguous:** Multiple parse trees for the same string — problematic for deterministic parsing
-- **Left-recursive:** Direct or indirect recursion on the left — fatal for top-down parsers
-- **LL(k):** Deterministic top-down parseable with k-token lookahead — requires left-factoring
-- **LR(k):** Deterministic bottom-up parseable with k-token lookahead — more powerful than LL
+- **Ambiguous:** Multiple parse trees for the same string -- problematic for deterministic parsing
+- **Left-recursive:** Direct or indirect recursion on the left -- fatal for top-down parsers
+- **LL(k):** Deterministic top-down parseable with k-token lookahead -- requires left-factoring
+- **LR(k):** Deterministic bottom-up parseable with k-token lookahead -- more powerful than LL
 - **Hierarchy:** Every LL grammar is LR, but LR grammars include non-LL languages (e.g., left-recursive expressions)
 
 ## Connections
 
-- **Built from:** [[context-free-grammar|Context-Free Grammar]] — CFG is the formal foundation being classified
-- **Builds into:** [[top-down-parsing|Top-Down Parsing]] — requires non-left-recursive, LL(k) grammars
-- **Builds into:** [[lr-parsers|LR Parsers]] — LR(k) grammars are the input class for LR parser generators
-- **Related:** [[wiki/compilerdesign/ambiguous-grammar|Ambiguous Grammar]] — ambiguity is a key classification dimension
-- **Related:** [[first-and-follow-sets|FIRST and FOLLOW Sets]] — used to determine if a grammar is LL(1)
+- **Built from:** [[context-free-grammar|Context-Free Grammar]] -- CFG is the formal foundation being classified
+- **Builds into:** [[top-down-parsing|Top-Down Parsing]] -- requires non-left-recursive, LL(k) grammars
+- **Builds into:** [[lr-parsers|LR Parsers]] -- LR(k) grammars are the input class for LR parser generators
+- **Related:** [[wiki/compilerdesign/ambiguous-grammar|Ambiguous Grammar]] -- ambiguity is a key classification dimension
+- **Related:** [[first-and-follow-sets|FIRST and FOLLOW Sets]] -- used to determine if a grammar is LL(1)
 
 ## Edge Cases & Gotchas
 
-- **LL(1) ≠ LL(k):** A grammar may not be LL(1) but may be LL(2) — increasing lookahead increases power
+- **LL(1) ≠ LL(k):** A grammar may not be LL(1) but may be LL(2) -- increasing lookahead increases power
 - **LR(0) < SLR < LALR < CLR:** Within LR family, each subclass handles a larger set of grammars
 - **Grammar transformation:** Left-recursive grammars can be mechanically transformed to non-left-recursive, but the resulting grammar may be harder to read
-- **Inherently ambiguous languages:** Some languages are inherently ambiguous — no unambiguous grammar exists for them
+- **Inherently ambiguous languages:** Some languages are inherently ambiguous -- no unambiguous grammar exists for them

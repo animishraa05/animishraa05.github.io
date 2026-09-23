@@ -12,7 +12,7 @@ After a series of attribute tests, the tree must produce an actual output. Witho
 
 ## Core Idea
 
-A leaf node (terminal node) is the bottommost node in a decision tree that cannot be split further. Each leaf node represents a final decision or prediction — a class label in classification tasks, or a continuous numeric value in regression tasks.
+A leaf node (terminal node) is the bottommost node in a decision tree that cannot be split further. Each leaf node represents a final decision or prediction -- a class label in classification tasks, or a continuous numeric value in regression tasks.
 
 ## How It Works
 
@@ -50,23 +50,38 @@ digraph leaf_node {
 
 ## Key Properties
 
-- **Terminal**: No outgoing branches — the decision path ends here
+- **Terminal**: No outgoing branches -- the decision path ends here
 - **Holds prediction**: Stores the class label (classification) or numeric value (regression)
 - **No impurity**: Ideally, all instances at a leaf belong to the same class
 - **Majority vote fallback**: When impurity remains, predicts the most common class in the subset
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Leaf_Node {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Leaf Node" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Builds into:** [[decision-tree-structure|Decision Tree Structure]] — leaves are the terminal elements of the tree
-- **Built from:** [[decision-tree-stopping-conditions|Decision Tree Stopping Conditions]] — determines when a node becomes a leaf
-- **Built from:** [[node-purity|Node Purity]] — pure subsets become leaves directly
-- **Builds into:** [[decision-tree-prediction|Decision Tree Prediction]] — leaves provide the final output
-- **Related:** [[classification|Classification]] — leaf nodes output class labels in classification
-- **Related:** [[regression|Regression]] — leaf nodes output continuous values in regression
+- **Builds into:** [[decision-tree-structure|Decision Tree Structure]] -- leaves are the terminal elements of the tree
+- **Built from:** [[decision-tree-stopping-conditions|Decision Tree Stopping Conditions]] -- determines when a node becomes a leaf
+- **Built from:** [[node-purity|Node Purity]] -- pure subsets become leaves directly
+- **Builds into:** [[decision-tree-prediction|Decision Tree Prediction]] -- leaves provide the final output
+- **Related:** [[classification|Classification]] -- leaf nodes output class labels in classification
+- **Related:** [[regression|Regression]] -- leaf nodes output continuous values in regression
 
 ## Edge Cases & Gotchas
 
 - **Single-sample leaves**: A leaf with one training sample is perfectly pure but almost certainly overfitted
 - **Empty leaves**: Can occur when a branch has no training data; defaults to parent's majority class
 - **Imbalanced leaf predictions**: A leaf may be dominated by one class but still contain minority class errors
-- **Leaf depth variance**: Some leaves may be 2 levels deep, others 20 — leading to inconsistent prediction confidence
+- **Leaf depth variance**: Some leaves may be 2 levels deep, others 20 -- leading to inconsistent prediction confidence

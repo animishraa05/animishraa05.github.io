@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Many compiler optimizations require knowing how data moves through the program — which definitions reach which uses, which variables are live at which points, which expressions are available. Without data-flow analysis, the compiler cannot safely apply transformations because it doesn't know if they preserve program semantics.
+Many compiler optimizations require knowing how data moves through the program -- which definitions reach which uses, which variables are live at which points, which expressions are available. Without data-flow analysis, the compiler cannot safely apply transformations because it doesn't know if they preserve program semantics.
 
 ## Core Idea
 
@@ -54,17 +54,32 @@ digraph data_flow {
 - **Data-flow equations:** IN[B] = ∪OUT[predecessors]; OUT[B] = GEN[B] ∪ (IN[B] - KILL[B])
 - **Fixed-point iteration:** Analysis iterates until the sets stabilize (no more changes)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Data_Flow_Analysis {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Data Flow Analysis" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[three-address-code|Three-Address Code]] — data-flow analysis operates on TAC basic blocks
-- **Builds into:** [[code-optimization|Code Optimization]] — optimizations like dead code elimination and constant propagation need data-flow info
-- **Related:** [[loop-detection-in-tac|Detection of a Loop in TAC]] — loops require data-flow analysis for effective optimization
-- **Related:** [[code-generator-design-issues|Issues in Code Generator Design]] — register allocation uses live variable analysis
-- **Related:** [[intermediate-code-generation|Intermediate Code Generation]] — IR in TAC form enables data-flow analysis
+- **Built from:** [[three-address-code|Three-Address Code]] -- data-flow analysis operates on TAC basic blocks
+- **Builds into:** [[code-optimization|Code Optimization]] -- optimizations like dead code elimination and constant propagation need data-flow info
+- **Related:** [[loop-detection-in-tac|Detection of a Loop in TAC]] -- loops require data-flow analysis for effective optimization
+- **Related:** [[code-generator-design-issues|Issues in Code Generator Design]] -- register allocation uses live variable analysis
+- **Related:** [[intermediate-code-generation|Intermediate Code Generation]] -- IR in TAC form enables data-flow analysis
 
 ## Edge Cases & Gotchas
 
-- **Conservative approximation:** Data-flow analysis must be conservative (safe) — if it cannot determine a property, it assumes the worst case
+- **Conservative approximation:** Data-flow analysis must be conservative (safe) -- if it cannot determine a property, it assumes the worst case
 - **Pointers and aliasing:** When variables can be accessed through pointers, tracking definitions becomes imprecise
 - **Control flow complexity:** Irreducible control flow (gotos, multiple entries) complicates data-flow analysis
-- **Array accesses:** `a[i]` and `a[j]` may or may not access the same location if i ≠ j — analysis must be conservative
+- **Array accesses:** `a[i]` and `a[j]` may or may not access the same location if i ≠ j -- analysis must be conservative

@@ -8,7 +8,7 @@ updated: 2026-04-30
 
 ## The Problem
 
-A producer generates data and puts it into a buffer, while a consumer takes data from the buffer. The buffer has limited size — producer must wait if full, consumer must wait if empty.
+A producer generates data and puts it into a buffer, while a consumer takes data from the buffer. The buffer has limited size -- producer must wait if full, consumer must wait if empty.
 
 ## Core Idea
 
@@ -44,6 +44,21 @@ digraph prod_cons {
 - Consumer waits on full, signals empty
 - Mutex protects buffer data structure
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Producer_Consumer_Problem {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Producer Consumer Pr" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[semaphore|Semaphore]], [[counting-semaphore|Counting Semaphore]]

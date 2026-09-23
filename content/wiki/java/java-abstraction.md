@@ -8,15 +8,15 @@ updated: 2026-05-13
 
 ## The Problem
 
-When designing class hierarchies, some behaviors should be defined at a general level without specifying implementation details. Without abstraction, every base class must provide complete implementations for all methods, even when the implementation is unknown or varies dramatically across subclasses. Users are forced to understand complex internals to use simple functionality — like needing to know how an ATM's cash dispenser mechanics work just to withdraw money.
+When designing class hierarchies, some behaviors should be defined at a general level without specifying implementation details. Without abstraction, every base class must provide complete implementations for all methods, even when the implementation is unknown or varies dramatically across subclasses. Users are forced to understand complex internals to use simple functionality -- like needing to know how an ATM's cash dispenser mechanics work just to withdraw money.
 
 ## Core Idea
 
-**Abstraction** hides implementation details and exposes only essential features. It helps users focus on **what** an object does rather than **how** it does it. In Java, abstraction is achieved through **abstract classes** (partial abstraction — can have state and concrete methods) and **interfaces** (full abstraction — pure contracts before Java 8).
+**Abstraction** hides implementation details and exposes only essential features. It helps users focus on **what** an object does rather than **how** it does it. In Java, abstraction is achieved through **abstract classes** (partial abstraction -- can have state and concrete methods) and **interfaces** (full abstraction -- pure contracts before Java 8).
 
 ## How It Works
 
-An abstract class is declared with the `abstract` keyword. It may contain both abstract methods (no body) and concrete methods. Subclasses use `extends` and must implement all abstract methods (or be declared abstract themselves). Interfaces use `implements` and provide 100% abstraction — they define only method signatures (pre-Java 8). The key distinction: abstract classes can hold state and constructors; interfaces cannot.
+An abstract class is declared with the `abstract` keyword. It may contain both abstract methods (no body) and concrete methods. Subclasses use `extends` and must implement all abstract methods (or be declared abstract themselves). Interfaces use `implements` and provide 100% abstraction -- they define only method signatures (pre-Java 8). The key distinction: abstract classes can hold state and constructors; interfaces cannot.
 
 ## Visual Explanation
 
@@ -74,16 +74,16 @@ graph semantic_abstraction {
 
 ## Connections
 
-- **Built from:** [[java-inheritance|Java Inheritance]] — abstract classes use the extends mechanism
-- **Builds into:** [[java-polymorphism|Java Polymorphism]] — abstract methods enable polymorphic behavior
-- **Contrasts with:** [[java-interfaces|Java Interfaces]] — interfaces are fully abstract (pre-Java 8); abstract classes can have state
-- **Related:** [[java-encapsulation|Java Encapsulation]] — both are OOP pillars working together
-- **Related:** [[java-abstract-class-vs-interface|Abstract Class vs Interface]] — synthesis comparing the two mechanisms
+- **Built from:** [[java-inheritance|Java Inheritance]] -- abstract classes use the extends mechanism
+- **Builds into:** [[java-polymorphism|Java Polymorphism]] -- abstract methods enable polymorphic behavior
+- **Contrasts with:** [[java-interfaces|Java Interfaces]] -- interfaces are fully abstract (pre-Java 8); abstract classes can have state
+- **Related:** [[java-encapsulation|Java Encapsulation]] -- both are OOP pillars working together
+- **Related:** [[java-abstract-class-vs-interface|Abstract Class vs Interface]] -- synthesis comparing the two mechanisms
 
 ## Edge Cases & Gotchas
 
 - **Abstract class vs interface confusion**: Use abstract classes for "is-a" with shared state; interfaces for "can-do" with behavior contracts
 - **Abstract methods in enums**: Enum types can have abstract methods per-constant
-- **Cannot be final**: An abstract class cannot be declared `final` (contradictory — abstraction requires extension)
+- **Cannot be final**: An abstract class cannot be declared `final` (contradictory -- abstraction requires extension)
 - **Performance**: Virtual method dispatch for abstract methods has minimal overhead (single vtable lookup)
 - **Interfaces with default methods (Java 8+)**: Interfaces can now have default and static methods, blurring the line with abstract classes

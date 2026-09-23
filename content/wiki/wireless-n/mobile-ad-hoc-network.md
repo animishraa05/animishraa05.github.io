@@ -17,7 +17,7 @@ A Mobile Ad Hoc Network (MANET) is a self-configuring network of mobile devices 
 **Key Characteristics:**
 1. **Self-Organizing:** No central infrastructure; devices discover neighbors and form a network
 2. **Multi-Hop Routing:** If the destination is out of range, intermediate devices forward the packet
-3. **Dynamic Topology:** Devices move, join, and leave — topology changes continuously
+3. **Dynamic Topology:** Devices move, join, and leave -- topology changes continuously
 4. **Distributed Operation:** All devices participate in routing, security, and network management
 
 **Routing Protocols:**
@@ -39,15 +39,44 @@ A Mobile Ad Hoc Network (MANET) is a self-configuring network of mobile devices 
 - Security challenges: no trusted infrastructure; vulnerable to attacks on routing protocols
 - Routing overhead increases with mobility
 
+
+
+## Visual Explanation
+
+```dot
+digraph Mobile_Ad_Hoc_Network {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Mobile Ad Hoc Networ\nInput"]
+  B [label="Mobile Ad Hoc Networ\nCore Mechanism"]
+  C [label="Mobile Ad Hoc Networ\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Mobile_Ad_Hoc_Network {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Mobile Ad Hoc Networ" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[wireless-network|Wireless Network]] — the foundational wireless technology
-- Related: [[ieee-802-11|IEEE 802.11]] — ad hoc mode in 802.11 enables MANET-like communication
-- Related: [[routing-protocols|Routing Protocols]] — DSR, AODV, OLSR are designed for MANETs
-- Related: [[mobile-opportunistic-network|Mobile Opportunistic Network]] — evolution of MANET for challenged networks
-- Related: [[wireless-sensor-network|Wireless Sensor Network]] — a specific type of MANET
+- Built from: [[wireless-network|Wireless Network]] -- the foundational wireless technology
+- Related: [[ieee-802-11|IEEE 802.11]] -- ad hoc mode in 802.11 enables MANET-like communication
+- Related: [[routing-protocols|Routing Protocols]] -- DSR, AODV, OLSR are designed for MANETs
+- Related: [[mobile-opportunistic-network|Mobile Opportunistic Network]] -- evolution of MANET for challenged networks
+- Related: [[wireless-sensor-network|Wireless Sensor Network]] -- a specific type of MANET
 
 ## Edge Cases & Gotchas
 - MANET routing protocols have conflicting design goals: low overhead vs. fast convergence
-- Battery is the primary constraint — routing must balance energy
+- Battery is the primary constraint -- routing must balance energy
 - Security is critical: routing attacks (black holes, worm holes) are easy to launch
 - Not suitable for real-time applications without explicit QoS support

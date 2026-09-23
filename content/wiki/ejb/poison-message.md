@@ -7,14 +7,14 @@ updated: 2026-04-28
 ---
 
 ## The Problem
-When a Message-Driven Bean fails to process a message (throws a system exception or calls `setRollbackOnly()`), the transaction rolls back and the JMS destination doesn't receive an acknowledgment. The destination then retransmits the same message, causing the MDB to fail again — creating an infinite loop that wastes CPU and memory.
+When a Message-Driven Bean fails to process a message (throws a system exception or calls `setRollbackOnly()`), the transaction rolls back and the JMS destination doesn't receive an acknowledgment. The destination then retransmits the same message, causing the MDB to fail again -- creating an infinite loop that wastes CPU and memory.
 
 ## Core Idea
 A poison message is a message that continuously fails processing and gets repeatedly retransmitted by the JMS destination. It creates an infinite retry loop that can drain system resources if not handled properly.
 
 ## How It Works
 1. MDB receives a message and begins processing (within a container-managed transaction)
-2. Processing fails — MDB throws a system exception OR calls `MessageDrivenContext.setRollbackOnly()`
+2. Processing fails -- MDB throws a system exception OR calls `MessageDrivenContext.setRollbackOnly()`
 3. Transaction rolls back → message acknowledgment is NOT sent to JMS destination
 4. JMS destination detects no ack → retransmits the same message to the container
 5. Container assigns MDB instance → same failure occurs → another rollback
@@ -48,21 +48,36 @@ digraph G {
 
 ## Key Properties
 - Caused by transaction rollback in MDB (system exception or `setRollbackOnly()`)
-- MDB is stateless — doesn't remember that this message previously failed
+- MDB is stateless -- doesn't remember that this message previously failed
 - Infinite loop consumes CPU, memory, and JMS resources
 - Solution: Dead Letter Queue (DLQ) after N retry attempts (configured in MOM)
 - Also solved by catching exceptions and acknowledging the message (don't rollback)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Poison_Message {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Poison Message" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[message-driven-bean|MDB]] — poison messages occur in MDB message processing
-- Built from: [[container-managed-transactions|CMT]] — rollback behavior is controlled by container-managed transactions
-- Related: [[queue-partitioning|Queue Partitioning]] — separate queues reduce poison message impact
-- Related: [[setrollbackonly|setRollbackOnly()]] — method that triggers rollback causing poison messages
-- Contrasts with: [[session-bean|Session Bean]] — session beans don't process queued messages, so no poison messages
+- Built from: [[message-driven-bean|MDB]] -- poison messages occur in MDB message processing
+- Built from: [[container-managed-transactions|CMT]] -- rollback behavior is controlled by container-managed transactions
+- Related: [[queue-partitioning|Queue Partitioning]] -- separate queues reduce poison message impact
+- Related: [[setrollbackonly|setRollbackOnly()]] -- method that triggers rollback causing poison messages
+- Contrasts with: [[session-bean|Session Bean]] -- session beans don't process queued messages, so no poison messages
 
 ## Edge Cases & Gotchas
-- MDB has no memory of prior failures — will retry the same message indefinitely
-- Poison messages can cascade — one bad message can block a queue if consumers keep retrying
+- MDB has no memory of prior failures -- will retry the same message indefinitely
+- Poison messages can cascade -- one bad message can block a queue if consumers keep retrying
 - `setRollbackOnly()` is the programmatic way to cause a poison message (besides throwing exceptions)
 - Some MOMs have configurable "max retries" before moving message to DLQ
 - Poison messages also occur with BMP entity beans that rollback transactions repeatedly

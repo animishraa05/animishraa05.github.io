@@ -14,9 +14,9 @@ The process of wrapping data with layer-specific headers (and sometimes trailers
 
 ## How It Works
 1. Application data is passed to the transport layer
-2. Transport layer adds its header (e.g., TCP or UDP header) — now a segment/datagram
-3. Network layer adds its header (IP header) — now a packet
-4. Link layer adds its header and trailer (frame header + FCS trailer) — now a frame
+2. Transport layer adds its header (e.g., TCP or UDP header) -- now a segment/datagram
+3. Network layer adds its header (IP header) -- now a packet
+4. Link layer adds its header and trailer (frame header + FCS trailer) -- now a frame
 5. Physical layer converts to bits for transmission
 
 ## Visual Explanation
@@ -42,11 +42,26 @@ digraph G {
 - Reverse process (decapsulation) happens at receiver
 - Enables layering and protocol independence
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Encapsulation {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Encapsulation" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[layered-model|Layered Model]] — encapsulation happens between layers
-- Contrasts with: [[decapsulation|Decapsulation]] — wrapping vs unwrapping
-- Related: [[protocol-header|Protocol Header]] — what gets added
-- Related: [[tcp-segment|TCP Segment]] — example of encapsulated unit
+- Built from: [[layered-model|Layered Model]] -- encapsulation happens between layers
+- Contrasts with: [[decapsulation|Decapsulation]] -- wrapping vs unwrapping
+- Related: [[protocol-header|Protocol Header]] -- what gets added
+- Related: [[tcp-segment|TCP Segment]] -- example of encapsulated unit
 
 ## Edge Cases & Gotchas
 - Overhead: each layer adds bytes, reducing effective payload size

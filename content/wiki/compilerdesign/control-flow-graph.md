@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-A basic block captures straight-line code, but programs have branches, loops, and conditional execution. The compiler needs a global view of how control flows between blocks to perform inter-block optimizations, data-flow analysis, and loop detection. Without a control-flow graph, each block is an island — no analysis can cross block boundaries.
+A basic block captures straight-line code, but programs have branches, loops, and conditional execution. The compiler needs a global view of how control flows between blocks to perform inter-block optimizations, data-flow analysis, and loop detection. Without a control-flow graph, each block is an island -- no analysis can cross block boundaries.
 
 ## Core Idea
 
@@ -61,11 +61,11 @@ graph semantic_cfg {
   OUT2 [label="Loop\nDetection" fillcolor="#d4edda"]
   REL1 [label="Code\nOptimization" fillcolor="#f0f0f0"]
 
-  THIS -- PRE1 [label="built from — blocks are nodes" style=dashed]
+  THIS -- PRE1 [label="built from -- blocks are nodes" style=dashed]
   THIS -- PRE2 [label="built from" style=dashed]
-  THIS -- OUT1 [label="builds into — DFA iterates over CFG"]
-  THIS -- OUT2 [label="builds into — loops from CFG cycles"]
-  THIS -- REL1 [label="related — optimizations use CFG"]
+  THIS -- OUT1 [label="builds into -- DFA iterates over CFG"]
+  THIS -- OUT2 [label="builds into -- loops from CFG cycles"]
+  THIS -- REL1 [label="related -- optimizations use CFG"]
 }
 ```
 
@@ -79,16 +79,16 @@ graph semantic_cfg {
 
 ## Connections
 
-- **Built from:** [[basic-blocks|Basic Blocks]] — blocks are the nodes of the CFG
-- **Builds into:** [[data-flow-analysis|Data Flow Analysis]] — DFA uses the CFG to propagate information across blocks
-- **Builds into:** [[loop-detection-in-tac|Detection of a Loop in TAC]] — loops are identified by analyzing back edges in the CFG
-- **Related:** [[code-optimization|Code Optimization]] — many optimizations use the CFG to determine safe transformation scope
-- **Related:** [[intermediate-code-generation|Intermediate Code Generation]] — ICG produces the TAC that the CFG represents
-- **Related:** [[code-generator-design-issues|Issues in Code Generator Design]] — code generators use CFG for instruction scheduling and register allocation
+- **Built from:** [[basic-blocks|Basic Blocks]] -- blocks are the nodes of the CFG
+- **Builds into:** [[data-flow-analysis|Data Flow Analysis]] -- DFA uses the CFG to propagate information across blocks
+- **Builds into:** [[loop-detection-in-tac|Detection of a Loop in TAC]] -- loops are identified by analyzing back edges in the CFG
+- **Related:** [[code-optimization|Code Optimization]] -- many optimizations use the CFG to determine safe transformation scope
+- **Related:** [[intermediate-code-generation|Intermediate Code Generation]] -- ICG produces the TAC that the CFG represents
+- **Related:** [[code-generator-design-issues|Issues in Code Generator Design]] -- code generators use CFG for instruction scheduling and register allocation
 
 ## Edge Cases & Gotchas
 
-- **Irreducible CFG:** When gotos create multiple-entry loops, the CFG is irreducible — some analyses cannot handle this
+- **Irreducible CFG:** When gotos create multiple-entry loops, the CFG is irreducible -- some analyses cannot handle this
 - **Dead code:** Blocks unreachable from the entry are dead code and can be removed
-- **Critical edges:** Edges from blocks with multiple successors to blocks with multiple predecessors — they complicate code motion optimizations
-- **CFG explosion:** For large programs, the CFG can have thousands of nodes — iterative analysis must be efficient
+- **Critical edges:** Edges from blocks with multiple successors to blocks with multiple predecessors -- they complicate code motion optimizations
+- **CFG explosion:** For large programs, the CFG can have thousands of nodes -- iterative analysis must be efficient

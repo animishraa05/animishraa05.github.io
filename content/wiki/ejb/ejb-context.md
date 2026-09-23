@@ -7,7 +7,7 @@ updated: 2026-04-29
 ---
 
 ## The Problem
-Enterprise beans live inside a managed container. Sometimes the bean needs to query the container—"Who is the current user?", "Is this transaction going to rollback?", "What's my home object?". But beans shouldn't directly access container internals.
+Enterprise beans live inside a managed container. Sometimes the bean needs to query the container--"Who is the current user?", "Is this transaction going to rollback?", "What's my home object?". But beans shouldn't directly access container internals.
 
 ## Core Idea
 `EJBContext` is the bean's gateway to the container. It's an object that encapsulates everything the bean needs to know about its environment. The container injects this context (via `setSessionContext()` or `setEntityContext()`), and the bean can query it at any time.
@@ -39,11 +39,26 @@ digraph EJBContext {
 ```
 
 ## Key Properties
-- **Callback injection**: Container injects context via `setSessionContext()`—never created by bean
+- **Callback injection**: Container injects context via `setSessionContext()`--never created by bean
 - **Dynamic**: Context changes over bean's lifecycle (e.g., transaction status changes)
 - **Two types**: `SessionContext` (for session beans), `EntityContext` (for entity beans)
 - **Environment bridge**: Bean can access JNDI environment entries via context
 
+
+
+## Semantic Network
+
+```dot
+graph semantic__EJB_Context_ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label=""Ejb Context"" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[ejb-container|EJB Container]] (provides the context)
 - **Builds into:** [[transactions|Transactions]] (via `setRollbackOnly()`)

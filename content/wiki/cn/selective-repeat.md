@@ -43,11 +43,26 @@ digraph G {
 - Individual ACKs (not cumulative)
 - Higher memory requirement at receiver for buffering
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Selective_Repeat_ARQ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Selective Repeat Arq" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[sliding-window-protocol|Sliding Window Protocol]] — based on sliding window
-- Contrasts with: [[go-back-n|Go-Back-N ARQ]] — selective vs full retransmission
-- Related: [[negative-acknowledgment|Negative Acknowledgment]] — NAK used to signal missing packets
-- Related: [[receiver-buffer|Receiver Buffer]] — needed for out-of-order packets
+- Built from: [[sliding-window-protocol|Sliding Window Protocol]] -- based on sliding window
+- Contrasts with: [[go-back-n|Go-Back-N ARQ]] -- selective vs full retransmission
+- Related: [[negative-acknowledgment|Negative Acknowledgment]] -- NAK used to signal missing packets
+- Related: [[receiver-buffer|Receiver Buffer]] -- needed for out-of-order packets
 
 ## Edge Cases & Gotchas
 - Window size must be <= sequence number space/2 to avoid ambiguity

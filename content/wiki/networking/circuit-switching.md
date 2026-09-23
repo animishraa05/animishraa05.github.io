@@ -13,23 +13,52 @@ Two parties need a guaranteed, dedicated communication channel for the duration 
 Before any data is sent, a **dedicated physical path** is established through the network from source to destination. This path is reserved exclusively for this conversation for its entire duration. No other traffic can use the reserved resources. When the conversation ends, the circuit is torn down and resources are freed.
 
 ## How It Works
-1. **Connection setup** — source sends a setup request; each intermediate node reserves bandwidth on its outgoing link
-2. **Data transfer** — once the circuit is established, data flows continuously along the reserved path
-3. **Connection teardown** — when done, a teardown signal frees all reserved resources
+1. **Connection setup** -- source sends a setup request; each intermediate node reserves bandwidth on its outgoing link
+2. **Data transfer** -- once the circuit is established, data flows continuously along the reserved path
+3. **Connection teardown** -- when done, a teardown signal frees all reserved resources
 
 ## Key Properties
-- **Reserved bandwidth** — the full capacity of the reserved path is guaranteed to this conversation
-- **Fixed latency** — no queuing delays from competing traffic once the circuit is established
-- **Setup overhead** — the initial setup takes time; short-lived communication pays this cost disproportionately
-- **Resource waste during silence** — if no data is being sent, the reserved bandwidth sits idle
+- **Reserved bandwidth** -- the full capacity of the reserved path is guaranteed to this conversation
+- **Fixed latency** -- no queuing delays from competing traffic once the circuit is established
+- **Setup overhead** -- the initial setup takes time; short-lived communication pays this cost disproportionately
+- **Resource waste during silence** -- if no data is being sent, the reserved bandwidth sits idle
 
+
+
+## Visual Explanation
+
+```dot
+digraph Circuit_Switching {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Circuit Switching\nInput"]
+  B [label="Circuit Switching\nCore Mechanism"]
+  C [label="Circuit Switching\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Circuit_Switching {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Circuit Switching" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Contrasts with: [[packet-switching|Packet Switching]] — dedicated vs shared, fixed vs dynamic, no setup vs setup cost
-- Related: [[connection-oriented-service|Connection-Oriented Service]] — circuit switching is the physical implementation of connection-oriented service
-- Related: [[client-server-model|Client-Server Model]] — the connection setup mirrors the connect-communicate-release pattern
+- Contrasts with: [[packet-switching|Packet Switching]] -- dedicated vs shared, fixed vs dynamic, no setup vs setup cost
+- Related: [[connection-oriented-service|Connection-Oriented Service]] -- circuit switching is the physical implementation of connection-oriented service
+- Related: [[client-server-model|Client-Server Model]] -- the connection setup mirrors the connect-communicate-release pattern
 
 ## Edge Cases & Gotchas
-- **Wasted capacity** — human conversations have ~50% silence time; circuit switching reserves bandwidth even during silence
-- **Scalability limit** — the number of simultaneous circuits is bounded by the number of physical channels
-- **Not just telephony** — optical networks (WDM) use circuit-switching-like wavelength reservation
-- **Modern hybrid** — MPLS and ATM blend circuit-switching predictability with packet-switching flexibility
+- **Wasted capacity** -- human conversations have ~50% silence time; circuit switching reserves bandwidth even during silence
+- **Scalability limit** -- the number of simultaneous circuits is bounded by the number of physical channels
+- **Not just telephony** -- optical networks (WDM) use circuit-switching-like wavelength reservation
+- **Modern hybrid** -- MPLS and ATM blend circuit-switching predictability with packet-switching flexibility

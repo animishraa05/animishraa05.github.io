@@ -8,7 +8,7 @@ updated: 2026-04-30
 
 ## The Problem
 
-SCAN has uneven wait times — requests just passed when the arm reverses have to wait a full cycle. Can we make wait times more uniform?
+SCAN has uneven wait times -- requests just passed when the arm reverses have to wait a full cycle. Can we make wait times more uniform?
 
 ## Core Idea
 
@@ -20,7 +20,7 @@ C-SCAN (Circular SCAN) services requests in one direction only, then jumps back 
 2. Service all requests in that direction
 3. When reaching end, jump back to start
 4. Continue in same direction (no reverse)
-5. Circular — never reverses direction
+5. Circular -- never reverses direction
 
 ```dot
 digraph cscan {
@@ -45,6 +45,21 @@ digraph cscan {
 - Wastes time on return jump (no service)
 - Better for systems needing predictable latency
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_C_SCAN {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="C Scan" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[disk-scheduling|Disk Scheduling]], [[scan-scheduling|SCAN]]

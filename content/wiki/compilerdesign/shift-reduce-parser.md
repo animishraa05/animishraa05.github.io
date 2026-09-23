@@ -56,16 +56,31 @@ digraph shift_reduce {
 - **Conflicts:** Shift/reduce and reduce/reduce conflicts require resolution rules
 - **Foundation:** LR parsers (SLR, CLR, LALR) are shift-reduce parsers with decision tables
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Shift_Reduce_Parser {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Shift Reduce Parser" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[bottom-up-parsing|Bottom-Up Parsing]] — shift-reduce is the mechanism for bottom-up parsing
-- **Builds into:** [[lr-parsers|LR Parsers]] — SLR, CLR, and LALR extend shift-reduce with state-based decision tables
-- **Related:** [[operator-precedence-parser|Operator Precedence Parser]] — a simpler shift-reduce variant using operator precedence relations
-- **Related:** [[syntax-analysis|Syntax Analysis]] — shift-reduce is a key parsing approach
-- **Related:** [[wiki/compilerdesign/ambiguous-grammar|Ambiguous Grammar]] — ambiguity causes shift/reduce and reduce/reduce conflicts
+- **Built from:** [[bottom-up-parsing|Bottom-Up Parsing]] -- shift-reduce is the mechanism for bottom-up parsing
+- **Builds into:** [[lr-parsers|LR Parsers]] -- SLR, CLR, and LALR extend shift-reduce with state-based decision tables
+- **Related:** [[operator-precedence-parser|Operator Precedence Parser]] -- a simpler shift-reduce variant using operator precedence relations
+- **Related:** [[syntax-analysis|Syntax Analysis]] -- shift-reduce is a key parsing approach
+- **Related:** [[wiki/compilerdesign/ambiguous-grammar|Ambiguous Grammar]] -- ambiguity causes shift/reduce and reduce/reduce conflicts
 
 ## Edge Cases & Gotchas
 
-- **Handle identification:** The handle is always at the top of the stack — never buried — in viable prefix parsing
+- **Handle identification:** The handle is always at the top of the stack -- never buried -- in viable prefix parsing
 - **Conflict resolution in Yacc:** Yacc resolves shift/reduce conflicts in favor of shift, reduce/reduce in favor of the first production listed
 - **Default reductions:** In ambiguous situations, the parser may make a default choice that doesn't match the language designer's intent

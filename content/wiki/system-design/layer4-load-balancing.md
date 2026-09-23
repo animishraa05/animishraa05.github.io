@@ -21,7 +21,7 @@ Layer 4 load balancers distribute requests using transport-layer information (so
 3. The LB selects a backend server using a scheduling algorithm (round robin, least connections, etc.).
 4. The LB performs Network Address Translation (NAT), rewriting the destination IP/port to the selected server.
 5. The server responds directly to the client (DSR mode) or through the LB.
-6. The LB sees only TCP handshake and layer 4 metadata — it never decrypts or inspects the payload.
+6. The LB sees only TCP handshake and layer 4 metadata -- it never decrypts or inspects the payload.
 
 ## Visual Explanation
 
@@ -50,15 +50,30 @@ digraph layer4_lb {
 - Faster throughput on modern hardware due to simpler processing
 - Supports any TCP/UDP protocol, not just HTTP
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Layer_4_Load_Balancing {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Layer 4 Load Balanci" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Contrasts with:** [[layer7-load-balancing|Layer 7 Load Balancing]] — transport vs application layer routing tradeoffs
-- **Related:** [[horizontal-scaling|Horizontal Scaling]] — L4 LB is the primary enabler of horizontal scaling
-- **Related:** [[reverse-proxy-pattern|Reverse Proxy]] — both terminate and forward traffic; LB focuses on distribution
-- **Related:** [[active-passive-failover|Active-Passive Failover]] — LB can detect server failure and reroute traffic
+- **Contrasts with:** [[layer7-load-balancing|Layer 7 Load Balancing]] -- transport vs application layer routing tradeoffs
+- **Related:** [[horizontal-scaling|Horizontal Scaling]] -- L4 LB is the primary enabler of horizontal scaling
+- **Related:** [[reverse-proxy-pattern|Reverse Proxy]] -- both terminate and forward traffic; LB focuses on distribution
+- **Related:** [[active-passive-failover|Active-Passive Failover]] -- LB can detect server failure and reroute traffic
 
 ## Edge Cases & Gotchas
 
-- L4 LB cannot route based on HTTP headers, cookies, or URL paths — all servers must be interchangeable
+- L4 LB cannot route based on HTTP headers, cookies, or URL paths -- all servers must be interchangeable
 - Sticky sessions require client IP hashing or a separate session store since the LB cannot read cookies
 - NAT rewrites break some protocols that embed IP addresses in the payload (FTP, SIP) without protocol-specific helpers

@@ -7,7 +7,7 @@ updated: 2026-04-30
 ---
 
 ## The Problem
-The CPU should not waste cycles copying data between I/O devices and memory. But without a dedicated hardware controller, there's no way to transfer data directly — someone (the CPU) must handle each byte.
+The CPU should not waste cycles copying data between I/O devices and memory. But without a dedicated hardware controller, there's no way to transfer data directly -- someone (the CPU) must handle each byte.
 
 ## Core Idea
 The DMA Controller (DMAC) is a specialized hardware component that manages data transfers between I/O devices and memory without CPU intervention, using bus mastering to directly access memory.
@@ -43,14 +43,29 @@ digraph dmac {
 - Requires bus arbitration logic to coordinate with CPU for bus access
 - Typically supports multiple channels for different devices
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_DMA_Controller {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Dma Controller" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[system-bus|System Bus]], [[device-controller|Device Controller]]
-- **Builds into:** [[dma|DMA]] — DMAC is the hardware that implements DMA
+- **Builds into:** [[dma|DMA]] -- DMAC is the hardware that implements DMA
 - **Related:** [[io-devices|I/O Devices]], [[buffering|Buffering]]
-- **Contrasts with:** [[cpu|CPU]] — DMAC handles transfers, CPU free to do other work
+- **Contrasts with:** [[cpu|CPU]] -- DMAC handles transfers, CPU free to do other work
 
 ## Edge Cases & Gotchas
-- Bus contention: CPU and DMAC both need bus access — arbitration required
+- Bus contention: CPU and DMAC both need bus access -- arbitration required
 - Cache coherency: CPU cache may not see DMAC-written data (need cache flush/invalidate)
 - Wrong register programming (bad address/count) can corrupt memory
-- Some systems have limited DMA channels — resource contention possible
+- Some systems have limited DMA channels -- resource contention possible

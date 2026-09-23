@@ -45,17 +45,32 @@ digraph first_follow {
 - **FIRST(X):** Terminals that begin X, plus ε if X ⇒ ε
 - **FOLLOW(A):** Terminals that can follow A in a derivation
 - **Algorithm:** FIRST is computed iteratively; FOLLOW requires computing nullable non-terminals first
-- **LL(1) condition:** No conflict in parsing table — for each A and each terminal a, at most one production applies
+- **LL(1) condition:** No conflict in parsing table -- for each A and each terminal a, at most one production applies
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_FIRST_and_FOLLOW_Sets {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="First And Follow Set" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[context-free-grammar|Context-Free Grammar]] — FIRST/FOLLOW are computed from production rules
-- **Builds into:** [[top-down-parsing|Top-Down Parsing]] — LL(1) parsers use FIRST/FOLLOW for predictive parsing tables
-- **Related:** [[syntax-analysis|Syntax Analysis]] — parsing uses FIRST/FOLLOW to guide decisions
-- **Related:** [[wiki/compilerdesign/ambiguous-grammar|Ambiguous Grammar]] — ambiguity can cause FIRST/FOLLOW conflicts in parsing tables
+- **Built from:** [[context-free-grammar|Context-Free Grammar]] -- FIRST/FOLLOW are computed from production rules
+- **Builds into:** [[top-down-parsing|Top-Down Parsing]] -- LL(1) parsers use FIRST/FOLLOW for predictive parsing tables
+- **Related:** [[syntax-analysis|Syntax Analysis]] -- parsing uses FIRST/FOLLOW to guide decisions
+- **Related:** [[wiki/compilerdesign/ambiguous-grammar|Ambiguous Grammar]] -- ambiguity can cause FIRST/FOLLOW conflicts in parsing tables
 
 ## Edge Cases & Gotchas
 
-- **Nullable non-terminals:** Non-terminals that derive ε complicate FIRST computation — ε propagates through chains
-- **Left recursion:** Left-recursive grammars cause infinite loops in FIRST computation — must be eliminated first
+- **Nullable non-terminals:** Non-terminals that derive ε complicate FIRST computation -- ε propagates through chains
+- **Left recursion:** Left-recursive grammars cause infinite loops in FIRST computation -- must be eliminated first
 - **LL(1) conflicts:** FIRST/FIRST conflict (two productions start with same token) or FIRST/FOLLOW conflict (production can derive ε and the next token is in FOLLOW) make a grammar not LL(1)

@@ -45,6 +45,21 @@ digraph disk_sched {
 - C-SCAN provides more uniform wait than SCAN
 - LOOK is more efficient (doesn't go to disk end unnecessarily)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Disk_Scheduling {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Disk Scheduling" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[disk-structure|Disk Structure]], [[io-system|I/O System]]
@@ -56,4 +71,4 @@ digraph disk_sched {
 
 - SSTF can cause starvation for requests at disk edges
 - Request merging (adjacent sectors) can improve throughput
-- Modern disks do their own scheduling (NCQ) — OS scheduling may be ignored
+- Modern disks do their own scheduling (NCQ) -- OS scheduling may be ignored

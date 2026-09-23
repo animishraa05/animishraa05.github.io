@@ -7,7 +7,7 @@ updated: 2026-04-29
 ---
 
 ## The Problem
-Monolithic applications mixed everything together—UI, business logic, and data access all in one codebase. This made code impossible to reuse across different applications and hard to maintain as the application grew.
+Monolithic applications mixed everything together--UI, business logic, and data access all in one codebase. This made code impossible to reuse across different applications and hard to maintain as the application grew.
 
 ## Core Idea
 "Divide and Conquer" applied to software architecture. Break a large application into small, independent pieces (components/services), where each component handles a specific responsibility. These components can be reused across multiple applications.
@@ -62,6 +62,21 @@ digraph ComponentArchitecture {
 - Enables **parallel development** by different teams
 - **Scalability**: Scale individual components based on demand
 
+
+
+## Semantic Network
+
+```dot
+graph semantic__Component_Architecture___SOA_ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label=""Component Architect" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[session-bean|Session Bean]], [[entity-bean|Entity Bean]]
 - **Builds into:** [[ejb-container|EJB Container]] (hosts components)
@@ -69,6 +84,6 @@ digraph ComponentArchitecture {
 - **Related:** [[middleware|Middleware]] (infrastructure for component communication)
 
 ## Edge Cases & Gotchas
-- Over-decomposition leads to **distributed monolith**—too many tiny components with complex dependencies
+- Over-decomposition leads to **distributed monolith**--too many tiny components with complex dependencies
 - Network overhead: Component calls cross process/JVM boundaries (unlike monolithic in-process calls)
 - Versioning: Updating a component interface can break all dependent applications

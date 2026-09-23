@@ -1,5 +1,5 @@
 ---
-title: Servlet vs JSP — Web Presentation Technologies Compared
+title: Servlet vs JSP -- Web Presentation Technologies Compared
 type: synthesis
 tags: [dev, web]
 created: 2026-05-13
@@ -44,12 +44,41 @@ The tradeoff is between **control** (Servlets give full programmatic access to H
 
 ## The Insight
 
-Servlets and JSP solve the same problem from opposite directions. In modern Spring applications, the distinction is largely moot: `@RestController` replaces servlets for APIs, and template engines (Thymeleaf, FreeMarker) replace JSP for views. The underlying lesson — separation of presentation from logic — is what matters, not the specific technology.
+Servlets and JSP solve the same problem from opposite directions. In modern Spring applications, the distinction is largely moot: `@RestController` replaces servlets for APIs, and template engines (Thymeleaf, FreeMarker) replace JSP for views. The underlying lesson -- separation of presentation from logic -- is what matters, not the specific technology.
 
+
+
+## Visual Explanation
+
+```dot
+digraph servlet_vs_jsp {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Servlet Vs Jsp\nInput"]
+  B [label="Servlet Vs Jsp\nCore Mechanism"]
+  C [label="Servlet Vs Jsp\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_servlet_vs_jsp {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Servlet Vs Jsp" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- [[servlets|Servlets]] — Java-centric web component, compiled directly
-- [[jsp|JSP]] — HTML-centric web page, compiles to servlet
-- [[dispatcher-servlet|DispatcherServlet]] — Spring's front controller unifying request handling
-- [[spring-controller|Spring Controller]] — Modern equivalent of Servlet for request handling
-- [[spring-mvc|Spring MVC]] — Modern web framework that subsumes both Servlet and JSP patterns
+- [[servlets|Servlets]] -- Java-centric web component, compiled directly
+- [[jsp|JSP]] -- HTML-centric web page, compiles to servlet
+- [[dispatcher-servlet|DispatcherServlet]] -- Spring's front controller unifying request handling
+- [[spring-controller|Spring Controller]] -- Modern equivalent of Servlet for request handling
+- [[spring-mvc|Spring MVC]] -- Modern web framework that subsumes both Servlet and JSP patterns

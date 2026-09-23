@@ -6,19 +6,19 @@
 
 ## Query Process
 
-### Step 1 — Find Relevant Pages
+### Step 1 -- Find Relevant Pages
 
 Read `wiki/index.md` first. Scan for pages whose concept, tags, or summary match the question.
 
 Do not guess at filenames. Use the index.
 
-### Step 2 — Read the Pages
+### Step 2 -- Read the Pages
 
 Open every relevant concept, synthesis, and source summary page. Read them fully.
 
-If a page links to another page that also seems relevant, read that too — one hop is usually enough.
+If a page links to another page that also seems relevant, read that too -- one hop is usually enough.
 
-### Step 3 — Synthesize
+### Step 3 -- Synthesize
 
 Answer the question in your own words, citing wiki pages with `[[wikilinks]]`.
 
@@ -26,7 +26,7 @@ Use this citation pattern in prose:
 
 > As described in [[stateless-session-bean|Stateless Session Beans]], the container manages pooling...
 
-### Step 4 — Capture New Insights
+### Step 4 -- Capture New Insights
 
 If synthesizing across pages generates an insight that isn't in any existing page:
 
@@ -35,7 +35,7 @@ If synthesizing across pages generates an insight that isn't in any existing pag
 - Add it to `wiki/index.md`
 - Append to `wiki/log.md`
 
-### Step 5 — Flag Gaps
+### Step 5 -- Flag Gaps
 
 If the question cannot be fully answered from existing wiki content:
 

@@ -13,7 +13,7 @@ How do you connect text (language) to images (vision) in a way that lets a diffu
 
 ## Core Idea
 
-CLIP (Contrastive Language-Image Pre-training) uses contrastive learning — it looks at millions of image-text pairs and learns to align the vector representation of an image with its corresponding text description. Once trained, CLIP can encode any text into a vector that "makes sense" to image-based models.
+CLIP (Contrastive Language-Image Pre-training) uses contrastive learning -- it looks at millions of image-text pairs and learns to align the vector representation of an image with its corresponding text description. Once trained, CLIP can encode any text into a vector that "makes sense" to image-based models.
 
 ## How It Works
 
@@ -23,11 +23,11 @@ Show the model many (image, text) pairs. For each batch, the model tries to matc
 
 ### Text Encoding
 
-When you type a prompt, the text encoder converts each word/token into a vector. These vectors live in the same space as image features — so "a dog" and an image of a dog have similar vectors.
+When you type a prompt, the text encoder converts each word/token into a vector. These vectors live in the same space as image features -- so "a dog" and an image of a dog have similar vectors.
 
 ### Limitations for Text Rendering
 
-CLIP was trained on natural image-text pairs (captions, descriptions). It learned semantic meaning — "dog" means the animal concept. It did NOT learn to distinguish between "Lakme" and "LAKME" or track exact character sequences. For CLIP, these are all the same concept.
+CLIP was trained on natural image-text pairs (captions, descriptions). It learned semantic meaning -- "dog" means the animal concept. It did NOT learn to distinguish between "Lakme" and "LAKME" or track exact character sequences. For CLIP, these are all the same concept.
 
 ## Key Properties
 
@@ -36,6 +36,35 @@ CLIP was trained on natural image-text pairs (captions, descriptions). It learne
 - Used in SDXL, some Flux components
 - Fast inference
 
+
+
+## Visual Explanation
+
+```dot
+digraph clip {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Clip\nInput"]
+  B [label="Clip\nCore Mechanism"]
+  C [label="Clip\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_clip {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Clip" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[transformers]], [[neural-networks]]

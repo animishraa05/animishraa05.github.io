@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Top-down parsers can only handle a restricted class of grammars (LL grammars). Many common programming language constructs — especially operator precedence, left recursion, and certain ambiguous patterns — are not LL-parseable. A more powerful parsing strategy is needed.
+Top-down parsers can only handle a restricted class of grammars (LL grammars). Many common programming language constructs -- especially operator precedence, left recursion, and certain ambiguous patterns -- are not LL-parseable. A more powerful parsing strategy is needed.
 
 ## Core Idea
 
@@ -42,20 +42,35 @@ digraph bottom_up {
 - **Direction of tree building:** Leaves → root (bottom-up)
 - **Derivation type:** Reverse of rightmost derivation
 - **Operations:** Shift (push token) and Reduce (apply production)
-- **LR family:** SLR, CLR (LR(1)), LALR — increasing power and complexity
+- **LR family:** SLR, CLR (LR(1)), LALR -- increasing power and complexity
 - **Handle:** The right-hand side of a production that is ready to be reduced
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Bottom_Up_Parsing {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Bottom Up Parsing" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[parser-introduction|Parser Introduction]] — bottom-up is a category of parsing
-- **Built from:** [[shift-reduce-parser|Shift Reduce Parser]] — bottom-up parsers use shift-reduce as their fundamental mechanism
-- **Contrasts with:** [[top-down-parsing|Top-Down Parsing]] — bottom-up reduces; top-down predicts
-- **Builds into:** [[lr-parsers|LR Parsers]] — SLR, CLR, and LALR are all bottom-up parsers
-- **Related:** [[context-free-grammar|Context-Free Grammar]] — bottom-up parsers handle a wider class of CFGs (LR grammars)
+- **Built from:** [[parser-introduction|Parser Introduction]] -- bottom-up is a category of parsing
+- **Built from:** [[shift-reduce-parser|Shift Reduce Parser]] -- bottom-up parsers use shift-reduce as their fundamental mechanism
+- **Contrasts with:** [[top-down-parsing|Top-Down Parsing]] -- bottom-up reduces; top-down predicts
+- **Builds into:** [[lr-parsers|LR Parsers]] -- SLR, CLR, and LALR are all bottom-up parsers
+- **Related:** [[context-free-grammar|Context-Free Grammar]] -- bottom-up parsers handle a wider class of CFGs (LR grammars)
 
 ## Edge Cases & Gotchas
 
-- **Shift/Reduce conflicts:** Parser cannot decide whether to shift or reduce — common in ambiguous grammars
+- **Shift/Reduce conflicts:** Parser cannot decide whether to shift or reduce -- common in ambiguous grammars
 - **Reduce/Reduce conflicts:** Two different productions could reduce the same handle
-- **Table size:** Canonical LR(1) tables can be enormous — LALR merges states to reduce size at the cost of some power
-- **Error recovery:** Detecting errors earlier in LR parsing vs LL is different — LR detects at reduce time
+- **Table size:** Canonical LR(1) tables can be enormous -- LALR merges states to reduce size at the cost of some power
+- **Error recovery:** Detecting errors earlier in LR parsing vs LL is different -- LR detects at reduce time

@@ -10,7 +10,7 @@ updated: 2026-04-29
 JNDI defines a common client API, but how do different directory vendors (LDAP, NIS, Novell) make their services accessible through that API? There needs to be a standardized way for vendors to plug their proprietary protocols into the JNDI framework.
 
 ## Core Idea
-The JNDI SPI is a framework that naming and directory service vendors implement to bridge JNDI client API calls to their specific protocols. It's the "converse" of the API—while the API is for client developers, the SPI is for vendor implementors.
+The JNDI SPI is a framework that naming and directory service vendors implement to bridge JNDI client API calls to their specific protocols. It's the "converse" of the API--while the API is for client developers, the SPI is for vendor implementors.
 
 ## How It Works
 1. Vendor implements `javax.naming.spi` interfaces (`InitialContextFactory`, `StateFactory`, etc.)
@@ -59,11 +59,26 @@ digraph G {
 - **Standardized**: `javax.naming.spi` package defines the contract
 - **Bundled with J2EE**: Many J2EE servers bundle custom JNDI implementations
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_JNDI_Service_Provider_Interface {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Jndi Service Provide" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[jndi-architecture|JNDI Architecture]] — SPI is one half of JNDI
-- Builds into: [[jndi|JNDI]] — SPI enables JNDI's unified interface
-- Related: [[jdbc|JDBC Drivers]] — similar plugin architecture for databases
-- Contrasts with: [[jndi-client-api|JNDI Client API]] — SPI is for vendors, API is for developers
+- Built from: [[jndi-architecture|JNDI Architecture]] -- SPI is one half of JNDI
+- Builds into: [[jndi|JNDI]] -- SPI enables JNDI's unified interface
+- Related: [[jdbc|JDBC Drivers]] -- similar plugin architecture for databases
+- Contrasts with: [[jndi-client-api|JNDI Client API]] -- SPI is for vendors, API is for developers
 
 ## Edge Cases & Gotchas
 - **Provider not found**: Classpath must include the provider library

@@ -15,7 +15,7 @@ The JMS programming model is a 6-step pipeline: lookup ConnectionFactory → cre
 ## How It Works
 1. **Lookup ConnectionFactory via JNDI:** Get the factory object configured by administrator
 2. **Create Connection:** Use factory to create an active connection to the JMS provider (like a JDBC connection)
-3. **Create Session:** Use connection to create a session — helper for creating producers/consumers and wrapping messages in transactions
+3. **Create Session:** Use connection to create a session -- helper for creating producers/consumers and wrapping messages in transactions
 4. **Lookup Destination via JNDI:** Get the Queue or Topic destination (configured by deployer)
 5. **Create Producer or Consumer:** Use session + destination to create a `QueueSender`/`TopicPublisher` or `QueueReceiver`/`TopicSubscriber`
 6. **Send or Receive Message:** Producer sends message to destination; Consumer receives from destination
@@ -47,20 +47,35 @@ digraph G {
 ## Key Properties
 - Session serves as factory for producers/consumers and enables transaction wrapping
 - Connection represents physical network connection to JMS provider (may be load-balanced)
-- Destination is the channel (Queue or Topic) — looked up by name in JNDI
-- Producer sends messages; Consumer receives messages — both created from Session
+- Destination is the channel (Queue or Topic) -- looked up by name in JNDI
+- Producer sends messages; Consumer receives messages -- both created from Session
 - Two flavors: `Queue*` interfaces for PTP, `Topic*` interfaces for Pub/Sub
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_JMS_Programming_Model {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Jms Programming Mode" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[jms|JMS]] — the programming model implements the JMS API
-- Built from: [[jndi|JNDI]] — steps 1 and 4 require JNDI lookups
-- Builds into: [[message-driven-bean|MDB]] — MDBs are the server-side consumer of messages
-- Related: [[point-to-point-vs-pub-sub|PTP vs Pub/Sub]] — determines which interfaces to use
-- Related: [[jdbc|JDBC]] — similar pattern: factory → connection → statement
+- Built from: [[jms|JMS]] -- the programming model implements the JMS API
+- Built from: [[jndi|JNDI]] -- steps 1 and 4 require JNDI lookups
+- Builds into: [[message-driven-bean|MDB]] -- MDBs are the server-side consumer of messages
+- Related: [[point-to-point-vs-pub-sub|PTP vs Pub/Sub]] -- determines which interfaces to use
+- Related: [[jdbc|JDBC]] -- similar pattern: factory → connection → statement
 
 ## Edge Cases & Gotchas
 - Forgetting to close Connection/Session causes resource leaks
-- Session is NOT thread-safe — one session per thread
-- JNDI lookups (steps 1 and 4) can be expensive — cache them if possible
+- Session is NOT thread-safe -- one session per thread
+- JNDI lookups (steps 1 and 4) can be expensive -- cache them if possible
 - Transactions are per-session, not per-connection
 - Using wrong interface flavor (Queue vs Topic) for your destination causes runtime errors

@@ -44,17 +44,32 @@ digraph G {
 
 ## Key Properties
 
-- Runs locally—no network requests yet
+- Runs locally--no network requests yet
 - Uses history, bookmarks, cookies, popular queries
 - Updates in real-time as user types
 - Can be disabled in browser settings
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Browser_Autocomplete {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Browser Autocomplete" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[url-parsing|URL Parsing]] — autocomplete works on URL input
-- **Related:** [[browser-rendering|Browser Rendering]] — happens before rendering
-- **Related:** [[history|Browser History]] — source for suggestions
-- **Contrasts with:** [[dns-lookup|DNS Lookup]] — autocomplete is local, DNS is network
+- **Built from:** [[url-parsing|URL Parsing]] -- autocomplete works on URL input
+- **Related:** [[browser-rendering|Browser Rendering]] -- happens before rendering
+- **Related:** [[history|Browser History]] -- source for suggestions
+- **Contrasts with:** [[dns-lookup|DNS Lookup]] -- autocomplete is local, DNS is network
 
 ## Edge Cases & Gotchas
 

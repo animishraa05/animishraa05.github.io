@@ -45,11 +45,26 @@ digraph G {
 - Portable: Standard format across application servers
 - Overridden by annotations in EJB 3.x
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_EJB_Deployment_Descriptor {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Ejb Deployment Descr" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[ejb-container|EJB Container]] — interprets deployment descriptor
-- Configures: [[container-managed-persistence|Container-Managed Persistence]] — can specify CMP fields
-- Configures: [[transaction-attribute|Transaction Attribute]] — transaction behavior
-- Related: [[ejb-jar|EJB JAR]] — packaging format
+- Built from: [[ejb-container|EJB Container]] -- interprets deployment descriptor
+- Configures: [[container-managed-persistence|Container-Managed Persistence]] -- can specify CMP fields
+- Configures: [[transaction-attribute|Transaction Attribute]] -- transaction behavior
+- Related: [[ejb-jar|EJB JAR]] -- packaging format
 - Related: [[ejb-ql|EJB-QL]], [[cdata-hack|CDATA Hack]], [[declarative-vs-programmatic-transactions|CMT vs BMT]], [[cmp-abstract-accessors|CMP Abstract Accessors]], [[one-to-one-relationship|One-to-One]], [[many-to-many-relationship|M:N Relationships]]
 
 ## Edge Cases & Gotchas

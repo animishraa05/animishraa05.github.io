@@ -88,16 +88,16 @@ graph semantic_nonvolatile {
 
 ## Connections
 
-- **Built from:** [[data-warehouse-definition|Data Warehouse Definition]] — fourth of Inmon's four characteristics
-- **Built from:** [[time-variant-dwh|Time-Variant]] — nonvolatility preserves the historical record
-- **Contrasts with:** [[oltp-vs-olap|OLTP vs OLAP]] — OLTP requires full CRUD + concurrency control; OLAP is read-only
-- **Builds into:** [[dwh-refresh|DWH Refresh]] — the only mechanism for updating warehouse data
-- **Builds into:** [[three-tier-dwh-architecture|Three-Tier DWH Architecture]] — nonvolatility is enforced at the bottom tier
-- **Related:** [[etl-pipeline-dwh|ETL Pipeline (DWH)]] — ETL is the sole mechanism for data entry
+- **Built from:** [[data-warehouse-definition|Data Warehouse Definition]] -- fourth of Inmon's four characteristics
+- **Built from:** [[time-variant-dwh|Time-Variant]] -- nonvolatility preserves the historical record
+- **Contrasts with:** [[oltp-vs-olap|OLTP vs OLAP]] -- OLTP requires full CRUD + concurrency control; OLAP is read-only
+- **Builds into:** [[dwh-refresh|DWH Refresh]] -- the only mechanism for updating warehouse data
+- **Builds into:** [[three-tier-dwh-architecture|Three-Tier DWH Architecture]] -- nonvolatility is enforced at the bottom tier
+- **Related:** [[etl-pipeline-dwh|ETL Pipeline (DWH)]] -- ETL is the sole mechanism for data entry
 
 ## Edge Cases & Gotchas
 
 - **Nonvolatile ≠ static:** Data is refreshed periodically. "Nonvolatile" means no in-place updates, not that data never changes.
 - **Correcting errors is hard:** If bad data was loaded, you cannot simply UPDATE it. You must either append a corrected record or reload the entire batch.
 - **Storage cost:** Since data is never deleted, the warehouse grows indefinitely. Archival policies (moving old data to cheaper storage) are essential.
-- **Not suitable for operational queries:** By design, the warehouse cannot answer "what is the current state?" questions — only "what was the state at time X?"
+- **Not suitable for operational queries:** By design, the warehouse cannot answer "what is the current state?" questions -- only "what was the state at time X?"

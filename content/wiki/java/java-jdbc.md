@@ -76,14 +76,14 @@ graph semantic_jdbc {
 
 ## Connections
 
-- **Built from:** [[java-try-catch-finally|Try-Catch-Finally]] — JDBC resources (Connection, Statement, ResultSet) must be closed in finally blocks
-- **Built from:** [[java-exception-hierarchy|Java Exception Hierarchy]] — JDBC methods throw SQLException (checked)
-- **Builds into:** [[java-socket-programming|Java Socket Programming]] — JDBC drivers communicate with databases over network sockets
-- **Related:** [[java-socket-programming|Java Socket Programming]] — JDBC drivers communicate with databases over network sockets
+- **Built from:** [[java-try-catch-finally|Try-Catch-Finally]] -- JDBC resources (Connection, Statement, ResultSet) must be closed in finally blocks
+- **Built from:** [[java-exception-hierarchy|Java Exception Hierarchy]] -- JDBC methods throw SQLException (checked)
+- **Builds into:** [[java-socket-programming|Java Socket Programming]] -- JDBC drivers communicate with databases over network sockets
+- **Related:** [[java-socket-programming|Java Socket Programming]] -- JDBC drivers communicate with databases over network sockets
 
 ## Edge Cases & Gotchas
 
-- **Resource leaks**: Never forget to close Connection, Statement, and ResultSet — use try-with-resources
-- **SQL injection**: Never concatenate user input into SQL — always use PreparedStatement
+- **Resource leaks**: Never forget to close Connection, Statement, and ResultSet -- use try-with-resources
+- **SQL injection**: Never concatenate user input into SQL -- always use PreparedStatement
 - **Connection pool exhaustion**: Long-running transactions or missing close() calls exhaust the pool
 - **Driver class loading**: In modern JDBC 4+, drivers auto-register via ServiceLoader (no Class.forName() needed)

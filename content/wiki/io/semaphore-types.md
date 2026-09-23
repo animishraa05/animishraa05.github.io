@@ -1,5 +1,5 @@
 ---
-title: "Semaphore Types — Binary vs Counting Semaphores Compared"
+title: "Semaphore Types -- Binary vs Counting Semaphores Compared"
 type: synthesis
 tags: [systems, concurrency]
 created: 2026-04-30
@@ -8,7 +8,7 @@ updated: 2026-04-30
 
 ## Framing
 
-Compare **binary semaphores** (mutex) versus **counting semaphores** (resource pools) — their use cases, behavior, and when to use each.
+Compare **binary semaphores** (mutex) versus **counting semaphores** (resource pools) -- their use cases, behavior, and when to use each.
 
 ## Comparison
 
@@ -22,23 +22,52 @@ Compare **binary semaphores** (mutex) versus **counting semaphores** (resource p
 
 ## Key Insights
 
-1. **Binary semaphore = mutex** — ensures only one process enters critical section
-2. **Counting semaphore = resource counter** — tracks pool of identical resources
-3. **Both use same wait()/signal() operations** — the difference is initialization and interpretation
+1. **Binary semaphore = mutex** -- ensures only one process enters critical section
+2. **Counting semaphore = resource counter** -- tracks pool of identical resources
+3. **Both use same wait()/signal() operations** -- the difference is initialization and interpretation
 4. **Binary semaphores can be implemented with counting** (just set N=1), but not vice versa
-5. **Classic use: producer-consumer** — uses counting (empty, full) + binary (mutex)
-6. **Priority inversion** affects both types — high-priority process blocked by lower-priority holder
+5. **Classic use: producer-consumer** -- uses counting (empty, full) + binary (mutex)
+6. **Priority inversion** affects both types -- high-priority process blocked by lower-priority holder
 
 ## Synthesis
 
 Binary semaphores are a special case of counting semaphores (N=1). Use **binary for mutual exclusion**, **counting for resource pools**. The producer-consumer problem elegantly combines both: counting semaphores (empty, full) manage buffer slots, while a binary semaphore (mutex) protects the buffer data structure.
 
+
+
+## Visual Explanation
+
+```dot
+digraph semaphore_types {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Semaphore Types\nInput"]
+  B [label="Semaphore Types\nCore Mechanism"]
+  C [label="Semaphore Types\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_semaphore_types {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Semaphore Types" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- [[semaphore|Semaphore]] — the general concept
-- [[binary-semaphore|Binary Semaphore]] — mutex use case
-- [[counting-semaphore|Counting Semaphore]] — resource pool use case
-- [[producer-consumer|Producer-Consumer Problem]] — uses both types
-- [[mutex|Mutex]] — binary semaphore synonym
-- [[wait-operation|wait() Operation]] — used by both
-- [[signal-operation|signal() Operation]] — used by both
+- [[semaphore|Semaphore]] -- the general concept
+- [[binary-semaphore|Binary Semaphore]] -- mutex use case
+- [[counting-semaphore|Counting Semaphore]] -- resource pool use case
+- [[producer-consumer|Producer-Consumer Problem]] -- uses both types
+- [[mutex|Mutex]] -- binary semaphore synonym
+- [[wait-operation|wait() Operation]] -- used by both
+- [[signal-operation|signal() Operation]] -- used by both

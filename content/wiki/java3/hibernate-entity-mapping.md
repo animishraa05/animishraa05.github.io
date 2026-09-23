@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Relational databases model relationships using foreign keys and join tables, while Java models relationships using object references and collections. Translating between these paradigms — one-to-one, one-to-many, many-to-many — requires explicit mapping configuration so Hibernate knows how to persist object graphs.
+Relational databases model relationships using foreign keys and join tables, while Java models relationships using object references and collections. Translating between these paradigms -- one-to-one, one-to-many, many-to-many -- requires explicit mapping configuration so Hibernate knows how to persist object graphs.
 
 ## Core Idea
 
@@ -66,17 +66,32 @@ digraph hibernate_mapping {
 - **Join columns**: `@JoinColumn` specifies the FK column name; `@JoinTable` specifies the join table for M:N
 - **Inheritance mapping**: Single table, joined table, or table-per-class strategies for class hierarchies
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Hibernate_Entity_Mapping {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Hibernate Entity Map" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[hibernate-orm-framework|Hibernate ORM Framework]] — Mapping is a core feature of Hibernate
-- **Built from:** [[object-relational-mapping|Object-Relational Mapping]] — Mapping implements ORM principles
-- **Related:** [[hibernate-annotations|Hibernate Annotations]] — JPA annotations define mappings
-- **Contrasts with:** [[one-to-one-relationship|One-to-One Relationship (EJB)]] — EJB's CMR vs Hibernate annotations
-- **Builds into:** [[spring-data-jpa|Spring Data JPA]] — Spring Data JPA repositories operate on mapped entities
+- **Built from:** [[hibernate-orm-framework|Hibernate ORM Framework]] -- Mapping is a core feature of Hibernate
+- **Built from:** [[object-relational-mapping|Object-Relational Mapping]] -- Mapping implements ORM principles
+- **Related:** [[hibernate-annotations|Hibernate Annotations]] -- JPA annotations define mappings
+- **Contrasts with:** [[one-to-one-relationship|One-to-One Relationship (EJB)]] -- EJB's CMR vs Hibernate annotations
+- **Builds into:** [[spring-data-jpa|Spring Data JPA]] -- Spring Data JPA repositories operate on mapped entities
 
 ## Edge Cases & Gotchas
 
 - **Bidirectional sync**: Always add convenience methods like `addEmployee(emp)` to sync both sides of bidirectional associations
-- **equals/hashCode**: Never use the auto-generated ID in hashCode() before persisting — null ID causes inconsistent behavior in collections
+- **equals/hashCode**: Never use the auto-generated ID in hashCode() before persisting -- null ID causes inconsistent behavior in collections
 - **EAGER fetch overuse**: Loading an entity with multiple EAGER collections creates a Cartesian product query
 - **Join table naming**: If `@JoinTable` name is unspecified, Hibernate generates a default; explicit naming avoids surprises

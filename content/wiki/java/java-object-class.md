@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Every object in Java needs a basic set of operations — comparing with other objects, generating a hash code, producing a string representation, and being cloneable. Without a common base class, each class would redefine these fundamental behaviors inconsistently.
+Every object in Java needs a basic set of operations -- comparing with other objects, generating a hash code, producing a string representation, and being cloneable. Without a common base class, each class would redefine these fundamental behaviors inconsistently.
 
 ## Core Idea
 
@@ -68,15 +68,15 @@ graph semantic_object_class {
 
 - **equals/hashCode contract**: If two objects are equal, they must have the same hash code
 - **Thread methods**: `wait()` and `notify()` are defined here, making every object a monitor
-- **getClass()**: Returns the runtime class — final, cannot be overridden
+- **getClass()**: Returns the runtime class -- final, cannot be overridden
 - **finalize()**: Called by GC before reclaiming memory (deprecated in Java 9+)
 
 ## Connections
 
-- **Built from:** [[java-inheritance|Java Inheritance]] — Object is the ultimate parent of all classes
-- **Builds into:** [[java-strings|Java Strings]] — String overrides equals() and hashCode() for value comparison
-- **Builds into:** [[java-collections-framework|Java Collections Framework]] — hashCode() is used by HashMap, HashSet
-- **Related:** [[java-polymorphism|Java Polymorphism]] — Object reference can hold any type (polymorphism)
+- **Built from:** [[java-inheritance|Java Inheritance]] -- Object is the ultimate parent of all classes
+- **Builds into:** [[java-strings|Java Strings]] -- String overrides equals() and hashCode() for value comparison
+- **Builds into:** [[java-collections-framework|Java Collections Framework]] -- hashCode() is used by HashMap, HashSet
+- **Related:** [[java-polymorphism|Java Polymorphism]] -- Object reference can hold any type (polymorphism)
 
 ## Edge Cases & Gotchas
 

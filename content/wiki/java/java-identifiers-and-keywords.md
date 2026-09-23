@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Programming languages need a way to name elements — variables, methods, classes — while reserving certain words for the language's own syntax. Without clear rules for what constitutes a valid name and what words are reserved, developers could write ambiguous or illegal code that confuses both the compiler and other programmers.
+Programming languages need a way to name elements -- variables, methods, classes -- while reserving certain words for the language's own syntax. Without clear rules for what constitutes a valid name and what words are reserved, developers could write ambiguous or illegal code that confuses both the compiler and other programmers.
 
 ## Core Idea
 
@@ -68,15 +68,15 @@ graph semantic_java_ids {
 
 ## Connections
 
-- **Built from:** [[java-data-types|Java Data Types]] — identifiers are typed when declared
-- **Builds into:** [[java-variables|Java Variables]] — variables are the primary use of identifiers
-- **Builds into:** [[java-methods|Java Methods]] — method names follow identifier rules
-- **Contrasts with:** [[java-operators|Java Operators]] — operators are symbols, not keywords/identifiers
-- **Related:** [[java-control-flow|Java Control Flow]] — keywords like if, else, switch, case enable branching
+- **Built from:** [[java-data-types|Java Data Types]] -- identifiers are typed when declared
+- **Builds into:** [[java-variables|Java Variables]] -- variables are the primary use of identifiers
+- **Builds into:** [[java-methods|Java Methods]] -- method names follow identifier rules
+- **Contrasts with:** [[java-operators|Java Operators]] -- operators are symbols, not keywords/identifiers
+- **Related:** [[java-control-flow|Java Control Flow]] -- keywords like if, else, switch, case enable branching
 
 ## Edge Cases & Gotchas
 
-- **`const` and `goto` are reserved but unused** — you cannot use them as identifiers, but they do nothing
-- **`true`, `false`, `null` are literals, not keywords** — but still cannot be used as identifiers
-- **`var` is not a keyword** — it is a "reserved type name" with special inference behavior
+- **`const` and `goto` are reserved but unused** -- you cannot use them as identifiers, but they do nothing
+- **`true`, `false`, `null` are literals, not keywords** -- but still cannot be used as identifiers
+- **`var` is not a keyword** -- it is a "reserved type name" with special inference behavior
 - **Dollar signs in identifiers** are legal but strongly discouraged (used by compiler-generated code)

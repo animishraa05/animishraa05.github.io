@@ -16,7 +16,7 @@ HQL (Hibernate Query Language) is an object-oriented query language that operate
 
 ## How It Works
 
-1. **HQL syntax**: `from Employee e where e.department.name = :deptName` — uses class and field names
+1. **HQL syntax**: `from Employee e where e.department.name = :deptName` -- uses class and field names
 2. **Query creation**: `session.createQuery("from Employee", Employee.class)`
 3. **Parameter binding**: Named parameters (`:paramName`) or positional (`?1`) prevent SQL injection
 4. **Translation**: Hibernate parses HQL, generates an AST, transforms it to SQL for the target dialect
@@ -53,23 +53,38 @@ digraph hql_flow {
 ## Key Properties
 
 - **Object-oriented**: Queries use Java class names (`Employee`) and field names (`firstName`)
-- **Dialect-independent**: Same HQL works on MySQL, Oracle, PostgreSQL — Hibernate handles translation
+- **Dialect-independent**: Same HQL works on MySQL, Oracle, PostgreSQL -- Hibernate handles translation
 - **Named parameters**: `:name` syntax with `setParameter("name", value)` for safe parameter binding
 - **Aggregation**: Supports `SELECT`, `GROUP BY`, `HAVING`, `ORDER BY`, aggregate functions
 - **Joins**: Implicit path navigation (`emp.department.name`) and explicit JOIN FETCH for loading associations
 - **Native SQL fallback**: `createNativeQuery()` for database-specific features, stored procedures, or complex queries
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Hibernate_Query_Language {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Hibernate Query Lang" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[hibernate-orm-framework|Hibernate ORM Framework]] — HQL is Hibernate's query language
-- **Built from:** [[ejb-ql|EJB Query Language (EJB-QL)]] — HQL is the ORM successor to EJB-QL's concept
-- **Related:** [[java-jdbc|JDBC]] — Native SQL in Hibernate still uses JDBC under the hood
-- **Builds into:** [[spring-data-jpa|Spring Data JPA]] — Spring Data JPA's @Query uses JPQL (similar to HQL)
-- **Contrasts with:** [[ejb-ql|EJB-QL]] — EJB-QL is more limited, HQL supports richer expressions and native SQL
+- **Built from:** [[hibernate-orm-framework|Hibernate ORM Framework]] -- HQL is Hibernate's query language
+- **Built from:** [[ejb-ql|EJB Query Language (EJB-QL)]] -- HQL is the ORM successor to EJB-QL's concept
+- **Related:** [[java-jdbc|JDBC]] -- Native SQL in Hibernate still uses JDBC under the hood
+- **Builds into:** [[spring-data-jpa|Spring Data JPA]] -- Spring Data JPA's @Query uses JPQL (similar to HQL)
+- **Contrasts with:** [[ejb-ql|EJB-QL]] -- EJB-QL is more limited, HQL supports richer expressions and native SQL
 
 ## Edge Cases & Gotchas
 
 - **N+1 with joins**: Default fetching is LAZY; HQL queries without JOIN FETCH trigger N+1 queries for associations
-- **HQL vs SQL mindset**: HQL operates on entities, not rows — `select e.firstName, e.lastName` returns `Object[]`, not entities
+- **HQL vs SQL mindset**: HQL operates on entities, not rows -- `select e.firstName, e.lastName` returns `Object[]`, not entities
 - **Positional parameters**: `?` positional params are deprecated in Hibernate 5+ in favor of `:named` parameters
-- **Scalar queries**: Aggregate results need proper typing — `query.getSingleResult()` returns `Long` for COUNT, not `Integer`
+- **Scalar queries**: Aggregate results need proper typing -- `query.getSingleResult()` returns `Long` for COUNT, not `Integer`

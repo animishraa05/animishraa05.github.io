@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Without classes, each object would need to be defined individually, with its own set of properties and methods copied from scratch. Writing code for every object separately leads to massive duplication — every BMW, Mercedes, and Audi would need its own implementation of drive(), brake(), and honk() even though they share the same behavior.
+Without classes, each object would need to be defined individually, with its own set of properties and methods copied from scratch. Writing code for every object separately leads to massive duplication -- every BMW, Mercedes, and Audi would need its own implementation of drive(), brake(), and honk() even though they share the same behavior.
 
 ## Core Idea
 
@@ -75,10 +75,10 @@ graph semantic_class {
 
 ## Connections
 
-- **Builds into:** [[java-object|Java Object]] — a class is instantiated to create objects
-- **Built from:** [[java-constructors|Java Constructors]] — constructors initialize new class instances
-- **Builds into:** [[java-inheritance|Java Inheritance]] — subclasses extend a parent class
-- **Related:** [[java-oop-pillars|The Four OOP Pillars]] — classes are the foundation of all four OOP pillars
+- **Builds into:** [[java-object|Java Object]] -- a class is instantiated to create objects
+- **Built from:** [[java-constructors|Java Constructors]] -- constructors initialize new class instances
+- **Builds into:** [[java-inheritance|Java Inheritance]] -- subclasses extend a parent class
+- **Related:** [[java-oop-pillars|The Four OOP Pillars]] -- classes are the foundation of all four OOP pillars
 
 ## Edge Cases & Gotchas
 

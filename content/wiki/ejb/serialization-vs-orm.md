@@ -72,15 +72,30 @@ digraph SerVsORM {
 - **ORM is superior for business data**: Queryability and debuggability win for enterprise apps
 - **Serialization still useful**: For caching, session replication in clusters, simple use cases
 - **Entity beans mandate ORM**: The EJB spec envisions ORM (not serialization) for entity beans
-- **Modern ORM tools**: Hibernate (most popular), TopLink, JDO—reduce manual JDBC code
+- **Modern ORM tools**: Hibernate (most popular), TopLink, JDO--reduce manual JDBC code
 
+
+
+## Semantic Network
+
+```dot
+graph semantic__Serialization_vs_ORM_ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label=""Serialization Vs Or" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[persistence-concepts|Persistence Concepts]], [[object-relational-mapping|Object-Relational Mapping]]
 - **Builds into:** [[entity-bean|Entity Bean]] (uses ORM, not serialization)
 - **Related:** [[jdbc|JDBC]] (API for ORM in BMP), [[bean-managed-persistence|BMP]]
-- **Contrasts with:** Direct database access (no objects—just SQL)
+- **Contrasts with:** Direct database access (no objects--just SQL)
 
 ## Edge Cases & Gotchas
 - **Serialization version UID**: If you change the class, deserialization fails without `serialVersionUID`
 - **ORM impedance mismatch**: Object model ≠ relational model (inheritance, collections are hard to map)
-- **EJB 3.x uses JPA**: Java Persistence API—modern evolution of EJB entity beans + ORM
+- **EJB 3.x uses JPA**: Java Persistence API--modern evolution of EJB entity beans + ORM

@@ -41,6 +41,21 @@ digraph seg {
 - External fragmentation (gaps between segments)
 - Easier sharing (share entire segment)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Segmentation {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Segmentation" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[virtual-memory|Virtual Memory]], [[wiki/io/paging|Paging]]

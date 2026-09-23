@@ -12,11 +12,11 @@ A class often needs multiple versions of the same operation that differ only in 
 
 ## Core Idea
 
-**Compile-time Polymorphism** (also called **Method Overloading**) allows multiple methods in the same class to share the same name but have different parameter lists. The compiler determines which version to call based on the number, type, and order of arguments. This decision is made at compile time — hence the name. Overloading improves code readability by using consistent names for logically similar operations.
+**Compile-time Polymorphism** (also called **Method Overloading**) allows multiple methods in the same class to share the same name but have different parameter lists. The compiler determines which version to call based on the number, type, and order of arguments. This decision is made at compile time -- hence the name. Overloading improves code readability by using consistent names for logically similar operations.
 
 ## How It Works
 
-The compiler uses the method signature (name + parameter types) to select the correct overload. It applies widening conversions, autoboxing, and varargs in that order of preference. If no matching overload is found, a compile error occurs. Overloaded methods can differ in parameter count, parameter types, or both. Return type alone is NOT sufficient for overloading — the compiler needs parameter differences.
+The compiler uses the method signature (name + parameter types) to select the correct overload. It applies widening conversions, autoboxing, and varargs in that order of preference. If no matching overload is found, a compile error occurs. Overloaded methods can differ in parameter count, parameter types, or both. Return type alone is NOT sufficient for overloading -- the compiler needs parameter differences.
 
 ## Visual Explanation
 
@@ -68,13 +68,13 @@ graph semantic_compile_time_poly {
 
 ## Connections
 
-- **Built from:** [[java-polymorphism|Java Polymorphism]] — compile-time polymorphism is one of two polymorphism types
-- **Contrasts with:** [[java-runtime-polymorphism|Runtime Polymorphism]] — compile-time vs runtime resolution
-- **Related:** [[java-methods|Java Methods]] — overloading is a method-level feature
-- **Related:** [[java-overloading-vs-overriding|Overloading vs Overriding]] — synthesis comparing the two
+- **Built from:** [[java-polymorphism|Java Polymorphism]] -- compile-time polymorphism is one of two polymorphism types
+- **Contrasts with:** [[java-runtime-polymorphism|Runtime Polymorphism]] -- compile-time vs runtime resolution
+- **Related:** [[java-methods|Java Methods]] -- overloading is a method-level feature
+- **Related:** [[java-overloading-vs-overriding|Overloading vs Overriding]] -- synthesis comparing the two
 
 ## Edge Cases & Gotchas
 
 - **Ambiguous call**: If two overloads are equally applicable (e.g., `method(Integer)` and `method(String)` with `null`), the compiler reports ambiguity
-- **Widening + boxing chain**: Widening followed by boxing is not supported — `int` cannot widen then autobox to `Long`
-- **Varargs ambiguity**: Overloading with varargs can create ambiguous calls — the compiler cannot distinguish `method(int...)` from `method(Integer...)` with `null`
+- **Widening + boxing chain**: Widening followed by boxing is not supported -- `int` cannot widen then autobox to `Long`
+- **Varargs ambiguity**: Overloading with varargs can create ambiguous calls -- the compiler cannot distinguish `method(int...)` from `method(Integer...)` with `null`

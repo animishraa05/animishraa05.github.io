@@ -36,13 +36,28 @@ digraph G {
 - Imbalanced: rare classes are harder to learn (may need special techniques)
 - Metrics: accuracy, precision, recall, F1-score, AUC-ROC (not just "error rate")
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Classification {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Classification" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[supervised-learning|Supervised Learning]] — classification is a supervised task
-- Contrasts with: [[regression|Regression]] — predicts categories instead of continuous numbers
-- Built from: [[decision-tree-structure|Decision Tree Structure]] — trees solve classification via leaf class labels
-- Related: [[decision-tree-prediction|Decision Tree Prediction]] — trees classify by root-to-leaf traversal
-- Related: [[train-test-split|Train-Test Split]] — classification needs stratified splitting
-- Related: [[overfitting|Overfitting]] — classifiers can memorize training examples
+- Built from: [[supervised-learning|Supervised Learning]] -- classification is a supervised task
+- Contrasts with: [[regression|Regression]] -- predicts categories instead of continuous numbers
+- Built from: [[decision-tree-structure|Decision Tree Structure]] -- trees solve classification via leaf class labels
+- Related: [[decision-tree-prediction|Decision Tree Prediction]] -- trees classify by root-to-leaf traversal
+- Related: [[train-test-split|Train-Test Split]] -- classification needs stratified splitting
+- Related: [[overfitting|Overfitting]] -- classifiers can memorize training examples
 
 ## Edge Cases & Gotchas
 - Class imbalance: accuracy is misleading when 95% of examples are one class

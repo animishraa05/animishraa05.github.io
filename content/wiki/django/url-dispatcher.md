@@ -16,12 +16,12 @@ The URL dispatcher solves the problem of connecting human-readable URLs to appli
 
 ## How It Works
 
-1. **Request received** — HTTP request path extracted from WSGI/ASGI environ
-2. **Root URLconf loaded** — `ROOT_URLCONF` setting points to project's `urls.py`
-3. **Pattern matching** — Iterator through `urlpatterns` list in order; first match wins
-4. **Converter extraction** — Path converters (`int`, `str`, `slug`, `uuid`, `path`) parse and type-cast URL segments
-5. **View resolution** — Matched view callable receives `request` + extracted kwargs
-6. **Namespace resolution** — `include()` with `namespace` enables reversible named URLs across apps
+1. **Request received** -- HTTP request path extracted from WSGI/ASGI environ
+2. **Root URLconf loaded** -- `ROOT_URLCONF` setting points to project's `urls.py`
+3. **Pattern matching** -- Iterator through `urlpatterns` list in order; first match wins
+4. **Converter extraction** -- Path converters (`int`, `str`, `slug`, `uuid`, `path`) parse and type-cast URL segments
+5. **View resolution** -- Matched view callable receives `request` + extracted kwargs
+6. **Namespace resolution** -- `include()` with `namespace` enables reversible named URLs across apps
 
 ## Visual Explanation
 
@@ -94,14 +94,14 @@ graph semantic_url_dispatcher {
 
 ## Connections
 
-- Built from: [[django-web-framework|Django Web Framework]] — Core routing component
-- Built from: [[http-protocol|HTTP Protocol]] — Routes HTTP request paths
-- Builds into: [[function-based-views|Function-Based Views]] — Targets for URL patterns
-- Builds into: [[class-based-views|Class-Based Views]] — `as_view()` as URL target
-- Builds into: [[url-reversal|URL Reversal]] — Named patterns enable reversal
-- Contrasts with: [[flask-routing|Flask @route]] — Decorator-based, single-file routing
-- Contrasts with: [[fastapi-routing|FastAPI Path Operations]] — Type-annotated, automatic OpenAPI
-- Related: [[django-rest-framework-routers|DRF Routers]] — Auto-generates URL patterns for ViewSets
+- Built from: [[django-web-framework|Django Web Framework]] -- Core routing component
+- Built from: [[http-protocol|HTTP Protocol]] -- Routes HTTP request paths
+- Builds into: [[function-based-views|Function-Based Views]] -- Targets for URL patterns
+- Builds into: [[class-based-views|Class-Based Views]] -- `as_view()` as URL target
+- Builds into: [[url-reversal|URL Reversal]] -- Named patterns enable reversal
+- Contrasts with: [[flask-routing|Flask @route]] -- Decorator-based, single-file routing
+- Contrasts with: [[fastapi-routing|FastAPI Path Operations]] -- Type-annotated, automatic OpenAPI
+- Related: [[django-rest-framework-routers|DRF Routers]] -- Auto-generates URL patterns for ViewSets
 
 ## Edge Cases & Gotchas
 

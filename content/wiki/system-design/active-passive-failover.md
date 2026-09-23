@@ -8,7 +8,7 @@ updated: 2026-05-15
 
 ## The Problem
 
-A single server is a single point of failure — if it goes down, the service becomes unavailable. Unplanned downtime leads to revenue loss, user trust erosion, and SLA violations.
+A single server is a single point of failure -- if it goes down, the service becomes unavailable. Unplanned downtime leads to revenue loss, user trust erosion, and SLA violations.
 
 ## Core Idea
 
@@ -52,15 +52,30 @@ digraph active_passive_failover {
 - Also called master-slave failover
 - Failover time varies by standby type: hot (minutes) vs cold (hours)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Active_Passive_Failover {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Active Passive Failo" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Contrasts with:** [[active-active-failover|Active-Active Failover]] — passive standby vs both serving traffic
-- **Related:** [[availability-nines|Availability Nines]] — failover improves uptime percentage
-- **Related:** [[layer4-load-balancing|Layer 4 Load Balancing]] — load balancers orchestrate failover routing
-- **Related:** [[horizontal-scaling|Horizontal Scaling]] — adding passive nodes is a scaling concern
+- **Contrasts with:** [[active-active-failover|Active-Active Failover]] -- passive standby vs both serving traffic
+- **Related:** [[availability-nines|Availability Nines]] -- failover improves uptime percentage
+- **Related:** [[layer4-load-balancing|Layer 4 Load Balancing]] -- load balancers orchestrate failover routing
+- **Related:** [[horizontal-scaling|Horizontal Scaling]] -- adding passive nodes is a scaling concern
 
 ## Edge Cases & Gotchas
 
 - Split-brain scenario: both servers think the other is dead and both become active, causing data corruption
-- Heartbeat network itself can be a single point of failure — redundant heartbeat links recommended
+- Heartbeat network itself can be a single point of failure -- redundant heartbeat links recommended
 - Stateful services (in-memory sessions) are lost on failover unless backed by shared storage

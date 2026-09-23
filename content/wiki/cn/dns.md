@@ -46,13 +46,28 @@ digraph G {
 - Hierarchical distributed database
 - Uses UDP primarily (fast, low overhead) with TCP fallback
 - Caching reduces query latency and server load
-- Critical infrastructure — internet unusable without it
+- Critical infrastructure -- internet unusable without it
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_DNS {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Dns" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[udp|UDP]] — primary transport protocol used
-- Built from: [[application-layer|Application Layer]] — operates at this layer
-- Related: [[ip-protocol|IP Protocol]] — returns IP addresses
-- Related: [[dns-cache|DNS Cache]] — improves performance
+- Built from: [[udp|UDP]] -- primary transport protocol used
+- Built from: [[application-layer|Application Layer]] -- operates at this layer
+- Related: [[ip-protocol|IP Protocol]] -- returns IP addresses
+- Related: [[dns-cache|DNS Cache]] -- improves performance
 
 ## Edge Cases & Gotchas
 - DNS cache poisoning can redirect users to malicious sites

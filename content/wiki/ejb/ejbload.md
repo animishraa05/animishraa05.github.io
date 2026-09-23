@@ -29,6 +29,35 @@ How does an entity bean synchronize its in-memory state with the database when t
 - In CMP: container auto-generates the SELECT
 - Must call `getPrimaryKey()` to know which data to load
 
+
+
+## Visual Explanation
+
+```dot
+digraph ejbLoad__ {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Ejbload()\nInput"]
+  B [label="Ejbload()\nCore Mechanism"]
+  C [label="Ejbload()\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_ejbLoad__ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Ejbload()" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[entity-bean|Entity Bean]], [[getprimarykey|getPrimaryKey()]], [[entity-context|Entity Context]]
@@ -37,6 +66,6 @@ How does an entity bean synchronize its in-memory state with the database when t
 
 ## Edge Cases & Gotchas
 
-- Not called on every method—only when loading from DB is needed
+- Not called on every method--only when loading from DB is needed
 - Called BEFORE business methods in the ready state
 - Don't confuse with `ejbActivate()` which acquires resources, not data

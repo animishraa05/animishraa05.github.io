@@ -7,14 +7,14 @@ updated: 2026-04-28
 ---
 
 ## The Problem
-When mapping EJB entity bean relationships to database schemas, you can choose between normalized (less redundancy) and denormalized (faster queries) approaches. This is the classic computer science space-time tradeoff — more space used but faster time, or less space but slower time.
+When mapping EJB entity bean relationships to database schemas, you can choose between normalized (less redundancy) and denormalized (faster queries) approaches. This is the classic computer science space-time tradeoff -- more space used but faster time, or less space but slower time.
 
 ## Core Idea
 **Normalized Schema:** Data redundancy minimized (separate tables, foreign keys). Requires JOIN queries for relationship navigation → slower but less storage, better data integrity. **Denormalized Schema:** Data duplicated across tables. Faster queries (no JOINs) but more storage, harder maintenance.
 
 ## How It Works
 
-### Normalized Schema (Figure 15.6 — Person:Address example)
+### Normalized Schema (Figure 15.6 -- Person:Address example)
 - `Person` table: `[PersonPK, Name, ...]`
 - `Address` table: `[AddressPK, Street, City, ...]`
 - `PersonAddress` table: `[PersonFK, AddressFK]` (junction for M:N)
@@ -29,7 +29,7 @@ When mapping EJB entity bean relationships to database schemas, you can choose b
 
 ### EJB Mapping
 - EJB directionality (bidirectional/unidirectional) can be mapped to either schema
-- Container can handle both — you just configure the O/R mapping
+- Container can handle both -- you just configure the O/R mapping
 - CMP container generates SQL based on the schema you have
 
 ## Visual Explanation
@@ -61,15 +61,30 @@ digraph G {
 - Directionality in beans doesn't have to match database schema directionality
 - Classic space-time tradeoff in computer science
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Normalized_vs_Denormalized_Database_Schema {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Normalized Vs Denorm" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[one-to-one-relationship|One-to-One Relationship]] — schema examples based on Person:Address
-- Related: [[one-to-many-relationship|One-to-Many Relationship]] — normalized schema uses FK on "many" side
-- Related: [[many-to-many-relationship|Many-to-Many Relationship]] — normalized needs junction table
-- Related: [[container-managed-persistence|CMP]] — container handles O/R mapping for both schemas
-- Related: [[bidirectional-vs-unidirectional|Bidirectional vs Unidirectional]] — bean directionality independent of DB schema
+- Built from: [[one-to-one-relationship|One-to-One Relationship]] -- schema examples based on Person:Address
+- Related: [[one-to-many-relationship|One-to-Many Relationship]] -- normalized schema uses FK on "many" side
+- Related: [[many-to-many-relationship|Many-to-Many Relationship]] -- normalized needs junction table
+- Related: [[container-managed-persistence|CMP]] -- container handles O/R mapping for both schemas
+- Related: [[bidirectional-vs-unidirectional|Bidirectional vs Unidirectional]] -- bean directionality independent of DB schema
 
 ## Edge Cases & Gotchas
-- EJB directionality (bidirectional) can be implemented on either schema type — don't assume DB schema matches object model
+- EJB directionality (bidirectional) can be implemented on either schema type -- don't assume DB schema matches object model
 - Denormalized schemas risk data inconsistency (if duplicated data is updated in one place but not another)
 - Normalized schemas with many JOINs can be slow for complex relationship navigation
 - CMP container generates different SQL based on which schema you use

@@ -19,7 +19,7 @@ How does an entity bean delete its database record when a client calls remove() 
 2. Container calls `ejbRemove()` on the bean instance
 3. In BMP: bean calls `ctx.getPrimaryKey()` to get the entity ID
 4. Bean executes `DELETE` query to remove the database row
-5. After returning, bean goes back to the pool—data is gone
+5. After returning, bean goes back to the pool--data is gone
 
 ## Key Properties
 
@@ -28,6 +28,35 @@ How does an entity bean delete its database record when a client calls remove() 
 - In BMP, developer writes DELETE logic
 - In CMP, container auto-generates the DELETE
 
+
+
+## Visual Explanation
+
+```dot
+digraph ejbRemove__ {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Ejbremove()\nInput"]
+  B [label="Ejbremove()\nCore Mechanism"]
+  C [label="Ejbremove()\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_ejbRemove__ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Ejbremove()" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[entity-bean|Entity Bean]], [[getprimarykey|getPrimaryKey()]]
@@ -35,6 +64,6 @@ How does an entity bean delete its database record when a client calls remove() 
 
 ## Edge Cases & Gotchas
 
-- Different from session bean `ejbRemove()`—that deletes the bean from RAM, this deletes database data
+- Different from session bean `ejbRemove()`--that deletes the bean from RAM, this deletes database data
 - Must call `getPrimaryKey()` because bean instances are pooled and reused
-- No parameters are passed—bean's identity must be queried from context
+- No parameters are passed--bean's identity must be queried from context

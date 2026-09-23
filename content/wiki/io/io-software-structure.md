@@ -12,7 +12,7 @@ I/O operations involve many concerns: buffering, error handling, device-specific
 
 ## Core Idea
 
-I/O software is organized into four layers, each handling a specific abstraction level — from user-facing system calls down to hardware interrupt handling.
+I/O software is organized into four layers, each handling a specific abstraction level -- from user-facing system calls down to hardware interrupt handling.
 
 ## How It Works
 
@@ -49,6 +49,21 @@ digraph io_layers {
 - Drivers can be loaded/unloaded without changing the OS
 - Modularity enables portability across hardware platforms
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_I_O_Software_Structure {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="I/O Software Structu" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[io-system|I/O System]], [[user-level-io-software|User-Level I/O Software]]

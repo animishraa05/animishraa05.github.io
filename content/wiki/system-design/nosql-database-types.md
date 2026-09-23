@@ -57,22 +57,37 @@ digraph NoSQLTypes {
 
 ## Key Properties
 
-- **BASE semantics** — Basically Available, Soft state, Eventual consistency (instead of ACID)
-- **Denormalized by nature** — data is stored in read-optimized shapes; joins happen in application code
-- **No true ACID transactions** — most NoSQL databases do not support multi-document/row transactions
-- **Designed for horizontal scaling** — built-in sharding and replication for massive scale
-- **Each type optimized for specific access patterns** — choosing the wrong type leads to poor performance
+- **BASE semantics** -- Basically Available, Soft state, Eventual consistency (instead of ACID)
+- **Denormalized by nature** -- data is stored in read-optimized shapes; joins happen in application code
+- **No true ACID transactions** -- most NoSQL databases do not support multi-document/row transactions
+- **Designed for horizontal scaling** -- built-in sharding and replication for massive scale
+- **Each type optimized for specific access patterns** -- choosing the wrong type leads to poor performance
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_NoSQL_Database_Types {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Nosql Database Types" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Builds into:** [[sql-vs-nosql|SQL vs NoSQL]] — a synthesis comparing relational and non-relational approaches
-- **Related:** [[cap-theorem|CAP Theorem]] — NoSQL databases typically prioritize Availability and Partition tolerance over Consistency
-- **Related:** [[denormalization|Denormalization]] — NoSQL databases are inherently denormalized; data duplication is by design
-- **Related:** [[sharding|Sharding]] — most NoSQL databases have built-in sharding, making horizontal scaling straightforward
-- **Related:** [[cache-aside|Cache-Aside]] — key-value stores (Redis, Memcached) are the most common caching layer
+- **Builds into:** [[sql-vs-nosql|SQL vs NoSQL]] -- a synthesis comparing relational and non-relational approaches
+- **Related:** [[cap-theorem|CAP Theorem]] -- NoSQL databases typically prioritize Availability and Partition tolerance over Consistency
+- **Related:** [[denormalization|Denormalization]] -- NoSQL databases are inherently denormalized; data duplication is by design
+- **Related:** [[sharding|Sharding]] -- most NoSQL databases have built-in sharding, making horizontal scaling straightforward
+- **Related:** [[cache-aside|Cache-Aside]] -- key-value stores (Redis, Memcached) are the most common caching layer
 
 ## Edge Cases & Gotchas
 
-- **Wrong tool for the job** — using a document store for deeply relational data (e.g., accounting systems) leads to application-level join spaghetti and data inconsistency.
-- **NoSQL does not mean no schema** — while schemas are flexible at write time, the application code implicitly defines a schema that must be managed; schema drift is a real problem.
-- **Eventual consistency surprises** — reading your own write may return stale data; this breaks user expectations in applications like social media or e-commerce.
+- **Wrong tool for the job** -- using a document store for deeply relational data (e.g., accounting systems) leads to application-level join spaghetti and data inconsistency.
+- **NoSQL does not mean no schema** -- while schemas are flexible at write time, the application code implicitly defines a schema that must be managed; schema drift is a real problem.
+- **Eventual consistency surprises** -- reading your own write may return stale data; this breaks user expectations in applications like social media or e-commerce.

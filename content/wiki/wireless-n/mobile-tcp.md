@@ -7,7 +7,7 @@ updated: 2026-04-21
 ---
 
 ## The Problem
-Standard TCP assumes packet loss is caused by network congestion (router buffers overflowing), and responds by reducing the congestion window. However, in wireless mobile networks, packet loss is often caused by signal fading, handoff, or temporary disconnection — not congestion. When TCP sees packet loss, it incorrectly throttles the connection, degrading performance by orders of magnitude.
+Standard TCP assumes packet loss is caused by network congestion (router buffers overflowing), and responds by reducing the congestion window. However, in wireless mobile networks, packet loss is often caused by signal fading, handoff, or temporary disconnection -- not congestion. When TCP sees packet loss, it incorrectly throttles the connection, degrading performance by orders of magnitude.
 
 ## Core Idea
 Mobile TCP adaptations modify the standard TCP protocol to handle wireless link characteristics: Indirect TCP (I-TCP) separates the wired and wireless parts of the connection, snooping TCP monitors the wireless link for fast local recovery, and Fast Retransmit/Fast Recovery allow quick recovery without full congestion control resets.
@@ -22,7 +22,7 @@ Mobile TCP adaptations modify the standard TCP protocol to handle wireless link 
 
 **Indirect TCP (I-TCP):**
 1. Connection is split at the foreign agent (gateway): wired part (sender ↔ FA) + wireless part (FA ↔ mobile)
-2. On the wired segment, packets are never lost — I-TCP provides a reliable transport
+2. On the wired segment, packets are never lost -- I-TCP provides a reliable transport
 3. FA performs local recovery of wireless losses
 4. Wired sender never sees wireless losses → no congestion window throttling
 
@@ -44,14 +44,43 @@ Mobile TCP adaptations modify the standard TCP protocol to handle wireless link 
 - All mobile TCP variants hide wireless link characteristics from the sender
 - Trade-off: network layer transparency vs. performance
 
+
+
+## Visual Explanation
+
+```dot
+digraph Mobile_TCP {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Mobile Tcp\nInput"]
+  B [label="Mobile Tcp\nCore Mechanism"]
+  C [label="Mobile Tcp\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Mobile_TCP {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Mobile Tcp" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[tcp|TCP]] — standard TCP that fails in mobile environments
-- Built from: [[cellular-mobile-system|Cellular Mobile System]] — the environment where standard TCP fails
-- Related: [[mobile-ip|Mobile IP]] — handles network layer (IP) mobility; different from transport layer mobility
-- Related: [[congestion-control|Congestion Control]] — the TCP mechanism that misfires in mobile networks
+- Built from: [[tcp|TCP]] -- standard TCP that fails in mobile environments
+- Built from: [[cellular-mobile-system|Cellular Mobile System]] -- the environment where standard TCP fails
+- Related: [[mobile-ip|Mobile IP]] -- handles network layer (IP) mobility; different from transport layer mobility
+- Related: [[congestion-control|Congestion Control]] -- the TCP mechanism that misfires in mobile networks
 
 ## Edge Cases & Gotchas
-- I-TCP breaks end-to-end semantics — FA crash loses data
+- I-TCP breaks end-to-end semantics -- FA crash loses data
 - Snooping TCP: FA crash loses buffered packets
 - Mobile IP and Mobile TCP address different problems: network vs. transport layer
-- For real-time traffic (voice), TCP is fundamentally wrong — UDP with FEC/Raptor codes is better
+- For real-time traffic (voice), TCP is fundamentally wrong -- UDP with FEC/Raptor codes is better

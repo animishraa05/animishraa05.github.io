@@ -16,7 +16,7 @@ Object-Oriented Programming offers several key advantages over procedural progra
 
 ## How It Works
 
-Reusability works through inheritance (subclasses reuse parent code) and composition (objects contain and delegate to other objects). Structure comes from classes grouping related state and behavior into single units. The DRY principle is enforced through class hierarchies — write common code in the base class, specialize in subclasses. Faster development results because well-designed classes become reusable components that can be composed like building blocks.
+Reusability works through inheritance (subclasses reuse parent code) and composition (objects contain and delegate to other objects). Structure comes from classes grouping related state and behavior into single units. The DRY principle is enforced through class hierarchies -- write common code in the base class, specialize in subclasses. Faster development results because well-designed classes become reusable components that can be composed like building blocks.
 
 ## Visual Explanation
 
@@ -72,12 +72,12 @@ graph semantic_oop_advantages {
 
 ## Connections
 
-- **Built from:** [[java-inheritance|Java Inheritance]] — inheritance is the primary mechanism for code reuse
-- **Built from:** [[java-composition|Java Composition]] — composition enables flexible reuse without inheritance
-- **Contrasts with:** [[java-oop-disadvantages|OOP Disadvantages]] — the tradeoffs of the paradigm
-- **Related:** [[java-oop-pillars|The Four OOP Pillars]] — the four pillars enable these advantages
+- **Built from:** [[java-inheritance|Java Inheritance]] -- inheritance is the primary mechanism for code reuse
+- **Built from:** [[java-composition|Java Composition]] -- composition enables flexible reuse without inheritance
+- **Contrasts with:** [[java-oop-disadvantages|OOP Disadvantages]] -- the tradeoffs of the paradigm
+- **Related:** [[java-oop-pillars|The Four OOP Pillars]] -- the four pillars enable these advantages
 
 ## Edge Cases & Gotchas
 
 - **Over-engineering**: The structure and abstraction that make OOP powerful for large systems add unnecessary complexity to small programs
-- **Reuse isn't free**: Inheritance creates coupling between parent and child — changes to parent can break children
+- **Reuse isn't free**: Inheritance creates coupling between parent and child -- changes to parent can break children

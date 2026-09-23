@@ -12,7 +12,7 @@ When a DNS resolver doesn't know where to find a domain, it needs a starting poi
 
 ## Core Idea
 
-DNS root servers are the top of the DNS hierarchy—13 logical servers (labeled A through M) that know the locations of all TLD servers. They are the starting point for all recursive DNS lookups.
+DNS root servers are the top of the DNS hierarchy--13 logical servers (labeled A through M) that know the locations of all TLD servers. They are the starting point for all recursive DNS lookups.
 
 ## How It Works
 
@@ -22,7 +22,7 @@ DNS root servers are the top of the DNS hierarchy—13 logical servers (labeled 
    - For `google.com`, root returns `.com` TLD server address
 4. **Next Step**: Resolver now queries the TLD server
 
-Root servers don't know the final IP—they only know which TLD server to ask next.
+Root servers don't know the final IP--they only know which TLD server to ask next.
 
 ## Visual Explanation
 
@@ -49,12 +49,27 @@ digraph G {
 - Only return TLD server addresses, never final IPs
 - Root zone file contains all TLD server addresses
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_DNS_Root_Server {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Dns Root Server" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[recursive-dns|Recursive DNS]] — resolvers query root servers
-- **Builds into:** [[dns-tld-server|DNS TLD Server]] — root points to TLD servers
-- **Related:** [[dns-hierarchy|DNS Hierarchy]] — root is the top level
-- **Related:** [[anycast|Anycast]] — root servers use anycast for redundancy
+- **Built from:** [[recursive-dns|Recursive DNS]] -- resolvers query root servers
+- **Builds into:** [[dns-tld-server|DNS TLD Server]] -- root points to TLD servers
+- **Related:** [[dns-hierarchy|DNS Hierarchy]] -- root is the top level
+- **Related:** [[anycast|Anycast]] -- root servers use anycast for redundancy
 
 ## Edge Cases & Gotchas
 

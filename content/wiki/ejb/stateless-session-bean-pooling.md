@@ -10,7 +10,7 @@ updated: 2026-04-29
 If 1000 clients want to use a stateless session bean, should the container create 1000 bean instances? That wastes RAM. Since stateless beans don't maintain client-specific state, can't we reuse them?
 
 ## Core Idea
-Stateless session beans are pooled. The container maintains a "Method-Ready Pool" of equivalent bean instances. Any client can use any instance—since there's no conversational state, it doesn't matter which instance serves which client. After each method call, the bean returns to the pool for reuse.
+Stateless session beans are pooled. The container maintains a "Method-Ready Pool" of equivalent bean instances. Any client can use any instance--since there's no conversational state, it doesn't matter which instance serves which client. After each method call, the bean returns to the pool for reuse.
 
 ## How It Works
 1. **Container pre-creates pool**: At startup (or when needed), container creates N bean instances (`Class.newInstance()`, `setSessionContext()`, `ejbCreate()`)
@@ -52,11 +52,26 @@ digraph Pooling {
 - **No passivation**: Stateless beans don't use `ejbActivate()`/`ejbPassivate()`
 - **Container controls pool size**: Vendor-specific configuration
 
+
+
+## Semantic Network
+
+```dot
+graph semantic__Stateless_Session_Bean_Pooling_ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label=""Stateless Session B" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[stateless-session-bean|Stateless Session Bean]], [[instance-pooling|Instance Pooling]]
 - **Builds into:** [[ejb-lifecycle-stateless|Stateless Bean Lifecycle]]
 - **Related:** [[ejb-container|EJB Container]] (manages the pool)
-- **Contrasts with:** [[stateful-session-bean|Stateful Session Bean]] (no pooling—dedicated per client)
+- **Contrasts with:** [[stateful-session-bean|Stateful Session Bean]] (no pooling--dedicated per client)
 
 ## Edge Cases & Gotchas
 - **Don't store client data in instance variables**: Next client might get your bean with old data

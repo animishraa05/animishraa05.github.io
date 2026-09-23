@@ -17,7 +17,7 @@ The CDATA (Character Data) section tells the XML parser to treat everything insi
 2. Wrapping content in `<![CDATA[ ... ]]>` disables XML parsing for that section
 3. In EJB-QL: `SELECT OBJECT(p) FROM PRODUCTS p WHERE p.basePrice <![CDATA[>]]> 200`
 4. The parser reads the comparison operator as literal text, not markup
-5. This is a generic XML technique, not specific to EJB — used anywhere XML contains code or special characters
+5. This is a generic XML technique, not specific to EJB -- used anywhere XML contains code or special characters
 
 ## Visual Explanation
 ```dot
@@ -37,18 +37,33 @@ digraph G {
 ```
 
 ## Key Properties
-- Syntax: `<![CDATA[ content ]]>` — brackets and parentheses are mandatory
+- Syntax: `<![CDATA[ content ]]>` -- brackets and parentheses are mandatory
 - Content inside is treated as raw character data
 - Only solution for using `>`, `<`, `>=`, `<=` inside XML element text
 - Not needed in Java code or non-XML contexts
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_CDATA_Hack_for_XML {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Cdata Hack For Xml" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[ejb-deployment-descriptor|EJB Deployment Descriptor]] — CDATA is used inside XML deployment descriptors
-- Builds into: [[ejb-ql|EJB-QL]] — EJB-QL queries in XML need CDATA for operators
-- Related: [[container-managed-persistence|CMP]] — CMP uses EJB-QL in deployment descriptors
-- Related: [[xml-basics|XML Basics]] — general XML escaping concept
+- Built from: [[ejb-deployment-descriptor|EJB Deployment Descriptor]] -- CDATA is used inside XML deployment descriptors
+- Builds into: [[ejb-ql|EJB-QL]] -- EJB-QL queries in XML need CDATA for operators
+- Related: [[container-managed-persistence|CMP]] -- CMP uses EJB-QL in deployment descriptors
+- Related: [[xml-basics|XML Basics]] -- general XML escaping concept
 
 ## Edge Cases & Gotchas
 - `]]>` cannot appear inside a CDATA section (it would end the CDATA prematurely)
-- CDATA is not the same as XML entity escaping (`&lt;` and `&gt;`) — both work but CDATA is cleaner for large code blocks
+- CDATA is not the same as XML entity escaping (`&lt;` and `&gt;`) -- both work but CDATA is cleaner for large code blocks
 - Forgetting CDATA causes cryptic XML parse errors during EJB deployment

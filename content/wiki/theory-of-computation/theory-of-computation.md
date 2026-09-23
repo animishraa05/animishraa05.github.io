@@ -31,6 +31,35 @@ Computer scientists use mathematical abstractions called models of computation t
 - Has three major branches linked by the fundamental question of computational limits
 - Separated from mathematics in the last century with its own conferences and awards
 
+
+
+## Visual Explanation
+
+```dot
+digraph Theory_of_Computation {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Theory Of Computatio\nInput"]
+  B [label="Theory Of Computatio\nCore Mechanism"]
+  C [label="Theory Of Computatio\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Theory_of_Computation {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Theory Of Computatio" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[mathematical-logic|Mathematical Logic]]

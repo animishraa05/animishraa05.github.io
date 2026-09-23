@@ -39,13 +39,28 @@ digraph G {
 - Detects duplicate packets (seq already seen)
 - In TCP, sequence numbers are per-byte, not per-packet
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Sequence_Numbers {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Sequence Numbers" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[reliable-data-transfer|Reliable Data Transfer]] — enables reliability
-- Built from: [[sliding-window-protocol|Sliding Window Protocol]] — window tracks sequence numbers
-- Related: [[acknowledgment|Acknowledgment]] — ACKs reference sequence numbers
-- Related: [[tcp|TCP]] — uses byte-level sequence numbers
+- Built from: [[reliable-data-transfer|Reliable Data Transfer]] -- enables reliability
+- Built from: [[sliding-window-protocol|Sliding Window Protocol]] -- window tracks sequence numbers
+- Related: [[acknowledgment|Acknowledgment]] -- ACKs reference sequence numbers
+- Related: [[tcp|TCP]] -- uses byte-level sequence numbers
 
 ## Edge Cases & Gotchas
-- Sequence number space is finite (wraps around) — must be large enough to avoid ambiguity
+- Sequence number space is finite (wraps around) -- must be large enough to avoid ambiguity
 - Initial sequence numbers are randomly chosen to avoid confusion with old connections
 - TCP sequence numbers increment by bytes, not segments

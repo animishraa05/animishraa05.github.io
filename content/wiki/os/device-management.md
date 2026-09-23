@@ -12,14 +12,14 @@ updated: 2026-06-11
 
 ## Explanation
 
-Device management is the OS function that controls all hardware peripherals — keyboard, mouse, display, disk, printer, GPU, network card. Applications cannot (and should not) talk directly to hardware, because each device has a different protocol, register layout, and behavior. Instead, the OS provides device drivers — specialized software that knows how to communicate with a specific piece of hardware. Applications interact with devices through the OS's standardized abstractions (e.g., read/write to a file descriptor for disk, sockets for network). This allows a programmer to write `open("file.txt")` without knowing whether the disk is SSD or HDD, SATA or NVMe.
+Device management is the OS function that controls all hardware peripherals -- keyboard, mouse, display, disk, printer, GPU, network card. Applications cannot (and should not) talk directly to hardware, because each device has a different protocol, register layout, and behavior. Instead, the OS provides device drivers -- specialized software that knows how to communicate with a specific piece of hardware. Applications interact with devices through the OS's standardized abstractions (e.g., read/write to a file descriptor for disk, sockets for network). This allows a programmer to write `open("file.txt")` without knowing whether the disk is SSD or HDD, SATA or NVMe.
 
 ## How It Works
 
 - A device driver is loaded into the OS (in kernel space for monolithic kernels, user space for microkernels)
 - When an application performs a device-related system call (e.g., `read` from a keyboard, `write` to a file), the kernel routes it to the appropriate driver
 - The driver communicates with the hardware using I/O ports, memory-mapped I/O, or DMA (Direct Memory Access)
-- For input devices, the hardware sends interrupts — the CPU stops its current work, the kernel's interrupt handler processes the input, and the result is delivered to the waiting application
+- For input devices, the hardware sends interrupts -- the CPU stops its current work, the kernel's interrupt handler processes the input, and the result is delivered to the waiting application
 - For output, the kernel may buffer data (e.g., network packets, disk writes) for efficiency
 - The OS provides a uniform interface (device files in Unix, device objects in Windows) so applications don't need device-specific code
 
@@ -80,16 +80,16 @@ graph semantic_device_management {
 
 ## Connections
 
-- Built from: [[kernel|Kernel]] — the kernel manages device drivers and I/O routing
-- Built from: [[operating-system|Operating System]] — device management is a core OS function
-- Builds into: [[monolithic-kernel|Monolithic Kernel]] — device drivers run in kernel space in monolithic kernels
-- Builds into: [[microkernel|Microkernel]] — device drivers run in user space in microkernels
-- Related: [[system-calls|System Calls]] — device access is mediated by system calls (read, write, ioctl)
-- Related: [[file-management|File Management]] — the file system often sits atop block device drivers
+- Built from: [[kernel|Kernel]] -- the kernel manages device drivers and I/O routing
+- Built from: [[operating-system|Operating System]] -- device management is a core OS function
+- Builds into: [[monolithic-kernel|Monolithic Kernel]] -- device drivers run in kernel space in monolithic kernels
+- Builds into: [[microkernel|Microkernel]] -- device drivers run in user space in microkernels
+- Related: [[system-calls|System Calls]] -- device access is mediated by system calls (read, write, ioctl)
+- Related: [[file-management|File Management]] -- the file system often sits atop block device drivers
 
 ## Edge Cases & Gotchas
 
-- A buggy device driver in a monolithic kernel can crash the entire OS — this is the primary motivation for microkernels
-- DMA can bypass the CPU and write data directly to memory — while efficient, it creates security concerns (a malicious device could modify kernel memory)
+- A buggy device driver in a monolithic kernel can crash the entire OS -- this is the primary motivation for microkernels
+- DMA can bypass the CPU and write data directly to memory -- while efficient, it creates security concerns (a malicious device could modify kernel memory)
 - Device drivers are the largest source of OS bugs (more than the kernel core) because they are written by third parties with varying quality
 - Power management requires close coordination between device drivers and the kernel (e.g., suspending a disk when unused)

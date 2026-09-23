@@ -14,7 +14,7 @@ updated: 2026-06-11
 
 ## Explanation
 
-The kernel is the trusted core of the operating system — the only component that runs in kernel mode with full hardware access. Every other part of the system (applications, utilities, even the GUI) runs in user mode and must ask the kernel to perform privileged operations. Without the kernel, there is no coordination: multiple programs would fight over the CPU, clobber each other's memory, and access hardware unsafely. The kernel solves this by being the single authority that manages processes, memory, devices, and security.
+The kernel is the trusted core of the operating system -- the only component that runs in kernel mode with full hardware access. Every other part of the system (applications, utilities, even the GUI) runs in user mode and must ask the kernel to perform privileged operations. Without the kernel, there is no coordination: multiple programs would fight over the CPU, clobber each other's memory, and access hardware unsafely. The kernel solves this by being the single authority that manages processes, memory, devices, and security.
 
 ## How It Works
 
@@ -22,7 +22,7 @@ The kernel is the trusted core of the operating system — the only component th
 - It handles process management: creating, scheduling, and terminating processes with algorithms like round-robin or priority scheduling
 - It manages memory: allocating RAM to processes, enforcing protection boundaries, and handling paging/virtual memory
 - It controls device access: all hardware communication goes through device drivers that live inside (monolithic) or communicate with (microkernel) the kernel
-- It provides a system call interface — a controlled entry point — so that user-space programs can request privileged operations
+- It provides a system call interface -- a controlled entry point -- so that user-space programs can request privileged operations
 - The kernel also handles interrupts: hardware signals (keyboard press, timer tick) are caught by the kernel and routed to the appropriate handler
 
 ## Visual Explanation
@@ -83,17 +83,17 @@ graph semantic_kernel {
 
 ## Connections
 
-- Built from: [[operating-system|Operating System]] — the OS contains the kernel as its core component
-- Built from: [[kernel-mode|Kernel Mode]] — the kernel executes in kernel mode with full privileges
-- Builds into: [[system-calls|System Calls]] — the kernel exposes system calls for user-space interaction
-- Builds into: [[monolithic-kernel|Monolithic Kernel]] — one architectural pattern where all kernel services run in kernel space
-- Builds into: [[microkernel|Microkernel]] — an alternative pattern where only essential services run in kernel space
-- Contrasts with: [[hypervisor|Hypervisor]] — a hypervisor manages VMs, while a kernel manages processes on one OS
-- Related: [[user-mode|User Mode]] — the restricted mode where applications run, contrasted with kernel mode
+- Built from: [[operating-system|Operating System]] -- the OS contains the kernel as its core component
+- Built from: [[kernel-mode|Kernel Mode]] -- the kernel executes in kernel mode with full privileges
+- Builds into: [[system-calls|System Calls]] -- the kernel exposes system calls for user-space interaction
+- Builds into: [[monolithic-kernel|Monolithic Kernel]] -- one architectural pattern where all kernel services run in kernel space
+- Builds into: [[microkernel|Microkernel]] -- an alternative pattern where only essential services run in kernel space
+- Contrasts with: [[hypervisor|Hypervisor]] -- a hypervisor manages VMs, while a kernel manages processes on one OS
+- Related: [[user-mode|User Mode]] -- the restricted mode where applications run, contrasted with kernel mode
 
 ## Edge Cases & Gotchas
 
-- "Kernel" is often confused with "Operating System" — the kernel is a subset; the OS includes shell, utilities, libraries, and GUI
-- A kernel panic (Linux) or BSOD (Windows) occurs when the kernel encounters a fatal error — any bug in kernel mode can crash the entire system
+- "Kernel" is often confused with "Operating System" -- the kernel is a subset; the OS includes shell, utilities, libraries, and GUI
+- A kernel panic (Linux) or BSOD (Windows) occurs when the kernel encounters a fatal error -- any bug in kernel mode can crash the entire system
 - Microkernels reduce crash surface by moving services to user space, but pay a performance cost from IPC overhead
 - Modern Linux uses a monolithic kernel with dynamically loadable modules, blurring the pure monolithic vs microkernel distinction

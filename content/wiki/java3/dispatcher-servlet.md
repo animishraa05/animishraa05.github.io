@@ -12,7 +12,7 @@ Without a central request-handling mechanism, every web page in an application m
 
 ## Core Idea
 
-DispatcherServlet is Spring MVC's front controller — a single servlet that receives all HTTP requests and delegates to specialized components for each step of request processing. It acts as the central entry point, coordinating handler mapping, controller execution, exception handling, and view resolution.
+DispatcherServlet is Spring MVC's front controller -- a single servlet that receives all HTTP requests and delegates to specialized components for each step of request processing. It acts as the central entry point, coordinating handler mapping, controller execution, exception handling, and view resolution.
 
 ## How It Works
 
@@ -64,17 +64,32 @@ digraph dispatcher_servlet {
 - **Servlet API independence**: Controllers don't directly depend on HttpServletRequest/Response
 - **Integration**: Works with Spring Security's filter chain seamlessly
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_DispatcherServlet {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Dispatcherservlet" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[spring-mvc|Spring MVC]] — DispatcherServlet is the core of Spring MVC
-- **Built from:** [[spring-framework|Spring Framework]] — DispatcherServlet is a Spring-managed bean wired via IoC
-- **Related:** [[spring-controller|Spring Controller]] — Controllers are the handlers that DispatcherServlet invokes
-- **Related:** [[spring-mvc-exception-handling|Spring MVC Exception Handling]] — HandlerExceptionResolver integrates with DispatcherServlet
-- **Contrasts with:** [[ejb-object|EJB Object]] — EJB Object is a proxy; DispatcherServlet is a front controller
+- **Built from:** [[spring-mvc|Spring MVC]] -- DispatcherServlet is the core of Spring MVC
+- **Built from:** [[spring-framework|Spring Framework]] -- DispatcherServlet is a Spring-managed bean wired via IoC
+- **Related:** [[spring-controller|Spring Controller]] -- Controllers are the handlers that DispatcherServlet invokes
+- **Related:** [[spring-mvc-exception-handling|Spring MVC Exception Handling]] -- HandlerExceptionResolver integrates with DispatcherServlet
+- **Contrasts with:** [[ejb-object|EJB Object]] -- EJB Object is a proxy; DispatcherServlet is a front controller
 
 ## Edge Cases & Gotchas
 
-- **Multiple DispatcherServlets**: Possible but rare — each defines its own application context, can't share beans
-- **Static resources**: DispatcherServlet must be configured to pass through static resources (CSS, JS) — use `<mvc:resources>` or default servlet handler
-- **404 without mapping**: No HandlerMapping match results in 404 — check servlet mapping URL patterns
+- **Multiple DispatcherServlets**: Possible but rare -- each defines its own application context, can't share beans
+- **Static resources**: DispatcherServlet must be configured to pass through static resources (CSS, JS) -- use `<mvc:resources>` or default servlet handler
+- **404 without mapping**: No HandlerMapping match results in 404 -- check servlet mapping URL patterns
 - **Application context hierarchy**: DispatcherServlet creates its own WebApplicationContext (child of root context); only sees beans in its own context

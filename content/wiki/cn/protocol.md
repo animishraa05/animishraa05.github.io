@@ -10,7 +10,7 @@ updated: 2026-04-30
 Devices from different manufacturers need to communicate, but they have different hardware, software, and data formats. Without agreed-upon rules, devices cannot understand each other's messages.
 
 ## Core Idea
-A set of rules, formats, and procedures that define how devices communicate — specifying message formats, timing, sequencing, and error handling.
+A set of rules, formats, and procedures that define how devices communicate -- specifying message formats, timing, sequencing, and error handling.
 
 ## How It Works
 1. Defines message formats (headers, payload structure)
@@ -41,12 +41,27 @@ digraph G {
 - Enables interoperability between different implementations
 - Part of a protocol suite (e.g., TCP/IP suite)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Network_Protocol {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Network Protocol" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Contrasts with: [[service|Service]] — protocol is "how", service is "what"
-- Built from: [[layered-model|Layered Model]] — protocols exist at each layer
-- Related: [[tcp|TCP]] — transport layer protocol example
-- Related: [[ip-protocol|IP Protocol]] — network layer protocol example
-- Related: [[protocol-suite|Protocol Suite]] — collection of related protocols
+- Contrasts with: [[service|Service]] -- protocol is "how", service is "what"
+- Built from: [[layered-model|Layered Model]] -- protocols exist at each layer
+- Related: [[tcp|TCP]] -- transport layer protocol example
+- Related: [[ip-protocol|IP Protocol]] -- network layer protocol example
+- Related: [[protocol-suite|Protocol Suite]] -- collection of related protocols
 
 ## Edge Cases & Gotchas
 - Protocol specification vs implementation: specs can be ambiguous leading to interop issues

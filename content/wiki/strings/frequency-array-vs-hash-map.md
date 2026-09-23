@@ -1,5 +1,5 @@
 ---
-title: Frequency Array vs Hash Map — Character Hashing Tradeoffs
+title: Frequency Array vs Hash Map -- Character Hashing Tradeoffs
 type: comparison
 tags: [dev, hashing]
 created: 2026-07-05
@@ -14,15 +14,15 @@ When solving character frequency problems, the first implementation decision is:
 
 | Dimension | Frequency Array | Hash Map |
 |---|---|---|
-| **Access time** | True O(1) — single CPU instruction | Average O(1) — hash + possible chain walk |
+| **Access time** | True O(1) -- single CPU instruction | Average O(1) -- hash + possible chain walk |
 | **Worst-case** | O(1) always | O(n) with hash collisions |
-| **Memory** | Fixed O(\|Σ\|) — e.g., 104 bytes for 26 ints | O(m) where m = distinct keys, but higher per-entry overhead |
-| **Character range** | Must be known and small (e.g., a–z) | Any hashable type — char, string, int, custom |
-| **ASCII math** | Requires `ch - 'a'` and `i + 'a'` | None — direct key usage |
+| **Memory** | Fixed O(\|Σ\|) -- e.g., 104 bytes for 26 ints | O(m) where m = distinct keys, but higher per-entry overhead |
+| **Character range** | Must be known and small (e.g., a–z) | Any hashable type -- char, string, int, custom |
+| **ASCII math** | Requires `ch - 'a'` and `i + 'a'` | None -- direct key usage |
 | **Iteration order** | Deterministic (0–25 index order) | Non-deterministic (bucket layout) |
 | **Sparse data** | Wastes iteration over empty slots | Only visits present entries |
 | **Stack vs heap** | Stack allocation (fast, no fragmentation) | Heap allocation (slower, may fragment) |
-| **Implementation complexity** | Trivial — 1 line declaration | Slightly more — need `#include <unordered_map>` |
+| **Implementation complexity** | Trivial -- 1 line declaration | Slightly more -- need `#include <unordered_map>` |
 | **Rehashing** | Never | Amortized O(n) when load factor exceeded |
 
 ## When to Choose Each
@@ -45,15 +45,44 @@ The array-vs-map choice reveals a deeper principle in software engineering: **th
 
 The interview answer that demonstrates mastery is the conditional one: "It depends on the character range." This shows the candidate understands the tradeoffs rather than having memorized a rule.
 
+
+
+## Visual Explanation
+
+```dot
+digraph frequency_array_vs_hash_map {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Frequency Array Vs H\nInput"]
+  B [label="Frequency Array Vs H\nCore Mechanism"]
+  C [label="Frequency Array Vs H\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_frequency_array_vs_hash_map {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Frequency Array Vs H" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- [[frequency-array|Frequency Array]] — the array-based approach, fastest for known domains
-- [[unordered-map-frequency|Unordered Map for Frequency Counting]] — the map-based approach, most flexible
-- [[known-range-assumption|Known Range Assumption]] — the precondition that makes arrays viable
-- [[hash-map-flexibility|Hash Map Flexibility]] — the key advantage of maps
-- [[memory-efficiency-array|Memory Efficiency of Frequency Array]] — why arrays use less memory
-- [[direct-array-access|Direct Array Access]] — why arrays are faster at the hardware level
-- [[hash-collision-overhead|Hash Collision Overhead]] — the hidden cost of maps
-- [[ascii-math-elimination|ASCII Math Elimination]] — one of the ergonomic benefits of maps
-- [[unordered-map-non-determinism|Unordered Map Non-Determinism]] — the ordering tradeoff of maps
-- [[interview-decision-framework|Array vs Hash Map Decision Framework]] — the practical decision process
+- [[frequency-array|Frequency Array]] -- the array-based approach, fastest for known domains
+- [[unordered-map-frequency|Unordered Map for Frequency Counting]] -- the map-based approach, most flexible
+- [[known-range-assumption|Known Range Assumption]] -- the precondition that makes arrays viable
+- [[hash-map-flexibility|Hash Map Flexibility]] -- the key advantage of maps
+- [[memory-efficiency-array|Memory Efficiency of Frequency Array]] -- why arrays use less memory
+- [[direct-array-access|Direct Array Access]] -- why arrays are faster at the hardware level
+- [[hash-collision-overhead|Hash Collision Overhead]] -- the hidden cost of maps
+- [[ascii-math-elimination|ASCII Math Elimination]] -- one of the ergonomic benefits of maps
+- [[unordered-map-non-determinism|Unordered Map Non-Determinism]] -- the ordering tradeoff of maps
+- [[interview-decision-framework|Array vs Hash Map Decision Framework]] -- the practical decision process

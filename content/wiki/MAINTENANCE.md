@@ -4,7 +4,7 @@
 
 ---
 
-## Quick Start — First Time Setup
+## Quick Start -- First Time Setup
 
 ### 1. Install OpenCode
 
@@ -54,7 +54,7 @@ If you get an answer → setup is working.
 
 ---
 
-## Daily Workflow — Ingesting Sources
+## Daily Workflow -- Ingesting Sources
 
 This is the PRIMARY way you interact with the wiki.
 
@@ -89,7 +89,7 @@ Source file (1 file)
     ↓
 OpenCode reads it
     ↓
-Identifies all atomic concepts — no limit
+Identifies all atomic concepts -- no limit
     ↓
 For each concept:
   - Checks if wiki/concepts/[name].md exists
@@ -122,14 +122,14 @@ Auto-commits to git (if configured)
 
 ---
 
-## Weekly Workflow — Automated Maintenance
+## Weekly Workflow -- Automated Maintenance
 
 The systemd timer runs every **Sunday at 10:00 AM**. It does:
 
-1. **Lint** — checks for orphans, broken links, contradictions, thin pages
-2. **Index rebuild** — refreshes `wiki/index.md` from current state
-3. **Uningested source check** — flags sources you haven't processed
-4. **Auto-commit** — saves changes to git
+1. **Lint** -- checks for orphans, broken links, contradictions, thin pages
+2. **Index rebuild** -- refreshes `wiki/index.md` from current state
+3. **Uningested source check** -- flags sources you haven't processed
+4. **Auto-commit** -- saves changes to git
 
 ### Check Weekly Results
 
@@ -190,7 +190,7 @@ opencode run "Run the wiki-index command. Rebuild wiki/index.md from current sta
 
 ---
 
-## Growing the Wiki — Best Practices
+## Growing the Wiki -- Best Practices
 
 ### 1. Quality > Quantity
 
@@ -234,7 +234,7 @@ What to look for:
 ### 5. Periodic Deep Lint (Monthly)
 
 ```bash
-# Beyond the weekly lint — ask for a deeper analysis
+# Beyond the weekly lint -- ask for a deeper analysis
 opencode run "
 Do a deep lint of the wiki. Beyond the usual checks:
 1. Are any concept pages trying to cover too much? (should be split)
@@ -308,9 +308,9 @@ git commit -m "wiki: revert to known good state"
 
 Google AI Studio free tier has rate limits. If you hit them:
 
-1. **Wait** — limits reset (typically hourly/daily)
-2. **Add another provider** — Groq free tier as fallback
-3. **Use me (Qwen CLI)** — for manual ingest, just tell me "ingest this"
+1. **Wait** -- limits reset (typically hourly/daily)
+2. **Add another provider** -- Groq free tier as fallback
+3. **Use me (Qwen CLI)** -- for manual ingest, just tell me "ingest this"
 
 To add Groq as fallback in `.opencode.json`:
 
@@ -375,7 +375,7 @@ Then configure OpenCode to use qmd as a tool for wiki queries.
 
 ---
 
-## File Map — What Goes Where
+## File Map -- What Goes Where
 
 | File | Purpose | Who Owns It |
 |---|---|---|

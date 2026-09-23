@@ -44,16 +44,31 @@ digraph G {
 - Garbage collection: Remote objects can be collected when no references exist
 - Security: Can use SecurityManager to control remote code execution
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_RMI_Remote_Method_Invocation {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Rmi Remote Method In" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[object-serialization|Object Serialization]] — serializes data for network transfer
-- Builds into: [[ejb-object|EJB Object]] — EJB uses RMI underneath
-- Builds into: [[rmi-registry|RMI Registry]] — provides naming for RMI objects
-- Related: [[jndi|JNDI]] — JNDI is a generalized naming system beyond RMI
-- Contrasts with: [[socket-programming|Socket Programming]] — RMI is higher level
+- Built from: [[object-serialization|Object Serialization]] -- serializes data for network transfer
+- Builds into: [[ejb-object|EJB Object]] -- EJB uses RMI underneath
+- Builds into: [[rmi-registry|RMI Registry]] -- provides naming for RMI objects
+- Related: [[jndi|JNDI]] -- JNDI is a generalized naming system beyond RMI
+- Contrasts with: [[socket-programming|Socket Programming]] -- RMI is higher level
 
 ## Edge Cases & Gotchas
 - Network failures can cause RemoteException
 - Serialization has performance cost
 - Pass-by-value for normal objects, pass-by-reference for Remote objects
 - Class must be available on both client and server
-- Not used much today — replaced by REST, gRPC, SOAP
+- Not used much today -- replaced by REST, gRPC, SOAP

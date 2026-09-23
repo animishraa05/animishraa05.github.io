@@ -23,7 +23,7 @@ The client-server model is a distributed architecture where clients request serv
 4. **Separation**: Client and server can be on different machines, even geographically separated
 5. **Responsibilities**: Client focuses on presentation, server focuses on data/processing
 
-This separation allows scaling—multiple clients can connect to one server, and servers can be scaled independently from clients.
+This separation allows scaling--multiple clients can connect to one server, and servers can be scaled independently from clients.
 
 ## Key Properties
 
@@ -34,23 +34,52 @@ This separation allows scaling—multiple clients can connect to one server, and
 - Client can be thin or thick (rich client with more logic)
 - Stateless or stateful communication patterns
 
+
+
+## Visual Explanation
+
+```dot
+digraph client_server_model {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Client Server Model\nInput"]
+  B [label="Client Server Model\nCore Mechanism"]
+  C [label="Client Server Model\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_client_server_model {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Client Server Model" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 **Built from:**
 
-- [[client|Client]] — Requesting entity in the model
-- [[server|Server]] — Responding entity in the model
+- [[client|Client]] -- Requesting entity in the model
+- [[server|Server]] -- Responding entity in the model
 
 **Builds into:**
 
-- [[front-end|Front End]] — Client side is front end
-- [[back-end|Back End]] — Server side is back end
-- [[api|API]] — Communication interface between client and server
+- [[front-end|Front End]] -- Client side is front end
+- [[back-end|Back End]] -- Server side is back end
+- [[api|API]] -- Communication interface between client and server
 
 **Related:**
 
-- [[http|HTTP]] — Common protocol for client-server communication
-- [[scalability|Scalability]] — Benefit of client-server separation
+- [[http|HTTP]] -- Common protocol for client-server communication
+- [[scalability|Scalability]] -- Benefit of client-server separation
 
 ## Edge Cases & Gotchas
 

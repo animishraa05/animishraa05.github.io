@@ -31,6 +31,35 @@ Problems are grouped into complexity classes (P, NP, PSPACE, etc.) based on reso
 - Uses Big O notation for asymptotic analysis
 - P vs NP is a major open problem and Millennium Prize Problem
 
+
+
+## Visual Explanation
+
+```dot
+digraph Computational_Complexity_Theory {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Computational Comple\nInput"]
+  B [label="Computational Comple\nCore Mechanism"]
+  C [label="Computational Comple\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Computational_Complexity_Theory {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Computational Comple" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[time-complexity|Time Complexity]], [[space-complexity|Space Complexity]], [[big-o-notation|Big O Notation]]
@@ -39,7 +68,7 @@ Problems are grouped into complexity classes (P, NP, PSPACE, etc.) based on reso
 
 ## Edge Cases & Gotchas
 
-- A problem being "hard" doesn't mean it's impossible—just that it requires lots of resources
+- A problem being "hard" doesn't mean it's impossible--just that it requires lots of resources
 - Polynomial vs exponential time is a crucial distinction in practice
 ## Why This Matters
 

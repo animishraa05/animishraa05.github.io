@@ -49,11 +49,26 @@ digraph G {
 - **J2EE standard**: Part of J2EE platform
 - **CMT integration**: EJB container can manage transactions declaratively
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_JTA_and_JTS {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Jta And Jts" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[transactions|Transactions in EJB]] — JTA/JTS provide transaction support
-- Builds into: [[declarative-vs-programmatic-transactions|CMT vs BMT]] — JTA enables both models
-- Related: [[ejb-container|EJB Container]] — container uses JTA/JTS for CMT
-- Related: [[java-platforms|Java Platforms]] — JTA/JTS are part of J2EE
+- Built from: [[transactions|Transactions in EJB]] -- JTA/JTS provide transaction support
+- Builds into: [[declarative-vs-programmatic-transactions|CMT vs BMT]] -- JTA enables both models
+- Related: [[ejb-container|EJB Container]] -- container uses JTA/JTS for CMT
+- Related: [[java-platforms|Java Platforms]] -- JTA/JTS are part of J2EE
 
 ## Edge Cases & Gotchas
 - **Heuristic outcomes**: Transactions may have heuristic commits/rollbacks

@@ -60,18 +60,33 @@ digraph spring_mvc {
 - **Data binding**: Automatically binds request parameters to Java objects
 - **Validation**: `@Valid` + `BindingResult` for declarative input validation
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Spring_MVC {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Spring Mvc" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[spring-framework|Spring Framework]] — Spring MVC is built on Spring Core (IoC, DI)
-- **Built from:** [[dispatcher-servlet|DispatcherServlet]] — The front controller is the entry point of Spring MVC
-- **Related:** [[spring-controller|Spring Controller]] — @Controller methods handle specific request mappings
-- **Builds into:** [[spring-boot|Spring Boot]] — Spring Boot auto-configures Spring MVC with embedded Tomcat
-- **Related:** [[spring-form-handling|Spring Form Handling]] — Form handling and validation in Spring MVC
-- **Contrasts with:** [[jsp|JSP]] — JSP is a view technology; Spring MVC is a full web framework
+- **Built from:** [[spring-framework|Spring Framework]] -- Spring MVC is built on Spring Core (IoC, DI)
+- **Built from:** [[dispatcher-servlet|DispatcherServlet]] -- The front controller is the entry point of Spring MVC
+- **Related:** [[spring-controller|Spring Controller]] -- @Controller methods handle specific request mappings
+- **Builds into:** [[spring-boot|Spring Boot]] -- Spring Boot auto-configures Spring MVC with embedded Tomcat
+- **Related:** [[spring-form-handling|Spring Form Handling]] -- Form handling and validation in Spring MVC
+- **Contrasts with:** [[jsp|JSP]] -- JSP is a view technology; Spring MVC is a full web framework
 
 ## Edge Cases & Gotchas
 
 - **Hidden HttpMethod**: HTML forms only support GET/POST; Spring's `HiddenHttpMethodFilter` converts `_method=PUT` to actual PUT
 - **@ModelAttribute vs @RequestParam**: @ModelAttribute binds complex objects; @RequestParam binds single parameters
-- **ViewResolver chaining**: Multiple ViewResolvers with order priority — first match wins
+- **ViewResolver chaining**: Multiple ViewResolvers with order priority -- first match wins
 - **async requests**: DeferredResult and Callable for long-lived async processing in controllers

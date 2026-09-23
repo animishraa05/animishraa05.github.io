@@ -8,7 +8,7 @@ updated: 2026-04-30
 
 ## The Comparison
 
-RISC (Reduced Instruction Set Computer) and CISC (Complex Instruction Set Computer) are two fundamental approaches to CPU architecture design, representing opposite philosophies about where complexity should live — in hardware (CISC) or software (RISC).
+RISC (Reduced Instruction Set Computer) and CISC (Complex Instruction Set Computer) are two fundamental approaches to CPU architecture design, representing opposite philosophies about where complexity should live -- in hardware (CISC) or software (RISC).
 
 ## Side-by-Side Comparison
 
@@ -36,11 +36,40 @@ RISC (Reduced Instruction Set Computer) and CISC (Complex Instruction Set Comput
 
 5. **Use case matters**: RISC dominates mobile (ARM) due to power efficiency; CISC dominated desktop (x86) due to backward compatibility.
 
+
+
+## Visual Explanation
+
+```dot
+digraph risc_vs_cisc {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Risc Vs Cisc\nInput"]
+  B [label="Risc Vs Cisc\nCore Mechanism"]
+  C [label="Risc Vs Cisc\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_risc_vs_cisc {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Risc Vs Cisc" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- [[risc-architecture|RISC Architecture]] — small, simple instruction set
-- [[cisc-architecture|CISC Architecture]] — large, complex instruction set
-- [[instruction-set|Instruction Set]] — defines CPU capabilities
-- [[pipelining|Pipelining]] — easier in RISC, harder in CISC
-- [[micro-ops|Micro-ops]] — how modern CISC implements RISC internally
-- [[arm-architecture|ARM Architecture]] — popular RISC example
-- [[x86-architecture|x86 Architecture]] — popular CISC example
+- [[risc-architecture|RISC Architecture]] -- small, simple instruction set
+- [[cisc-architecture|CISC Architecture]] -- large, complex instruction set
+- [[instruction-set|Instruction Set]] -- defines CPU capabilities
+- [[pipelining|Pipelining]] -- easier in RISC, harder in CISC
+- [[micro-ops|Micro-ops]] -- how modern CISC implements RISC internally
+- [[arm-architecture|ARM Architecture]] -- popular RISC example
+- [[x86-architecture|x86 Architecture]] -- popular CISC example

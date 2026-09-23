@@ -8,7 +8,7 @@ updated: 2026-05-04
 
 ## The Problem
 
-Data warehouses are not small databases — they are among the largest databases in existence. Understanding the scale is essential for appreciating the engineering challenges: storage architecture, query optimization, ETL throughput, and refresh performance all behave differently at terabyte and petabyte scale than at gigabyte scale.
+Data warehouses are not small databases -- they are among the largest databases in existence. Understanding the scale is essential for appreciating the engineering challenges: storage architecture, query optimization, ETL throughput, and refresh performance all behave differently at terabyte and petabyte scale than at gigabyte scale.
 
 ## Core Idea
 
@@ -84,15 +84,15 @@ graph semantic_scale {
 
 ## Connections
 
-- **Related:** [[data-warehouse-definition|Data Warehouse Definition]] — scale is a consequence of the warehouse's design
-- **Built from:** [[time-variant-dwh|Time-Variant DWH]] — historical accumulation drives scale growth
-- **Builds into:** [[loading-dwh|Loading (DWH)]] — loading strategies must handle massive volumes
-- **Builds into:** [[dwh-server-models|DWH Server Models]] — server architecture choices depend on scale
-- **Related:** [[molap-server|MOLAP Server]] — MOLAP is limited at large scale due to storage constraints
+- **Related:** [[data-warehouse-definition|Data Warehouse Definition]] -- scale is a consequence of the warehouse's design
+- **Built from:** [[time-variant-dwh|Time-Variant DWH]] -- historical accumulation drives scale growth
+- **Builds into:** [[loading-dwh|Loading (DWH)]] -- loading strategies must handle massive volumes
+- **Builds into:** [[dwh-server-models|DWH Server Models]] -- server architecture choices depend on scale
+- **Related:** [[molap-server|MOLAP Server]] -- MOLAP is limited at large scale due to storage constraints
 
 ## Edge Cases & Gotchas
 
-- **Yottabytes are theoretical:** No existing system approaches yottabyte scale — this is a future projection.
+- **Yottabytes are theoretical:** No existing system approaches yottabyte scale -- this is a future projection.
 - **Scale is not just storage:** Query performance, ETL throughput, and refresh time all scale non-linearly.
 - **Compression reduces effective scale:** Modern columnar databases compress data 5-10×, making a petabyte warehouse occupy only 100-200 TB of physical storage.
 - **Archive tiering:** Not all data needs to be on fast storage. Old data can be moved to cheaper archival storage while remaining queryable.

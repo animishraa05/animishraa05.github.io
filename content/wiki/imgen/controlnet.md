@@ -9,7 +9,7 @@ updated: 2026-04-12
 
 ## The Problem
 
-How do you tell a diffusion model exactly WHERE something should be in the image, or WHAT specific spatial structure to follow — not just what's in the prompt? Standard text-to-image only gives you coarse control through prompts.
+How do you tell a diffusion model exactly WHERE something should be in the image, or WHAT specific spatial structure to follow -- not just what's in the prompt? Standard text-to-image only gives you coarse control through prompts.
 
 ## Core Idea
 
@@ -31,7 +31,7 @@ ControlNet copies the UNet/DiT encoder layers and trains them separately on the 
 
 ### For Glyph Injection
 
-When we render "Made by Lakme" as a black-on-white image and pass it to ControlNet, the model receives pixel-level spatial constraints: "there must be dark strokes at these coordinates." It doesn't need to understand letters — it just follows the stroke pattern.
+When we render "Made by Lakme" as a black-on-white image and pass it to ControlNet, the model receives pixel-level spatial constraints: "there must be dark strokes at these coordinates." It doesn't need to understand letters -- it just follows the stroke pattern.
 
 ## Key Properties
 
@@ -40,6 +40,35 @@ When we render "Made by Lakme" as a black-on-white image and pass it to ControlN
 - controlnet_scale (0-1) controls strength
 - Works with Flux, SDXL, other diffusers
 
+
+
+## Visual Explanation
+
+```dot
+digraph controlnet {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Controlnet\nInput"]
+  B [label="Controlnet\nCore Mechanism"]
+  C [label="Controlnet\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_controlnet {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Controlnet" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[diffusion-models]], [[vae]]

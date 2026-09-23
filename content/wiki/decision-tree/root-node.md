@@ -8,7 +8,7 @@ updated: 2026-05-06
 
 ## The Problem
 
-When building a decision tree from scratch, the first question matters most — it determines how the entire dataset is initially partitioned, and a poor first split cascades into suboptimal decisions throughout the tree.
+When building a decision tree from scratch, the first question matters most -- it determines how the entire dataset is initially partitioned, and a poor first split cascades into suboptimal decisions throughout the tree.
 
 ## Core Idea
 
@@ -20,7 +20,7 @@ During tree construction:
 
 1. All training instances are associated with the root node
 2. Every available attribute is evaluated using an attribute selection measure (Information Gain, Gini Index)
-3. The attribute that best separates the data — creating the purest child subsets — is selected
+3. The attribute that best separates the data -- creating the purest child subsets -- is selected
 4. The root node is labeled with this attribute and branches are created for each possible value
 5. Each branch receives a subset of the data, which becomes the input for the corresponding child node
 
@@ -52,14 +52,29 @@ digraph root_node {
 - **Single per tree**: Every decision tree has exactly one root node
 - **Sees all data**: Unlike internal nodes, the root evaluates every training instance
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Root_Node {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Root Node" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Builds into:** [[decision-tree-structure|Decision Tree Structure]] — root is the top element of the tree
-- **Built from:** [[attribute-selection-measures|Attribute Selection Measures]] — determines which attribute becomes the root
-- **Built from:** [[information-gain|Information Gain]] — common criterion for root selection
-- **Built from:** [[gini-index|Gini Index]] — alternative criterion for root selection
-- **Builds into:** [[internal-node|Internal Node]] — children of the root become internal nodes
-- **Related:** [[decision-tree-splitting|Decision Tree Splitting]] — root performs the first split
+- **Builds into:** [[decision-tree-structure|Decision Tree Structure]] -- root is the top element of the tree
+- **Built from:** [[attribute-selection-measures|Attribute Selection Measures]] -- determines which attribute becomes the root
+- **Built from:** [[information-gain|Information Gain]] -- common criterion for root selection
+- **Built from:** [[gini-index|Gini Index]] -- alternative criterion for root selection
+- **Builds into:** [[internal-node|Internal Node]] -- children of the root become internal nodes
+- **Related:** [[decision-tree-splitting|Decision Tree Splitting]] -- root performs the first split
 
 ## Edge Cases & Gotchas
 

@@ -51,12 +51,41 @@ urlpatterns = [
 - Supports path converters: Can capture variables from URLs (e.g., `<int:id>`).
 - Supports namespaces: Allows apps to have isolated URL names.
 
+
+
+## Visual Explanation
+
+```dot
+digraph Django_URL_Dispatcher {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Django Url Dispatche\nInput"]
+  B [label="Django Url Dispatche\nCore Mechanism"]
+  C [label="Django Url Dispatche\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Django_URL_Dispatcher {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Django Url Dispatche" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[django-web-framework|Django Web Framework]] — core component of the framework.
-- **Builds into:** [[django-view|Django View]] — routes requests to views.
-- **Related:** [[django-request-response-lifecycle|Django Request-Response Lifecycle]] — it is the first step in the lifecycle.
-- **Related:** [[django-project|Django Project]] — configured at the project level.
+- **Built from:** [[django-web-framework|Django Web Framework]] -- core component of the framework.
+- **Builds into:** [[django-view|Django View]] -- routes requests to views.
+- **Related:** [[django-request-response-lifecycle|Django Request-Response Lifecycle]] -- it is the first step in the lifecycle.
+- **Related:** [[django-project|Django Project]] -- configured at the project level.
 
 ## Edge Cases & Gotchas
 

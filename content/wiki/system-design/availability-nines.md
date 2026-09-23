@@ -12,7 +12,7 @@ Uptime guarantees need a standardized measurement to compare systems and set mea
 
 ## Core Idea
 
-Availability is quantified by uptime percentage — "number of 9s" (99.9% = three 9s, 99.99% = four 9s). Each additional 9 represents a tenfold reduction in allowed downtime.
+Availability is quantified by uptime percentage -- "number of 9s" (99.9% = three 9s, 99.99% = four 9s). Each additional 9 represents a tenfold reduction in allowed downtime.
 
 ## How It Works
 
@@ -43,21 +43,36 @@ digraph availability_nines {
 
 ## Key Properties
 
-- Measured in "number of 9s" — 99.9%, 99.99%, 99.999%
+- Measured in "number of 9s" -- 99.9%, 99.99%, 99.999%
 - Each additional 9 is a 10x reduction in allowed downtime
 - Three 9s = 99.9% uptime
 - Four 9s = 99.99% uptime
 - Five 9s = 99.999% uptime
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Availability_Nines {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Availability Nines" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[availability-parallel-vs-sequence|Availability in Parallel vs Sequence]] — how component availability combines to produce overall nines
-- **Related:** [[active-passive-failover|Active-Passive Failover]] — failover pattern increases achievable nines
-- **Related:** [[active-active-failover|Active-Active Failover]] — active-active improves achievable nines
-- **Related:** [[horizontal-scaling|Horizontal Scaling]] — adding nodes increases availability through redundancy
+- **Built from:** [[availability-parallel-vs-sequence|Availability in Parallel vs Sequence]] -- how component availability combines to produce overall nines
+- **Related:** [[active-passive-failover|Active-Passive Failover]] -- failover pattern increases achievable nines
+- **Related:** [[active-active-failover|Active-Active Failover]] -- active-active improves achievable nines
+- **Related:** [[horizontal-scaling|Horizontal Scaling]] -- adding nodes increases availability through redundancy
 
 ## Edge Cases & Gotchas
 
-- Nines are calculated over a full year — a single prolonged outage can blow through the entire budget
+- Nines are calculated over a full year -- a single prolonged outage can blow through the entire budget
 - "Five 9s" is extraordinarily difficult in practice, requiring redundant everything (power, network, servers, data centers)
 - Partial outages (degraded but not down) are often excluded from SLA calculations, masking real availability

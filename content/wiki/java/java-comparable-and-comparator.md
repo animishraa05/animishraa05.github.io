@@ -12,7 +12,7 @@ Sorting and ordered collections (TreeSet, TreeMap) need to determine the relativ
 
 ## Core Idea
 
-**Comparable** defines a natural ordering for objects of a class — the class implements `Comparable<T>` and overrides `compareTo()`. **Comparator** is a separate interface for defining custom orderings — useful when you need multiple sorting strategies or cannot modify the class.
+**Comparable** defines a natural ordering for objects of a class -- the class implements `Comparable<T>` and overrides `compareTo()`. **Comparator** is a separate interface for defining custom orderings -- useful when you need multiple sorting strategies or cannot modify the class.
 
 ## How It Works
 
@@ -74,13 +74,13 @@ graph semantic_comparison {
 
 ## Connections
 
-- **Built from:** [[java-collections-framework|Java Collections Framework]] — sorted collections require comparison
-- **Builds into:** [[java-collections-framework|Java Collections Framework]] — TreeSet and TreeMap use Comparable/Comparator for sorting
-- **Contrasts with:** [[java-iterator|Java Iterator]] — Comparable defines ordering; Iterator defines traversal
+- **Built from:** [[java-collections-framework|Java Collections Framework]] -- sorted collections require comparison
+- **Builds into:** [[java-collections-framework|Java Collections Framework]] -- TreeSet and TreeMap use Comparable/Comparator for sorting
+- **Contrasts with:** [[java-iterator|Java Iterator]] -- Comparable defines ordering; Iterator defines traversal
 
 ## Edge Cases & Gotchas
 
 - **compareTo must be transitive**: If a > b and b > c, then a > c must hold
 - **compareTo must be reflexive**: a.compareTo(a) must return 0
 - **compareTo consistency with equals**: Inconsistent classes break Set/Map contracts
-- **compare returns int**: Overflow risk when subtracting values — use `Integer.compare()` instead
+- **compare returns int**: Overflow risk when subtracting values -- use `Integer.compare()` instead

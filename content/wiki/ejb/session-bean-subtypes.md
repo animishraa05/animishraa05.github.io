@@ -7,7 +7,7 @@ updated: 2026-04-29
 ---
 
 ## The Problem
-Business processes vary—some span multiple requests (like shopping carts), others are single-request (like credit card verification). One bean type can't efficiently handle both. What are the two subtypes and when to use each?
+Business processes vary--some span multiple requests (like shopping carts), others are single-request (like credit card verification). One bean type can't efficiently handle both. What are the two subtypes and when to use each?
 
 ## Core Idea
 Session beans have two subtypes based on how they handle conversational state:
@@ -58,6 +58,21 @@ digraph SessionSubtypes {
 - **Stateless has no activation/passivation**: No state to save
 - **Declared in deployment descriptor**: `<session-type>Stateful</session-type>` or `Stateless`
 
+
+
+## Semantic Network
+
+```dot
+graph semantic__Session_Bean_Subtypes_ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label=""Session Bean Subtyp" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[session-bean|Session Bean]] (parent concept)
 - **Builds into:** [[stateful-session-bean|Stateful Session Bean]], [[stateless-session-bean|Stateless Session Bean]]
@@ -66,5 +81,5 @@ digraph SessionSubtypes {
 
 ## Edge Cases & Gotchas
 - **Stateless can have instance variables**: Just not client-specific state (e.g., a shared DB connection factory is fine)
-- **Switching types**: Change `<session-type>` in XML—no code changes needed (declarative)
+- **Switching types**: Change `<session-type>` in XML--no code changes needed (declarative)
 - **Stateless for Web Services**: Since EJB 2.1, stateless beans can expose Web Service endpoints

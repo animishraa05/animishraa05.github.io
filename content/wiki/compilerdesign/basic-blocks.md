@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Three-address code is a flat sequence of instructions, but optimizations need to reason about program structure. A program has branches and joins — different paths of execution. Before analysis can begin, the compiler must partition TAC into straight-line segments where control enters at the top and leaves at the bottom, with no internal branches.
+Three-address code is a flat sequence of instructions, but optimizations need to reason about program structure. A program has branches and joins -- different paths of execution. Before analysis can begin, the compiler must partition TAC into straight-line segments where control enters at the top and leaves at the bottom, with no internal branches.
 
 ## Core Idea
 
@@ -16,7 +16,7 @@ A basic block is a sequence of consecutive three-address code instructions with 
 
 ## How It Works
 
-Basic blocks are identified by finding **leaders** — the first instruction of a block. Leaders are: the first instruction of the program, any instruction that is the target of a jump, and any instruction immediately following a jump. Starting from each leader, the block extends until another leader is reached (or the end). The block includes all instructions from the leader up to (but not including) the next leader.
+Basic blocks are identified by finding **leaders** -- the first instruction of a block. Leaders are: the first instruction of the program, any instruction that is the target of a jump, and any instruction immediately following a jump. Starting from each leader, the block extends until another leader is reached (or the end). The block includes all instructions from the leader up to (but not including) the next leader.
 
 ## Visual Explanation
 
@@ -57,10 +57,10 @@ graph semantic_bb {
   REL1 [label="Code\nOptimization" fillcolor="#f0f0f0"]
   REL2 [label="Intermediate\nCode Generation" fillcolor="#f0f0f0"]
 
-  THIS -- PRE1 [label="built from — TAC partitioned into blocks" style=dashed]
-  THIS -- OUT1 [label="builds into — blocks are CFG nodes"]
-  THIS -- OUT2 [label="builds into — DFA operates on blocks"]
-  THIS -- REL1 [label="related — optimizations work per block"]
+  THIS -- PRE1 [label="built from -- TAC partitioned into blocks" style=dashed]
+  THIS -- OUT1 [label="builds into -- blocks are CFG nodes"]
+  THIS -- OUT2 [label="builds into -- DFA operates on blocks"]
+  THIS -- REL1 [label="related -- optimizations work per block"]
   THIS -- REL2 [label="related"]
 }
 ```
@@ -75,15 +75,15 @@ graph semantic_bb {
 
 ## Connections
 
-- **Built from:** [[three-address-code|Three-Address Code]] — TAC is partitioned into basic blocks
-- **Builds into:** [[control-flow-graph|Control Flow Graph]] — basic blocks form the nodes of the CFG
-- **Builds into:** [[data-flow-analysis|Data Flow Analysis]] — DFA uses GEN/KILL sets per basic block
-- **Related:** [[code-optimization|Code Optimization]] — many local optimizations operate within a single block
-- **Related:** [[intermediate-code-generation|Intermediate Code Generation]] — ICG produces the TAC that gets partitioned
+- **Built from:** [[three-address-code|Three-Address Code]] -- TAC is partitioned into basic blocks
+- **Builds into:** [[control-flow-graph|Control Flow Graph]] -- basic blocks form the nodes of the CFG
+- **Builds into:** [[data-flow-analysis|Data Flow Analysis]] -- DFA uses GEN/KILL sets per basic block
+- **Related:** [[code-optimization|Code Optimization]] -- many local optimizations operate within a single block
+- **Related:** [[intermediate-code-generation|Intermediate Code Generation]] -- ICG produces the TAC that gets partitioned
 
 ## Edge Cases & Gotchas
 
-- **Empty blocks:** A leader may be immediately followed by another leader, creating an empty basic block — rare but possible
-- **Overlapping blocks:** Blocks cannot overlap — each instruction belongs to exactly one block
-- **Critical edges:** Edges from a block with multiple successors to a block with multiple predecessors are called critical edges — they complicate optimization
-- **Unreachable code:** Instructions after an unconditional jump (but before the next leader) are unreachable — dead code elimination can remove them
+- **Empty blocks:** A leader may be immediately followed by another leader, creating an empty basic block -- rare but possible
+- **Overlapping blocks:** Blocks cannot overlap -- each instruction belongs to exactly one block
+- **Critical edges:** Edges from a block with multiple successors to a block with multiple predecessors are called critical edges -- they complicate optimization
+- **Unreachable code:** Instructions after an unconditional jump (but before the next leader) are unreachable -- dead code elimination can remove them

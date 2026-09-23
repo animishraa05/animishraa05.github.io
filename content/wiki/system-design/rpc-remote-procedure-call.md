@@ -8,11 +8,11 @@ updated: 2026-05-15
 
 ## The Problem
 
-Network communication between services requires manual serialization, addressing, protocol handling, and error management — this is complex, error-prone, and obscures business logic.
+Network communication between services requires manual serialization, addressing, protocol handling, and error management -- this is complex, error-prone, and obscures business logic.
 
 ## Core Idea
 
-RPC makes a remote procedure call look indistinguishable from a local call. The client calls a local stub that marshals the function name and arguments into a network message, sends it to the server, which unmarshals and executes the function, and returns the result — all transparent to the application code.
+RPC makes a remote procedure call look indistinguishable from a local call. The client calls a local stub that marshals the function name and arguments into a network message, sends it to the server, which unmarshals and executes the function, and returns the result -- all transparent to the application code.
 
 ## How It Works
 
@@ -52,17 +52,32 @@ digraph RPC {
 ## Key Properties
 
 - Hides network complexity behind a familiar local-call abstraction
-- Request-response protocol — synchronous by default
+- Request-response protocol -- synchronous by default
 - Automatically marshals/unmarshals parameters and return values
 - Tight client-server coupling (interface contract is shared)
 - Better suited for internal service-to-service communication than public APIs
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_RPC__Remote_Procedure_Call_ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Rpc (Remote Procedur" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- Contrasts with: [[rest-architectural-style|REST]] — RPC exposes behaviors (functions); REST exposes resources (nouns)
-- Related: [[microservices-architecture|Microservices Architecture]] — RPC is a common inter-service communication pattern
-- Related: [[service-discovery|Service Discovery]] — RPC clients need to locate server instances dynamically
-- Related: [[message-queues|Message Queues]] — RPC is synchronous; message queues enable async communication
+- Contrasts with: [[rest-architectural-style|REST]] -- RPC exposes behaviors (functions); REST exposes resources (nouns)
+- Related: [[microservices-architecture|Microservices Architecture]] -- RPC is a common inter-service communication pattern
+- Related: [[service-discovery|Service Discovery]] -- RPC clients need to locate server instances dynamically
+- Related: [[message-queues|Message Queues]] -- RPC is synchronous; message queues enable async communication
 
 ## Edge Cases & Gotchas
 

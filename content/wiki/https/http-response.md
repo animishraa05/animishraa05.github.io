@@ -8,7 +8,7 @@ updated: 2026-04-30
 
 ## The Problem
 
-The server has processed the request—now it needs to send back the result. Without a structured response format, the client wouldn't know if the request succeeded, what data was returned, or how to interpret it.
+The server has processed the request--now it needs to send back the result. Without a structured response format, the client wouldn't know if the request succeeded, what data was returned, or how to interpret it.
 
 ## Core Idea
 
@@ -55,12 +55,27 @@ digraph G {
 - Body contains the actual resource (HTML, CSS, JS, images)
 - Responses can be cached based on cache headers
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_HTTP_Response {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Http Response" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[http-request|HTTP Request]] — response is the reply to a request
-- **Builds into:** [[browser-rendering|Browser Rendering]] — HTML response gets rendered
-- **Related:** [[http-status-codes|HTTP Status Codes]] — 200, 404, 500, etc.
-- **Related:** [[http-headers|HTTP Headers]] — headers control response behavior
+- **Built from:** [[http-request|HTTP Request]] -- response is the reply to a request
+- **Builds into:** [[browser-rendering|Browser Rendering]] -- HTML response gets rendered
+- **Related:** [[http-status-codes|HTTP Status Codes]] -- 200, 404, 500, etc.
+- **Related:** [[http-headers|HTTP Headers]] -- headers control response behavior
 
 ## Edge Cases & Gotchas
 

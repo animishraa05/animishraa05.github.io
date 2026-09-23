@@ -44,6 +44,21 @@ digraph clook {
 - Most efficient of the SCAN family
 - Default in many modern systems
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_C_LOOK {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="C Look" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[disk-scheduling|Disk Scheduling]], [[c-scan|C-SCAN]], [[look-scheduling|LOOK]]

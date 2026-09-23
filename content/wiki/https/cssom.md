@@ -48,12 +48,27 @@ digraph G {
 - CSS parsing blocks rendering (need styles before paint)
 - Media queries evaluated during CSSOM construction
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_CSSOM {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Cssom" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[css-parsing|CSS Parsing]] — CSSOM is the output
-- **Builds into:** [[render-tree|Render Tree]] — CSSOM + DOM = render tree
-- **Related:** [[dom-tree|DOM Tree]] — CSSOM styles are applied to DOM
-- **Related:** [[browser-rendering|Browser Rendering]] — CSSOM is step 2
+- **Built from:** [[css-parsing|CSS Parsing]] -- CSSOM is the output
+- **Builds into:** [[render-tree|Render Tree]] -- CSSOM + DOM = render tree
+- **Related:** [[dom-tree|DOM Tree]] -- CSSOM styles are applied to DOM
+- **Related:** [[browser-rendering|Browser Rendering]] -- CSSOM is step 2
 
 ## Edge Cases & Gotchas
 

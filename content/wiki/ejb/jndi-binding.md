@@ -10,7 +10,7 @@ updated: 2026-04-29
 In a naming system, we need to associate names with objects so clients can look them up. How do we represent the association between a name (like `autoexec.bat`) and the actual object it refers to (the file data on disk)?
 
 ## Core Idea
-A binding is an association of a name with an object. For example, `autoexec.bat` is bound to the file data on your hard disk. In JNDI, bindings are the fundamental associations that make up contexts—each context contains a set of bindings.
+A binding is an association of a name with an object. For example, `autoexec.bat` is bound to the file data on your hard disk. In JNDI, bindings are the fundamental associations that make up contexts--each context contains a set of bindings.
 
 ## How It Works
 1. A binding maps a name (atomic name) to an object
@@ -47,12 +47,27 @@ digraph G {
 - **Type-independent**: The bound object can be any Java object
 - **Serializable**: Objects bound in JNDI should typically be serializable
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_JNDI_Binding {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Jndi Binding" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[atomic-name|Atomic Name]] — bindings use atomic names as keys
-- Built from: [[jndi-context|JNDI Context]] — contexts contain bindings
-- Builds into: [[compound-name|Compound Name]] — compound names resolve through multiple bindings
-- Related: [[jndi-naming-concepts|JNDI Naming Concepts]] — bindings are a core concept
-- Related: [[jndi|JNDI]] — JNDI provides the API for managing bindings
+- Built from: [[atomic-name|Atomic Name]] -- bindings use atomic names as keys
+- Built from: [[jndi-context|JNDI Context]] -- contexts contain bindings
+- Builds into: [[compound-name|Compound Name]] -- compound names resolve through multiple bindings
+- Related: [[jndi-naming-concepts|JNDI Naming Concepts]] -- bindings are a core concept
+- Related: [[jndi|JNDI]] -- JNDI provides the API for managing bindings
 
 ## Edge Cases & Gotchas
 - **Overwriting bindings**: Rebinding a name replaces the existing binding

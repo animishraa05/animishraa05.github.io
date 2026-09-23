@@ -83,16 +83,16 @@ graph semantic_file_management {
 
 ## Connections
 
-- Built from: [[operating-system|Operating System]] — file management is a core OS function
-- Built from: [[kernel|Kernel]] — the kernel's VFS and file system drivers implement file operations
-- Builds into: [[virtual-machine|Virtual Machine]] — virtual disks are files on the host file system
-- Related: [[device-management|Device Management]] — file systems sit atop block device drivers
-- Related: [[system-calls|System Calls]] — all file operations go through system calls (open, read, write, close)
-- Related: [[security-and-protection|Security and Protection]] — file permissions are a key OS security mechanism
+- Built from: [[operating-system|Operating System]] -- file management is a core OS function
+- Built from: [[kernel|Kernel]] -- the kernel's VFS and file system drivers implement file operations
+- Builds into: [[virtual-machine|Virtual Machine]] -- virtual disks are files on the host file system
+- Related: [[device-management|Device Management]] -- file systems sit atop block device drivers
+- Related: [[system-calls|System Calls]] -- all file operations go through system calls (open, read, write, close)
+- Related: [[security-and-protection|Security and Protection]] -- file permissions are a key OS security mechanism
 
 ## Edge Cases & Gotchas
 
-- File deletion does NOT erase data — it removes metadata pointers; the data remains on disk until overwritten (this is how file recovery tools work)
-- Fragmentation slows down file access over time — SSDs handle fragmentation differently than HDDs (seek time penalty is negligible on SSDs)
+- File deletion does NOT erase data -- it removes metadata pointers; the data remains on disk until overwritten (this is how file recovery tools work)
+- Fragmentation slows down file access over time -- SSDs handle fragmentation differently than HDDs (seek time penalty is negligible on SSDs)
 - Maximum file size and maximum volume size vary by file system (FAT32: 4 GB per file; ext4: 16 TB; NTFS: 256 TB)
 - Hard links vs symlinks: hard links share the same inode (same data), symlinks are path-based references (can dangle or cross file systems)

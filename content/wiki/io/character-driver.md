@@ -20,7 +20,7 @@ A character driver handles byte-stream devices, managing sequential data transfe
 2. Driver reads/writes bytes sequentially from device
 3. Typically uses small buffers (one character or small FIFO)
 4. Interrupt per character (or small group) is common
-5. No seeking — data is a sequential stream
+5. No seeking -- data is a sequential stream
 
 ```dot
 digraph char_driver {
@@ -40,10 +40,25 @@ digraph char_driver {
 ## Key Properties
 
 - Transfers one byte or small buffers at a time
-- No seeking — sequential access only
+- No seeking -- sequential access only
 - Examples: keyboard, mouse, serial port, printer
 - Often uses interrupts per character (can be high overhead)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Character_Driver {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Character Driver" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[device-driver|Device Driver]], [[io-devices|I/O Devices]]

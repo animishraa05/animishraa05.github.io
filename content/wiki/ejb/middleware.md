@@ -53,11 +53,26 @@ digraph G {
 - Container-managed: Services provided by EJB container
 - ACID: Transactions are guaranteed
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Middleware {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Middleware" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[rmi-remote-method-invocation|RMI Remote Method Invocation]] — uses RMI for communication
-- Builds into: [[ejb-container|EJB Container]] — EJB is the middleware implementation
-- Built from: [[transaction-management|Transaction Management]] — middleware provides transactions
-- Built from: [[ejb-security|EJB Security]] — middleware provides security
+- Built from: [[rmi-remote-method-invocation|RMI Remote Method Invocation]] -- uses RMI for communication
+- Builds into: [[ejb-container|EJB Container]] -- EJB is the middleware implementation
+- Built from: [[transaction-management|Transaction Management]] -- middleware provides transactions
+- Built from: [[ejb-security|EJB Security]] -- middleware provides security
 
 ## Edge Cases & Gotchas
 - Performance overhead: Middleware adds some latency

@@ -8,7 +8,7 @@ updated: 2026-04-30
 
 ## The Problem
 
-Applications need to perform I/O (read files, write data, print) but shouldn't talk directly to hardware — that would require every program to know every device's details.
+Applications need to perform I/O (read files, write data, print) but shouldn't talk directly to hardware -- that would require every program to know every device's details.
 
 ## Core Idea
 
@@ -45,6 +45,21 @@ digraph user_io {
 - Handles user-space buffering and formatting
 - Spooling for shared devices (printers) happens here
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_User_Level_I_O_Software {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="User Level I/O Softw" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[io-software-structure|I/O Software Structure]], [[system-call|System Call]]
@@ -56,4 +71,4 @@ digraph user_io {
 
 - User-space buffering can delay writes (must flush explicitly)
 - System call overhead for each I/O operation (mitigated by buffering)
-- Library functions may mask errors — always check return values
+- Library functions may mask errors -- always check return values

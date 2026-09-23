@@ -71,18 +71,33 @@ digraph ig_calculation {
 - **Computationally intensive**: Requires entropy calculation for each candidate split at each node
 - **Greedy**: Computed locally without considering future splits
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Information_Gain_Calculation {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Information Gain Cal" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Builds into:** [[information-gain|Information Gain]] — this is the computational procedure behind the concept
-- **Built from:** [[entropy-calculation|Entropy Calculation]] — child entropy computations feed into IG
-- **Builds into:** [[root-node|Root Node]] — IG calculation determines the root attribute
-- **Builds into:** [[recursive-tree-building|Recursive Tree Building]] — IG is computed at every recursive step
-- **Related:** [[decision-tree-splitting|Decision Tree Splitting]] — IG values drive the split decision
-- **Contrasts with:** [[gini-index|Gini Index]] — different computational formula for the same goal
+- **Builds into:** [[information-gain|Information Gain]] -- this is the computational procedure behind the concept
+- **Built from:** [[entropy-calculation|Entropy Calculation]] -- child entropy computations feed into IG
+- **Builds into:** [[root-node|Root Node]] -- IG calculation determines the root attribute
+- **Builds into:** [[recursive-tree-building|Recursive Tree Building]] -- IG is computed at every recursive step
+- **Related:** [[decision-tree-splitting|Decision Tree Splitting]] -- IG values drive the split decision
+- **Contrasts with:** [[gini-index|Gini Index]] -- different computational formula for the same goal
 
 ## Edge Cases & Gotchas
 
-- **Division by zero**: If |S| = 0 (empty node), IG is undefined — the node should be a leaf
+- **Division by zero**: If |S| = 0 (empty node), IG is undefined -- the node should be a leaf
 - **All same values**: If an attribute has the same value for all instances, only one child exists and IG = 0
 - **Precision accumulation**: Repeated floating point operations can accumulate rounding errors in deep trees
 - **Tie-breaking**: Multiple attributes may have identical IG; a deterministic tie-breaking rule is needed

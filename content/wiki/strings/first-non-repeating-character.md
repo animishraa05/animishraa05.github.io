@@ -75,26 +75,26 @@ graph semantic_first_non_repeat {
 
 ## Key Properties
 
-- O(n) Phase 1 + O(n) Phase 2 = O(n) total — two linear passes
-- Preserves original string order in Phase 2 — this is why re-traversal is necessary
+- O(n) Phase 1 + O(n) Phase 2 = O(n) total -- two linear passes
+- Preserves original string order in Phase 2 -- this is why re-traversal is necessary
 - The frequency structure alone cannot answer this question (it loses order information)
-- Works with both arrays and hash maps — Phase 2 checks are O(1) in both
-- Early termination possible — stop at the first match
+- Works with both arrays and hash maps -- Phase 2 checks are O(1) in both
+- Early termination possible -- stop at the first match
 
 ## Connections
 
-- Built from: [[hashing-retrieval-phase|Hashing Retrieval Phase]] — re-traversing input is a specific Phase 2 pattern
-- Built from: [[two-phase-hashing|Two-Phase Hashing Paradigm]] — the canonical example of Phase 2 differing from Phase 1
-- Built from: [[frequency-array|Frequency Array]] — one implementation choice
-- Contrasts with: [[most-frequent-character|Most Frequent Character]] — same Phase 1, different Phase 2 strategy
-- Related: [[anagram-detection-via-hashing|Anagram Detection]] — another Phase 2 variant
-- Related: [[map-traversal-method|Hash Map Traversal Method]] — re-traversal works regardless of structure type
+- Built from: [[hashing-retrieval-phase|Hashing Retrieval Phase]] -- re-traversing input is a specific Phase 2 pattern
+- Built from: [[two-phase-hashing|Two-Phase Hashing Paradigm]] -- the canonical example of Phase 2 differing from Phase 1
+- Built from: [[frequency-array|Frequency Array]] -- one implementation choice
+- Contrasts with: [[most-frequent-character|Most Frequent Character]] -- same Phase 1, different Phase 2 strategy
+- Related: [[anagram-detection-via-hashing|Anagram Detection]] -- another Phase 2 variant
+- Related: [[map-traversal-method|Hash Map Traversal Method]] -- re-traversal works regardless of structure type
 
 ## Edge Cases & Gotchas
 
-- All characters are repeating (e.g., "aabbcc"): no character has count 1 — must handle the no-solution case
+- All characters are repeating (e.g., "aabbcc"): no character has count 1 -- must handle the no-solution case
 - Empty string: return sentinel immediately
-- Single character (e.g., "z"): that character is the answer — Phase 2 finds it on the first check
-- Case sensitivity: 'A' and 'a' are different characters — the hash structure treats them separately
+- Single character (e.g., "z"): that character is the answer -- Phase 2 finds it on the first check
+- Case sensitivity: 'A' and 'a' are different characters -- the hash structure treats them separately
 - For strings with only one unique character appearing once (e.g., "aaaabbbbccccd"): 'd' is the answer
-- The naive solution without hashing is O(n²) — the hash structure reduces this to O(n)
+- The naive solution without hashing is O(n²) -- the hash structure reduces this to O(n)

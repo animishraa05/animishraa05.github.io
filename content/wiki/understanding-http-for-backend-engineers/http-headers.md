@@ -9,11 +9,11 @@ updated: 2026-04-12
 
 ## The Problem
 
-The message body carries the core data, but the request/response needs metadata—content type, authentication, caching rules, client info—that shouldn't be mixed with the payload.
+The message body carries the core data, but the request/response needs metadata--content type, authentication, caching rules, client info--that shouldn't be mixed with the payload.
 
 ## Core Idea
 
-Headers are key-value pairs providing metadata about the request or response. They're like the address on a parcel—metadata that lets intermediaries process messages without opening the body.
+Headers are key-value pairs providing metadata about the request or response. They're like the address on a parcel--metadata that lets intermediaries process messages without opening the body.
 
 ## Categories
 
@@ -51,6 +51,35 @@ Enhance security:
 - `X-Frame-Options`: Prevent clickjacking
 - `Set-Cookie`: With HttpOnly/Secure flags
 
+
+
+## Visual Explanation
+
+```dot
+digraph true {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="True\nInput"]
+  B [label="True\nCore Mechanism"]
+  C [label="True\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_true {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="True" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[http|HTTP]] (the message structure)

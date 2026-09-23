@@ -8,7 +8,7 @@ updated: 2026-04-30
 
 ## The Problem
 
-Clients (browsers) don't want to query root, TLD, and authoritative servers themselves—that's too complex and slow. Recursive DNS resolvers do all the work so clients just get the final answer.
+Clients (browsers) don't want to query root, TLD, and authoritative servers themselves--that's too complex and slow. Recursive DNS resolvers do all the work so clients just get the final answer.
 
 ## Core Idea
 
@@ -57,12 +57,27 @@ digraph G {
 - Can be ISP-provided or public (Google, Cloudflare)
 - Recursive = will query until it gets the final answer
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Recursive_DNS {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Recursive Dns" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[dns-hierarchy|DNS Hierarchy]] — navigates the full hierarchy
-- **Builds into:** [[dns-lookup|DNS Lookup]] — recursive is the fallback when caches miss
-- **Related:** [[dns-cache|DNS Cache]] — resolvers cache aggressively
-- **Related:** [[public-dns|Public DNS]] — Google DNS, Cloudflare, Quad9
+- **Built from:** [[dns-hierarchy|DNS Hierarchy]] -- navigates the full hierarchy
+- **Builds into:** [[dns-lookup|DNS Lookup]] -- recursive is the fallback when caches miss
+- **Related:** [[dns-cache|DNS Cache]] -- resolvers cache aggressively
+- **Related:** [[public-dns|Public DNS]] -- Google DNS, Cloudflare, Quad9
 
 ## Edge Cases & Gotchas
 

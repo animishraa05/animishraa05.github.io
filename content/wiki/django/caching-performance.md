@@ -12,16 +12,16 @@ Django's Cache Framework provides a unified API for storing and retrieving compu
 
 ## Explanation
 
-Caching solves the problem of repeated expensive computations (database queries, template rendering, API calls) by storing results for reuse. Django's cache API (`cache.get`, `cache.set`, `cache.get_or_set`) abstracts the backend, allowing development with local memory cache and production with Redis/Memcached. Performance optimization complements caching by reducing the need for it — efficient queries, proper indexes, and background processing keep response times low even on cache misses.
+Caching solves the problem of repeated expensive computations (database queries, template rendering, API calls) by storing results for reuse. Django's cache API (`cache.get`, `cache.set`, `cache.get_or_set`) abstracts the backend, allowing development with local memory cache and production with Redis/Memcached. Performance optimization complements caching by reducing the need for it -- efficient queries, proper indexes, and background processing keep response times low even on cache misses.
 
 ## How It Works
 
-1. **Backend configured** — `CACHES = {'default': {'BACKEND': 'django.core.cache.backends.redis.RedisCache', 'LOCATION': 'redis://127.0.0.1:6379/1'}}`
-2. **Cache key generated** — Unique string; `make_key('my_key', version=2)` includes prefix and version
-3. **Set/Get operations** — `cache.set(key, value, timeout=300)`; `cache.get(key, default=None)`
-4. **Per-view caching** — `@cache_page(60 * 15)` decorator caches entire response
-5. **Template fragment** — `{% cache 500 sidebar request.user.id %}...{% endcache %}`
-6. **Low-level API** — `cache.add()` (only if not exists), `cache.incr()`, `cache.decr()`, `cache.delete_pattern()` (Redis)
+1. **Backend configured** -- `CACHES = {'default': {'BACKEND': 'django.core.cache.backends.redis.RedisCache', 'LOCATION': 'redis://127.0.0.1:6379/1'}}`
+2. **Cache key generated** -- Unique string; `make_key('my_key', version=2)` includes prefix and version
+3. **Set/Get operations** -- `cache.set(key, value, timeout=300)`; `cache.get(key, default=None)`
+4. **Per-view caching** -- `@cache_page(60 * 15)` decorator caches entire response
+5. **Template fragment** -- `{% cache 500 sidebar request.user.id %}...{% endcache %}`
+6. **Low-level API** -- `cache.add()` (only if not exists), `cache.incr()`, `cache.decr()`, `cache.delete_pattern()` (Redis)
 
 ## Visual Explanation
 
@@ -96,19 +96,19 @@ graph semantic_caching_performance {
 
 ## Connections
 
-- Built from: [[cache-framework-api|Cache Framework API]] — Core `cache.get/set` interface
-- Built from: [[cache-backends|Cache Backends]] — Pluggable storage implementations
-- Built from: [[query-optimization|Query Optimization]] — Reduce DB load before caching
-- Builds into: [[per-view-caching|Per-View Caching]] — `@cache_page` decorator
-- Builds into: [[template-fragment-caching|Template Fragment Caching]] — `{% cache %}` tag
-- Builds into: [[low-level-cache-api|Low-Level Cache API]] — `cache.get_or_set`, `incr`, `delete_pattern`
-- Builds into: [[redis-memcached|Redis/Memcached]] — Production backends
-- Builds into: [[celery-background-jobs|Celery Background Jobs]] — Async task processing
-- Builds into: [[query-optimization-techniques|Query Optimization Techniques]] — `select_related`, `prefetch_related`, indexes
-- Contrasts with: [[flask-caching|Flask-Caching]] — Extension, similar API, less integrated
-- Contrasts with: [[fastapi-caching|FastAPI Custom Caching]] — No built-in framework, manual implementation
-- Related: [[cache-middleware|Cache Middleware]] — Site-wide caching layer
-- Related: [[database-indexes|Database Indexes]] — Complementary performance tool
+- Built from: [[cache-framework-api|Cache Framework API]] -- Core `cache.get/set` interface
+- Built from: [[cache-backends|Cache Backends]] -- Pluggable storage implementations
+- Built from: [[query-optimization|Query Optimization]] -- Reduce DB load before caching
+- Builds into: [[per-view-caching|Per-View Caching]] -- `@cache_page` decorator
+- Builds into: [[template-fragment-caching|Template Fragment Caching]] -- `{% cache %}` tag
+- Builds into: [[low-level-cache-api|Low-Level Cache API]] -- `cache.get_or_set`, `incr`, `delete_pattern`
+- Builds into: [[redis-memcached|Redis/Memcached]] -- Production backends
+- Builds into: [[celery-background-jobs|Celery Background Jobs]] -- Async task processing
+- Builds into: [[query-optimization-techniques|Query Optimization Techniques]] -- `select_related`, `prefetch_related`, indexes
+- Contrasts with: [[flask-caching|Flask-Caching]] -- Extension, similar API, less integrated
+- Contrasts with: [[fastapi-caching|FastAPI Custom Caching]] -- No built-in framework, manual implementation
+- Related: [[cache-middleware|Cache Middleware]] -- Site-wide caching layer
+- Related: [[database-indexes|Database Indexes]] -- Complementary performance tool
 
 ## Edge Cases & Gotchas
 

@@ -16,7 +16,7 @@ Direct Addressing specifies the exact memory address of the operand within the i
 1. Instruction includes the memory address (e.g., 1234h)
 2. CPU fetches the instruction, extracts the address
 3. CPU performs a memory read/write to that address
-4. Example: `MOV AX, [1234h]` — loads data from memory address 1234h into AX
+4. Example: `MOV AX, [1234h]` -- loads data from memory address 1234h into AX
 5. Requires one memory access (in addition to instruction fetch)
 
 ```dot
@@ -34,15 +34,30 @@ digraph direct_addr {
 ```
 
 ## Key Properties
-- Simple and intuitive — address is fixed at compile time
+- Simple and intuitive -- address is fixed at compile time
 - Limited address range: address size limited by instruction format
 - Used for accessing global variables, fixed data structures
 - Slower than register addressing (requires memory access)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Direct_Addressing {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Direct Addressing" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[addressing-mode|Addressing Mode]], [[memory-address|Memory Address]]
-- **Contrasts with:** [[immediate-addressing|Immediate Addressing]] — value in instruction, not address
-- **Contrasts with:** [[indirect-addressing|Indirect Addressing]] — address in register, not instruction
+- **Contrasts with:** [[immediate-addressing|Immediate Addressing]] -- value in instruction, not address
+- **Contrasts with:** [[indirect-addressing|Indirect Addressing]] -- address in register, not instruction
 - **Related:** [[memory|Memory]], [[effective-address|Effective Address]]
 
 ## Edge Cases & Gotchas

@@ -61,12 +61,41 @@ class UserViewSet(viewsets.ModelViewSet):
 - Serializers: Complex data conversion.
 - Extensible authentication (JWT, OAuth) and permissions.
 
+
+
+## Visual Explanation
+
+```dot
+digraph Django_REST_Framework {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Django Rest Framewor\nInput"]
+  B [label="Django Rest Framewor\nCore Mechanism"]
+  C [label="Django Rest Framewor\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Django_REST_Framework {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Django Rest Framewor" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[django-web-framework|Django Web Framework]] — an extension of Django.
-- **Related:** [[django-model|Django Model]] — Serializers map to models.
-- **Related:** [[django-view|Django View]] — APIViews extend standard views.
-- **Related:** [[django-authentication-system|Django Authentication System]] — DRF builds on Django's auth for APIs.
+- **Built from:** [[django-web-framework|Django Web Framework]] -- an extension of Django.
+- **Related:** [[django-model|Django Model]] -- Serializers map to models.
+- **Related:** [[django-view|Django View]] -- APIViews extend standard views.
+- **Related:** [[django-authentication-system|Django Authentication System]] -- DRF builds on Django's auth for APIs.
 
 ## Edge Cases & Gotchas
 

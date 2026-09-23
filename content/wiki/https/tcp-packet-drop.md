@@ -50,12 +50,27 @@ digraph G {
 - Reduces congestion window (slows down sending)
 - Part of TCP's reliability guarantees
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_TCP_Packet_Drop {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Tcp Packet Drop" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[tcp-handshake|TCP Handshake]] — TCP connection must exist
-- **Related:** [[congestion-control|Congestion Control]] — packet drop triggers slowdown
-- **Related:** [[timeout|Timeout]] — mechanism to detect lost packets
-- **Contrasts with:** [[udp|UDP]] — UDP doesn't handle packet loss
+- **Built from:** [[tcp-handshake|TCP Handshake]] -- TCP connection must exist
+- **Related:** [[congestion-control|Congestion Control]] -- packet drop triggers slowdown
+- **Related:** [[timeout|Timeout]] -- mechanism to detect lost packets
+- **Contrasts with:** [[udp|UDP]] -- UDP doesn't handle packet loss
 
 ## Edge Cases & Gotchas
 

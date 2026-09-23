@@ -43,11 +43,26 @@ digraph G {
 - Runs after LCP succeeds
 - Enables multiprotocol support over single link
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_NCP {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Ncp" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[ppp-protocol|PPP Protocol]] — NCP is a component of PPP
-- Related: [[lcp|LCP]] — establishes link before NCP runs
-- Related: [[ipcp|IPCP]] — most common NCP for IP
-- Related: [[multiprotocol|Multiprotocol Support]] — NCP enables this
+- Built from: [[ppp-protocol|PPP Protocol]] -- NCP is a component of PPP
+- Related: [[lcp|LCP]] -- establishes link before NCP runs
+- Related: [[ipcp|IPCP]] -- most common NCP for IP
+- Related: [[multiprotocol|Multiprotocol Support]] -- NCP enables this
 
 ## Edge Cases & Gotchas
 - If NCP fails, network-layer communication doesn't work even though link is up

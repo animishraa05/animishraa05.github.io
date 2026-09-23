@@ -59,11 +59,40 @@ MIDDLEWARE = [
 - Ordered: The sequence in the settings array matters heavily.
 - Can short-circuit: Middleware can return a response directly without calling the view.
 
+
+
+## Visual Explanation
+
+```dot
+digraph Django_Middleware {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Django Middleware\nInput"]
+  B [label="Django Middleware\nCore Mechanism"]
+  C [label="Django Middleware\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Django_Middleware {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Django Middleware" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[django-web-framework|Django Web Framework]] — hooks into the core framework.
-- **Related:** [[django-request-response-lifecycle|Django Request-Response Lifecycle]] — forms the boundary layers of the lifecycle.
-- **Related:** [[django-authentication-system|Django Authentication System]] — auth relies on middleware to set `request.user`.
+- **Built from:** [[django-web-framework|Django Web Framework]] -- hooks into the core framework.
+- **Related:** [[django-request-response-lifecycle|Django Request-Response Lifecycle]] -- forms the boundary layers of the lifecycle.
+- **Related:** [[django-authentication-system|Django Authentication System]] -- auth relies on middleware to set `request.user`.
 
 ## Edge Cases & Gotchas
 

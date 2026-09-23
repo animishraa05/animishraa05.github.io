@@ -18,25 +18,54 @@ The exposed terminal problem occurs when a node (C) that is within range of an a
 3. C senses the channel and detects B's ongoing transmission
 4. C incorrectly concludes it cannot transmit without causing interference
 5. C waits unnecessarily, even though its signal to D would not interfere with B's signal to A
-6. Bandwidth is wasted — C could have successfully transmitted to D simultaneously
+6. Bandwidth is wasted -- C could have successfully transmitted to D simultaneously
 
 The key insight: if the intended receivers are sufficiently separated, simultaneous transmissions are possible without collision.
 
 ## Key Properties
 - Waste of bandwidth: node C unnecessarily waits when transmission would succeed
 - Caused by over-conservative carrier sensing (no distinction between harmful and harmless interference)
-- More subtle than hidden terminal — requires understanding of receiver locations
+- More subtle than hidden terminal -- requires understanding of receiver locations
 - Can be partially solved by RTS/CTS exchanges (MACA) which announce intended receivers
 - Not as severe as hidden terminal but still reduces network efficiency significantly
 
+
+
+## Visual Explanation
+
+```dot
+digraph Exposed_Terminal_Problem {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Exposed Terminal Pro\nInput"]
+  B [label="Exposed Terminal Pro\nCore Mechanism"]
+  C [label="Exposed Terminal Pro\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Exposed_Terminal_Problem {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Exposed Terminal Pro" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Related: [[hidden-terminal-problem|Hidden Terminal Problem]] — the complementary problem; both arise from range limitations
-- Related: [[maca|MACA]] — MACA's RTS/CTS handshake also helps exposed terminals by announcing clear receiver zones
-- Related: [[csma|CSMA]] — carrier sensing that causes the exposed terminal problem
-- Related: [[near-far-terminal|Near/Far Terminal Effect]] — another wireless MAC efficiency problem
+- Related: [[hidden-terminal-problem|Hidden Terminal Problem]] -- the complementary problem; both arise from range limitations
+- Related: [[maca|MACA]] -- MACA's RTS/CTS handshake also helps exposed terminals by announcing clear receiver zones
+- Related: [[csma|CSMA]] -- carrier sensing that causes the exposed terminal problem
+- Related: [[near-far-terminal|Near/Far Terminal Effect]] -- another wireless MAC efficiency problem
 
 ## Edge Cases & Gotchas
 - The exposed terminal problem is less severe than the hidden terminal problem in terms of call quality
 - It mainly affects throughput (capacity), not call success rates
-- Directional antennas can help — C can transmit in a direction different from B's reception zone
+- Directional antennas can help -- C can transmit in a direction different from B's reception zone
 - RTS/CTS helps resolve both hidden and exposed terminal problems by explicitly announcing receiver locations

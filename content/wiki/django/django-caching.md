@@ -56,10 +56,39 @@ def homepage(request):
 - Can cache entire views, specific template fragments, or arbitrary Python objects (Low-level API).
 - Requires invalidation strategies to prevent serving stale data.
 
+
+
+## Visual Explanation
+
+```dot
+digraph Django_Caching {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Django Caching\nInput"]
+  B [label="Django Caching\nCore Mechanism"]
+  C [label="Django Caching\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Django_Caching {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Django Caching" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[django-web-framework|Django Web Framework]] — performance optimization layer.
-- **Related:** [[django-view|Django View]] — often applied via view decorators.
+- **Built from:** [[django-web-framework|Django Web Framework]] -- performance optimization layer.
+- **Related:** [[django-view|Django View]] -- often applied via view decorators.
 
 ## Edge Cases & Gotchas
 

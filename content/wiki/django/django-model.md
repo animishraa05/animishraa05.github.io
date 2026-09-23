@@ -50,12 +50,41 @@ class Student(models.Model):
 - Fields map to database columns.
 - Provides an automatic API to query the database.
 
+
+
+## Visual Explanation
+
+```dot
+digraph Django_Model {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Django Model\nInput"]
+  B [label="Django Model\nCore Mechanism"]
+  C [label="Django Model\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Django_Model {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Django Model" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[django-orm|Django ORM]] — the system that powers models.
-- **Builds into:** [[django-migration|Django Migration]] — models generate migrations.
-- **Related:** [[django-view|Django View]] — views interact with models.
-- **Related:** [[django-form|Django Form]] — ModelForms are generated from models.
+- **Built from:** [[django-orm|Django ORM]] -- the system that powers models.
+- **Builds into:** [[django-migration|Django Migration]] -- models generate migrations.
+- **Related:** [[django-view|Django View]] -- views interact with models.
+- **Related:** [[django-form|Django Form]] -- ModelForms are generated from models.
 
 ## Edge Cases & Gotchas
 

@@ -10,7 +10,7 @@ updated: 2026-04-29
 How long does a session bean live? Is it days? Years? Can it survive a server crash? Understanding bean lifetime is crucial for deciding what data to store in a session bean vs a database.
 
 ## Core Idea
-Session beans are **short-lived, non-persistent objects**. Their lifetime is roughly the duration of the client session—when the client disconnects or times out, the container may destroy the bean. Session beans live in RAM and do NOT survive server crashes.
+Session beans are **short-lived, non-persistent objects**. Their lifetime is roughly the duration of the client session--when the client disconnects or times out, the container may destroy the bean. Session beans live in RAM and do NOT survive server crashes.
 
 Contrast with Entity Beans which can live for months/years (persistent in database).
 
@@ -51,6 +51,21 @@ digraph SessionLifetime {
 - **Container-managed**: Container decides exactly when to destroy
 - **RAM-only**: Live in memory, not on disk
 
+
+
+## Semantic Network
+
+```dot
+graph semantic__Session_Bean_Lifetime_ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label=""Session Bean Lifeti" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[session-bean|Session Bean]], [[ejb-container|EJB Container]] (manages lifetime)
 - **Builds into:** [[stateful-session-bean|Stateful Session Bean]] (dedicated lifetime), [[stateless-session-bean|Stateless Session Bean]] (pool-based lifetime)

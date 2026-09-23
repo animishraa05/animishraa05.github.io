@@ -12,7 +12,7 @@ The browser receives CSS as text (from stylesheets, `<style>` tags, inline style
 
 ## Core Idea
 
-CSS parsing converts CSS text into the CSSOM (CSS Object Model)—a tree of style rules. This is used later to compute styles for each DOM element during render tree construction.
+CSS parsing converts CSS text into the CSSOM (CSS Object Model)--a tree of style rules. This is used later to compute styles for each DOM element during render tree construction.
 
 ## How It Works
 
@@ -25,7 +25,7 @@ CSS parsing converts CSS text into the CSSOM (CSS Object Model)—a tree of styl
    ```
 3. **Style calculation**: Later, match CSSOM rules to DOM elements
 
-CSS parsing can block rendering—browser won't paint until CSSOM is ready.
+CSS parsing can block rendering--browser won't paint until CSSOM is ready.
 
 ## Visual Explanation
 
@@ -49,16 +49,31 @@ digraph G {
 - Media queries are evaluated during CSSOM construction
 - Errors in CSS are silently ignored (lenient parsing)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_CSS_Parsing {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Css Parsing" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Builds into:** [[render-tree|Render Tree]] — CSSOM combines with DOM
-- **Related:** [[dom-tree|DOM Tree]] — CSSOM is the CSS counterpart
-- **Related:** [[browser-rendering|Browser Rendering]] — CSS parsing is step 2
-- **Related:** [[cssom|CSSOM]] — the output of CSS parsing
+- **Builds into:** [[render-tree|Render Tree]] -- CSSOM combines with DOM
+- **Related:** [[dom-tree|DOM Tree]] -- CSSOM is the CSS counterpart
+- **Related:** [[browser-rendering|Browser Rendering]] -- CSS parsing is step 2
+- **Related:** [[cssom|CSSOM]] -- the output of CSS parsing
 
 ## Edge Cases & Gotchas
 
-- CSS at top of page (best practice)—blocks rendering until parsed
+- CSS at top of page (best practice)--blocks rendering until parsed
 - `@import` causes additional network requests (slow)
 - Invalid CSS silently fails (no error thrown)
 - Large stylesheets = slow CSSOM construction

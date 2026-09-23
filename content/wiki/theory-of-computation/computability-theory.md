@@ -32,6 +32,35 @@ Computability theory is closely related to mathematical logic's recursion theory
 - Builds on the halting problem result
 - Often synonymous with recursion theory
 
+
+
+## Visual Explanation
+
+```dot
+digraph Computability_Theory {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Computability Theory\nInput"]
+  B [label="Computability Theory\nCore Mechanism"]
+  C [label="Computability Theory\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Computability_Theory {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Computability Theory" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[turing-machine|Turing Machine]], [[halting-problem|Halting Problem]], [[rices-theorem|Rice's Theorem]]
@@ -40,7 +69,7 @@ Computability theory is closely related to mathematical logic's recursion theory
 
 ## Edge Cases & Gotchas
 
-- "Undecidable" means no algorithm exists—not just that no one has found one
+- "Undecidable" means no algorithm exists--not just that no one has found one
 - Some problems are undecidable even though individual instances may be solvable
 ## Why This Matters
 

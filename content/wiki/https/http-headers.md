@@ -8,7 +8,7 @@ updated: 2026-04-30
 
 ## The Problem
 
-HTTP requests and responses need metadata—who is making the request? What type of content is being sent? How should the response be cached? Without headers, HTTP would only be able to send raw data with no context.
+HTTP requests and responses need metadata--who is making the request? What type of content is being sent? How should the response be cached? Without headers, HTTP would only be able to send raw data with no context.
 
 ## Core Idea
 
@@ -62,13 +62,28 @@ digraph G {
 - Standard headers vs custom `X-` headers (deprecated but still seen)
 - Headers affect caching, auth, content negotiation, CORS
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_HTTP_Headers {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Http Headers" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[http-request|HTTP Request]] — headers are part of requests
-- **Builds into:** [[http-response|HTTP Response]] — headers are part of responses
-- **Related:** [[cookies|Cookies]] — sent via Cookie/Set-Cookie headers
-- **Related:** [[cors|CORS]] — controlled by special headers
-- **Related:** [[cache-control|Cache Control]] — caching headers
+- **Built from:** [[http-request|HTTP Request]] -- headers are part of requests
+- **Builds into:** [[http-response|HTTP Response]] -- headers are part of responses
+- **Related:** [[cookies|Cookies]] -- sent via Cookie/Set-Cookie headers
+- **Related:** [[cors|CORS]] -- controlled by special headers
+- **Related:** [[cache-control|Cache Control]] -- caching headers
 
 ## Edge Cases & Gotchas
 

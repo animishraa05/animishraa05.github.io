@@ -55,8 +55,8 @@ This source covers Jochen Schiller's "Mobile Communications" (2nd Edition, Pears
 
 ## Syntheses Created (2)
 
-- [[modulation-techniques-compared|Modulation Techniques Compared]] — FSK, MSK, GMSK comparison
-- [[wireless-mac-problems-compared|Wireless MAC Problems Compared]] — Hidden, Exposed, Near/Far comparison
+- [[modulation-techniques-compared|Modulation Techniques Compared]] -- FSK, MSK, GMSK comparison
+- [[wireless-mac-problems-compared|Wireless MAC Problems Compared]] -- Hidden, Exposed, Near/Far comparison
 
 ## Key Takeaways
 
@@ -83,13 +83,13 @@ networking, wireless
 
 ## Connections
 
-- [[wireless-network|Wireless Network]] — foundational concept covered
-- [[cellular-mobile-system|Cellular Mobile System]] — Unit 3 coverage
-- [[gsm-architecture|GSM Architecture]] — Unit 4 coverage
-- [[ieee-802-11|IEEE 802.11]] — Unit 5 coverage
-- [[modulation-techniques-compared|Modulation Techniques Compared]] — synthesis created
-- [[wireless-mac-problems-compared|Wireless MAC Problems Compared]] — synthesis created
-- [[hidden-terminal-problem|Hidden Terminal Problem]] — Unit 2 coverage
-- [[frequency-reuse|Frequency Reuse]] — Unit 3 coverage
-- [[multiplexing|Multiplexing]] — Unit 1 coverage
-- [[spread-spectrum|Spread Spectrum]] — Unit 1 coverage
+- [[wireless-network|Wireless Network]] -- foundational concept covered
+- [[cellular-mobile-system|Cellular Mobile System]] -- Unit 3 coverage
+- [[gsm-architecture|GSM Architecture]] -- Unit 4 coverage
+- [[ieee-802-11|IEEE 802.11]] -- Unit 5 coverage
+- [[modulation-techniques-compared|Modulation Techniques Compared]] -- synthesis created
+- [[wireless-mac-problems-compared|Wireless MAC Problems Compared]] -- synthesis created
+- [[hidden-terminal-problem|Hidden Terminal Problem]] -- Unit 2 coverage
+- [[frequency-reuse|Frequency Reuse]] -- Unit 3 coverage
+- [[multiplexing|Multiplexing]] -- Unit 1 coverage
+- [[spread-spectrum|Spread Spectrum]] -- Unit 1 coverage

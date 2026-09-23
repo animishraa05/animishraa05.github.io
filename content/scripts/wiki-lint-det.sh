@@ -41,7 +41,7 @@ if [ -n "$TOPIC_FILTER" ]; then
 fi
 
 existing="$(echo "$all_mds" | sed "s|$WIKI_DIR/||" | sed 's|\.md$||' | tr '[:upper:]' '[:lower:]' | sort -u)"
-existing_basenames="$(basename -a $all_mds 2>/dev/null | sed 's/\.md$//' | tr '[:upper:]' '[:lower:]' | sort -u || echo "")"
+existing_basenames="$(echo "$all_mds" | xargs -n1 basename 2>/dev/null | sed 's/\.md$//' | tr '[:upper:]' '[:lower:]' | sort -u || echo "")"
 
 link_list="$(mktemp)"
 link_counts="$(mktemp)"
@@ -50,9 +50,10 @@ trap 'rm -f "$link_list" "$link_counts"' EXIT
 rg -o '\[\[([^\]|#]+)' "$WIKI_DIR" -g '*.md' --no-heading -n 2>/dev/null | sed 's/.*\[\[//' | tr '[:upper:]' '[:lower:]' | sed 's|/$||' | sort > "$link_list" || true
 sort "$link_list" | uniq -c | sort -rn > "$link_counts" || true
 
-DEFERRED="$(rg -c '<!-- TODO: add backlink here -->' "$WIKI_DIR" -g '*.md' 2>/dev/null | awk -F: '{s+=$2} END{print s+0}')"
+    DEFERRED="$(rg -c '<!-- TODO: add backlink here -->' "$WIKI_DIR" -g '*.md' 2>/dev/null | awk -F: '{s+=$2} END{print s+0}')"
+[ -z "$DEFERRED" ] && DEFERRED=0
 if [ "$DEFERRED" -gt 0 ]; then
-    echo -e "${YELLOW}Deferred backlinks found: $DEFERRED — removing markers (backlinks already exist via deterministic relate)${NC}"
+    echo -e "${YELLOW}Deferred backlinks found: $DEFERRED -- removing markers (backlinks already exist via deterministic relate)${NC}"
     rg -l '<!-- TODO: add backlink here -->' "$WIKI_DIR" -g '*.md' 2>/dev/null | while read f; do
         sed -i 's/ *<!-- TODO: add backlink here -->//g' "$f"
     done
@@ -69,6 +70,7 @@ while read count link; do
     base="$(basename "$link")"
     if echo "$base" | grep -qE 'summary$|moc$'; then continue; fi
     if echo "$existing_basenames" | grep -qx "$base"; then continue; fi
+    if echo "$link" | grep -qE '^concept-[a-z]$|^concept-filename$|^a-vs-b$|^page-name$|^links$|^other-page$|^filename-without-ext$'; then continue; fi
     if [ "$count" -ge 2 ]; then
         topic="misc"
         if [ -n "$TOPIC_FILTER" ]; then topic="$TOPIC_FILTER"; else

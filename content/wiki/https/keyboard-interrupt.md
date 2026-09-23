@@ -48,12 +48,27 @@ digraph G {
 - OS converts scan codes to characters
 - Interrupt Vector Table maps IRQ to handler
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Keyboard_Interrupt {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Keyboard Interrupt" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Builds into:** [[os-interrupt-handler|OS Interrupt Handler]] — OS handles the interrupt
-- **Related:** [[keyboard-matrix|Keyboard Matrix]] — physical circuit for keys
-- **Related:** [[scan-code|Scan Code]] — what keyboard controller generates
-- **Contrasts with:** [[polling|Polling]] — interrupts vs continuous checking
+- **Builds into:** [[os-interrupt-handler|OS Interrupt Handler]] -- OS handles the interrupt
+- **Related:** [[keyboard-matrix|Keyboard Matrix]] -- physical circuit for keys
+- **Related:** [[scan-code|Scan Code]] -- what keyboard controller generates
+- **Contrasts with:** [[polling|Polling]] -- interrupts vs continuous checking
 
 ## Edge Cases & Gotchas
 

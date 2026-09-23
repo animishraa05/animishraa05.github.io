@@ -7,7 +7,7 @@ updated: 2026-04-29
 ---
 
 ## The Problem
-Objects live in RAM—when the program stops, they're gone. To keep data permanently (across restarts, for other applications to use), objects must be saved to persistent storage (database, filesystem). What are the ways to persist Java objects?
+Objects live in RAM--when the program stops, they're gone. To keep data permanently (across restarts, for other applications to use), objects must be saved to persistent storage (database, filesystem). What are the ways to persist Java objects?
 
 ## Core Idea
 There are two main ways to persist Java objects:
@@ -51,9 +51,24 @@ digraph Persistence {
 ## Key Properties
 - **Entity Beans use ORM**: They map to relational database tables (not serialization)
 - **EJB doesn't dictate ORM tool**: You can use JDBC (BMP) or container-managed (CMP)
-- **Modern tools**: Hibernate, TopLink, JDO—automate ORM (popular in EJB 3.x+)
+- **Modern tools**: Hibernate, TopLink, JDO--automate ORM (popular in EJB 3.x+)
 - **Queryable**: Unlike serialization, ORM lets you run SQL queries like "find all accounts with balance > $1000"
 
+
+
+## Semantic Network
+
+```dot
+graph semantic__Persistence_Concepts_ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label=""Persistence Concept" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[object-relational-mapping|Object-Relational Mapping]], [[entity-bean|Entity Bean]]
 - **Builds into:** [[bean-managed-persistence|Bean-Managed Persistence]] (JDBC), [[container-managed-persistence|Container-Managed Persistence]] (auto)

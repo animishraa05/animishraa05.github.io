@@ -43,12 +43,27 @@ digraph G {
 - Full-duplex: bidirectional data flow
 - Used by HTTP, HTTPS, FTP, SMTP, SSH
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_TCP {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Tcp" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[connection-oriented-service|Connection-Oriented Service]] — implements this service
-- Built from: [[three-way-handshake|Three-Way Handshake]] — connection setup
-- Built from: [[sliding-window-protocol|Sliding Window Protocol]] — flow/congestion control
-- Built from: [[ip-protocol|IP Protocol]] — runs on top of IP
-- Related: [[udp|UDP]] — unreliable alternative transport protocol
+- Built from: [[connection-oriented-service|Connection-Oriented Service]] -- implements this service
+- Built from: [[three-way-handshake|Three-Way Handshake]] -- connection setup
+- Built from: [[sliding-window-protocol|Sliding Window Protocol]] -- flow/congestion control
+- Built from: [[ip-protocol|IP Protocol]] -- runs on top of IP
+- Related: [[udp|UDP]] -- unreliable alternative transport protocol
 - Related: [[flow-control|Flow Control]] and [[congestion-control|Congestion Control]]
 
 ## Edge Cases & Gotchas

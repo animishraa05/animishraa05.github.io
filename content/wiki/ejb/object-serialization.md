@@ -7,7 +7,7 @@ updated: 2026-04-28
 ---
 
 ## The Problem
-Objects in Java live in RAM with memory addresses. These addresses only make sense within the same JVM. When we need to send an object over a network (for RMI calls) or store it in a file, we cannot send raw memory — we need a machine-independent representation.
+Objects in Java live in RAM with memory addresses. These addresses only make sense within the same JVM. When we need to send an object over a network (for RMI calls) or store it in a file, we cannot send raw memory -- we need a machine-independent representation.
 
 ## Core Idea
 Object Serialization is the process of converting a Java object into a byte stream so it can be transmitted over a network or stored in a file, then reconstructed later. The reverse process (deserialization) reconstructs the object from the byte stream.
@@ -48,17 +48,32 @@ digraph G {
 - State transfer only: Object data transfers, not memory identity
 - serialVersionUID: Version tracking for compatibility
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Object_Serialization {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Object Serialization" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[java-se|Java Standard Edition]] — Java feature
-- Builds into: [[rmi-remote-method-invocation|RMI Remote Method Invocation]] — RMI depends on serialization
-- Builds into: [[ejb-object|EJB Object]] — EJB uses serialization
-- Related: [[transient-keyword|Transient Keyword]] — marks fields to exclude
-- Contrasts with: [[json-serialization|JSON Serialization]] — text-based alternative
+- Built from: [[java-se|Java Standard Edition]] -- Java feature
+- Builds into: [[rmi-remote-method-invocation|RMI Remote Method Invocation]] -- RMI depends on serialization
+- Builds into: [[ejb-object|EJB Object]] -- EJB uses serialization
+- Related: [[transient-keyword|Transient Keyword]] -- marks fields to exclude
+- Contrasts with: [[json-serialization|JSON Serialization]] -- text-based alternative
 
 ## Edge Cases & Gotchas
 - static and transient fields are NOT serialized
 - Non-serializable fields cause NotSerializableException
-- Constructor is NOT called during deserialization — may skip important initialization
+- Constructor is NOT called during deserialization -- may skip important initialization
 - Identity is lost: original != deserialized (different memory addresses)
 - Security risk: Deserialization can execute malicious code
 - Performance cost: Slow and CPU/memory intensive

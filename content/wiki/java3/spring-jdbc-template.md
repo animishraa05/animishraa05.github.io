@@ -16,8 +16,8 @@ Spring JDBC Template provides a template-based API that eliminates JDBC boilerpl
 
 ## How It Works
 
-1. **JdbcTemplate**: Core class wrapping JDBC — execute query/update with automatic resource management
-2. **NamedParameterJdbcTemplate**: Uses named parameters (`:name`) instead of positional (`?`) — more readable, especially with many parameters
+1. **JdbcTemplate**: Core class wrapping JDBC -- execute query/update with automatic resource management
+2. **NamedParameterJdbcTemplate**: Uses named parameters (`:name`) instead of positional (`?`) -- more readable, especially with many parameters
 3. **RowMapper**: `(ResultSet rs, int rowNum) → T` maps a result set row to a domain object
 4. **ResultSetExtractor**: For custom result extraction (e.g., building a Map from multiple rows)
 5. **SQL scripts**: `ResourceDatabasePopulator` or `ScriptUtils` for executing SQL scripts during testing or setup
@@ -53,26 +53,41 @@ digraph jdbc_template {
 
 ## Key Properties
 
-- **JdbcTemplate**: Simplest template — positional `?` parameters, automatic resource cleanup
+- **JdbcTemplate**: Simplest template -- positional `?` parameters, automatic resource cleanup
 - **NamedParameterJdbcTemplate**: Named `:param` parameters, better readability, uses SqlParameterSource
 - **SimpleJdbcTemplate** (deprecated): Legacy wrapper, replaced by JdbcTemplate
-- **RowMapper**: Maps individual rows — reusable, no external state
+- **RowMapper**: Maps individual rows -- reusable, no external state
 - **ResultSetExtractor**: Processes entire ResultSet (multiple rows, custom structures)
 - **SQL scripts**: Execute SQL files via `ResourceDatabasePopulator` for setup, testing, or migrations
 - **PreparedStatementCallback**: For full control over PreparedStatement creation and execution
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Spring_JDBC_Template {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Spring Jdbc Template" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[java-jdbc|JDBC]] — JdbcTemplate is a wrapper over raw JDBC
-- **Built from:** [[spring-framework|Spring Framework]] — JdbcTemplate is a Spring module for data access
-- **Contrasts with:** [[spring-orm|Spring ORM]] — JdbcTemplate is direct SQL; Spring ORM is object-oriented
-- **Contrasts with:** [[spring-data-jpa|Spring Data JPA]] — JdbcTemplate gives SQL control; JPA abstracts SQL
-- **Related:** [[hql|Hibernate Query Language]] — Both execute database queries; HQL is ORM-based, JdbcTemplate is SQL-based
+- **Built from:** [[java-jdbc|JDBC]] -- JdbcTemplate is a wrapper over raw JDBC
+- **Built from:** [[spring-framework|Spring Framework]] -- JdbcTemplate is a Spring module for data access
+- **Contrasts with:** [[spring-orm|Spring ORM]] -- JdbcTemplate is direct SQL; Spring ORM is object-oriented
+- **Contrasts with:** [[spring-data-jpa|Spring Data JPA]] -- JdbcTemplate gives SQL control; JPA abstracts SQL
+- **Related:** [[hql|Hibernate Query Language]] -- Both execute database queries; HQL is ORM-based, JdbcTemplate is SQL-based
 
 ## Edge Cases & Gotchas
 
-- **Large results**: JdbcTemplate fetches all results into memory by default — use `RowCallbackHandler` or streaming for large datasets
-- **No caching**: Unlike ORM, JdbcTemplate has no built-in caching — each query hits the database
+- **Large results**: JdbcTemplate fetches all results into memory by default -- use `RowCallbackHandler` or streaming for large datasets
+- **No caching**: Unlike ORM, JdbcTemplate has no built-in caching -- each query hits the database
 - **No lazy loading**: All fields must be explicitly selected; no proxy-based lazy loading
 - **SQL injection**: Always use parameterized queries (`?` or `:param`), never concatenate user input into SQL strings
 - **DataSource configuration**: JdbcTemplate needs a properly configured DataSource bean; Spring Boot auto-configures one

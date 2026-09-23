@@ -20,7 +20,7 @@ Spring Security provides built-in CSRF protection (synchronizer token pattern, e
 2. **CORS**: `CorsFilter` checks `Origin` header against allowed origins. Spring Security configures via `.cors()` and `@CrossOrigin` on controllers
 3. **JWT authentication**: Client sends JWT in `Authorization: Bearer <token>` header. `BearerTokenAuthenticationFilter` extracts and validates token signature and claims
 4. **JWT validation**: Verify signature (HMAC or RSA), check expiration (`exp` claim), verify issuer (`iss`) and audience (`aud`)
-5. **Stateless sessions**: `SessionCreationPolicy.STATELESS` — no HTTP session, every request fully authenticated
+5. **Stateless sessions**: `SessionCreationPolicy.STATELESS` -- no HTTP session, every request fully authenticated
 
 ## Visual Explanation
 
@@ -62,21 +62,36 @@ digraph security_protection {
 - **@CrossOrigin**: Per-controller CORS configuration for specific endpoints
 - **JWT Bearer tokens**: `spring-boot-starter-oauth2-resource-server` for JWT validation
 - **Token validation**: Signature, expiration (`exp`), not-before (`nbf`), issuer (`iss`), audience (`aud`)
-- **Stateless architecture**: JWT enables stateless auth — no server-side session, scales horizontally
+- **Stateless architecture**: JWT enables stateless auth -- no server-side session, scales horizontally
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Spring_Security_CSRF_and_JWT {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Spring Security Csrf" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[spring-security|Spring Security]] — CSRF, CORS, and JWT are Spring Security modules
-- **Built from:** [[spring-security-authentication|Spring Security Authentication]] — JWT provides bearer token authentication
-- **Related:** [[jwt-authentication|JWT Authentication]] — The JWT token concept; Spring Security implements JWT validation
-- **Related:** [[cors|CORS]] — CORS is an HTTP mechanism; Spring Security configures it
-- **Contrasts with:** [[jaas|JAAS]] — JAAS is container-managed; Spring Security JWT is application-managed and stateless
+- **Built from:** [[spring-security|Spring Security]] -- CSRF, CORS, and JWT are Spring Security modules
+- **Built from:** [[spring-security-authentication|Spring Security Authentication]] -- JWT provides bearer token authentication
+- **Related:** [[jwt-authentication|JWT Authentication]] -- The JWT token concept; Spring Security implements JWT validation
+- **Related:** [[cors|CORS]] -- CORS is an HTTP mechanism; Spring Security configures it
+- **Contrasts with:** [[jaas|JAAS]] -- JAAS is container-managed; Spring Security JWT is application-managed and stateless
 
 ## Edge Cases & Gotchas
 
-- **CSRF with REST APIs**: If using stateless sessions (JWT), disable CSRF — there's no session to protect
+- **CSRF with REST APIs**: If using stateless sessions (JWT), disable CSRF -- there's no session to protect
 - **CSRF with file upload**: Multipart requests need CSRF token in URL parameter or separate header
-- **JWT revocation**: JWT tokens can't be revoked before expiration (no server-side state) — use short expirations + refresh tokens
-- **CORS vs CSRF**: CORS is about cross-origin access; CSRF is about request forgery — they address different threats
+- **JWT revocation**: JWT tokens can't be revoked before expiration (no server-side state) -- use short expirations + refresh tokens
+- **CORS vs CSRF**: CORS is about cross-origin access; CSRF is about request forgery -- they address different threats
 - **Bearer token storage**: Storing JWT in localStorage is vulnerable to XSS; httpOnly cookies are safer but require CSRF protection
-- **JWT size**: Large JWT tokens with many claims can exceed header size limits — keep claims minimal
+- **JWT size**: Large JWT tokens with many claims can exceed header size limits -- keep claims minimal

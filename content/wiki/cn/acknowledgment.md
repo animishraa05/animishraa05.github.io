@@ -39,12 +39,27 @@ digraph G {
 - Can be piggybacked on data packets (in full-duplex protocols)
 - Timeout + lack of ACK triggers retransmission
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Acknowledgment {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Acknowledgment" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[reliable-data-transfer|Reliable Data Transfer]] — core mechanism
-- Built from: [[sequence-numbers|Sequence Numbers]] — ACKs reference these
-- Related: [[piggybacking|Piggybacking]] — ACK attached to data packet
-- Related: [[cumulative-acknowledgment|Cumulative Acknowledgment]] — acknowledges through seq num
-- Contrasts with: [[negative-acknowledgment|Negative Acknowledgment]] — NAK signals failure
+- Built from: [[reliable-data-transfer|Reliable Data Transfer]] -- core mechanism
+- Built from: [[sequence-numbers|Sequence Numbers]] -- ACKs reference these
+- Related: [[piggybacking|Piggybacking]] -- ACK attached to data packet
+- Related: [[cumulative-acknowledgment|Cumulative Acknowledgment]] -- acknowledges through seq num
+- Contrasts with: [[negative-acknowledgment|Negative Acknowledgment]] -- NAK signals failure
 
 ## Edge Cases & Gotchas
 - ACK loss can cause unnecessary retransmission (sender times out)

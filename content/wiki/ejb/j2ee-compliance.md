@@ -53,11 +53,26 @@ digraph G {
 - **Vendor competition**: Compliance encourages innovation and price competition
 - **Customer confidence**: Certified products guaranteed to work per spec
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_J2EE_Compliance {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="J2Ee Compliance" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[j2ee-specification|J2EE Specification]] — compliance verifies spec implementation
-- Builds into: [[ejb-container|EJB Container]] — containers must be J2EE-compliant
-- Related: [[java-platforms|Java Platforms]] — compliance applies to J2EE platform
-- Related: [[component-architecture-soa|Component Architecture]] — compliant servers implement component model
+- Built from: [[j2ee-specification|J2EE Specification]] -- compliance verifies spec implementation
+- Builds into: [[ejb-container|EJB Container]] -- containers must be J2EE-compliant
+- Related: [[java-platforms|Java Platforms]] -- compliance applies to J2EE platform
+- Related: [[component-architecture-soa|Component Architecture]] -- compliant servers implement component model
 
 ## Edge Cases & Gotchas
 - **Incompatibilities**: Ambiguities in spec can cause vendor differences despite compliance

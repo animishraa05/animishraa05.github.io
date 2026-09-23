@@ -7,14 +7,14 @@ updated: 2026-05-04
 ---
 
 ## The Problem
-Fact tables contain quantitative metrics, but they need context—knowing that `customer_id = CUST0001` isn't useful without knowing the customer's name, city, and preferences. Dimension tables provide this descriptive context.
+Fact tables contain quantitative metrics, but they need context--knowing that `customer_id = CUST0001` isn't useful without knowing the customer's name, city, and preferences. Dimension tables provide this descriptive context.
 
 ## Core Idea
 A dimension table is a denormalized table containing descriptive attributes about a business entity. It has a primary key (often a surrogate key) that connects to foreign keys in fact tables. Each row represents one instance of a business entity (customer, restaurant, date, product).
 
 ## How It Works
 1. **Primary key**: Unique identifier for each entity (customer_id, restaurant_id, date_id)
-2. **Descriptive attributes**: All related information in one table—no need to JOIN
+2. **Descriptive attributes**: All related information in one table--no need to JOIN
 3. **Surrogate keys**: Integer-based keys like `date_id = 20240115` for performance
 4. **Computed attributes**: Feature engineering adds derived fields like `tenure_days`, `customer_segment`, `rating_band`
 
@@ -30,13 +30,42 @@ In a food delivery warehouse:
 - **Computed bands**: `pd.cut()` creates categorical bands (rating_band, price_band, performance_tier)
 - **Foreign key in fact**: Fact tables reference dimension primary keys
 
+
+
+## Visual Explanation
+
+```dot
+digraph Dimension_Table {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Dimension Table\nInput"]
+  B [label="Dimension Table\nCore Mechanism"]
+  C [label="Dimension Table\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Dimension_Table {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Dimension Table" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[wiki/comprehensive-report/star-schema|Star Schema]] — dimension tables are a core component
-- Builds into: [[wiki/comprehensive-report/fact-table|Fact Table]] — fact tables reference dimensions via foreign keys
-- Related: [[etl-pipeline|ETL Pipeline]] — ETL transforms raw data into dimension tables
-- Related: [[data-warehouse|Data Warehouse]] — dimensions are part of the warehouse schema
+- Built from: [[wiki/comprehensive-report/star-schema|Star Schema]] -- dimension tables are a core component
+- Builds into: [[wiki/comprehensive-report/fact-table|Fact Table]] -- fact tables reference dimensions via foreign keys
+- Related: [[etl-pipeline|ETL Pipeline]] -- ETL transforms raw data into dimension tables
+- Related: [[data-warehouse|Data Warehouse]] -- dimensions are part of the warehouse schema
 
 ## Edge Cases & Gotchas
 - **Hardcoded reference date**: Using fixed reference date (2024-12-31) makes tenure_days stale over time
-- **Type 1 limitation**: Customer city change overwrites history—old orders appear in new city
+- **Type 1 limitation**: Customer city change overwrites history--old orders appear in new city
 - **Low-cardinality attributes**: Attributes with 3-5 values (status, platform) belong in fact as degenerate dimensions, not separate dimension tables

@@ -7,7 +7,7 @@ updated: 2026-04-30
 ---
 
 ## The Problem
-Raw data is messy, incomplete, and unstructured — unusable for analysis or modeling without significant preprocessing.
+Raw data is messy, incomplete, and unstructured -- unusable for analysis or modeling without significant preprocessing.
 
 ## Core Idea
 The process of cleaning, structuring, and enriching raw data into a usable format for analysis and modeling.
@@ -34,11 +34,26 @@ digraph G {
 - Source-dependent: each data source has unique quality issues
 - Foundation: poor wrangling corrupts all downstream analysis
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Data_Wrangling {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Data Wrangling" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[data-science|Data Science]] — core component of the field
-- Builds into: [[exploratory-data-analysis|EDA]] — clean data enables exploration
-- Related: [[data-cleaning|Data Cleaning]] — subset focused on fixing errors
-- Related: [[data-transformation|Data Transformation]] — reshaping and converting data
+- Built from: [[data-science|Data Science]] -- core component of the field
+- Builds into: [[exploratory-data-analysis|EDA]] -- clean data enables exploration
+- Related: [[data-cleaning|Data Cleaning]] -- subset focused on fixing errors
+- Related: [[data-transformation|Data Transformation]] -- reshaping and converting data
 
 ## Edge Cases & Gotchas
 - Over-cleaning can remove meaningful outliers

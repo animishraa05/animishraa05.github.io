@@ -29,7 +29,7 @@ The DOM (Document Object Model) tree is a tree structure built by parsing HTML, 
    ```
 4. **Scripts may modify**: JavaScript can add/remove nodes
 
-The DOM is live—changes via JavaScript immediately affect the structure.
+The DOM is live--changes via JavaScript immediately affect the structure.
 
 ## Visual Explanation
 
@@ -58,13 +58,28 @@ digraph G {
 - `document.getElementById()` etc. query the DOM
 - DOM changes trigger re-rendering (reflow/repaint)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_DOM_Tree {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Dom Tree" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[browser-rendering|Browser Rendering]] — DOM is step 1
-- **Builds into:** [[render-tree|Render Tree]] — DOM + CSSOM combine
-- **Related:** [[html-parsing|HTML Parsing]] — the process that builds the DOM
-- **Related:** [[cssom|CSSOM]] — CSS counterpart to DOM
-- **Related:** [[javascript|JavaScript]] — manipulates the DOM
+- **Built from:** [[browser-rendering|Browser Rendering]] -- DOM is step 1
+- **Builds into:** [[render-tree|Render Tree]] -- DOM + CSSOM combine
+- **Related:** [[html-parsing|HTML Parsing]] -- the process that builds the DOM
+- **Related:** [[cssom|CSSOM]] -- CSS counterpart to DOM
+- **Related:** [[javascript|JavaScript]] -- manipulates the DOM
 
 ## Edge Cases & Gotchas
 

@@ -9,7 +9,7 @@ updated: 2026-04-12
 
 ## The Problem
 
-Generating images at full pixel resolution (1024x1024 = 1M pixels) directly would be computationally infeasible — the model would need to reason about millions of values per image. Diffusion models need a more efficient representation to work with.
+Generating images at full pixel resolution (1024x1024 = 1M pixels) directly would be computationally infeasible -- the model would need to reason about millions of values per image. Diffusion models need a more efficient representation to work with.
 
 ## Core Idea
 
@@ -19,11 +19,11 @@ A VAE compresses an image into a smaller "latent" representation (e.g., 128x128 
 
 ### Encoder
 
-Takes an input image and produces a compressed representation in latent space. Instead of outputting a single vector, it outputs a probability distribution (mean and variance) — this is what "variational" means.
+Takes an input image and produces a compressed representation in latent space. Instead of outputting a single vector, it outputs a probability distribution (mean and variance) -- this is what "variational" means.
 
 ### Latent Space
 
-The compressed representation lives in a lower-dimensional space. Similar images end up close together in this space. The dimensionality is a tradeoff — smaller = faster but more information loss.
+The compressed representation lives in a lower-dimensional space. Similar images end up close together in this space. The dimensionality is a tradeoff -- smaller = faster but more information loss.
 
 ### Decoder
 
@@ -35,10 +35,39 @@ Standard SDXL uses 4 channels in latent space (R, G, B, plus one extra). Flux us
 
 ## Key Properties
 
-- Lossy compression — some information is always lost
+- Lossy compression -- some information is always lost
 - Latent diffusion (LDM) runs the diffusion process in this compressed space
 - 16-channel VAE preserves more high-frequency detail than 4-channel
 
+
+
+## Visual Explanation
+
+```dot
+digraph vae {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Vae\nInput"]
+  B [label="Vae\nCore Mechanism"]
+  C [label="Vae\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_vae {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Vae" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[neural-networks]]

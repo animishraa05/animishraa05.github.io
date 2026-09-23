@@ -20,7 +20,7 @@ The selection process at each node:
 
 1. **Enumerate candidates**: List all available attributes (features) not yet used on the current path
 2. **Score each attribute**: Apply the chosen measure (Information Gain or Gini Index) to evaluate each attribute
-3. **Compare scores**: Rank attributes by their scores — highest IG or lowest Gini wins
+3. **Compare scores**: Rank attributes by their scores -- highest IG or lowest Gini wins
 4. **Select the best**: Assign the winning attribute to the current node
 5. **Create branches**: Split the data based on the selected attribute's values
 
@@ -61,19 +61,34 @@ digraph attribute_selection {
 - **Measure-dependent**: Results differ between IG and Gini, though often similar in practice
 - **Local optimization**: Best for the current node, not necessarily for the overall tree
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Attribute_Selection_Measures {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Attribute Selection " fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[information-gain|Information Gain]] — primary attribute selection measure
-- **Built from:** [[gini-index|Gini Index]] — alternative attribute selection measure
-- **Builds into:** [[decision-tree-splitting|Decision Tree Splitting]] — determines which attribute to split on
-- **Builds into:** [[root-node|Root Node]] — root is selected via attribute selection
-- **Builds into:** [[internal-node|Internal Node]] — each internal node uses attribute selection
-- **Built from:** [[entropy|Entropy]] — entropy is the foundation of Information Gain
-- **Related:** [[recursive-tree-building|Recursive Tree Building]] — attribute selection happens at every recursive step
+- **Built from:** [[information-gain|Information Gain]] -- primary attribute selection measure
+- **Built from:** [[gini-index|Gini Index]] -- alternative attribute selection measure
+- **Builds into:** [[decision-tree-splitting|Decision Tree Splitting]] -- determines which attribute to split on
+- **Builds into:** [[root-node|Root Node]] -- root is selected via attribute selection
+- **Builds into:** [[internal-node|Internal Node]] -- each internal node uses attribute selection
+- **Built from:** [[entropy|Entropy]] -- entropy is the foundation of Information Gain
+- **Related:** [[recursive-tree-building|Recursive Tree Building]] -- attribute selection happens at every recursive step
 
 ## Edge Cases & Gotchas
 
 - **ID3 bias**: Information Gain favors attributes with many distinct values (like IDs)
 - **Ties are common**: Multiple attributes may score equally; tie-breaking affects tree structure
-- **Measure choice matters**: Some datasets respond better to Gini, others to IG — no universal winner
+- **Measure choice matters**: Some datasets respond better to Gini, others to IG -- no universal winner
 - **No interaction detection**: Cannot detect that two weak attributes together would be strong

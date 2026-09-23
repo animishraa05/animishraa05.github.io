@@ -15,7 +15,7 @@ Burst Mode DMA transfers the entire block of data in one continuous operation, w
 ## How It Works
 1. DMA controller requests and gains exclusive bus control
 2. Entire data block is transferred continuously, one word/byte at a time
-3. CPU is paused/halted during the entire transfer — cannot access memory or bus
+3. CPU is paused/halted during the entire transfer -- cannot access memory or bus
 4. When transfer completes, DMA releases the bus and sends interrupt to CPU
 
 ```dot
@@ -42,19 +42,34 @@ digraph burst_dma {
 ```
 
 ## Key Properties
-- Fastest DMA mode for the transfer itself — no interruptions
+- Fastest DMA mode for the transfer itself -- no interruptions
 - CPU is completely blocked during transfer (can't even access cache if it misses)
 - Best for high-priority, time-sensitive transfers (real-time systems)
-- Simple to implement — no need for interleaving logic
+- Simple to implement -- no need for interleaving logic
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Burst_Mode_DMA {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Burst Mode Dma" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[dma|DMA]], [[dma-controller|DMA Controller]]
-- **Contrasts with:** [[cycle-stealing-mode-dma|Cycle Stealing Mode DMA]] — CPU can work between transfers
-- **Contrasts with:** [[transparent-mode-dma|Transparent Mode DMA]] — DMA only runs when CPU not using bus
-- **Related:** [[polling|Polling]] — CPU also blocked in polling, but for different reasons
+- **Contrasts with:** [[cycle-stealing-mode-dma|Cycle Stealing Mode DMA]] -- CPU can work between transfers
+- **Contrasts with:** [[transparent-mode-dma|Transparent Mode DMA]] -- DMA only runs when CPU not using bus
+- **Related:** [[polling|Polling]] -- CPU also blocked in polling, but for different reasons
 
 ## Edge Cases & Gotchas
-- Long bursts can cause CPU starvation — system becomes unresponsive
+- Long bursts can cause CPU starvation -- system becomes unresponsive
 - Not suitable for systems requiring low-latency CPU response
 - Some systems limit maximum burst size to prevent excessive CPU blocking
-- Cache coherency issues still apply — CPU cache may be stale after burst
+- Cache coherency issues still apply -- CPU cache may be stale after burst

@@ -22,7 +22,7 @@ HTTP (Hypertext Transfer Protocol) is a text-based request-response protocol tha
 4. **Processing**: Server parses the request, runs logic, possibly queries database
 5. **Response**: Server sends "HTTP/1.1 200 OK" with status code, headers, body
 
-HTTP is stateless—each request is independent. Servers don't remember previous requests from the same client.
+HTTP is stateless--each request is independent. Servers don't remember previous requests from the same client.
 
 ## Key Properties
 
@@ -32,19 +32,48 @@ HTTP is stateless—each request is independent. Servers don't remember previous
 - Headers provide metadata: Content-Type, Authorization, Cache-Control
 - Runs over TCP (port 80) or TLS (port 443 for HTTPS)
 
+
+
+## Visual Explanation
+
+```dot
+digraph HTTP_Protocol {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Http Protocol\nInput"]
+  B [label="Http Protocol\nCore Mechanism"]
+  C [label="Http Protocol\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_HTTP_Protocol {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Http Protocol" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[socket|Socket]] — HTTP runs over TCP socket connections
-- **Built from:** [[tcp-handshake|TCP Handshake]] — TCP establishes reliable connection first
-- **Builds into:** [[api|API]] — REST APIs use HTTP as the communication protocol
-- **Contrasts with:** [[websocket|WebSocket]] — WebSocket is bidirectional, HTTP is request-response
-- **Related:** [[https|HTTPS]] — HTTP over TLS encryption
-- **Related:** [[http-methods|HTTP Methods]] — specific operations defined in HTTP
-- **Related:** [[http-status-codes|HTTP Status Codes]] — response outcome codes
+- **Built from:** [[socket|Socket]] -- HTTP runs over TCP socket connections
+- **Built from:** [[tcp-handshake|TCP Handshake]] -- TCP establishes reliable connection first
+- **Builds into:** [[api|API]] -- REST APIs use HTTP as the communication protocol
+- **Contrasts with:** [[websocket|WebSocket]] -- WebSocket is bidirectional, HTTP is request-response
+- **Related:** [[https|HTTPS]] -- HTTP over TLS encryption
+- **Related:** [[http-methods|HTTP Methods]] -- specific operations defined in HTTP
+- **Related:** [[http-status-codes|HTTP Status Codes]] -- response outcome codes
 
 ## Edge Cases & Gotchas
 
-- HTTP is text-based—binary data must be encoded (Base64) or use multipart
-- No inherent state—every request must re-authenticate or send session tokens
+- HTTP is text-based--binary data must be encoded (Base64) or use multipart
+- No inherent state--every request must re-authenticate or send session tokens
 - Headers have size limits, bodies can be arbitrarily large
 - Without keep-alive, every request needs a new TCP connection (slow)

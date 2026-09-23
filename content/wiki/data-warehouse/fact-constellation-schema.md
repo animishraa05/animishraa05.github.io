@@ -8,7 +8,7 @@ updated: 2026-05-04
 
 ## The Problem
 
-A single fact table can measure only one business process. But an enterprise needs to analyze multiple processes — sales, shipping, returns, inventory — simultaneously. Each process has its own metrics and may share some dimensions (Time, Item) with others. A single star schema cannot represent this multi-process reality.
+A single fact table can measure only one business process. But an enterprise needs to analyze multiple processes -- sales, shipping, returns, inventory -- simultaneously. Each process has its own metrics and may share some dimensions (Time, Item) with others. A single star schema cannot represent this multi-process reality.
 
 ## Core Idea
 
@@ -30,7 +30,7 @@ The galaxy schema involves:
 3. **Process-specific dimensions:** Each fact table may have unique dimensions.
    - Sales has `branch_key`; Shipping has `shipper_key`, `from_location`, `to_location`.
 
-4. **Cross-process analysis:** Shared dimensions enable queries that span multiple fact tables — e.g., "Compare sales revenue to shipping cost by item category."
+4. **Cross-process analysis:** Shared dimensions enable queries that span multiple fact tables -- e.g., "Compare sales revenue to shipping cost by item category."
 
 ## Visual Explanation
 
@@ -95,16 +95,16 @@ graph semantic_constellation {
 
 ## Connections
 
-- **Built from:** [[star-schema|Star Schema]] — galaxy is an extension with multiple fact tables
-- **Related:** [[snowflake-schema|Snowflake Schema]] — both are schema variants beyond the basic star
-- **Builds into:** [[fact-table|Fact Table]] — galaxy uses multiple fact tables
-- **Builds into:** [[dimension-table|Dimension Table]] — shared dimensions connect all fact tables
-- **Builds into:** [[multidimensional-data-model|Multidimensional Data Model]] — galaxy implements the dimensional model at scale
-- **Contrasts with:** [[star-schema|Star Schema]] — star has one fact table, galaxy has many
+- **Built from:** [[star-schema|Star Schema]] -- galaxy is an extension with multiple fact tables
+- **Related:** [[snowflake-schema|Snowflake Schema]] -- both are schema variants beyond the basic star
+- **Builds into:** [[fact-table|Fact Table]] -- galaxy uses multiple fact tables
+- **Builds into:** [[dimension-table|Dimension Table]] -- shared dimensions connect all fact tables
+- **Builds into:** [[multidimensional-data-model|Multidimensional Data Model]] -- galaxy implements the dimensional model at scale
+- **Contrasts with:** [[star-schema|Star Schema]] -- star has one fact table, galaxy has many
 
 ## Edge Cases & Gotchas
 
 - **Complexity:** Managing multiple fact tables with shared and unique dimensions is significantly more complex than a single star schema.
 - **Dimension conformance:** Shared dimensions must have consistent definitions across all fact tables. If "Time" means different things in Sales vs. Shipping, cross-process analysis fails.
-- **Implementation challenge:** Galaxy schemas are difficult to design and maintain — they are the most complex of the three schema types.
+- **Implementation challenge:** Galaxy schemas are difficult to design and maintain -- they are the most complex of the three schema types.
 - **When to use:** Only needed for enterprise-level companies with genuinely distinct but related business processes.

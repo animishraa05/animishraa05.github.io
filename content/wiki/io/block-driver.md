@@ -44,6 +44,21 @@ digraph block_driver {
 - Uses buffering/caching heavily (buffers are block-sized)
 - Examples: hard disk driver, SSD driver, USB mass storage
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Block_Driver {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Block Driver" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[device-driver|Device Driver]], [[io-devices|I/O Devices]]

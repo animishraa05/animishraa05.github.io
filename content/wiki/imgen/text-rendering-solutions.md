@@ -1,5 +1,5 @@
 ---
-title: Text Rendering Solutions — Layer by Layer
+title: Text Rendering Solutions -- Layer by Layer
 type: synthesis
 tags: [ai, diffusion]
 created: 2026-04-12
@@ -18,7 +18,7 @@ This page combines three core concepts to show how the text rendering problem is
 
 ### Layer 1: Character-Aware Encoding (T5)
 
-**Problem:** CLIP is character-blind — "Lakme" and "LAKME" are the same vector.
+**Problem:** CLIP is character-blind -- "Lakme" and "LAKME" are the same vector.
 
 **Solution:** Flux uses T5-XXL alongside CLIP. T5 was trained on pure text and maintains character-level information. "L-a-k-m-e" is preserved as distinct tokens.
 
@@ -36,7 +36,7 @@ This page combines three core concepts to show how the text rendering problem is
 
 **Problem:** Even with T5 and better VAE, semantic drift can override character info during generation.
 
-**Solution:** Don't ask the model to generate letters — give it the exact stroke positions via ControlNet. Render text as a clean image, pass to ControlNet, which enforces pixel-level geometry at every denoising step.
+**Solution:** Don't ask the model to generate letters -- give it the exact stroke positions via ControlNet. Render text as a clean image, pass to ControlNet, which enforces pixel-level geometry at every denoising step.
 
 **Result:** Text is exactly correct, with style applied on top.
 
@@ -60,7 +60,35 @@ The three-layer approach works because each addresses a different failure mode a
 
 ## Related Concepts
 
-- [[hybrid-pipeline]] — uses this solution in Stage 4-5
-- [[diffusion-models]] — where the generation happens
-- [[vae]] — where compression happens
-- [[controlnet]] — the mechanism for Layer 3
+- [[hybrid-pipeline]] -- uses this solution in Stage 4-5
+- [[diffusion-models]] -- where the generation happens
+- [[vae]] -- where compression happens
+- [[controlnet]] -- the mechanism for Layer 3
+
+## Visual Explanation
+
+```dot
+digraph text_rendering_solutions {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Text Rendering Solut\nInput"]
+  B [label="Text Rendering Solut\nCore Mechanism"]
+  C [label="Text Rendering Solut\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_text_rendering_solutions {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Text Rendering Solut" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```

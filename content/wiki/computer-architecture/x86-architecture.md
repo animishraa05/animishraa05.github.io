@@ -9,7 +9,7 @@ draft: true
 
 ## The Problem
 
-Auto-created stub for broken link `[[x86-architecture]]` — needs human content.
+Auto-created stub for broken link `[[x86-architecture]]` -- needs human content.
 
 ## Formal Definition
 
@@ -17,7 +17,7 @@ Per Wikipedia: "To be written."
 
 ## Explanation
 
-Stub — fill with plain language explanation.
+Stub -- fill with plain language explanation.
 
 ## How It Works
 
@@ -59,7 +59,7 @@ graph semantic_x86-architecture {
 
 ## Connections
 
-- **Related:** [[index|Index]] — auto stub, needs proper links
+- **Related:** [[index|Index]] -- auto stub, needs proper links
 
 ## Edge Cases & Gotchas
 

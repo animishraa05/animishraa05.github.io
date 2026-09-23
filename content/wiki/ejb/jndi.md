@@ -9,7 +9,7 @@ updated: 2026-04-29
 > See also: [[ejb-naming-service|EJB Naming Service]], [[location-transparency|Location Transparency]] for EJB-specific usage.
 
 ## The Problem
-In a distributed system, how do clients locate resources like databases, EJB components, or other services? Hard-coding connection details (like IP addresses) is bad practice — we need a centralized naming service that can change without recompiling code.
+In a distributed system, how do clients locate resources like databases, EJB components, or other services? Hard-coding connection details (like IP addresses) is bad practice -- we need a centralized naming service that can change without recompiling code.
 
 ## Core Idea
 JNDI is a Java API that provides a unified interface for locating resources (objects, services) through a naming and directory service. It allows clients to look up resources by logical name rather than physical location, providing location independence and flexibility.
@@ -23,9 +23,9 @@ JNDI is a Java API that provides a unified interface for locating resources (obj
 6. Client gets reference to resource
 
 Common JNDI trees:
-- java:comp/env — application environment
-- jdbc/ — database connections
-- ejb/ — EJB references
+- java:comp/env -- application environment
+- jdbc/ -- database connections
+- ejb/ -- EJB references
 
 ## Visual Explanation
 ```dot
@@ -49,12 +49,27 @@ digraph G {
 - Hierarchical: Supports nested contexts (java:comp/env/jdbc)
 - Dependency injection: Can inject JNDI references automatically (EJB 3.x)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_JNDI {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Jndi" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[naming-service|Naming Service]] — core naming concept, [[ejb-naming-service|EJB Naming Service]] (EJB-specific usage)
-- Related: [[directory-service|Directory Service]] — adds attributes to naming
-- Builds into: [[ejb-container|EJB Container]] — EJB container registers beans in JNDI, [[location-transparency|Location Transparency]] (JNDI enables location-independent lookups)
+- Built from: [[naming-service|Naming Service]] -- core naming concept, [[ejb-naming-service|EJB Naming Service]] (EJB-specific usage)
+- Related: [[directory-service|Directory Service]] -- adds attributes to naming
+- Builds into: [[ejb-container|EJB Container]] -- EJB container registers beans in JNDI, [[location-transparency|Location Transparency]] (JNDI enables location-independent lookups)
 - Builds into: [[home-interface|Home Interface]] (what clients look up via JNDI), [[ejb-development-lifecycle|EJB Development Lifecycle]] (step 5+: deploy, then JNDI lookup)
-- Contrasts with: [[rmi-registry|RMI Registry]] — RMI Registry is a specific JNDI provider, Hard-coded addresses (JNDI is registry-based, not address-based)
+- Contrasts with: [[rmi-registry|RMI Registry]] -- RMI Registry is a specific JNDI provider, Hard-coded addresses (JNDI is registry-based, not address-based)
 - Related: [[jms-programming-model|JMS Programming Model]], [[jms|JMS]], [[cmp-abstract-accessors|CMP Abstract Accessors]], [[one-to-many-relationship|One-to-Many Relationship]], [[distributed-objects|Distributed Objects]] (clients access objects via JNDI)
 
 ## Edge Cases & Gotchas

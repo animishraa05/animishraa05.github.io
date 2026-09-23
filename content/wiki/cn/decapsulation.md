@@ -42,11 +42,26 @@ digraph G {
 - Passes payload to next higher layer
 - Errors detected at each layer (if error checking exists)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Decapsulation {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Decapsulation" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Contrasts with: [[encapsulation|Encapsulation]] — unwrapping vs wrapping
-- Built from: [[layered-model|Layered Model]] — decapsulation happens between layers
-- Related: [[protocol-header|Protocol Header]] — what gets removed
-- Related: [[error-detection|Error Detection]] — often checked during decapsulation
+- Contrasts with: [[encapsulation|Encapsulation]] -- unwrapping vs wrapping
+- Built from: [[layered-model|Layered Model]] -- decapsulation happens between layers
+- Related: [[protocol-header|Protocol Header]] -- what gets removed
+- Related: [[error-detection|Error Detection]] -- often checked during decapsulation
 
 ## Edge Cases & Gotchas
 - If a layer detects an error (bad checksum), it may discard the packet

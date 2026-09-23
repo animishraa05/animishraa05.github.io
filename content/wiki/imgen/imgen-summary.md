@@ -14,16 +14,16 @@ This source is a conversation transcript covering the design of a production-gra
 
 ## Concepts Extracted
 
-1. **Hybrid LLM-Guided Diffusion Pipeline** — Combining LLM for reasoning with diffusion for synthesis
-2. **Text Rendering Problem** — Three-layer issue: character-blind encoder, semantic drift, VAE stroke destruction
-3. **Flux Architecture** — DiT, dual encoders (CLIP + T5), 16-channel VAE, flow matching
-4. **Glyph Injection via ControlNet** — Using font rendering + spatial conditioning to solve text rendering
-5. **Diffusion Models** — Core generation mechanism (DDPM, DDIM, latent diffusion)
-6. **VAE** — Compression/decompression in latent space
-7. **CLIP** — Semantic text encoder with character-blindness
-8. **T5 Encoder** — Character-aware alternative to CLIP
-9. **LoRA Fine-tuning** — Low-rank adaptation for brand consistency
-10. **ControlNet** — Spatial conditioning for generation control
+1. **Hybrid LLM-Guided Diffusion Pipeline** -- Combining LLM for reasoning with diffusion for synthesis
+2. **Text Rendering Problem** -- Three-layer issue: character-blind encoder, semantic drift, VAE stroke destruction
+3. **Flux Architecture** -- DiT, dual encoders (CLIP + T5), 16-channel VAE, flow matching
+4. **Glyph Injection via ControlNet** -- Using font rendering + spatial conditioning to solve text rendering
+5. **Diffusion Models** -- Core generation mechanism (DDPM, DDIM, latent diffusion)
+6. **VAE** -- Compression/decompression in latent space
+7. **CLIP** -- Semantic text encoder with character-blindness
+8. **T5 Encoder** -- Character-aware alternative to CLIP
+9. **LoRA Fine-tuning** -- Low-rank adaptation for brand consistency
+10. **ControlNet** -- Spatial conditioning for generation control
 
 ## Key Takeaways
 
@@ -54,13 +54,13 @@ This source is a conversation transcript covering the design of a production-gra
 
 ## Connections
 
-- [[hybrid-pipeline|Hybrid Pipeline]] — architecture decision
-- [[text-rendering-problem|Text Rendering Problem]] — 3-layer root causes
-- [[flux-architecture|Flux Architecture]] — base model
-- [[diffusion-models|Diffusion Models]] — generation mechanism
-- [[vae|VAE]] — latent compression
-- [[clip|CLIP]] — text encoder
-- [[t5-encoder|T5 Encoder]] — character-aware encoder
-- [[glyph-injection|Glyph Injection]] — ControlNet solution
-- [[text-rendering-solutions|Text Rendering Solutions]] — synthesis created
-- [[controlnet|ControlNet]] — spatial conditioning
+- [[hybrid-pipeline|Hybrid Pipeline]] -- architecture decision
+- [[text-rendering-problem|Text Rendering Problem]] -- 3-layer root causes
+- [[flux-architecture|Flux Architecture]] -- base model
+- [[diffusion-models|Diffusion Models]] -- generation mechanism
+- [[vae|VAE]] -- latent compression
+- [[clip|CLIP]] -- text encoder
+- [[t5-encoder|T5 Encoder]] -- character-aware encoder
+- [[glyph-injection|Glyph Injection]] -- ControlNet solution
+- [[text-rendering-solutions|Text Rendering Solutions]] -- synthesis created
+- [[controlnet|ControlNet]] -- spatial conditioning

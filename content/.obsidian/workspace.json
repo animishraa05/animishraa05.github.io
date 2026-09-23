@@ -4,20 +4,41 @@
     "type": "split",
     "children": [
       {
-        "id": "5cc8362f7de019f2",
+        "id": "a85162a7ccfd815c",
         "type": "tabs",
         "children": [
           {
-            "id": "eddfe8e40b7fe1ec",
+            "id": "20e2aabcf0c132ce",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "watchlist hub.base",
-                "viewName": "movies"
+                "file": "Private/Daily/2026-09-21.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-grid",
-              "title": "watchlist hub"
+              "icon": "lucide-file",
+              "title": "2026-09-21"
+            }
+          }
+        ]
+      },
+      {
+        "id": "f65008f4f50e0a9e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "722df392c2498ba5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Private/sem 9/Cloud-computing/cloud-computing.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "cloud-computing"
             }
           }
         ]
@@ -112,19 +133,6 @@
             }
           },
           {
-            "id": "81057d1197041525",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-going-out",
-              "title": "Outgoing links"
-            }
-          },
-          {
             "id": "3dc82928583ec595",
             "type": "leaf",
             "state": {
@@ -159,7 +167,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Private/Tree/1.md",
+                "file": "Private/sem 9/Cloud-computing/chapter 1.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -187,9 +195,23 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "ccdb8fbc79dc4747",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Private/sem 9/Cloud-computing/cloud-computing.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
           }
         ],
-        "currentTab": 6
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -212,43 +234,46 @@
       "obsidian-media-db-plugin:Add new Media DB entry": false
     }
   },
-  "active": "eddfe8e40b7fe1ec",
+  "active": "fdb2d7e88a403019",
   "lastOpenFiles": [
-    "Media DB/movies/Life of Pi (2012).md",
+    "Private/sem 9/Cloud-computing/chapter 1.md",
+    "Private/sem 9/Cloud-computing/syllabus_tracker.md",
+    "Private/sem 9/Cloud-computing/GEMINI.md",
+    "Private/sem 9/Cloud-computing/cloud-computing.md",
+    "Untitled.md",
+    "Ulpf-improved.md",
+    "ULPF-SRS.md",
+    "Private/Daily/2026-09-21.md",
+    "Private/sem 9/ITM/it-and-project-management.md",
+    "Private/sem 9/OOAD/object-oriented-analysis-and-design.md",
+    "Private/sem 9/MM/multimedia-systems.md",
+    "Private/sem 9/CD/compiler-design.md",
+    "Private/sem 9/MM",
+    "Private/sem 9/CD",
+    "Private/sem 9/OOAD",
+    "Private/sem 9/ITM",
+    "Private/sem 9/Cloud-computing",
+    "Private/sem 9/cloud-computing.md",
+    "Private/sem 9/compiler-design.md",
+    "Private/system-design-notes/01. Scaling/Readme.md",
+    "privacy.md",
+    "ULPF_SRS2.md",
+    "ULPF_Architecture_Notes.md",
+    "ULPF-SRS_diagram_2.png",
+    "ULPF-SRS_diagram_5.png",
+    "srs1questionandcounter.md",
     "watchlist hub.base",
+    "Media DB/movies/Manchester by the Sea (2016).md",
+    "Media DB/movies/Life of Pi (2012).md",
     "Media DB/series/Black Sails (2014–2017).md",
     "Media DB/series/Murder Mindfully (2024–).md",
     "Media DB/movies/The Pursuit of Happyness (2006).md",
     "Media DB/series/Silicon Valley (2014–2019).md",
     "wiki/wireless-n/index.md",
-    "wiki/understanding-http-for-backend-engineers/index.md",
-    "wiki/theory-of-computation/index.md",
-    "wiki/system-design/index.md",
-    "wiki/strings/index.md",
-    "wiki/os/index.md",
-    "wiki/networking/index.md",
-    "wiki/lsp/index.md",
-    "wiki/learn-vim-progressively/index.md",
-    "wiki/java/index.md",
-    "wiki/java3/index.md",
-    "wiki/io/index.md",
-    "wiki/imgen/index.md",
-    "wiki/https/index.md",
-    "wiki/ejb/index.md",
-    "wiki/django/index.md",
-    "wiki/decision-tree/index.md",
-    "wiki/data-warehouse/index.md",
-    "wiki/data-science/index.md",
-    "wiki/computer-architecture/index.md",
     "imdb_env/bin/playwright",
     "imdb_env/lib/python3.14/site-packages/playwright/sync_api/__pycache__/_generated.cpython-314.pyc",
     "imdb_env/lib/python3.14/site-packages/playwright/sync_api/__pycache__/_context_manager.cpython-314.pyc",
     "imdb_env/lib/python3.14/site-packages/playwright/sync_api/__pycache__/__init__.cpython-314.pyc",
-    "imdb_env/lib/python3.14/site-packages/playwright/sync_api/__pycache__",
-    "imdb_env/lib/python3.14/site-packages/playwright-1.62.0.dist-info/licenses/LICENSE",
-    "imdb_env/lib/python3.14/site-packages/playwright-1.62.0.dist-info/top_level.txt",
-    "imdb_env/lib/python3.14/site-packages/playwright-1.62.0.dist-info/licenses",
-    "imdb_env/lib/python3.14/site-packages/playwright-1.62.0.dist-info/entry_points.txt",
     "imdb_env/lib/python3.14/site-packages/playwright/driver/package/lib/vite/dashboard/assets/safari-na3_-uQk.svg",
     "imdb_env/lib/python3.14/site-packages/playwright/driver/package/lib/vite/dashboard/assets/firefox-nightly-Cp5nfeDT.svg",
     "imdb_env/lib/python3.14/site-packages/playwright/driver/package/lib/vite/dashboard/assets/firefox-beta-k3eOH_eK.svg",
@@ -256,7 +281,6 @@
     "imdb_env/lib/python3.14/site-packages/playwright/driver/package/lib/vite/traceViewer/playwright-logo.svg",
     "imdb_env/lib/python3.14/site-packages/playwright/driver/package/lib/vite/recorder/playwright-logo.svg",
     "imdb_env/lib/python3.14/site-packages/playwright/driver/package/lib/vite/dashboard/playwright-logo.svg",
-    "imdb_env/lib/python3.14/site-packages/playwright/driver/package/lib/tools/dashboard/appIcon.png",
-    "imdb_env/lib/python3.14/site-packages/playwright/driver/package/lib/server/chromium/appIcon.png"
+    "imdb_env/lib/python3.14/site-packages/playwright/driver/package/lib/tools/dashboard/appIcon.png"
   ]
 }

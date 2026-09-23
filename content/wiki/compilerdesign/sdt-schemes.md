@@ -12,7 +12,7 @@ Syntax-directed definitions specify semantic rules as equations attached to prod
 
 ## Core Idea
 
-A syntax-directed translation scheme (SDT scheme) is a context-free grammar with semantic actions embedded at specific positions in the right-hand side of productions. Unlike SDDs (which declaratively specify attributes), SDT schemes prescribe an **evaluation order** — actions execute when the parser reaches their position during parsing. Actions can be placed before, between, or after the grammar symbols.
+A syntax-directed translation scheme (SDT scheme) is a context-free grammar with semantic actions embedded at specific positions in the right-hand side of productions. Unlike SDDs (which declaratively specify attributes), SDT schemes prescribe an **evaluation order** -- actions execute when the parser reaches their position during parsing. Actions can be placed before, between, or after the grammar symbols.
 
 ## How It Works
 
@@ -52,7 +52,7 @@ graph semantic_sdt_schemes {
 
   THIS -- PRE1 [label="built from" style=dashed]
   THIS -- OUT1 [label="builds into"]
-  THIS -- CON1 [label="contrasts with — SDD vs SDT scheme"]
+  THIS -- CON1 [label="contrasts with -- SDD vs SDT scheme"]
   THIS -- REL1 [label="related"]
   THIS -- REL2 [label="related"]
 }
@@ -68,15 +68,15 @@ graph semantic_sdt_schemes {
 
 ## Connections
 
-- **Built from:** [[syntax-directed-translation|Syntax-Directed Translation]] — SDT schemes are the operational form of SDDs
-- **Builds into:** [[application-of-sdts|Application of SDTs]] — SDT schemes are used for practical translation tasks
-- **Related:** [[attributed-sdt|S-Attributed and L-Attributed SDTs]] — classification of attributes in SDDs vs action placement in schemes
-- **Related:** [[intermediate-code-generation|Intermediate Code Generation]] — SDT schemes often emit intermediate code as actions
-- **Related:** [[semantic-analysis|Semantic Analysis]] — SDT schemes execute semantic checks during parsing
+- **Built from:** [[syntax-directed-translation|Syntax-Directed Translation]] -- SDT schemes are the operational form of SDDs
+- **Builds into:** [[application-of-sdts|Application of SDTs]] -- SDT schemes are used for practical translation tasks
+- **Related:** [[attributed-sdt|S-Attributed and L-Attributed SDTs]] -- classification of attributes in SDDs vs action placement in schemes
+- **Related:** [[intermediate-code-generation|Intermediate Code Generation]] -- SDT schemes often emit intermediate code as actions
+- **Related:** [[semantic-analysis|Semantic Analysis]] -- SDT schemes execute semantic checks during parsing
 
 ## Edge Cases & Gotchas
 
-- **Bottom-up middle actions:** Actions in the middle of a production must be hoisted by creating a marker non-terminal — increases grammar size
+- **Bottom-up middle actions:** Actions in the middle of a production must be hoisted by creating a marker non-terminal -- increases grammar size
 - **Side effect ordering:** When multiple actions have side effects, the order must be carefully designed
-- **Action dependencies:** An action may reference values from symbols before and after it — placement matters
+- **Action dependencies:** An action may reference values from symbols before and after it -- placement matters
 - **LL vs LR compatibility:** SDT schemes are natural for LL parsing (left-to-right execution) but require care with bottom-up parsers

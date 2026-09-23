@@ -62,19 +62,34 @@ digraph information_gain {
 - **Biased toward many-valued attributes**: Attributes with more unique values tend to have higher IG
 - **Additive across nodes**: Total IG of a tree is the sum of IG at each split
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Information_Gain {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Information Gain" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[entropy|Entropy]] — IG is the reduction in entropy after a split
-- **Builds into:** [[decision-tree-splitting|Decision Tree Splitting]] — IG determines which split to choose
-- **Built from:** [[entropy-calculation|Entropy Calculation]] — entropy values are the building blocks of IG
-- **Builds into:** [[root-node|Root Node]] — root is chosen as the attribute with highest IG
-- **Contrasts with:** [[gini-index|Gini Index]] — IG uses log-based entropy; Gini uses squared probabilities
-- **Related:** [[attribute-selection-measures|Attribute Selection Measures]] — IG is the primary selection measure
-- **Related:** [[information-gain-calculation|Information Gain Calculation]] — detailed formula and worked example
+- **Built from:** [[entropy|Entropy]] -- IG is the reduction in entropy after a split
+- **Builds into:** [[decision-tree-splitting|Decision Tree Splitting]] -- IG determines which split to choose
+- **Built from:** [[entropy-calculation|Entropy Calculation]] -- entropy values are the building blocks of IG
+- **Builds into:** [[root-node|Root Node]] -- root is chosen as the attribute with highest IG
+- **Contrasts with:** [[gini-index|Gini Index]] -- IG uses log-based entropy; Gini uses squared probabilities
+- **Related:** [[attribute-selection-measures|Attribute Selection Measures]] -- IG is the primary selection measure
+- **Related:** [[information-gain-calculation|Information Gain Calculation]] -- detailed formula and worked example
 
 ## Edge Cases & Gotchas
 
-- **ID bias**: Attributes like customer ID have maximum IG (each value is unique) but are meaningless — this led to Gain Ratio
+- **ID bias**: Attributes like customer ID have maximum IG (each value is unique) but are meaningless -- this led to Gain Ratio
 - **Zero IG**: If an attribute has the same value for all instances, IG = 0 and it should not be selected
 - **Rounding errors**: Near-zero IG values may appear positive due to floating point precision
-- **Not normalized**: IG values are absolute, not relative — a gain of 0.1 may be significant for one dataset but negligible for another
+- **Not normalized**: IG values are absolute, not relative -- a gain of 0.1 may be significant for one dataset but negligible for another

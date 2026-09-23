@@ -8,7 +8,7 @@ updated: 2026-04-30
 
 ## The Problem
 
-CPU, memory, and I/O controllers need to communicate — transferring data, addresses, and control signals. Individual wires between every pair would be impossible. A shared communication pathway is needed.
+CPU, memory, and I/O controllers need to communicate -- transferring data, addresses, and control signals. Individual wires between every pair would be impossible. A shared communication pathway is needed.
 
 ## Core Idea
 
@@ -57,6 +57,21 @@ digraph system_bus {
 - Clock speed limits transfer rate
 - Modern systems may have multiple buses (PCIe, memory bus, etc.)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_System_Bus {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="System Bus" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[io-system|I/O System]], [[cpu|CPU]], [[device-controller|Device Controller]]

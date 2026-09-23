@@ -7,7 +7,7 @@ updated: 2026-04-28
 ---
 
 ## The Problem
-When a method is called in RMI, parameters cross JVM boundaries. But the JVMs have completely separate memory spaces — they cannot share references. How does RMI handle sending regular objects as parameters?
+When a method is called in RMI, parameters cross JVM boundaries. But the JVMs have completely separate memory spaces -- they cannot share references. How does RMI handle sending regular objects as parameters?
 
 ## Core Idea
 In RMI, normal objects (non-Remote) are passed by value. The object is serialized, sent over the network, and reconstructed on the server as a completely separate copy. Changes to the copy do NOT affect the original.
@@ -43,10 +43,25 @@ digraph G {
 - State transfer: Only data is transferred, not identity
 - Default for non-Remote objects: Most parameters use this
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Pass_by_Value_in_RMI {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Pass By Value In Rmi" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[object-serialization|Object Serialization]] — mechanism for passing by value
-- Contrasts with: [[pass-by-reference-in-rmi|Pass-by-Reference in RMI]] — Remote objects use different mechanism
-- Built from: [[rmi-remote-method-invocation|RMI Remote Method Invocation]] — call context
+- Built from: [[object-serialization|Object Serialization]] -- mechanism for passing by value
+- Contrasts with: [[pass-by-reference-in-rmi|Pass-by-Reference in RMI]] -- Remote objects use different mechanism
+- Built from: [[rmi-remote-method-invocation|RMI Remote Method Invocation]] -- call context
 
 ## Edge Cases & Gotchas
 - If object contains non-serializable fields, serialization fails

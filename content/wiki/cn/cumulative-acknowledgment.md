@@ -39,11 +39,26 @@ digraph G {
 - Used by Go-Back-N and TCP (with selective ACK option available)
 - If gap detected, ACK stays at last in-order packet
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Cumulative_Acknowledgment {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Cumulative Acknowled" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[acknowledgment|Acknowledgment]] — cumulative is a type of ACK
-- Built from: [[go-back-n|Go-Back-N ARQ]] — uses cumulative ACKs
-- Built from: [[tcp|TCP]] — uses cumulative ACKs (default behavior)
-- Contrasts with: [[selective-repeat|Selective Repeat]] — individual ACKs vs cumulative
+- Built from: [[acknowledgment|Acknowledgment]] -- cumulative is a type of ACK
+- Built from: [[go-back-n|Go-Back-N ARQ]] -- uses cumulative ACKs
+- Built from: [[tcp|TCP]] -- uses cumulative ACKs (default behavior)
+- Contrasts with: [[selective-repeat|Selective Repeat]] -- individual ACKs vs cumulative
 
 ## Edge Cases & Gotchas
 - Doesn't identify which specific packets are missing (just the last contiguous one)

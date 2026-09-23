@@ -62,18 +62,33 @@ digraph service_registry {
 - **Server-side discovery**: Load balancer (Nginx, AWS ALB) queries registry and routes
 - **Caching**: Clients cache the registry locally to avoid querying on every request
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Service_Discovery_and_Registry {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Service Discovery An" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[java-microservices|Java Microservices]] — Service discovery is essential for dynamic microservice environments
-- **Built from:** [[spring-cloud|Spring Cloud]] — Spring Cloud provides Eureka-based service discovery
-- **Related:** [[spring-cloud-service-discovery|Spring Cloud Service Discovery]] — Spring Cloud's implementation with Eureka
-- **Related:** [[api-gateway-pattern|API Gateway Pattern]] — API Gateway uses service discovery to route requests
-- **Contrasts with:** [[dns|DNS]] — DNS resolves name → single IP (cached, slow to update); registry returns dynamic, health-filtered instance list
+- **Built from:** [[java-microservices|Java Microservices]] -- Service discovery is essential for dynamic microservice environments
+- **Built from:** [[spring-cloud|Spring Cloud]] -- Spring Cloud provides Eureka-based service discovery
+- **Related:** [[spring-cloud-service-discovery|Spring Cloud Service Discovery]] -- Spring Cloud's implementation with Eureka
+- **Related:** [[api-gateway-pattern|API Gateway Pattern]] -- API Gateway uses service discovery to route requests
+- **Contrasts with:** [[dns|DNS]] -- DNS resolves name → single IP (cached, slow to update); registry returns dynamic, health-filtered instance list
 
 ## Edge Cases & Gotchas
 
-- **Stale registry entries**: Instances that crash without graceful shutdown (kill -9) leave stale entries — heartbeats eventually evict them
-- **Registry SPOF**: The registry itself must be highly available — run in cluster mode
-- **Cache staleness**: Client-cached instance lists may point to dead instances — use circuit breakers and retries
-- **Bootstrap problem**: Clients need to know registry location before they can discover services — use well-known DNS or static config
+- **Stale registry entries**: Instances that crash without graceful shutdown (kill -9) leave stale entries -- heartbeats eventually evict them
+- **Registry SPOF**: The registry itself must be highly available -- run in cluster mode
+- **Cache staleness**: Client-cached instance lists may point to dead instances -- use circuit breakers and retries
+- **Bootstrap problem**: Clients need to know registry location before they can discover services -- use well-known DNS or static config
 - **Multi-datacenter**: Registry should prefer instances in the same datacenter/region (zone affinity) to reduce latency

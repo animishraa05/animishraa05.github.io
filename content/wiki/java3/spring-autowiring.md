@@ -20,7 +20,7 @@ Autowiring is Spring's automatic dependency resolution mechanism. The container 
 2. **Constructor injection** (preferred): Container resolves constructor parameter types and provides matching beans
 3. **Setter injection**: Container calls the setter with the resolved dependency after instantiation
 4. **Disambiguation**: If multiple beans of the same type exist, `@Primary` marks the preferred one; `@Qualifier("beanName")` selects by name
-5. **Optional dependencies**: `@Autowired(required=false)` — if no bean is found, leaves field as null
+5. **Optional dependencies**: `@Autowired(required=false)` -- if no bean is found, leaves field as null
 6. **@Resource**: JSR-250 annotation, resolves by bean name (field name) first, then by type
 
 ## Visual Explanation
@@ -49,24 +49,39 @@ digraph autowiring {
 
 ## Key Properties
 
-- **Mode byType**: Default behavior — Spring matches by field/constructor parameter type
+- **Mode byType**: Default behavior -- Spring matches by field/constructor parameter type
 - **Mode byName**: Matches field name to bean ID (used with `@Resource`)
 - **@Primary**: Marks a bean as the preferred choice when multiple candidates exist
 - **@Qualifier**: Selects a specific bean by name when type alone is ambiguous
 - **Constructor injection preferred**: Immutable dependencies, required by default, better testability
 - **Field injection**: Simplest but makes testing harder (no way to set field without reflection)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Spring_Autowiring {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Spring Autowiring" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[spring-ioc-container|Spring IoC Container]] — Autowiring is the DI resolution mechanism within the container
-- **Built from:** [[spring-framework|Spring Framework]] — Autowiring is a core Spring DI feature
-- **Related:** [[spring-bean-lifecycle|Spring Bean Lifecycle]] — Autowiring executes during the dependency injection phase
-- **Related:** [[spring-annotations|Spring Annotations]] — @Autowired, @Qualifier, @Primary are Spring annotations
-- **Contrasts with:** [[ejb-context|EJB Context]] — EJB's JNDI lookup is explicit; Spring autowiring is implicit
+- **Built from:** [[spring-ioc-container|Spring IoC Container]] -- Autowiring is the DI resolution mechanism within the container
+- **Built from:** [[spring-framework|Spring Framework]] -- Autowiring is a core Spring DI feature
+- **Related:** [[spring-bean-lifecycle|Spring Bean Lifecycle]] -- Autowiring executes during the dependency injection phase
+- **Related:** [[spring-annotations|Spring Annotations]] -- @Autowired, @Qualifier, @Primary are Spring annotations
+- **Contrasts with:** [[ejb-context|EJB Context]] -- EJB's JNDI lookup is explicit; Spring autowiring is implicit
 
 ## Edge Cases & Gotchas
 
-- **NoUniqueBeanDefinitionException**: Multiple beans of same type without @Primary or @Qualifier — the most common autowiring error
+- **NoUniqueBeanDefinitionException**: Multiple beans of same type without @Primary or @Qualifier -- the most common autowiring error
 - **Field injection in unit tests**: Need reflection or Spring test runner; constructor injection avoids this entirely
-- **Circular dependency with constructor injection**: Unresolvable — use @Lazy on one side or switch to setter injection
+- **Circular dependency with constructor injection**: Unresolvable -- use @Lazy on one side or switch to setter injection
 - **@Autowired on final fields**: Fails because Spring uses reflection to set fields but final fields can't be set via reflection after construction

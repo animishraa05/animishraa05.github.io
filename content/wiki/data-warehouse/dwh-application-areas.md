@@ -18,31 +18,31 @@ Data warehousing is an abstract concept until it is connected to real business p
 
 Each industry applies the warehouse to its unique analytical challenges:
 
-1. **Finance — Credit Card Analysis:**
+1. **Finance -- Credit Card Analysis:**
    - Analyze spending patterns, identify high-value customers, detect unusual transaction patterns.
    - Cross-sell financial products based on transaction history.
 
-2. **Insurance — Claims and Fraud Analysis:**
+2. **Insurance -- Claims and Fraud Analysis:**
    - Analyze claim patterns to identify fraudulent claims.
    - Historical trend analysis for risk assessment and premium pricing.
 
-3. **Telecommunications — Call Record Analysis:**
+3. **Telecommunications -- Call Record Analysis:**
    - Analyze call patterns, peak usage times, and customer churn.
    - Optimize network capacity based on usage trends.
 
-4. **Transport — Logistics Management:**
+4. **Transport -- Logistics Management:**
    - Optimize routing, fleet utilization, and delivery schedules.
    - Historical analysis of delays and their causes.
 
-5. **Consumer Goods — Promotion Analysis:**
+5. **Consumer Goods -- Promotion Analysis:**
    - Measure promotion effectiveness across regions and time periods.
    - Compare sales performance before, during, and after promotional campaigns.
 
-6. **Data Service Providers — Value-Added Data:**
+6. **Data Service Providers -- Value-Added Data:**
    - Combine multiple data sources to create new analytical products.
    - Sell enriched, analyzed data to third parties.
 
-7. **Utilities — Power Usage Analysis:**
+7. **Utilities -- Power Usage Analysis:**
    - Analyze consumption patterns for demand forecasting.
    - Identify peak usage periods for capacity planning.
 
@@ -112,11 +112,11 @@ graph semantic_applications {
 
 ## Connections
 
-- **Built from:** [[data-warehouse-definition|Data Warehouse Definition]] — applications demonstrate the definition in practice
-- **Built from:** [[oltp-vs-olap|OLTP vs OLAP]] — each application uses OLAP, not OLTP
-- **Related:** [[dwh-benefits|DWH Benefits]] — applications realize the benefits
-- **Related:** [[subject-oriented-dwh|Subject-Oriented DWH]] — each application organizes data around business subjects
-- **Builds into:** [[multidimensional-data-model|Multidimensional Data Model]] — applications analyze data along multiple dimensions
+- **Built from:** [[data-warehouse-definition|Data Warehouse Definition]] -- applications demonstrate the definition in practice
+- **Built from:** [[oltp-vs-olap|OLTP vs OLAP]] -- each application uses OLAP, not OLTP
+- **Related:** [[dwh-benefits|DWH Benefits]] -- applications realize the benefits
+- **Related:** [[subject-oriented-dwh|Subject-Oriented DWH]] -- each application organizes data around business subjects
+- **Builds into:** [[multidimensional-data-model|Multidimensional Data Model]] -- applications analyze data along multiple dimensions
 
 ## Edge Cases & Gotchas
 

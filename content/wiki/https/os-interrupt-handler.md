@@ -44,15 +44,30 @@ digraph G {
 
 - Interrupt Vector Table maps IRQ numbers to handler functions
 - Handlers run in kernel mode (privileged)
-- Must be fast—blocking handler blocks entire system
+- Must be fast--blocking handler blocks entire system
 - After handler, CPU resumes previous task
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_OS_Interrupt_Handler {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Os Interrupt Handler" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[keyboard-interrupt|Keyboard Interrupt]] — handler processes keyboard IRQs
-- **Builds into:** [[browser-autocomplete|Browser Autocomplete]] — key events go to browser
-- **Related:** [[interrupt-vector-table|Interrupt Vector Table]] — lookup table for handlers
-- **Related:** [[kernel-mode|Kernel Mode]] — handlers run with full privileges
+- **Built from:** [[keyboard-interrupt|Keyboard Interrupt]] -- handler processes keyboard IRQs
+- **Builds into:** [[browser-autocomplete|Browser Autocomplete]] -- key events go to browser
+- **Related:** [[interrupt-vector-table|Interrupt Vector Table]] -- lookup table for handlers
+- **Related:** [[kernel-mode|Kernel Mode]] -- handlers run with full privileges
 
 ## Edge Cases & Gotchas
 

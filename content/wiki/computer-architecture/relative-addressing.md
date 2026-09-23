@@ -17,7 +17,7 @@ Relative Addressing computes the target address by adding an offset to the Progr
 2. CPU reads current PC (address of current instruction)
 3. Target address = PC + offset
 4. Used primarily for branch and jump instructions
-5. Example: `JMP 10` — jumps to address (PC + 10)
+5. Example: `JMP 10` -- jumps to address (PC + 10)
 
 ```dot
 digraph relative {
@@ -41,10 +41,25 @@ digraph relative {
 - Used for conditional/unconditional branches, function calls
 - Most common addressing mode for control flow instructions
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Relative_Addressing {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Relative Addressing" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[addressing-mode|Addressing Mode]], [[program-counter|Program Counter]]
 - **Related:** [[branch-instruction|Branch Instruction]], [[jump-instruction|Jump Instruction]]
-- **Contrasts with:** [[direct-addressing|Direct Addressing]] — fixed address, not relative
+- **Contrasts with:** [[direct-addressing|Direct Addressing]] -- fixed address, not relative
 - **Builds into:** [[loop|Loop]], [[function-call|Function Call]]
 
 ## Edge Cases & Gotchas

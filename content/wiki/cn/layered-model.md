@@ -42,12 +42,27 @@ digraph G {
 - Service abstraction: upper layers don't need to know lower layer details
 - Two main models: OSI (7 layers) and TCP/IP (4-5 layers)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Layered_Model {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Layered Model" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[encapsulation|Encapsulation]] — wrapping data with headers
-- Built from: [[service|Service]] — what each layer provides
-- Built from: [[protocol|Protocol]] — how peers communicate at each layer
-- Related: [[tcp-ip-model|TCP/IP Model]] — practical 4-layer model
-- Related: [[osi-model|OSI Model]] — conceptual 7-layer model
+- Built from: [[encapsulation|Encapsulation]] -- wrapping data with headers
+- Built from: [[service|Service]] -- what each layer provides
+- Built from: [[protocol|Protocol]] -- how peers communicate at each layer
+- Related: [[tcp-ip-model|TCP/IP Model]] -- practical 4-layer model
+- Related: [[osi-model|OSI Model]] -- conceptual 7-layer model
 
 ## Edge Cases & Gotchas
 - Strict layering can reduce efficiency (extra headers, processing)

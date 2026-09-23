@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Arrays have a fixed size — once created, they cannot grow or shrink. For most applications, the number of elements is not known in advance. A data structure that can grow and shrink dynamically while providing array-like O(1) indexed access is essential.
+Arrays have a fixed size -- once created, they cannot grow or shrink. For most applications, the number of elements is not known in advance. A data structure that can grow and shrink dynamically while providing array-like O(1) indexed access is essential.
 
 ## Core Idea
 
@@ -73,14 +73,14 @@ graph semantic_arraylist {
 
 ## Connections
 
-- **Built from:** [[java-collections-framework|Java Collections Framework]] — ArrayList implements the List interface
-- **Built from:** [[java-arrays|Java Arrays]] — ArrayList is backed by an Object[] array
-- **Contrasts with:** [[java-collections-framework|Collections Framework]] — ArrayList is for random access; LinkedList is better for insert/delete at ends
-- **Related:** [[java-hashmap|HashMap]] — both are the most commonly used collection implementations
+- **Built from:** [[java-collections-framework|Java Collections Framework]] -- ArrayList implements the List interface
+- **Built from:** [[java-arrays|Java Arrays]] -- ArrayList is backed by an Object[] array
+- **Contrasts with:** [[java-collections-framework|Collections Framework]] -- ArrayList is for random access; LinkedList is better for insert/delete at ends
+- **Related:** [[java-hashmap|HashMap]] -- both are the most commonly used collection implementations
 
 ## Edge Cases & Gotchas
 
 - **Capacity not the same as size**: `size()` returns actual element count, not array capacity
-- **SubList is a view**: `subList()` returns a view backed by the original list — modifying either affects both
+- **SubList is a view**: `subList()` returns a view backed by the original list -- modifying either affects both
 - **trimToSize()**: Reduces capacity to current size to save memory
 - **Not synchronized**: Use `Collections.synchronizedList()` or `CopyOnWriteArrayList` for thread safety

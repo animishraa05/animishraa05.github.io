@@ -7,7 +7,7 @@ updated: 2026-04-14
 ---
 
 ## The Problem
-Marketers need to segment customers into actionable groups—like "champions" who buy frequently and recently, or "at-risk" who used to buy but haven't ordered recently. Simple counts aren't enough—they need behavioral segmentation based on purchase patterns.
+Marketers need to segment customers into actionable groups--like "champions" who buy frequently and recently, or "at-risk" who used to buy but haven't ordered recently. Simple counts aren't enough--they need behavioral segmentation based on purchase patterns.
 
 ## Core Idea
 RFM (Recency, Frequency, Monetary) is a customer segmentation technique that scores each customer on three dimensions:
@@ -38,17 +38,46 @@ Each dimension is scored 1-5 using NTILE(5), then combined into 9 actionable seg
 | Can't Lose Them | 3+ | ≤2 | 3+ |
 
 ## Key Properties
-- **NTILE(5)**: Equal-frequency binning—each quintile has ~20% of customers
+- **NTILE(5)**: Equal-frequency binning--each quintile has ~20% of customers
 - **9 segments**: Standard marketing framework with actionable insights
 - **SQL implementation**: Uses window functions (NTILE) and CASE expressions
 - **Business value**: Directs marketing resources to highest-value segments
 
+
+
+## Visual Explanation
+
+```dot
+digraph RFM_Segmentation {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Rfm Segmentation\nInput"]
+  B [label="Rfm Segmentation\nCore Mechanism"]
+  C [label="Rfm Segmentation\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_RFM_Segmentation {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Rfm Segmentation" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Related: [[customer-lifetime-value|Customer Lifetime Value]] — CLV is closely related to RFM monetary dimension
-- Related: [[data-warehouse|Data Warehouse]] — RFM queries run against warehouse
-- Related: [[etl-pipeline|ETL Pipeline]] — customer data prepared by ETL
+- Related: [[customer-lifetime-value|Customer Lifetime Value]] -- CLV is closely related to RFM monetary dimension
+- Related: [[data-warehouse|Data Warehouse]] -- RFM queries run against warehouse
+- Related: [[etl-pipeline|ETL Pipeline]] -- customer data prepared by ETL
 
 ## Edge Cases & Gotchas
 - **Zero orders**: Customers with no orders require LEFT JOIN, result in NULL/zero values
-- **Equal-frequency binning**: NTILE creates equal groups, not equal ranges—outliers affect scores
-- **Static segmentation**: Updates only when ETL runs—not real-time
+- **Equal-frequency binning**: NTILE creates equal groups, not equal ranges--outliers affect scores
+- **Static segmentation**: Updates only when ETL runs--not real-time

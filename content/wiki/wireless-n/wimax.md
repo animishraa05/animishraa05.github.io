@@ -45,15 +45,44 @@ WiMAX (IEEE 802.16) is a metropolitan area wireless broadband standard providing
 - OFDM for efficient spectrum and multi-path resistance
 - Both fixed (line-of-sight) and mobile (non-line-of-sight) profiles
 
+
+
+## Visual Explanation
+
+```dot
+digraph WiMAX {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Wimax\nInput"]
+  B [label="Wimax\nCore Mechanism"]
+  C [label="Wimax\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_WiMAX {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Wimax" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Related: [[ieee-802-11|IEEE 802.11]] — Wi-Fi's competitor for local area networking
-- Related: [[wimax-vs-wifi|WiMAX vs Wi-Fi]] — comparison of metropolitan vs. local area wireless
-- Related: [[lte|LTE]] — WiMAX's main competitor as 4G technology
-- Related: [[ofdm|OFDM]] — the modulation technique used in WiMAX, Wi-Fi, and LTE
-- Related: [[zigbee|ZigBee]] — another 802.15 standard for low-rate WPAN
+- Related: [[ieee-802-11|IEEE 802.11]] -- Wi-Fi's competitor for local area networking
+- Related: [[wimax-vs-wifi|WiMAX vs Wi-Fi]] -- comparison of metropolitan vs. local area wireless
+- Related: [[lte|LTE]] -- WiMAX's main competitor as 4G technology
+- Related: [[ofdm|OFDM]] -- the modulation technique used in WiMAX, Wi-Fi, and LTE
+- Related: [[zigbee|ZigBee]] -- another 802.15 standard for low-rate WPAN
 
 ## Edge Cases & Gotchas
-- WiMAX spectrum is licensed — operators must buy licenses
+- WiMAX spectrum is licensed -- operators must buy licenses
 - WiMAX never achieved the scale that LTE did (Wi-Fi won local, LTE won mobile)
 - Many WiMAX operators migrated to LTE
 - Line-of-sight fixed WiMAX (802.16-2004) was an alternative to DSL but never scaled

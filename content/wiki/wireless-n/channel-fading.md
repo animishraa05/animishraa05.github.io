@@ -15,8 +15,8 @@ Channel fading refers to variations in received signal amplitude and phase over 
 ## How It Works
 1. The transmitted signal travels via multiple paths (multipath propagation)
 2. Each copy has a different phase (determined by path length)
-3. When copies add up in phase, they create constructive interference — signal strength increases
-4. When copies are out of phase, they create destructive interference — signal strength decreases
+3. When copies add up in phase, they create constructive interference -- signal strength increases
+4. When copies are out of phase, they create destructive interference -- signal strength decreases
 5. As the mobile device moves, the relative path lengths change continuously, causing rapid strength fluctuations
 
 Fading typically follows statistical distributions: Rayleigh fading when there is no dominant direct path (typical in urban environments), Rician fading when there is a dominant line-of-sight component.
@@ -28,14 +28,43 @@ Fading typically follows statistical distributions: Rayleigh fading when there i
 - Frequency-selective fading: Different frequencies fade differently if the channel bandwidth exceeds the coherence bandwidth
 - Time-varying: The channel changes continuously as the device moves
 
+
+
+## Visual Explanation
+
+```dot
+digraph Channel_Fading {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Channel Fading\nInput"]
+  B [label="Channel Fading\nCore Mechanism"]
+  C [label="Channel Fading\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Channel_Fading {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Channel Fading" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[multipath-propagation|Multipath Propagation]] — fading is caused by the constructive/destructive superposition of multipath signals
-- Related: [[diversity-antenna|Diversity Antenna]] — diversity techniques combat fading by receiving signals via multiple independent paths
-- Related: [[spread-spectrum|Spread Spectrum]] — spreading the signal over a wide bandwidth reduces the impact of narrowband fading
-- Related: [[modulation|Modulation]] — robust modulation schemes (like PSK with coding) are more resilient to fading
+- Built from: [[multipath-propagation|Multipath Propagation]] -- fading is caused by the constructive/destructive superposition of multipath signals
+- Related: [[diversity-antenna|Diversity Antenna]] -- diversity techniques combat fading by receiving signals via multiple independent paths
+- Related: [[spread-spectrum|Spread Spectrum]] -- spreading the signal over a wide bandwidth reduces the impact of narrowband fading
+- Related: [[modulation|Modulation]] -- robust modulation schemes (like PSK with coding) are more resilient to fading
 
 ## Edge Cases & Gotchas
-- Fading is most severe at certain speeds — too slow and the channel doesn't change enough for diversity; too fast and tracking becomes impossible
+- Fading is most severe at certain speeds -- too slow and the channel doesn't change enough for diversity; too fast and tracking becomes impossible
 - Fading margins (extra signal power) must be built into link budgets to ensure reliable communication
-- Simple path loss models (free space) do not account for fading — realistic models need shadowing and multipath components
+- Simple path loss models (free space) do not account for fading -- realistic models need shadowing and multipath components
 - Diversity combining (selection, maximal ratio combining) can provide 10–30 dB of improvement

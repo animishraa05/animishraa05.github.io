@@ -25,15 +25,44 @@ Multiplexing is the technique of combining multiple signals into a single shared
 - CDMA: All users share all resources; soft capacity (interference-limited); requires sophisticated power control
 - Can be combined: GSM uses both FDMA (carrier frequencies) and TDMA (time slots within each frequency)
 
+
+
+## Visual Explanation
+
+```dot
+digraph Multiplexing {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Multiplexing\nInput"]
+  B [label="Multiplexing\nCore Mechanism"]
+  C [label="Multiplexing\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Multiplexing {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Multiplexing" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[modulation|Modulation]] — multiplexing allows different modulated carriers to coexist
-- Built into: [[gsm|GSM]] — GSM uses FDMA + TDMA for channel access
-- Built into: [[cellular-mobile-system|Cellular Mobile System]] — frequency reuse is a form of space-division multiplexing
-- Related: [[code-division-multiple-access|CDMA]] — code-based multiplexing
-- Related: [[frequency-reuse|Frequency Reuse]] — spatial multiplexing through geographical separation
+- Built from: [[modulation|Modulation]] -- multiplexing allows different modulated carriers to coexist
+- Built into: [[gsm|GSM]] -- GSM uses FDMA + TDMA for channel access
+- Built into: [[cellular-mobile-system|Cellular Mobile System]] -- frequency reuse is a form of space-division multiplexing
+- Related: [[code-division-multiple-access|CDMA]] -- code-based multiplexing
+- Related: [[frequency-reuse|Frequency Reuse]] -- spatial multiplexing through geographical separation
 
 ## Edge Cases & Gotchas
 - Guard bands (FDMA) and guard times (TDMA) waste some capacity to prevent interference
-- CDMA is interference-limited — adding more users degrades quality for all users (soft capacity)
-- TDMA requires precise synchronization — clock drift can cause slot misalignment
+- CDMA is interference-limited -- adding more users degrades quality for all users (soft capacity)
+- TDMA requires precise synchronization -- clock drift can cause slot misalignment
 - CDMA codes must be orthogonal to minimize self-interference

@@ -1,5 +1,5 @@
 ---
-title: CMP vs BMP — Entity Bean Persistence
+title: CMP vs BMP -- Entity Bean Persistence
 type: comparison
 tags: [dev, ejb, persistence]
 created: 2026-04-11
@@ -55,8 +55,37 @@ Entity beans represent persistent data in EJB. The key architectural decision is
 
 ## Key Insight
 
-CMP is the EJB "magic"—the container does the heavy lifting. BMP gives you the keys to the car. Choose based on your team's expertise and the complexity of your data access needs.
+CMP is the EJB "magic"--the container does the heavy lifting. BMP gives you the keys to the car. Choose based on your team's expertise and the complexity of your data access needs.
 
+
+
+## Visual Explanation
+
+```dot
+digraph cmp_vs_bmp {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Cmp Vs Bmp\nInput"]
+  B [label="Cmp Vs Bmp\nCore Mechanism"]
+  C [label="Cmp Vs Bmp\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_cmp_vs_bmp {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Cmp Vs Bmp" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - [[container-managed-persistence|Container-Managed Persistence]]

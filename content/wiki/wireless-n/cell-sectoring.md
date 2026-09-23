@@ -30,16 +30,45 @@ The effective reuse factor improves by a factor equal to the number of sectors: 
 - Common configuration: 3 sectors per cell (120° each)
 - Sectors can overlap at boundaries, enabling soft handoff zones
 
+
+
+## Visual Explanation
+
+```dot
+digraph Cell_Sectoring {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Cell Sectoring\nInput"]
+  B [label="Cell Sectoring\nCore Mechanism"]
+  C [label="Cell Sectoring\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Cell_Sectoring {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Cell Sectoring" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[cellular-mobile-system|Cellular Mobile System]] — sectoring is a capacity enhancement technique for cellular systems
-- Built from: [[antenna-types|Antenna Types]] — sectoring uses directional antennas
-- Built from: [[frequency-reuse|Frequency Reuse]] — sectoring improves effective frequency reuse
-- Related: [[cell-splitting|Cell Splitting]] — another capacity enhancement technique
-- Related: [[co-channel-interference|Co-Channel Interference]] — sectoring directly reduces this
-- Related: [[gsm-architecture|GSM Architecture]] — GSM BTS supports sectorized deployments
+- Built from: [[cellular-mobile-system|Cellular Mobile System]] -- sectoring is a capacity enhancement technique for cellular systems
+- Built from: [[antenna-types|Antenna Types]] -- sectoring uses directional antennas
+- Built from: [[frequency-reuse|Frequency Reuse]] -- sectoring improves effective frequency reuse
+- Related: [[cell-splitting|Cell Splitting]] -- another capacity enhancement technique
+- Related: [[co-channel-interference|Co-Channel Interference]] -- sectoring directly reduces this
+- Related: [[gsm-architecture|GSM Architecture]] -- GSM BTS supports sectorized deployments
 
 ## Edge Cases & Gotchas
 - Sectors can cause coverage gaps at their boundaries
 - Requires careful RF planning to ensure uniform coverage
-- Sector boundaries are not static — they shift with traffic load and seasonal foliage
+- Sector boundaries are not static -- they shift with traffic load and seasonal foliage
 - Ping-pong handovers can occur at sector boundaries

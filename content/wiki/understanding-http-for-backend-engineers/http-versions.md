@@ -9,7 +9,7 @@ updated: 2026-04-12
 
 ## The Problem
 
-Early HTTP was inefficient—each request opened a new TCP connection, adding latency. The protocol needed evolution to handle modern web scale.
+Early HTTP was inefficient--each request opened a new TCP connection, adding latency. The protocol needed evolution to handle modern web scale.
 
 ## Core Idea
 
@@ -20,7 +20,7 @@ HTTP has evolved through four major versions, each adding performance and capabi
 ### HTTP 1.0 (1991)
 
 - Each request opens a new TCP connection
-- No persistent connections—significant latency
+- No persistent connections--significant latency
 - Text-based protocol
 
 ### HTTP 1.1 (1997)
@@ -53,6 +53,35 @@ HTTP has evolved through four major versions, each adding performance and capabi
 | 2.0     | TCP/binary     | Multiplexing, server push |
 | 3.0     | QUIC/UDP       | No HOL blocking           |
 
+
+
+## Visual Explanation
+
+```dot
+digraph true {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="True\nInput"]
+  B [label="True\nCore Mechanism"]
+  C [label="True\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_true {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="True" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Evolves from:** [[http|HTTP]] (the protocol)
@@ -64,4 +93,4 @@ HTTP has evolved through four major versions, each adding performance and capabi
 
 - HTTP/2 doesn't require encryption (but browsers only support h2 over TLS)
 - HTTP/3 still has limited server support
-- HTTP/1.1 pipelining was disabled due to bugs—HTTP/2 fixed this
+- HTTP/1.1 pipelining was disabled due to bugs--HTTP/2 fixed this

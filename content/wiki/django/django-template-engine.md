@@ -54,12 +54,41 @@ A template is like a form letter (mad libs). The structure of the letter is stat
 - Supports template inheritance (DRY principle).
 - Intentionally restricts execution of arbitrary Python code to enforce separation of logic and presentation.
 
+
+
+## Visual Explanation
+
+```dot
+digraph Django_Template_Engine {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Django Template Engi\nInput"]
+  B [label="Django Template Engi\nCore Mechanism"]
+  C [label="Django Template Engi\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Django_Template_Engine {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Django Template Engi" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[django-view|Django View]] — views render templates.
-- **Related:** [[django-web-framework|Django Web Framework]] — the built in UI layer.
-- **Related:** [[django-app|Django App]] — templates are usually stored in app directories.
-- **Related:** [[django-rest-framework|Django REST Framework]] — an alternative to templates when building APIs.
+- **Built from:** [[django-view|Django View]] -- views render templates.
+- **Related:** [[django-web-framework|Django Web Framework]] -- the built in UI layer.
+- **Related:** [[django-app|Django App]] -- templates are usually stored in app directories.
+- **Related:** [[django-rest-framework|Django REST Framework]] -- an alternative to templates when building APIs.
 
 ## Edge Cases & Gotchas
 

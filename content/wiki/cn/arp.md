@@ -41,11 +41,26 @@ digraph G {
 - Maintains ARP cache to avoid repeated lookups
 - Works at the link layer (between network and link layers)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_ARP {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Arp" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[ip-protocol|IP Protocol]] — resolves IP addresses
-- Built from: [[mac-address|MAC Address]] — what ARP discovers
-- Related: [[local-area-network|LAN]] — operates within single network
-- Related: [[arp-cache|ARP Cache]] — stores recent resolutions
+- Built from: [[ip-protocol|IP Protocol]] -- resolves IP addresses
+- Built from: [[mac-address|MAC Address]] -- what ARP discovers
+- Related: [[local-area-network|LAN]] -- operates within single network
+- Related: [[arp-cache|ARP Cache]] -- stores recent resolutions
 
 ## Edge Cases & Gotchas
 - ARP spoofing/poisoning: attacker can send fake ARP replies to intercept traffic

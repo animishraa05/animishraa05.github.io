@@ -58,11 +58,40 @@ class Post(models.Model):
 - Keeps views thin by moving complex ORM filters to the model layer.
 - A model can have multiple managers.
 
+
+
+## Visual Explanation
+
+```dot
+digraph Django_Model_Manager {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Django Model Manager\nInput"]
+  B [label="Django Model Manager\nCore Mechanism"]
+  C [label="Django Model Manager\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Django_Model_Manager {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Django Model Manager" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[django-orm|Django ORM]] — an extension point of the ORM.
-- **Related:** [[django-model|Django Model]] — attached to models.
-- **Related:** [[django-query-optimization|Django Query Optimization]] — custom managers are great places to put `select_related`.
+- **Built from:** [[django-orm|Django ORM]] -- an extension point of the ORM.
+- **Related:** [[django-model|Django Model]] -- attached to models.
+- **Related:** [[django-query-optimization|Django Query Optimization]] -- custom managers are great places to put `select_related`.
 
 ## Edge Cases & Gotchas
 

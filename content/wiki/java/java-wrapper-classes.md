@@ -69,14 +69,14 @@ graph semantic_wrappers {
 
 ## Connections
 
-- **Built from:** [[java-data-types|Java Data Types]] — each wrapper corresponds to a primitive type
-- **Builds into:** [[java-collections-framework|Java Collections Framework]] — collections require object types, enabled by wrappers
-- **Related:** [[java-memory-management|Java Memory Management]] — wrappers live on the heap, primitives on the stack
-- **Related:** [[java-strings|Java Strings]] — strings are also immutable objects with similar behavior patterns
+- **Built from:** [[java-data-types|Java Data Types]] -- each wrapper corresponds to a primitive type
+- **Builds into:** [[java-collections-framework|Java Collections Framework]] -- collections require object types, enabled by wrappers
+- **Related:** [[java-memory-management|Java Memory Management]] -- wrappers live on the heap, primitives on the stack
+- **Related:** [[java-strings|Java Strings]] -- strings are also immutable objects with similar behavior patterns
 
 ## Edge Cases & Gotchas
 
 - **== vs equals() for wrappers**: `new Integer(100) == new Integer(100)` is false (different objects)
 - **NullPointerException**: Unboxing a null wrapper throws NPE: `Integer x = null; int y = x;` crashes
-- **Performance penalty**: Autoboxing creates unnecessary objects in loops — use primitives for math-heavy code
+- **Performance penalty**: Autoboxing creates unnecessary objects in loops -- use primitives for math-heavy code
 - **Cache boundary**: `Integer.valueOf(200) != Integer.valueOf(200)` is true (outside cache range)

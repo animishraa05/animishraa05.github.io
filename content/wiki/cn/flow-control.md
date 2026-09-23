@@ -44,14 +44,29 @@ digraph G {
 - Implemented via sliding window with receiver-advertised limits
 - Distinct from congestion control (which responds to network conditions)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Flow_Control {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Flow Control" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[sliding-window-protocol|Sliding Window Protocol]] — mechanism for window management
-- Built from: [[receiver-buffer|Receiver Buffer]] — the resource being protected
-- Builds into: [[tcp|TCP]] — implements flow control via receive window
-- Related: [[connection-oriented-service|Connection-Oriented Service]] — key feature
-- Contrasts with: [[congestion-control|Congestion Control]] — receiver vs network limited
+- Built from: [[sliding-window-protocol|Sliding Window Protocol]] -- mechanism for window management
+- Built from: [[receiver-buffer|Receiver Buffer]] -- the resource being protected
+- Builds into: [[tcp|TCP]] -- implements flow control via receive window
+- Related: [[connection-oriented-service|Connection-Oriented Service]] -- key feature
+- Contrasts with: [[congestion-control|Congestion Control]] -- receiver vs network limited
 
 ## Edge Cases & Gotchas
 - Zero-window condition: receiver advertises window=0, sender must probe periodically
 - Silly window syndrome: small window updates can cause inefficient small transmissions
-- Flow control doesn't prevent network congestion — that's congestion control's job
+- Flow control doesn't prevent network congestion -- that's congestion control's job

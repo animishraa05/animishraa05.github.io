@@ -17,8 +17,8 @@ When an interviewer asks "array or unordered_map?" the strong answer is not a do
 ## How It Works
 
 1. **Check the range:** ask if the string is guaranteed lowercase letters
-2. **If small and known (a–z, A–Z, digits):** use `int freq[N]` — faster, simpler, deterministic
-3. **If large or unknown (Unicode, mixed, any char):** use `unordered_map` — flexible, no ASCII math
+2. **If small and known (a–z, A–Z, digits):** use `int freq[N]` -- faster, simpler, deterministic
+3. **If large or unknown (Unicode, mixed, any char):** use `unordered_map` -- flexible, no ASCII math
 4. **If ordered output required:** use array (sorted by index) or `std::map` (tree-based order)
 5. **If memory-constrained with sparse input:** consider map (stores only what appears)
 
@@ -73,24 +73,24 @@ graph semantic_decision_framework {
 ## Key Properties
 
 - Range, speed, memory, and determinism are the four decision axes
-- No universal "better" choice — the decision depends on the problem constraints
+- No universal "better" choice -- the decision depends on the problem constraints
 - Interviewers look for conditional reasoning, not a fixed preference
 - The answer should be conversational: "Generally I'd use X, but if Y then Z"
-- The framework applies beyond character hashing — it generalizes to any array-vs-hash decision
+- The framework applies beyond character hashing -- it generalizes to any array-vs-hash decision
 
 ## Connections
 
-- Built from: [[known-range-assumption|Known Range Assumption]] — the range check is the first decision step
-- Built from: [[memory-efficiency-array|Memory Efficiency of Array]] — memory is a decision factor
-- Built from: [[hash-map-flexibility|Hash Map Flexibility]] — flexibility is the deciding factor for unknown ranges
-- Builds into: [[character-hashing-use-cases|Character Hashing Use Cases]] — the framework applies to every use case
-- Contrasts with: [[hash-collision-overhead|Hash Collision Overhead]] — maps pay a collision cost that arrays avoid
-- Related: [[ascii-math-elimination|ASCII Math Elimination]] — one reason to choose maps
+- Built from: [[known-range-assumption|Known Range Assumption]] -- the range check is the first decision step
+- Built from: [[memory-efficiency-array|Memory Efficiency of Array]] -- memory is a decision factor
+- Built from: [[hash-map-flexibility|Hash Map Flexibility]] -- flexibility is the deciding factor for unknown ranges
+- Builds into: [[character-hashing-use-cases|Character Hashing Use Cases]] -- the framework applies to every use case
+- Contrasts with: [[hash-collision-overhead|Hash Collision Overhead]] -- maps pay a collision cost that arrays avoid
+- Related: [[ascii-math-elimination|ASCII Math Elimination]] -- one reason to choose maps
 
 ## Edge Cases & Gotchas
 
-- "I always use unordered_map because it's O(1)" is a naive answer — interviewers see it as a red flag (ignores constant factors)
-- "I always use arrays because they're faster" misses the flexibility argument — it fails for mixed character sets
-- The "hash map is O(1)" claim is average-case, not worst-case — a good candidate mentions this nuance
-- For strings with only a few characters (n < 10), the overhead of any data structure may dominate — a simple loop without hashing could be faster
-- The framework assumes you need to solve a frequency problem — if the problem doesn't require frequencies (e.g., simple character presence check), a `std::set` or `bool` array is more appropriate
+- "I always use unordered_map because it's O(1)" is a naive answer -- interviewers see it as a red flag (ignores constant factors)
+- "I always use arrays because they're faster" misses the flexibility argument -- it fails for mixed character sets
+- The "hash map is O(1)" claim is average-case, not worst-case -- a good candidate mentions this nuance
+- For strings with only a few characters (n < 10), the overhead of any data structure may dominate -- a simple loop without hashing could be faster
+- The framework assumes you need to solve a frequency problem -- if the problem doesn't require frequencies (e.g., simple character presence check), a `std::set` or `bool` array is more appropriate

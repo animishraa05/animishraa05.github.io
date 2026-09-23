@@ -34,6 +34,35 @@ The notation focuses on dominant terms, ignoring lower-order terms and constants
 - Used for time and space complexity
 - Essential for comparing algorithms
 
+
+
+## Visual Explanation
+
+```dot
+digraph Big_O_Notation {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Big O Notation\nInput"]
+  B [label="Big O Notation\nCore Mechanism"]
+  C [label="Big O Notation\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Big_O_Notation {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Big O Notation" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[asymptotic-analysis|Asymptotic Analysis]]
@@ -42,6 +71,6 @@ The notation focuses on dominant terms, ignoring lower-order terms and constants
 
 ## Edge Cases & Gotchas
 
-- Big O gives upper bound—actual performance may be better
+- Big O gives upper bound--actual performance may be better
 - Constants matter in practice for small inputs
 - Must consider best, average, and worst case

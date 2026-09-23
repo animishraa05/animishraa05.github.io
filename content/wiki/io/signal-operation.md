@@ -44,6 +44,21 @@ digraph signal_op {
 - Releases resource back to pool
 - Also called V (verhogen = to release) or up operation
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_signal_Operation {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Signal Operation" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[semaphore|Semaphore]]
@@ -54,5 +69,5 @@ digraph signal_op {
 ## Edge Cases & Gotchas
 
 - Calling signal() without holding resource is a bug
-- Must be atomic — can't be interrupted
+- Must be atomic -- can't be interrupted
 - Forgetting signal() causes deadlock (resource never released)

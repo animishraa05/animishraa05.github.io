@@ -17,7 +17,7 @@ Indexed Addressing computes the effective address by adding a base address (from
 2. CPU reads index register to get offset value
 3. Effective address = base address + index
 4. CPU accesses memory at the computed address
-5. Example: `MOV AX, [1000h + SI]` — SI is index, accesses memory at (1000h + SI)
+5. Example: `MOV AX, [1000h + SI]` -- SI is index, accesses memory at (1000h + SI)
 
 ```dot
 digraph indexed_addr {
@@ -43,11 +43,26 @@ digraph indexed_addr {
 - Requires address computation (slightly slower than simpler modes)
 - Used in loops, array processing, table lookups
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Indexed_Addressing {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Indexed Addressing" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[addressing-mode|Addressing Mode]], [[indirect-addressing|Indirect Addressing]]
 - **Related:** [[array|Array]], [[loop|Loop]], [[effective-address|Effective Address]]
 - **Builds into:** [[register-indirect-with-displacement|Register Indirect with Displacement]]
-- **Contrasts with:** [[direct-addressing|Direct Addressing]] — no index computation
+- **Contrasts with:** [[direct-addressing|Direct Addressing]] -- no index computation
 
 ## Edge Cases & Gotchas
 - Index register must be set correctly before use (common bug: forgetting to increment)

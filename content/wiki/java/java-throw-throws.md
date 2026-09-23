@@ -64,19 +64,19 @@ graph semantic_throw_throws {
 
 - **throw**: Takes a Throwable instance (or subclass), never returns normally
 - **throws**: Lists checked exception types a method may propagate
-- **RuntimeException**: Does not need `throws` — unchecked by design
+- **RuntimeException**: Does not need `throws` -- unchecked by design
 - **Override rules**: Subclass method cannot throw a broader checked exception than the parent override
 
 ## Connections
 
-- **Built from:** [[java-exception-hierarchy|Java Exception Hierarchy]] — throw works with any Throwable subclass
-- **Builds into:** [[java-custom-exceptions|Custom Exceptions]] — custom exceptions are thrown with `throw`
-- **Contrasts with:** [[java-try-catch-finally|Try-Catch-Finally]] — throw propagates; try-catch handles
-- **Related:** [[java-polymorphism|Java Polymorphism]] — method overriding has specific throws clause constraints
+- **Built from:** [[java-exception-hierarchy|Java Exception Hierarchy]] -- throw works with any Throwable subclass
+- **Builds into:** [[java-custom-exceptions|Custom Exceptions]] -- custom exceptions are thrown with `throw`
+- **Contrasts with:** [[java-try-catch-finally|Try-Catch-Finally]] -- throw propagates; try-catch handles
+- **Related:** [[java-polymorphism|Java Polymorphism]] -- method overriding has specific throws clause constraints
 
 ## Edge Cases & Gotchas
 
-- **Throws for RuntimeException**: Legal but pointless — the compiler doesn't enforce it
+- **Throws for RuntimeException**: Legal but pointless -- the compiler doesn't enforce it
 - **Overriding and throws**: Subclass cannot add new checked exception types to throws clause
 - **Exception chaining**: Use `throw new Cause(e)` or `initCause()` to wrap exceptions
-- **throws Exception**: Too broad — defeats the purpose of checked exceptions
+- **throws Exception**: Too broad -- defeats the purpose of checked exceptions

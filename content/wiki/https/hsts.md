@@ -53,12 +53,27 @@ digraph G {
 - Browsers refuse to bypass certificate errors for HSTS sites
 - `includeSubDomains` extends policy to all subdomains
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_HSTS {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Hsts" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[https|HTTPS]] — HSTS enforces HTTPS usage
-- **Contrasts with:** [[http|HTTP]] — HSTS explicitly prevents HTTP fallback
-- **Related:** [[tls-handshake|TLS Handshake]] — HSTS ensures TLS is always used
-- **Related:** [[url-parsing|URL Parsing]] — HSTS check happens after URL is parsed
+- **Built from:** [[https|HTTPS]] -- HSTS enforces HTTPS usage
+- **Contrasts with:** [[http|HTTP]] -- HSTS explicitly prevents HTTP fallback
+- **Related:** [[tls-handshake|TLS Handshake]] -- HSTS ensures TLS is always used
+- **Related:** [[url-parsing|URL Parsing]] -- HSTS check happens after URL is parsed
 
 ## Edge Cases & Gotchas
 

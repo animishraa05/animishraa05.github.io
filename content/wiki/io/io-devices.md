@@ -8,7 +8,7 @@ updated: 2026-04-30
 
 ## The Problem
 
-The CPU needs to interact with many different types of external hardware — keyboards, disks, printers, network cards — each with different speeds, data formats, and interfaces. The OS must classify and manage them appropriately.
+The CPU needs to interact with many different types of external hardware -- keyboards, disks, printers, network cards -- each with different speeds, data formats, and interfaces. The OS must classify and manage them appropriately.
 
 ## Core Idea
 
@@ -59,6 +59,21 @@ digraph io_devices {
 - Speed varies from very slow (keyboard) to very fast (10GbE NIC)
 - Hybrid devices exist (touchscreen = input + output)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_I_O_Devices {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="I/O Devices" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[io-system|I/O System]], [[device-driver|Device Driver]]

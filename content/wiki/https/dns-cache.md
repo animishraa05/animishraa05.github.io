@@ -59,14 +59,29 @@ digraph G {
 - TTL (Time To Live) controls cache duration in seconds
 - Each level can serve the cached result to speed up lookup
 - Clearing cache forces a fresh lookup (useful for debugging)
-- Cache poisoning is a security risk—false entries redirect traffic
+- Cache poisoning is a security risk--false entries redirect traffic
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_DNS_Cache {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Dns Cache" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[dns-lookup|DNS Lookup]] — caching is part of the lookup process
-- **Related:** [[recursive-dns|Recursive DNS]] — fallback when caches miss
-- **Related:** [[dns-hierarchy|DNS Hierarchy]] — caches store results from hierarchical queries
-- **Contrasts with:** [[dns-lookup|DNS Lookup]] — lookup is the full process; cache is just one optimization
+- **Built from:** [[dns-lookup|DNS Lookup]] -- caching is part of the lookup process
+- **Related:** [[recursive-dns|Recursive DNS]] -- fallback when caches miss
+- **Related:** [[dns-hierarchy|DNS Hierarchy]] -- caches store results from hierarchical queries
+- **Contrasts with:** [[dns-lookup|DNS Lookup]] -- lookup is the full process; cache is just one optimization
 
 ## Edge Cases & Gotchas
 

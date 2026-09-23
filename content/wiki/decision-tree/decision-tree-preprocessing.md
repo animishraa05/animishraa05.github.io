@@ -18,15 +18,15 @@ Decision trees require minimal preprocessing because they make decisions based o
 
 Why decision trees don't need common preprocessing steps:
 
-1. **No feature scaling needed**: Since trees compare values to thresholds (e.g., "Income > 50K"), the absolute scale doesn't matter. Doubling all income values would simply shift the threshold — the split logic remains identical.
+1. **No feature scaling needed**: Since trees compare values to thresholds (e.g., "Income > 50K"), the absolute scale doesn't matter. Doubling all income values would simply shift the threshold -- the split logic remains identical.
 
 2. **Natural categorical handling**: Categorical attributes are split by creating one branch per category value. No one-hot encoding or label encoding is required.
 
-3. **Monotonic transformations are irrelevant**: Applying log, sqrt, or any monotonic function to a feature doesn't change which threshold-based splits are possible — the relative ordering is preserved.
+3. **Monotonic transformations are irrelevant**: Applying log, sqrt, or any monotonic function to a feature doesn't change which threshold-based splits are possible -- the relative ordering is preserved.
 
 4. **Outlier tolerance**: A single extreme value doesn't distort the tree's behavior the way it would in distance-based methods like k-NN or SVM.
 
-The source explicitly lists "low preprocessing needs" as one of the reasons why "decision trees are widely used" — alongside interpretability and flexibility.
+The source explicitly lists "low preprocessing needs" as one of the reasons why "decision trees are widely used" -- alongside interpretability and flexibility.
 
 ## Visual Explanation
 
@@ -54,18 +54,33 @@ digraph decision_tree_preprocessing {
 - **Robust to outliers**: Extreme values don't distort split decisions
 - **Missing-value tolerant**: Can use surrogate splits or majority routing for missing features
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Decision_Tree_Preprocessing {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Decision Tree Prepro" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[decision-tree-splitting|Decision Tree Splitting]] — threshold-based splits don't require scaling
-- **Contrasts with:** [[regression|Regression]] — linear regression requires feature scaling and encoding
-- **Related:** [[supervised-learning|Supervised Learning]] — trees reduce the preprocessing burden in supervised workflows
-- **Related:** [[decision-tree-interpretability|Decision Tree Interpretability]] — both are practical advantages of trees
-- **Related:** [[decision-tree-flexibility|Decision Tree Flexibility]] — low preprocessing contributes to flexibility
-- **Related:** [[classification|Classification]] — trees are a low-preprocessing option for classification
+- **Built from:** [[decision-tree-splitting|Decision Tree Splitting]] -- threshold-based splits don't require scaling
+- **Contrasts with:** [[regression|Regression]] -- linear regression requires feature scaling and encoding
+- **Related:** [[supervised-learning|Supervised Learning]] -- trees reduce the preprocessing burden in supervised workflows
+- **Related:** [[decision-tree-interpretability|Decision Tree Interpretability]] -- both are practical advantages of trees
+- **Related:** [[decision-tree-flexibility|Decision Tree Flexibility]] -- low preprocessing contributes to flexibility
+- **Related:** [[classification|Classification]] -- trees are a low-preprocessing option for classification
 
 ## Edge Cases & Gotchas
 
 - **Not zero preprocessing**: Extremely noisy data or massive cardinality still benefit from preprocessing
 - **High-cardinality categories**: An attribute with 10,000 unique values can cause overfitting even in trees
-- **Missing data handling varies**: Not all tree implementations handle missing values — check your library
+- **Missing data handling varies**: Not all tree implementations handle missing values -- check your library
 - **Still benefits from cleaning**: Removing irrelevant features speeds up training and reduces overfitting

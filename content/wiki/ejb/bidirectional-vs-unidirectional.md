@@ -71,15 +71,30 @@ digraph G {
 - In CMP, directionality is set via `<cmr-field>` presence in deployment descriptor
 - EJB directionality may not match database schema directionality (object model ≠ database model)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Bidirectional_vs_Unidirectional_Relationships {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Bidirectional Vs Uni" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[one-to-one-relationship|One-to-One Relationship]] — directionality applies to 1:1
-- Built from: [[one-to-many-relationship|One-to-Many Relationship]] — directionality applies to 1:N
-- Built from: [[many-to-many-relationship|Many-to-Many Relationship]] — directionality applies to M:N
-- Related: [[session-bean-relationships|Session Bean Relationships]] — session beans can also implement relationships but manually
-- Related: [[normalized-vs-denormalized-schema|Normalized vs Denormalized Schema]] — directionality vs database mapping
+- Built from: [[one-to-one-relationship|One-to-One Relationship]] -- directionality applies to 1:1
+- Built from: [[one-to-many-relationship|One-to-Many Relationship]] -- directionality applies to 1:N
+- Built from: [[many-to-many-relationship|Many-to-Many Relationship]] -- directionality applies to M:N
+- Related: [[session-bean-relationships|Session Bean Relationships]] -- session beans can also implement relationships but manually
+- Related: [[normalized-vs-denormalized-schema|Normalized vs Denormalized Schema]] -- directionality vs database mapping
 
 ## Edge Cases & Gotchas
 - Omitting a `<cmr-field>` makes the relationship unidirectional on that side
-- Unidirectional limits queries — can't do "find all orders for this shipment" if Shipment doesn't know about Order
-- CMP container doesn't enforce directionality at compile time — misconfiguration found at deploy time
+- Unidirectional limits queries -- can't do "find all orders for this shipment" if Shipment doesn't know about Order
+- CMP container doesn't enforce directionality at compile time -- misconfiguration found at deploy time
 - Object directionality doesn't require matching database directionality (EJB abstracts this)

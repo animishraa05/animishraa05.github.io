@@ -12,7 +12,7 @@ In a star schema, dimension tables are fully denormalized, leading to significan
 
 ## Core Idea
 
-**Snowflake Schema** is an extension of the star schema where large dimension tables are **normalized** — split into additional tables to eliminate redundancy. The normalized dimensions branch out like a snowflake, creating a more complex but storage-efficient structure.
+**Snowflake Schema** is an extension of the star schema where large dimension tables are **normalized** -- split into additional tables to eliminate redundancy. The normalized dimensions branch out like a snowflake, creating a more complex but storage-efficient structure.
 
 ## How It Works
 
@@ -86,16 +86,16 @@ graph semantic_snowflake {
 
 ## Connections
 
-- **Built from:** [[wiki/data-warehouse/star-schema|Star Schema]] — snowflake is a normalized variant of the star schema
-- **Builds into:** [[wiki/data-warehouse/dimension-table|Dimension Table]] — normalized dimensions are still dimension tables
-- **Related:** [[fact-constellation-schema|Fact Constellation Schema]] — another schema variant beyond star
-- **Builds into:** [[multidimensional-data-model|Multidimensional Data Model]] — snowflake implements the dimensional model
-- **Related:** [[rolap-server|ROLAP Server]] — ROLAP works well with snowflake schemas (relational tables)
-- **Contrasts with:** [[wiki/data-warehouse/star-schema|Star Schema]] — the defining difference is normalization
+- **Built from:** [[wiki/data-warehouse/star-schema|Star Schema]] -- snowflake is a normalized variant of the star schema
+- **Builds into:** [[wiki/data-warehouse/dimension-table|Dimension Table]] -- normalized dimensions are still dimension tables
+- **Related:** [[fact-constellation-schema|Fact Constellation Schema]] -- another schema variant beyond star
+- **Builds into:** [[multidimensional-data-model|Multidimensional Data Model]] -- snowflake implements the dimensional model
+- **Related:** [[rolap-server|ROLAP Server]] -- ROLAP works well with snowflake schemas (relational tables)
+- **Contrasts with:** [[wiki/data-warehouse/star-schema|Star Schema]] -- the defining difference is normalization
 
 ## Edge Cases & Gotchas
 
 - **Query performance degradation:** Each additional join in the snowflake adds query execution time. For very large warehouses, the star schema is usually faster.
 - **Over-normalization:** Normalizing every dimension attribute creates a complex schema that is hard to understand and maintain. Only normalize large, highly redundant dimensions.
 - **When to use snowflake:** Best when storage cost is a significant concern and query performance requirements are moderate.
-- **Hybrid approach:** Some dimensions can be normalized (snowflake) while others remain denormalized (star) — a "partially snowflaked" schema.
+- **Hybrid approach:** Some dimensions can be normalized (snowflake) while others remain denormalized (star) -- a "partially snowflaked" schema.

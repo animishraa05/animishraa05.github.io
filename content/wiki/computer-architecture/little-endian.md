@@ -33,16 +33,31 @@ digraph little_endian {
 ```
 
 ## Key Properties
-- Efficient for CPU arithmetic — can process LSB first (natural for x86)
+- Efficient for CPU arithmetic -- can process LSB first (natural for x86)
 - Most common in personal computers (Intel x86, AMD64)
 - Harder to read in memory dumps (bytes appear reversed)
 - Conversion needed for network communication (network byte order is Big Endian)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Little_Endian {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Little Endian" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- **Contrasts with:** [[big-endian|Big Endian]] — stores MSB first
+- **Contrasts with:** [[big-endian|Big Endian]] -- stores MSB first
 - **Built from:** [[endianness|Endianness]], [[memory|Memory]]
 - **Related:** [[x86-architecture|x86 Architecture]], [[intel-cpu|Intel CPU]]
-- **Builds into:** [[network-byte-order|Network Byte Order]] — must convert LE to BE for network
+- **Builds into:** [[network-byte-order|Network Byte Order]] -- must convert LE to BE for network
 
 ## Edge Cases & Gotchas
 - Harder for humans to debug (memory dump shows reversed bytes)

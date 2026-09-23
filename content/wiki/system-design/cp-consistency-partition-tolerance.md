@@ -1,5 +1,5 @@
 ---
-concept: CP — Consistency and Partition Tolerance
+concept: CP -- Consistency and Partition Tolerance
 aliases: [CP system, CP database, consistency preferred]
 tags: [systems, distributed-systems]
 created: 2026-05-15
@@ -56,17 +56,32 @@ digraph G {
 
 ## Key Properties
 
-- **Atomic consistent reads**: Every read returns the latest write or an error — never stale data
+- **Atomic consistent reads**: Every read returns the latest write or an error -- never stale data
 - **May return errors during partition**: Availability drops to zero for the affected data
 - **Business-critical use cases**: Banking, inventory, booking systems where stale data causes real harm
 - **Synchronous replication**: Writes are synchronously replicated to a quorum before acknowledgment
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_CP____Consistency_and_Partition_Tolerance {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Cp    Consistency An" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[cap-theorem|CAP Theorem]]
-- **Contrasts with:** [[ap-availability-partition-tolerance|AP — Availability and Partition Tolerance]]
-- **Related:** [[strong-consistency|Strong Consistency]] — CP systems guarantee strong consistency
-- **Related:** [[master-slave-replication|Master-Slave Replication]] — reading from master ensures strong consistency (a CP pattern)
+- **Contrasts with:** [[ap-availability-partition-tolerance|AP -- Availability and Partition Tolerance]]
+- **Related:** [[strong-consistency|Strong Consistency]] -- CP systems guarantee strong consistency
+- **Related:** [[master-slave-replication|Master-Slave Replication]] -- reading from master ensures strong consistency (a CP pattern)
 
 ## Edge Cases & Gotchas
 

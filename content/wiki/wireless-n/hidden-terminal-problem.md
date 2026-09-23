@@ -14,7 +14,7 @@ The hidden terminal problem occurs when two nodes (A and C) cannot detect each o
 
 ## How It Works
 1. Node A begins transmitting to node B
-2. Node C, which is not within range of A, checks the channel — it cannot hear A's transmission
+2. Node C, which is not within range of A, checks the channel -- it cannot hear A's transmission
 3. C concludes the channel is free
 4. C begins transmitting to B
 5. Both signals arrive at B simultaneously → **Collision**
@@ -30,12 +30,41 @@ Standard CSMA fails because carrier sense only detects local transmissions, not 
 - Common in large cells, ad hoc networks, and networks with obstacles between nodes
 - Requires a specialized MAC protocol to solve
 
+
+
+## Visual Explanation
+
+```dot
+digraph Hidden_Terminal_Problem {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Hidden Terminal Prob\nInput"]
+  B [label="Hidden Terminal Prob\nCore Mechanism"]
+  C [label="Hidden Terminal Prob\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Hidden_Terminal_Problem {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Hidden Terminal Prob" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Related: [[maca|MACA]] — the MAC protocol that solves this using RTS/CTS exchange
-- Related: [[exposed-terminal-problem|Exposed Terminal Problem]] — the complementary problem in wireless MAC
-- Related: [[near-far-terminal|Near/Far Terminal Effect]] — another wireless MAC problem
-- Related: [[csma-cd|CSMA/CD]] — the Ethernet protocol that fails in this wireless scenario
-- Related: [[csma|CSMA]] — the foundational carrier sense technique that fails for hidden nodes
+- Related: [[maca|MACA]] -- the MAC protocol that solves this using RTS/CTS exchange
+- Related: [[exposed-terminal-problem|Exposed Terminal Problem]] -- the complementary problem in wireless MAC
+- Related: [[near-far-terminal|Near/Far Terminal Effect]] -- another wireless MAC problem
+- Related: [[csma-cd|CSMA/CD]] -- the Ethernet protocol that fails in this wireless scenario
+- Related: [[csma|CSMA]] -- the foundational carrier sense technique that fails for hidden nodes
 
 ## Edge Cases & Gotchas
 - The hidden terminal problem is inherent to wireless networks and cannot be fully eliminated

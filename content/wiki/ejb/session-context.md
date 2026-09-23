@@ -46,12 +46,27 @@ digraph G {
 - **`getEJBLocalObject()`**: For local interfaces
 - **Never use `this`**: Bean must use EJB object for self-reference
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_SessionContext {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Sessioncontext" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[ejb-context|EJB Context]] — SessionContext extends EJBContext
-- Related: [[session-bean|Session Bean]] — SessionContext is for session beans
-- Contrasts with: [[entity-context|Entity Context]] — entity beans have different context
-- Related: [[why-bean-doesnt-implement-interface|Why Bean Doesn't Implement Interface]] — `this` danger
-- Builds into: [[business-interface-pattern|Business Interface Pattern]] — context used in pattern
+- Built from: [[ejb-context|EJB Context]] -- SessionContext extends EJBContext
+- Related: [[session-bean|Session Bean]] -- SessionContext is for session beans
+- Contrasts with: [[entity-context|Entity Context]] -- entity beans have different context
+- Related: [[why-bean-doesnt-implement-interface|Why Bean Doesn't Implement Interface]] -- `this` danger
+- Builds into: [[business-interface-pattern|Business Interface Pattern]] -- context used in pattern
 
 ## Edge Cases & Gotchas
 - **`this` danger**: Passing `this` bypasses container services

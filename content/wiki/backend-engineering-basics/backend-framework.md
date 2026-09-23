@@ -12,7 +12,7 @@ Writing a web server from scratch (socket binding, HTTP parsing, routing, error 
 
 ## Core Idea
 
-A backend framework is a library that provides the boilerplate for building web servers: HTTP server, routing, database connectors, middleware, and helpers. They automate the basics so developers focus on business logic. The key insight: frameworks are just abstractions over the fundamentals—if you know the fundamentals, any framework is learnable.
+A backend framework is a library that provides the boilerplate for building web servers: HTTP server, routing, database connectors, middleware, and helpers. They automate the basics so developers focus on business logic. The key insight: frameworks are just abstractions over the fundamentals--if you know the fundamentals, any framework is learnable.
 
 ## How It Works
 
@@ -31,18 +31,47 @@ When you write `app.get("/users", handler)`, the framework handles the socket, p
 - Opinionated (Django) vs unopinionated (Express)
 - Includes batteries (Django) vs minimal (Express)
 - Synchronous or asynchronous execution models
-- Frameworks don't handle TLS in production—that's the reverse proxy's job
+- Frameworks don't handle TLS in production--that's the reverse proxy's job
 
+
+
+## Visual Explanation
+
+```dot
+digraph Backend_Framework {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Backend Framework\nInput"]
+  B [label="Backend Framework\nCore Mechanism"]
+  C [label="Backend Framework\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Backend_Framework {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Backend Framework" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[http-protocol|HTTP Protocol]] — frameworks parse and handle HTTP
-- **Built from:** [[socket|Socket]] — frameworks abstract socket handling
-- **Builds into:** [[backend-architecture|Backend Architecture]] — frameworks implement the API server layer
-- **Related:** [[backend-skills|Backend Skills]] — skills needed beyond just knowing frameworks
+- **Built from:** [[http-protocol|HTTP Protocol]] -- frameworks parse and handle HTTP
+- **Built from:** [[socket|Socket]] -- frameworks abstract socket handling
+- **Builds into:** [[backend-architecture|Backend Architecture]] -- frameworks implement the API server layer
+- **Related:** [[backend-skills|Backend Skills]] -- skills needed beyond just knowing frameworks
 
 ## Edge Cases & Gotchas
 
-- Don't confuse framework with runtime—Spring Boot runs on JVM, Express on Node.js
-- Frameworks add abstraction cost—understand what's happening underneath
+- Don't confuse framework with runtime--Spring Boot runs on JVM, Express on Node.js
+- Frameworks add abstraction cost--understand what's happening underneath
 - Production deployments need reverse proxies (Nginx) for TLS, load balancing
 - Framework choice affects performance but fundamentals transfer between them

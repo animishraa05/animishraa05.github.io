@@ -7,7 +7,7 @@ updated: 2026-04-28
 ---
 
 ## The Problem
-Both BMP and CMP entity beans have lifecycle callbacks (ejbLoad, ejbStore) that are called by the container, not the bean itself. If a developer tries to use programmatic transactions (begin/commit in code), they can't control when ejbLoad/ejbStore are called — leading to uncommitted transactions and data inconsistency.
+Both BMP and CMP entity beans have lifecycle callbacks (ejbLoad, ejbStore) that are called by the container, not the bean itself. If a developer tries to use programmatic transactions (begin/commit in code), they can't control when ejbLoad/ejbStore are called -- leading to uncommitted transactions and data inconsistency.
 
 ## Core Idea
 **Entity Beans (BMP and CMP) MUST use Container-Managed (Declarative) Transactions only. Programmatic (Bean-Managed) Transactions are ILLEGAL for entity beans.** This is the "Golden Rule" of EJB transactions.
@@ -17,8 +17,8 @@ Both BMP and CMP entity beans have lifecycle callbacks (ejbLoad, ejbStore) that 
 2. Business methods execute within the transaction
 3. On commit, container calls `ejbStore()` (writes to DB, releases locks)
 4. Transaction spans: `ejbLoad()` → business methods → `ejbStore()`
-5. If entity beans used BMT: developer would call `begin()` in `ejbLoad()`, but container controls when `ejbLoad()` is called — so the transaction may never properly complete
-6. Entity beans load/store data **per transaction**, not per method call — the container optimizes when to actually hit the database
+5. If entity beans used BMT: developer would call `begin()` in `ejbLoad()`, but container controls when `ejbLoad()` is called -- so the transaction may never properly complete
+6. Entity beans load/store data **per transaction**, not per method call -- the container optimizes when to actually hit the database
 
 ## Visual Explanation
 ```dot
@@ -48,17 +48,32 @@ digraph G {
 - Entity beans load/store per transaction, not per method call (performance implication)
 - Session beans and MDBs CAN use BMT or CMT (entity beans cannot)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Entity_Bean_Transaction_Rules {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Entity Bean Transact" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[transaction-demarcation|Transaction Demarcation]] — entity beans restricted to CMT only
-- Built from: [[entity-bean|Entity Bean]] — rule applies to all entity beans (BMP and CMP)
-- Built from: [[ejbload|ejbLoad()]] — called by container within transaction
-- Built from: [[ejbstore|ejbStore()]] — called by container within transaction
-- Contrasts with: [[session-bean|Session Bean]] — session beans can use BMT or CMT
-- Contrasts with: [[message-driven-bean|MDB]] — MDBs can use BMT or CMT
-- Related: [[declarative-vs-programmatic-transactions|CMT vs BMT]] — why CMT is mandatory for entities
+- Built from: [[transaction-demarcation|Transaction Demarcation]] -- entity beans restricted to CMT only
+- Built from: [[entity-bean|Entity Bean]] -- rule applies to all entity beans (BMP and CMP)
+- Built from: [[ejbload|ejbLoad()]] -- called by container within transaction
+- Built from: [[ejbstore|ejbStore()]] -- called by container within transaction
+- Contrasts with: [[session-bean|Session Bean]] -- session beans can use BMT or CMT
+- Contrasts with: [[message-driven-bean|MDB]] -- MDBs can use BMT or CMT
+- Related: [[declarative-vs-programmatic-transactions|CMT vs BMT]] -- why CMT is mandatory for entities
 
 ## Edge Cases & Gotchas
 - Performance problem: if each method call is a separate transaction, entity bean does DB read/write per get/set
 - Solution: make transactions span multiple method calls (using transaction attributes)
-- BMP developers often mistakenly try BMT — it's explicitly illegal in EJB spec
-- Entity beans don't control when ejbLoad/ejbStore are called — container does
+- BMP developers often mistakenly try BMT -- it's explicitly illegal in EJB spec
+- Entity beans don't control when ejbLoad/ejbStore are called -- container does

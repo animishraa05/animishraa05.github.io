@@ -20,7 +20,7 @@ Hibernate is an Object-Relational Mapping (ORM) framework for Java that maps Jav
 2. **SessionFactory**: A thread-safe factory created once per application from the configuration
 3. **Session**: A lightweight, non-thread-safe wrapper around a JDBC connection, obtained per operation
 4. **Transaction**: Wraps each unit of work. Hibernate uses its own Transaction API over JDBC transactions
-5. **Persistence operations**: `session.save(obj)`, `session.get(Class, id)`, `session.update(obj)`, `session.delete(obj)` — Hibernate generates and executes the SQL
+5. **Persistence operations**: `session.save(obj)`, `session.get(Class, id)`, `session.update(obj)`, `session.delete(obj)` -- Hibernate generates and executes the SQL
 6. **Automatic dirty checking**: Hibernate tracks entity state changes and flushes updates to the database automatically
 
 ## Visual Explanation
@@ -84,12 +84,12 @@ graph semantic_hibernate {
 
 ## Connections
 
-- **Built from:** [[java-jdbc|JDBC]] — Hibernate uses JDBC under the hood for database connectivity
-- **Built from:** [[object-relational-mapping|Object-Relational Mapping]] — Hibernate implements ORM principles
-- **Builds into:** [[spring-orm|Spring ORM]] — Spring integrates Hibernate via SessionFactory and transaction management
-- **Builds into:** [[spring-data-jpa|Spring Data JPA]] — Spring Data JPA builds on Hibernate as the default JPA provider
-- **Related:** [[hql|Hibernate Query Language]] — HQL is Hibernate's object-oriented query language
-- **Contrasts with:** [[container-managed-persistence|Container-Managed Persistence]] — CMP is EJB's ORM approach; Hibernate is standalone
+- **Built from:** [[java-jdbc|JDBC]] -- Hibernate uses JDBC under the hood for database connectivity
+- **Built from:** [[object-relational-mapping|Object-Relational Mapping]] -- Hibernate implements ORM principles
+- **Builds into:** [[spring-orm|Spring ORM]] -- Spring integrates Hibernate via SessionFactory and transaction management
+- **Builds into:** [[spring-data-jpa|Spring Data JPA]] -- Spring Data JPA builds on Hibernate as the default JPA provider
+- **Related:** [[hql|Hibernate Query Language]] -- HQL is Hibernate's object-oriented query language
+- **Contrasts with:** [[container-managed-persistence|Container-Managed Persistence]] -- CMP is EJB's ORM approach; Hibernate is standalone
 
 ## Edge Cases & Gotchas
 

@@ -10,7 +10,7 @@ updated: 2026-04-30
 Software needs a way to tell the CPU what to do. The set of operations a CPU supports defines what programs can do and how efficiently they run.
 
 ## Core Idea
-The instruction set is the complete collection of machine-level instructions that a CPU can execute — it defines the boundary between software and hardware.
+The instruction set is the complete collection of machine-level instructions that a CPU can execute -- it defines the boundary between software and hardware.
 
 ## How It Works
 1. Each instruction specifies an operation (add, load, branch, etc.) and operands (registers, memory addresses, constants)
@@ -37,8 +37,23 @@ digraph instruction_set {
 - Defines CPU's machine language (binary encoding of instructions)
 - RISC: small, simple, fixed-length; CISC: large, complex, variable-length
 - Includes data movement, arithmetic, logic, control flow instructions
-- ISA is a contract — software depends on it, hardware implements it
+- ISA is a contract -- software depends on it, hardware implements it
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Instruction_Set {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Instruction Set" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 - **Built from:** [[cpu|CPU]], [[addressing-mode|Addressing Mode]]
 - **Builds into:** [[risc-architecture|RISC Architecture]], [[cisc-architecture|CISC Architecture]]
@@ -46,6 +61,6 @@ digraph instruction_set {
 - **Contrasts with:** Different ISAs are not directly compatible (x86 vs ARM)
 
 ## Edge Cases & Gotchas
-- ISA is not implementation — two CPUs with same ISA can have different performance
+- ISA is not implementation -- two CPUs with same ISA can have different performance
 - Backward compatibility: new CPUs must support old ISA (lots of legacy baggage)
 - Modern CPUs may add extensions (SSE, AVX, NEON) to base ISA

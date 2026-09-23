@@ -32,6 +32,35 @@ This is one of the most important results in computability theory.
 - Foundation for much of computability theory
 - Any problem that can encode the halting problem is also undecidable
 
+
+
+## Visual Explanation
+
+```dot
+digraph Halting_Problem {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Halting Problem\nInput"]
+  B [label="Halting Problem\nCore Mechanism"]
+  C [label="Halting Problem\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Halting_Problem {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Halting Problem" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[turing-machine|Turing Machine]]

@@ -46,15 +46,30 @@ digraph G {
 - Value-added services: guaranteed delivery, fault tolerance, load balancing
 - Proprietary APIs led to vendor lock-in until JMS standardized the API
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Message_Oriented_Middleware__MOM_ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Message Oriented Mid" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Builds into: [[jms|JMS]] — JMS is the standard API that abstracts MOM products
-- Builds into: [[message-driven-bean|MDB]] — MDBs consume messages delivered by MOM
-- Contrasts with: [[rmi-remote-method-invocation|RMI-IIOP]] — RMI is synchronous, 1:1, tightly coupled; MOM is async, many:many, loosely coupled
-- Related: [[middleware|Middleware]] — MOM is a specific type of middleware
-- Related: [[queue-partitioning|Queue Partitioning]] — MOM supports multiple queues for traffic separation
+- Builds into: [[jms|JMS]] -- JMS is the standard API that abstracts MOM products
+- Builds into: [[message-driven-bean|MDB]] -- MDBs consume messages delivered by MOM
+- Contrasts with: [[rmi-remote-method-invocation|RMI-IIOP]] -- RMI is synchronous, 1:1, tightly coupled; MOM is async, many:many, loosely coupled
+- Related: [[middleware|Middleware]] -- MOM is a specific type of middleware
+- Related: [[queue-partitioning|Queue Partitioning]] -- MOM supports multiple queues for traffic separation
 
 ## Edge Cases & Gotchas
 - MOM adds overhead (performance can be slower than direct RMI calls)
-- Not all MOM products support the same features — JMS abstracts common features only
+- Not all MOM products support the same features -- JMS abstracts common features only
 - Guaranteed delivery requires message persistence (disk I/O cost)
 - "Fire-and-forget" means client has no idea if message processing succeeded

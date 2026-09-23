@@ -7,7 +7,7 @@ updated: 2026-04-30
 ---
 
 ## The Problem
-Tables of numbers are incomprehensible at scale — humans cannot intuitively grasp patterns, trends, or outliers from raw data.
+Tables of numbers are incomprehensible at scale -- humans cannot intuitively grasp patterns, trends, or outliers from raw data.
 
 ## Core Idea
 Representing data graphically to enable pattern recognition, comparison, and communication of insights.
@@ -34,11 +34,26 @@ digraph G {
 - Purpose-driven: exploratory (many charts, quick) vs explanatory (few charts, polished)
 - Truth-telling: visualizations must accurately represent the underlying data
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Data_Visualization {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Data Visualization" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[exploratory-data-analysis|EDA]] — visualization is EDA's primary tool
-- Builds into: [[data-science|Data Science]] — communication is the final step
-- Related: [[feature-engineering|Feature Engineering]] — visualizations reveal feature relationships
-- Related: [[data-wrangling|Data Wrangling]] — visualize data quality issues
+- Built from: [[exploratory-data-analysis|EDA]] -- visualization is EDA's primary tool
+- Builds into: [[data-science|Data Science]] -- communication is the final step
+- Related: [[feature-engineering|Feature Engineering]] -- visualizations reveal feature relationships
+- Related: [[data-wrangling|Data Wrangling]] -- visualize data quality issues
 
 ## Edge Cases & Gotchas
 - Misleading axes (non-zero baselines, truncated ranges) distort perception

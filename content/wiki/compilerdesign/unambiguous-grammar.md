@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Ambiguous grammars create non-determinism in parsing — the parser doesn't know which parse tree is the intended one. Compilers need grammars where each valid input string has exactly one parse tree to ensure deterministic, predictable compilation.
+Ambiguous grammars create non-determinism in parsing -- the parser doesn't know which parse tree is the intended one. Compilers need grammars where each valid input string has exactly one parse tree to ensure deterministic, predictable compilation.
 
 ## Core Idea
 
@@ -16,7 +16,7 @@ An unambiguous grammar is a context-free grammar where every string in the langu
 
 ## How It Works
 
-Unambiguous grammars avoid constructs that create multiple derivations. For example, an unambiguous expression grammar enforces precedence through non-terminal hierarchy: `E → E + T | T`, `T → T * F | F`, `F → id`. The non-terminal levels create a single parse tree for `a + b * c` — multiplication binds tighter than addition because `a + (b * c)` is the only valid derivation.
+Unambiguous grammars avoid constructs that create multiple derivations. For example, an unambiguous expression grammar enforces precedence through non-terminal hierarchy: `E → E + T | T`, `T → T * F | F`, `F → id`. The non-terminal levels create a single parse tree for `a + b * c` -- multiplication binds tighter than addition because `a + (b * c)` is the only valid derivation.
 
 ## Visual Explanation
 
@@ -40,18 +40,33 @@ digraph unambiguous {
 - **Grammar transformation:** Ambiguous grammars can often be rewritten as unambiguous
 - **Non-terminal hierarchy:** Enforces precedence through level separation
 - **No parsing conflicts:** No shift/reduce or reduce/reduce conflicts from the grammar itself
-- **LL and LR:** Unambiguous grammars may still not be LL(1) or LR(1) — parser class is separate from ambiguity
+- **LL and LR:** Unambiguous grammars may still not be LL(1) or LR(1) -- parser class is separate from ambiguity
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Unambiguous_Grammar {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Unambiguous Grammar" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Contrasts with:** [[wiki/compilerdesign/ambiguous-grammar|Ambiguous Grammar]] — ambiguous has multiple parse trees; unambiguous has exactly one
-- **Built from:** [[context-free-grammar|Context-Free Grammar]] — unambiguous CFGs are a subset of all CFGs
-- **Related:** [[top-down-parsing|Top-Down Parsing]] — requires unambiguous grammars for deterministic prediction
-- **Related:** [[bottom-up-parsing|Bottom-Up Parsing]] — shift-reduce conflicts signal ambiguity that needs resolution
-- **Related:** [[operator-precedence-parser|Operator Precedence Parser]] — resolves expression ambiguity through precedence rules
+- **Contrasts with:** [[wiki/compilerdesign/ambiguous-grammar|Ambiguous Grammar]] -- ambiguous has multiple parse trees; unambiguous has exactly one
+- **Built from:** [[context-free-grammar|Context-Free Grammar]] -- unambiguous CFGs are a subset of all CFGs
+- **Related:** [[top-down-parsing|Top-Down Parsing]] -- requires unambiguous grammars for deterministic prediction
+- **Related:** [[bottom-up-parsing|Bottom-Up Parsing]] -- shift-reduce conflicts signal ambiguity that needs resolution
+- **Related:** [[operator-precedence-parser|Operator Precedence Parser]] -- resolves expression ambiguity through precedence rules
 
 ## Edge Cases & Gotchas
 
-- **Inherently ambiguous languages:** Some languages are inherently ambiguous — every grammar for them is ambiguous (e.g., `{aⁿbⁿcᵐdᵐ | n,m ≥ 0} ∪ {aⁿbᵐcᵐdⁿ | n,m ≥ 0}`)
+- **Inherently ambiguous languages:** Some languages are inherently ambiguous -- every grammar for them is ambiguous (e.g., `{aⁿbⁿcᵐdᵐ | n,m ≥ 0} ∪ {aⁿbᵐcᵐdⁿ | n,m ≥ 0}`)
 - **Disambiguating rules:** Yacc/Bison use `%left`, `%right`, `%nonassoc` to resolve ambiguity without rewriting the grammar
-- **Ambiguity ≠ non-determinism:** A grammar can be unambiguous but still not parsable by LL(1) or LR(1) — parser class and ambiguity are separate concerns
+- **Ambiguity ≠ non-determinism:** A grammar can be unambiguous but still not parsable by LL(1) or LR(1) -- parser class and ambiguity are separate concerns

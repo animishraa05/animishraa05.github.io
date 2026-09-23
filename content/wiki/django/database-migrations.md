@@ -16,12 +16,12 @@ Migrations solve the problem of evolving database schema alongside code without 
 
 ## How It Works
 
-1. **Models changed** — Developer modifies `models.py` (add field, change type, new model)
-2. **Autodetector runs** — `makemigrations` compares current models to project state from last migration
-3. **Operations generated** — Creates `Migration` class with `operations = [AddField(...), ...]`
-4. **Dependencies resolved** — Migration declares `dependencies = [('app', '0001_initial'), ...]`
-5. **Migration applied** — `migrate` runs operations in topological order, updates `django_migrations`
-6. **State reconstructed** — Future `makemigrations` replays all migrations to compute current state
+1. **Models changed** -- Developer modifies `models.py` (add field, change type, new model)
+2. **Autodetector runs** -- `makemigrations` compares current models to project state from last migration
+3. **Operations generated** -- Creates `Migration` class with `operations = [AddField(...), ...]`
+4. **Dependencies resolved** -- Migration declares `dependencies = [('app', '0001_initial'), ...]`
+5. **Migration applied** -- `migrate` runs operations in topological order, updates `django_migrations`
+6. **State reconstructed** -- Future `makemigrations` replays all migrations to compute current state
 
 ## Visual Explanation
 
@@ -94,20 +94,20 @@ graph semantic_database_migrations {
 
 ## Connections
 
-- Built from: [[models-orm|Models/ORM]] — Source of schema changes
-- Built from: [[historical-model-state|Historical Model State]] — Baseline for autodetection
-- Builds into: [[schema-operations|Schema Operations]] — Individual migration steps
-- Builds into: [[data-migrations|Data Migrations]] — `RunPython` for data transformation
-- Builds into: [[squash-migrations|Squash Migrations]] — Optimize migration history
-- Contrasts with: [[alembic|Alembic]] — SQLAlchemy's migration tool, similar but separate ecosystem
-- Contrasts with: [[flyway|Flyway]] — SQL-file based, not ORM-coupled
-- Related: [[database-transactions|Transaction Wrapper]] — Each migration in transaction (except PostgreSQL DDL)
-- Related: [[runpython|RunPython]] — Custom data migration logic
+- Built from: [[models-orm|Models/ORM]] -- Source of schema changes
+- Built from: [[historical-model-state|Historical Model State]] -- Baseline for autodetection
+- Builds into: [[schema-operations|Schema Operations]] -- Individual migration steps
+- Builds into: [[data-migrations|Data Migrations]] -- `RunPython` for data transformation
+- Builds into: [[squash-migrations|Squash Migrations]] -- Optimize migration history
+- Contrasts with: [[alembic|Alembic]] -- SQLAlchemy's migration tool, similar but separate ecosystem
+- Contrasts with: [[flyway|Flyway]] -- SQL-file based, not ORM-coupled
+- Related: [[database-transactions|Transaction Wrapper]] -- Each migration in transaction (except PostgreSQL DDL)
+- Related: [[runpython|RunPython]] -- Custom data migration logic
 
 ## Edge Cases & Gotchas
 
 - **Non-reversible migrations**: `RunPython` without `reverse_code` blocks rollback; `migrate --fake` risky
-- **Concurrent migrations**: Two developers create `0003_...` — resolve with `makemigrations --merge`
+- **Concurrent migrations**: Two developers create `0003_...` -- resolve with `makemigrations --merge`
 - **Large table ALTER**: Adding column with default locks table; use `AddField` → `RunSQL` (no default) → `AlterField`
 - **Historical model drift**: `RunPython` using current model instead of `apps.get_model()` breaks future migrations
 - **Swap app models**: `swappable = 'AUTH_USER_MODEL'` requires special handling in migrations

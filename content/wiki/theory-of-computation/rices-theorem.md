@@ -22,7 +22,7 @@ A property is "non-trivial" if it is not always true or always false for all Tur
 - "Does this machine output a prime number?"
 - "Does this machine halt on empty input?"
 
-All such properties are undecidable—proving many problems are unsolvable without case-by-case analysis.
+All such properties are undecidable--proving many problems are unsolvable without case-by-case analysis.
 
 ## Key Properties
 
@@ -31,6 +31,35 @@ All such properties are undecidable—proving many problems are unsolvable witho
 - Generalizes the halting problem to many properties
 - Any property about the function a program computes is undecidable
 
+
+
+## Visual Explanation
+
+```dot
+digraph Rice_s_Theorem {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Rice'S Theorem\nInput"]
+  B [label="Rice'S Theorem\nCore Mechanism"]
+  C [label="Rice'S Theorem\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Rice_s_Theorem {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Rice'S Theorem" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[turing-machine|Turing Machine]], [[halting-problem|Halting Problem]]

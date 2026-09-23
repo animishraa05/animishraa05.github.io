@@ -8,7 +8,7 @@ updated: 2026-05-15
 
 ## The Problem
 
-Low latency and high throughput are often competing goals — optimizing for one can degrade the other. Systems must balance both based on application requirements.
+Low latency and high throughput are often competing goals -- optimizing for one can degrade the other. Systems must balance both based on application requirements.
 
 ## Core Idea
 
@@ -62,17 +62,32 @@ digraph G {
 - **Latency** measured in milliseconds or nanoseconds (time per operation)
 - **Throughput** measured in requests per second or operations per second
 - **Goal**: maximize throughput while keeping latency within acceptable bounds
-- **Little's Law**: `L = λ × W` — average concurrency equals throughput times latency
+- **Little's Law**: `L = λ × W` -- average concurrency equals throughput times latency
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Latency_vs_Throughput {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Latency Vs Throughpu" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Related:** [[performance-vs-scalability|Performance vs Scalability]] — latency and throughput are the two dimensions of performance
-- **Related:** [[back-pressure|Back Pressure]] — queue sizing affects both latency and throughput
-- **Related:** [[cdn-pull|Pull CDN]] — reduces latency by serving content from edge locations
-- **Related:** [[message-queues|Message Queues]] — improves throughput by decoupling producers and consumers
+- **Related:** [[performance-vs-scalability|Performance vs Scalability]] -- latency and throughput are the two dimensions of performance
+- **Related:** [[back-pressure|Back Pressure]] -- queue sizing affects both latency and throughput
+- **Related:** [[cdn-pull|Pull CDN]] -- reduces latency by serving content from edge locations
+- **Related:** [[message-queues|Message Queues]] -- improves throughput by decoupling producers and consumers
 
 ## Edge Cases & Gotchas
 
 - **Tail latency matters**: Average latency hides outliers. P99 latency spikes often cause user-perceived slowness even when the average looks fine.
 - **Throughput vs bandwidth**: Throughput is completed operations; bandwidth is capacity. You can have high bandwidth but low throughput due to protocol overhead or lock contention.
-- **Coordinated omission**: If you exclude slow requests from measurements, reported latency looks artificially low — a common benchmarking mistake.
+- **Coordinated omission**: If you exclude slow requests from measurements, reported latency looks artificially low -- a common benchmarking mistake.

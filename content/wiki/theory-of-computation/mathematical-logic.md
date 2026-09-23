@@ -14,11 +14,11 @@ Mathematical logic uses formal languages with precise syntax and semantics to st
 
 ## How It Works
 Mathematical logic consists of:
-1. **Propositional logic** — simple true/false statements connected by AND, OR, NOT
-2. **First-order logic** — adds quantifiers (∀, ∃) and predicates over objects
-3. **Proof theory** — formal systems for deriving theorems
-4. **Model theory** — relationships between formal languages and their interpretations
-5. **Recursion theory** — what is computable (directly led to computability theory)
+1. **Propositional logic** -- simple true/false statements connected by AND, OR, NOT
+2. **First-order logic** -- adds quantifiers (∀, ∃) and predicates over objects
+3. **Proof theory** -- formal systems for deriving theorems
+4. **Model theory** -- relationships between formal languages and their interpretations
+5. **Recursion theory** -- what is computable (directly led to computability theory)
 
 Church's lambda calculus and Turing's machines both emerged from mathematical logic investigations.
 
@@ -38,19 +38,34 @@ digraph G {
 ```
 
 ## Key Properties
-- **Soundness** — only true statements can be proved
-- **Completeness** — all true statements can be proved (for first-order logic, Gödel proved this)
-- **Decidability** — is there an algorithm to determine if a statement is provable? (answer: no, for first-order logic)
+- **Soundness** -- only true statements can be proved
+- **Completeness** -- all true statements can be proved (for first-order logic, Gödel proved this)
+- **Decidability** -- is there an algorithm to determine if a statement is provable? (answer: no, for first-order logic)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Mathematical_Logic {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Mathematical Logic" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Builds into: [[theory-of-computation|Theory of Computation]] — computability emerged from logic
-- Builds into: [[lambda-calculus|Lambda Calculus]] — logical foundation for functional programming
-- Builds into: [[turing-machine|Turing Machine]] — Turing's work was in mathematical logic
-- Builds into: [[algorithm|Algorithm]] — formal procedures for computation
-- Related: [[formal-language-theory|Formal Language Theory]] — languages defined by logical grammars
-- Related: [[rices-theorem|Rice's Theorem]] — all non-trivial semantic properties are undecidable
+- Builds into: [[theory-of-computation|Theory of Computation]] -- computability emerged from logic
+- Builds into: [[lambda-calculus|Lambda Calculus]] -- logical foundation for functional programming
+- Builds into: [[turing-machine|Turing Machine]] -- Turing's work was in mathematical logic
+- Builds into: [[algorithm|Algorithm]] -- formal procedures for computation
+- Related: [[formal-language-theory|Formal Language Theory]] -- languages defined by logical grammars
+- Related: [[rices-theorem|Rice's Theorem]] -- all non-trivial semantic properties are undecidable
 
 ## Edge Cases & Gotchas
-- Gödel's incompleteness theorems — any sufficiently powerful logical system cannot be both consistent and complete
+- Gödel's incompleteness theorems -- any sufficiently powerful logical system cannot be both consistent and complete
 - First-order logic is undecidable (no algorithm can determine truth of arbitrary statements)
 - Second-order logic is even more expressive but loses completeness

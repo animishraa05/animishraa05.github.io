@@ -13,7 +13,7 @@ Without a standardized protocol, every client and server would need custom commu
 
 ## Core Idea
 
-HTTP (Hypertext Transfer Protocol) is the standardized language that enables any client—a browser, mobile app, Postman, or CLI tool—to communicate with any server, regardless of technology stack.
+HTTP (Hypertext Transfer Protocol) is the standardized language that enables any client--a browser, mobile app, Postman, or CLI tool--to communicate with any server, regardless of technology stack.
 
 ## How It Works
 
@@ -32,6 +32,35 @@ Key architectural decisions:
 - Extensible via headers without protocol changes
 - Works with persistent connections (1.1+) for efficiency
 
+
+
+## Visual Explanation
+
+```dot
+digraph true {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="True\nInput"]
+  B [label="True\nCore Mechanism"]
+  C [label="True\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_true {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="True" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[packet-switching|Packet Switching]] (transported as network packets)
@@ -41,6 +70,6 @@ Key architectural decisions:
 
 ## Edge Cases & Gotchas
 
-- HTTP is text-based in 1.x—binary data must be encoded (Base64)
+- HTTP is text-based in 1.x--binary data must be encoded (Base64)
 - Without state management, every request must re-authenticate
 - Servers cannot push data to clients without WebSockets or polling

@@ -65,20 +65,35 @@ digraph G {
 
 ## Key Properties
 - Requires junction table in database (for BMP, must manually query it)
-- CMP: extremely straightforward — just use `Many` multiplicity on both sides
+- CMP: extremely straightforward -- just use `Many` multiplicity on both sides
 - BMP: modeled as two 1:N relationships, each bean does JNDI lookup of the other
 - Both sides hold `Collection` of the other bean's stubs
-- CMP ejbLoad() and ejbStore() remain empty — container handles junction table
+- CMP ejbLoad() and ejbStore() remain empty -- container handles junction table
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Many_to_Many_Relationship_in_EJB {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Many To Many Relatio" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[one-to-many-relationship|One-to-Many Relationship]] — M:N is two 1:N relationships
-- Built from: [[container-managed-persistence|CMP]] — CMR makes M:N trivial
-- Built from: [[bean-managed-persistence|BMP]] — requires manual junction table handling
-- Related: [[cmp-vs-bmp-relationships|CMP vs BMP Relationships]] — comparison of implementations
-- Related: [[ejb-ql|EJB-QL]] — CMP uses EJB-QL queries for relationship navigation
+- Built from: [[one-to-many-relationship|One-to-Many Relationship]] -- M:N is two 1:N relationships
+- Built from: [[container-managed-persistence|CMP]] -- CMR makes M:N trivial
+- Built from: [[bean-managed-persistence|BMP]] -- requires manual junction table handling
+- Related: [[cmp-vs-bmp-relationships|CMP vs BMP Relationships]] -- comparison of implementations
+- Related: [[ejb-ql|EJB-QL]] -- CMP uses EJB-QL queries for relationship navigation
 
 ## Edge Cases & Gotchas
 - BMP "true M:N" implementation is really two 1:N with junction table queries
 - Junction table must be manually managed in BMP (SQL INSERT/DELETE for associations)
-- CMP container generates junction table SQL — you never see it
+- CMP container generates junction table SQL -- you never see it
 - Adding/removing from Collection in CMP may trigger multiple SQL operations (performance consideration)

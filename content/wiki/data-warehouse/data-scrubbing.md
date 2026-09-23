@@ -12,7 +12,7 @@ When data comes from multiple heterogeneous sources, the same real-world value i
 
 ## Core Idea
 
-**Data scrubbing** is the process of finding and correcting data inconsistencies by mapping disparate representations to a single, uniform standard. It handles value encoding, unit mapping, attribute name mapping, name resolution, and entity deduplication — transforming raw, inconsistent source data into clean, warehouse-ready data.
+**Data scrubbing** is the process of finding and correcting data inconsistencies by mapping disparate representations to a single, uniform standard. It handles value encoding, unit mapping, attribute name mapping, name resolution, and entity deduplication -- transforming raw, inconsistent source data into clean, warehouse-ready data.
 
 ## How It Works
 
@@ -109,16 +109,16 @@ graph semantic_scrubbing {
 
 ## Connections
 
-- **Built from:** [[etl-pipeline-dwh|ETL Pipeline (DWH)]] — scrubbing is part of the Transform phase
-- **Built from:** [[integrated-dwh|Integrated DWH]] — scrubbing implements the integration characteristic
-- **Related:** [[enrichment-dwh|Enrichment]] — another transformation sub-process alongside scrubbing
-- **Related:** [[conditioning-dwh|Conditioning]] — data type conversion complements value standardization
-- **Builds into:** [[loading-dwh|Loading (DWH)]] — scrubbed data is loaded into the warehouse
-- **Related:** [[metadata-in-dwh|Metadata in DWH]] — scrubbing rules are stored as metadata
+- **Built from:** [[etl-pipeline-dwh|ETL Pipeline (DWH)]] -- scrubbing is part of the Transform phase
+- **Built from:** [[integrated-dwh|Integrated DWH]] -- scrubbing implements the integration characteristic
+- **Related:** [[enrichment-dwh|Enrichment]] -- another transformation sub-process alongside scrubbing
+- **Related:** [[conditioning-dwh|Conditioning]] -- data type conversion complements value standardization
+- **Builds into:** [[loading-dwh|Loading (DWH)]] -- scrubbed data is loaded into the warehouse
+- **Related:** [[metadata-in-dwh|Metadata in DWH]] -- scrubbing rules are stored as metadata
 
 ## Edge Cases & Gotchas
 
 - **Mapping table maintenance:** As new source values appear, mapping tables must be updated. Stale mappings produce incorrect scrubbing.
 - **Over-standardization:** Aggressively mapping similar-but-different values to the same code can lose important distinctions.
-- **Name resolution ambiguity:** "John Smith" in one system may not be the same as "J. Smith" in another — automated resolution can create false matches.
+- **Name resolution ambiguity:** "John Smith" in one system may not be the same as "J. Smith" in another -- automated resolution can create false matches.
 - **Performance cost:** Scrubbing millions of records through multiple mapping rules is computationally expensive.

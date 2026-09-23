@@ -33,12 +33,41 @@ LSP Configuration in Neovim uses `vim.lsp.config()` to define server settings, w
 - Config files in runtimepath may be eagerly evaluated (performance note)
 - "after/" directory follows standard Vim after-directory semantics
 
+
+
+## Visual Explanation
+
+```dot
+digraph true {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="True\nInput"]
+  B [label="True\nCore Mechanism"]
+  C [label="True\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_true {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="True" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[vim-lsp|vim.lsp]] — the framework providing config()
-- **Builds into:** [[lsp-client|LSP Client]] — configs become client instances via enable/start
-- **Related:** [[lsp-root-markers|Root Markers]] — part of config that determines workspace
-- **Related:** [[lsp-events|LSP Events]] — lifecycle events triggered for configured clients
+- **Built from:** [[vim-lsp|vim.lsp]] -- the framework providing config()
+- **Builds into:** [[lsp-client|LSP Client]] -- configs become client instances via enable/start
+- **Related:** [[lsp-root-markers|Root Markers]] -- part of config that determines workspace
+- **Related:** [[lsp-events|LSP Events]] -- lifecycle events triggered for configured clients
 
 ## Edge Cases & Gotchas
 

@@ -8,15 +8,15 @@ updated: 2026-05-13
 
 ## The Problem
 
-When working with a class hierarchy, code often needs to treat objects of different types uniformly — processing a list of `Shape` objects where each is actually a `Circle` or `Rectangle`. Without polymorphism, every operation would require type checks and casts, making code rigid and unextensible. The same method name (like `speak()`) should produce different behavior depending on the object (Dog barks, Cat meows, Cow moos) without the caller knowing the specific type.
+When working with a class hierarchy, code often needs to treat objects of different types uniformly -- processing a list of `Shape` objects where each is actually a `Circle` or `Rectangle`. Without polymorphism, every operation would require type checks and casts, making code rigid and unextensible. The same method name (like `speak()`) should produce different behavior depending on the object (Dog barks, Cat meows, Cow moos) without the caller knowing the specific type.
 
 ## Core Idea
 
-**Polymorphism** means "many forms" — a single entity can behave differently in different situations. Java supports two types: **compile-time polymorphism** (method overloading — same method name, different parameters, resolved at compile time) and **runtime polymorphism** (method overriding — subclass provides specific implementation of a method already defined in its superclass, resolved at runtime based on the actual object type).
+**Polymorphism** means "many forms" -- a single entity can behave differently in different situations. Java supports two types: **compile-time polymorphism** (method overloading -- same method name, different parameters, resolved at compile time) and **runtime polymorphism** (method overriding -- subclass provides specific implementation of a method already defined in its superclass, resolved at runtime based on the actual object type).
 
 ## How It Works
 
-For overloading, the compiler selects the method based on argument types and count at compile time — it's a purely syntactic decision. For overriding, the JVM uses the virtual method table (vtable) stored in the object's class: at runtime, the actual object type determines which method implementation is called, regardless of the reference type. For example, `Animal a = new Dog(); a.speak()` calls Dog's speak() because the vtable points to Dog's implementation.
+For overloading, the compiler selects the method based on argument types and count at compile time -- it's a purely syntactic decision. For overriding, the JVM uses the virtual method table (vtable) stored in the object's class: at runtime, the actual object type determines which method implementation is called, regardless of the reference type. For example, `Animal a = new Dog(); a.speak()` calls Dog's speak() because the vtable points to Dog's implementation.
 
 ## Visual Explanation
 
@@ -77,16 +77,16 @@ graph semantic_polymorphism {
 
 ## Connections
 
-- **Built from:** [[java-inheritance|Java Inheritance]] — overriding requires an inheritance relationship
-- **Built from:** [[java-interfaces|Java Interfaces]] — interface methods are always dynamically dispatched
-- **Builds into:** [[java-lambda-and-streams|Streams & Lambdas]] — functional interfaces enable polymorphic behavior patterns
-- **Related:** [[java-methods|Java Methods]] — overloading is a method feature; overriding is an inheritance feature
-- **Related:** [[java-compile-time-polymorphism|Compile-Time Polymorphism]] — the overloading mechanism in detail
-- **Related:** [[java-runtime-polymorphism|Runtime Polymorphism]] — the overriding mechanism in detail
+- **Built from:** [[java-inheritance|Java Inheritance]] -- overriding requires an inheritance relationship
+- **Built from:** [[java-interfaces|Java Interfaces]] -- interface methods are always dynamically dispatched
+- **Builds into:** [[java-lambda-and-streams|Streams & Lambdas]] -- functional interfaces enable polymorphic behavior patterns
+- **Related:** [[java-methods|Java Methods]] -- overloading is a method feature; overriding is an inheritance feature
+- **Related:** [[java-compile-time-polymorphism|Compile-Time Polymorphism]] -- the overloading mechanism in detail
+- **Related:** [[java-runtime-polymorphism|Runtime Polymorphism]] -- the overriding mechanism in detail
 
 ## Edge Cases & Gotchas
 
-- **Static methods are not polymorphic**: They are hidden, not overridden — dispatch based on compile-time type
+- **Static methods are not polymorphic**: They are hidden, not overridden -- dispatch based on compile-time type
 - **Private methods are not polymorphic**: They are not inherited and cannot be overridden
 - **Overloaded methods with same erasure**: Generics can cause ambiguity after type erasure
 - **Covariance**: In Java 5+, overriding methods can return a more specific type

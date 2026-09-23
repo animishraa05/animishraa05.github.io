@@ -44,12 +44,27 @@ digraph G {
 - Provides logical addressing and routing
 - Foundation of the internet protocol suite
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_IP_Protocol {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Ip Protocol" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[connectionless-service|Connectionless Service]] — IP is connectionless
-- Builds into: [[tcp|TCP]] — runs on top of IP
-- Builds into: [[udp|UDP]] — runs on top of IP
-- Related: [[routing|Routing]] — how routers forward IP packets
-- Related: [[ipv4|IPv4]] and [[ipv6|IPv6]] — protocol versions
+- Built from: [[connectionless-service|Connectionless Service]] -- IP is connectionless
+- Builds into: [[tcp|TCP]] -- runs on top of IP
+- Builds into: [[udp|UDP]] -- runs on top of IP
+- Related: [[routing|Routing]] -- how routers forward IP packets
+- Related: [[ipv4|IPv4]] and [[ipv6|IPv6]] -- protocol versions
 
 ## Edge Cases & Gotchas
 - Fragmentation can occur when packet exceeds MTU (Maximum Transmission Unit)

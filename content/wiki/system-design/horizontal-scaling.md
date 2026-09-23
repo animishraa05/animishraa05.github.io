@@ -8,7 +8,7 @@ updated: 2026-05-15
 
 ## The Problem
 
-Vertical scaling (buying a bigger server) hits diminishing returns — costs grow super-linearly while performance gains taper off, and high-end hardware requires specialized expertise.
+Vertical scaling (buying a bigger server) hits diminishing returns -- costs grow super-linearly while performance gains taper off, and high-end hardware requires specialized expertise.
 
 ## Core Idea
 
@@ -17,7 +17,7 @@ Horizontal scaling adds more commodity machines to distribute load across them, 
 ## How It Works
 
 1. Clone identical server instances behind a load balancer.
-2. Servers must be stateless — no user data stored locally on any instance.
+2. Servers must be stateless -- no user data stored locally on any instance.
 3. Session data is stored in a centralized, shared store (Redis, Memcached, database).
 4. The load balancer distributes incoming requests across all available instances.
 5. More instances are added during traffic spikes and removed during lulls (auto-scaling).
@@ -52,19 +52,34 @@ digraph horizontal_scaling {
 
 - Scales out by adding more machines (contrast: scaling up = bigger machine)
 - Requires a load balancer to distribute traffic
-- Servers must be stateless — user sessions live in an external store
+- Servers must be stateless -- user sessions live in an external store
 - More cost-effective than vertical scaling at medium to large scale
-- Higher availability than a single server — failure of one instance doesn't take down the system
+- Higher availability than a single server -- failure of one instance doesn't take down the system
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Horizontal_Scaling {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Horizontal Scaling" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Related:** [[layer4-load-balancing|Layer 4 Load Balancing]] — load balancers are the entry point that enables horizontal scaling
-- **Related:** [[layer7-load-balancing|Layer 7 Load Balancing]] — L7 LB enables routing to specific horizontally scaled services
-- **Related:** [[active-active-failover|Active-Active Failover]] — active-active is a specific form of horizontal scaling
-- **Related:** [[availability-parallel-vs-sequence|Availability in Parallel vs Sequence]] — horizontal scaling improves availability through parallel redundancy
+- **Related:** [[layer4-load-balancing|Layer 4 Load Balancing]] -- load balancers are the entry point that enables horizontal scaling
+- **Related:** [[layer7-load-balancing|Layer 7 Load Balancing]] -- L7 LB enables routing to specific horizontally scaled services
+- **Related:** [[active-active-failover|Active-Active Failover]] -- active-active is a specific form of horizontal scaling
+- **Related:** [[availability-parallel-vs-sequence|Availability in Parallel vs Sequence]] -- horizontal scaling improves availability through parallel redundancy
 
 ## Edge Cases & Gotchas
 
 - Statelessness is hard for legacy applications that assume local file system access or in-memory session state
 - Auto-scaling can cause thundering herds if new instances all hit the database simultaneously on startup
-- Horizontal scaling does not help with database writes — those require sharding or read replicas
+- Horizontal scaling does not help with database writes -- those require sharding or read replicas

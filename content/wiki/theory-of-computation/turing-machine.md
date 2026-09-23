@@ -33,6 +33,35 @@ Any problem that can be solved by a computer can be solved by a Turing machine. 
 - Despite infinite tape, any decidable problem needs only finite memory
 - Represents the foundation of computability theory
 
+
+
+## Visual Explanation
+
+```dot
+digraph Turing_Machine {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Turing Machine\nInput"]
+  B [label="Turing Machine\nCore Mechanism"]
+  C [label="Turing Machine\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Turing_Machine {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Turing Machine" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[model-of-computation|Model of Computation]]
@@ -42,7 +71,7 @@ Any problem that can be solved by a computer can be solved by a Turing machine. 
 
 ## Edge Cases & Gotchas
 
-- The infinite tape is an abstraction—in practice, any useful computation needs finite memory
+- The infinite tape is an abstraction--in practice, any useful computation needs finite memory
 - Not the only model; lambda calculus, register machines are all equivalent
 ## Why This Matters
 

@@ -64,12 +64,12 @@ graph semantic_multilevel_inheritance {
 
 ## Connections
 
-- **Built from:** [[java-single-inheritance|Single Inheritance]] — each link is a single inheritance relationship
-- **Built from:** [[java-inheritance|Java Inheritance]] — extends mechanism drives the chain
-- **Contrasts with:** [[java-hierarchical-inheritance|Hierarchical Inheritance]] — chain vs fan-out
-- **Related:** [[java-inheritance-types|Inheritance Types]] — multilevel is one of the five inheritance types
+- **Built from:** [[java-single-inheritance|Single Inheritance]] -- each link is a single inheritance relationship
+- **Built from:** [[java-inheritance|Java Inheritance]] -- extends mechanism drives the chain
+- **Contrasts with:** [[java-hierarchical-inheritance|Hierarchical Inheritance]] -- chain vs fan-out
+- **Related:** [[java-inheritance-types|Inheritance Types]] -- multilevel is one of the five inheritance types
 
 ## Edge Cases & Gotchas
 
-- **Deep hierarchy**: 3+ levels of inheritance is often a design smell — favor composition over deep inheritance
+- **Deep hierarchy**: 3+ levels of inheritance is often a design smell -- favor composition over deep inheritance
 - **Fragile base class problem**: Changes at the top of the chain can break classes multiple levels down

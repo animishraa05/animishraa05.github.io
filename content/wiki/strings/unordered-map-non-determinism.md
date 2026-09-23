@@ -19,7 +19,7 @@ When you iterate a frequency array (0–25), the order is always a, b, c, ..., z
 1. Each key is hashed to a bucket index: `bucket = hash(key) % bucket_count`
 2. Insertion order within a bucket is the order of insertion into that bucket's chain
 3. Iteration visits buckets in order of bucket index, then entries within each bucket
-4. When the map rehashes (grows), all entries are rehashed — bucket assignments change
+4. When the map rehashes (grows), all entries are rehashed -- bucket assignments change
 5. The hash function may use a random seed (SSO/ASLR) to prevent hash DoS attacks, making order vary across executions
 
 ## Visual Explanation
@@ -67,7 +67,7 @@ graph semantic_non_determinism {
 
 ## Key Properties
 
-- Iteration order is not a bug — it is a design feature (performance over determinism)
+- Iteration order is not a bug -- it is a design feature (performance over determinism)
 - Order can change between: compilers, standard library versions, program runs, and before/after rehashing
 - Frequency arrays guarantee deterministic, sorted-by-index order
 - If order matters, copy to a vector and sort, or use `std::map` (tree-based, ordered)
@@ -75,16 +75,16 @@ graph semantic_non_determinism {
 
 ## Connections
 
-- Built from: [[hash-collision-overhead|Hash Collision Overhead]] — bucket layout drives iteration order
-- Built from: [[hash-map-flexibility|Hash Map Flexibility]] — the flexibility tradeoff includes non-determinism
-- Builds into: [[map-traversal-method|Hash Map Traversal Method]] — traversal must account for unspecified order
-- Contrasts with: [[frequency-array|Frequency Array]] — arrays give predictable, index-based order
-- Related: [[interview-decision-framework|Array vs Hash Map Decision Framework]] — determinism is a decision factor
+- Built from: [[hash-collision-overhead|Hash Collision Overhead]] -- bucket layout drives iteration order
+- Built from: [[hash-map-flexibility|Hash Map Flexibility]] -- the flexibility tradeoff includes non-determinism
+- Builds into: [[map-traversal-method|Hash Map Traversal Method]] -- traversal must account for unspecified order
+- Contrasts with: [[frequency-array|Frequency Array]] -- arrays give predictable, index-based order
+- Related: [[interview-decision-framework|Array vs Hash Map Decision Framework]] -- determinism is a decision factor
 
 ## Edge Cases & Gotchas
 
 - Automated test suites that compare output as strings will fail if they expect a specific order from unordered_map
-- Using `std::map` instead guarantees order but costs O(log n) per operation — not always necessary
+- Using `std::map` instead guarantees order but costs O(log n) per operation -- not always necessary
 - For "first non-repeating character" problems, re-traversing the original string (not the map) avoids the ordering issue entirely
 - If the problem says "print frequencies in any order," unordered_map is fine; if it says "print in alphabetical order," use an array or a sorted container
-- The non-determinism is a concern for reproducibility in debugging — a bug that depends on iteration order may not reproduce consistently
+- The non-determinism is a concern for reproducibility in debugging -- a bug that depends on iteration order may not reproduce consistently

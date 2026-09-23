@@ -16,7 +16,7 @@ Java provides four access levels: **private** (only within the class), **default
 
 ## How It Works
 
-The compiler checks access rules at compile time. If a method in class A tries to access a `private` field of class B, the compiler rejects it. Access modifiers do not affect runtime behavior — they are a compile-time enforcement mechanism. Protected access also grants access to subclasses in different packages.
+The compiler checks access rules at compile time. If a method in class A tries to access a `private` field of class B, the compiler rejects it. Access modifiers do not affect runtime behavior -- they are a compile-time enforcement mechanism. Protected access also grants access to subclasses in different packages.
 
 ## Visual Explanation
 
@@ -74,14 +74,14 @@ graph semantic_access_modifiers {
 
 ## Connections
 
-- **Built from:** [[java-encapsulation|Java Encapsulation]] — access modifiers are the mechanism for data hiding
-- **Builds into:** [[java-inheritance|Java Inheritance]] — override rules depend on access level of parent methods
-- **Builds into:** [[java-packages|Java Packages]] — default access is tied to package boundaries
-- **Related:** [[java-methods|Java Methods]] — every method has an access level
+- **Built from:** [[java-encapsulation|Java Encapsulation]] -- access modifiers are the mechanism for data hiding
+- **Builds into:** [[java-inheritance|Java Inheritance]] -- override rules depend on access level of parent methods
+- **Builds into:** [[java-packages|Java Packages]] -- default access is tied to package boundaries
+- **Related:** [[java-methods|Java Methods]] -- every method has an access level
 
 ## Edge Cases & Gotchas
 
 - **Protected means access from subclasses, not by subclasses**: You can access a protected member only through an expression of the subclass type, not the parent type
 - **Reflection bypasses access modifiers**: `setAccessible(true)` breaks encapsulation at runtime
-- **Default is not "friendly"**: Officially called package-private — no keyword; absence of modifier means default
+- **Default is not "friendly"**: Officially called package-private -- no keyword; absence of modifier means default
 - **Nested classes**: Private members of outer class are accessible to inner classes

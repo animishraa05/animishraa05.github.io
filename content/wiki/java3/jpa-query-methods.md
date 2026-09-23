@@ -20,7 +20,7 @@ Spring Data JPA's derived query methods generate database queries automatically 
 2. **Property references**: The parser extracts entity property names from the method name (e.g., `LastName`, `Age`)
 3. **Criteria keywords**: AND, OR, Between, LessThan, GreaterThan, Like, In, IgnoreCase, OrderBy, Null, NotNull
 4. **Nested property traversal**: `findByAddressZipCode(String zip)` traverses the Address→zipCode path
-5. **Startup validation**: At application startup, Spring Data validates that all properties in method names actually exist — errors are caught early
+5. **Startup validation**: At application startup, Spring Data validates that all properties in method names actually exist -- errors are caught early
 6. **@Query override**: If a method name can't express the logic, `@Query("...")` provides explicit JPQL
 
 ## Visual Explanation
@@ -48,20 +48,35 @@ digraph query_methods {
 
 - **Supported prefixes**: `findBy`, `readBy`, `getBy`, `queryBy`, `countBy`, `deleteBy`, `removeBy`
 - **Criteria keywords**: And, Or, Between, LessThan, GreaterThan, Like, NotLike, In, NotIn, IgnoreCase, OrderBy, True, False, Null, NotNull, Before, After, StartingWith, EndingWith, Containing
-- **Limiting results**: `findFirst5By...`, `findTop10By...` — restricts result count
+- **Limiting results**: `findFirst5By...`, `findTop10By...` -- restricts result count
 - **Return types**: Entity, `Optional<T>`, `List<T>`, `Stream<T>`, `Page<T>`, `Slice<T>`
 - **Validation**: Startup validation catches method names that reference non-existent properties
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_JPA_Query_Methods {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Jpa Query Methods" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[spring-data-jpa|Spring Data JPA]] — Derived query methods are a core feature
-- **Built from:** [[jpa-repository|JpaRepository]] — Derived methods are declared on JpaRepository interfaces
-- **Related:** [[hql|Hibernate Query Language]] — Both generate JPQL; derived methods are a higher-level abstraction
-- **Contrasts with:** [[ejb-ql|EJB Query Language (EJB-QL)]] — EJB-QL is written in deployment descriptors; Spring Data derives queries from method names
+- **Built from:** [[spring-data-jpa|Spring Data JPA]] -- Derived query methods are a core feature
+- **Built from:** [[jpa-repository|JpaRepository]] -- Derived methods are declared on JpaRepository interfaces
+- **Related:** [[hql|Hibernate Query Language]] -- Both generate JPQL; derived methods are a higher-level abstraction
+- **Contrasts with:** [[ejb-ql|EJB Query Language (EJB-QL)]] -- EJB-QL is written in deployment descriptors; Spring Data derives queries from method names
 
 ## Edge Cases & Gotchas
 
-- **Method name explosion**: `findByLastNameAndAgeGreaterThanAndStatusInOrderByLastNameAsc(...)` — unreadable; use `@Query` for complex cases
+- **Method name explosion**: `findByLastNameAndAgeGreaterThanAndStatusInOrderByLastNameAsc(...)` -- unreadable; use `@Query` for complex cases
 - **Distinct**: `findDistinctBy...` for distinct results
 - **IgnoreCase**: Works only on String comparisons; added after property: `findByLastNameIgnoreCase`
-- **Nested property ambiguity**: `findByAddressZipCode` assumes `address.zipCode` property; if `addressZipCode` is a direct property, it won't find it — disambiguate with `findByAddress_ZipCode`
+- **Nested property ambiguity**: `findByAddressZipCode` assumes `address.zipCode` property; if `addressZipCode` is a direct property, it won't find it -- disambiguate with `findByAddress_ZipCode`

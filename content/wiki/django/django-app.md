@@ -55,12 +55,41 @@ INSTALLED_APPS = [
 - Contains domain-specific logic.
 - Has its own models and views.
 
+
+
+## Visual Explanation
+
+```dot
+digraph Django_App {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Django App\nInput"]
+  B [label="Django App\nCore Mechanism"]
+  C [label="Django App\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Django_App {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Django App" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[django-project|Django Project]] — lives inside a project.
-- **Builds into:** [[django-model|Django Model]] — apps define models.
-- **Builds into:** [[django-view|Django View]] — apps define views.
-- **Contrasts with:** [[django-project|Django Project]] — app is specific, project is global.
+- **Built from:** [[django-project|Django Project]] -- lives inside a project.
+- **Builds into:** [[django-model|Django Model]] -- apps define models.
+- **Builds into:** [[django-view|Django View]] -- apps define views.
+- **Contrasts with:** [[django-project|Django Project]] -- app is specific, project is global.
 
 ## Edge Cases & Gotchas
 

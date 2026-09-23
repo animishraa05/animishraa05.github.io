@@ -55,15 +55,30 @@ digraph compiler_pass {
 - **Language constraints:** Some languages require multi-pass (forward references, C requires seeing struct definitions before use)
 - **Intermediate files:** Multi-pass compilers read/write intermediate representation between passes
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Compiler_Pass {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Compiler Pass" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[phases-of-compiler|Phases of a Compiler]] — passes group phases into scans
-- **Contrasts with:** [[single-pass-vs-multi-pass|Single Pass vs Multi-Pass Compiler]] — synthesis comparing the two strategies
-- **Related:** [[compiler|Compiler]] — the overall architecture of a compiler
-- **Related:** [[code-optimization|Code Optimization]] — optimization typically requires multiple passes for effective transformation
+- **Built from:** [[phases-of-compiler|Phases of a Compiler]] -- passes group phases into scans
+- **Contrasts with:** [[single-pass-vs-multi-pass|Single Pass vs Multi-Pass Compiler]] -- synthesis comparing the two strategies
+- **Related:** [[compiler|Compiler]] -- the overall architecture of a compiler
+- **Related:** [[code-optimization|Code Optimization]] -- optimization typically requires multiple passes for effective transformation
 
 ## Edge Cases & Gotchas
 
 - **Hybrid approaches:** Modern compilers like GCC and LLVM are multi-pass but use efficient in-memory IR, not files between passes
-- **Pascal is single-pass:** Pascal was designed specifically to allow single-pass compilation — no forward references without explicit forward declaration
+- **Pascal is single-pass:** Pascal was designed specifically to allow single-pass compilation -- no forward references without explicit forward declaration
 - **Multi-pass enables optimization:** Dead code elimination, constant propagation, and loop transformations all require multiple passes to analyze

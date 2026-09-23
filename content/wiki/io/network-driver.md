@@ -48,6 +48,21 @@ digraph net_driver {
 - Hardware acceleration: checksum offload, TSO, RSS
 - Examples: Ethernet driver, Wi-Fi driver, InfiniBand driver
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Network_Driver {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Network Driver" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[device-driver|Device Driver]], [[io-devices|I/O Devices]]
@@ -59,4 +74,4 @@ digraph net_driver {
 
 - Packet drop under high load (driver must handle ring exhaustion)
 - DMA mapping must handle scattered packet buffers (SG DMA)
-- Some NICs have buggy offload features — may need disabling
+- Some NICs have buggy offload features -- may need disabling

@@ -7,7 +7,7 @@ updated: 2026-04-14
 ---
 
 ## The Problem
-A modern data platform requires multiple services—PostgreSQL, Airflow, Metabase, Redis—each with their own configuration, dependencies, and networking. Installing and configuring these manually on a development machine is error-prone and hard to reproduce.
+A modern data platform requires multiple services--PostgreSQL, Airflow, Metabase, Redis--each with their own configuration, dependencies, and networking. Installing and configuring these manually on a development machine is error-prone and hard to reproduce.
 
 ## Core Idea
 Docker Compose is a tool for defining and running multi-container applications. A single `docker-compose.yml` file declares all services, their images, ports, volumes, environment variables, and dependencies. Running `docker compose up -d` starts everything with proper health checks and networking.
@@ -34,13 +34,42 @@ Example (FoodFlow services):
 - **Port mapping**: Host ports (5433, 8080, 3000) map to container ports
 - **Bind mounts**: Local directories mounted into containers for code/data access
 
+
+
+## Visual Explanation
+
+```dot
+digraph Docker_Compose {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Docker Compose\nInput"]
+  B [label="Docker Compose\nCore Mechanism"]
+  C [label="Docker Compose\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Docker_Compose {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Docker Compose" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Related: [[apache-airflow|Apache Airflow]] — runs in Docker Compose environment
-- Related: [[data-warehouse|Data Warehouse]] — PostgreSQL runs in Docker Compose
-- Related: [[etl-pipeline|ETL Pipeline]] — ETL scripts access DB via Docker networking
+- Related: [[apache-airflow|Apache Airflow]] -- runs in Docker Compose environment
+- Related: [[data-warehouse|Data Warehouse]] -- PostgreSQL runs in Docker Compose
+- Related: [[etl-pipeline|ETL Pipeline]] -- ETL scripts access DB via Docker networking
 
 ## Edge Cases & Gotchas
 - **Volume persistence**: `docker compose down` keeps volumes; `docker compose down -v` deletes
 - **Startup order**: Even with `depends_on`, fast-starting services may fail if slow starters aren't ready
-- **Resource limits**: No CPU/memory limits by default—containers can consume host resources
-- **Secrets**: Credentials in docker-compose.yml visible to anyone with file access—use Docker secrets in production
+- **Resource limits**: No CPU/memory limits by default--containers can consume host resources
+- **Secrets**: Credentials in docker-compose.yml visible to anyone with file access--use Docker secrets in production

@@ -48,12 +48,27 @@ digraph G {
 - Used by switches to learn port-to-MAC mappings
 - First 3 bytes indicate manufacturer (OUI)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_MAC_Address {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Mac Address" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[ethernet|Ethernet]] — MAC addresses are used by Ethernet
-- **Builds into:** [[arp-protocol|ARP Protocol]] — ARP resolves IP to MAC
-- **Related:** [[ip-address|IP Address]] — IP is Layer 3; MAC is Layer 2
-- **Related:** [[network-switch|Network Switch]] — switches forward based on MAC
+- **Built from:** [[ethernet|Ethernet]] -- MAC addresses are used by Ethernet
+- **Builds into:** [[arp-protocol|ARP Protocol]] -- ARP resolves IP to MAC
+- **Related:** [[ip-address|IP Address]] -- IP is Layer 3; MAC is Layer 2
+- **Related:** [[network-switch|Network Switch]] -- switches forward based on MAC
 
 ## Edge Cases & Gotchas
 

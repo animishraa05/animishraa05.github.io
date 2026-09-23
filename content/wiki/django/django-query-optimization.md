@@ -53,10 +53,39 @@ for book in books:
 - `select_related` modifies the SQL query (JOIN).
 - `prefetch_related` modifies how Python aggregates the data.
 
+
+
+## Visual Explanation
+
+```dot
+digraph Django_Query_Optimization {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Django Query Optimiz\nInput"]
+  B [label="Django Query Optimiz\nCore Mechanism"]
+  C [label="Django Query Optimiz\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Django_Query_Optimization {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Django Query Optimiz" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[django-orm|Django ORM]] — an advanced feature of the ORM.
-- **Related:** [[django-model|Django Model]] — optimizes model relationship access.
+- **Built from:** [[django-orm|Django ORM]] -- an advanced feature of the ORM.
+- **Related:** [[django-model|Django Model]] -- optimizes model relationship access.
 
 ## Edge Cases & Gotchas
 

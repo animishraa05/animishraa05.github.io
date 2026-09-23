@@ -7,7 +7,7 @@ updated: 2026-04-30
 ---
 
 ## The Problem
-Models that perform perfectly on training data but fail on new data are useless in practice — they've memorized noise instead of learning patterns.
+Models that perform perfectly on training data but fail on new data are useless in practice -- they've memorized noise instead of learning patterns.
 
 ## Core Idea
 When a model learns training data too well, including noise and idiosyncrasies, resulting in poor generalization to new data.
@@ -38,11 +38,26 @@ digraph G {
 - Reducible: regularization, more data, or simpler models can fix it
 - Universal: affects all machine learning models to some degree
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Overfitting {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Overfitting" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[train-test-split|Train-Test Split]] — the tool to detect overfitting
-- Contrasts with: [[underfitting|Underfitting]] — opposite problem (model too simple)
-- Related: [[supervised-learning|Supervised Learning]] — overfitting is a supervised learning risk
-- Related: [[cross-validation|Cross-Validation]] — helps detect and mitigate overfitting
+- Built from: [[train-test-split|Train-Test Split]] -- the tool to detect overfitting
+- Contrasts with: [[underfitting|Underfitting]] -- opposite problem (model too simple)
+- Related: [[supervised-learning|Supervised Learning]] -- overfitting is a supervised learning risk
+- Related: [[cross-validation|Cross-Validation]] -- helps detect and mitigate overfitting
 
 ## Edge Cases & Gotchas
 - Overfitting can happen even with simple models on very small datasets

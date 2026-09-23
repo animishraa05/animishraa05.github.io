@@ -12,7 +12,7 @@ Every data access class needs standard CRUD operations (create, read, update, de
 
 ## Core Idea
 
-`JpaRepository<T, ID>` is a Spring Data JPA interface that provides a full set of CRUD, paging, and sorting operations automatically. By extending it, a repository interface inherits `findAll()`, `findById()`, `save()`, `delete()`, `findAll(Pageable)`, and more — no implementation code required. Spring Data generates the implementation at runtime.
+`JpaRepository<T, ID>` is a Spring Data JPA interface that provides a full set of CRUD, paging, and sorting operations automatically. By extending it, a repository interface inherits `findAll()`, `findById()`, `save()`, `delete()`, `findAll(Pageable)`, and more -- no implementation code required. Spring Data generates the implementation at runtime.
 
 ## How It Works
 
@@ -46,24 +46,39 @@ digraph jpaRepository_hierarchy {
 
 ## Key Properties
 
-- **CrudRepository**: Base interface with full CRUD — return types are `Optional<T>` for single result
+- **CrudRepository**: Base interface with full CRUD -- return types are `Optional<T>` for single result
 - **PagingAndSortingRepository**: Adds pagination and sorting support
 - **JpaRepository**: Extends both with JPA-specific batch operations and flush control
-- **Query by Example**: `findAll(Example.of(probe))` — query by example object
+- **Query by Example**: `findAll(Example.of(probe))` -- query by example object
 - **Specification**: `JpaSpecificationExecutor` for dynamic criteria queries
 - **@NoRepositoryBean**: Marker for intermediate interfaces that shouldn't be instantiated
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_JpaRepository {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Jparepository" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[spring-data-jpa|Spring Data JPA]] — JpaRepository is the primary repository interface
-- **Built from:** [[hibernate-orm-framework|Hibernate ORM Framework]] — SimpleJpaRepository delegates to EntityManager (Hibernate)
-- **Related:** [[jpa-query-methods|JPA Query Methods]] — Derived query methods extend JpaRepository
-- **Related:** [[jpa-pagination-sorting|JPA Pagination and Sorting]] — JpaRepository inherits Pageable support
-- **Contrasts with:** [[java-jdbc|JDBC]] — JDBC requires manual SQL; JpaRepository is declarative
+- **Built from:** [[spring-data-jpa|Spring Data JPA]] -- JpaRepository is the primary repository interface
+- **Built from:** [[hibernate-orm-framework|Hibernate ORM Framework]] -- SimpleJpaRepository delegates to EntityManager (Hibernate)
+- **Related:** [[jpa-query-methods|JPA Query Methods]] -- Derived query methods extend JpaRepository
+- **Related:** [[jpa-pagination-sorting|JPA Pagination and Sorting]] -- JpaRepository inherits Pageable support
+- **Contrasts with:** [[java-jdbc|JDBC]] -- JDBC requires manual SQL; JpaRepository is declarative
 
 ## Edge Cases & Gotchas
 
-- **save() semantics**: `save()` is both INSERT and UPDATE — Hibernate checks if ID exists; this can cause extra SELECT queries
+- **save() semantics**: `save()` is both INSERT and UPDATE -- Hibernate checks if ID exists; this can cause extra SELECT queries
 - **getById() vs findById()**: `getById()` returns a reference (proxy, lazy); `findById()` returns Optional (eager loading)
 - **deleteInBatch vs deleteAll**: `deleteInBatch()` uses one JPQL DELETE query; `deleteAll()` loads each entity and calls EntityManager.remove()
 - **Transactional behavior**: Repository methods are @Transactional(readOnly=true) for reads, @Transactional for writes

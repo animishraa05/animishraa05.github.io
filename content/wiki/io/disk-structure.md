@@ -8,11 +8,11 @@ updated: 2026-04-30
 
 ## The Problem
 
-Data on a hard disk isn't stored as a linear sequence — it's physically organized on spinning platters with magnetic surfaces. The OS needs to understand this geometry to efficiently locate and access data.
+Data on a hard disk isn't stored as a linear sequence -- it's physically organized on spinning platters with magnetic surfaces. The OS needs to understand this geometry to efficiently locate and access data.
 
 ## Core Idea
 
-A hard disk consists of platters, tracks, sectors, cylinders, and read/write heads — the physical organization that determines how data is addressed and accessed.
+A hard disk consists of platters, tracks, sectors, cylinders, and read/write heads -- the physical organization that determines how data is addressed and accessed.
 
 ## How It Works
 
@@ -55,6 +55,21 @@ digraph disk {
 - Tracks are numbered from outer (0) to inner
 - Multiple platters increase capacity without increasing form factor
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Disk_Structure {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Disk Structure" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[io-devices|I/O Devices]], [[block-driver|Block Driver]]
@@ -64,6 +79,6 @@ digraph disk {
 
 ## Edge Cases & Gotchas
 
-- Sectors aren't always 512B — modern disks use 4KB physical sectors
+- Sectors aren't always 512B -- modern disks use 4KB physical sectors
 - Zone bit recording: outer tracks have more sectors than inner tracks
 - Bad sectors must be remapped (handled by disk firmware)

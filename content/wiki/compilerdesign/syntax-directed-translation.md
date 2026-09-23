@@ -40,21 +40,36 @@ digraph sdt {
 ## Key Properties
 
 - **Grammar + Actions:** Productions have embedded semantic actions
-- **Execution timing:** During parsing (not after) — integrated into the parsing process
+- **Execution timing:** During parsing (not after) -- integrated into the parsing process
 - **Two forms:** Syntax-directed definitions (attributes) and translation schemes (actions)
 - **Action positions:** Actions can be placed anywhere in the production right-hand side
 - **Output:** Semantic evaluation produces the translation (code, types, etc.)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Syntax_Directed_Translation {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Syntax Directed Tran" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[context-free-grammar|Context-Free Grammar]] — SDTs extend CFGs with semantic actions
-- **Builds into:** [[attributed-sdt|S-Attributed and L-Attributed SDTs]] — classification of SDTs by attribute flow direction
-- **Related:** [[syntax-analysis|Syntax Analysis]] — SDT actions execute during syntax analysis
-- **Related:** [[intermediate-code-generation|Intermediate Code Generation]] — SDTs often emit intermediate code as their actions
-- **Related:** [[semantic-analysis|Semantic Analysis]] — SDTs can perform type checking during parsing
+- **Built from:** [[context-free-grammar|Context-Free Grammar]] -- SDTs extend CFGs with semantic actions
+- **Builds into:** [[attributed-sdt|S-Attributed and L-Attributed SDTs]] -- classification of SDTs by attribute flow direction
+- **Related:** [[syntax-analysis|Syntax Analysis]] -- SDT actions execute during syntax analysis
+- **Related:** [[intermediate-code-generation|Intermediate Code Generation]] -- SDTs often emit intermediate code as their actions
+- **Related:** [[semantic-analysis|Semantic Analysis]] -- SDTs can perform type checking during parsing
 
 ## Edge Cases & Gotchas
 
-- **Action ordering:** In bottom-up parsing, actions at the end of the production execute at reduce time — actions in the middle need special handling (split productions)
+- **Action ordering:** In bottom-up parsing, actions at the end of the production execute at reduce time -- actions in the middle need special handling (split productions)
 - **Inherited attributes:** When attributes flow down the parse tree, the order of execution must be carefully managed
-- **Side effects:** Actions can have side effects (printing, emitting code) — these must be ordered correctly to produce the right output
+- **Side effects:** Actions can have side effects (printing, emitting code) -- these must be ordered correctly to produce the right output

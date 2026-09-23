@@ -1,5 +1,5 @@
 ---
-title: String vs StringBuffer vs StringBuilder — Java String Types Compared
+title: String vs StringBuffer vs StringBuilder -- Java String Types Compared
 type: synthesis
 tags: [dev, java]
 created: 2026-05-13
@@ -41,15 +41,44 @@ The tradeoff is between safety and performance. Immutability (String) is the saf
 
 - Mutable string building in a shared, multi-threaded context
 - Legacy code that already uses it
-- Rare — `StringBuilder` is almost always preferred in modern code
+- Rare -- `StringBuilder` is almost always preferred in modern code
 
 ## The Insight
 
-The Java compiler itself prefers StringBuilder — `"a" + "b" + "c"` is compiled to `new StringBuilder().append("a").append("b").append("c").toString()`. There is almost never a reason to use StringBuffer in new code. The real choice is between String (immutable, safe) and StringBuilder (mutable, fast).
+The Java compiler itself prefers StringBuilder -- `"a" + "b" + "c"` is compiled to `new StringBuilder().append("a").append("b").append("c").toString()`. There is almost never a reason to use StringBuffer in new code. The real choice is between String (immutable, safe) and StringBuilder (mutable, fast).
 
+
+
+## Visual Explanation
+
+```dot
+digraph java_string_types_compared {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Java String Types Co\nInput"]
+  B [label="Java String Types Co\nCore Mechanism"]
+  C [label="Java String Types Co\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_java_string_types_compared {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Java String Types Co" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- [[java-strings|Java Strings]] — the immutable baseline for comparison
-- [[java-stringbuilder-stringbuffer|StringBuilder and StringBuffer]] — the mutable alternatives
-- [[java-memory-management|Java Memory Management]] — immutability enables string pooling
-- [[java-synchronization|Java Synchronization]] — StringBuffer's synchronized methods explained
+- [[java-strings|Java Strings]] -- the immutable baseline for comparison
+- [[java-stringbuilder-stringbuffer|StringBuilder and StringBuffer]] -- the mutable alternatives
+- [[java-memory-management|Java Memory Management]] -- immutability enables string pooling
+- [[java-synchronization|Java Synchronization]] -- StringBuffer's synchronized methods explained

@@ -47,15 +47,30 @@ digraph token_structure {
 - **Attribute values:** Symbol table pointers, constant values, or null
 - **Parser alphabet:** The parser reads tokens, not characters
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Token {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Token" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[lexical-analysis|Lexical Analysis]] — the lexer produces the token stream
-- **Builds into:** [[syntax-analysis|Syntax Analysis]] — the parser consumes tokens as terminal symbols
-- **Related:** [[wiki/compilerdesign/symbol-table-in-compiler|Symbol Table]] — identifier token attributes point to symbol table entries
-- **Related:** [[phases-of-compiler|Phases of a Compiler]] — token generation is the output of phase 1
+- **Built from:** [[lexical-analysis|Lexical Analysis]] -- the lexer produces the token stream
+- **Builds into:** [[syntax-analysis|Syntax Analysis]] -- the parser consumes tokens as terminal symbols
+- **Related:** [[wiki/compilerdesign/symbol-table-in-compiler|Symbol Table]] -- identifier token attributes point to symbol table entries
+- **Related:** [[phases-of-compiler|Phases of a Compiler]] -- token generation is the output of phase 1
 
 ## Edge Cases & Gotchas
 
-- **Keywords vs Identifiers:** In most languages, keywords are reserved and not usable as identifiers — the lexer checks this
+- **Keywords vs Identifiers:** In most languages, keywords are reserved and not usable as identifiers -- the lexer checks this
 - **Maximal munch:** `>=` is one token, not `>` then `=`
-- **Semicolons and delimiters:** Even single characters like `;` are tokens — the parser needs them for grammar structure
+- **Semicolons and delimiters:** Even single characters like `;` are tokens -- the parser needs them for grammar structure

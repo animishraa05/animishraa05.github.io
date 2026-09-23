@@ -47,23 +47,38 @@ digraph cfg {
 
 ## Key Properties
 
-- **Formal definition:** G = (V, Σ, R, S) — non-terminals, terminals, productions, start symbol
+- **Formal definition:** G = (V, Σ, R, S) -- non-terminals, terminals, productions, start symbol
 - **BNF notation:** Backus-Naur Form is the standard notation for writing CFGs
 - **Derivation:** Replacing non-terminals with right-hand sides of productions
 - **Parse tree:** Graphical representation of a derivation
 - **Language:** Set of all strings derivable from the start symbol
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Context_Free_Grammar {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Context Free Grammar" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[syntax-analysis|Syntax Analysis]] — the parser uses a CFG to validate program structure
-- **Builds into:** [[wiki/compilerdesign/ambiguous-grammar|Ambiguous Grammar]] — a grammar that produces multiple parse trees for the same input
-- **Builds into:** [[top-down-parsing|Top-Down Parsing]] — top-down parsers follow leftmost derivations from a CFG
-- **Builds into:** [[bottom-up-parsing|Bottom-Up Parsing]] — bottom-up parsers compute reverse rightmost derivations from a CFG
-- **Related:** [[first-and-follow-sets|FIRST and FOLLOW Sets]] — computed from CFG to guide parser table construction
-- **Related:** [[context-free-grammar|Context-Free Grammar]] — CFGs are categorized by production rule structure into regular, context-free, context-sensitive, and unrestricted
+- **Built from:** [[syntax-analysis|Syntax Analysis]] -- the parser uses a CFG to validate program structure
+- **Builds into:** [[wiki/compilerdesign/ambiguous-grammar|Ambiguous Grammar]] -- a grammar that produces multiple parse trees for the same input
+- **Builds into:** [[top-down-parsing|Top-Down Parsing]] -- top-down parsers follow leftmost derivations from a CFG
+- **Builds into:** [[bottom-up-parsing|Bottom-Up Parsing]] -- bottom-up parsers compute reverse rightmost derivations from a CFG
+- **Related:** [[first-and-follow-sets|FIRST and FOLLOW Sets]] -- computed from CFG to guide parser table construction
+- **Related:** [[context-free-grammar|Context-Free Grammar]] -- CFGs are categorized by production rule structure into regular, context-free, context-sensitive, and unrestricted
 
 ## Edge Cases & Gotchas
 
 - **Left recursion:** Top-down parsers enter infinite loops with left-recursive productions (A → Aα)
-- **Ambiguity:** A grammar may be ambiguous even though the language is not — the grammar must be rewritten
+- **Ambiguity:** A grammar may be ambiguous even though the language is not -- the grammar must be rewritten
 - **Grammar transformations:** Left recursion elimination and left factoring are common transformations to make grammars parseable

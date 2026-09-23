@@ -53,6 +53,21 @@ digraph io_system {
 - Uses interrupts to avoid CPU busy-waiting
 - Supports multiple I/O techniques: polling, interrupt-driven, DMA
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_I_O_System {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="I/O System" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[system-bus|System Bus]], [[device-driver|Device Driver]], [[interrupt-handler|Interrupt Handler]]
@@ -62,7 +77,7 @@ digraph io_system {
 
 ## Edge Cases & Gotchas
 
-- Device drivers run in kernel mode — a buggy driver can crash the entire OS
+- Device drivers run in kernel mode -- a buggy driver can crash the entire OS
 - Interrupt storms can overwhelm the CPU if devices generate too many interrupts
 - Some devices don't support interrupts and require polling
 - DMA conflicts can occur if the DMA controller isn't properly programmed

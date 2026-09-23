@@ -37,11 +37,26 @@ digraph G {
 - Iterative: findings lead to new questions and deeper exploration
 - Open-ended: no fixed endpoint, driven by curiosity and domain knowledge
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Exploratory_Data_Analysis {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Exploratory Data Ana" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[data-wrangling|Data Wrangling]] — EDA requires clean, structured data
-- Builds into: [[feature-engineering|Feature Engineering]] — EDA insights drive feature creation
-- Related: [[data-visualization|Data Visualization]] — EDA relies heavily on visualization
-- Related: [[data-science|Data Science]] — EDA is a core phase of the data science process
+- Built from: [[data-wrangling|Data Wrangling]] -- EDA requires clean, structured data
+- Builds into: [[feature-engineering|Feature Engineering]] -- EDA insights drive feature creation
+- Related: [[data-visualization|Data Visualization]] -- EDA relies heavily on visualization
+- Related: [[data-science|Data Science]] -- EDA is a core phase of the data science process
 
 ## Edge Cases & Gotchas
 - Confirmation bias: seeing patterns that confirm pre-existing beliefs

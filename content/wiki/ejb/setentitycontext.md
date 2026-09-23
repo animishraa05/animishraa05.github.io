@@ -19,7 +19,7 @@ When the EJB container creates a new entity bean instance for the pool, how does
 - Container calls `setEntityContext(EntityContext ctx)` on the instance
 - Bean stores the context in a member variable for later use
 - Bean can now query environment info via JNDI (DataSource, etc.)
-- Bean enters the pool—no specific data associated yet
+- Bean enters the pool--no specific data associated yet
 
 ## Key Properties
 
@@ -28,6 +28,35 @@ When the EJB container creates a new entity bean instance for the pool, how does
 - Context should be stored for use in lifecycle callbacks
 - Bean is now in the pool but has no specific data
 
+
+
+## Visual Explanation
+
+```dot
+digraph setEntityContext__ {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Setentitycontext()\nInput"]
+  B [label="Setentitycontext()\nCore Mechanism"]
+  C [label="Setentitycontext()\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_setEntityContext__ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Setentitycontext()" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[entity-bean|Entity Bean]], [[ejb-container|EJB Container]]

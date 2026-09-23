@@ -40,11 +40,26 @@ digraph G {
 - Supports both connection-oriented (TCP) and connectionless (UDP) sockets
 - File descriptor-based (sockets behave like files)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Socket_API {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Socket Api" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[service-access-point|Service Access Point]] — concrete implementation of SAP
-- Built from: [[service-primitives|Service Primitives]] — API calls are primitives
-- Related: [[tcp|TCP]] and [[udp|UDP]] — accessed via socket API
-- Related: [[application-layer|Application Layer]] — applications use sockets
+- Built from: [[service-access-point|Service Access Point]] -- concrete implementation of SAP
+- Built from: [[service-primitives|Service Primitives]] -- API calls are primitives
+- Related: [[tcp|TCP]] and [[udp|UDP]] -- accessed via socket API
+- Related: [[application-layer|Application Layer]] -- applications use sockets
 
 ## Edge Cases & Gotchas
 - Blocking vs non-blocking sockets: blocking waits, non-blocking returns immediately

@@ -12,7 +12,7 @@ RAM is limited and expensive. When all RAM is full, the OS needs somewhere to pu
 
 ## Core Idea
 
-Swap space is a portion of the disk used as an extension of RAM — inactive pages are moved (swapped) from RAM to disk to free memory.
+Swap space is a portion of the disk used as an extension of RAM -- inactive pages are moved (swapped) from RAM to disk to free memory.
 
 ## How It Works
 
@@ -43,6 +43,21 @@ digraph swap {
 - Can be dedicated partition or swap file in file system
 - Excessive swapping = "thrashing" (system becomes very slow)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Swap_Space {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Swap Space" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[disk-management|Disk Management]], [[wiki/io/paging|Paging]]
@@ -54,4 +69,4 @@ digraph swap {
 
 - Swap on SSD wears out flash cells (limited write endurance)
 - Too much swapping = thrashing (spending all time swapping, not working)
-- Some systems allow disabling swap (risky — OOM killer may activate)
+- Some systems allow disabling swap (risky -- OOM killer may activate)

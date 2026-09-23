@@ -28,6 +28,35 @@ JDBC (Java Database Connectivity) is a standard Java API that provides universal
 - Supports connection pooling through DataSource
 - SQL statements via Statement, PreparedStatement, CallableStatement
 
+
+
+## Visual Explanation
+
+```dot
+digraph JDBC {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Jdbc\nInput"]
+  B [label="Jdbc\nCore Mechanism"]
+  C [label="Jdbc\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_JDBC {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Jdbc" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[bean-managed-persistence|Bean-Managed Persistence]]

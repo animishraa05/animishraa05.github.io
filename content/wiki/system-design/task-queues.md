@@ -54,12 +54,27 @@ digraph TaskQueues {
 - Built-in retry and error handling for failed tasks
 - Well-suited for CPU-intensive or long-running background work
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Task_Queues {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Task Queues" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- Related: [[message-queues|Message Queues]] — task queues extend message queue concepts with scheduling and result tracking
-- Related: [[back-pressure|Back Pressure]] — prevents task queue overflow under heavy submission
-- Related: [[microservices-architecture|Microservices Architecture]] — background processing offloads work from request path
-- Contrasts with: synchronous processing — async background computation vs inline blocking execution
+- Related: [[message-queues|Message Queues]] -- task queues extend message queue concepts with scheduling and result tracking
+- Related: [[back-pressure|Back Pressure]] -- prevents task queue overflow under heavy submission
+- Related: [[microservices-architecture|Microservices Architecture]] -- background processing offloads work from request path
+- Contrasts with: synchronous processing -- async background computation vs inline blocking execution
 
 ## Edge Cases & Gotchas
 

@@ -4,7 +4,7 @@
 
 ---
 
-## Template 1 — Concept Page
+## Template 1 -- Concept Page
 
 ````markdown
 ---
@@ -17,7 +17,7 @@ updated: YYYY-MM-DD
 
 ## Formal Definition
 
-_A precise, textbook-style definition. Formal and rigorous — as it would appear in a reference textbook or academic paper. If the concept has a standard mathematical or technical definition, state it here._
+_A precise, textbook-style definition. Formal and rigorous -- as it would appear in a reference textbook or academic paper. If the concept has a standard mathematical or technical definition, state it here._
 
 > [!example] Example (TCP)
 > "The Transmission Control Protocol (TCP) is a connection-oriented transport protocol that provides reliable, ordered, and error-checked delivery of a byte stream between applications running on hosts communicating over an IP network."
@@ -28,7 +28,7 @@ _Plain language intuition. What does this concept mean in simpler terms? Why doe
 
 ## How It Works
 
-_Mechanism step by step. Not just what it does — how it accomplishes it. Bullet points or numbered steps, 4–8 items._
+_Mechanism step by step. Not just what it does -- how it accomplishes it. Bullet points or numbered steps, 4–8 items._
 
 ## Mathematical Formulation
 
@@ -77,12 +77,12 @@ _Practical usage. If this is a CS concept, provide a core code snippet (C++/Pyth
 
 ## Connections
 
-- **Built from:** [[prerequisite-page|Prerequisite Name]] — one line on why
-- **Builds into:** [[higher-concept|Higher Concept]] — one line on how this enables it
-- **Contrasts with:** [[other-approach|Other Approach]] — one line on the key difference
-- **Related:** [[adjacent-concept|Adjacent Concept]] — one line on the relationship
+- **Built from:** [[prerequisite-page|Prerequisite Name]] -- one line on why
+- **Builds into:** [[higher-concept|Higher Concept]] -- one line on how this enables it
+- **Contrasts with:** [[other-approach|Other Approach]] -- one line on the key difference
+- **Related:** [[adjacent-concept|Adjacent Concept]] -- one line on the relationship
 
-_(Minimum 4 connections. Be specific — explain the relationship, don't just list names.)_
+_(Minimum 4 connections. Be specific -- explain the relationship, don't just list names.)_
 
 ## Edge Cases & Gotchas
 
@@ -96,11 +96,11 @@ _2-3 thought-provoking questions to test retention. Hide the answers using Obsid
 
 > [!question]- What happens if...?
 > _Answer goes here._
-## Template 2 — Synthesis Page
+## Template 2 -- Synthesis Page
 
 ```markdown
 ---
-title: A vs B — Descriptive Title of the Comparison
+title: A vs B -- Descriptive Title of the Comparison
 type: synthesis
 tags: [domain-tag, subtopic]
 created: YYYY-MM-DD
@@ -139,7 +139,7 @@ _What does this comparison reveal that neither page alone captures?_
 
 ---
 
-## Template 3 — Source Summary
+## Template 3 -- Source Summary
 
 ```markdown
 ---
@@ -157,16 +157,16 @@ _One paragraph: what kind of source is this, what topic does it cover, what is i
 
 **Created:**
 
-- [[concept-one|Concept One]] — one line on what it covers
-- [[concept-two|Concept Two]] — one line on what it covers
+- [[concept-one|Concept One]] -- one line on what it covers
+- [[concept-two|Concept Two]] -- one line on what it covers
 
 **Updated:**
 
-- [[existing-page|Existing Page]] — what new information was merged in
+- [[existing-page|Existing Page]] -- what new information was merged in
 
 ## Syntheses Created
 
-- [[a-vs-b|A vs B]] — what comparison this source prompted
+- [[a-vs-b|A vs B]] -- what comparison this source prompted
 
 ## Key Takeaways
 
@@ -175,7 +175,7 @@ _One paragraph: what kind of source is this, what topic does it cover, what is i
 
 ## Open Questions
 
-_(Things this source raised but didn't answer — also append these to wiki/open-questions.md)_
+_(Things this source raised but didn't answer -- also append these to wiki/open-questions.md)_
 
 - Question one?
 - Question two?
@@ -183,11 +183,11 @@ _(Things this source raised but didn't answer — also append these to wiki/open
 
 ---
 
-## Template 4 — Map of Content (MOC)
+## Template 4 -- Map of Content (MOC)
 
 ```markdown
 ---
-title: [Topic Name] — Map of Content
+title: [Topic Name] -- Map of Content
 type: moc
 tags: [domain-tag, topic]
 created: YYYY-MM-DD
@@ -200,37 +200,37 @@ _2–3 sentences orienting a reader who is new to this topic area._
 
 ## Core Concepts
 
-_(The foundational pages — start here)_
+_(The foundational pages -- start here)_
 
-- [[concept-a|Concept A]] — one-line summary
-- [[concept-b|Concept B]] — one-line summary
+- [[concept-a|Concept A]] -- one-line summary
+- [[concept-b|Concept B]] -- one-line summary
 
 ## Mechanisms & How Things Work
 
 _(Pages that explain processes, flows, or implementations)_
 
-- [[concept-c|Concept C]] — one-line summary
+- [[concept-c|Concept C]] -- one-line summary
 
 ## Comparisons & Tradeoffs
 
 _(Synthesis pages)_
 
-- [[a-vs-b|A vs B]] — what the comparison is about
+- [[a-vs-b|A vs B]] -- what the comparison is about
 
 ## Sources Ingested
 
-- [[topic-summary|Source Title]] — ingested YYYY-MM-DD
+- [[topic-summary|Source Title]] -- ingested YYYY-MM-DD
 
 ## Suggested Reading Order
 
-1. [[concept-a|Concept A]] — start here
-2. [[concept-b|Concept B]] — then this
-3. [[a-vs-b|A vs B]] — then the comparison
+1. [[concept-a|Concept A]] -- start here
+2. [[concept-b|Concept B]] -- then this
+3. [[a-vs-b|A vs B]] -- then the comparison
 ```
 
 ---
 
-## Template 5 — Stub Page
+## Template 5 -- Stub Page
 
 _(Created by lint pass when a linked page doesn't exist yet)_
 
@@ -267,25 +267,24 @@ _To be written._
 3. **Code:** Use ` ``` ` with language tag for code blocks.
 4. **Links:** Use Obsidian wiki links `[[page-name|Display Name]]`.
 5. **Bidirectional linking:** If page A links to page B, page B must link back to page A.
+6. **Punctuation:** NEVER use em dash character; use `--` double hyphen for pauses/interruptions.
 
 ---
 
-## Section Order (Enforced)
+## Section Order (Enforced -- per `AGENTS.md:81` source of truth)
 
-Every concept page must have sections in this exact order:
+Every concept page must have sections in this exact order (Quartz-public):
 
 1. Frontmatter
-2. Formal Definition
-3. Explanation
-4. Mental Model & Analogy
+2. The Problem
+3. Formal Definition
+4. Explanation
 5. How It Works
-6. Mathematical Formulation _(optional — delete if no math)_
-7. Visual Explanation
-8. Implementation & Examples
-9. Key Properties
-10. Connections
+6. Visual Explanation -- ONE Graphviz DOT `digraph` 4-8 nodes
+7. Semantic Network -- ONE Graphviz DOT `graph semantic_*` 5-10 nodes
+8. Key Properties / Objectives / Functions / Pros & Cons -- pick ONE
+9. Real-World Example
+10. Connections (4+ wiki links with why)
 11. Edge Cases & Gotchas
-12. Active Recall Questions
-13. Sources
 
-Do not reorder. Do not rename. Do not skip required sections.
+Do not reorder. Do not rename. Do not skip required sections. `Mathematical Formulation`, `Mental Model & Analogy`, `Active Recall Questions`, `Sources` are legacy in templates below -- not required for new pages; keep only if already present and migrate to above order on update. Use `--` not em dash.

@@ -1,5 +1,5 @@
 ---
-title: Understanding HTTP for Backend Engineers — Source Summary
+title: Understanding HTTP for Backend Engineers -- Source Summary
 source: sources/Understanding HTTP for Backend Engineers Where It All Starts.md
 source_path: sources/Understanding HTTP for Backend Engineers Where It All Starts.md
 content_hash: http-backend-foundations-2026-04-12
@@ -12,13 +12,13 @@ tags: [dev, http]
 
 ## Extracted Concepts
 
-1. **[[http|HTTP]]** — The standardized protocol enabling any client to communicate with any server
-2. **[[statelessness|Statelessness]]** — Each request is independent; server has no memory of past interactions
-3. **[[http-methods|HTTP Methods]]** — GET, POST, PUT, PATCH, DELETE define intent and side effects
-4. **[[http-headers|HTTP Headers]]** — Key-value metadata about requests/responses
-5. **[[http-status-codes|HTTP Status Codes]]** — Standardized 3-digit response outcomes
-6. **[[cors|CORS]]** — Cross-origin resource sharing mechanism
-7. **[[http-versions|HTTP Versions]]** — Evolution from 1.0 to 3.0
+1. **[[http|HTTP]]** -- The standardized protocol enabling any client to communicate with any server
+2. **[[statelessness|Statelessness]]** -- Each request is independent; server has no memory of past interactions
+3. **[[http-methods|HTTP Methods]]** -- GET, POST, PUT, PATCH, DELETE define intent and side effects
+4. **[[http-headers|HTTP Headers]]** -- Key-value metadata about requests/responses
+5. **[[http-status-codes|HTTP Status Codes]]** -- Standardized 3-digit response outcomes
+6. **[[cors|CORS]]** -- Cross-origin resource sharing mechanism
+7. **[[http-versions|HTTP Versions]]** -- Evolution from 1.0 to 3.0
 
 ## Wiki Pages Created
 
@@ -32,11 +32,11 @@ tags: [dev, http]
 
 ## Key Takeaways
 
-- **Statelessness is a feature, not a bug**—enables massive scale through simplicity
-- **Headers are the extension mechanism**—HTTP evolves through headers without protocol changes
-- **Status codes are a taxonomy**—not arbitrary numbers but a carefully designed system
-- **CORS is a security feature**—protects users while allowing controlled cross-origin access
-- **HTTP evolution is driven by latency**—each version addresses performance bottlenecks
+- **Statelessness is a feature, not a bug**--enables massive scale through simplicity
+- **Headers are the extension mechanism**--HTTP evolves through headers without protocol changes
+- **Status codes are a taxonomy**--not arbitrary numbers but a carefully designed system
+- **CORS is a security feature**--protects users while allowing controlled cross-origin access
+- **HTTP evolution is driven by latency**--each version addresses performance bottlenecks
 
 ## Novelty in This Source
 
@@ -53,10 +53,10 @@ tags: [dev, http]
 - When should engineers prefer PATCH over PUT in practical API design?
 ## Connections
 
-- [[http|HTTP]] — protocol covered
-- [[statelessness|Statelessness]] — core HTTP property covered
-- [[http-methods|HTTP Methods]] — GET/POST/PUT/PATCH/DELETE covered
-- [[http-headers|HTTP Headers]] — metadata mechanism covered
-- [[http-status-codes|HTTP Status Codes]] — response taxonomy covered
-- [[cors|CORS]] — cross-origin security covered
-- [[http-versions|HTTP Versions]] — protocol evolution covered
+- [[http|HTTP]] -- protocol covered
+- [[statelessness|Statelessness]] -- core HTTP property covered
+- [[http-methods|HTTP Methods]] -- GET/POST/PUT/PATCH/DELETE covered
+- [[http-headers|HTTP Headers]] -- metadata mechanism covered
+- [[http-status-codes|HTTP Status Codes]] -- response taxonomy covered
+- [[cors|CORS]] -- cross-origin security covered
+- [[http-versions|HTTP Versions]] -- protocol evolution covered

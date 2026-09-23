@@ -37,11 +37,26 @@ digraph G {
 - Fixable: more complex models, more features, or less regularization
 - Symmetric: opposite of overfitting (train-test gap is small, but both are bad)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Underfitting {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Underfitting" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Contrasts with: [[overfitting|Overfitting]] — opposite problem (model too complex)
-- Related: [[supervised-learning|Supervised Learning]] — underfitting affects all supervised models
-- Related: [[train-test-split|Train-Test Split]] — both train and test errors reveal underfitting
-- Related: [[data-modeling|Data Modeling]] — model selection must balance under/over-fitting
+- Contrasts with: [[overfitting|Overfitting]] -- opposite problem (model too complex)
+- Related: [[supervised-learning|Supervised Learning]] -- underfitting affects all supervised models
+- Related: [[train-test-split|Train-Test Split]] -- both train and test errors reveal underfitting
+- Related: [[data-modeling|Data Modeling]] -- model selection must balance under/over-fitting
 
 ## Edge Cases & Gotchas
 - Underfitting can masquerade as overfitting if only test error is monitored

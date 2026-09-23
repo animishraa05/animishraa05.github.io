@@ -1,5 +1,5 @@
 ---
-title: Two-Phase Hashing Patterns — A Catalog of Phase 2 Strategies
+title: Two-Phase Hashing Patterns -- A Catalog of Phase 2 Strategies
 type: deep-dive
 tags: [dev, hashing]
 created: 2026-07-05
@@ -87,14 +87,43 @@ The key insight is that **Phase 1 is invariant across all these problems.** You 
 
 A second insight is that **some problems combine multiple patterns.** For example, finding the most frequent character in the first string that also appears at least twice in the second string: Pattern 3 (compare) + Pattern 1 (extremum).
 
+
+
+## Visual Explanation
+
+```dot
+digraph two_phase_hashing_patterns {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Two Phase Hashing Pa\nInput"]
+  B [label="Two Phase Hashing Pa\nCore Mechanism"]
+  C [label="Two Phase Hashing Pa\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_two_phase_hashing_patterns {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Two Phase Hashing Pa" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- [[two-phase-hashing|Two-Phase Hashing Paradigm]] — the overarching model
-- [[hashing-store-phase|Hashing Store Phase]] — Phase 1, invariant across patterns
-- [[hashing-retrieval-phase|Hashing Retrieval Phase]] — Phase 2, the pattern catalog
-- [[most-frequent-character|Most Frequent Character]] — implements Pattern 1
-- [[first-non-repeating-character|First Non-Repeating Character]] — implements Pattern 2
-- [[anagram-detection-via-hashing|Anagram Detection]] — implements Pattern 3
-- [[character-hashing-use-cases|Character Hashing Use Cases]] — the full set of problems
-- [[frequency-array|Frequency Array]] — the structure used in Phase 1
-- [[unordered-map-frequency|Unordered Map for Frequency Counting]] — alternative Phase 1 structure
+- [[two-phase-hashing|Two-Phase Hashing Paradigm]] -- the overarching model
+- [[hashing-store-phase|Hashing Store Phase]] -- Phase 1, invariant across patterns
+- [[hashing-retrieval-phase|Hashing Retrieval Phase]] -- Phase 2, the pattern catalog
+- [[most-frequent-character|Most Frequent Character]] -- implements Pattern 1
+- [[first-non-repeating-character|First Non-Repeating Character]] -- implements Pattern 2
+- [[anagram-detection-via-hashing|Anagram Detection]] -- implements Pattern 3
+- [[character-hashing-use-cases|Character Hashing Use Cases]] -- the full set of problems
+- [[frequency-array|Frequency Array]] -- the structure used in Phase 1
+- [[unordered-map-frequency|Unordered Map for Frequency Counting]] -- alternative Phase 1 structure

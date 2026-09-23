@@ -45,13 +45,28 @@ digraph G {
 - Define the contract between adjacent layers
 - Enable standardized layer interaction
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Service_Primitives {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Service Primitives" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[service-access-point|Service Access Point]] — where primitives are invoked
-- Built from: [[service|Service]] — the operations that implement the service
-- Related: [[socket-api|Socket API]] — concrete implementation of primitives
-- Related: [[layered-model|Layered Model]] — primitives operate between layers
+- Built from: [[service-access-point|Service Access Point]] -- where primitives are invoked
+- Built from: [[service|Service]] -- the operations that implement the service
+- Related: [[socket-api|Socket API]] -- concrete implementation of primitives
+- Related: [[layered-model|Layered Model]] -- primitives operate between layers
 
 ## Edge Cases & Gotchas
 - Not all primitives are used for every service (connectionless may not need confirm)
-- Primitive ordering matters — must follow the request-indication-response-confirm pattern
+- Primitive ordering matters -- must follow the request-indication-response-confirm pattern
 - Some implementations combine primitives (e.g., synchronous calls that block until confirm)

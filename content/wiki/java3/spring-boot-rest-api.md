@@ -16,7 +16,7 @@ Spring Boot makes REST API development effortless by combining `@RestController`
 
 ## How It Works
 
-1. **@RestController**: `@Controller` + `@ResponseBody` — every method returns data (JSON/XML), not view names
+1. **@RestController**: `@Controller` + `@ResponseBody` -- every method returns data (JSON/XML), not view names
 2. **Request mapping**: `@GetMapping`, `@PostMapping`, `@PutMapping`, `@DeleteMapping` map HTTP verbs and URLs
 3. **Request binding**: `@PathVariable`, `@RequestParam`, `@RequestBody` bind request data to method parameters
 4. **Response serialization**: Jackson (auto-configured) serializes Java objects to JSON; `@JsonIgnore`, `@JsonProperty` control output
@@ -53,25 +53,40 @@ digraph rest_api {
 
 ## Key Properties
 
-- **RESTful mapping**: One annotation per HTTP verb — `@GetMapping`, `@PostMapping`, `@PutMapping`, `@DeleteMapping`, `@PatchMapping`
+- **RESTful mapping**: One annotation per HTTP verb -- `@GetMapping`, `@PostMapping`, `@PutMapping`, `@DeleteMapping`, `@PatchMapping`
 - **Content negotiation**: Jackson serializes to JSON by default; XML if Jackson XML extension is on classpath
-- **ResponseEntity**: Full control over status, headers, and body — `ResponseEntity.created(location).body(savedUser)`
+- **ResponseEntity**: Full control over status, headers, and body -- `ResponseEntity.created(location).body(savedUser)`
 - **Request validation**: `@Valid` + BindingResult for request body validation
 - **HATEOAS**: Spring HATEOAS adds link support for hypermedia-driven APIs
 - **Testing**: `MockMvc` and `WebTestClient` for comprehensive REST API testing
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Spring_Boot_REST_API {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Spring Boot Rest Api" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[spring-boot|Spring Boot]] — Boot auto-configures the web stack for REST APIs
-- **Built from:** [[spring-controller|Spring Controller]] — @RestController is a specialized @Controller
-- **Related:** [[jax-rpc|JAX-RPC]] — JAX-RPC is XML-based SOAP; Spring Boot REST is JSON-based, lighter
-- **Builds into:** [[java-microservices|Java Microservices]] — REST APIs are the communication backbone of microservices
-- **Related:** [[http-protocol|HTTP Protocol]] — REST APIs use HTTP semantics (methods, status codes, headers)
+- **Built from:** [[spring-boot|Spring Boot]] -- Boot auto-configures the web stack for REST APIs
+- **Built from:** [[spring-controller|Spring Controller]] -- @RestController is a specialized @Controller
+- **Related:** [[jax-rpc|JAX-RPC]] -- JAX-RPC is XML-based SOAP; Spring Boot REST is JSON-based, lighter
+- **Builds into:** [[java-microservices|Java Microservices]] -- REST APIs are the communication backbone of microservices
+- **Related:** [[http-protocol|HTTP Protocol]] -- REST APIs use HTTP semantics (methods, status codes, headers)
 
 ## Edge Cases & Gotchas
 
-- **Circular references**: Bidirectional JPA relationships cause infinite JSON serialization — use `@JsonIgnore` or `@JsonManagedReference`/`@JsonBackReference`
-- **Global prefix**: All APIs under `/api/v1/` — set `server.servlet.context-path` or use `RequestMapping` at class level
+- **Circular references**: Bidirectional JPA relationships cause infinite JSON serialization -- use `@JsonIgnore` or `@JsonManagedReference`/`@JsonBackReference`
+- **Global prefix**: All APIs under `/api/v1/` -- set `server.servlet.context-path` or use `RequestMapping` at class level
 - **Content-type mismatch**: Client sends wrong Content-Type → 415 Unsupported Media Type
 - **Versioning**: URL path versioning (`/v1/users`) vs header versioning (`Accept: application/vnd.company.v1+json`)
 - **CORS**: Browsers block cross-origin requests; `@CrossOrigin` or `WebMvcConfigurer.addCorsMappings()` to allow

@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Some classes need to fulfill multiple contracts simultaneously — a class might need to be both `Comparable` (for sorting) and `Runnable` (for threading). Single class inheritance would force a choice between the two, or require a deep hierarchy to combine them.
+Some classes need to fulfill multiple contracts simultaneously -- a class might need to be both `Comparable` (for sorting) and `Runnable` (for threading). Single class inheritance would force a choice between the two, or require a deep hierarchy to combine them.
 
 ## Core Idea
 
@@ -56,7 +56,7 @@ graph semantic_multiple_inheritance {
 
 ## Key Properties
 
-- **Interface-only in Java**: Java does not support multiple inheritance of classes — only interfaces
+- **Interface-only in Java**: Java does not support multiple inheritance of classes -- only interfaces
 - **Multiple contracts**: A class can implement any number of interfaces
 - **Diamond problem avoided**: Since interfaces have no state (pre-Java 8), there is no state ambiguity
 - **Default method rules**: If two interfaces define the same default method, the class must override
@@ -64,10 +64,10 @@ graph semantic_multiple_inheritance {
 
 ## Connections
 
-- **Built from:** [[java-interfaces|Java Interfaces]] — interfaces enable multiple type inheritance
-- **Built from:** [[java-inheritance-types|Inheritance Types]] — multiple inheritance through interfaces
-- **Contrasts with:** [[java-inheritance|Java Inheritance]] — class inheritance is single; interface inheritance is multiple
-- **Builds into:** [[java-hybrid-inheritance|Hybrid Inheritance]] — multiple is a building block for hybrid
+- **Built from:** [[java-interfaces|Java Interfaces]] -- interfaces enable multiple type inheritance
+- **Built from:** [[java-inheritance-types|Inheritance Types]] -- multiple inheritance through interfaces
+- **Contrasts with:** [[java-inheritance|Java Inheritance]] -- class inheritance is single; interface inheritance is multiple
+- **Builds into:** [[java-hybrid-inheritance|Hybrid Inheritance]] -- multiple is a building block for hybrid
 
 ## Edge Cases & Gotchas
 

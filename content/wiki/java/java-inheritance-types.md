@@ -8,11 +8,11 @@ updated: 2026-05-13
 
 ## The Problem
 
-Inheritance in Java is not a single mechanism — there are different ways a class can inherit from another, each serving different design needs. Understanding which type to use is critical: choosing the wrong inheritance structure can lead to deep, fragile hierarchies or the infamous diamond problem.
+Inheritance in Java is not a single mechanism -- there are different ways a class can inherit from another, each serving different design needs. Understanding which type to use is critical: choosing the wrong inheritance structure can lead to deep, fragile hierarchies or the infamous diamond problem.
 
 ## Core Idea
 
-Java supports five types of inheritance through a combination of class and interface mechanisms: **single** (one subclass, one superclass), **multilevel** (chain of inheritance), **hierarchical** (multiple subclasses from one superclass), **multiple** (through interfaces — a class implements multiple interfaces), and **hybrid** (combination of types, achievable only through interfaces).
+Java supports five types of inheritance through a combination of class and interface mechanisms: **single** (one subclass, one superclass), **multilevel** (chain of inheritance), **hierarchical** (multiple subclasses from one superclass), **multiple** (through interfaces -- a class implements multiple interfaces), and **hybrid** (combination of types, achievable only through interfaces).
 
 ## How It Works
 
@@ -73,7 +73,7 @@ graph semantic_inheritance_types {
 
 ## Key Properties
 
-- **Single**: One subclass inherits from one superclass — the simplest form
+- **Single**: One subclass inherits from one superclass -- the simplest form
 - **Multilevel**: A chain of inheritance where a class is derived from another derived class
 - **Hierarchical**: Multiple subclasses inherit from a single superclass
 - **Multiple (interface only)**: A class implements multiple interfaces
@@ -81,13 +81,13 @@ graph semantic_inheritance_types {
 
 ## Connections
 
-- **Built from:** [[java-inheritance|Java Inheritance]] — all inheritance types are specializations of the basic extends mechanism
-- **Builds into:** [[java-single-inheritance|Single Inheritance]] — the simplest form, one parent one child
-- **Builds into:** [[java-multilevel-inheritance|Multilevel Inheritance]] — chain of derived classes
-- **Builds into:** [[java-hierarchical-inheritance|Hierarchical Inheritance]] — one parent, multiple children
-- **Builds into:** [[java-multiple-inheritance|Multiple Inheritance]] — through interfaces
-- **Builds into:** [[java-hybrid-inheritance|Hybrid Inheritance]] — combination through interfaces
-- **Contrasts with:** [[java-interfaces|Java Interfaces]] — interfaces enable multiple and hybrid inheritance
+- **Built from:** [[java-inheritance|Java Inheritance]] -- all inheritance types are specializations of the basic extends mechanism
+- **Builds into:** [[java-single-inheritance|Single Inheritance]] -- the simplest form, one parent one child
+- **Builds into:** [[java-multilevel-inheritance|Multilevel Inheritance]] -- chain of derived classes
+- **Builds into:** [[java-hierarchical-inheritance|Hierarchical Inheritance]] -- one parent, multiple children
+- **Builds into:** [[java-multiple-inheritance|Multiple Inheritance]] -- through interfaces
+- **Builds into:** [[java-hybrid-inheritance|Hybrid Inheritance]] -- combination through interfaces
+- **Contrasts with:** [[java-interfaces|Java Interfaces]] -- interfaces enable multiple and hybrid inheritance
 
 ## Edge Cases & Gotchas
 

@@ -7,7 +7,7 @@ updated: 2026-05-13
 ---
 
 ## The Problem
-Writing HTML in Java servlets is painful—Java code is mixed with HTML strings. Web designers who don't know Java need to modify the look-and-feel. How can we separate presentation from business logic?
+Writing HTML in Java servlets is painful--Java code is mixed with HTML strings. Web designers who don't know Java need to modify the look-and-feel. How can we separate presentation from business logic?
 
 ## Core Idea
 JSP (JavaServer Pages) is similar to servlets but centered on look-and-feel. JSP scripts are HTML-like with embedded Java code, compiled into servlets. They enable non-Java staff to maintain the UI separately from business logic.
@@ -47,7 +47,7 @@ digraph G {
 - **HTML-centric**: Looks like HTML with embedded Java
 - **Compiles to servlet**: Under the hood, it's a servlet
 - **Lifecycle**: Translation → Compilation → init → service → destroy
-- **Directives**: page, include, taglib — control page behavior
+- **Directives**: page, include, taglib -- control page behavior
 - **EL (Expression Language)**: ${} syntax, auto-scoped attribute lookup
 - **JSTL**: Core, formatting, SQL, XML, functions tag libraries
 - **Implicit objects**: 9 pre-defined objects accessible in any JSP
@@ -56,12 +56,27 @@ digraph G {
 - **Separate maintenance**: UI separated from business logic
 - **J2EE standard**: Part of J2EE platform
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_JSP {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Jsp" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[servlets|Servlets]] — JSP compiles to servlets
-- Built from: [[java-platforms|Java Platforms]] — JSP is part of J2EE
-- Builds into: [[ejb-container|EJB Container]] — JSP can call EJBs
-- Related: [[jsp|JSP]] — alternative to servlets for presentation
-- Contrasts with: [[session-bean|Session Bean]] — JSP is presentation, EJBs are business logic
+- Built from: [[servlets|Servlets]] -- JSP compiles to servlets
+- Built from: [[java-platforms|Java Platforms]] -- JSP is part of J2EE
+- Builds into: [[ejb-container|EJB Container]] -- JSP can call EJBs
+- Related: [[jsp|JSP]] -- alternative to servlets for presentation
+- Contrasts with: [[session-bean|Session Bean]] -- JSP is presentation, EJBs are business logic
 
 ## Edge Cases & Gotchas
 - **Scriptlet pollution**: Avoid too much Java in JSP (use JSTL/EL)

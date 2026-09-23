@@ -45,16 +45,31 @@ digraph G {
 - `will-change` hints browser to create a layer
 - CPU-intensive for complex styles (shadows, gradients)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Painting {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Painting" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[layout|Layout]] — painting uses layout output
-- **Builds into:** [[compositing|Compositing]] — layers get combined
-- **Related:** [[gpu-rendering|GPU Rendering]] — can accelerate painting
-- **Related:** [[browser-rendering|Browser Rendering]] — painting is step 5
+- **Built from:** [[layout|Layout]] -- painting uses layout output
+- **Builds into:** [[compositing|Compositing]] -- layers get combined
+- **Related:** [[gpu-rendering|GPU Rendering]] -- can accelerate painting
+- **Related:** [[browser-rendering|Browser Rendering]] -- painting is step 5
 
 ## Edge Cases & Gotchas
 
 - Large repaints are expensive (full-screen redraw)
 - `box-shadow` and `border-radius` slow down painting
-- Layers help—only repaint changed elements
+- Layers help--only repaint changed elements
 - Forced repaint (reading `getComputedStyle`) is slow

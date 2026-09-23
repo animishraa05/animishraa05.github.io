@@ -51,12 +51,41 @@ def hello(request):
 - Must return an HttpResponse object (or raise an exception).
 - Can be function-based (FBV) or class-based (CBV).
 
+
+
+## Visual Explanation
+
+```dot
+digraph Django_View {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Django View\nInput"]
+  B [label="Django View\nCore Mechanism"]
+  C [label="Django View\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_Django_View {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Django View" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[django-web-framework|Django Web Framework]] — the logic center.
-- **Builds into:** [[django-class-based-view|Django Class Based View]] — a more advanced, object-oriented way to write views.
-- **Related:** [[django-url-dispatcher|Django URL Dispatcher]] — calls the view.
-- **Related:** [[django-model|Django Model]] — views query models for data.
+- **Built from:** [[django-web-framework|Django Web Framework]] -- the logic center.
+- **Builds into:** [[django-class-based-view|Django Class Based View]] -- a more advanced, object-oriented way to write views.
+- **Related:** [[django-url-dispatcher|Django URL Dispatcher]] -- calls the view.
+- **Related:** [[django-model|Django Model]] -- views query models for data.
 
 ## Edge Cases & Gotchas
 

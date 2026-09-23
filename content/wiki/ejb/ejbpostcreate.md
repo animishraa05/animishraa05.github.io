@@ -27,6 +27,35 @@ What happens after the bean creates a database record but before the bean is ful
 - Called after bean is bound to an EJB object
 - Can safely call `getEJBObject()` here (not in `ejbCreate()`)
 
+
+
+## Visual Explanation
+
+```dot
+digraph ejbPostCreate__ {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Ejbpostcreate()\nInput"]
+  B [label="Ejbpostcreate()\nCore Mechanism"]
+  C [label="Ejbpostcreate()\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_ejbPostCreate__ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Ejbpostcreate()" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[ejbcreate|ejbCreate()]], [[entity-bean|Entity Bean]]
@@ -34,5 +63,5 @@ What happens after the bean creates a database record but before the bean is ful
 
 ## Edge Cases & Gotchas
 
-- Don't perform database operations here—`ejbCreate()` already inserted the record
+- Don't perform database operations here--`ejbCreate()` already inserted the record
 - Don't assume the transaction is committed yet

@@ -45,6 +45,21 @@ digraph dev_indep {
 - Manages buffer cache for block devices
 - Enforces access control (permissions)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Device_Independent_I_O_Software {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Device Independent I" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[io-software-structure|I/O Software Structure]], [[user-level-io-software|User-Level I/O Software]]
@@ -54,6 +69,6 @@ digraph dev_indep {
 
 ## Edge Cases & Gotchas
 
-- Buffer cache size affects performance — too small means frequent disk reads
+- Buffer cache size affects performance -- too small means frequent disk reads
 - Error reporting must be consistent across device types
 - Device naming conventions vary by OS (Linux vs Windows)

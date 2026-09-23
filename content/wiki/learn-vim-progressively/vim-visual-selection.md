@@ -9,7 +9,7 @@ updated: 2026-04-12
 
 ## The Problem
 
-Editing arbitrary regions requires cursor gymnastics or awkward mouse selection. Standard editors let you select text then act on it — Vim needs equivalent functionality.
+Editing arbitrary regions requires cursor gymnastics or awkward mouse selection. Standard editors let you select text then act on it -- Vim needs equivalent functionality.
 
 ## Core Idea
 
@@ -26,11 +26,11 @@ Entry commands:
 
 Post-selection operations:
 
-- `J` — join selected lines together
-- `<` — indent left
-- `>` — indent right
-- `=` — auto-indent
-- `~` — toggle case
+- `J` -- join selected lines together
+- `<` -- indent left
+- `>` -- indent right
+- `=` -- auto-indent
+- `~` -- toggle case
 
 For block selection across lines:
 
@@ -50,11 +50,40 @@ For block selection across lines:
 
 - Windows: may need `<C-q>` instead of `<C-v>` for block mode
 - Block selection with `$` selects to end of longest line
-- Visual mode is temporary — operators exit back to Normal
+- Visual mode is temporary -- operators exit back to Normal
 
+
+
+## Visual Explanation
+
+```dot
+digraph aliases___visual_mode__visual_select__v__V__Ctrl_v_ {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Aliases: [Visual Mod\nInput"]
+  B [label="Aliases: [Visual Mod\nCore Mechanism"]
+  C [label="Aliases: [Visual Mod\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_aliases___visual_mode__visual_select__v__V__Ctrl_v_ {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Aliases: [Visual Mod" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- [[vim-modes|Vim Modes]] — Visual is one of the three main modes
-- [[vim-macros|Macros]] — Record actions on visual selection
-- [[vim-rectangular-blocks|Block Selection]] — Special case of visual block mode
-- [[vim-text-objects|Text Objects]] — Alternative selection syntax
+- [[vim-modes|Vim Modes]] -- Visual is one of the three main modes
+- [[vim-macros|Macros]] -- Record actions on visual selection
+- [[vim-rectangular-blocks|Block Selection]] -- Special case of visual block mode
+- [[vim-text-objects|Text Objects]] -- Alternative selection syntax

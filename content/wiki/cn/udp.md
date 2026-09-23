@@ -13,7 +13,7 @@ Some applications (DNS, VoIP, gaming) need fast, low-latency communication where
 A connectionless, unreliable transport protocol that sends independent datagrams with minimal overhead, trading reliability for speed.
 
 ## How It Works
-1. No connection establishment — applications send datagrams immediately
+1. No connection establishment -- applications send datagrams immediately
 2. Each UDP segment has source port, destination port, length, and checksum
 3. No guarantees: packets can be lost, duplicated, or arrive out of order
 4. No flow control or congestion control
@@ -43,14 +43,29 @@ digraph G {
 - Lightweight: 8-byte header vs TCP's 20+ bytes
 - Supports broadcast and multicast (unlike TCP)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_UDP {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Udp" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[connectionless-service|Connectionless Service]] — implements this service
-- Built from: [[ip-protocol|IP Protocol]] — runs on top of IP
-- Contrasts with: [[tcp|TCP]] — unreliable vs reliable transport
-- Related: [[dns|DNS]] — uses UDP for fast lookups
-- Related: [[voip|VoIP]] — uses UDP for real-time communication
+- Built from: [[connectionless-service|Connectionless Service]] -- implements this service
+- Built from: [[ip-protocol|IP Protocol]] -- runs on top of IP
+- Contrasts with: [[tcp|TCP]] -- unreliable vs reliable transport
+- Related: [[dns|DNS]] -- uses UDP for fast lookups
+- Related: [[voip|VoIP]] -- uses UDP for real-time communication
 
 ## Edge Cases & Gotchas
 - Checksum is optional in IPv4 (unlike TCP which always has it)
-- No backpressure — sender can overwhelm receiver
+- No backpressure -- sender can overwhelm receiver
 - Fragmentation happens at IP layer, not UDP layer

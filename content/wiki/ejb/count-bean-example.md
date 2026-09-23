@@ -54,19 +54,34 @@ digraph G {
 - **JNDI lookup**: Client finds Home Object via JNDI, not `new`
 - **No `this`**: Bean uses `SessionContext.getEJBObject()` to get self-reference
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Count_Bean_Example {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Count Bean Example" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[stateful-session-bean|Stateful Session Bean]] — CountBean is a stateful bean
-- Built from: [[remote-interface|Remote Interface]] — Count interface extends EJBObject
-- Built from: [[home-interface|Home Interface]] — CountHome is the factory
-- Built from: [[passivation|Passivation]] — demonstrated when pool limit reached
-- Built from: [[activation|Activation]] — demonstrated when bean reused
-- Builds into: [[ejb-development-lifecycle|EJB Development Lifecycle]] — full example of the lifecycle
-- Related: [[session-context|SessionContext]] — provides `getEJBObject()` for self-reference
-- Related: [[instance-pooling|Instance Pooling]] — pool management triggers passivation
+- Built from: [[stateful-session-bean|Stateful Session Bean]] -- CountBean is a stateful bean
+- Built from: [[remote-interface|Remote Interface]] -- Count interface extends EJBObject
+- Built from: [[home-interface|Home Interface]] -- CountHome is the factory
+- Built from: [[passivation|Passivation]] -- demonstrated when pool limit reached
+- Built from: [[activation|Activation]] -- demonstrated when bean reused
+- Builds into: [[ejb-development-lifecycle|EJB Development Lifecycle]] -- full example of the lifecycle
+- Related: [[session-context|SessionContext]] -- provides `getEJBObject()` for self-reference
+- Related: [[instance-pooling|Instance Pooling]] -- pool management triggers passivation
 
 ## Edge Cases & Gotchas
 - **Stateful cannot be pooled**: Unlike stateless, each client gets dedicated bean
 - **Passivation failure**: `val` must be serialiable, or passivation fails
-- **`this` danger**: Never pass `this` to other beans—use `getEJBObject()`
+- **`this` danger**: Never pass `this` to other beans--use `getEJBObject()`
 - **Pool limit**: Container-specific setting controls when passivation occurs
 - **Server crash**: Passivated state may be lost if server crashes

@@ -37,11 +37,26 @@ digraph G {
 - Iterative: requires constant refinement of models and features
 - Data-driven: relies on empirical evidence rather than assumptions
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Data_Science {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Data Science" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[data-wrangling|Data Wrangling]] — foundational step for all data science work
-- Builds into: [[data-modeling|Data Modeling]] — core output of data science pipelines
-- Related: [[exploratory-data-analysis|EDA]] — critical exploratory phase
-- Related: [[feature-engineering|Feature Engineering]] — key preparatory step for modeling
+- Built from: [[data-wrangling|Data Wrangling]] -- foundational step for all data science work
+- Builds into: [[data-modeling|Data Modeling]] -- core output of data science pipelines
+- Related: [[exploratory-data-analysis|EDA]] -- critical exploratory phase
+- Related: [[feature-engineering|Feature Engineering]] -- key preparatory step for modeling
 
 ## Edge Cases & Gotchas
 - Confusing correlation with causation in insights

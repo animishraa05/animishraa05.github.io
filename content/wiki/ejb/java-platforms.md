@@ -7,7 +7,7 @@ updated: 2026-04-29
 ---
 
 ## The Problem
-Java targets different types of devices and use cases: tiny mobile devices, standard desktop applications, and large enterprise servers. One-size-fits-all doesn't work—each needs different APIs and capabilities. How does Java organize its platform offerings?
+Java targets different types of devices and use cases: tiny mobile devices, standard desktop applications, and large enterprise servers. One-size-fits-all doesn't work--each needs different APIs and capabilities. How does Java organize its platform offerings?
 
 ## Core Idea
 Java has three platforms in a hierarchical relationship: J2ME (Micro Edition) for mobile/embedded, J2SE (Standard Edition) for desktop/apps, and J2EE (Enterprise Edition) for server-side enterprise applications. Each platform is a conceptual superset of the next smaller platform.
@@ -41,14 +41,29 @@ digraph G {
 - **Industry consolidation**: High barrier led to few major J2EE players
 - **J2ME restrictions**: Limited by device memory and processing power
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Java_Platforms {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Java Platforms" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Builds into: [[j2ee-specification|J2EE Specification]] — J2EE is one platform
-- Built from: [[component-architecture-soa|Component Architecture]] — J2EE implements this
-- Related: [[ejb-container|EJB Container]] — EJB is part of J2EE
-- Related: [[j2ee-compliance|J2EE Compliance]] — compliance applies to J2EE platform
+- Builds into: [[j2ee-specification|J2EE Specification]] -- J2EE is one platform
+- Built from: [[component-architecture-soa|Component Architecture]] -- J2EE implements this
+- Related: [[ejb-container|EJB Container]] -- EJB is part of J2EE
+- Related: [[j2ee-compliance|J2EE Compliance]] -- compliance applies to J2EE platform
 
 ## Edge Cases & Gotchas
 - **"Conceptual superset"**: Not strict subset/superset in code terms
 - **J2SE in J2EE**: J2EE products must pass J2SE tests too
 - **Modern names**: J2ME → Java ME, J2SE → Java SE, J2EE → Java EE
-- **Android**: Not part of this hierarchy—uses different APIs
+- **Android**: Not part of this hierarchy--uses different APIs

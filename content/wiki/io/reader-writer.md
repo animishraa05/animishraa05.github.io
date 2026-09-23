@@ -42,6 +42,21 @@ digraph rw {
 - Starvation possible: writers may starve if readers keep coming
 - Uses readCount, mutex, writeLock semaphores
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Reader_Writer_Problem {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Reader Writer Proble" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - **Built from:** [[semaphore|Semaphore]], [[producer-consumer|Producer-Consumer Problem]]

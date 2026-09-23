@@ -47,10 +47,39 @@ Data:      78     56     34     12
 
 4. **Most systems are Little Endian today**: Intel x86 dominance made Little Endian the most common desktop/PC architecture.
 
+
+
+## Visual Explanation
+
+```dot
+digraph endianness_comparison {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Endianness Compariso\nInput"]
+  B [label="Endianness Compariso\nCore Mechanism"]
+  C [label="Endianness Compariso\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_endianness_comparison {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Endianness Compariso" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- [[big-endian|Big Endian]] — MSB first storage
-- [[little-endian|Little Endian]] — LSB first storage
-- [[endianness|Endianness]] — the concept of byte order
-- [[network-byte-order|Network Byte Order]] — Big Endian for TCP/IP
-- [[memory|Memory]] — where bytes are stored
-- [[multi-byte-data|Multi-Byte Data]] — what endianness applies to
+- [[big-endian|Big Endian]] -- MSB first storage
+- [[little-endian|Little Endian]] -- LSB first storage
+- [[endianness|Endianness]] -- the concept of byte order
+- [[network-byte-order|Network Byte Order]] -- Big Endian for TCP/IP
+- [[memory|Memory]] -- where bytes are stored
+- [[multi-byte-data|Multi-Byte Data]] -- what endianness applies to

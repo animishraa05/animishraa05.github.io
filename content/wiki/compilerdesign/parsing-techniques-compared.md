@@ -1,5 +1,5 @@
 ---
-title: Parsing Techniques Compared — LL(1), LR(0), SLR, CLR, LALR
+title: Parsing Techniques Compared -- LL(1), LR(0), SLR, CLR, LALR
 type: synthesis
 tags: [dev, compiler-design]
 created: 2026-05-13
@@ -8,11 +8,11 @@ updated: 2026-05-13
 
 ## What's Being Compared
 
-Compiler design offers multiple parsing strategies — top-down (LL) and bottom-up (LR) with several variants. Each has different power, table size, and implementation complexity. Understanding the spectrum from LL(1) through LALR helps compiler designers choose the right parsing technique for their language and constraints.
+Compiler design offers multiple parsing strategies -- top-down (LL) and bottom-up (LR) with several variants. Each has different power, table size, and implementation complexity. Understanding the spectrum from LL(1) through LALR helps compiler designers choose the right parsing technique for their language and constraints.
 
 ## The Core Tension
 
-Parsing power and table size are inversely related across the LR family, and a fundamental trade-off exists between human-readability (LL grammars require grammar transformations) and language coverage (LR handles more constructs natively). The CLR(1) parser is the most powerful but produces impractically large tables — LALR exists precisely to trade a tiny amount of power for dramatically smaller tables.
+Parsing power and table size are inversely related across the LR family, and a fundamental trade-off exists between human-readability (LL grammars require grammar transformations) and language coverage (LR handles more constructs natively). The CLR(1) parser is the most powerful but produces impractically large tables -- LALR exists precisely to trade a tiny amount of power for dramatically smaller tables.
 
 ## Comparison
 
@@ -30,24 +30,53 @@ Parsing power and table size are inversely related across the LR family, and a f
 
 **LL(1) / Predictive:** When you are hand-writing a parser (recursive descent) or when the grammar is naturally LL(1). Used in many production compilers (GCC, Clang use hand-written recursive descent).
 
-**LR(0):** Rarely chosen in practice — almost never sufficient for real languages. Useful only as a pedagogical stepping stone to understanding SLR and LALR.
+**LR(0):** Rarely chosen in practice -- almost never sufficient for real languages. Useful only as a pedagogical stepping stone to understanding SLR and LALR.
 
 **SLR:** When the grammar is simple enough that FOLLOW sets provide sufficient conflict resolution. Easier to debug than LALR because the relationship between conflicts and grammar rules is clearer.
 
-**CLR / LR(1):** When maximum parsing power is needed and table size is not a constraint. Research and educational use mainly — impractical for production compilers due to state explosion.
+**CLR / LR(1):** When maximum parsing power is needed and table size is not a constraint. Research and educational use mainly -- impractical for production compilers due to state explosion.
 
-**LALR:** The practical sweet spot — the default for parser generators like Yacc and Bison. Handles nearly all programming language constructs with table sizes comparable to SLR.
+**LALR:** The practical sweet spot -- the default for parser generators like Yacc and Bison. Handles nearly all programming language constructs with table sizes comparable to SLR.
 
 ## The Insight
 
-The LR family shows a beautiful engineering trade-off: by adding just enough lookahead information (merge LR(1) states with same core), LALR achieves CLR-like power with SLR-like table sizes. Meanwhile, LL(1) represents an entirely different approach — predicting rather than reducing — which is simpler to implement by hand but requires more grammar transformation. Most modern compilers use either hand-written recursive descent (LL) or generated LALR parsers, with the middle variants (LR(0), SLR, CLR) serving mainly as conceptual building blocks.
+The LR family shows a beautiful engineering trade-off: by adding just enough lookahead information (merge LR(1) states with same core), LALR achieves CLR-like power with SLR-like table sizes. Meanwhile, LL(1) represents an entirely different approach -- predicting rather than reducing -- which is simpler to implement by hand but requires more grammar transformation. Most modern compilers use either hand-written recursive descent (LL) or generated LALR parsers, with the middle variants (LR(0), SLR, CLR) serving mainly as conceptual building blocks.
 
+
+
+## Visual Explanation
+
+```dot
+digraph parsing_techniques_compared {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Parsing Techniques C\nInput"]
+  B [label="Parsing Techniques C\nCore Mechanism"]
+  C [label="Parsing Techniques C\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_parsing_techniques_compared {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Parsing Techniques C" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- [[ll1-parsing-table|LL(1) Parsing Table]] — top-down predictive parsing approach
-- [[lr0-parser|LR(0) Parser]] — simplest LR variant, zero lookahead
-- [[lr-parsers|LR Parsers (SLR, CLR, LALR)]] — the three main bottom-up LR variants
-- [[predictive-parser|Predictive Parser]] — LL(1) table-driven implementation
-- [[recursive-descent-parser|Recursive Descent Parser]] — hand-written top-down approach
-- [[top-down-parsing|Top-Down Parsing]] — the LL family category
-- [[bottom-up-parsing|Bottom-Up Parsing]] — the LR family category
+- [[ll1-parsing-table|LL(1) Parsing Table]] -- top-down predictive parsing approach
+- [[lr0-parser|LR(0) Parser]] -- simplest LR variant, zero lookahead
+- [[lr-parsers|LR Parsers (SLR, CLR, LALR)]] -- the three main bottom-up LR variants
+- [[predictive-parser|Predictive Parser]] -- LL(1) table-driven implementation
+- [[recursive-descent-parser|Recursive Descent Parser]] -- hand-written top-down approach
+- [[top-down-parsing|Top-Down Parsing]] -- the LL family category
+- [[bottom-up-parsing|Bottom-Up Parsing]] -- the LR family category

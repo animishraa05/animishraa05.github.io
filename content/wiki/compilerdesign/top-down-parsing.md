@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Bottom-up parsers (LR) are powerful but complex to implement manually. For many programming languages, a simpler parsing strategy suffices — one that can be implemented by hand as a set of recursive functions without needing a parser generator.
+Bottom-up parsers (LR) are powerful but complex to implement manually. For many programming languages, a simpler parsing strategy suffices -- one that can be implemented by hand as a set of recursive functions without needing a parser generator.
 
 ## Core Idea
 
@@ -49,17 +49,32 @@ digraph top_down {
 - **Requirements:** Grammar must not be left-recursive; may need left-factoring
 - **Implementation:** Recursive descent is the most common hand-written parsing technique
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Top_Down_Parsing {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Top Down Parsing" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[parser-introduction|Parser Introduction]] — top-down is a category of parsing
-- **Built from:** [[first-and-follow-sets|FIRST and FOLLOW Sets]] — LL(1) parsers use these sets for prediction table construction
-- **Built from:** [[context-free-grammar|Context-Free Grammar]] — the grammar must be transformed (left-recursion removed, factored) for LL parsing
-- **Contrasts with:** [[bottom-up-parsing|Bottom-Up Parsing]] — top-down predicts; bottom-up reduces
-- **Related:** [[wiki/compilerdesign/ambiguous-grammar|Ambiguous Grammar]] — ambiguity causes multiple valid predictions in LL tables
+- **Built from:** [[parser-introduction|Parser Introduction]] -- top-down is a category of parsing
+- **Built from:** [[first-and-follow-sets|FIRST and FOLLOW Sets]] -- LL(1) parsers use these sets for prediction table construction
+- **Built from:** [[context-free-grammar|Context-Free Grammar]] -- the grammar must be transformed (left-recursion removed, factored) for LL parsing
+- **Contrasts with:** [[bottom-up-parsing|Bottom-Up Parsing]] -- top-down predicts; bottom-up reduces
+- **Related:** [[wiki/compilerdesign/ambiguous-grammar|Ambiguous Grammar]] -- ambiguity causes multiple valid predictions in LL tables
 
 ## Edge Cases & Gotchas
 
-- **Left recursion:** Top-down parsers loop infinitely on A → Aα — must be eliminated before parsing
-- **Left factoring:** Common prefixes in alternatives cause FIRST conflicts — factored out to create `A → αB` where `B → β₁ | β₂`
-- **LL(1) limitation:** Not all languages can be parsed with LL(1) — some require LL(k) or LR parsing
+- **Left recursion:** Top-down parsers loop infinitely on A → Aα -- must be eliminated before parsing
+- **Left factoring:** Common prefixes in alternatives cause FIRST conflicts -- factored out to create `A → αB` where `B → β₁ | β₂`
+- **LL(1) limitation:** Not all languages can be parsed with LL(1) -- some require LL(k) or LR parsing
 - **Backtracking:** Naive recursive descent with backtracking has exponential worst-case time; predictive parsing avoids this

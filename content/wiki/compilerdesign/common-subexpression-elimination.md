@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Programs repeatedly compute the same expression multiple times — especially in loops, repeated indexing calculations (`a[i*cols+j]`), and aliased computations. Each redundant computation wastes CPU cycles. The compiler must detect when two expressions compute the same value and reuse the earlier result.
+Programs repeatedly compute the same expression multiple times -- especially in loops, repeated indexing calculations (`a[i*cols+j]`), and aliased computations. Each redundant computation wastes CPU cycles. The compiler must detect when two expressions compute the same value and reuse the earlier result.
 
 ## Core Idea
 
@@ -51,32 +51,32 @@ graph semantic_cse {
   REL1 [label="Basic\nBlocks" fillcolor="#f0f0f0"]
 
   THIS -- PRE1 [label="built from" style=dashed]
-  THIS -- PRE2 [label="built from — needs available expr analysis"]
-  THIS -- CON1 [label="contrasts with — CSE is IR-level, not target-level"]
-  THIS -- CON2 [label="contrasts with — CSE targets repeated expressions, not constants"]
-  THIS -- REL1 [label="related — local CSE works within a block"]
+  THIS -- PRE2 [label="built from -- needs available expr analysis"]
+  THIS -- CON1 [label="contrasts with -- CSE is IR-level, not target-level"]
+  THIS -- CON2 [label="contrasts with -- CSE targets repeated expressions, not constants"]
+  THIS -- REL1 [label="related -- local CSE works within a block"]
 }
 ```
 
 ## Key Properties
 
-- **Local CSE:** Works within a single basic block — simple and fast
+- **Local CSE:** Works within a single basic block -- simple and fast
 - **Global CSE:** Works across blocks using available-expression data-flow analysis
 - **Available expressions:** An expression `a op b` is available at point p if it was computed earlier and operands haven't changed
-- **Safety:** Always safe — replacing a computation with a reference to an identical computation preserves semantics
+- **Safety:** Always safe -- replacing a computation with a reference to an identical computation preserves semantics
 - **Loop benefits:** Most impactful in loops where expressions are repeatedly computed with the same operands
 
 ## Connections
 
-- **Built from:** [[code-optimization|Code Optimization]] — CSE is a classic compiler optimization technique
-- **Built from:** [[data-flow-analysis|Data Flow Analysis]] — global CSE requires available-expression analysis
-- **Contrasts with:** [[peephole-optimization|Peephole Optimization]] — CSE works at the IR level, not the target instruction level
-- **Contrasts with:** [[constant-propagation|Constant Propagation]] — CSE targets repeated expression evaluation, not constant values
-- **Related:** [[basic-blocks|Basic Blocks]] — local CSE operates within a single basic block
+- **Built from:** [[code-optimization|Code Optimization]] -- CSE is a classic compiler optimization technique
+- **Built from:** [[data-flow-analysis|Data Flow Analysis]] -- global CSE requires available-expression analysis
+- **Contrasts with:** [[peephole-optimization|Peephole Optimization]] -- CSE works at the IR level, not the target instruction level
+- **Contrasts with:** [[constant-propagation|Constant Propagation]] -- CSE targets repeated expression evaluation, not constant values
+- **Related:** [[basic-blocks|Basic Blocks]] -- local CSE operates within a single basic block
 
 ## Edge Cases & Gotchas
 
 - **Operand aliasing:** If `a` and `b` can be modified through pointers between the two computations, CSE cannot safely eliminate the redundant computation
-- **Cost trade-off:** CSE increases register pressure by keeping more values live — may slow down register allocation
+- **Cost trade-off:** CSE increases register pressure by keeping more values live -- may slow down register allocation
 - **Global CSE complexity:** Available-expression analysis is more complex than reaching-definitions analysis because expressions involve multiple variables
-- **Partial redundancy:** When an expression is available on some paths but not all — partial redundancy elimination (PRE) is a more sophisticated optimization
+- **Partial redundancy:** When an expression is available on some paths but not all -- partial redundancy elimination (PRE) is a more sophisticated optimization

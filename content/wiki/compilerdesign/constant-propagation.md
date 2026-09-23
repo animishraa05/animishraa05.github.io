@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Source code often contains expressions whose operands are all known at compile time — either literal constants or variables that can only hold one value. Evaluating these at runtime wastes cycles. The compiler should replace them with their computed values and propagate those values through subsequent uses.
+Source code often contains expressions whose operands are all known at compile time -- either literal constants or variables that can only hold one value. Evaluating these at runtime wastes cycles. The compiler should replace them with their computed values and propagate those values through subsequent uses.
 
 ## Core Idea
 
@@ -16,7 +16,7 @@ Constant propagation replaces variables whose values are known at compile time w
 
 ## How It Works
 
-The compiler tracks which variables hold known constant values at each program point. It starts by identifying assignments of constants to variables (`x = 5`). For each subsequent use of `x`, if no intervening assignment has changed `x`, it replaces `x` with `5`. When a constant expression is formed (e.g., `5 * 2`), constant folding evaluates it at compile time (`10`). This propagates forward — simplifications create more opportunities for propagation. Reaching-definitions analysis determines which assignments reach which uses.
+The compiler tracks which variables hold known constant values at each program point. It starts by identifying assignments of constants to variables (`x = 5`). For each subsequent use of `x`, if no intervening assignment has changed `x`, it replaces `x` with `5`. When a constant expression is formed (e.g., `5 * 2`), constant folding evaluates it at compile time (`10`). This propagates forward -- simplifications create more opportunities for propagation. Reaching-definitions analysis determines which assignments reach which uses.
 
 ## Visual Explanation
 
@@ -53,10 +53,10 @@ graph semantic_const_prop {
   REL2 [label="Basic\nBlocks" fillcolor="#f0f0f0"]
 
   THIS -- PRE1 [label="built from" style=dashed]
-  THIS -- PRE2 [label="built from — uses reaching definitions"]
-  THIS -- CON1 [label="contrasts with — CP is about constant values, not repeated expressions"]
-  THIS -- REL1 [label="related — peephole can do local constant folding"]
-  THIS -- REL2 [label="related — local CP works within a block"]
+  THIS -- PRE2 [label="built from -- uses reaching definitions"]
+  THIS -- CON1 [label="contrasts with -- CP is about constant values, not repeated expressions"]
+  THIS -- REL1 [label="related -- peephole can do local constant folding"]
+  THIS -- REL2 [label="related -- local CP works within a block"]
 }
 ```
 
@@ -70,15 +70,15 @@ graph semantic_const_prop {
 
 ## Connections
 
-- **Built from:** [[code-optimization|Code Optimization]] — CP/CF is a fundamental optimization technique
-- **Built from:** [[data-flow-analysis|Data Flow Analysis]] — reaching-definitions analysis drives global CP
-- **Contrasts with:** [[common-subexpression-elimination|Common Subexpression Elimination]] — CP simplifies constant expressions; CSE eliminates redundant computations
-- **Related:** [[peephole-optimization|Peephole Optimization]] — local constant folding can be done as a peephole optimization on target code
-- **Related:** [[basic-blocks|Basic Blocks]] — local CP works within a single block; global CP needs the CFG
+- **Built from:** [[code-optimization|Code Optimization]] -- CP/CF is a fundamental optimization technique
+- **Built from:** [[data-flow-analysis|Data Flow Analysis]] -- reaching-definitions analysis drives global CP
+- **Contrasts with:** [[common-subexpression-elimination|Common Subexpression Elimination]] -- CP simplifies constant expressions; CSE eliminates redundant computations
+- **Related:** [[peephole-optimization|Peephole Optimization]] -- local constant folding can be done as a peephole optimization on target code
+- **Related:** [[basic-blocks|Basic Blocks]] -- local CP works within a single block; global CP needs the CFG
 
 ## Edge Cases & Gotchas
 
-- **Over-approximation:** The analysis must be conservative — if a variable might have been modified (e.g., through a pointer), CP cannot assume its previous constant value
+- **Over-approximation:** The analysis must be conservative -- if a variable might have been modified (e.g., through a pointer), CP cannot assume its previous constant value
 - **Conditional constant propagation:** When a variable is constant on one branch but not another, the analysis must handle this precisely
 - **Sparse conditional constant propagation (SCCP):** A more powerful form that simultaneously tracks constants and reachability
 - **Not always beneficial:** Propagating a constant may increase code size (different constants propagated to different uses) without runtime benefit

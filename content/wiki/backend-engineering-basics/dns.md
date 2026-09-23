@@ -8,7 +8,7 @@ updated: 2026-04-30
 
 ## The Problem
 
-Humans can't remember IP addresses (142.250.183.46), but computers need them. Without DNS, we'd have to memorize strings of numbers for every website—a completely unusable internet.
+Humans can't remember IP addresses (142.250.183.46), but computers need them. Without DNS, we'd have to memorize strings of numbers for every website--a completely unusable internet.
 
 ## Core Idea
 
@@ -21,7 +21,7 @@ DNS is the phonebook of the internet. It translates human-readable domain names 
 3. **Response**: The resolver returns the IP address (e.g., 142.250.183.46)
 4. **Connection**: Your browser now connects to that IP address
 
-This happens in milliseconds. DNS uses caching heavily—once resolved, subsequent requests don't need to go through the full lookup.
+This happens in milliseconds. DNS uses caching heavily--once resolved, subsequent requests don't need to go through the full lookup.
 
 ## Key Properties
 
@@ -31,18 +31,47 @@ This happens in milliseconds. DNS uses caching heavily—once resolved, subseque
 - Operates on UDP port 53 (typically)
 - Anycast allows multiple servers to serve the same domain from different locations
 
+
+
+## Visual Explanation
+
+```dot
+digraph DNS {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Dns\nInput"]
+  B [label="Dns\nCore Mechanism"]
+  C [label="Dns\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_DNS {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Dns" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- **Built from:** [[ip-address|IP Address]] — DNS resolves to IP addresses
-- **Builds into:** [[http|HTTP]] — HTTP requests need an IP, which DNS provides
-- **Builds into:** [[dns-lookup|DNS Lookup]] — DNS lookup is the full resolution process
-- **Related:** [[ports|Port]] — IP + port identifies the final destination
-- **Related:** [[dns-cache|DNS Cache]] — caching speeds up DNS resolution
-- **Related:** [[recursive-dns|Recursive DNS]] — does the heavy lifting for clients
-- **Contrasts with:** [[circuit-switching|Circuit Switching]] — DNS is packet-based, not circuit-based
+- **Built from:** [[ip-address|IP Address]] -- DNS resolves to IP addresses
+- **Builds into:** [[http|HTTP]] -- HTTP requests need an IP, which DNS provides
+- **Builds into:** [[dns-lookup|DNS Lookup]] -- DNS lookup is the full resolution process
+- **Related:** [[ports|Port]] -- IP + port identifies the final destination
+- **Related:** [[dns-cache|DNS Cache]] -- caching speeds up DNS resolution
+- **Related:** [[recursive-dns|Recursive DNS]] -- does the heavy lifting for clients
+- **Contrasts with:** [[circuit-switching|Circuit Switching]] -- DNS is packet-based, not circuit-based
 
 ## Edge Cases & Gotchas
 
 - DNS poisoning/caching attacks can redirect users to malicious sites
-- DNS can be slow for first-time lookups—that's why browsers cache aggressively
+- DNS can be slow for first-time lookups--that's why browsers cache aggressively
 - Changing DNS records can take time to propagate (TTL)
 - Some networks block certain DNS queries

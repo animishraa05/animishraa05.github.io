@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-Recursive descent parsers require writing code for each non-terminal. For large grammars, this becomes labor-intensive. The parsing logic — choosing which production to apply based on lookahead — can be mechanized: given a grammar, a parsing table can be constructed automatically, and a generic driver can use the table to parse any LL(1) grammar.
+Recursive descent parsers require writing code for each non-terminal. For large grammars, this becomes labor-intensive. The parsing logic -- choosing which production to apply based on lookahead -- can be mechanized: given a grammar, a parsing table can be constructed automatically, and a generic driver can use the table to parse any LL(1) grammar.
 
 ## Core Idea
 
@@ -57,7 +57,7 @@ graph semantic_predictive {
   THIS -- PRE1 [label="built from" style=dashed]
   THIS -- PRE2 [label="built from" style=dashed]
   THIS -- OUT1 [label="enables"]
-  THIS -- CON1 [label="contrasts with — table vs hand-written"]
+  THIS -- CON1 [label="contrasts with -- table vs hand-written"]
   THIS -- REL1 [label="related"]
 }
 ```
@@ -72,15 +72,15 @@ graph semantic_predictive {
 
 ## Connections
 
-- **Built from:** [[top-down-parsing|Top-Down Parsing]] — predictive parsing is a specific top-down approach
-- **Built from:** [[first-and-follow-sets|FIRST and FOLLOW Sets]] — used to construct the parsing table
-- **Builds into:** [[ll1-parsing-algorithm|LL(1) Parsing Algorithm]] — the algorithm that drives the table
-- **Contrasts with:** [[recursive-descent-parser|Recursive Descent Parser]] — table-driven vs hand-written approach
-- **Related:** [[ll1-parsing-table|LL(1) Parsing Table]] — the data structure that the algorithm uses
+- **Built from:** [[top-down-parsing|Top-Down Parsing]] -- predictive parsing is a specific top-down approach
+- **Built from:** [[first-and-follow-sets|FIRST and FOLLOW Sets]] -- used to construct the parsing table
+- **Builds into:** [[ll1-parsing-algorithm|LL(1) Parsing Algorithm]] -- the algorithm that drives the table
+- **Contrasts with:** [[recursive-descent-parser|Recursive Descent Parser]] -- table-driven vs hand-written approach
+- **Related:** [[ll1-parsing-table|LL(1) Parsing Table]] -- the data structure that the algorithm uses
 
 ## Edge Cases & Gotchas
 
 - **Multiple entries:** If the table has multiple entries for the same cell, the grammar is not LL(1)
-- **ε-productions:** Handled by using FOLLOW sets — when a non-terminal can derive ε, the parser matches its FOLLOW set
-- **Error detection:** Errors are detected when the table entry is empty — error recovery routines can use the stack to skip tokens
-- **LL(1) limitation:** Not all grammars are LL(1) — operator precedence and certain if-then-else constructs require more lookahead
+- **ε-productions:** Handled by using FOLLOW sets -- when a non-terminal can derive ε, the parser matches its FOLLOW set
+- **Error detection:** Errors are detected when the table entry is empty -- error recovery routines can use the stack to skip tokens
+- **LL(1) limitation:** Not all grammars are LL(1) -- operator precedence and certain if-then-else constructs require more lookahead

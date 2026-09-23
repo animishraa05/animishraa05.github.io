@@ -64,18 +64,33 @@ digraph entropy {
 - **Additive**: Entropy of combined systems equals the sum of individual entropies (for independent systems)
 - **Symmetric**: Depends only on the probability distribution, not on class labels or ordering
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Entropy {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Entropy" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Builds into:** [[information-gain|Information Gain]] — Information Gain is calculated as Entropy(parent) - weighted Entropy(children)
-- **Built from:** [[node-purity|Node Purity]] — entropy is the mathematical formalization of purity
-- **Contrasts with:** [[gini-index|Gini Index]] — both measure impurity but with different formulas and sensitivities
-- **Builds into:** [[decision-tree-splitting|Decision Tree Splitting]] — entropy drives split decisions
-- **Related:** [[attribute-selection-measures|Attribute Selection Measures]] — entropy is the foundation of Information Gain
-- **Related:** [[entropy-calculation|Entropy Calculation]] — detailed formula and worked example
+- **Builds into:** [[information-gain|Information Gain]] -- Information Gain is calculated as Entropy(parent) - weighted Entropy(children)
+- **Built from:** [[node-purity|Node Purity]] -- entropy is the mathematical formalization of purity
+- **Contrasts with:** [[gini-index|Gini Index]] -- both measure impurity but with different formulas and sensitivities
+- **Builds into:** [[decision-tree-splitting|Decision Tree Splitting]] -- entropy drives split decisions
+- **Related:** [[attribute-selection-measures|Attribute Selection Measures]] -- entropy is the foundation of Information Gain
+- **Related:** [[entropy-calculation|Entropy Calculation]] -- detailed formula and worked example
 
 ## Edge Cases & Gotchas
 
 - **Log(0) undefined**: If a class has zero instances, that term is treated as 0 (by convention, 0 × log(0) = 0)
 - **Multi-class scaling**: Entropy increases with the number of classes even at maximum impurity
 - **Computation cost**: Logarithm calculations are more expensive than Gini's squaring
-- **Not scale-invariant**: Entropy depends on proportions, not absolute counts — a 50/50 split of 10 samples has the same entropy as 50/50 of 10,000
+- **Not scale-invariant**: Entropy depends on proportions, not absolute counts -- a 50/50 split of 10 samples has the same entropy as 50/50 of 10,000

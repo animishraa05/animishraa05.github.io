@@ -1,5 +1,5 @@
 ---
-source: Java OOP Concepts — GeeksforGeeks
+source: Java OOP Concepts -- GeeksforGeeks
 source_path: sources/Java2.md
 content_hash: 0ba2bdd28d27abdb6222ebc536ce176c
 ingested: 2026-05-13
@@ -16,48 +16,48 @@ A GeeksforGeeks Java OOP concepts article covering the four OOP pillars (encapsu
 
 **Created (15):**
 
-- [[java-class|Java Class]] — class as blueprint/prototype for creating objects
-- [[java-object|Java Object]] — object with state, behavior, and identity
-- [[java-association|Java Association]] — relationship between independent class objects
-- [[java-aggregation|Java Aggregation]] — weak "has-a" relationship with independent lifecycles
-- [[java-composition|Java Composition]] — strong "has-a" relationship with dependent lifecycles
-- [[java-inheritance-types|Inheritance Types]] — five types of inheritance in Java
-- [[java-single-inheritance|Single Inheritance]] — one subclass inherits from one superclass
-- [[java-multilevel-inheritance|Multilevel Inheritance]] — chain of derived classes
-- [[java-hierarchical-inheritance|Hierarchical Inheritance]] — multiple subclasses from one superclass
-- [[java-multiple-inheritance|Multiple Inheritance]] — through interfaces only
-- [[java-hybrid-inheritance|Hybrid Inheritance]] — combination through interfaces
-- [[java-compile-time-polymorphism|Compile-Time Polymorphism]] — method overloading resolution at compile time
-- [[java-runtime-polymorphism|Runtime Polymorphism]] — method overriding resolution at runtime
-- [[java-oop-advantages|OOP Advantages]] — code reusability, structure, DRY, faster development
-- [[java-oop-disadvantages|OOP Disadvantages]] — learning curve, overhead, debugging, memory
+- [[java-class|Java Class]] -- class as blueprint/prototype for creating objects
+- [[java-object|Java Object]] -- object with state, behavior, and identity
+- [[java-association|Java Association]] -- relationship between independent class objects
+- [[java-aggregation|Java Aggregation]] -- weak "has-a" relationship with independent lifecycles
+- [[java-composition|Java Composition]] -- strong "has-a" relationship with dependent lifecycles
+- [[java-inheritance-types|Inheritance Types]] -- five types of inheritance in Java
+- [[java-single-inheritance|Single Inheritance]] -- one subclass inherits from one superclass
+- [[java-multilevel-inheritance|Multilevel Inheritance]] -- chain of derived classes
+- [[java-hierarchical-inheritance|Hierarchical Inheritance]] -- multiple subclasses from one superclass
+- [[java-multiple-inheritance|Multiple Inheritance]] -- through interfaces only
+- [[java-hybrid-inheritance|Hybrid Inheritance]] -- combination through interfaces
+- [[java-compile-time-polymorphism|Compile-Time Polymorphism]] -- method overloading resolution at compile time
+- [[java-runtime-polymorphism|Runtime Polymorphism]] -- method overriding resolution at runtime
+- [[java-oop-advantages|OOP Advantages]] -- code reusability, structure, DRY, faster development
+- [[java-oop-disadvantages|OOP Disadvantages]] -- learning curve, overhead, debugging, memory
 
 **Updated (4):**
 
-- [[java-abstraction|Java Abstraction]] — added ATM/coffee machine real-world metaphor, abstract class vs interface distinction (100% vs partial abstraction)
-- [[java-encapsulation|Java Encapsulation]] — added protective shield metaphor, expanded data security description
-- [[java-inheritance|Java Inheritance]] — added types of inheritance, Dog/Cat/Cow Animal hierarchy example
-- [[java-polymorphism|Java Polymorphism]] — added speak() example (Bark/Meow/Moo), expanded compile-time vs runtime distinction
+- [[java-abstraction|Java Abstraction]] -- added ATM/coffee machine real-world metaphor, abstract class vs interface distinction (100% vs partial abstraction)
+- [[java-encapsulation|Java Encapsulation]] -- added protective shield metaphor, expanded data security description
+- [[java-inheritance|Java Inheritance]] -- added types of inheritance, Dog/Cat/Cow Animal hierarchy example
+- [[java-polymorphism|Java Polymorphism]] -- added speak() example (Bark/Meow/Moo), expanded compile-time vs runtime distinction
 
 **Updated in this ingest (9):**
 
-- [[java-single-inheritance|Single Inheritance]] — added Visual Explanation, Semantic Network, Key Properties, Edge Cases
-- [[java-multilevel-inheritance|Multilevel Inheritance]] — added Visual Explanation, Semantic Network, Key Properties
-- [[java-hierarchical-inheritance|Hierarchical Inheritance]] — added Visual Explanation, Semantic Network, Key Properties
-- [[java-multiple-inheritance|Multiple Inheritance]] — added Visual Explanation, Semantic Network, Key Properties
-- [[java-hybrid-inheritance|Hybrid Inheritance]] — added Visual Explanation, Semantic Network, Key Properties
-- [[java-interfaces|Java Interfaces]] — added interfaces provide 100% abstraction detail
-- [[java-methods|Java Methods]] — added method definition as collection of statements for a task
-- [[java-oop-pillars|The Four OOP Pillars]] — added Sources section linking to this source
-- [[java-aggregation-vs-composition|Aggregation vs Composition]] — added Sources section
-- [[java-overloading-vs-overriding|Overloading vs Overriding]] — added Sources section
-- [[java-abstract-class-vs-interface|Abstract Class vs Interface]] — added Sources section
+- [[java-single-inheritance|Single Inheritance]] -- added Visual Explanation, Semantic Network, Key Properties, Edge Cases
+- [[java-multilevel-inheritance|Multilevel Inheritance]] -- added Visual Explanation, Semantic Network, Key Properties
+- [[java-hierarchical-inheritance|Hierarchical Inheritance]] -- added Visual Explanation, Semantic Network, Key Properties
+- [[java-multiple-inheritance|Multiple Inheritance]] -- added Visual Explanation, Semantic Network, Key Properties
+- [[java-hybrid-inheritance|Hybrid Inheritance]] -- added Visual Explanation, Semantic Network, Key Properties
+- [[java-interfaces|Java Interfaces]] -- added interfaces provide 100% abstraction detail
+- [[java-methods|Java Methods]] -- added method definition as collection of statements for a task
+- [[java-oop-pillars|The Four OOP Pillars]] -- added Sources section linking to this source
+- [[java-aggregation-vs-composition|Aggregation vs Composition]] -- added Sources section
+- [[java-overloading-vs-overriding|Overloading vs Overriding]] -- added Sources section
+- [[java-abstract-class-vs-interface|Abstract Class vs Interface]] -- added Sources section
 
 ## Syntheses Created (3)
 
-- [[java-aggregation-vs-composition|Aggregation vs Composition]] — weak vs strong association with lifecycle comparison
-- [[java-overloading-vs-overriding|Overloading vs Overriding]] — compile-time vs runtime polymorphism resolution
-- [[java-abstract-class-vs-interface|Abstract Class vs Interface]] — partial vs full abstraction
+- [[java-aggregation-vs-composition|Aggregation vs Composition]] -- weak vs strong association with lifecycle comparison
+- [[java-overloading-vs-overriding|Overloading vs Overriding]] -- compile-time vs runtime polymorphism resolution
+- [[java-abstract-class-vs-interface|Abstract Class vs Interface]] -- partial vs full abstraction
 
 ## Key Takeaways
 

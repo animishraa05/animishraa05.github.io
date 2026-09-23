@@ -43,11 +43,26 @@ digraph G {
 - Negotiates connection parameters
 - Prevents old duplicate connection initiations from causing confusion
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Three_Way_Handshake {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Three Way Handshake" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[tcp|TCP]] — the protocol that uses this handshake
-- Builds into: [[connection-oriented-service|Connection-Oriented Service]] — enables reliable connections
-- Related: [[sequence-numbers|Sequence Numbers]] — synchronized during handshake
-- Related: [[acknowledgment|Acknowledgment]] — used in SYN-ACK and ACK
+- Built from: [[tcp|TCP]] -- the protocol that uses this handshake
+- Builds into: [[connection-oriented-service|Connection-Oriented Service]] -- enables reliable connections
+- Related: [[sequence-numbers|Sequence Numbers]] -- synchronized during handshake
+- Related: [[acknowledgment|Acknowledgment]] -- used in SYN-ACK and ACK
 
 ## Edge Cases & Gotchas
 - SYN flood attacks can exhaust server resources with half-open connections

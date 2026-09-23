@@ -47,21 +47,36 @@ digraph ServiceDiscovery {
 
 ## Key Properties
 
-- **Dynamic registration/deregistration** — instances automatically register on startup and deregister on shutdown
-- **Health checks** — continuous verification that instances are alive and ready
-- **Key-value store** — shared configuration storage alongside the registry
-- **Consistent naming** — services are found by logical name, not physical address
+- **Dynamic registration/deregistration** -- instances automatically register on startup and deregister on shutdown
+- **Health checks** -- continuous verification that instances are alive and ready
+- **Key-value store** -- shared configuration storage alongside the registry
+- **Consistent naming** -- services are found by logical name, not physical address
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Service_Discovery {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Service Discovery" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[microservices-architecture|Microservices Architecture]] — dynamic microservice environments create the need for discovery
-- **Related:** [[layer7-load-balancing|Layer 7 Load Balancing]] — L7 load balancers use the service registry to discover healthy backends
-- **Related:** [[horizontal-scaling|Horizontal Scaling]] — scaling up/down changes instance counts, and discovery tracks the current set
-- **Related:** [[message-queues|Message Queues]] — an alternative async communication pattern that decouples services without direct discovery
-- **Related:** [[reverse-proxy-pattern|Reverse Proxy Pattern]] — reverse proxy can use service discovery to route to backends
+- **Built from:** [[microservices-architecture|Microservices Architecture]] -- dynamic microservice environments create the need for discovery
+- **Related:** [[layer7-load-balancing|Layer 7 Load Balancing]] -- L7 load balancers use the service registry to discover healthy backends
+- **Related:** [[horizontal-scaling|Horizontal Scaling]] -- scaling up/down changes instance counts, and discovery tracks the current set
+- **Related:** [[message-queues|Message Queues]] -- an alternative async communication pattern that decouples services without direct discovery
+- **Related:** [[reverse-proxy-pattern|Reverse Proxy Pattern]] -- reverse proxy can use service discovery to route to backends
 
 ## Edge Cases & Gotchas
 
-- **Cached stale entries** — if a service crashes without deregistering, the registry may return a dead instance until the next health check.
-- **Thundering herd on registry** — if every client aggressively re-queries on failure, the registry can be overwhelmed; client-side caching with TTL is essential.
-- **Consistency vs. availability tradeoff** — highly available registries (eventually consistent) may return stale data; strongly consistent registries (Paxos/Raft based) add write latency.
+- **Cached stale entries** -- if a service crashes without deregistering, the registry may return a dead instance until the next health check.
+- **Thundering herd on registry** -- if every client aggressively re-queries on failure, the registry can be overwhelmed; client-side caching with TTL is essential.
+- **Consistency vs. availability tradeoff** -- highly available registries (eventually consistent) may return stale data; strongly consistent registries (Paxos/Raft based) add write latency.

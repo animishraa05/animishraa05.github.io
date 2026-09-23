@@ -29,6 +29,35 @@ All P problems are in NP, but whether NP ⊆ P (i.e., P = NP) is unknown. If P =
 - Current consensus: probably false
 - Has profound implications for cryptography, optimization, AI
 
+
+
+## Visual Explanation
+
+```dot
+digraph P_vs_NP_Problem {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="P Vs Np Problem\nInput"]
+  B [label="P Vs Np Problem\nCore Mechanism"]
+  C [label="P Vs Np Problem\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_P_vs_NP_Problem {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="P Vs Np Problem" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 - Built from: [[computational-complexity-theory|Computational Complexity Theory]], [[np-complete|NP-Complete]]

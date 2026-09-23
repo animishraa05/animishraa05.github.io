@@ -12,16 +12,16 @@ Django Forms (`django.forms.Form`) provide a declarative way to define validatio
 
 ## Explanation
 
-Forms solve the problem of safely handling user input — validating, sanitizing, and converting raw HTTP POST data into structured Python objects. A Form declares fields with validators and widgets; on submission, `form.is_valid()` runs field cleaning (`clean_<field>()`), form-level cleaning (`clean()`), and returns cleaned data. ModelForms extend this by mapping form fields to model fields, enabling `form.save()` to create or update model instances atomically.
+Forms solve the problem of safely handling user input -- validating, sanitizing, and converting raw HTTP POST data into structured Python objects. A Form declares fields with validators and widgets; on submission, `form.is_valid()` runs field cleaning (`clean_<field>()`), form-level cleaning (`clean()`), and returns cleaned data. ModelForms extend this by mapping form fields to model fields, enabling `form.save()` to create or update model instances atomically.
 
 ## How It Works
 
-1. **Form defined** — Class with field instances (`CharField`, `EmailField`, `ModelChoiceField`, etc.)
-2. **GET request** — View instantiates empty form; template renders `{{ form.as_p }}` or manual `{{ field }}`
-3. **POST request** — View instantiates `Form(request.POST)` (and `request.FILES` for uploads)
-4. **Validation runs** — `is_valid()` calls `full_clean()` → field `clean()` → `clean_<field>()` → `clean()`
-5. **Cleaned data** — `form.cleaned_data` dict available if valid
-6. **Save/Model save** — `form.save()` creates/updates model (ModelForm) or custom logic (Form)
+1. **Form defined** -- Class with field instances (`CharField`, `EmailField`, `ModelChoiceField`, etc.)
+2. **GET request** -- View instantiates empty form; template renders `{{ form.as_p }}` or manual `{{ field }}`
+3. **POST request** -- View instantiates `Form(request.POST)` (and `request.FILES` for uploads)
+4. **Validation runs** -- `is_valid()` calls `full_clean()` → field `clean()` → `clean_<field>()` → `clean()`
+5. **Cleaned data** -- `form.cleaned_data` dict available if valid
+6. **Save/Model save** -- `form.save()` creates/updates model (ModelForm) or custom logic (Form)
 
 ## Visual Explanation
 
@@ -91,26 +91,26 @@ graph semantic_forms_modelforms {
 ## Key Properties
 
 - **Field types**: `CharField`, `IntegerField`, `EmailField`, `ChoiceField`, `ModelChoiceField`, `ModelMultipleChoiceField`, `FileField`, `ImageField`, `DateTimeField`, `BooleanField`
-- **Widgets control rendering**: `TextInput`, `Textarea`, `Select`, `CheckboxSelectMultiple`, `HiddenInput`, `DateTimeInput` — customize HTML attributes
+- **Widgets control rendering**: `TextInput`, `Textarea`, `Select`, `CheckboxSelectMultiple`, `HiddenInput`, `DateTimeInput` -- customize HTML attributes
 - **Validation layers**: Field `clean()` (type/format) → `clean_<field>()` (field-specific) → `clean()` (cross-field) → `cleaned_data`
 - **ModelForm Meta**: `model`, `fields`/`exclude`, `widgets`, `labels`, `help_texts`, `error_messages`, `field_classes`
 - **`save(commit=False)`**: Returns unsaved instance for pre-save modification (e.g., set `author=request.user`)
 
 ## Connections
 
-- Built from: [[models-orm|Models/ORM]] — ModelForm introspects model fields
-- Built from: [[form-fields|Form Fields]] — Field definitions and validation
-- Built from: [[widgets|Widgets]] — HTML rendering customization
-- Built from: [[validators|Validators]] — Reusable validation logic
-- Builds into: [[form-validation|Form Validation]] — Multi-layer cleaning pipeline
-- Builds into: [[modelform-save|ModelForm Save Logic]] — `save()`, `save(commit=False)`
-- Builds into: [[form-rendering|Form Rendering]] — `as_p`, `as_table`, `as_ul`, manual `{{ field }}`
-- Builds into: [[formsets|Formsets]] — Multiple forms on one page
-- Builds into: [[file-uploads|File Uploads]] — `FileField`, `ImageField`, `request.FILES`
-- Contrasts with: [[wtforms|WTForms]] — Flask's form library, similar but separate
-- Contrasts with: [[pydantic|Pydantic]] — FastAPI's validation, type-hint based, no HTML rendering
-- Related: [[csrf-protection|CSRF Protection]] — `{% csrf_token %}` required for POST forms
-- Related: [[form-template-tags|Form Template Tags]] — `{{ form.errors }}`, `{{ field.label_tag }}`
+- Built from: [[models-orm|Models/ORM]] -- ModelForm introspects model fields
+- Built from: [[form-fields|Form Fields]] -- Field definitions and validation
+- Built from: [[widgets|Widgets]] -- HTML rendering customization
+- Built from: [[validators|Validators]] -- Reusable validation logic
+- Builds into: [[form-validation|Form Validation]] -- Multi-layer cleaning pipeline
+- Builds into: [[modelform-save|ModelForm Save Logic]] -- `save()`, `save(commit=False)`
+- Builds into: [[form-rendering|Form Rendering]] -- `as_p`, `as_table`, `as_ul`, manual `{{ field }}`
+- Builds into: [[formsets|Formsets]] -- Multiple forms on one page
+- Builds into: [[file-uploads|File Uploads]] -- `FileField`, `ImageField`, `request.FILES`
+- Contrasts with: [[wtforms|WTForms]] -- Flask's form library, similar but separate
+- Contrasts with: [[pydantic|Pydantic]] -- FastAPI's validation, type-hint based, no HTML rendering
+- Related: [[csrf-protection|CSRF Protection]] -- `{% csrf_token %}` required for POST forms
+- Related: [[form-template-tags|Form Template Tags]] -- `{{ form.errors }}`, `{{ field.label_tag }}`
 
 ## Edge Cases & Gotchas
 

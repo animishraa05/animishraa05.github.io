@@ -22,7 +22,7 @@ DAMA (Demand Assigned Multiple Access) is a combination of random access (Aloha)
 5. During the transmission phase, stations transmit exactly in their assigned slots
 6. Zero collisions during data transmission because slots are explicitly reserved
 
-**Implicit Reservation (PRMA — Packet Reservation Multiple Access):**
+**Implicit Reservation (PRMA -- Packet Reservation Multiple Access):**
 1. Time is divided into frames, each with a fixed number of slots
 2. The base station broadcasts a reservation status vector (e.g., "ACDABA-F") each frame
 3. New stations contend for free slots using Aloha during their first successful transmission
@@ -37,15 +37,44 @@ DAMA (Demand Assigned Multiple Access) is a combination of random access (Aloha)
 - PRMA is optimized for periodic traffic (e.g., voice) where continuous slot allocation is needed
 - Both schemes protect actual data transmission from collisions
 
+
+
+## Visual Explanation
+
+```dot
+digraph DAMA_Protocol {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Dama Protocol\nInput"]
+  B [label="Dama Protocol\nCore Mechanism"]
+  C [label="Dama Protocol\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_DAMA_Protocol {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Dama Protocol" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[reservation-aloha|Reservation Aloha]] — DAMA is a form of reservation Aloha
-- Related: [[prma|PRMA]] — PRMA is an implicit reservation variant of DAMA
-- Related: [[slotted-aloha|Slotted Aloha]] — DAMA uses Slotted Aloha for the contention/reservation phase
-- Related: [[multiplexing|Multiplexing]] — both TDMA and DAMA are multiplexing schemes
-- Related: [[ieee-802-11|IEEE 802.11]] — 802.11 PCF and HCF have reservation-like mechanisms
+- Built from: [[reservation-aloha|Reservation Aloha]] -- DAMA is a form of reservation Aloha
+- Related: [[prma|PRMA]] -- PRMA is an implicit reservation variant of DAMA
+- Related: [[slotted-aloha|Slotted Aloha]] -- DAMA uses Slotted Aloha for the contention/reservation phase
+- Related: [[multiplexing|Multiplexing]] -- both TDMA and DAMA are multiplexing schemes
+- Related: [[ieee-802-11|IEEE 802.11]] -- 802.11 PCF and HCF have reservation-like mechanisms
 
 ## Edge Cases & Gotchas
 - Explicit DAMA: higher delay under light load (must go through request phase first)
-- PRMA: voice activity detection is critical — if a voice call ends but the speaker is silent (no packet), the reservation is released
+- PRMA: voice activity detection is critical -- if a voice call ends but the speaker is silent (no packet), the reservation is released
 - PRMA drop probability must be kept very low (e.g., 1%) for voice quality
 - PRMA requires a voice activity detector to efficiently use slots during silence periods

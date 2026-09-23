@@ -12,7 +12,7 @@ High-level language constructs (complex expressions, nested loops, function call
 
 ## Core Idea
 
-Three-address code (TAC) is an intermediate representation where each instruction has at most three operands — typically two source operands and one destination. Each TAC instruction performs a single operation: `a = b op c`. TAC simplifies code generation by breaking complex expressions into elementary steps and provides a flat instruction sequence that is easy to analyze and optimize.
+Three-address code (TAC) is an intermediate representation where each instruction has at most three operands -- typically two source operands and one destination. Each TAC instruction performs a single operation: `a = b op c`. TAC simplifies code generation by breaking complex expressions into elementary steps and provides a flat instruction sequence that is easy to analyze and optimize.
 
 ## How It Works
 
@@ -49,16 +49,31 @@ digraph tac {
 - **Flat sequence:** Unlike the AST, TAC is a linear instruction sequence
 - **Variants:** Quadruples (op, arg1, arg2, result), triples (indirect references), indirect triples
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Three_Address_Code {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Three Address Code" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[intermediate-code-generation|Intermediate Code Generation]] — TAC is a common form of intermediate code
-- **Builds into:** [[code-optimization|Code Optimization]] — optimization algorithms operate on TAC
-- **Builds into:** [[code-generation|Code Generation]] — code generator translates TAC to target instructions
-- **Related:** [[loop-detection-in-tac|Detection of a Loop in TAC]] — analyzing loops in three-address code for optimization
-- **Related:** [[data-flow-analysis|Data Flow Analysis]] — data-flow analysis works on TAC instruction sequences
+- **Built from:** [[intermediate-code-generation|Intermediate Code Generation]] -- TAC is a common form of intermediate code
+- **Builds into:** [[code-optimization|Code Optimization]] -- optimization algorithms operate on TAC
+- **Builds into:** [[code-generation|Code Generation]] -- code generator translates TAC to target instructions
+- **Related:** [[loop-detection-in-tac|Detection of a Loop in TAC]] -- analyzing loops in three-address code for optimization
+- **Related:** [[data-flow-analysis|Data Flow Analysis]] -- data-flow analysis works on TAC instruction sequences
 
 ## Edge Cases & Gotchas
 
-- **Addressing modes:** TAC abstracts away target-specific addressing — the code generator handles the mapping
-- **Symbolic labels:** TAC uses symbolic labels for jumps — these must be resolved to actual addresses during code generation
-- **Three-address vs SSA:** Static single assignment (SSA) form extends TAC by ensuring every variable is assigned exactly once — more powerful for optimization
+- **Addressing modes:** TAC abstracts away target-specific addressing -- the code generator handles the mapping
+- **Symbolic labels:** TAC uses symbolic labels for jumps -- these must be resolved to actual addresses during code generation
+- **Three-address vs SSA:** Static single assignment (SSA) form extends TAC by ensuring every variable is assigned exactly once -- more powerful for optimization

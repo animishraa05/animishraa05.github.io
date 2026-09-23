@@ -42,11 +42,26 @@ digraph G {
 - Identified by a SAP address (e.g., port number for transport layer)
 - Enables layer independence and modularity
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Service_Access_Point {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Service Access Point" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[service|Service]] — the service provided through the SAP
-- Built from: [[service-primitives|Service Primitives]] — operations at the SAP
-- Related: [[socket-api|Socket API]] — common SAP implementation
-- Related: [[layered-model|Layered Model]] — SAPs exist between layers
+- Built from: [[service|Service]] -- the service provided through the SAP
+- Built from: [[service-primitives|Service Primitives]] -- operations at the SAP
+- Related: [[socket-api|Socket API]] -- common SAP implementation
+- Related: [[layered-model|Layered Model]] -- SAPs exist between layers
 
 ## Edge Cases & Gotchas
 - SAP exhaustion (e.g., running out of ports) prevents new connections

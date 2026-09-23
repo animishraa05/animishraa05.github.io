@@ -1,5 +1,5 @@
 ---
-title: Aggregation vs Composition — Weak vs Strong Association
+title: Aggregation vs Composition -- Weak vs Strong Association
 type: synthesis
 tags: [dev, java]
 created: 2026-05-13
@@ -12,7 +12,7 @@ Two forms of association in Java: **Aggregation** (weak "has-a") and **Compositi
 
 ## The Core Tension
 
-The key question is: **who owns the lifecycle?** In aggregation, parts can outlive the whole. In composition, the whole owns the parts completely — when the whole dies, the parts die with it. Choosing wrong creates either memory leaks (too strong) or premature destruction (too weak).
+The key question is: **who owns the lifecycle?** In aggregation, parts can outlive the whole. In composition, the whole owns the parts completely -- when the whole dies, the parts die with it. Choosing wrong creates either memory leaks (too strong) or premature destruction (too weak).
 
 ## Comparison
 
@@ -44,9 +44,38 @@ The key question is: **who owns the lifecycle?** In aggregation, parts can outli
 
 The distinction is fundamentally about **lifecycle responsibility**. Aggregation transfers the lifecycle burden to external code (someone else must create and destroy the parts). Composition internalizes it (the container manages everything). This has real consequences: aggregation is more flexible but can cause memory leaks if parts aren't cleaned up; composition is safer but less reusable.
 
+
+
+## Visual Explanation
+
+```dot
+digraph java_aggregation_vs_composition {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Java Aggregation Vs \nInput"]
+  B [label="Java Aggregation Vs \nCore Mechanism"]
+  C [label="Java Aggregation Vs \nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_java_aggregation_vs_composition {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Java Aggregation Vs " fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- [[java-aggregation|Aggregation]] — weak association with independent lifecycles
-- [[java-composition|Composition]] — strong association with dependent lifecycles
-- [[java-association|Association]] — the parent concept of both
-- [[java-encapsulation|Encapsulation]] — both rely on encapsulation to manage internal state
+- [[java-aggregation|Aggregation]] -- weak association with independent lifecycles
+- [[java-composition|Composition]] -- strong association with dependent lifecycles
+- [[java-association|Association]] -- the parent concept of both
+- [[java-encapsulation|Encapsulation]] -- both rely on encapsulation to manage internal state

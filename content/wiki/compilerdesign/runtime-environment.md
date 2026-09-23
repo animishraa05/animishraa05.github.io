@@ -16,7 +16,7 @@ The runtime environment is the execution context in which the compiled program r
 
 ## How It Works
 
-When a function is called, the runtime pushes an **activation record** (stack frame) onto the call stack. This record contains the return address, local variables, parameters, and saved registers. When the function returns, the record is popped. The heap grows dynamically as memory is allocated. The runtime system provides services that the compiled code calls — memory allocators, exception handlers, type-checking code.
+When a function is called, the runtime pushes an **activation record** (stack frame) onto the call stack. This record contains the return address, local variables, parameters, and saved registers. When the function returns, the record is popped. The heap grows dynamically as memory is allocated. The runtime system provides services that the compiled code calls -- memory allocators, exception handlers, type-checking code.
 
 ## Visual Explanation
 
@@ -56,17 +56,32 @@ digraph runtime_env {
 - **Static data:** Global variables and static local variables allocated at load time
 - **Runtime system:** Library of services (memory management, I/O, error handling)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Runtime_Environment {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Runtime Environment" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[storage-allocation-strategies|Storage Allocation Strategies]] — runtime uses stack, heap, and static allocation
-- **Built from:** [[linker-and-loader|Linker and Loader]] — the loader sets up the initial runtime environment
-- **Related:** [[static-and-dynamic-scoping|Static and Dynamic Scoping]] — scoping rules affect how runtime resolves variable references
-- **Related:** [[code-generation|Code Generation]] — generated code must follow runtime calling conventions
-- **Related:** [[compiler|Compiler]] — the runtime environment is where compiled programs execute
+- **Built from:** [[storage-allocation-strategies|Storage Allocation Strategies]] -- runtime uses stack, heap, and static allocation
+- **Built from:** [[linker-and-loader|Linker and Loader]] -- the loader sets up the initial runtime environment
+- **Related:** [[static-and-dynamic-scoping|Static and Dynamic Scoping]] -- scoping rules affect how runtime resolves variable references
+- **Related:** [[code-generation|Code Generation]] -- generated code must follow runtime calling conventions
+- **Related:** [[compiler|Compiler]] -- the runtime environment is where compiled programs execute
 
 ## Edge Cases & Gotchas
 
 - **Stack overflow:** Infinite recursion or very deep call chains exhaust the stack
-- **Garbage collection:** Managed languages (Java, C#) include GC in the runtime — the compiler must generate GC-friendly code
-- **Setjmp/Longjmp:** Non-local jumps bypass normal stack frame unwinding — compilers must handle this carefully
+- **Garbage collection:** Managed languages (Java, C#) include GC in the runtime -- the compiler must generate GC-friendly code
+- **Setjmp/Longjmp:** Non-local jumps bypass normal stack frame unwinding -- compilers must handle this carefully
 - **Trampolines and thunks:** Dynamic dispatch (virtual functions) requires runtime support from the environment

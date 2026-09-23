@@ -59,7 +59,7 @@ graph semantic_ll1_table {
   THIS -- PRE2 [label="built from" style=dashed]
   THIS -- OUT1 [label="builds into"]
   THIS -- OUT2 [label="builds into"]
-  THIS -- CON1 [label="contrasts with — LR uses ACTION/GOTO"]
+  THIS -- CON1 [label="contrasts with -- LR uses ACTION/GOTO"]
 }
 ```
 
@@ -69,19 +69,19 @@ graph semantic_ll1_table {
 - **Algorithmic construction:** Built from FIRST and FOLLOW sets, not manually
 - **One entry per cell:** For an LL(1) grammar, each cell contains at most one production
 - **ε-productions:** In the table for FOLLOW-set terminals when FIRST contains ε
-- **Error cells:** Empty cells represent syntax errors — used for error detection and recovery
+- **Error cells:** Empty cells represent syntax errors -- used for error detection and recovery
 
 ## Connections
 
-- **Built from:** [[first-and-follow-sets|FIRST and FOLLOW Sets]] — the table is constructed from these sets
-- **Built from:** [[context-free-grammar|Context-Free Grammar]] — grammar transformations may be needed before construction
-- **Builds into:** [[predictive-parser|Predictive Parser]] — the table is the core data structure
-- **Builds into:** [[ll1-parsing-algorithm|LL(1) Parsing Algorithm]] — the algorithm that interprets the table
-- **Contrasts with:** [[lr-parsers|LR Parsing Tables]] — LR tables have ACTION and GOTO parts for bottom-up parsing
+- **Built from:** [[first-and-follow-sets|FIRST and FOLLOW Sets]] -- the table is constructed from these sets
+- **Built from:** [[context-free-grammar|Context-Free Grammar]] -- grammar transformations may be needed before construction
+- **Builds into:** [[predictive-parser|Predictive Parser]] -- the table is the core data structure
+- **Builds into:** [[ll1-parsing-algorithm|LL(1) Parsing Algorithm]] -- the algorithm that interprets the table
+- **Contrasts with:** [[lr-parsers|LR Parsing Tables]] -- LR tables have ACTION and GOTO parts for bottom-up parsing
 
 ## Edge Cases & Gotchas
 
-- **Multiple entries:** A cell with multiple productions means the grammar is not LL(1) — ambiguous or left-recursive
-- **Left recursion:** Left-recursive grammars produce multiple entries in the table — must eliminate left recursion first
-- **Left factoring:** Common prefixes produce FIRST conflicts — solved by left-factoring the grammar (e.g., `A → αβ₁ | αβ₂` becomes `A → αA', A' → β₁ | β₂`)
-- **Table size:** Number of rows = count of non-terminals, columns = count of terminals — grows with grammar size
+- **Multiple entries:** A cell with multiple productions means the grammar is not LL(1) -- ambiguous or left-recursive
+- **Left recursion:** Left-recursive grammars produce multiple entries in the table -- must eliminate left recursion first
+- **Left factoring:** Common prefixes produce FIRST conflicts -- solved by left-factoring the grammar (e.g., `A → αβ₁ | αβ₂` becomes `A → αA', A' → β₁ | β₂`)
+- **Table size:** Number of rows = count of non-terminals, columns = count of terminals -- grows with grammar size

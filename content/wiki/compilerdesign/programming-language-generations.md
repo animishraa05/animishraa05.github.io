@@ -12,7 +12,7 @@ Programming languages evolved from machine-specific binary to human-readable abs
 
 ## Core Idea
 
-Programming languages are classified into five generations based on their level of abstraction from machine code. **1GL** is machine code (binary). **2GL** is assembly language (mnemonics for machine instructions). **3GL** is high-level languages (C, C++, Java, Python) — compiled or interpreted. **4GL** is domain-specific languages (SQL, report generators). **5GL** is constraint/logic-based languages (Prolog).
+Programming languages are classified into five generations based on their level of abstraction from machine code. **1GL** is machine code (binary). **2GL** is assembly language (mnemonics for machine instructions). **3GL** is high-level languages (C, C++, Java, Python) -- compiled or interpreted. **4GL** is domain-specific languages (SQL, report generators). **5GL** is constraint/logic-based languages (Prolog).
 
 ## How It Works
 
@@ -44,12 +44,27 @@ digraph lang_generations {
 - **4GL:** Domain-specific, declarative, often uses sophisticated interpreters
 - **5GL:** Constraint/logic based, specify what not how
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Programming_Language_Generations {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Programming Language" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Related:** [[compiler|Compiler]] — compilers translate 3GL and above to lower-level code
-- **Related:** [[compiler-vs-interpreter|Compiler vs Interpreter]] — 3GL+ languages use either or both translation strategies
-- **Related:** [[phases-of-compiler|Phases of a Compiler]] — the abstraction gap between generations determines compiler complexity
-- **Related:** [[programming-language-generations|Programming Language Generations]] — the evolution that made compilers necessary
+- **Related:** [[compiler|Compiler]] -- compilers translate 3GL and above to lower-level code
+- **Related:** [[compiler-vs-interpreter|Compiler vs Interpreter]] -- 3GL+ languages use either or both translation strategies
+- **Related:** [[phases-of-compiler|Phases of a Compiler]] -- the abstraction gap between generations determines compiler complexity
+- **Related:** [[programming-language-generations|Programming Language Generations]] -- the evolution that made compilers necessary
 
 ## Edge Cases & Gotchas
 

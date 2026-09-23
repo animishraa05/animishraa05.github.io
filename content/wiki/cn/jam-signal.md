@@ -44,11 +44,26 @@ digraph G {
 - Duration is at least the slot time (time to detect collision)
 - Part of CSMA/CD protocol
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Jam_Signal {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Jam Signal" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[csma-cd|CSMA/CD]] — jam signal is part of this protocol
-- Related: [[collision-detection|Collision Detection]] — triggers jam signal
-- Related: [[binary-exponential-backoff|Binary Exponential Backoff]] — follows jam signal
-- Related: [[collision|Collision]] — what triggers the jam
+- Built from: [[csma-cd|CSMA/CD]] -- jam signal is part of this protocol
+- Related: [[collision-detection|Collision Detection]] -- triggers jam signal
+- Related: [[binary-exponential-backoff|Binary Exponential Backoff]] -- follows jam signal
+- Related: [[collision|Collision]] -- what triggers the jam
 
 ## Edge Cases & Gotchas
 - Jam signal itself could theoretically collide (rare, handled by backoff)

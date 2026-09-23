@@ -66,12 +66,27 @@ digraph G {
 - **Contexts**: Containers for bindings, can be nested (subcontexts)
 - **JNDI compound names**: Can use different syntaxes (slash, dot, etc.)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_JNDI_Naming_Concepts {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Jndi Naming Concepts" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[jndi|JNDI]] — JNDI implements these naming concepts
-- Builds into: [[jndi-context|JNDI Context]] — contexts are central to JNDI operations
-- Related: [[jndi-binding|JNDI Binding]] — bindings are the associations within contexts
+- Built from: [[jndi|JNDI]] -- JNDI implements these naming concepts
+- Builds into: [[jndi-context|JNDI Context]] -- contexts are central to JNDI operations
+- Related: [[jndi-binding|JNDI Binding]] -- bindings are the associations within contexts
 - Related: [[atomic-name|Atomic Name]], [[compound-name|Compound Name]]
-- Related: [[subcontext|Subcontext]] — subcontexts enable hierarchical organization
+- Related: [[subcontext|Subcontext]] -- subcontexts enable hierarchical organization
 
 ## Edge Cases & Gotchas
 - **Compound name syntax**: Different providers may use different separators

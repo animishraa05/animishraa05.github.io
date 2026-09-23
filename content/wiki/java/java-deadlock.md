@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-When multiple threads need multiple locks, they can get stuck waiting for each other indefinitely. Thread A holds lock 1 and waits for lock 2, while Thread B holds lock 2 and waits for lock 1. Neither can proceed — they are permanently blocked.
+When multiple threads need multiple locks, they can get stuck waiting for each other indefinitely. Thread A holds lock 1 and waits for lock 2, while Thread B holds lock 2 and waits for lock 1. Neither can proceed -- they are permanently blocked.
 
 ## Core Idea
 
@@ -62,16 +62,16 @@ graph semantic_deadlock {
 ## Key Properties
 
 - **Four conditions**: All four must hold for deadlock to occur
-- **Circular wait**: The defining condition — a cycle of threads waiting for each other's locks
+- **Circular wait**: The defining condition -- a cycle of threads waiting for each other's locks
 - **Detection**: jstack and thread dump analysis reveal deadlocked threads
 - **Prevention**: Consistent lock ordering is the simplest prevention strategy
 
 ## Connections
 
-- **Built from:** [[java-synchronization|Java Synchronization]] — deadlock requires multiple synchronized resources
-- **Built from:** [[java-multithreading|Java Multithreading]] — deadlock requires at least two threads
-- **Builds into:** [[java-executor-framework|Java Executor Framework]] — executors can be designed to avoid deadlock
-- **Related:** [[java-synchronization|Java Synchronization]] — thread safety and deadlock avoidance both require proper synchronization
+- **Built from:** [[java-synchronization|Java Synchronization]] -- deadlock requires multiple synchronized resources
+- **Built from:** [[java-multithreading|Java Multithreading]] -- deadlock requires at least two threads
+- **Builds into:** [[java-executor-framework|Java Executor Framework]] -- executors can be designed to avoid deadlock
+- **Related:** [[java-synchronization|Java Synchronization]] -- thread safety and deadlock avoidance both require proper synchronization
 
 ## Edge Cases & Gotchas
 

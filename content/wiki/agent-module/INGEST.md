@@ -10,28 +10,28 @@
 Before writing a single file:
 
 1. Read the source from `sources/[filename]`
-2. Read `wiki/index.md` to see what already exists — avoid duplicates
+2. Read `wiki/index.md` to see what already exists -- avoid duplicates
 3. Determine the topic folder name from the source filename (kebab-case, no extension)
-4. Check if `wiki/[topic]/` already exists — if yes, add to it, don't create a parallel folder
+4. Check if `wiki/[topic]/` already exists -- if yes, add to it, don't create a parallel folder
 
 ---
 
 ## Step-by-Step Process
 
-### Step 1 — Concept Extraction
+### Step 1 -- Concept Extraction
 
 Read the source and identify atomic concepts. An atomic concept is a distinct idea, mechanism, pattern, or principle that can stand alone as a page.
 
 **Target: 25 concepts minimum per source.** Extract every distinct idea, mechanism, pattern, and principle.
 
-- If the source genuinely contains more, extract more — there is no upper limit
-- If the source is thin, decompose broader concepts into finer atomic pieces — do not stop short of 25
+- If the source genuinely contains more, extract more -- there is no upper limit
+- If the source is thin, decompose broader concepts into finer atomic pieces -- do not stop short of 25
 - Each concept should be something a reader would search for independently
 - This is a hard floor: the ingest shell gate will fail if you produce fewer than 25 pages
 
 Write your concept list as scratch notes before creating any files. This prevents mid-ingest rethinking.
 
-### Step 2 — Create the Topic Folder
+### Step 2 -- Create the Topic Folder
 
 ```
 wiki/[topic]/
@@ -39,15 +39,15 @@ wiki/[topic]/
 
 If it already exists, skip this step.
 
-### Step 3 — Create Concept Pages
+### Step 3 -- Create Concept Pages
 
 For each concept in your list:
 
-1. Check `wiki/index.md` — does a page for this concept already exist anywhere?
+1. Check `wiki/index.md` -- does a page for this concept already exist anywhere?
    - **If YES**: open that page, merge new information in, update `updated:` date, increment `sources_count:`
    - **If NO**: create `wiki/[topic]/concept-name.md` using the Concept Page template from `SCHEMA.md`
 
-**Deferred linking rule:** Add outbound `[[links]]` freely. Do NOT go back to other files to add backlinks during ingest — this is expensive and error-prone. Instead, mark where a backlink is needed with a comment on the same line:
+**Deferred linking rule:** Add outbound `[[links]]` freely. Do NOT go back to other files to add backlinks during ingest -- this is expensive and error-prone. Instead, mark where a backlink is needed with a comment on the same line:
 
 ```markdown
 - **Related:** [[packet-switching|Packet Switching]]
@@ -55,7 +55,7 @@ For each concept in your list:
 
 These are resolved in the next lint pass.
 
-### Step 4 — Create Synthesis Pages
+### Step 4 -- Create Synthesis Pages
 
 After concepts are written, look for natural comparisons or tensions in the source material. Create one or more synthesis pages (`wiki/[topic]/a-vs-b.md`) for:
 
@@ -65,7 +65,7 @@ After concepts are written, look for natural comparisons or tensions in the sour
 
 Use the Synthesis Page template from `SCHEMA.md`. Aim for 1–3 synthesis pages per source, not one per concept pair.
 
-### Step 5 — Create Source Summary
+### Step 5 -- Create Source Summary
 
 Create `wiki/[topic]/topic-name-summary.md` using the Source Summary template from `SCHEMA.md`.
 
@@ -75,13 +75,13 @@ The summary must list:
 - Every synthesis page created
 - Open questions raised by this source → also append these to `wiki/open-questions.md`
 
-### Step 6 — Create or Update the Map of Content
+### Step 6 -- Create or Update the Map of Content
 
 If `wiki/[topic]/topic-moc.md` does not exist, create it using the MOC template from `SCHEMA.md`.
 
 If it exists, add the new pages to the relevant section.
 
-### Step 7 — Update `wiki/index.md`
+### Step 7 -- Update `wiki/index.md`
 
 Add a new row in the appropriate section with topic name, wiki link, and one-line description. Do NOT add page counts, a Stats section, or agent-module references. Do NOT update the `updated:` date in index frontmatter.
 
@@ -89,12 +89,12 @@ Add a new row in the appropriate section with topic name, wiki link, and one-lin
 | [[topic-name\|Display Name]] | Description text |
 ```
 
-### Step 8 — Append to `wiki/log.md`
+### Step 8 -- Append to `wiki/log.md`
 
 Write a brief personal note about what was added. Do NOT include page counts or structured tracking data.
 
 ```markdown
-## [YYYY-MM-DD] — What was studied or learned
+## [YYYY-MM-DD] -- What was studied or learned
 ```
 
 ---
@@ -104,12 +104,12 @@ Write a brief personal note about what was added. Do NOT include page counts or 
 A page is **valid** if it has:
 
 - YAML frontmatter (all required fields)
-- "Formal Definition" section — non-empty (textbook style)
-- "Explanation" section — non-empty (plain language)
-- "Mathematical Formulation" — if the concept involves math, use LaTeX. If no math, omit.
-- "Visual Explanation" section — Graphviz DOT diagram (required, see below)
-- "Semantic Network" section — Graphviz DOT mind map (required, see below)
-- "Connections" section — minimum 4 links
+- "Formal Definition" section -- non-empty (textbook style)
+- "Explanation" section -- non-empty (plain language)
+- "Mathematical Formulation" -- if the concept involves math, use LaTeX. If no math, omit.
+- "Visual Explanation" section -- Graphviz DOT diagram (required, see below)
+- "Semantic Network" section -- Graphviz DOT mind map (required, see below)
+- "Connections" section -- minimum 4 links
 
 Sections that can be brief stubs on first pass (fill in during lint):
 
@@ -125,7 +125,7 @@ A page is a **stub** if it is missing any required section. Set `status: stub` i
 
 Every concept page must contain TWO Graphviz diagrams.
 
-### Diagram 1 — Visual Explanation
+### Diagram 1 -- Visual Explanation
 
 Explains the concept's internal structure, flow, or mechanism. Shows HOW it works.
 
@@ -147,19 +147,19 @@ Rules:
 
 - Use `rankdir=LR` for flows, `rankdir=TB` for hierarchies
 - Label every edge with its relationship
-- 4–8 nodes is the sweet spot — more gets unreadable
+- 4–8 nodes is the sweet spot -- more gets unreadable
 - Node labels should be the concept's own vocabulary, not generic placeholders
 
-### Diagram 2 — Semantic Network (Mind Map)
+### Diagram 2 -- Semantic Network (Mind Map)
 
-Shows WHERE this concept lives in the knowledge graph — its neighbors, dependencies, and contrasts. This is for memory and navigation, not mechanism explanation.
+Shows WHERE this concept lives in the knowledge graph -- its neighbors, dependencies, and contrasts. This is for memory and navigation, not mechanism explanation.
 
 ```dot
 graph semantic_[concept_name] {
   layout=neato
   node [shape=ellipse style=filled fontname="Helvetica"]
 
-  // Center node — this concept
+  // Center node -- this concept
   THIS [label="This Concept" fillcolor="#ffd700" fontsize=14]
 
   // Prerequisites (blue)
@@ -211,7 +211,7 @@ updated: YYYY-MM-DD
 
 ```yaml
 ---
-title: A vs B — What Makes Them Different
+title: A vs B -- What Makes Them Different
 type: synthesis
 tags: [domain-tag, subtopic]
 created: YYYY-MM-DD

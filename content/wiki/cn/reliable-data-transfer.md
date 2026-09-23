@@ -7,7 +7,7 @@ updated: 2026-04-30
 ---
 
 ## The Problem
-Networks are inherently unreliable — packets get lost, corrupted, duplicated, or arrive out of order. Applications like file transfer and email need guarantees that data arrives correctly and completely.
+Networks are inherently unreliable -- packets get lost, corrupted, duplicated, or arrive out of order. Applications like file transfer and email need guarantees that data arrives correctly and completely.
 
 ## Core Idea
 A set of mechanisms ensuring data is delivered completely, in order, without errors, despite network unreliability.
@@ -49,14 +49,29 @@ digraph G {
 - Detects and recovers from packet loss, corruption, duplication
 - Requires state maintenance (sequence numbers, timers, buffers)
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Reliable_Data_Transfer {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Reliable Data Transf" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[sequence-numbers|Sequence Numbers]] — enables ordering and loss detection
-- Built from: [[acknowledgment|Acknowledgment]] — confirms delivery
-- Builds into: [[tcp|TCP]] — implements reliable data transfer
-- Builds into: [[connection-oriented-service|Connection-Oriented Service]] — core feature
-- Contrasts with: [[best-effort-delivery|Best Effort Delivery]] — no guarantees
+- Built from: [[sequence-numbers|Sequence Numbers]] -- enables ordering and loss detection
+- Built from: [[acknowledgment|Acknowledgment]] -- confirms delivery
+- Builds into: [[tcp|TCP]] -- implements reliable data transfer
+- Builds into: [[connection-oriented-service|Connection-Oriented Service]] -- core feature
+- Contrasts with: [[best-effort-delivery|Best Effort Delivery]] -- no guarantees
 
 ## Edge Cases & Gotchas
 - Ack loss can cause unnecessary retransmission (handled by duplicate detection)
-- Retransmission timeout tuning is critical — too short causes unnecessary retrans, too long adds latency
+- Retransmission timeout tuning is critical -- too short causes unnecessary retrans, too long adds latency
 - Duplicate packets must be detected and discarded

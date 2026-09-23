@@ -32,7 +32,7 @@ Predict whether a customer will buy a product:
 - Step 3: Internal node asks "Previous Purchases > 0?" → Yes (2 > 0) → follow Yes branch
 - Step 4: Leaf node → Prediction: **"Purchase"**
 
-This process is O(depth) — the prediction time grows linearly with tree depth, not with training data size.
+This process is O(depth) -- the prediction time grows linearly with tree depth, not with training data size.
 
 ## Visual Explanation
 
@@ -58,19 +58,34 @@ digraph decision_tree_prediction {
 ## Key Properties
 
 - **Deterministic**: The same instance always follows the same path to the same leaf
-- **Fast**: O(depth) time — typically O(log n) for balanced trees
+- **Fast**: O(depth) time -- typically O(log n) for balanced trees
 - **No data needed**: Prediction doesn't require the training dataset, only the tree structure
 - **Interpretable**: The full decision path can be printed as an if-then rule
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Decision_Tree_Prediction {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Decision Tree Predic" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[decision-tree-structure|Decision Tree Structure]] — prediction uses the tree's nodes and branches
-- **Built from:** [[root-node|Root Node]] — prediction always starts at the root
-- **Built from:** [[internal-node|Internal Node]] — internal nodes guide the traversal
-- **Built from:** [[leaf-node|Leaf Node]] — leaf nodes provide the final prediction
-- **Builds into:** [[classification|Classification]] — prediction outputs class labels
-- **Builds into:** [[regression|Regression]] — prediction outputs continuous values
-- **Related:** [[decision-tree-interpretability|Decision Tree Interpretability]] — the prediction path is human-readable
+- **Built from:** [[decision-tree-structure|Decision Tree Structure]] -- prediction uses the tree's nodes and branches
+- **Built from:** [[root-node|Root Node]] -- prediction always starts at the root
+- **Built from:** [[internal-node|Internal Node]] -- internal nodes guide the traversal
+- **Built from:** [[leaf-node|Leaf Node]] -- leaf nodes provide the final prediction
+- **Builds into:** [[classification|Classification]] -- prediction outputs class labels
+- **Builds into:** [[regression|Regression]] -- prediction outputs continuous values
+- **Related:** [[decision-tree-interpretability|Decision Tree Interpretability]] -- the prediction path is human-readable
 
 ## Edge Cases & Gotchas
 

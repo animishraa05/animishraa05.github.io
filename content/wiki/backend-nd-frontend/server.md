@@ -34,19 +34,48 @@ Servers can be physical machines, virtual machines, or containers. They typicall
 - Can be scaled horizontally (more machines) or vertically (more resources)
 - High availability often requires redundancy
 
+
+
+## Visual Explanation
+
+```dot
+digraph server {
+  rankdir=LR
+  node [shape=box style=filled fillcolor="#f0f4ff" fontname="Helvetica"]
+  A [label="Server\nInput"]
+  B [label="Server\nCore Mechanism"]
+  C [label="Server\nOutput"]
+  A -> B [label="triggers"]
+  B -> C [label="produces"]
+}
+```
+
+## Semantic Network
+
+```dot
+graph semantic_server {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Server" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
 **Builds into:**
 
-- [[back-end|Back End]] — Server typically runs back end components
+- [[back-end|Back End]] -- Server typically runs back end components
 
 **Related:**
 
-- [[client-server-model|Client-Server Model]] — Server is one side of the model
-- [[front-end|Front End]] — Client counterpart to server
+- [[client-server-model|Client-Server Model]] -- Server is one side of the model
+- [[front-end|Front End]] -- Client counterpart to server
 
 ## Edge Cases & Gotchas
 
 - Server downtime affects all clients
-- Security critical—servers are attack targets
+- Security critical--servers are attack targets
 - Performance bottlenecks can affect all users

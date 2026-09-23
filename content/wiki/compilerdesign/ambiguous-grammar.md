@@ -8,15 +8,15 @@ updated: 2026-05-13
 
 ## The Problem
 
-A grammar that allows more than one parse tree for the same input string means the compiler cannot determine the unique syntactic structure of the program. This leads to unpredictable behavior — different parsers may interpret the same program differently.
+A grammar that allows more than one parse tree for the same input string means the compiler cannot determine the unique syntactic structure of the program. This leads to unpredictable behavior -- different parsers may interpret the same program differently.
 
 ## Core Idea
 
-A grammar is **ambiguous** if there exists a string in its language that has more than one leftmost derivation (equivalently, more than one parse tree). Ambiguity is a property of the grammar, not necessarily of the language — many ambiguous grammars can be rewritten as unambiguous ones.
+A grammar is **ambiguous** if there exists a string in its language that has more than one leftmost derivation (equivalently, more than one parse tree). Ambiguity is a property of the grammar, not necessarily of the language -- many ambiguous grammars can be rewritten as unambiguous ones.
 
 ## How It Works
 
-Ambiguity arises when a non-terminal can be expanded in multiple ways that lead to the same input. Classic examples: **dangling else** (`if x if y ... else ...` — which if does else belong to?), and **expression associativity** (`E → E + E | id` allows two trees for `a + b + c`). The parser resolves ambiguity through precedence rules, associativity declarations, or grammar rewriting.
+Ambiguity arises when a non-terminal can be expanded in multiple ways that lead to the same input. Classic examples: **dangling else** (`if x if y ... else ...` -- which if does else belong to?), and **expression associativity** (`E → E + E | id` allows two trees for `a + b + c`). The parser resolves ambiguity through precedence rules, associativity declarations, or grammar rewriting.
 
 ## Visual Explanation
 
@@ -45,17 +45,32 @@ digraph ambiguous_grammar {
 - **Expression ambiguity:** Operator precedence and associativity are typically ambiguous in naive expression grammars
 - **Parser resolution:** Yacc and Bison allow precedence and associativity declarations to resolve ambiguities
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Ambiguous_Grammar {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Ambiguous Grammar" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[context-free-grammar|Context-Free Grammar]] — ambiguity is a property of CFGs
-- **Contrasts with:** [[unambiguous-grammar|Unambiguous Grammar]] — a grammar producing exactly one parse tree per string
-- **Related:** [[top-down-parsing|Top-Down Parsing]] — some ambiguous grammars cause non-determinism in LL parsers
-- **Related:** [[operator-precedence-parser|Operator Precedence Parser]] — specifically designed to handle ambiguous expression grammars using precedence rules
-- **Related:** [[syntax-analysis|Syntax Analysis]] — detecting and resolving ambiguity is a core concern in parsing
+- **Built from:** [[context-free-grammar|Context-Free Grammar]] -- ambiguity is a property of CFGs
+- **Contrasts with:** [[unambiguous-grammar|Unambiguous Grammar]] -- a grammar producing exactly one parse tree per string
+- **Related:** [[top-down-parsing|Top-Down Parsing]] -- some ambiguous grammars cause non-determinism in LL parsers
+- **Related:** [[operator-precedence-parser|Operator Precedence Parser]] -- specifically designed to handle ambiguous expression grammars using precedence rules
+- **Related:** [[syntax-analysis|Syntax Analysis]] -- detecting and resolving ambiguity is a core concern in parsing
 
 ## Edge Cases & Gotchas
 
-- **Inherent ambiguity:** Some languages are inherently ambiguous — every grammar for them is ambiguous
+- **Inherent ambiguity:** Some languages are inherently ambiguous -- every grammar for them is ambiguous
 - **Ambiguity detection is undecidable:** There is no algorithm that can determine whether an arbitrary CFG is ambiguous
-- **Yacc/Bison resolution:** By default, yacc resolves shift-reduce conflicts in favor of shift — this may not always be what the user wants
+- **Yacc/Bison resolution:** By default, yacc resolves shift-reduce conflicts in favor of shift -- this may not always be what the user wants
 - **Disambiguating rules:** Associativity declarations (`%left`, `%right`) and precedence levels resolve ambiguity without grammar rewriting

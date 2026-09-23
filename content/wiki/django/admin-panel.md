@@ -12,16 +12,16 @@ The Django Admin Panel is an auto-generated, model-centric administrative interf
 
 ## Explanation
 
-The admin panel solves the problem of building custom administrative interfaces for every data model. By registering a model with a `ModelAdmin` class, developers get a production-ready interface for viewing, creating, editing, and deleting records, with list views supporting search, filters, ordering, and pagination — all without writing HTML or view logic. It respects Django's authentication and permission system (`add`, `change`, `delete`, `view` per model).
+The admin panel solves the problem of building custom administrative interfaces for every data model. By registering a model with a `ModelAdmin` class, developers get a production-ready interface for viewing, creating, editing, and deleting records, with list views supporting search, filters, ordering, and pagination -- all without writing HTML or view logic. It respects Django's authentication and permission system (`add`, `change`, `delete`, `view` per model).
 
 ## How It Works
 
-1. **Models registered** — `admin.site.register(Model, ModelAdmin)` in `admin.py`
-2. **Autodiscovery** — `admin.autodiscover()` (auto in Django 1.7+) imports `admin.py` from each `INSTALLED_APP`
-3. **ModelAdmin options** — `list_display`, `list_filter`, `search_fields`, `ordering`, `readonly_fields`, `fieldsets`
-4. **URLs included** — `path('admin/', admin.site.urls)` adds admin routes
-5. **Request handled** — Admin views check permissions, render changelist/changeform templates
-6. **Actions executed** — Bulk actions (delete, custom) process selected objects
+1. **Models registered** -- `admin.site.register(Model, ModelAdmin)` in `admin.py`
+2. **Autodiscovery** -- `admin.autodiscover()` (auto in Django 1.7+) imports `admin.py` from each `INSTALLED_APP`
+3. **ModelAdmin options** -- `list_display`, `list_filter`, `search_fields`, `ordering`, `readonly_fields`, `fieldsets`
+4. **URLs included** -- `path('admin/', admin.site.urls)` adds admin routes
+5. **Request handled** -- Admin views check permissions, render changelist/changeform templates
+6. **Actions executed** -- Bulk actions (delete, custom) process selected objects
 
 ## Visual Explanation
 
@@ -89,22 +89,22 @@ graph semantic_admin_panel {
 - **Zero-code baseline**: `admin.site.register(Model)` gives functional CRUD immediately
 - **ModelAdmin customization**: `list_display`, `list_filter`, `search_fields`, `date_hierarchy`, `ordering`, `raw_id_fields`, `autocomplete_fields`
 - **Inlines**: `TabularInline`, `StackedInline` for editing related objects (FK, M2M) on parent form
-- **Actions**: `actions = ['make_published']` — bulk operations on selected changelist rows
+- **Actions**: `actions = ['make_published']` -- bulk operations on selected changelist rows
 - **Permissions**: `has_add_permission`, `has_change_permission`, `has_delete_permission`, `has_view_permission`
 - **Extensibility**: Override `changelist_view`, `changeform_view`, `get_queryset`, `save_model`, custom templates
 
 ## Connections
 
-- Built from: [[models-orm|Models/ORM]] — Introspects model fields for UI
-- Built from: [[authentication-system|Authentication System]] — Admin requires login
-- Built from: [[permissions-framework|Permissions Framework]] — Per-model permissions
-- Builds into: [[modeladmin-configuration|ModelAdmin Configuration]] — Customization options
-- Builds into: [[inline-models|Inline Models]] — Edit related objects inline
-- Builds into: [[admin-actions|Admin Actions]] — Bulk operations
-- Contrasts with: [[flask-admin|Flask-Admin]] — Extension, not built-in, more manual config
-- Contrasts with: [[custom-admin|Custom Admin Dashboard]] — Full control but more work
-- Related: [[admin-templates|Admin Templates]] — Override `admin/change_list.html`, etc.
-- Related: [[logentry|LogEntry (Audit Trail)]] — Tracks admin changes automatically
+- Built from: [[models-orm|Models/ORM]] -- Introspects model fields for UI
+- Built from: [[authentication-system|Authentication System]] -- Admin requires login
+- Built from: [[permissions-framework|Permissions Framework]] -- Per-model permissions
+- Builds into: [[modeladmin-configuration|ModelAdmin Configuration]] -- Customization options
+- Builds into: [[inline-models|Inline Models]] -- Edit related objects inline
+- Builds into: [[admin-actions|Admin Actions]] -- Bulk operations
+- Contrasts with: [[flask-admin|Flask-Admin]] -- Extension, not built-in, more manual config
+- Contrasts with: [[custom-admin|Custom Admin Dashboard]] -- Full control but more work
+- Related: [[admin-templates|Admin Templates]] -- Override `admin/change_list.html`, etc.
+- Related: [[logentry|LogEntry (Audit Trail)]] -- Tracks admin changes automatically
 
 ## Edge Cases & Gotchas
 

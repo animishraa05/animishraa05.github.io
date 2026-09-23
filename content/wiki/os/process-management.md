@@ -22,7 +22,7 @@ Process management is the OS function responsible for juggling multiple programs
 - The scheduler performs a context switch: saves the current process's state (registers, PC, stack) and loads the next process's state
 - If a process makes a blocking I/O call (e.g., read from disk), it enters the waiting state; the scheduler picks another ready process
 - When I/O completes, the process returns to ready queue
-- The process eventually terminates (normal exit, error, or killed by signal) — the OS frees its resources
+- The process eventually terminates (normal exit, error, or killed by signal) -- the OS frees its resources
 
 ## Visual Explanation
 
@@ -81,16 +81,16 @@ graph semantic_process_management {
 
 ## Connections
 
-- Built from: [[kernel|Kernel]] — the kernel's scheduler implements process management
-- Built from: [[operating-system|Operating System]] — process management is a core OS function
-- Builds into: [[multiprogramming-operating-system|Multiprogramming Operating System]] — process management enables multiple programs in memory
-- Builds into: [[multitasking-operating-system|Multitasking Operating System]] — process management enables rapid switching for user-facing tasks
-- Related: [[mode-switching|Mode Switching]] — context switches are different from mode switches but both involve the scheduler
-- Related: [[inter-process-communication|Inter-Process Communication]] — IPC allows processes to communicate and synchronize
+- Built from: [[kernel|Kernel]] -- the kernel's scheduler implements process management
+- Built from: [[operating-system|Operating System]] -- process management is a core OS function
+- Builds into: [[multiprogramming-operating-system|Multiprogramming Operating System]] -- process management enables multiple programs in memory
+- Builds into: [[multitasking-operating-system|Multitasking Operating System]] -- process management enables rapid switching for user-facing tasks
+- Related: [[mode-switching|Mode Switching]] -- context switches are different from mode switches but both involve the scheduler
+- Related: [[inter-process-communication|Inter-Process Communication]] -- IPC allows processes to communicate and synchronize
 
 ## Edge Cases & Gotchas
 
-- Context switch is NOT the same as mode switch — context switch changes the running process (saves/loads PCB); mode switch changes privilege level within the same process
-- Infinite loops in user mode can be preempted by timer interrupts — the scheduler reclaims control
+- Context switch is NOT the same as mode switch -- context switch changes the running process (saves/loads PCB); mode switch changes privilege level within the same process
+- Infinite loops in user mode can be preempted by timer interrupts -- the scheduler reclaims control
 - Priority inversion can occur when a high-priority process waits for a resource held by a low-priority process (solved by priority inheritance)
 - Zombie processes (terminated but not waited on by parent) and orphan processes (parent terminated before child) are edge cases the OS must handle

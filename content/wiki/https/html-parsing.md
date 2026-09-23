@@ -12,7 +12,7 @@ The browser receives HTML as a text string from the server. To build the DOM and
 
 ## Core Idea
 
-HTML parsing tokenizes HTML text and constructs the DOM tree. The parser is lenient—it corrects malformed HTML automatically (missing closing tags, mismatched tags, etc.).
+HTML parsing tokenizes HTML text and constructs the DOM tree. The parser is lenient--it corrects malformed HTML automatically (missing closing tags, mismatched tags, etc.).
 
 ## How It Works
 
@@ -52,12 +52,27 @@ digraph G {
 - Incremental parsing: starts before full HTML arrives
 - Output is the DOM tree
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_HTML_Parsing {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Html Parsing" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Builds into:** [[dom-tree|DOM Tree]] — HTML parsing creates the DOM
-- **Related:** [[browser-rendering|Browser Rendering]] — HTML parsing is step 1
-- **Related:** [[css-parsing|CSS Parsing]] — parallel but separate process
-- **Contrasts with:** [[xml-parsing|XML Parsing]] — HTML is lenient, XML is strict
+- **Builds into:** [[dom-tree|DOM Tree]] -- HTML parsing creates the DOM
+- **Related:** [[browser-rendering|Browser Rendering]] -- HTML parsing is step 1
+- **Related:** [[css-parsing|CSS Parsing]] -- parallel but separate process
+- **Contrasts with:** [[xml-parsing|XML Parsing]] -- HTML is lenient, XML is strict
 
 ## Edge Cases & Gotchas
 

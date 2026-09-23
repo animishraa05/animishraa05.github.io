@@ -8,7 +8,7 @@ updated: 2026-05-13
 
 ## The Problem
 
-A class is just a blueprint — it defines what an entity looks like but has no concrete existence. To actually execute behavior and hold data, the program needs live instances that exist at runtime, each with its own unique state. Without objects, the program would be a collection of static methods with no persistent data.
+A class is just a blueprint -- it defines what an entity looks like but has no concrete existence. To actually execute behavior and hold data, the program needs live instances that exist at runtime, each with its own unique state. Without objects, the program would be a collection of static methods with no persistent data.
 
 ## Core Idea
 
@@ -16,7 +16,7 @@ An **object** is a basic unit of Object-Oriented Programming that represents rea
 
 ## How It Works
 
-When `new ClassName()` executes, the JVM allocates memory on the heap for the object's fields (with default values), then calls the constructor to initialize them. A reference to this memory location is returned as the object's identity. Multiple reference variables can point to the same object. Objects interact by invoking methods on each other's references — this is how a Java program performs its work.
+When `new ClassName()` executes, the JVM allocates memory on the heap for the object's fields (with default values), then calls the constructor to initialize them. A reference to this memory location is returned as the object's identity. Multiple reference variables can point to the same object. Objects interact by invoking methods on each other's references -- this is how a Java program performs its work.
 
 ## Visual Explanation
 
@@ -74,14 +74,14 @@ graph semantic_object {
 
 ## Connections
 
-- **Built from:** [[java-class|Java Class]] — objects are runtime instances of a class blueprint
-- **Builds into:** [[java-methods|Java Methods]] — objects interact by invoking methods on each other
-- **Related:** [[java-object-class|Java Object Class]] — every object inherits from java.lang.Object
-- **Contrasts with:** [[java-primitive-types|Java Data Types]] — primitives store values directly; objects use reference semantics
+- **Built from:** [[java-class|Java Class]] -- objects are runtime instances of a class blueprint
+- **Builds into:** [[java-methods|Java Methods]] -- objects interact by invoking methods on each other
+- **Related:** [[java-object-class|Java Object Class]] -- every object inherits from java.lang.Object
+- **Contrasts with:** [[java-primitive-types|Java Data Types]] -- primitives store values directly; objects use reference semantics
 
 ## Edge Cases & Gotchas
 
-- **null reference**: An object variable set to null points to no object — calling methods on it throws NullPointerException
+- **null reference**: An object variable set to null points to no object -- calling methods on it throws NullPointerException
 - **Object identity vs equality**: `==` compares references (identity); `.equals()` compares content (equality by default uses == unless overridden)
 - **Mutable vs immutable objects**: Object state can be mutable (changeable) or immutable (unchangeable after construction)
 - **Object lifespan**: Objects become eligible for garbage collection when no reachable references point to them

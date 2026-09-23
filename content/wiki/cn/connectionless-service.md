@@ -17,7 +17,7 @@ A service where packets are sent independently without connection setup, offerin
 2. Each packet (datagram) is treated independently with full addressing information
 3. Packets may take different network paths and arrive out of order or not at all
 4. No retransmission mechanism at this service layer
-5. No flow control or congestion control — sender transmits at will
+5. No flow control or congestion control -- sender transmits at will
 6. Stateless: neither endpoint maintains communication state
 
 ## Visual Explanation
@@ -50,15 +50,30 @@ digraph G {
 - Each packet routed independently
 - Stateless operation at the service layer
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_Connectionless_Service {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Connectionless Servi" fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
-- Built from: [[ip-protocol|IP Protocol]] — network layer connectionless foundation
-- Builds into: [[udp|UDP]] — primary transport layer implementation
-- Contrasts with: [[connection-oriented-service|Connection-Oriented Service]] — reliable vs best-effort
-- Related: [[datagram|Datagram]] — independent packet unit used
-- Related: [[best-effort-delivery|Best Effort Delivery]] — no delivery guarantees
+- Built from: [[ip-protocol|IP Protocol]] -- network layer connectionless foundation
+- Builds into: [[udp|UDP]] -- primary transport layer implementation
+- Contrasts with: [[connection-oriented-service|Connection-Oriented Service]] -- reliable vs best-effort
+- Related: [[datagram|Datagram]] -- independent packet unit used
+- Related: [[best-effort-delivery|Best Effort Delivery]] -- no delivery guarantees
 
 ## Edge Cases & Gotchas
 - Applications must handle reliability at higher layers if needed
 - Packet loss goes undetected unless application implements checking
-- No backpressure mechanism — can overwhelm receiver or network
+- No backpressure mechanism -- can overwhelm receiver or network
 - Out-of-order delivery requires application-level reordering

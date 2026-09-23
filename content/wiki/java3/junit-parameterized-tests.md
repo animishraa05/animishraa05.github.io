@@ -12,14 +12,14 @@ Testing a method with different inputs requires either writing multiple test met
 
 ## Core Idea
 
-JUnit 5's `@ParameterizedTest` allows running the same test method with different arguments. By providing a source of arguments (`@ValueSource`, `@CsvSource`, `@MethodSource`), the test runs once per argument set, with each run reported independently — making it easy to see exactly which input failed.
+JUnit 5's `@ParameterizedTest` allows running the same test method with different arguments. By providing a source of arguments (`@ValueSource`, `@CsvSource`, `@MethodSource`), the test runs once per argument set, with each run reported independently -- making it easy to see exactly which input failed.
 
 ## How It Works
 
 1. **@ParameterizedTest**: Replaces `@Test` to indicate a parameterized test
-2. **@ValueSource**: Provides literal values (ints, strings) — `@ValueSource(ints = {1, 2, 3})`
-3. **@CsvSource**: Provides comma-separated values for multiple parameters — `@CsvSource({"1,2,3", "4,5,9"})`
-4. **@MethodSource**: References a static method that returns a `Stream<Arguments>` — most flexible
+2. **@ValueSource**: Provides literal values (ints, strings) -- `@ValueSource(ints = {1, 2, 3})`
+3. **@CsvSource**: Provides comma-separated values for multiple parameters -- `@CsvSource({"1,2,3", "4,5,9"})`
+4. **@MethodSource**: References a static method that returns a `Stream<Arguments>` -- most flexible
 5. **@EnumSource**: Provides enum constants as test arguments
 6. **@CsvFileSource**: Loads test data from a CSV file on classpath
 7. **@NullSource / @EmptySource**: Provides null and empty values for edge case testing
@@ -59,25 +59,40 @@ digraph parameterized {
 ## Key Properties
 
 - **@ParameterizedTest**: Replaces `@Test` for tests that take arguments
-- **@ValueSource**: Simple literal values — ints, strings, longs, doubles
-- **@CsvSource**: Multiple parameters as CSV — supports null values via empty field
+- **@ValueSource**: Simple literal values -- ints, strings, longs, doubles
+- **@CsvSource**: Multiple parameters as CSV -- supports null values via empty field
 - **@MethodSource**: References a factory method returning `Stream<Arguments>`, `Arguments[]`, or `Stream<T>`
 - **@CsvFileSource**: Load test data from CSV files (lines = test cases, columns = parameters)
 - **@EnumSource**: All enum values or a filtered subset
 - **@NullAndEmptySource**: Combines both @NullSource and @EmptySource
 - **Custom display names**: `@ParameterizedTest(name = "{index}: add({0}, {1}) = {2}")`
 
+
+
+## Semantic Network
+
+```dot
+graph semantic_JUnit_Parameterized_Tests {
+  layout=neato
+  node [shape=ellipse fontname="Helvetica" fontsize=11 style=filled]
+  THIS [label="Junit Parameterized " fillcolor="#ffd700" fontsize=13 style="filled,bold"]
+  REL1 [label="Related Concept" fillcolor="#f0f0f0"]
+  REL2 [label="Builds Into" fillcolor="#d4edda"]
+  THIS -- REL1 [label="related"]
+  THIS -- REL2 [label="builds into"]
+}
+```
 ## Connections
 
-- **Built from:** [[junit-testing|JUnit Testing]] — Parameterized tests extend JUnit 5's test capabilities
-- **Related:** [[junit-annotations-lifecycle|JUnit Annotations and Lifecycle]] — Lifecycle hooks work with parameterized tests
-- **Related:** [[sql-database|SQL Database]] — @CsvSource provides tabular test data, similar to query result sets
-- **Related:** [[test-driven-development|Test-Driven Development]] — TDD benefits from parameterized tests for boundary value analysis
+- **Built from:** [[junit-testing|JUnit Testing]] -- Parameterized tests extend JUnit 5's test capabilities
+- **Related:** [[junit-annotations-lifecycle|JUnit Annotations and Lifecycle]] -- Lifecycle hooks work with parameterized tests
+- **Related:** [[sql-database|SQL Database]] -- @CsvSource provides tabular test data, similar to query result sets
+- **Related:** [[test-driven-development|Test-Driven Development]] -- TDD benefits from parameterized tests for boundary value analysis
 
 ## Edge Cases & Gotchas
 
 - **MethodSource must be static**: Factory methods for @MethodSource must be static (unless PER_CLASS lifecycle)
 - **Type conversion**: JUnit automatically converts strings to primitives, but custom types need `@ConvertWith` or `@JavaTimeConversionPattern`
-- **Large CSV files**: @CsvFileSource for large datasets — but test data in CSV may be harder to maintain than inline
+- **Large CSV files**: @CsvFileSource for large datasets -- but test data in CSV may be harder to maintain than inline
 - **Argument name in display name**: Use `{0}`, `{1}`, etc. in the `name` attribute of @ParameterizedTest to reference arguments
-- **Null handling**: Primitive parameters can't accept null — use `Integer` instead of `int` for nullable tests
+- **Null handling**: Primitive parameters can't accept null -- use `Integer` instead of `int` for nullable tests
