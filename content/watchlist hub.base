@@ -3,7 +3,7 @@ views:
     name: movies
     filters:
       and:
-        - file.folder == "Media DB/movies"
+        - file.folder == "Media-DB/movies"
     sort:
       - property: file.ctime
         direction: ASC
@@ -14,7 +14,7 @@ views:
     name: series
     filters:
       and:
-        - file.folder == "Media DB/series"
+        - file.folder == "Media-DB/series"
     sort:
       - property: file.ctime
         direction: ASC

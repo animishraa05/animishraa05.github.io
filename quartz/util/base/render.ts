@@ -1005,7 +1005,7 @@ function buildCards(
             href,
             'data-slug': slug,
             style: {
-              'background-image': `url(${imageUrl})`,
+              'background-image': `url("${imageUrl}")`,
               'background-size': 'cover',
               top: '0px',
               'inset-inline': '0px',

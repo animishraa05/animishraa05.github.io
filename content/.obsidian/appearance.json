@@ -1,7 +1,7 @@
 {
-  "cssTheme": "Primary",
-  "baseFontSize": 21,
-  "theme": "moonstone",
+  "cssTheme": "Everforest",
+  "baseFontSize": 25,
+  "theme": "obsidian",
   "translucency": false,
   "nativeMenus": false,
   "textFontFamily": "AtkynsonMono Nerd Font Mono",

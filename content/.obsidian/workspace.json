@@ -4,41 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "a85162a7ccfd815c",
+        "id": "a26a75ac1af9587c",
         "type": "tabs",
         "children": [
           {
-            "id": "20e2aabcf0c132ce",
+            "id": "238e8dbd61ca3e51",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Private/Daily/2026-09-21.md",
+                "file": "AGENTS.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-09-21"
-            }
-          }
-        ]
-      },
-      {
-        "id": "f65008f4f50e0a9e",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "722df392c2498ba5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Private/sem 9/Cloud-computing/cloud-computing.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "cloud-computing"
+              "title": "AGENTS"
             }
           }
         ]
@@ -215,8 +195,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 257.5,
-    "collapsed": true
+    "width": 257.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -231,45 +210,46 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
-      "obsidian-media-db-plugin:Add new Media DB entry": false
+      "obsidian-media-db-plugin:Add new Media DB entry": false,
+      "rss-dashboard:RSS dashboard": false
     }
   },
-  "active": "fdb2d7e88a403019",
+  "active": "238e8dbd61ca3e51",
   "lastOpenFiles": [
+    "colophon.md",
+    "index.md",
+    "Private/template.md",
+    "Private/Daily Template.md",
+    "Private/Sde.md",
+    "wiki/cn/multiprotocol.md",
+    "wiki/cn/ncp.md",
+    "wiki/cn/ipcp.md",
+    "wiki/cn/ipv4.md",
+    "wiki/cn/ip-protocol.md",
+    "wiki/cn/index.md",
+    "wiki/backend-engineering-basics/index.md",
+    "wiki/backend-engineering-basics/sql-database.md",
+    "wiki/backend-engineering-basics/http-protocol.md",
+    "wiki/backend-engineering-basics/backend-architecture.md",
+    "AGENTS.md",
+    "ml/projects.md",
+    "ml/papers.md",
+    "ml/index.md",
+    "ml/concepts.md",
+    "Private/sem 9/Cloud-computing/cloud-computing.md",
+    "articles/2026-09-23-how-to-run-a-big-model-on-cheap-hardware.md",
     "Private/sem 9/Cloud-computing/chapter 1.md",
     "Private/sem 9/Cloud-computing/syllabus_tracker.md",
     "Private/sem 9/Cloud-computing/GEMINI.md",
-    "Private/sem 9/Cloud-computing/cloud-computing.md",
     "Untitled.md",
-    "Ulpf-improved.md",
-    "ULPF-SRS.md",
-    "Private/Daily/2026-09-21.md",
-    "Private/sem 9/ITM/it-and-project-management.md",
-    "Private/sem 9/OOAD/object-oriented-analysis-and-design.md",
-    "Private/sem 9/MM/multimedia-systems.md",
-    "Private/sem 9/CD/compiler-design.md",
     "Private/sem 9/MM",
     "Private/sem 9/CD",
     "Private/sem 9/OOAD",
     "Private/sem 9/ITM",
     "Private/sem 9/Cloud-computing",
-    "Private/sem 9/cloud-computing.md",
-    "Private/sem 9/compiler-design.md",
-    "Private/system-design-notes/01. Scaling/Readme.md",
-    "privacy.md",
-    "ULPF_SRS2.md",
-    "ULPF_Architecture_Notes.md",
     "ULPF-SRS_diagram_2.png",
     "ULPF-SRS_diagram_5.png",
-    "srs1questionandcounter.md",
     "watchlist hub.base",
-    "Media DB/movies/Manchester by the Sea (2016).md",
-    "Media DB/movies/Life of Pi (2012).md",
-    "Media DB/series/Black Sails (2014–2017).md",
-    "Media DB/series/Murder Mindfully (2024–).md",
-    "Media DB/movies/The Pursuit of Happyness (2006).md",
-    "Media DB/series/Silicon Valley (2014–2019).md",
-    "wiki/wireless-n/index.md",
     "imdb_env/bin/playwright",
     "imdb_env/lib/python3.14/site-packages/playwright/sync_api/__pycache__/_generated.cpython-314.pyc",
     "imdb_env/lib/python3.14/site-packages/playwright/sync_api/__pycache__/_context_manager.cpython-314.pyc",
