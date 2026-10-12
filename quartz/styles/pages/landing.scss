@@ -62,6 +62,37 @@ body[data-slug='index'] {
     }
   }
 
+  // The graph floats in the top-right corner of the landing page, matching the
+  // panel placement upstream Quartz uses. It is hidden by default because the
+  // header is a flex row: without the absolute positioning below, the graph
+  // would inject a 250px box between the icon and the search field.
+  .header-content .graph {
+    display: none;
+  }
+
+  // Desktop only. Below 1400px the reading column spans nearly the full
+  // viewport width, so a floating panel would sit on top of the prose.
+  @media all and ($desktop) {
+    .header-content .graph {
+      display: block;
+      position: absolute;
+      top: calc(100% + 0.75rem);
+      right: 0;
+      z-index: 1;
+      width: clamp(13rem, 19vw, 19rem);
+
+      & > .graph-local {
+        & > h2 {
+          display: none;
+        }
+
+        & > .graph-outer {
+          background: var(--light);
+        }
+      }
+    }
+  }
+
   .page-content:not([data-plain='true']) {
     margin: 1rem 0;
     border: 1px solid var(--gray);

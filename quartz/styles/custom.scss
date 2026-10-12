@@ -301,8 +301,15 @@ section[data-footnotes] {
   }
 }
 
+// Keep the page title on small screens. Breadcrumbs already collapse, so the
+// title is the only remaining context for where you are once they are hidden.
 @media all and ($mobile) {
   .page-title {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .breadcrumb-container {
     display: none;
   }
 }

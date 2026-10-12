@@ -9,7 +9,7 @@ import script from './scripts/palette.inline'
 import style from './styles/palette.scss'
 
 export default (() => {
-  const placeholder = 'sélectionnez une option...'
+  const placeholder = 'select an option...'
   const Palette: QuartzComponent = ({ displayClass }: QuartzComponentProps) => (
     <div class={classNames(displayClass, 'palette')}>
       <search id="palette-container">
@@ -27,22 +27,22 @@ export default (() => {
           <output id="result" />
           <ul id="helper">
             <li>
-              <kbd>↑↓</kbd> pour naviguer
+              <kbd>↑↓</kbd> to navigate
             </li>
             <li>
-              <kbd>↵</kbd> pour ouvrir
+              <kbd>↵</kbd> to open
             </li>
             <li data-quick-open>
-              <kbd>⟶</kbd> pour sélectionner
+              <kbd>⟶</kbd> to select
             </li>
             <li data-quick-open>
-              <kbd>⌘ ⌥ ↵</kbd> pour ouvrir dans un panneau
+              <kbd>⌘ ⌥ ↵</kbd> to open in a panel
             </li>
             <li data-command style={{ display: 'none' }}>
-              <kbd>←→</kbd> pour naviguer
+              <kbd>←→</kbd> to navigate
             </li>
             <li>
-              <kbd>esc</kbd> pour rejeter
+              <kbd>esc</kbd> to dismiss
             </li>
           </ul>
         </div>

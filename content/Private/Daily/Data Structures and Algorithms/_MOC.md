@@ -55,7 +55,7 @@ Welcome to the syllabus and index for **Data Structures And Algorithms**.
 - [[kth-missing-positive-number]]
 - [[longest-common-prefix]]
 - [[longest-consecutive-sequence]]
-- [[longest-substring-without-repeating-characters]]
+- [[Private/Daily/Data Structures and Algorithms/longest-substring-without-repeating-characters]]
 - [[majority element]]
 - [[majority-element-ii]]
 - [[majority-element]]

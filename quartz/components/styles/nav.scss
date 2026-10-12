@@ -1,0 +1,42 @@
+@use '../../styles/mixin.scss' as *;
+
+.nav {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.9rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    @include tinyFonts;
+    font-family: var(--codeFont);
+    text-transform: lowercase;
+    text-decoration: none;
+    color: var(--darkgray);
+    padding: 0.1rem 0;
+    border-bottom: 1px solid transparent;
+    transition:
+      color 0.15s ease,
+      border-color 0.15s ease;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--secondary);
+      border-bottom-color: var(--secondary);
+    }
+
+    &[aria-current='page'] {
+      color: var(--dark);
+      border-bottom-color: var(--dark);
+    }
+  }
+}
+
+@media all and (max-width: 800px) {
+  .nav ul {
+    gap: 0.2rem 0.75rem;
+  }
+}

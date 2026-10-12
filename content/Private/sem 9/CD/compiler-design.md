@@ -36,7 +36,7 @@ After completion of the course, student will:
 - **Assignment:** Discussion on Lexical Analyzer and Assignment regarding Lex Tool.
 
 ### Unit 3: Syntax-Analysis
-- **Contents:** Role of Parser, Top-down Parsing- Brute-force approach, recursive descent parser and algorithms, Simple LL (1) grammar, LL (1) with null and without null rules grammars, predictive parsing. Bottom-up parsing- Handle of a right sentential form, Shift-reduce parsers, operator precedence parsing, LR parsing. Parser Generator YACC.
+- **Contents:** Role of Parser, Top-down Parsing- Brute-force approach, recursive descent parser and algorithms, ~Simple LL (1) grammar, LL (1) with null and without null rules grammars, predictive parsing. Bottom-up parsing- Handle of a right sentential form, Shift-reduce parsers, operator precedence parsing, LR parsing. Parser Generator YACC.~
 - **Hours:** 10
 - **Targeted Levels of Bloom's Taxonomy:** 1, 2, 3, and 6*
 - **Learning Outcomes (LO):**

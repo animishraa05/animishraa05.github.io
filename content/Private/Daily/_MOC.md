@@ -8,7 +8,7 @@ Welcome to the syllabus and index for **Daily**.
 
 ## 📁 Sub-Topics
 - [[Algorithm Design Manual/_MOC|Algorithm Design Manual]]
-- [[Data Structures and Algorithms/_MOC|Data Structures And Algorithms]]
+- [[Private/Daily/Data Structures and Algorithms/_MOC|Data Structures And Algorithms]]
 - [[SQL/_MOC|Sql]]
 - [[computer-science/_MOC|Computer Science]]
 

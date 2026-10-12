@@ -7,7 +7,7 @@ tags: [moc]
 Welcome to the syllabus and index for **Computer Science**.
 
 ## 📁 Sub-Topics
-- [[algorithms/_MOC|Algorithms]]
+- [[Private/Daily/computer-science/algorithms/_MOC|Algorithms]]
 - [[compiler-design/_MOC|Compiler Design]]
 - [[computer-organization-architecture/_MOC|Computer Organization Architecture]]
 - [[dbms/_MOC|Dbms]]

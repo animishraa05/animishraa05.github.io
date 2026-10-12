@@ -4,21 +4,33 @@
     "type": "split",
     "children": [
       {
-        "id": "a26a75ac1af9587c",
+        "id": "2894f2cd44cfa840",
         "type": "tabs",
         "children": [
           {
-            "id": "238e8dbd61ca3e51",
+            "id": "0f5e47b5ac743c10",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AGENTS.md",
+                "file": "Clippings/I trained my brain like a muscle for 30 days, and got jacked..md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AGENTS"
+              "title": "I trained my brain like a muscle for 30 days, and got jacked."
+            }
+          },
+          {
+            "id": "3029074e892118b7",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Private/Excalidraw/Drawing 2026-08-31 18.55.06.excalidraw.md"
+              },
+              "icon": "lucide-ghost",
+              "title": "excalidraw"
             }
           }
         ]
@@ -162,8 +174,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
+              "icon": "lucide-ghost",
+              "title": "calendar"
             }
           },
           {
@@ -172,8 +184,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
+              "icon": "lucide-ghost",
+              "title": "git-view"
             }
           },
           {
@@ -195,72 +207,68 @@
       }
     ],
     "direction": "horizontal",
-    "width": 257.5
+    "width": 257.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian-git:Open Git source control": false,
-      "obsidian-excalidraw-plugin:New drawing": false,
-      "omnisearch:Omnisearch": false,
-      "mermaid-tools:Open Mermaid Toolbar": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false,
-      "obsidian-media-db-plugin:Add new Media DB entry": false,
-      "rss-dashboard:RSS dashboard": false
+      "bases:Create new base": false
     }
   },
-  "active": "238e8dbd61ca3e51",
+  "active": "0f5e47b5ac743c10",
   "lastOpenFiles": [
-    "colophon.md",
-    "index.md",
-    "Private/template.md",
-    "Private/Daily Template.md",
-    "Private/Sde.md",
-    "wiki/cn/multiprotocol.md",
-    "wiki/cn/ncp.md",
-    "wiki/cn/ipcp.md",
-    "wiki/cn/ipv4.md",
-    "wiki/cn/ip-protocol.md",
-    "wiki/cn/index.md",
-    "wiki/backend-engineering-basics/index.md",
-    "wiki/backend-engineering-basics/sql-database.md",
-    "wiki/backend-engineering-basics/http-protocol.md",
-    "wiki/backend-engineering-basics/backend-architecture.md",
-    "AGENTS.md",
-    "ml/projects.md",
-    "ml/papers.md",
-    "ml/index.md",
-    "ml/concepts.md",
-    "Private/sem 9/Cloud-computing/cloud-computing.md",
-    "articles/2026-09-23-how-to-run-a-big-model-on-cheap-hardware.md",
-    "Private/sem 9/Cloud-computing/chapter 1.md",
-    "Private/sem 9/Cloud-computing/syllabus_tracker.md",
-    "Private/sem 9/Cloud-computing/GEMINI.md",
+    "articles/2026-10-10-coverage-not-difficulty-sets-how-much-synthetic-data-an-acti.md",
+    "Clippings/I trained my brain like a muscle for 30 days, and got jacked..md",
+    "Clippings",
+    "Private/Excalidraw/Drawing 2026-08-31 18.55.06.excalidraw.md",
+    "Private/AgenticAI/Agents and Basics.md",
+    "Untitled.canvas",
     "Untitled.md",
-    "Private/sem 9/MM",
-    "Private/sem 9/CD",
-    "Private/sem 9/OOAD",
-    "Private/sem 9/ITM",
-    "Private/sem 9/Cloud-computing",
-    "ULPF-SRS_diagram_2.png",
-    "ULPF-SRS_diagram_5.png",
-    "watchlist hub.base",
-    "imdb_env/bin/playwright",
-    "imdb_env/lib/python3.14/site-packages/playwright/sync_api/__pycache__/_generated.cpython-314.pyc",
-    "imdb_env/lib/python3.14/site-packages/playwright/sync_api/__pycache__/_context_manager.cpython-314.pyc",
-    "imdb_env/lib/python3.14/site-packages/playwright/sync_api/__pycache__/__init__.cpython-314.pyc",
-    "imdb_env/lib/python3.14/site-packages/playwright/driver/package/lib/vite/dashboard/assets/safari-na3_-uQk.svg",
-    "imdb_env/lib/python3.14/site-packages/playwright/driver/package/lib/vite/dashboard/assets/firefox-nightly-Cp5nfeDT.svg",
-    "imdb_env/lib/python3.14/site-packages/playwright/driver/package/lib/vite/dashboard/assets/firefox-beta-k3eOH_eK.svg",
-    "imdb_env/lib/python3.14/site-packages/playwright/driver/package/lib/vite/dashboard/assets/firefox-1bWoP6pv.svg",
-    "imdb_env/lib/python3.14/site-packages/playwright/driver/package/lib/vite/traceViewer/playwright-logo.svg",
-    "imdb_env/lib/python3.14/site-packages/playwright/driver/package/lib/vite/recorder/playwright-logo.svg",
-    "imdb_env/lib/python3.14/site-packages/playwright/driver/package/lib/vite/dashboard/playwright-logo.svg",
-    "imdb_env/lib/python3.14/site-packages/playwright/driver/package/lib/tools/dashboard/appIcon.png"
+    "assets/Pasted image 20261009183159.png",
+    "assets/Pasted image 20261009183148.png",
+    "assets/Pasted image 20261009173409.png",
+    "assets/Pasted image 20261009173407.png",
+    "assets/Pasted image 20261009170002.png",
+    "watchlist-hub.base",
+    "Private/MediaDB/series/Sex Education (2019–2023).md",
+    "assets/Pasted image 20261008220519.png",
+    "assets/Pasted image 20261008113424.png",
+    "assets/Pasted image 20261008113421.png",
+    "assets/Pasted image 20261008113354.png",
+    "assets/Pasted image 20261008111007.png",
+    "Private/ULPF/assets/ulpf",
+    "Private/ULPF/assets",
+    "Private/templates/template.md",
+    "Private/templates",
+    "Private/career/projectstotry.md",
+    "Private/career/Sde.md",
+    "Private/career",
+    "Private/ULPF/srs1questionandcounter.md",
+    "Private/ULPF/Ulpf-improved.md",
+    "Private/ULPF/ULPF_SRS2.md",
+    "Private/ULPF/ULPF_Architecture_Notes.md",
+    "Private/ULPF/ULPF-SRS.md",
+    "Private/ULPF",
+    "Private/PatternsDSA/recursion.md",
+    "Private/PatternsDSA",
+    "Private/MediaDB/series/Young Justice (2010–2022).md",
+    "Private/MediaDB/series/Yes, Prime Minister (1986–1987).md",
+    "Private/MediaDB/series/Yes Minister (1980–1984).md",
+    "Private/MediaDB/series/Yellowstone (2018–2024).md",
+    "Private/MediaDB/series/Yeh Meri Family (2018–).md",
+    "Private/MediaDB/series/X-Men (1992–1997).md",
+    "Private/MediaDB/series/Whose Line Is It Anyway? (1998–2007).md",
+    "Private/MediaDB/series/Westworld (2016–2022).md",
+    "Private/MediaDB/series/Wentworth (2013–2021).md",
+    "Private/MediaDB/series/Violet Evergarden (2018).md",
+    "Private/MediaDB/series/Vikings (2013–2020).md",
+    "Private/MediaDB/series",
+    "Private/MediaDB/movies"
   ]
 }

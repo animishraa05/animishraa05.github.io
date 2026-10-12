@@ -5,7 +5,7 @@ description: "Gemini conversation with 88 messages"
 tags:
   - "clippings"
 ---
-nter JNDI
+Enter JNDI
 
 JNDI is a system for Java-based clients to interact with naming and directory
 

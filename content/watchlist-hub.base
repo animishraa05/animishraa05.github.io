@@ -1,0 +1,38 @@
+filters:
+  and:
+    - file.folder == "MediaDB/movies" || file.folder == "MediaDB/series"
+views:
+  - type: cards
+    name: movies
+    filters:
+      and:
+        - file.folder == "MediaDB/movies"
+    order:
+      - year
+      - genres
+      - onlineRating
+      - director
+    sort:
+      - property: year
+        direction: DESC
+    image: image
+    cardSize: 180
+    cardAspect: 0.6667
+  - type: cards
+    name: series
+    filters:
+      and:
+        - file.folder == "MediaDB/series"
+    order:
+      - year
+      - genres
+      - onlineRating
+      - writer
+    sort:
+      - property: year
+        direction: DESC
+    image: image
+    cardSize: 340
+    cardAspect: 0.6667
+  - type: table
+    name: View
