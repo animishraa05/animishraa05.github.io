@@ -8,29 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "0f5e47b5ac743c10",
+            "id": "9228bb5cc80fb25e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Clippings/I trained my brain like a muscle for 30 days, and got jacked..md",
+                "file": "sources/cloudComputing.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "I trained my brain like a muscle for 30 days, and got jacked."
-            }
-          },
-          {
-            "id": "3029074e892118b7",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Private/Excalidraw/Drawing 2026-08-31 18.55.06.excalidraw.md"
-              },
-              "icon": "lucide-ghost",
-              "title": "excalidraw"
+              "title": "cloudComputing"
             }
           }
         ]
@@ -159,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Private/sem 9/Cloud-computing/chapter 1.md",
+                "file": "sources/cloudComputing.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -203,12 +191,11 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 257.5,
-    "collapsed": true
+    "width": 257.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -221,10 +208,15 @@
       "bases:Create new base": false
     }
   },
-  "active": "0f5e47b5ac743c10",
+  "active": "9228bb5cc80fb25e",
   "lastOpenFiles": [
-    "articles/2026-10-10-coverage-not-difficulty-sets-how-much-synthetic-data-an-acti.md",
+    "Private/sem 9/Cloud-computing/cloud-computing.md",
+    "sources/cloudComputing.md",
+    "sources/cloudComputing.md",
+    "Private/sem 9/ITM/it-and-project-management.md",
+    "srs.md",
     "Clippings/I trained my brain like a muscle for 30 days, and got jacked..md",
+    "articles/2026-10-10-coverage-not-difficulty-sets-how-much-synthetic-data-an-acti.md",
     "Clippings",
     "Private/Excalidraw/Drawing 2026-08-31 18.55.06.excalidraw.md",
     "Private/AgenticAI/Agents and Basics.md",
@@ -263,11 +255,6 @@
     "Private/MediaDB/series/Yellowstone (2018–2024).md",
     "Private/MediaDB/series/Yeh Meri Family (2018–).md",
     "Private/MediaDB/series/X-Men (1992–1997).md",
-    "Private/MediaDB/series/Whose Line Is It Anyway? (1998–2007).md",
-    "Private/MediaDB/series/Westworld (2016–2022).md",
-    "Private/MediaDB/series/Wentworth (2013–2021).md",
-    "Private/MediaDB/series/Violet Evergarden (2018).md",
-    "Private/MediaDB/series/Vikings (2013–2020).md",
     "Private/MediaDB/series",
     "Private/MediaDB/movies"
   ]

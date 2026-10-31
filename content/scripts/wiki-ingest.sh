@@ -124,7 +124,7 @@ Follow ALL rules in $AGENTS_FILE strictly.
 
 Critical (Quartz-public, no LLM fingerprints):
 - Extract 25-30 atomic concepts minimum — decompose thin sources. Human easy language to teach.
-- Every concept page needs TWO Graphviz DOT diagrams: Visual Explanation (internal arch, rankdir=LR/TB, 4-8 nodes, labeled edges) + Semantic Network (graph semantic_*, layout=neato, gold #ffd700 center, blue prereq #cce5ff, green builds-into #d4edda, orange contrasts #ffe5cc, gray related #f0f0f0, 5-10 nodes)
+- Every concept page needs TWO Graphviz DOT only using black and white color diagrams: Visual Explanation (internal arch, rankdir=LR/TB, 4-8 nodes, labeled edges) + Semantic Network (graph semantic_*, layout=neato, gold #ffd700 center, blue prereq #cce5ff, green builds-into #d4edda, orange contrasts #ffe5cc, gray related #f0f0f0, 5-10 nodes)
 - NO Sources section in body — provenance hidden in draft:true summary + wiki/.wiki-meta.json ledger
 - NO Active Recall callouts, NO <!-- TODO --> comments, NO status: stub banners in public body
 - Connections: 4+ links with one-line why, bidirectional (resolved by lint tail)

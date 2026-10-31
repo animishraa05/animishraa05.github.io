@@ -1,3 +1,9 @@
+---
+id: INGEST
+aliases: []
+tags: []
+---
+
 # Ingest Rules
 
 > Loaded by the agent when ingesting a new source.
@@ -107,8 +113,8 @@ A page is **valid** if it has:
 - "Formal Definition" section -- non-empty (textbook style)
 - "Explanation" section -- non-empty (plain language)
 - "Mathematical Formulation" -- if the concept involves math, use LaTeX. If no math, omit.
-- "Visual Explanation" section -- Graphviz DOT diagram (required, see below)
-- "Semantic Network" section -- Graphviz DOT mind map (required, see below)
+- "Visual Explanation" section -- Graphviz DOT diagram using only black and white colorscheme(required, see below)
+- "Semantic Network" section -- Graphviz DOT mind map using black and white colorscheme (required, see below) 
 - "Connections" section -- minimum 4 links
 
 Sections that can be brief stubs on first pass (fill in during lint):
