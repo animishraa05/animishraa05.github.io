@@ -1,3 +1,19 @@
 [
-  "better-export-pdf"
+  "better-export-pdf",
+  "calendar",
+  "obsidian-discordrpc",
+  "obsidian-excalidraw-plugin",
+  "obsidian-git",
+  "highlightr-plugin",
+  "obsidian-icon-folder",
+  "ink",
+  "obsidian-linter",
+  "obsidian-media-db-plugin",
+  "mermaid-tools",
+  "obsidian-mind-map",
+  "obsidian-graphviz",
+  "omnisearch",
+  "obsidian-tasks-plugin",
+  "zoottelkeeper-obsidian-plugin",
+  "rss-dashboard"
 ]

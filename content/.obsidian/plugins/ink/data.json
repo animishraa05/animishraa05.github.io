@@ -2,7 +2,7 @@
   "onboardingTips": {
     "welcomeTipRead": true,
     "strokeLimitTipRead": false,
-    "lastVersionTipRead": "0.3.4"
+    "lastVersionTipRead": "0.6.1"
   },
   "customAttachmentFolders": false,
   "noteAttachmentFolderLocation": "obsidian",
