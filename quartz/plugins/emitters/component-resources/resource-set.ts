@@ -8,6 +8,7 @@ import popoverStyle from '../../../components/styles/popover.scss'
 import '../../../components/mdx'
 import pseudoStyle from '../../../components/styles/pseudocode.scss'
 import { bundleInlineScript } from '../../../util/inline-script-bundler'
+import { googleAnalyticsScript } from './analytics-script'
 import { notebookRuntimeInlineEntry } from './asset-paths'
 
 const notFoundInlineEntry = 'quartz/components/scripts/404.inline.ts'
@@ -130,7 +131,9 @@ async function addGlobalPageResources(ctx: BuildCtx, componentResources: Compone
     webMcpScript,
   )
 
-  if (cfg.analytics?.provider === 'plausible') {
+  if (cfg.analytics?.provider === 'google') {
+    componentResources.afterDOMLoaded.push(googleAnalyticsScript(cfg.analytics.tagId))
+  } else if (cfg.analytics?.provider === 'plausible') {
     const plausibleHost = cfg.analytics.host ?? 'https://plausible.io'
     componentResources.afterDOMLoaded.push(`
       const plausibleScript = document.createElement("script")

@@ -5,7 +5,7 @@ const configuration: GlobalConfiguration = {
   pageTitle: "Animesh Mishra",
   enableSPA: true,
   enablePopovers: true,
-  analytics: { provider: "plausible" },
+  analytics: { provider: "google", tagId: "G-0XNMKWCW0G" },
   locale: "en-US",
   baseUrl: "animishraa05.github.io",
   ignorePatterns: [
