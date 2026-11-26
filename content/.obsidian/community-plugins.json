@@ -1,8 +1,6 @@
 [
   "better-export-pdf",
   "calendar",
-  "obsidian-discordrpc",
-  "obsidian-excalidraw-plugin",
   "obsidian-git",
   "highlightr-plugin",
   "obsidian-icon-folder",
@@ -15,5 +13,5 @@
   "omnisearch",
   "obsidian-tasks-plugin",
   "zoottelkeeper-obsidian-plugin",
-  "rss-dashboard"
+  "smart-second-brain"
 ]

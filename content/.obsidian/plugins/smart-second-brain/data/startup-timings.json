@@ -1,0 +1,178 @@
+[
+  {
+    "label": "S2B startup",
+    "totalMs": 10237,
+    "phases": [
+      {
+        "kind": "mark",
+        "name": "onload:start",
+        "offset": 0,
+        "duration": 0,
+        "blocking": true
+      },
+      {
+        "kind": "span",
+        "name": "data:load",
+        "offset": 2,
+        "duration": 25,
+        "blocking": true
+      },
+      {
+        "kind": "mark",
+        "name": "onload:registrations-done",
+        "offset": 244,
+        "duration": 0,
+        "blocking": true
+      },
+      {
+        "kind": "mark",
+        "name": "layoutReady:start",
+        "offset": 245,
+        "duration": 0,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "lexical:startInit",
+        "offset": 449,
+        "duration": 6,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "vectorstore:startInit",
+        "offset": 456,
+        "duration": 3,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "lexical:miniSearch.open",
+        "offset": 454,
+        "duration": 451,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "lexical:loadFromStorage",
+        "offset": 904,
+        "duration": 6,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "pendingChanges:load",
+        "offset": 462,
+        "duration": 580,
+        "blocking": true
+      },
+      {
+        "kind": "mark",
+        "name": "onload:end",
+        "offset": 1197,
+        "duration": 0,
+        "blocking": true
+      },
+      {
+        "kind": "span",
+        "name": "skills:migrate",
+        "offset": 459,
+        "duration": 1055,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "skills:migrate-core",
+        "offset": 1514,
+        "duration": 2530,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "skills:migrate-manage-skills",
+        "offset": 4044,
+        "duration": 61,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "skills:migrate-manage-notes",
+        "offset": 4104,
+        "duration": 136,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "skills:bootstrap",
+        "offset": 4240,
+        "duration": 4600,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "skills:discover",
+        "offset": 8840,
+        "duration": 597,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "skills:init",
+        "offset": 458,
+        "duration": 8978,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "promptFiles:init",
+        "offset": 9437,
+        "duration": 330,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "agent:chatManager.load",
+        "offset": 9768,
+        "duration": 451,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "agent:init",
+        "offset": 9767,
+        "duration": 469,
+        "blocking": false
+      },
+      {
+        "kind": "span",
+        "name": "vectorstore:ready",
+        "offset": 10236,
+        "duration": 0,
+        "blocking": false
+      },
+      {
+        "kind": "mark",
+        "name": "deferred:end",
+        "offset": 10236,
+        "duration": 0,
+        "blocking": false
+      }
+    ],
+    "meta": {
+      "rendererToOnloadMs": 21209291,
+      "obsidianPreLayoutMs": 0,
+      "platform": "linux",
+      "enabledCommunityPlugins": 14,
+      "usedJSHeapMB": 224,
+      "jsHeapLimitMB": 4192,
+      "lexicalIndexDocs": 0,
+      "lexicalIndexBytes": 0,
+      "lexicalIndexLoadedFromCache": false,
+      "vaultFileCount": 4662,
+      "skillFolderCount": 7,
+      "slowestSkillFolder": "widgets",
+      "slowestSkillFolderMs": 86
+    },
+    "timestamp": "2026-11-25T14:01:16.393Z"
+  }
+]

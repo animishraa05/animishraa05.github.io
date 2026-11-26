@@ -1,0 +1,10 @@
+{
+  "id": "note-agent",
+  "name": "Note Agent",
+  "version": "0.4.0",
+  "minAppVersion": "1.8.7",
+  "description": "Bring your own LLM: chat and an agent that works with your vault, AI editing with diff preview, inline completion, custom prompts, semantic search and MCP tools.",
+  "author": "sigmalos",
+  "authorUrl": "https://github.com/sigmalos",
+  "isDesktopOnly": false
+}

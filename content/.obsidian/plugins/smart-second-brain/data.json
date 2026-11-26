@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 14,
+  "providerConfig": {
+    "ollama": {
+      "isConfigured": true,
+      "auth": {
+        "values": {
+          "baseUrl": "http://localhost:11434"
+        },
+        "secretIds": {},
+        "authMode": "apiKey"
+      },
+      "chatModels": {},
+      "embedModels": {},
+      "trustedForPrivateData": true
+    }
+  },
+  "providerMeta": {
+    "ollama": {
+      "templateId": "ollama",
+      "displayName": "Ollama"
+    }
+  },
+  "agents": {
+    "default-agent": {
+      "id": "default-agent",
+      "name": "S2B Agent",
+      "icon": "brain",
+      "chatModel": {
+        "provider": "ollama",
+        "model": "deepseek-heretic:latest",
+        "modelConfig": {
+          "contextWindow": 128000,
+          "supportsVision": false
+        }
+      },
+      "summarizationModel": null,
+      "titleModel": null,
+      "skills": {},
+      "toolsConfig": {
+        "search_notes": {
+          "enabled": true,
+          "name": "search_notes",
+          "description": "Search through your Obsidian notes, or return recently opened notes. Returns structured JSON with matching file names, paths, tags, match reasons, short match snippets or headings, and metadata (properties/frontmatter), plus a count of results hidden by privacy rules. Use this to identify relevant notes before using other tools. Pick the retrieval strategy with `algorithm`: `lexical` (default, fast, exact keyword matching) is usually the right first attempt — escalate to `semantic` or `hybrid` when wording rather than content is the obstacle.",
+          "settings": {}
+        },
+        "list_directory": {
+          "enabled": true,
+          "name": "list_directory",
+          "description": "List the vault's folder structure. Without a path: an overview of the top folders with file counts (2 levels deep, no file names) — small in any vault. With a path: that folder's files and subfolders (1 level deep unless maxDepth is set); 'path' must be an actual vault folder (e.g. 'Projects/research'). Every folder carries a recursive fileCount; moreFiles / moreFolders report entries omitted to fit the context budget. To find specific notes use search_notes or grep_notes rather than walking the tree."
+        },
+        "read_content": {
+          "enabled": true,
+          "name": "read_content",
+          "description": "Read content of vault files by path or wiki link. Supports text, PDFs, and Excalidraw. Images must be attached directly in chat."
+        },
+        "grep_notes": {
+          "enabled": true,
+          "name": "grep_notes",
+          "description": "Find an exact text substring or regex pattern across your notes, returning matching lines with line numbers and surrounding context. Unlike search_notes (which ranks notes by relevance and cannot match literal strings), this does exact/regex line-level matching. Provide 'path' to scope the search to a single note. Use it to find literal strings (e.g. 'TODO(fix)', '#deprecated', a wiki link), or to locate exact positions before editing."
+        },
+        "get_all_tags": {
+          "enabled": true,
+          "name": "get_all_tags",
+          "description": "Retrieve a list of all tags used in the Obsidian vault. Returns a sorted list of unique tags."
+        },
+        "get_properties": {
+          "enabled": true,
+          "name": "get_properties",
+          "description": "Retrieve properties (frontmatter) from Obsidian. Omit 'note_name' to list all available property keys in the vault."
+        },
+        "execute_javascript": {
+          "enabled": true,
+          "name": "execute_javascript",
+          "description": "Execute isolated JavaScript for calculations and data transformation. Pass structured data via the input field, use return for the final value, and use console.log for intermediate output."
+        },
+        "manage_notes": {
+          "enabled": true,
+          "name": "manage_notes",
+          "description": "Create, update, delete, move, or find-and-replace across markdown notes in one staged batch. For a single note, use 'update' with targeted search-and-replace edits (add is_regex/replace_all to match by regex or replace every occurrence). For vault-wide or folder-scoped find-and-replace, use the 'replace' operation (find/replace, optional is_regex/case_sensitive/path_prefix) — preview its blast radius first with grep_notes. Batch related note operations together. Staged changes can still be revised: editing a note you already have a pending proposal for ADDS to that proposal, so set replace_pending on the update to replace it instead, or use the 'discard' operation with the proposal's id (reported when it was staged) to withdraw it entirely."
+        },
+        "fetch_url": {
+          "enabled": true,
+          "name": "fetch_url",
+          "description": "Fetch a public web page or text resource over HTTP(S) and return its main content. HTML is converted to markdown with scripts, styles, and navigation chrome removed while headings, lists, tables, code blocks, and links are preserved. JSON, plain text, and other text-based responses are returned as-is. Use this when the user asks about a specific URL or when external information is needed that the vault does not contain."
+        },
+        "web_search": {
+          "enabled": true,
+          "name": "web_search",
+          "description": "Search the web and return a list of relevant results (title, URL, snippet). Use this when the user asks about current events, external topics, or anything that cannot be in the vault. Always prefer searching the vault first with search_notes.",
+          "settings": {
+            "maxResults": 10
+          }
+        },
+        "manage_skills": {
+          "enabled": true,
+          "name": "manage_skills",
+          "description": "Create new skills, revise your own attached skills, or delete a skill when the user asks you to. Changes apply immediately. A skill's name and plugin link are locked once created; only the body and description can change."
+        },
+        "write_todos": {
+          "enabled": true,
+          "name": "write_todos",
+          "description": "Keep a visible task list for the current request. The user sees it pinned above the chat input and follows your progress there.\n\nUse it when a request takes several distinct steps or touches many notes: restructuring a folder, merging or splitting notes, researching a topic across the vault, a review that ends in edits. Write the list before you start, as short imperative steps, with the first one in_progress. Skip it for questions you can answer directly and for one- or two-step tasks.\n\nEach call replaces the whole list, so always send every item. Keep exactly one item in_progress while you work. Mark an item completed as soon as it is done, not in a batch at the end. Revise the list when you learn something that changes the plan: add steps, drop steps that no longer apply. Update it as you work through the request, but never call it twice in parallel within one response.\n\nIf the user drops the plan or the work no longer needs one, send an empty list to clear it."
+        },
+        "ask_question": {
+          "enabled": true,
+          "name": "ask_question",
+          "description": "Ask the user a question and wait for the answer. The questions appear above the chat input with your options as buttons; the user can also type their own answer, so never add an \"Other\" option.\n\nAsk when the request can reasonably be read in more than one way and the readings lead to different results, when a choice is the user's to make (a name, a structure, which of several matching notes they mean), or before a large change whose direction you are unsure of. Ask early, before doing work the answer could throw away.\n\nDo not ask about anything you can find out yourself by searching or reading the vault, about details with an obvious default, or for permission to do what was plainly requested. Do not ask in plain text when this tool fits: options are faster to answer than a typed reply.\n\nAsk everything you need in one call, at most 4 questions, each with 2 to 4 concrete, mutually exclusive options (unless multiSelect is true). Put the option you recommend first. Never call this tool twice in one response.\n\nThe result holds the user's answers. If they dismissed the question, do not ask it again."
+        }
+      },
+      "mcpServers": {},
+      "subAgentIds": []
+    }
+  },
+  "defaultAgentId": "default-agent",
+  "selectedAgentId": "default-agent",
+  "targetFolder": "Chats",
+  "attachmentFolder": "",
+  "widgetsFolder": "Widgets",
+  "agentFolder": "Agents",
+  "agentFolderMigrated": true,
+  "coreSkillsSeeded": true,
+  "manageSkillsFolderMigrated": true,
+  "manageNotesFolderMigrated": true,
+  "privacyMode": "private-by-default",
+  "privacyFilter": {
+    "type": "paths",
+    "value": []
+  },
+  "contentIndexing": {
+    "pdfs": false,
+    "chats": false,
+    "data": false
+  },
+  "isVerbose": false,
+  "showToolIODetails": false,
+  "chatOpenLocation": "tab",
+  "lastActiveChatId": null,
+  "onboardingComplete": true,
+  "onboardingSplashSeen": true,
+  "checkForUpdates": true,
+  "lastUpdateCheckAt": null,
+  "lastNotifiedUpdateVersion": null,
+  "lastSeenVersion": "2.6.0",
+  "dismissedRecommendations": [],
+  "thinkingProcessExpanded": true,
+  "showActiveAgentsInStatusBar": true,
+  "overrideMobileNavbarSearch": false,
+  "suppressIntegrationPrivacyWarning": false,
+  "enableLangSmith": false,
+  "langSmithApiKeyId": "",
+  "langSmithProject": "obsidian-agent",
+  "langSmithEndpoint": "https://api.smith.langchain.com",
+  "webSearchProvider": "firecrawl",
+  "webSearchApiKeyIds": {},
+  "searchShowPath": true,
+  "searchShowTags": true,
+  "searchShowMatchBadges": true,
+  "searchShowMatchContext": true,
+  "searchShowKeyboardHints": true,
+  "recentNotes": [
+    {
+      "path": "Untitled 6.md",
+      "lastOpenedAt": 1795615372818
+    }
+  ],
+  "embeddingIndexes": [],
+  "searchEmbedIndex": null,
+  "graphEmbedIndex": null,
+  "favoriteModels": [],
+  "smartGraphSettings": {
+    "linkDistance": 60,
+    "chargeStrength": -120,
+    "centerStrength": 0.07,
+    "linkStrength": 1,
+    "clusterCohesionStrength": 0.45,
+    "showWikiLinks": true,
+    "showSemanticLinks": true,
+    "highlightSemanticLinks": false,
+    "linkOnlyTopics": false,
+    "semanticNeighborCount": 5,
+    "semanticThreshold": 0.55,
+    "directedWikiEdges": true,
+    "graphChatModel": null,
+    "autoLabelClusters": false,
+    "markdownOnly": false,
+    "showTags": false,
+    "leidenSeed": 42,
+    "leidenResolution": 1,
+    "bridgeThreshold": 0.4,
+    "highlightIsolated": false,
+    "highlightBridges": false,
+    "showClusterLabels": true,
+    "showTopicHulls": true,
+    "showTopics": true
+  },
+  "diffViewMode": "two-pane",
+  "vaultSlug": "content"
+}

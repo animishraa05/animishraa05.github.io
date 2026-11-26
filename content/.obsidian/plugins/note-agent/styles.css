@@ -1,0 +1,1091 @@
+/* ==========================================================================
+   Note Agent — styles. Uses Obsidian CSS variables so themes apply.
+   ========================================================================== */
+
+/* ---------- shared ---------- */
+.ai-agent-status {
+  margin-top: 4px;
+  font-size: var(--font-ui-smaller);
+  color: var(--text-muted);
+  white-space: pre-wrap;
+  user-select: text;
+}
+.ai-agent-status.is-ok { color: var(--color-green); }
+.ai-agent-status.is-error { color: var(--text-error); }
+
+.ai-agent-badge {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 0 6px;
+  border-radius: var(--radius-s);
+  font-size: var(--font-ui-smaller);
+  line-height: 1.6;
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  vertical-align: middle;
+}
+
+.ai-agent-empty {
+  padding: var(--size-4-3);
+  color: var(--text-muted);
+  border: 1px dashed var(--background-modifier-border);
+  border-radius: var(--radius-m);
+  margin-bottom: var(--size-4-2);
+}
+
+/* ---------- settings ---------- */
+.ai-agent-settings .ai-agent-provider-row .setting-item-control { flex-wrap: wrap; gap: var(--size-2-2); }
+.ai-agent-provider-modal .setting-item-control input[type="text"],
+.ai-agent-provider-modal .setting-item-control input[type="password"] { width: 100%; min-width: 220px; }
+.ai-agent-provider-modal h4 { margin: var(--size-4-4) 0 var(--size-2-2); }
+.ai-agent-confirm-message { white-space: pre-wrap; }
+
+/* ---------- chat view ---------- */
+.ai-agent-chat {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+/* more specific than Obsidian's view padding */
+.workspace-leaf-content > .view-content.ai-agent-chat { padding: 0; }
+.ai-agent-chat-header {
+  display: flex;
+  align-items: center;
+  gap: var(--size-2-2);
+  padding: var(--size-4-2) var(--size-4-3);
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+.ai-agent-chat-title {
+  flex: 1;
+  min-width: 0;
+  font-weight: var(--font-semibold);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.ai-agent-chat-actions { display: flex; gap: 2px; }
+
+.ai-agent-messages {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-y: auto;
+  padding: var(--size-4-4) var(--size-4-4) var(--size-4-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-4-6);
+  user-select: text;
+}
+
+.ai-agent-empty-state {
+  margin: auto;
+  text-align: center;
+  color: var(--text-muted);
+  max-width: 280px;
+}
+.ai-agent-empty-icon svg { width: 32px; height: 32px; color: var(--text-faint); }
+.ai-agent-empty-title { font-weight: var(--font-semibold); color: var(--text-normal); margin: var(--size-2-3) 0; }
+.ai-agent-empty-desc { font-size: var(--font-ui-small); line-height: 1.5; }
+
+.ai-agent-msg { display: flex; flex-direction: column; gap: var(--size-4-2); }
+.ai-agent-msg-header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--size-2-2);
+  font-size: var(--font-ui-smaller);
+  color: var(--text-muted);
+}
+.ai-agent-msg-role { font-weight: var(--font-semibold); color: var(--text-normal); }
+.ai-agent-msg-time { margin-left: auto; color: var(--text-faint); }
+
+/* user turn: header, bubble and attachments all sit on the right */
+.ai-agent-msg.is-user { align-items: flex-end; }
+.ai-agent-msg.is-user .ai-agent-msg-header { justify-content: flex-end; }
+.ai-agent-msg.is-user .ai-agent-msg-time { margin-left: 0; }
+.ai-agent-msg.is-user .ai-agent-msg-body {
+  /* sidebars already use --background-secondary, so tint with the accent instead */
+  max-width: 85%;
+  background: hsla(var(--interactive-accent-hsl), 0.1);
+  border-radius: var(--radius-l) var(--radius-l) var(--radius-s) var(--radius-l);
+  padding: var(--size-4-3) var(--size-4-4);
+  line-height: 1.6;
+}
+.ai-agent-msg.is-user .ai-agent-msg-context { align-self: flex-end; max-width: 85%; }
+.ai-agent-msg.is-user .ai-agent-msg-context > span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* a rule between the prompt and its answer */
+.ai-agent-msg.is-user + .ai-agent-msg.is-assistant {
+  padding-top: var(--size-4-5);
+  border-top: 1px solid var(--background-modifier-border);
+}
+.ai-agent-user-text { white-space: pre-wrap; word-break: break-word; }
+.ai-agent-msg.is-assistant .ai-agent-msg-body { padding: 0 2px; word-break: break-word; }
+.ai-agent-msg-body > :first-child,
+.ai-agent-msg-markdown > :first-child { margin-top: 0; }
+.ai-agent-msg-body > :last-child,
+.ai-agent-msg-markdown > :last-child { margin-bottom: 0; }
+.ai-agent-msg-markdown + .ai-agent-msg-markdown { margin-top: var(--p-spacing, 1em); }
+.ai-agent-msg.is-assistant .ai-agent-msg-body { line-height: 1.65; }
+.ai-agent-msg-footer { margin-top: var(--size-2-2); }
+.ai-agent-msg.is-streaming .ai-agent-msg-body > .ai-agent-msg-markdown:last-child > :last-child::after {
+  content: "▍";
+  margin-left: 2px;
+  color: var(--text-accent);
+  animation: ai-agent-blink 1s steps(2) infinite;
+}
+@keyframes ai-agent-blink { 50% { opacity: 0; } }
+
+.ai-agent-msg-context {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  align-self: flex-start;
+  font-size: var(--font-ui-smaller);
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.ai-agent-msg-context:hover { color: var(--text-accent); }
+.ai-agent-msg-context svg { width: 12px; height: 12px; }
+
+.ai-agent-reasoning {
+  font-size: var(--font-ui-small);
+  color: var(--text-muted);
+  border-left: 2px solid var(--background-modifier-border);
+  padding-left: var(--size-4-2);
+}
+.ai-agent-reasoning summary { cursor: pointer; user-select: none; }
+.ai-agent-reasoning-body { white-space: pre-wrap; max-height: 240px; overflow-y: auto; margin-top: 4px; }
+/* chat: thinking reads like the answer (same size), only greyed out */
+.ai-agent-msg .ai-agent-reasoning {
+  font-size: inherit;
+  line-height: var(--line-height-normal, 1.5);
+  color: var(--text-faint);
+  border-left: none;
+  padding-left: 0;
+}
+.ai-agent-msg .ai-agent-reasoning summary { gap: 6px; color: var(--text-muted); }
+.ai-agent-reasoning-time { color: var(--text-faint); font-variant-numeric: tabular-nums; }
+.ai-agent-reasoning-time:empty { display: none; }
+.ai-agent-msg .ai-agent-reasoning-body {
+  margin: var(--size-4-2) 0 var(--size-2-2);
+  padding-left: var(--size-4-3);
+  border-left: 2px solid var(--background-modifier-border);
+  max-height: 320px;
+}
+@keyframes ai-agent-shimmer { 0% { background-position: 100% 0; } 100% { background-position: -100% 0; } }
+.ai-agent-reasoning.is-thinking .ai-agent-reasoning-label {
+  background: linear-gradient(90deg, var(--text-muted) 0%, var(--text-muted) 35%, var(--text-normal) 50%, var(--text-muted) 65%, var(--text-muted) 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: ai-agent-shimmer 1.8s linear infinite;
+}
+
+.ai-agent-typing { color: var(--text-faint); font-size: var(--font-ui-small); }
+.ai-agent-msg-note { font-size: var(--font-ui-smaller); color: var(--text-faint); }
+.ai-agent-msg-error {
+  white-space: pre-wrap;
+  font-size: var(--font-ui-small);
+  color: var(--text-error);
+  background: rgba(var(--color-red-rgb), 0.08);
+  border-radius: var(--radius-s);
+  padding: var(--size-2-3) var(--size-4-2);
+  user-select: text;
+}
+.ai-agent-msg-actions { display: flex; align-items: center; gap: 2px; opacity: 0.6; }
+.ai-agent-msg:hover .ai-agent-msg-actions { opacity: 1; }
+.ai-agent-msg-usage { margin-left: auto; font-size: var(--font-ui-smaller); color: var(--text-faint); }
+
+/* divider between conversation and context: drag to resize */
+.ai-agent-resizer {
+  position: relative;
+  flex: none;
+  height: 9px;
+  margin: -4px 0;
+  z-index: 2;
+  cursor: row-resize;
+  touch-action: none;
+  outline: none;
+}
+.ai-agent-resizer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 4px;
+  height: 1px;
+  background: var(--background-modifier-border);
+  transition: background-color 150ms ease, height 150ms ease, top 150ms ease;
+}
+.ai-agent-resizer::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 2px;
+  width: 32px;
+  height: 5px;
+  margin-left: -16px;
+  border-radius: 3px;
+  background: var(--interactive-accent);
+  opacity: 0;
+  transform: scaleX(0.4);
+  transition: opacity 150ms ease, transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.ai-agent-resizer:hover::before,
+.ai-agent-resizer:focus-visible::before,
+.ai-agent-resizer.is-dragging::before { top: 3.5px; height: 2px; background: var(--interactive-accent); }
+.ai-agent-resizer:hover::after,
+.ai-agent-resizer:focus-visible::after,
+.ai-agent-resizer.is-dragging::after { opacity: 1; transform: scaleX(1); }
+/* repeated class: outranks the buttons' own cursors while dragging */
+.ai-agent-chat.is-resizing.is-resizing,
+.ai-agent-chat.is-resizing.is-resizing.is-resizing * { cursor: row-resize; user-select: none; }
+
+/* bottom panel: context chips + composer box */
+.ai-agent-bottom {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 0;
+  box-sizing: border-box;
+  /* leave room for Obsidian's floating status bar on desktop */
+  padding: 6px var(--size-4-3) calc(var(--size-4-3) + 22px);
+}
+body.is-mobile .ai-agent-bottom { padding-bottom: var(--size-4-3); }
+
+.ai-agent-context-bar {
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  max-height: 58px;
+  overflow-y: auto;
+  font-size: var(--font-ui-smaller);
+}
+.ai-agent-chat .ai-agent-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: auto;
+  max-width: 100%;
+  padding: 2px 8px;
+  border-radius: var(--radius-l);
+  font-size: var(--font-ui-smaller);
+  background: transparent;
+  border: 1px dashed var(--background-modifier-border-hover);
+  color: var(--text-faint);
+  box-shadow: none;
+  cursor: pointer;
+}
+.ai-agent-chip.is-active {
+  border-style: solid;
+  border-color: var(--interactive-accent);
+  color: var(--text-normal);
+  background: var(--background-modifier-hover);
+}
+.ai-agent-chip.is-active.is-warning { border-color: var(--color-orange); }
+.ai-agent-chip.is-warning .ai-agent-chip-icon { color: var(--color-orange); }
+.ai-agent-chip svg { width: 12px; height: 12px; }
+.ai-agent-chip-text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 160px; }
+.ai-agent-chip-remove { display: inline-flex; color: var(--text-muted); }
+.ai-agent-chip-remove:hover { color: var(--text-error); }
+
+.ai-agent-composer {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-m);
+  background: var(--background-primary);
+  cursor: text;
+}
+.ai-agent-composer:focus-within {
+  border-color: var(--interactive-accent);
+  box-shadow: 0 0 0 2px hsla(var(--interactive-accent-hsl), 0.18);
+}
+.ai-agent-input {
+  flex: 1 1 auto;
+  min-height: 2.6em;
+  width: 100%;
+  resize: none;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  padding: var(--size-2-3) var(--size-4-3) 0;
+  font-size: var(--font-ui-medium);
+  line-height: 1.5;
+}
+.ai-agent-input:focus,
+.ai-agent-input:hover { border: none; box-shadow: none; background: transparent; }
+.ai-agent-composer-footer {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 6px;
+  cursor: default;
+}
+.ai-agent-composer-footer .clickable-icon { padding: 4px; flex: none; }
+.ai-agent-composer-footer .clickable-icon.is-open { color: var(--text-normal); background: var(--background-modifier-hover); }
+/* provider / model / effort / mode: one row of compact list buttons that shrink with the sidebar */
+.ai-agent-pickers {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  overflow: hidden;
+}
+.ai-agent-chat .ai-agent-picker {
+  flex: 0 1 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  height: 26px;
+  padding: 0 6px;
+  font-size: var(--font-ui-smaller);
+  color: var(--text-muted);
+  background: transparent;
+  box-shadow: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius-s);
+  cursor: pointer;
+}
+.ai-agent-chat .ai-agent-picker:hover,
+.ai-agent-chat .ai-agent-picker.is-open { color: var(--text-normal); background: var(--background-modifier-hover); }
+.ai-agent-chat .ai-agent-picker:focus-visible { box-shadow: 0 0 0 2px hsla(var(--interactive-accent-hsl), 0.35); }
+.ai-agent-picker-icon { display: inline-flex; flex: none; }
+.ai-agent-picker svg { width: 13px; height: 13px; }
+.ai-agent-picker-label { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* the model id matters most: it gets the room, the provider name gives way first */
+.ai-agent-picker.is-provider { flex-shrink: 3; max-width: 34%; }
+.ai-agent-picker.is-model { flex-shrink: 1; max-width: 48%; }
+.ai-agent-picker.is-effort,
+.ai-agent-picker.is-mode { flex: none; }
+.ai-agent-chat .ai-agent-picker.is-placeholder { color: var(--text-accent); }
+.ai-agent-picker.is-shaking { animation: ai-agent-shake 360ms ease both; }
+.ai-agent-composer-footer .ai-agent-prompts-btn { flex: none; margin-left: 1px; }
+.ai-agent-picker.is-mode.is-mode-accept { color: var(--text-accent); }
+.ai-agent-picker.is-mode.is-mode-auto { color: var(--color-orange); }
+.ai-agent-picker.is-mode .ai-agent-picker-icon svg { width: 13px; height: 13px; }
+.ai-agent-composer { container-type: inline-size; container-name: ai-composer; }
+@container ai-composer (max-width: 400px) {
+  .ai-agent-picker.is-provider .ai-agent-picker-label { display: none; }
+  .ai-agent-picker.is-provider { flex: none; }
+  .ai-agent-picker.is-model { max-width: none; }
+}
+/* the mode label stays visible: Auto writes to notes and should be obvious */
+@container ai-composer (max-width: 330px) {
+  .ai-agent-picker.is-effort .ai-agent-picker-label { display: none; }
+}
+.ai-agent-spacer { flex: 1; }
+.ai-agent-chat .ai-agent-send {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  margin-left: 4px;
+  border-radius: 50%;
+}
+.ai-agent-send-icon { display: inline-flex; }
+.ai-agent-send svg { width: 15px; height: 15px; }
+.ai-agent-chat .ai-agent-send.is-busy { background: var(--background-modifier-error); color: var(--text-on-accent); }
+.ai-agent-chat .ai-agent-send svg { width: 14px; height: 14px; }
+
+/* history modal */
+.ai-agent-session-list { display: flex; flex-direction: column; max-height: 60vh; overflow-y: auto; }
+.ai-agent-session-row {
+  display: flex;
+  align-items: center;
+  gap: var(--size-2-2);
+  padding: var(--size-2-3) var(--size-4-2);
+  border-radius: var(--radius-s);
+}
+.ai-agent-session-row:hover { background: var(--background-modifier-hover); }
+.ai-agent-session-row.is-current { background: var(--background-secondary); }
+.ai-agent-session-main { flex: 1; min-width: 0; cursor: pointer; }
+.ai-agent-session-title { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ai-agent-session-meta { font-size: var(--font-ui-smaller); color: var(--text-muted); }
+.ai-agent-session-actions { display: flex; gap: 2px; }
+
+/* context viewer */
+.ai-agent-context-table { width: 100%; border-collapse: collapse; font-size: var(--font-ui-small); }
+.ai-agent-context-table th,
+.ai-agent-context-table td { text-align: left; padding: 4px 8px; border-bottom: 1px solid var(--background-modifier-border); }
+.ai-agent-context-raw {
+  max-height: 40vh;
+  overflow: auto;
+  white-space: pre-wrap;
+  font-size: var(--font-ui-smaller);
+  background: var(--background-secondary);
+  padding: var(--size-4-2);
+  border-radius: var(--radius-s);
+  user-select: text;
+}
+
+/* ---------- AI edit popup ---------- */
+.ai-agent-edit-prompt { width: min(560px, 92vw); }
+.ai-agent-edit-target {
+  background: var(--background-secondary);
+  border-radius: var(--radius-m);
+  padding: var(--size-2-3) var(--size-4-3);
+  margin-bottom: var(--size-4-3);
+}
+.ai-agent-edit-target-label { font-size: var(--font-ui-smaller); color: var(--text-muted); }
+.ai-agent-edit-target-text {
+  margin-top: 4px;
+  white-space: pre-wrap;
+  font-size: var(--font-ui-small);
+  max-height: 6em;
+  overflow: hidden;
+}
+.ai-agent-edit-presets { display: flex; flex-wrap: wrap; gap: var(--size-2-2); margin-bottom: var(--size-4-3); }
+.ai-agent-edit-preset { display: inline-flex; align-items: center; gap: 4px; }
+.ai-agent-edit-preset svg { width: 14px; height: 14px; }
+.ai-agent-edit-instruction { width: 100%; resize: vertical; font-size: var(--font-ui-medium); }
+.ai-agent-edit-instruction.is-invalid { border-color: var(--text-error); }
+.ai-agent-edit-footer,
+.ai-agent-diff-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--size-2-2);
+  margin-top: var(--size-4-3);
+  flex-wrap: wrap;
+}
+.ai-agent-hint { margin-right: auto; font-size: var(--font-ui-smaller); color: var(--text-faint); }
+
+/* ---------- diff preview ---------- */
+.ai-agent-diff-modal { width: min(1000px, 94vw); }
+.ai-agent-diff-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--size-4-2);
+  font-size: var(--font-ui-small);
+  color: var(--text-muted);
+  margin-bottom: var(--size-2-3);
+  flex-wrap: wrap;
+}
+.ai-agent-diff-instruction { color: var(--text-normal); }
+.ai-agent-diff-status { margin-left: auto; }
+.ai-agent-diff-status.is-generating { color: var(--text-accent); }
+.ai-agent-diff-status.is-error { color: var(--text-error); }
+.ai-agent-diff-body { display: grid; grid-template-columns: 1fr; gap: var(--size-4-2); margin: var(--size-2-3) 0; }
+.ai-agent-diff-body.is-split { grid-template-columns: 1fr 1fr; }
+.ai-agent-diff-pane {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.ai-agent-diff-pane-title {
+  font-size: var(--font-ui-smaller);
+  color: var(--text-muted);
+  padding: 4px var(--size-4-2);
+  background: var(--background-secondary);
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+.ai-agent-diff-text {
+  padding: var(--size-4-2) var(--size-4-3);
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: var(--font-text-size);
+  line-height: 1.6;
+  max-height: 50vh;
+  overflow-y: auto;
+  user-select: text;
+}
+.ai-agent-diff-ins { background: rgba(var(--color-green-rgb), 0.22); border-radius: 2px; }
+.ai-agent-diff-del {
+  background: rgba(var(--color-red-rgb), 0.18);
+  text-decoration: line-through;
+  border-radius: 2px;
+}
+.ai-agent-diff-context { color: var(--text-faint); }
+.ai-agent-diff-placeholder { color: var(--text-faint); font-style: italic; }
+.ai-agent-diff-refine { display: flex; gap: var(--size-2-2); }
+.ai-agent-diff-refine input { flex: 1; }
+.ai-agent-diff-btn { display: inline-flex; align-items: center; gap: 4px; }
+.ai-agent-diff-btn svg { width: 14px; height: 14px; }
+.ai-agent-diff-modal .ai-agent-reasoning { margin-bottom: var(--size-2-3); }
+@media (max-width: 700px) {
+  .ai-agent-diff-body.is-split { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   Motion — short, purposeful feedback. Scoped to plugin UI; disabled under
+   prefers-reduced-motion. JS only toggles classes (src/ui/components/motion.ts).
+   ========================================================================== */
+.ai-agent-chat,
+.ai-agent-diff-modal,
+.ai-agent-edit-prompt,
+.ai-agent-session-modal,
+.ai-agent-provider-modal,
+.ai-agent-settings {
+  --ai-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ai-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes ai-agent-rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes ai-agent-rise-user { from { opacity: 0; transform: translateY(8px) scale(0.98); } to { opacity: 1; transform: none; } }
+@keyframes ai-agent-leave { to { opacity: 0; transform: translateY(-10px); } }
+@keyframes ai-agent-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes ai-agent-pop-in { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: none; } }
+@keyframes ai-agent-pop-out { to { opacity: 0; transform: scale(0.82); } }
+@keyframes ai-agent-bump { 40% { transform: scale(0.92); } 100% { transform: none; } }
+@keyframes ai-agent-pop { 0% { transform: scale(0.6); } 60% { transform: scale(1.18); } 100% { transform: none; } }
+@keyframes ai-agent-spin { to { transform: rotate(360deg); } }
+@keyframes ai-agent-quarter { to { transform: rotate(90deg); } }
+@keyframes ai-agent-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@keyframes ai-agent-dot { 0%, 80%, 100% { transform: translateY(0); opacity: 0.35; } 40% { transform: translateY(-4px); opacity: 1; } }
+@keyframes ai-agent-shake { 20%, 60% { transform: translateX(-3px); } 40%, 80% { transform: translateX(3px); } }
+@keyframes ai-agent-glow {
+  0% { box-shadow: 0 0 0 0 hsla(var(--interactive-accent-hsl), 0.45); }
+  100% { box-shadow: 0 0 0 8px hsla(var(--interactive-accent-hsl), 0); }
+}
+
+/* ---- buttons: hover/press everywhere in plugin UI ---- */
+:is(.ai-agent-chat, .ai-agent-diff-modal, .ai-agent-edit-prompt, .ai-agent-session-modal, .ai-agent-provider-modal, .ai-agent-settings)
+  :is(button, .clickable-icon) {
+  transition: background-color 140ms ease, color 140ms ease, border-color 140ms ease, box-shadow 160ms ease,
+    opacity 140ms ease, transform 160ms var(--ai-ease);
+}
+:is(.ai-agent-chat, .ai-agent-diff-modal, .ai-agent-edit-prompt, .ai-agent-session-modal, .ai-agent-provider-modal, .ai-agent-settings)
+  :is(button, .clickable-icon):active:not(:disabled) {
+  transform: scale(0.92);
+  transition-duration: 60ms;
+}
+:is(.ai-agent-chat, .ai-agent-diff-modal, .ai-agent-edit-prompt, .ai-agent-settings) button.mod-cta:active:not(:disabled) { transform: scale(0.96); }
+.ai-agent-chat .clickable-icon svg { transition: transform 200ms var(--ai-ease); }
+.ai-agent-chat .clickable-icon.is-rotating svg { animation: ai-agent-quarter 320ms var(--ai-spring); }
+.ai-agent-chat .clickable-icon.is-spinning svg { animation: ai-agent-spin 560ms var(--ai-ease); }
+.ai-agent-chat .clickable-icon.is-done { color: var(--color-green); }
+.ai-agent-chat .clickable-icon.is-popping svg { animation: ai-agent-pop 360ms var(--ai-spring); }
+
+/* ---- send / stop ---- */
+.ai-agent-send { transition: background-color 200ms ease, color 200ms ease, transform 160ms var(--ai-ease), box-shadow 160ms ease; }
+.ai-agent-chat .ai-agent-send:hover:not(:disabled) { background: var(--interactive-accent-hover); }
+.ai-agent-chat .ai-agent-send.is-busy:hover:not(:disabled) { background: var(--text-error); }
+.ai-agent-send.is-swapping .ai-agent-send-icon { display: inline-flex; animation: ai-agent-pop 320ms var(--ai-spring); }
+.ai-agent-send.is-busy .ai-agent-send-icon svg { fill: currentColor; }
+
+/* ---- conversation ---- */
+.ai-agent-messages.is-entering { animation: ai-agent-rise 260ms var(--ai-ease) both; }
+.ai-agent-messages.is-leaving { animation: ai-agent-leave 180ms ease-in both; pointer-events: none; }
+.ai-agent-msg.is-entering { animation: ai-agent-rise 260ms var(--ai-ease) both; }
+.ai-agent-msg.is-user.is-entering { transform-origin: right bottom; animation-name: ai-agent-rise-user; }
+.ai-agent-msg.is-settled .ai-agent-msg-actions { animation: ai-agent-fade-in 260ms ease both; }
+.ai-agent-msg.is-failed .ai-agent-msg-error { animation: ai-agent-shake 360ms ease both; }
+.ai-agent-chat-title.is-updating { animation: ai-agent-fade-in 280ms ease both; }
+.ai-agent-empty-state { animation: ai-agent-rise 360ms var(--ai-ease) both; }
+.ai-agent-empty-icon { animation: ai-agent-float 3.2s ease-in-out infinite; }
+.ai-agent-msg-context { transition: color 140ms ease; }
+
+.ai-agent-typing { display: inline-flex; align-items: center; gap: 8px; }
+.ai-agent-typing-dots { display: inline-flex; gap: 3px; }
+.ai-agent-typing-dots span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--text-accent);
+  animation: ai-agent-dot 1.2s ease-in-out infinite;
+}
+.ai-agent-typing-dots span:nth-child(2) { animation-delay: 0.15s; }
+.ai-agent-typing-dots span:nth-child(3) { animation-delay: 0.3s; }
+
+/* reasoning: rotating chevron instead of the default marker */
+.ai-agent-reasoning summary { list-style: none; display: inline-flex; align-items: center; gap: 4px; }
+.ai-agent-reasoning summary::-webkit-details-marker { display: none; }
+.ai-agent-reasoning summary::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 4px solid currentColor;
+  border-top: 3.5px solid transparent;
+  border-bottom: 3.5px solid transparent;
+  transition: transform 200ms var(--ai-ease);
+}
+.ai-agent-reasoning[open] > summary::before { transform: rotate(90deg); }
+.ai-agent-reasoning summary:hover { color: var(--text-normal); }
+.ai-agent-reasoning-body.is-revealing { animation: ai-agent-rise 220ms var(--ai-ease) both; }
+
+/* ---- context chips ---- */
+.ai-agent-chat .ai-agent-chip {
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 160ms var(--ai-ease);
+}
+.ai-agent-chat .ai-agent-chip:hover { border-color: var(--interactive-accent); color: var(--text-normal); }
+.ai-agent-chat .ai-agent-chip:active { transform: scale(0.95); }
+.ai-agent-chip.is-new { animation: ai-agent-pop-in 240ms var(--ai-spring) both; }
+.ai-agent-chip.is-bump { animation: ai-agent-bump 240ms var(--ai-ease); }
+.ai-agent-chip.is-removing { animation: ai-agent-pop-out 160ms ease-in both; pointer-events: none; }
+.ai-agent-chip-remove { transition: color 140ms ease, transform 160ms var(--ai-ease); }
+.ai-agent-chip-remove:hover { transform: rotate(90deg); }
+
+/* ---- composer ---- */
+.ai-agent-composer { transition: border-color 160ms ease, box-shadow 200ms ease; }
+.ai-agent-composer.is-flash { animation: ai-agent-glow 600ms ease-out; }
+.ai-agent-picker-icon svg { transition: transform 200ms var(--ai-ease); }
+.ai-agent-picker.is-bump { animation: ai-agent-bump 240ms var(--ai-ease); }
+.ai-agent-picker.is-bump .ai-agent-picker-icon svg { animation: ai-agent-pop 320ms var(--ai-spring); }
+
+/* ---- popover (composer lists) ---- */
+@keyframes ai-agent-popover-in { from { opacity: 0; transform: translateY(6px) scale(0.97); } to { opacity: 1; transform: none; } }
+@keyframes ai-agent-popover-out { to { opacity: 0; transform: translateY(4px) scale(0.98); } }
+.ai-agent-popover.is-closing { animation: ai-agent-popover-out 110ms ease-in both; pointer-events: none; }
+
+/* ---- modals ---- */
+.ai-agent-edit-preset { transition: transform 160ms var(--ai-ease), background-color 140ms ease, box-shadow 160ms ease; }
+.ai-agent-edit-preset:hover { transform: translateY(-1px); box-shadow: var(--shadow-s); }
+.ai-agent-edit-preset:active { transform: scale(0.95); }
+.ai-agent-diff-body.is-ready { animation: ai-agent-fade-in 240ms ease both; }
+.ai-agent-diff-modal .ai-agent-msg-error.is-failed { animation: ai-agent-shake 360ms ease both; }
+.ai-agent-session-row {
+  animation: ai-agent-rise 220ms var(--ai-ease) both;
+  animation-delay: calc(var(--i, 0) * 22ms);
+  transition: background-color 140ms ease;
+}
+.ai-agent-session-row.is-removing { animation: ai-agent-leave 180ms ease-in both; animation-delay: 0ms; }
+
+
+/* ==========================================================================
+   Popover — upward list anchored to a composer button. One style for every list:
+   quick prompts, provider, model, effort and mode.
+   ========================================================================== */
+.ai-agent-popover {
+  position: absolute;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-m);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.06);
+  transform-origin: left bottom;
+  animation: ai-agent-popover-in 160ms var(--ai-ease) both;
+  font-size: var(--font-ui-small);
+}
+.theme-dark .ai-agent-popover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 2px 6px rgba(0, 0, 0, 0.3); }
+.ai-agent-popover-list { flex: 1 1 auto; min-height: 0; overflow-y: auto; padding: 4px; }
+.ai-agent-popover-search {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--background-modifier-border);
+  color: var(--text-faint);
+}
+.ai-agent-popover-search-icon { display: inline-flex; }
+.ai-agent-popover-search-icon svg { width: 14px; height: 14px; }
+.ai-agent-popover .ai-agent-popover-search input {
+  flex: 1;
+  min-width: 0;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  font-size: var(--font-ui-small);
+  color: var(--text-normal);
+}
+.ai-agent-popover .ai-agent-popover-search input:focus { border: none; box-shadow: none; }
+.ai-agent-popover-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  font-size: var(--font-ui-smaller);
+  color: var(--text-faint);
+}
+.ai-agent-popover-note.is-warning { color: var(--color-orange); }
+.ai-agent-popover-note .ai-agent-popover-icon { color: inherit; }
+.ai-agent-popover-note.is-loading .ai-agent-popover-icon svg { animation: ai-agent-spin 900ms linear infinite; }
+.ai-agent-popover-label {
+  padding: 6px 8px 4px;
+  font-size: var(--font-ui-smaller);
+  font-weight: var(--font-semibold);
+  color: var(--text-faint);
+  letter-spacing: 0.02em;
+}
+.ai-agent-popover-separator { height: 1px; margin: 4px 6px; background: var(--background-modifier-border); }
+.ai-agent-popover-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: var(--radius-s);
+  color: var(--text-normal);
+  cursor: pointer;
+  transition: background-color 100ms ease;
+}
+.ai-agent-popover-item.is-active { background: var(--background-modifier-hover); }
+.ai-agent-popover-item:active { background: var(--background-modifier-active-hover); }
+.ai-agent-popover-icon { display: inline-flex; flex: none; color: var(--text-muted); }
+.ai-agent-popover-icon svg { width: 15px; height: 15px; }
+.ai-agent-popover-item.is-checked .ai-agent-popover-icon { color: var(--interactive-accent); }
+.ai-agent-popover-text { flex: 1; min-width: 0; }
+.ai-agent-popover-title-line { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.ai-agent-popover-title { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ai-agent-popover-badge {
+  flex: none;
+  padding: 0 5px;
+  border-radius: var(--radius-s);
+  font-size: var(--font-ui-smaller);
+  line-height: 16px;
+  color: var(--text-muted);
+  background: var(--background-modifier-hover);
+}
+.ai-agent-popover-item.is-checked .ai-agent-popover-title { font-weight: var(--font-semibold); }
+.ai-agent-popover-subtitle {
+  margin-top: 1px;
+  font-size: var(--font-ui-smaller);
+  color: var(--text-faint);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ai-agent-popover-subtitle.is-warning { color: var(--color-orange); }
+.ai-agent-popover-item.is-custom .ai-agent-popover-icon { color: var(--text-accent); }
+.ai-agent-popover.is-wrapping .ai-agent-popover-subtitle { white-space: normal; }
+.ai-agent-popover-note > span:last-child { min-width: 0; }
+.ai-agent-popover-check { display: inline-flex; flex: none; width: 16px; color: var(--interactive-accent); }
+.ai-agent-popover-check svg { width: 15px; height: 15px; }
+.ai-agent-popover-item.is-checked .ai-agent-popover-check svg { animation: ai-agent-pop 300ms var(--ai-spring); }
+
+
+/* ==========================================================================
+   Note edit cards (Accept / Auto modes)
+   ========================================================================== */
+.ai-agent-edit-card {
+  margin: var(--size-4-3) 0;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-m);
+  background: var(--background-primary);
+  overflow: hidden;
+  transition: border-color 180ms ease, opacity 180ms ease;
+}
+.ai-agent-edit-card.is-pending { border-color: hsla(var(--interactive-accent-hsl), 0.55); }
+.ai-agent-edit-card.is-applied { border-color: rgba(var(--color-green-rgb), 0.5); }
+.ai-agent-edit-card.is-failed { border-color: rgba(var(--color-orange-rgb), 0.6); }
+.ai-agent-edit-card.is-rejected,
+.ai-agent-edit-card.is-reverted,
+.ai-agent-edit-card.is-incomplete { opacity: 0.72; }
+.ai-agent-edit-card-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  box-sizing: border-box;
+  padding: 8px 14px;
+  font-size: var(--font-ui-small);
+  color: var(--text-muted);
+  background: var(--background-secondary);
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+.ai-agent-edit-card-icon { display: inline-flex; color: var(--text-accent); }
+.ai-agent-edit-card-icon svg { width: 14px; height: 14px; }
+.ai-agent-edit-card-file {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: var(--font-semibold);
+  color: var(--text-normal);
+  text-decoration: none;
+  cursor: pointer;
+}
+.ai-agent-edit-card-file:hover { color: var(--text-accent); text-decoration: underline; }
+.ai-agent-edit-card-kind { flex: none; color: var(--text-faint); }
+.ai-agent-edit-card-stats { flex: none; display: inline-flex; gap: 4px; font-family: var(--font-monospace); }
+.ai-agent-edit-card-stats .is-ins { color: var(--color-green); }
+.ai-agent-edit-card-stats .is-del { color: var(--color-red); }
+.ai-agent-edit-card-status {
+  flex: none;
+  margin-left: auto;
+  padding: 0 6px;
+  border-radius: var(--radius-s);
+  line-height: 18px;
+  background: var(--background-modifier-hover);
+}
+.ai-agent-edit-card.is-pending .ai-agent-edit-card-status { color: var(--text-accent); background: hsla(var(--interactive-accent-hsl), 0.12); }
+.ai-agent-edit-card.is-applied .ai-agent-edit-card-status { color: var(--color-green); background: rgba(var(--color-green-rgb), 0.12); }
+.ai-agent-edit-card.is-failed .ai-agent-edit-card-status { color: var(--color-orange); background: rgba(var(--color-orange-rgb), 0.12); }
+.ai-agent-edit-card.is-streaming .ai-agent-edit-card-status { animation: ai-agent-blink 1.2s ease-in-out infinite; }
+.ai-agent-edit-card-diff {
+  max-height: 240px;
+  overflow: auto;
+  padding: 12px 14px;
+  font-size: var(--font-ui-small);
+  line-height: 1.55;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.ai-agent-edit-card-error {
+  padding: 8px 14px;
+  font-size: var(--font-ui-smaller);
+  color: var(--color-orange);
+  border-top: 1px solid var(--background-modifier-border);
+}
+.ai-agent-edit-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 14px;
+  border-top: 1px solid var(--background-modifier-border);
+}
+.ai-agent-edit-card-actions button,
+.ai-agent-edit-bulk button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 12px;
+  font-size: var(--font-ui-small);
+}
+.ai-agent-edit-card-actions svg { width: 13px; height: 13px; }
+.ai-agent-edit-bulk {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 2px 0 4px;
+  font-size: var(--font-ui-smaller);
+  color: var(--text-muted);
+}
+.ai-agent-edit-bulk > span { margin-right: auto; }
+@keyframes ai-agent-resolved { 0% { box-shadow: 0 0 0 0 rgba(var(--color-green-rgb), 0.4); } 100% { box-shadow: 0 0 0 6px rgba(var(--color-green-rgb), 0); } }
+.ai-agent-edit-card.is-resolved { animation: ai-agent-resolved 520ms ease-out; }
+.ai-agent-edit-card.is-shaking { animation: ai-agent-shake 360ms ease both; }
+
+/* provider dialog: detected model list */
+.ai-agent-detected-models:empty { display: none; }
+.ai-agent-detected-models { margin: var(--size-2-2) 0 var(--size-4-2); }
+.ai-agent-detected-title { margin-bottom: 6px; font-size: var(--font-ui-smaller); color: var(--text-muted); }
+.ai-agent-detected-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-height: 120px;
+  overflow-y: auto;
+  padding: 6px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-s);
+  background: var(--background-secondary);
+}
+.ai-agent-detected-chip {
+  padding: 1px 6px;
+  border-radius: var(--radius-s);
+  font-size: var(--font-ui-smaller);
+  color: var(--text-muted);
+  background: var(--background-primary);
+  animation: ai-agent-pop-in 200ms var(--ai-spring) both;
+}
+.ai-agent-provider-advanced { margin-top: var(--size-4-2); border-top: 1px solid var(--background-modifier-border); }
+.ai-agent-provider-advanced > summary {
+  padding: var(--size-4-3) 0 var(--size-4-2);
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+}
+.ai-agent-provider-advanced > summary:hover { color: var(--text-normal); }
+.ai-agent-provider-advanced[open] > div { animation: ai-agent-rise 200ms var(--ai-ease) both; }
+.ai-agent-provider-footer { border-top: none; }
+
+/* ==========================================================================
+   Agent run inside an assistant message: plan, tool calls, approvals
+   ========================================================================== */
+.ai-agent-plan {
+  margin: var(--size-2-2) 0 var(--size-4-3);
+  padding: 12px 14px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-m);
+  background: var(--background-primary);
+  font-size: var(--font-ui-small);
+}
+.ai-agent-plan-head { display: flex; align-items: center; gap: 6px; color: var(--text-muted); font-weight: var(--font-semibold); }
+.ai-agent-plan-icon, .ai-agent-plan-mark { display: inline-flex; }
+.ai-agent-plan-icon svg, .ai-agent-plan-mark svg { width: 14px; height: 14px; }
+.ai-agent-plan-count { margin-left: auto; font-weight: normal; color: var(--text-faint); font-variant-numeric: tabular-nums; }
+.ai-agent-plan-list { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.ai-agent-plan-list li { display: flex; align-items: flex-start; gap: 6px; color: var(--text-muted); }
+.ai-agent-plan-list li .ai-agent-plan-mark { margin-top: 2px; color: var(--text-faint); }
+.ai-agent-plan-list li.is-done { color: var(--text-faint); text-decoration: line-through; }
+.ai-agent-plan-list li.is-done .ai-agent-plan-mark { color: var(--color-green); }
+.ai-agent-plan-list li.is-in_progress { color: var(--text-normal); }
+.ai-agent-plan-list li.is-in_progress .ai-agent-plan-mark { color: var(--interactive-accent); }
+
+.ai-agent-tool { margin: var(--size-4-2) 0; font-size: var(--font-ui-small); color: var(--text-muted); }
+.ai-agent-tool > summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  min-height: 38px;
+  box-sizing: border-box;
+  padding: 8px 12px;
+  border-radius: var(--radius-m);
+  background: var(--background-modifier-hover);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+.ai-agent-tool > summary::-webkit-details-marker { display: none; }
+.ai-agent-tool.is-empty > summary { cursor: default; }
+.ai-agent-tool > summary:hover { color: var(--text-normal); }
+.ai-agent-tool-icon, .ai-agent-tool-status { display: inline-flex; flex: none; }
+.ai-agent-tool-icon svg, .ai-agent-tool-status svg { width: 14px; height: 14px; }
+.ai-agent-tool-label { flex: none; font-weight: var(--font-medium, 500); color: var(--text-normal); }
+.ai-agent-tool-detail { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ai-agent-tool-summary { flex: none; margin-left: auto; color: var(--text-faint); font-size: var(--font-ui-smaller); }
+.ai-agent-tool-detail + .ai-agent-tool-status,
+.ai-agent-tool-label + .ai-agent-tool-status { margin-left: auto; }
+.ai-agent-tool.is-done .ai-agent-tool-status { color: var(--color-green); }
+.ai-agent-tool.is-error .ai-agent-tool-status,
+.ai-agent-tool.is-denied .ai-agent-tool-status { color: var(--color-red); }
+.ai-agent-tool.is-running .ai-agent-tool-status svg { animation: ai-agent-spin 900ms linear infinite; }
+.ai-agent-tool.is-running > summary { background: hsla(var(--interactive-accent-hsl), 0.08); }
+.ai-agent-tool-body { padding: 10px 12px 4px 34px; }
+.ai-agent-tool-paths { display: flex; flex-wrap: wrap; gap: 6px; }
+.ai-agent-tool-path {
+  padding: 2px 8px;
+  border-radius: var(--radius-s);
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  font-size: var(--font-ui-smaller);
+  color: var(--text-accent);
+  text-decoration: none;
+  cursor: pointer;
+}
+.ai-agent-tool-path:hover { border-color: var(--interactive-accent); }
+.ai-agent-tool-result {
+  margin: 6px 0 0;
+  max-height: 180px;
+  overflow: auto;
+  padding: 6px 8px;
+  border-radius: var(--radius-s);
+  background: var(--background-primary);
+  font-size: var(--font-ui-smaller);
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+.ai-agent-tool-paths + .ai-agent-tool-result { display: none; }
+.ai-agent-tool-error { color: var(--text-error); font-size: var(--font-ui-smaller); }
+/* parts added to a visible message (keyed repaint): fade in once, never on repaints */
+.ai-agent-msg .is-appearing { animation: ai-agent-rise 200ms var(--ai-ease) both; }
+
+.ai-agent-agent-state { display: flex; align-items: center; gap: 8px; margin: var(--size-4-3) 0 var(--size-2-2); font-size: var(--font-ui-small); color: var(--text-faint); }
+.ai-agent-agent-state.is-waiting_approval { color: var(--text-accent); }
+.ai-agent-agent-state-icon { display: inline-flex; }
+.ai-agent-agent-state-icon svg { width: 14px; height: 14px; }
+.ai-agent-agent-stop {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 6px 0 2px;
+  font-size: var(--font-ui-smaller);
+  color: var(--color-orange);
+}
+.ai-agent-agent-stop svg { width: 13px; height: 13px; }
+.ai-agent-change .ai-agent-edit-card-kind { color: var(--text-muted); }
+.ai-agent-diff-gap { color: var(--text-faint); line-height: 1; margin: 2px 0; }
+/* ---- flat buttons: solid fills, no shadows, borders or gradients ---- */
+:is(.ai-agent-chat, .ai-agent-diff-modal, .ai-agent-edit-prompt, .ai-agent-session-modal) button:not(.clickable-icon) {
+  box-shadow: none;
+  border: none;
+  background-image: none;
+}
+:is(.ai-agent-chat, .ai-agent-diff-modal, .ai-agent-edit-prompt, .ai-agent-session-modal) button:not(.clickable-icon):hover:not(:disabled) { box-shadow: none; }
+:is(.ai-agent-edit-card-actions, .ai-agent-edit-bulk, .ai-agent-changed-head) button:not(.mod-cta):not(.mod-warning),
+.ai-agent-diff-modal button.ai-agent-diff-btn:not(.mod-cta) {
+  background: var(--background-modifier-hover);
+  color: var(--text-normal);
+}
+:is(.ai-agent-edit-card-actions, .ai-agent-edit-bulk, .ai-agent-changed-head) button:not(.mod-cta):not(.mod-warning):hover:not(:disabled),
+.ai-agent-diff-modal button.ai-agent-diff-btn:not(.mod-cta):hover:not(:disabled) {
+  background: var(--background-modifier-active-hover);
+}
+:is(.ai-agent-chat, .ai-agent-diff-modal, .ai-agent-edit-prompt) button.mod-cta { background: var(--interactive-accent); color: var(--text-on-accent); }
+:is(.ai-agent-chat, .ai-agent-diff-modal, .ai-agent-edit-prompt) button.mod-cta:hover:not(:disabled) { background: var(--interactive-accent-hover); }
+.ai-agent-edit-card-actions button.mod-warning { background: var(--background-modifier-error); color: var(--text-on-accent); }
+.ai-agent-edit-card-actions button.mod-warning:hover:not(:disabled) { background: var(--text-error); }
+.ai-agent-btn-icon { display: inline-flex; }
+.ai-agent-edit-card-actions .ai-agent-btn-icon svg { width: 12px; height: 12px; }
+
+/* Auto mode: safety classifier verdict on an action */
+.ai-agent-review {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 6px;
+  padding: 6px 14px;
+  font-size: var(--font-ui-smaller);
+  color: var(--text-muted);
+  border-top: 1px solid var(--background-modifier-border);
+}
+.ai-agent-tool-body .ai-agent-review { border-top: none; padding: 4px 0; }
+.ai-agent-review-icon { display: inline-flex; }
+.ai-agent-review-icon svg { width: 12px; height: 12px; }
+.ai-agent-review.is-allow .ai-agent-review-icon { color: var(--color-green); }
+.ai-agent-review.is-block .ai-agent-review-icon,
+.ai-agent-review.is-error .ai-agent-review-icon { color: var(--color-orange); }
+.ai-agent-review-title { color: var(--text-normal); font-weight: var(--font-medium); }
+.ai-agent-review-reason { color: var(--text-muted); }
+
+/* settings: everything except providers folds under “高级选项”, a heading row like “服务商” */
+.ai-agent-settings .ai-agent-advanced-toggle { margin-top: var(--size-4-6); cursor: pointer; }
+.ai-agent-settings .ai-agent-advanced-toggle:hover .ai-agent-advanced-toggle-icon { color: var(--text-normal); }
+.ai-agent-settings .ai-agent-advanced-toggle:focus-visible { box-shadow: 0 0 0 2px var(--background-modifier-border-focus); border-radius: var(--radius-s); outline: none; }
+.ai-agent-advanced-toggle-icon { display: inline-flex; color: var(--text-muted); transition: transform 160ms var(--ai-ease); }
+.ai-agent-advanced-toggle-icon svg { width: 16px; height: 16px; }
+.ai-agent-advanced-toggle.is-open .ai-agent-advanced-toggle-icon { transform: rotate(90deg); }
+.ai-agent-changed {
+  margin: var(--size-4-3) 0 var(--size-2-2);
+  padding: 12px 14px;
+  border-radius: var(--radius-m);
+  background: rgba(var(--color-green-rgb), 0.07);
+  font-size: var(--font-ui-small);
+}
+.ai-agent-changed-head { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; color: var(--text-muted); }
+.ai-agent-changed-head svg { width: 14px; height: 14px; }
+.ai-agent-changed-head button { margin-left: auto; height: 24px; padding: 0 10px; font-size: var(--font-ui-smaller); }
+.ai-agent-edit-card-diff.is-create { border-left: 3px solid rgba(var(--color-green-rgb), 0.6); }
+
+.ai-agent-input-full { width: 100%; }
+
+/* inline completion */
+.ai-agent-ghost { color: var(--text-faint); opacity: 0.85; white-space: pre-wrap; pointer-events: none; }
+.ai-agent-completion-status { display: inline-flex; align-items: center; gap: 4px; }
+.ai-agent-completion-status.is-off { opacity: 0.55; }
+.ai-agent-completion-status.is-error { color: var(--text-error); }
+.ai-agent-completion-icon { display: inline-flex; }
+.ai-agent-completion-icon svg { width: 12px; height: 12px; }
+.ai-agent-completion-status.is-loading .ai-agent-completion-icon svg { animation: ai-agent-spin 900ms linear infinite; }
+.ai-agent-edit-section { margin: var(--size-4-3) 0 var(--size-2-2); font-size: var(--font-ui-smaller); font-weight: var(--font-semibold); color: var(--text-faint); }
+
+/* Reduced motion. Last in the file and with a repeated :is() (specificity 0,4,0) so it outranks the
+   component animation rules above; the streaming cursor (a pseudo-element) is stopped separately. */
+@media (prefers-reduced-motion: reduce) {
+  :is(.ai-agent-chat, .ai-agent-diff-modal, .ai-agent-edit-prompt, .ai-agent-session-modal, .ai-agent-provider-modal, .ai-agent-settings):is(.ai-agent-chat, .ai-agent-diff-modal, .ai-agent-edit-prompt, .ai-agent-session-modal, .ai-agent-provider-modal, .ai-agent-settings):is(.ai-agent-chat, .ai-agent-diff-modal, .ai-agent-edit-prompt, .ai-agent-session-modal, .ai-agent-provider-modal, .ai-agent-settings):is(.ai-agent-chat, .ai-agent-diff-modal, .ai-agent-edit-prompt, .ai-agent-session-modal, .ai-agent-provider-modal, .ai-agent-settings),
+  :is(.ai-agent-chat, .ai-agent-diff-modal, .ai-agent-edit-prompt, .ai-agent-session-modal, .ai-agent-provider-modal, .ai-agent-settings):is(.ai-agent-chat, .ai-agent-diff-modal, .ai-agent-edit-prompt, .ai-agent-session-modal, .ai-agent-provider-modal, .ai-agent-settings):is(.ai-agent-chat, .ai-agent-diff-modal, .ai-agent-edit-prompt, .ai-agent-session-modal, .ai-agent-provider-modal, .ai-agent-settings):is(.ai-agent-chat, .ai-agent-diff-modal, .ai-agent-edit-prompt, .ai-agent-session-modal, .ai-agent-provider-modal, .ai-agent-settings) * {
+    animation-duration: 1ms;
+    animation-iteration-count: 1;
+    animation-delay: 0ms;
+    transition-duration: 1ms;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ai-agent-msg.is-streaming .ai-agent-msg-body > .ai-agent-msg-markdown:last-child > :last-child::after { animation: none; }
+}
